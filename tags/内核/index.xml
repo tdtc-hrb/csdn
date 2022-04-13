@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>内核 on 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+    <link>https://tdtc-hrb.github.io/csdn/tags/%E5%86%85%E6%A0%B8/</link>
+    <description>Recent content in 内核 on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 10 Oct 2020 02:12:39 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/tags/%E5%86%85%E6%A0%B8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>查看版本-Ubuntu</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/version-ubuntu/</link>
+      <pubDate>Sat, 10 Oct 2020 02:12:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/version-ubuntu/</guid>
+      <description>查看Glibc库版本 #apt-cache show libc6 查看内核版本 #uname -a 查看binutils版本 #ld -v 查看ubuntu版本号 #cat /etc/issue </description>
+    </item>
+    
+  </channel>
+</rss>

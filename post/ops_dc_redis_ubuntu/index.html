@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="安装redis-server"/>
+<meta name="twitter:description" content="ubuntu"/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="安装redis-server &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/ops_dc_redis_ubuntu/" />
+
+    
+        
+    
+
+    
+    <meta property="og:description" content="ubuntu" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2021-09-08T08:08:08&#43;08:00" />
+
+    
+    
+
+    <title>安装redis-server &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="ubuntu" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.96.0" />
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_dc_redis_ubuntu/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null 
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "安装redis-server",
+    "name": "安装redis-server",
+    "wordCount":  615 ,
+    "timeRequired": "PT3M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/post/ops_dc_redis_ubuntu/",
+    "datePublished": "2021-09-08T08:08Z",
+    "dateModified": "2021-09-08T08:08Z",
+    
+    
+    "description": "ubuntu",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/post/ops_dc_redis_ubuntu/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button icon-feed" href="/csdn/index.xml" >&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">安装redis-server</h1>
+        <small>ubuntu</small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2021-09-08T08:08:08&#43;08:00">
+            Sep 8, 2021
+          </time>
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <p>本文适用范围：</p>
+<ul>
+<li>WSL1(Ubuntu) <br>
+开发环境</li>
+<li>Ubuntu <br>
+生产环境</li>
+</ul>
+<h1 id="1-安装">1. 安装</h1>
+<p>推荐使用<a href="https://launchpad.net/~chris-lea/+archive/ubuntu/redis-server">PPA模式</a>安装redis-server</p>
+<h2 id="11-增加ppa">1.1 增加PPA</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-add-repository ppa:chris-lea/redis-server
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span></code></pre></div><h2 id="install">install</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install redis-server
+</span></span></code></pre></div><h2 id="12-配置">1.2 配置</h2>
+<h3 id="警告清除">警告清除</h3>
+<h4 id="memory">Memory</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. 
+</span></span><span style="display:flex;"><span>To fix this issue add <span style="color:#e6db74">&#39;vm.overcommit_memory = 1&#39;</span> to /etc/sysctl.conf and <span style="color:#66d9ef">then</span> reboot or run the command <span style="color:#e6db74">&#39;sysctl vm.overcommit_memory=1&#39;</span> <span style="color:#66d9ef">for</span> this to take effect.
+</span></span></code></pre></div><p>A: add vm.overcommit_memory=1
+edit sysctl.conf:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/sysctl.conf
+</span></span></code></pre></div><p>Take effect:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo sysctl -p
+</span></span></code></pre></div><h4 id="network">Network</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>WARNING: The TCP backlog setting of <span style="color:#ae81ff">511</span> cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+</span></span></code></pre></div><p>A: add net.core.somaxconn=1024
+edit sysctl.conf:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/sysctl.conf
+</span></span></code></pre></div><p>Take effect:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo sysctl -p
+</span></span></code></pre></div><p>Note: There is no solution in <a href="https://github.com/redis/redis/issues/6123">WSL1</a>.</p>
+<blockquote>
+<p>yossigo commented on Feb 15</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>If so, please note that there<span style="color:#e6db74">&#39;s a big difference between WSL1 which only provides a user-space environment 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">and WSL2 which is a fully virtualized environment running a Linux kernel. 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Since WSL1 is not a real Linux environment most of the kernel-related tunings simply don&#39;</span>t work.
+</span></span></code></pre></div><h4 id="thp">THP</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> WARNING you have Transparent Huge Pages <span style="color:#f92672">(</span>THP<span style="color:#f92672">)</span> support enabled in your kernel. 
+</span></span><span style="display:flex;"><span> This will create latency and memory usage issues with Redis. 
+</span></span><span style="display:flex;"><span> To fix this issue run the command <span style="color:#e6db74">&#39;echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled&#39;</span> as root, 
+</span></span><span style="display:flex;"><span> and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+</span></span></code></pre></div><p>A: add service &ldquo;disable-thp.service&rdquo;
+edit /etc/systemd/system/disable-thp.service:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>Unit<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Description<span style="color:#f92672">=</span>Disable Transparent Huge Pages <span style="color:#f92672">(</span>THP<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>DefaultDependencies<span style="color:#f92672">=</span>no
+</span></span><span style="display:flex;"><span>After<span style="color:#f92672">=</span>sysinit.target local-fs.target
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>Service<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Type<span style="color:#f92672">=</span>oneshot
+</span></span><span style="display:flex;"><span>ExecStart<span style="color:#f92672">=</span>/bin/sh -c <span style="color:#e6db74">&#39;echo never | tee /sys/kernel/mm/transparent_hugepage/enabled &gt; /dev/null&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>Install<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>WantedBy<span style="color:#f92672">=</span>basic.target
+</span></span></code></pre></div><p>Take effect:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl daemon-reload
+</span></span><span style="display:flex;"><span>sudo systemctl start disable-thp
+</span></span><span style="display:flex;"><span>sudo systemctl enable disable-thp
+</span></span><span style="display:flex;"><span>sudo reboot
+</span></span></code></pre></div><h3 id="开发机">开发机</h3>
+<blockquote>
+<p>PS: 当使用WSL时，可以不配置！</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>DENIED Redis is running in protected mode because protected mode is enabled, 
+</span></span><span style="display:flex;"><span>no bind address was specified, no authentication password is requested to clients. 
+</span></span><span style="display:flex;"><span>In this mode connections are only accepted from the loopback interface. 
+</span></span><span style="display:flex;"><span>If you want to connect from external computers to Redis you may adopt one of the following solutions: 
+</span></span><span style="display:flex;"><span>1<span style="color:#f92672">)</span> Just disable protected mode sending the command <span style="color:#e6db74">&#39;CONFIG SET protected-mode no&#39;</span> 
+</span></span><span style="display:flex;"><span> from the loopback interface by connecting to Redis from the same host the server is running, 
+</span></span><span style="display:flex;"><span>however MAKE SURE Redis is not publicly accessible from internet <span style="color:#66d9ef">if</span> you <span style="color:#66d9ef">do</span> so. 
+</span></span><span style="display:flex;"><span>Use CONFIG REWRITE to make this change permanent. 
+</span></span><span style="display:flex;"><span>2<span style="color:#f92672">)</span> Alternatively you can just disable the protected mode by editing the Redis configuration file, 
+</span></span><span style="display:flex;"><span>and setting the protected mode option to <span style="color:#e6db74">&#39;no&#39;</span>, and <span style="color:#66d9ef">then</span> restarting the server. 
+</span></span><span style="display:flex;"><span>3<span style="color:#f92672">)</span> If you started the server manually just <span style="color:#66d9ef">for</span> testing, restart it with the <span style="color:#e6db74">&#39;--protected-mode no&#39;</span> option. 
+</span></span><span style="display:flex;"><span>4<span style="color:#f92672">)</span> Setup a bind address or an authentication password. 
+</span></span><span style="display:flex;"><span>NOTE: You only need to <span style="color:#66d9ef">do</span> one of the above things in order <span style="color:#66d9ef">for</span> the server to start accepting connections from the outside.
+</span></span></code></pre></div><h4 id="本地绑定关">本地绑定（关）</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># bind 127.0.0.1 </span>
+</span></span></code></pre></div><h4 id="保护模式关">保护模式（关）</h4>
+<pre tabindex="0"><code>protected-mode no 
+</code></pre><h3 id="cluster">cluster</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Configure redis to use sockets</span>
+</span></span><span style="display:flex;"><span>sudo cp /etc/redis/redis.conf /etc/redis/redis.conf.orig
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Disable Redis listening on TCP by setting &#39;port&#39; to 0</span>
+</span></span><span style="display:flex;"><span>sed <span style="color:#e6db74">&#39;s/^port .*/port 0/&#39;</span> /etc/redis/redis.conf.orig | sudo tee /etc/redis/redis.conf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Enable Redis socket for default Debian / Ubuntu path</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;unixsocket /var/run/redis/redis.sock&#39;</span> | sudo tee -a /etc/redis/redis.conf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Grant permission to the socket to all members of the redis group</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;unixsocketperm 770&#39;</span> | sudo tee -a /etc/redis/redis.conf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create the directory which contains the socket</span>
+</span></span><span style="display:flex;"><span>mkdir /var/run/redis
+</span></span><span style="display:flex;"><span>chown redis:redis /var/run/redis
+</span></span><span style="display:flex;"><span>chmod <span style="color:#ae81ff">755</span> /var/run/redis
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Activate the changes to redis.conf</span>
+</span></span><span style="display:flex;"><span>sudo service redis-server restart
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add git to the redis group</span>
+</span></span><span style="display:flex;"><span>sudo usermod -aG redis git
+</span></span></code></pre></div><h1 id="2-运行">2. 运行</h1>
+<h2 id="localwsl">local(WSL)</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>redis-server
+</span></span></code></pre></div><h2 id="remotevirtual-box-or-vm-ware-etc">remote(Virtual Box or VM ware etc.)</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo redis-server /etc/redis/redis.conf
+</span></span></code></pre></div><h2 id="21-test">2.1 Test</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wsl-1130@DESKTOP-14G6K9S:~$ redis-cli
+</span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; SET mykey2 <span style="color:#e6db74">&#34;This is mykey2&#34;</span>
+</span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; SET mykey3 <span style="color:#e6db74">&#34;This is mykey3&#34;</span>
+</span></span></code></pre></div><h3 id="有数据">有数据</h3>
+<blockquote>
+<p><a href="https://stackoverflow.com/questions/5252099/redis-command-to-get-all-available-keys">redis-command-to-get-all-available-keys</a></p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wsl-1130@DESKTOP-14G6K9S:~$ redis-cli
+</span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; KEYS *
+</span></span><span style="display:flex;"><span>1<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;mykey3&#34;</span>
+</span></span><span style="display:flex;"><span>2<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;mykey2&#34;</span>
+</span></span><span style="display:flex;"><span>127.0.0.1:6379&gt;
+</span></span></code></pre></div><h1 id="ref">Ref</h1>
+<ul>
+<li><a href="https://techexpert.tips/ubuntu/ubuntu-disable-transparent-huge-pages/">Ubuntu - Disable Transparent Huge Pages</a></li>
+</ul>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=%e5%ae%89%e8%a3%85redis-server&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_dc_redis_ubuntu%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_dc_redis_ubuntu%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_dc_redis_ubuntu%2f&amp;description=%e5%ae%89%e8%a3%85redis-server"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_dc_redis_ubuntu%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/csdn/post/demo-tdtc/">
+          <section class="post">
+              <h2>TDTC Demo</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/apt-oper-ubuntu/">
+          <section class="post">
+              <h2>apt的安装问题</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>
+

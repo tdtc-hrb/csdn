@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Posts"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/" />
+
+    
+        
+    
+
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="" />
+    
+
+    <title>Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+        <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+    
+    <meta name="generator" content="Hugo 0.96.0" />
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/"
+    },
+    "description":  null 
+}
+  </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/post/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+	<header class="main-header tag-head no-cover">
+
+    <nav class="main-nav overlay clearfix">
+      
+      
+        
+          <a class="menu-button icon-feed" href='/csdn/post/index.xml'>&nbsp;&nbsp;Subscribe</a>
+        
+      
+    </nav>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            <h1 class="page-title">Posts</h1>
+            <h2 class="page-description">
+                
+            </h2>
+        </div>
+    </div>
+</header>
+
+<main class="content" role="main">
+    
+
+	<div class="extra-pagination inner">
+    <nav class="pagination" role="navigation">
+	
+	<span class="page-number">Page 1 of 12</span>
+	
+	    <a class="older-posts" href="/csdn/post/page/2/">Older Posts &rarr;</a>
+	
+</nav>
+
+	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_network_adapter_linux/">Linux修改网卡为固定IP</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>CentOS View $ip addr  1 is loopback 2 is the current network card
+ Setup auto Start job network adapter.
+ONBOOT=yes static cd /etc/sysconfig/network-scripts $sudo vi ifcfg-*  *: current network card
+ BOOTPROTO=static IPADDR=192.168.1.186 NETMASK=255.255.255.0 GATEWAY=192.168.1.1 DNS1=211.161.191.235 DNS2=211.161.122.197 virtual machine 设置Network Adapter为Bridged
+vmware 缺省/etc/sysconfig/network-scripts/ifcfg-eth0
+ default: eth0
+ vbox 缺省/etc/sysconfig/network-scripts/ifcfg-enp0XX
+ default: enp0s3
+ Ubuntu 设置static IP cd /etc/netplan/ sudo vi 00-installer-config.yaml #This is the network config written by &#39;subiquity&#39; network:  ethernets:  enp0s3:  dhcp4: no  addresses:  - 192. <a class="read-more" href="/csdn/post/ops_network_adapter_linux/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-04-13T08:38:08&#43;08:00">
+            13 Apr 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/nodejs-ubuntu/">在Ubuntu下安装NodeJS</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>1.node.js v12.x/16.x
+v12.x:
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - v16.x:
+curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash - install sudo apt-get install -y nodejs 2. yarn js curl --silent --show-error https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo &#34;deb https://dl.yarnpkg.com/debian/ stable main&#34; | sudo tee /etc/apt/sources.list.d/yarn.list sudo apt-get update sudo apt-get install yarn  <a class="read-more" href="/csdn/post/nodejs-ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-04-10T23:08:39&#43;08:00">
+            10 Apr 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/vc-boost/">安装boost库(VC)</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>vs2008 cl 提示不可用.
+ vs2012 Gen b2时出错。
+  支持的VC版本(已测)
+   名称 VS版本     msvc-12.0 VS2013   msvc-14.0 VS2015   msvc-14.1 VS2017   msvc-14.2 VS2019    1. 编译  在 x86 Native Tools Command Prompt for VS 2019 下运行
+ About b2 vs bjam as of Boost 1.47.0, the official name of the executable was changed to b2. Gen b2 bootstrap. <a class="read-more" href="/csdn/post/vc-boost/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-03-18T10:08:39&#43;08:00">
+            18 Mar 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_openjdk_centos/">设置OpenJDK</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>1. install  jre
+ sudo yum install java -y jdk sudo yum install java-1.8.0-openjdk-devel 2. set path sudo vi /etc/profile export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.322.b06-1.el7_9.x86_64 export CLASSPATH=.:$JAVA_HOME/jre/lib/:. export PATH=$PATH:$JAVA_HOME/bin $su root $source /etc/profile About path 3.3. INSTALL OPENJDK ON RED HAT ENTERPRISE LINUX - 2.Optional: Set the JAVA_HOME environment variable
+Reference  How to install Java on CentOS 7 OpenJDK Version Info - Releases   <a class="read-more" href="/csdn/post/ops_openjdk_centos/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-03-14T02:08:08-08:00">
+            14 Mar 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_network_adapter_centos/">CentOS修改网卡为固定IP</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>View $ip addr  1 is loopback 2 is the current network card
+ Setup auto Start job network adapter.
+ONBOOT=yes static cd /etc/sysconfig/network-scripts $sudo vi ifcfg-*  *: current network card
+ BOOTPROTO=static IPADDR=192.168.1.186 NETMASK=255.255.255.0 GATEWAY=192.168.1.1 DNS1=211.161.191.235 DNS2=211.161.122.197 virtual machine vmware 设置Network Adapter为Bridged
+缺省/etc/sysconfig/network-scripts/ifcfg-eth0
+ default: eth0
+ vbox 设置Network Adapter为Bridged
+缺省/etc/sysconfig/network-scripts/ifcfg-enp0XX
+ default: enp0s3
+ ssh $sudo yum install openssh  <a class="read-more" href="/csdn/post/ops_network_adapter_centos/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-03-13T08:38:08-08:00">
+            13 Mar 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/java-grammar/">java的grammar</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>JDK8:
+  March 2022 for Oracle (commercial)
+  At least May 2026 for Eclipse Adoptium
+  lambda 我们使用实现Runnable的不同来做对比。
+java 7 package my.csdn2;  import java.util.concurrent.ExecutorService; import java.util.concurrent.Executors;  public class RunnableThread implements Runnable {  	public int mul(int x, int y) { 	int result = 0;  	result = x * y;  	return result; 	}  	public void run() { 	// TODO Auto-generated method stub 	for (int i = 0; i &lt; 5; i++) { 	for (int j = 0; j &lt; 5; j++) { 	System. <a class="read-more" href="/csdn/post/java-grammar/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-03-08T02:09:28&#43;08:00">
+            8 Mar 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_tomcat/">Tomcat安装</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Servlet Spec JSP Spec EL Spec WebSocket Spec Authentication (JASIC) Spec Apache Tomcat Version Latest Released Version Supported Java Versions     5.0 3.0 4.0 2.0 2.0 10.0.x 10.0.17 8 and later   4.0 2.3 3.0 1.1 1.1 9.0.x 9.0.59 8 and later   3.1 2.3 3.0 1.1 1.1 8.5.x 8.5.76 7 and later    0. 安装JDK  RHEL/CentOS 参见 设置OpenJDK - CentOS Ubuntu参见 设置OpenJDK - Ubuntu <a class="read-more" href="/csdn/post/ops_tomcat/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-03-05T05:38:08&#43;08:00">
+            5 Mar 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/small-site/">微信小程序简介</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p> 注册及其他说明 基于NW.js的开发工具  微信基本文件  .wxss 等同css文件 .wxml 布局文件 .json 管理文件 .js 主逻辑文件  文件说明  以下基于JS，而不是TypeScript！
+ 一、pages 首页 index目录
+二、项目文件 app 除了布局文件外，包括微信小程序的3个基本文件。
+project 项目配置
+sitemap 站点设置
+hdd600 - 133  STARS-081  magnet:?xt=urn:btih:04cfca3dd7f13bab4c40a16263faa1c47ccf5f6b&amp;dn=STARS-081  STARS-118  magnet:?xt=urn:btih:cf823c824045d1d0a1e1e805c3b1312ccc012209&amp;dn=STARS-118  STARS-134  magnet:?xt=urn:btih:17cff784b4b5d45044d0d1afd091ee74542ebd58&amp;dn=STARS-134  STARS-209  magnet:?xt=urn:btih:056611d3df3142bcede86d5cbf85b6a548e8b415&amp;dn=STARS-209  STARS-249  magnet:?xt=urn:btih:257719ffba826b46cbaf80cd5b04663f69198b45&amp;dn=STARS-249  STAR-927  magnet:?xt=urn:btih:ee3cbf70c1f51ec6f04841c66918f4f6593eddae&amp;dn=STAR-927  STAR-971  magnet:?xt=urn:btih:a980986f4a6725296dffb48f7cff4c2df9cc5507&amp;dn=STAR-971  STARS-035  magnet:?xt=urn:btih:c19a77bc8956841b2f0dd362f9ed0074754e9106&amp;dn=STARS-035  <a class="read-more" href="/csdn/post/small-site/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-02-10T02:11:39&#43;08:00">
+            10 Feb 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql57-win/">安装配置MySQL 5.7</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>一、配置和安装 ini配置详见附录
+预配置 设置环境变量 名称：MYSQL57_HOME 赋值：D:\progFiles\mysql-5.7 init data %MYSQL57_HOME%\bin\mysqld --initialize-insecure --console 注册/注销服务 注册 多个版本的MySQL运行：
+%MYSQL57_HOME%\bin\mysqld --install MySQL57 --defaults-file=&#34;D:\progFiles\mysql-5.7\my.ini&#34; 注销 sc delete mysql57 Enable SSL Connections for MySQL 注意： 可以忽略如下警告信息：
+CA certificate ca.pem is self signed.For more information, see Help and Support Center at http://www.mysql.com. Connection TLS Protocol Configuration mysql&gt; SHOW GLOBAL VARIABLES LIKE &#39;tls_version&#39;; To change the value of tls_version, set it at server startup. For example, to permit connections that use the TLSv1. <a class="read-more" href="/csdn/post/mysql57-win/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-02-07T12:08:39&#43;08:00">
+            7 Feb 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_git_oper1/">git操作 部分1</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>一、远程仓库回滚 1. 硬性 git reset --hard HEAD~1  &ldquo;~1&quot;表示向前回滚1个提交。 &ldquo;~2&quot;表示向前回滚2个提交，以此类推。  2. 强制推送 git push -f --set-upstream origin master 二、删除github发布 git tag -d [tag] git push origin :[tag] 例如：
+git tag -d v0.3.1 git push origin :v0.3.1 三、修改commit信息 可以修改最后一次提交的信息.
+进入git-cmd或git-bash：
+git commit --amend About：
+ git-bash和git-cmd的区别
+ bash是linux风格的命令行，可以使用windows和linux的命令； cmd是windows风格的命令行，可以使用windows命令；
+ 此外，还有一个最大的不同点，git-cmd是天生就带了系统的PATH环境变量， 这一点会导致如果你运行某些脚本的时候，如果依赖某些安装的程序， 如python、node这些，git-bash就会提示不存在对应的命令， 而git-cmd可以正确运行。    四、合并分支 1. checkout git checkout dev git checkout master 2. merge git merge origin/dev 五、设置user git init ``bash git config user. <a class="read-more" href="/csdn/post/ops_git_oper1/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-01-02T01:38:08&#43;08:00">
+            2 Jan 2022
+        </time>
+    </footer>
+</article>
+
+	
+
+	<nav class="pagination" role="navigation">
+	
+	<span class="page-number">Page 1 of 12</span>
+	
+	    <a class="older-posts" href="/csdn/post/page/2/">Older Posts &rarr;</a>
+	
+</nav>
+
+</main>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>

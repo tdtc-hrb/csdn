@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Posts"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/" />
+
+    
+        
+    
+
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="" />
+    
+
+    <title>Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+        <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+    
+    <meta name="generator" content="Hugo 0.96.0" />
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/"
+    },
+    "description":  null 
+}
+  </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/post/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+	<header class="main-header tag-head no-cover">
+
+    <nav class="main-nav overlay clearfix">
+      
+      
+        
+          <a class="menu-button icon-feed" href='/csdn/post/index.xml'>&nbsp;&nbsp;Subscribe</a>
+        
+      
+    </nav>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            <h1 class="page-title">Posts</h1>
+            <h2 class="page-description">
+                
+            </h2>
+        </div>
+    </div>
+</header>
+
+<main class="content" role="main">
+    
+
+	<div class="extra-pagination inner">
+    <nav class="pagination" role="navigation">
+	
+	    <a class="newer-posts" href="/csdn/post/page/10/">&larr; Newer Posts</a>
+	
+	<span class="page-number">Page 11 of 12</span>
+	
+	    <a class="older-posts" href="/csdn/post/page/12/">Older Posts &rarr;</a>
+	
+</nav>
+
+	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/java-tomcat-pool-hikaricp/">设置HikariCP</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>1. context.xml  tomcat
+ &lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt; &lt;!-- Licensed to the Apache Software Foundation (ASF) under one or more contributor license agreements. See the NOTICE file distributed with this work for additional information regarding copyright ownership. The ASF licenses this file to You under the Apache License, Version 2.0 (the &#34;License&#34;); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www. <a class="read-more" href="/csdn/post/java-tomcat-pool-hikaricp/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-10T12:26:39&#43;08:00">
+            10 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/java-spring-security/">关于Spring Security 4例子的补充</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Spring Security 4 Hibernate Password Encoder Bcrypt Example
+1. 数据表 资料来源于spring-security-remember-me-example
+CREATE TABLE `persistent_logins` (  `series` varchar(64) NOT NULL,  `username` varchar(64) NOT NULL,  `token` varchar(64) NOT NULL,  `last_used` datetime NOT NULL  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;    ALTER TABLE `persistent_logins`  ADD PRIMARY KEY (`series`);  COMMIT; 2. pojo  User.java
+ 其中的缺省值：
+@Column(name = &#34;state&#34;, nullable=true) private String state = &#34;Inactive&#34;; 3. 依赖库  pom. <a class="read-more" href="/csdn/post/java-spring-security/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-10T11:26:39&#43;08:00">
+            10 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/java-struts-spring-jpa/">Struts2 &#43; Spring &#43; JPA</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>PART I: Struts2  Refence: 《how to create a struts2 web application》
+ 1. pom.xml 1) Struts2  struts2-spring-plugin
+ &lt;dependency&gt;  &lt;groupId&gt;org.apache.struts&lt;/groupId&gt;  &lt;artifactId&gt;struts2-spring-plugin&lt;/artifactId&gt;  &lt;version&gt;${struts2.version}&lt;/version&gt; &lt;/dependency&gt; 2) jsp servlet &lt;dependency&gt;  &lt;groupId&gt;javax.servlet&lt;/groupId&gt;  &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;  &lt;version&gt;3.1.0&lt;/version&gt; &lt;/dependency&gt; jstl &lt;!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl --&gt; &lt;dependency&gt;  &lt;groupId&gt;javax.servlet.jsp.jstl&lt;/groupId&gt;  &lt;artifactId&gt;jstl&lt;/artifactId&gt;  &lt;version&gt;1.2&lt;/version&gt; &lt;/dependency&gt; 2. web.xml  filter  &lt;filter&gt;  &lt;filter-name&gt;struts2&lt;/filter-name&gt;  &lt;filter-class&gt;org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter&lt;/filter-class&gt; &lt;/filter&gt; 3. struts.xml &lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt; &lt;!DOCTYPE struts PUBLIC &#34;-//Apache Software Foundation//DTD Struts Configuration 2. <a class="read-more" href="/csdn/post/java-struts-spring-jpa/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-10T10:26:39&#43;08:00">
+            10 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/java-springboot-jpa/">thymeleaf &#43; Spring Boot &#43; JPA</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>1. 自动构建 1) boot向导 2) pom依赖 &lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt; &lt;project xmlns=&#34;http://maven.apache.org/POM/4.0.0&#34; xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; 	xsi:schemaLocation=&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;&gt; 	&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;  	&lt;groupId&gt;com.example&lt;/groupId&gt; 	&lt;artifactId&gt;demo&lt;/artifactId&gt; 	&lt;version&gt;0.0.2-SNAPSHOT&lt;/version&gt; 	&lt;packaging&gt;jar&lt;/packaging&gt;  	&lt;name&gt;demo-jpa&lt;/name&gt; 	&lt;description&gt;Demo project for Spring Boot&lt;/description&gt;  	&lt;parent&gt; 	&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; 	&lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt; 	&lt;version&gt;2.0.2.RELEASE&lt;/version&gt; 	&lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt; 	&lt;/parent&gt;  	&lt;properties&gt; 	&lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt; 	&lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt; 	&lt;java.version&gt;1.8&lt;/java.version&gt; 	&lt;/properties&gt;  	&lt;dependencies&gt; 	&lt;dependency&gt; 	&lt;groupId&gt;org. <a class="read-more" href="/csdn/post/java-springboot-jpa/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-10T10:26:39&#43;08:00">
+            10 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/reduxjs-asyn/">重构asyn</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>0. pre 生成基本框 npm install -g create-react-app create-react-app async clone repo https://github.com/redux-saga/redux-saga.git
+1. copy directorys Copy the examples/async/src from the redux-saga to your async/src.
+2. rename main.js  async/src
+ Rename main.js to index.js
+3. move files  async/src
+ App.css &amp;&amp; logo.svg -&gt;
+ async/src/containers
+ App.css &amp;&amp; logo.svg
+4. modify containers/App.js Add the following two blocks of code.
+import logo from &#39;./logo.svg&#39;; import &#39;./App.css&#39;; &lt;div className=&#34;App&#34;&gt;  &lt;header className=&#34;App-header&#34;&gt;  &lt;img src={logo} className=&#34;App-logo&#34; alt=&#34;logo&#34; /&gt;  &lt;h1 className=&#34;App-title&#34;&gt;Welcome to React&lt;/h1&gt;  &lt;/header&gt;  . <a class="read-more" href="/csdn/post/reduxjs-asyn/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-10T07:26:39&#43;08:00">
+            10 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/pd-db-phy/">powerDesigner生成phy图</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>使用版本：v16.1
+ 一、连接数据库 1. 新建pdm File-》New Model model types -&gt; physical data model  model name: newmodel-phy dbms: mysql5.0
+ 2. config connect profile DataBase -&gt; Configure connections Connection profile 3. connect Database -&gt; connect Flag: &ldquo;Disconnect&rdquo; Available
+ dcp文件（mysql5-crm.dcp）  [ConnectionProfile]ConnectionType=JDBCDbms=MySQLDisableBind=0Driver=com.mysql.jdbc.DriverJarFiles=D:\war\mysql-connector-java-5.1.48.jarLogId=rootTrimSpaces=0URL=jdbc:mysql://106.14.141.40:3306/crm 二、生成phy图 1. Reverse Engineer File -&gt; Reverse Engineer-&gt;Database 选择数据库： 其他数据库全部反选： 例如： 最后，点击ok生成phy图。
+ Tips：如果想从pdm生成CDM，Tools -&gt; Generate Conceptual Data Model <a class="read-more" href="/csdn/post/pd-db-phy/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-10T02:26:39&#43;08:00">
+            10 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql57-cenos7/">CentOS7安装mysql5.7</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p> 本安装大部分同《安装 MariaDB 10.3数据库》
+ 1. add repo sudo yum install http://repo.mysql.com/mysql57-community-release-el7.rpm 2. install sudo yum install mysql-community-server 3. init  start  sudo systemctl start mysqld.service change password sudo grep &#34;temporary password&#34; /var/log/mysqld.log mysql -uroot -p Weak password mysql&gt; set global validate_password_policy=0; set password mysql&gt; SET PASSWORD FOR &#39;root&#39;@&#39;localhost&#39; = PASSWORD(&#39;xbfirst80&#39;); Reference   A Quick Guide to Using the MySQL Yum Repository
+  http://repo.mysql.com/
+   <a class="read-more" href="/csdn/post/mysql57-cenos7/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-10T02:21:39&#43;08:00">
+            10 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/pack-file-linux/">打包文件</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>取消目录所有权限
+ chmod -R 777 /tmp/etc 一、ISO文件 mkisofs -r -o etc.iso /tmp/etc 二、压缩文件 1. zip zip -r etc.zip /tmp/etc 2. tar  仅打包，不压缩！
+ tar -cvf /tmp/etc.tar /etc  gz  tar -zcvf /tmp/etc.tar.gz /etc  bz2  tar -jcvf /tmp/etc.tar.bz2 /etc FAQ This does not look like a tar archive #gzip -d xxxx.tar.gz #tar -xf xxxx.tar 参考文章  18 Tar Command Examples in Linux  c – Creates a new . <a class="read-more" href="/csdn/post/pack-file-linux/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-10T02:20:39&#43;08:00">
+            10 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql-imp-exp/">MySQL导入导出数据库</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>导出数据库 $mysqldump dbName &gt; dbName.sql -u user -p  v5.6/5.7  $mysqldump --no-defaults dbName &gt; dbName.sql -u user -p 导入数据库 mysql&gt;CREATE DATABASE `dbName` CHARACTER SET utf8 COLLATE utf8_general_ci;  mysql&gt;USE dbName;  mysql&gt;SOURCE C:/Users/xiaobin/dbName.sql; Reference  MySQL Create Database with UTF8 Character Set Syntax   <a class="read-more" href="/csdn/post/mysql-imp-exp/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-10T02:18:39&#43;08:00">
+            10 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/gitlab-install-shell/"> 使用脚本安装gitlab</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>一、安装 1. depend $sudo apt-get update $sudo apt-get install ca-certificates curl openssh-server postfix vim 2. down script $curl -LO https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh 3. exec script $sudo bash ~/script.deb.sh 4. install If it is &ldquo;qiang&rdquo;, please see 《代理set - ubuntu》
+$sudo apt-get install gitlab-ce 5. config 1) ufw $sudo ufw allow http $sudo ufw allow https $sudo ufw allow OpenSSH 2) gitlab.rb $sudo vim /etc/gitlab/gitlab.rb # If your GitLab server does not have a domain name, you will need to use an IP # address instead of a domain and keep the protocol as `http`. <a class="read-more" href="/csdn/post/gitlab-install-shell/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-10T02:15:39&#43;08:00">
+            10 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+
+	<nav class="pagination" role="navigation">
+	
+	    <a class="newer-posts" href="/csdn/post/page/10/">&larr; Newer Posts</a>
+	
+	<span class="page-number">Page 11 of 12</span>
+	
+	    <a class="older-posts" href="/csdn/post/page/12/">Older Posts &rarr;</a>
+	
+</nav>
+
+</main>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>

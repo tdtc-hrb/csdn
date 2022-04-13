@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Windows串口"/>
+<meta name="twitter:description" content="vc"/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Windows串口 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/vc-serial_communication/" />
+
+    
+        
+    
+
+    
+    <meta property="og:description" content="vc" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2020-05-15T00:08:08&#43;08:00" />
+
+    
+    
+
+    <title>Windows串口 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="vc" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.96.0" />
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/vc-serial_communication/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null 
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "Windows串口",
+    "name": "Windows串口",
+    "wordCount":  120 ,
+    "timeRequired": "PT1M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/post/vc-serial_communication/",
+    "datePublished": "2020-05-15T00:08Z",
+    "dateModified": "2020-05-15T00:08Z",
+    
+    
+    "description": "vc",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/post/vc-serial_communication/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button icon-feed" href="/csdn/index.xml" >&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">Windows串口</h1>
+        <small>vc</small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2020-05-15T00:08:08&#43;08:00">
+            May 15, 2020
+          </time>
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <h1 id="项目导读">项目导读</h1>
+<ul>
+<li>串口读写工具</li>
+<li>CSerialPort <br>
+Remon Spekreijse</li>
+<li>MFC <br>
+VS2005（VC8）</li>
+</ul>
+<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20150118233218968.png" alt="program ui1"></p>
+<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20150118233246359.png" alt="program ui2"></p>
+<h1 id="程序介绍">程序介绍</h1>
+<p>界面分三块：</p>
+<h2 id="1-端口配置">1. 端口配置</h2>
+<h3 id="11-在port-number选择端口号">1.1 在“Port Number”选择端口号；</h3>
+<h3 id="12-在config配置端口的属性比如波特率奇偶校验数据位停止位等等">1.2 在“Config”配置端口的属性，比如波特率、奇偶校验、数据位、停止位等等。</h3>
+<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20150119144350996.png" alt="program ui3"></p>
+<h2 id="2-发送区域">2. 发送区域</h2>
+<h3 id="21-loop-send">2.1 Loop Send</h3>
+<p>当我们钩选此复选框时，必须选择“发送频率”，然后才能执行循环发送数据。</p>
+<p>### 2.2 发送频率 <br>
+选择其一：500、1000、2000毫秒。
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20150119144408343.png" alt="program ui4"></p>
+<blockquote>
+<p>如果要更改读取自定义的时间频率：</p>
+<blockquote>
+<p>请将SerialCommView.cpp-Ln292，更为：</p>
+<blockquote>
+<p>((CComboBox *)GetDlgItem(IDC_COMBO1Timer))-&gt;GetWindowTextA(strTemp);)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="23-发送内容框">2.3 发送内容框</h3>
+<p>在“发送信息框”输入内容就可发送数据了！</p>
+<h3 id="24-操作流程">2.4 操作流程</h3>
+<h3 id="a类自动化">A类（自动化）</h3>
+<p>2.2-》2.3-》2.1</p>
+<h3 id="b类手动">B类（手动）</h3>
+<p>2.3-》点击“Send”按钮。</p>
+<h2 id="3-接收区域">3. 接收区域</h2>
+<h3 id="31-制式切换">3.1 制式切换</h3>
+<p>当钩选了“Hex View”复选框，接收到的数据就以16进制显示。</p>
+<h3 id="32-清除数据">3.2 清除数据</h3>
+<p>当点击“Clear”按钮，即清空接收框数据。</p>
+<h3 id="33-数据保存">3.3 数据保存</h3>
+<p>当点击“Save As”按钮，即保存接收框数据；默认文件格式为rtf文件。</p>
+<hr>
+<p>操作串口主要分为：初始化串口、读串口、写串口。</p>
+<p>其中，读串口需要使用线程。</p>
+<h1 id="一初始化串口">一、初始化串口</h1>
+<p>在使用串口的时候，我们需要配置串口相关的参数比如，串口号，波特率，数据位，停止位等等。
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/2020051500152383.png" alt="flow diagram"></p>
+<p>首先，如果有线程在运行则停止它。防止数据出现错读。然后，建立事件以及把它们的值放到数组中。
+这时我们要初始化临界区，准备进入临界编码。如果要设定的串口打开了，我们要关闭它。
+建立串口以及设置超时时间设定这时我们要设置等待事件，之后设置RTS为高。获得通讯状态，配置DCB以及清空缓存。
+最后退出临界区编码。完成串口的初始化。</p>
+<h1 id="二类图">二、类图</h1>
+<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20140427134802562.png" alt="rational rose"></p>
+<h1 id="三githubhttpsgithubcomxiaobin80serialcommgit">三、<a href="https://github.com/xiaobin80/SerialComm.git">Github</a></h1>
+<ul>
+<li>开发语言: VC2010</li>
+<li>sln文件:  SerialComm.sln</li>
+</ul>
+<blockquote>
+<p>请把此文件放置与“SerialComm”库同一目录。</p>
+</blockquote>
+<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20150119160142237.png" alt="project file"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>Microsoft Visual Studio Solution File, Format Version 11.00
+</span></span><span style="display:flex;"><span># Visual Studio 2010
+</span></span><span style="display:flex;"><span>Project(&#34;{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}&#34;) = &#34;SerialComm&#34;, &#34;SerialComm\SerialComm.vcxproj&#34;, &#34;{886C559E-5E6B-4EEC-9D3B-FE3433013718}&#34;
+</span></span><span style="display:flex;"><span>EndProject
+</span></span><span style="display:flex;"><span>Global
+</span></span><span style="display:flex;"><span>	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+</span></span><span style="display:flex;"><span>		Debug|Win32 = Debug|Win32
+</span></span><span style="display:flex;"><span>		Release|Win32 = Release|Win32
+</span></span><span style="display:flex;"><span>	EndGlobalSection
+</span></span><span style="display:flex;"><span>	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+</span></span><span style="display:flex;"><span>		{886C559E-5E6B-4EEC-9D3B-FE3433013718}.Debug|Win32.ActiveCfg = Debug|Win32
+</span></span><span style="display:flex;"><span>		{886C559E-5E6B-4EEC-9D3B-FE3433013718}.Debug|Win32.Build.0 = Debug|Win32
+</span></span><span style="display:flex;"><span>		{886C559E-5E6B-4EEC-9D3B-FE3433013718}.Release|Win32.ActiveCfg = Release|Win32
+</span></span><span style="display:flex;"><span>		{886C559E-5E6B-4EEC-9D3B-FE3433013718}.Release|Win32.Build.0 = Release|Win32
+</span></span><span style="display:flex;"><span>	EndGlobalSection
+</span></span><span style="display:flex;"><span>	GlobalSection(SolutionProperties) = preSolution
+</span></span><span style="display:flex;"><span>		HideSolutionNode = FALSE
+</span></span><span style="display:flex;"><span>	EndGlobalSection
+</span></span><span style="display:flex;"><span>EndGlobal
+</span></span></code></pre></div>
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Windows%e4%b8%b2%e5%8f%a3&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fvc-serial_communication%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fvc-serial_communication%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fvc-serial_communication%2f&amp;description=Windows%e4%b8%b2%e5%8f%a3"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fvc-serial_communication%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/csdn/post/vc-update-atl/">
+          <section class="post">
+              <h2>VC升级时出现的问题</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/com-crc32-delphi/">
+          <section class="post">
+              <h2>Delphi调用COM</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>
+

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="VC升级时出现的问题"/>
+<meta name="twitter:description" content="atl工程"/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="VC升级时出现的问题 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/vc-update-atl/" />
+
+    
+        
+    
+
+    
+    <meta property="og:description" content="atl工程" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2020-05-15T00:28:08&#43;08:00" />
+
+    
+    
+
+    <title>VC升级时出现的问题 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="atl工程" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.96.0" />
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/vc-update-atl/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null 
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "VC升级时出现的问题",
+    "name": "VC升级时出现的问题",
+    "wordCount":  402 ,
+    "timeRequired": "PT2M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/post/vc-update-atl/",
+    "datePublished": "2020-05-15T00:28Z",
+    "dateModified": "2020-05-15T00:28Z",
+    
+    
+    "description": "atl工程",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/post/vc-update-atl/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button icon-feed" href="/csdn/index.xml" >&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">VC升级时出现的问题</h1>
+        <small>atl工程</small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2020-05-15T00:28:08&#43;08:00">
+            May 15, 2020
+          </time>
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <blockquote>
+<p>VC6迁移到VC2005以及更高。</p>
+</blockquote>
+<h1 id="1-c1189">1. C1189</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>c:<span style="color:#ae81ff">\p</span>rogram files<span style="color:#ae81ff">\m</span>icrosoft visual studio 10.0<span style="color:#ae81ff">\v</span>c<span style="color:#ae81ff">\a</span>tlmfc<span style="color:#ae81ff">\i</span>nclude<span style="color:#ae81ff">\a</span>tlcore.h<span style="color:#f92672">(</span>35<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>fatal error C1189: <span style="color:#75715e">#error :  This file requires _WIN32_WINNT to be #defined at least to 0x0403. Value 0x0501 or higher is recommended.</span>
+</span></span></code></pre></div><p>A:</p>
+<blockquote>
+<p>StdAfx.h</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#define _WIN32_WINNT 0x0400
+</span></span></span></code></pre></div><p>-&gt;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#define _WIN32_WINNT 0x0501
+</span></span></span></code></pre></div><h1 id="2-c1083atlimpl">2. C1083(atlimpl)</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>c:<span style="color:#ae81ff">\u</span>sers<span style="color:#ae81ff">\x</span>iaobin<span style="color:#ae81ff">\d</span>ocuments<span style="color:#ae81ff">\v</span>isual studio 2013<span style="color:#ae81ff">\p</span>rojects<span style="color:#ae81ff">\c</span>rcfcn_vc<span style="color:#ae81ff">\s</span>tdafx.cpp<span style="color:#f92672">(</span>13<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>fatal error C1083: Cannot open include file: <span style="color:#e6db74">&#39;atlimpl.cpp&#39;</span>: No such file or directory
+</span></span></code></pre></div><p>A: solution1 or solution2.</p>
+<h2 id="solution1">solution1</h2>
+<p>Comment out this line <br>
+stdAfx.cpp</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">// stdafx.cpp : source file that includes just the standard includes
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  stdafx.pch will be the pre-compiled header
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  stdafx.obj will contain the pre-compiled type information
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;stdafx.h&#34;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#ifdef _ATL_STATIC_REGISTRY
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;statreg.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;statreg.cpp&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#endif
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#include &lt;atlimpl.cpp&gt;
+</span></span></span></code></pre></div><h2 id="solution2">solution2</h2>
+<p>Copy this file to the Project folder，</p>
+<p>atlimpl.cpp</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">// This is a part of the Active Template Library.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// Copyright (C) Microsoft Corporation
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// All rights reserved.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// This source code is only intended as a supplement to the
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// Active Template Library Reference and related
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// electronic documentation provided with the library.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// See these sources for detailed information regarding the
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// Active Template Library product.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#pragma message(&#34;atlimpl.cpp is obsolete. Please remove it from your project.&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/////////////////////////////////////////////////////////////////////////////
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// No longer used
+</span></span></span></code></pre></div><p>and modify the reference path.</p>
+<p>stdAfx.cpp</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">// stdafx.cpp : source file that includes just the standard includes
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  stdafx.pch will be the pre-compiled header
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  stdafx.obj will contain the pre-compiled type information
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;stdafx.h&#34;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#ifdef _ATL_STATIC_REGISTRY
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;statreg.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;statreg.cpp&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#endif
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;atlimpl.cpp&#34;</span><span style="color:#75715e">
+</span></span></span></code></pre></div><h1 id="3-file-formatdsw-and-dsp">3. file format(.dsw and .dsp)</h1>
+<p>Download the source code (released)  </p>
+<p>Q: When opening a project, &ldquo;cannot load the project due to a corrupt project file&rdquo;. </p>
+<p>A: Just convert .dsw and .dsp to &ldquo;Windows (CR LF)&quot;. </p>
+<h1 id="4-error-d8016">4. Error D8016</h1>
+<p>Q: &lsquo;/ZI&rsquo; and &lsquo;/Gy-&rsquo; command-line options are incompatible    </p>
+<p>A: Configuration Properties -&gt; C/C++ -&gt; Debug Information Format   
+    Program Database for Edit And Continue(/ZI) =&gt; Program Database(/Zi)</p>
+<h1 id="5-error-msb3075">5. Error MSB3075</h1>
+<p>Q: The command &ldquo;regsvr32 /s /c &ldquo;D:\projects\crcfcn - Copy.\Debug\FCV.dll&rdquo;    
+  echo regsvr32 exec. time &gt; &ldquo;.\Debug\regsvr32.trg&rdquo;    </p>
+<p>A: Project &gt; Properties &gt; Configuration Properties &gt; Custom Build Step    
+Command line: Empty content.    
+  <a href="https://social.msdn.microsoft.com/Forums/vstudio/en-US/97f50350-e37a-46ba-a921-8f4afa29db03/error-msb3073-exited-with-code-3">https://social.msdn.microsoft.com/Forums/vstudio/en-US/97f50350-e37a-46ba-a921-8f4afa29db03/error-msb3073-exited-with-code-3</a></p>
+<h1 id="6-error-msb8011">6. error MSB8011</h1>
+<p>A: Project&ndash;&gt;Propertier&ndash;&gt;Linker&ndash;&gt;General&ndash;&gt;Register Output&ndash;&gt;NO</p>
+<h1 id="7-excluded-files">7. Excluded files</h1>
+<blockquote>
+<p>提交代码时不需要的文件</p>
+</blockquote>
+<ul>
+<li>MIDL</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>_.i.h, _.i.c, _.p.c
+</span></span></code></pre></div><ul>
+<li>resource <br>
+.aps</li>
+<li>PS</li>
+</ul>
+<blockquote>
+<p>vc10建立atl会生成一个ps的工程
+<a href="https://stackoverflow.com/questions/9582733/what-is-the-foops-project-in-my-foo-atl-solution-for">Proxy and Stub</a></p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>In other words, interfaces that derive from IDispatch and only use Automation compatible types.
+</span></span><span style="display:flex;"><span>You only need to get the registry entries right to enable it and
+</span></span><span style="display:flex;"><span>don<span style="color:#960050;background-color:#1e0010">&#39;</span>t otherwise need the proxy/stub generated by midl.
+</span></span></code></pre></div><ul>
+<li>MSbuild
+<a href="https://docs.microsoft.com/en-us/cpp/porting/build-system-changes?view=vs-2019">.vcxproj.user</a></li>
+</ul>
+<h1 id="8-register-output">8. Register Output</h1>
+<p>我们更改为不要在注册表注册！</p>
+<p>“project property” -&gt;“Configuration Properties” -&gt; “Linker”下的选项“Register Output”为 “No”；</p>
+<h1 id="9-validate-parameters">9. Validate Parameters</h1>
+<p>“project property” -&gt;“Configuration Properties”-&gt;&ldquo;MIDL&rdquo;-&gt;“Advanced”下的选项&quot;Validate Parameters&quot;为“Yes(/robust)”</p>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=VC%e5%8d%87%e7%ba%a7%e6%97%b6%e5%87%ba%e7%8e%b0%e7%9a%84%e9%97%ae%e9%a2%98&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fvc-update-atl%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fvc-update-atl%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fvc-update-atl%2f&amp;description=VC%e5%8d%87%e7%ba%a7%e6%97%b6%e5%87%ba%e7%8e%b0%e7%9a%84%e9%97%ae%e9%a2%98"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fvc-update-atl%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_department_gitlab_man/">
+          <section class="post">
+              <h2>GitLab使用</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/vc-serial_communication/">
+          <section class="post">
+              <h2>Windows串口</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>
+

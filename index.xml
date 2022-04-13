@@ -1,0 +1,1480 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+    <link>https://tdtc-hrb.github.io/csdn/</link>
+    <description>Recent content on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 13 Apr 2022 08:38:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux修改网卡为固定IP</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/</link>
+      <pubDate>Wed, 13 Apr 2022 08:38:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/</guid>
+      <description>CentOS View $ip addr  1 is loopback 2 is the current network card
+ Setup auto Start job network adapter.
+ONBOOT=yes static cd /etc/sysconfig/network-scripts $sudo vi ifcfg-*  *: current network card
+ BOOTPROTO=static IPADDR=192.168.1.186 NETMASK=255.255.255.0 GATEWAY=192.168.1.1 DNS1=211.161.191.235 DNS2=211.161.122.197 virtual machine 设置Network Adapter为Bridged
+vmware 缺省/etc/sysconfig/network-scripts/ifcfg-eth0
+ default: eth0
+ vbox 缺省/etc/sysconfig/network-scripts/ifcfg-enp0XX
+ default: enp0s3
+ Ubuntu 设置static IP cd /etc/netplan/ sudo vi 00-installer-config.yaml #This is the network config written by &amp;#39;subiquity&amp;#39; network:  ethernets:  enp0s3:  dhcp4: no  addresses:  - 192.</description>
+    </item>
+    
+    <item>
+      <title>在Ubuntu下安装NodeJS</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/nodejs-ubuntu/</link>
+      <pubDate>Sun, 10 Apr 2022 23:08:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/nodejs-ubuntu/</guid>
+      <description>1.node.js v12.x/16.x
+v12.x:
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - v16.x:
+curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash - install sudo apt-get install -y nodejs 2. yarn js curl --silent --show-error https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo &amp;#34;deb https://dl.yarnpkg.com/debian/ stable main&amp;#34; | sudo tee /etc/apt/sources.list.d/yarn.list sudo apt-get update sudo apt-get install yarn </description>
+    </item>
+    
+    <item>
+      <title>安装boost库(VC)</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/vc-boost/</link>
+      <pubDate>Fri, 18 Mar 2022 10:08:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/vc-boost/</guid>
+      <description>vs2008 cl 提示不可用.
+ vs2012 Gen b2时出错。
+  支持的VC版本(已测)
+   名称 VS版本     msvc-12.0 VS2013   msvc-14.0 VS2015   msvc-14.1 VS2017   msvc-14.2 VS2019    1. 编译  在 x86 Native Tools Command Prompt for VS 2019 下运行
+ About b2 vs bjam as of Boost 1.47.0, the official name of the executable was changed to b2. Gen b2 bootstrap.</description>
+    </item>
+    
+    <item>
+      <title>设置OpenJDK</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_openjdk_centos/</link>
+      <pubDate>Mon, 14 Mar 2022 02:08:08 -0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_openjdk_centos/</guid>
+      <description>1. install  jre
+ sudo yum install java -y jdk sudo yum install java-1.8.0-openjdk-devel 2. set path sudo vi /etc/profile export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.322.b06-1.el7_9.x86_64 export CLASSPATH=.:$JAVA_HOME/jre/lib/:. export PATH=$PATH:$JAVA_HOME/bin $su root $source /etc/profile About path 3.3. INSTALL OPENJDK ON RED HAT ENTERPRISE LINUX - 2.Optional: Set the JAVA_HOME environment variable
+Reference  How to install Java on CentOS 7 OpenJDK Version Info - Releases  </description>
+    </item>
+    
+    <item>
+      <title>CentOS修改网卡为固定IP</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_centos/</link>
+      <pubDate>Sun, 13 Mar 2022 08:38:08 -0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_centos/</guid>
+      <description>View $ip addr  1 is loopback 2 is the current network card
+ Setup auto Start job network adapter.
+ONBOOT=yes static cd /etc/sysconfig/network-scripts $sudo vi ifcfg-*  *: current network card
+ BOOTPROTO=static IPADDR=192.168.1.186 NETMASK=255.255.255.0 GATEWAY=192.168.1.1 DNS1=211.161.191.235 DNS2=211.161.122.197 virtual machine vmware 设置Network Adapter为Bridged
+缺省/etc/sysconfig/network-scripts/ifcfg-eth0
+ default: eth0
+ vbox 设置Network Adapter为Bridged
+缺省/etc/sysconfig/network-scripts/ifcfg-enp0XX
+ default: enp0s3
+ ssh $sudo yum install openssh </description>
+    </item>
+    
+    <item>
+      <title>java的grammar</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/java-grammar/</link>
+      <pubDate>Tue, 08 Mar 2022 02:09:28 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/java-grammar/</guid>
+      <description>JDK8:
+  March 2022 for Oracle (commercial)
+  At least May 2026 for Eclipse Adoptium
+  lambda 我们使用实现Runnable的不同来做对比。
+java 7 package my.csdn2;  import java.util.concurrent.ExecutorService; import java.util.concurrent.Executors;  public class RunnableThread implements Runnable {  	public int mul(int x, int y) { 	int result = 0;  	result = x * y;  	return result; 	}  	public void run() { 	// TODO Auto-generated method stub 	for (int i = 0; i &amp;lt; 5; i++) { 	for (int j = 0; j &amp;lt; 5; j++) { 	System.</description>
+    </item>
+    
+    <item>
+      <title>Tomcat安装</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</link>
+      <pubDate>Sat, 05 Mar 2022 05:38:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</guid>
+      <description>Servlet Spec JSP Spec EL Spec WebSocket Spec Authentication (JASIC) Spec Apache Tomcat Version Latest Released Version Supported Java Versions     5.0 3.0 4.0 2.0 2.0 10.0.x 10.0.17 8 and later   4.0 2.3 3.0 1.1 1.1 9.0.x 9.0.59 8 and later   3.1 2.3 3.0 1.1 1.1 8.5.x 8.5.76 7 and later    0. 安装JDK  RHEL/CentOS 参见 设置OpenJDK - CentOS Ubuntu参见 设置OpenJDK - Ubuntu</description>
+    </item>
+    
+    <item>
+      <title>微信小程序简介</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/small-site/</link>
+      <pubDate>Thu, 10 Feb 2022 02:11:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/small-site/</guid>
+      <description> 注册及其他说明 基于NW.js的开发工具  微信基本文件  .wxss 等同css文件 .wxml 布局文件 .json 管理文件 .js 主逻辑文件  文件说明  以下基于JS，而不是TypeScript！
+ 一、pages 首页 index目录
+二、项目文件 app 除了布局文件外，包括微信小程序的3个基本文件。
+project 项目配置
+sitemap 站点设置
+hdd600 - 133  STARS-081  magnet:?xt=urn:btih:04cfca3dd7f13bab4c40a16263faa1c47ccf5f6b&amp;amp;dn=STARS-081  STARS-118  magnet:?xt=urn:btih:cf823c824045d1d0a1e1e805c3b1312ccc012209&amp;amp;dn=STARS-118  STARS-134  magnet:?xt=urn:btih:17cff784b4b5d45044d0d1afd091ee74542ebd58&amp;amp;dn=STARS-134  STARS-209  magnet:?xt=urn:btih:056611d3df3142bcede86d5cbf85b6a548e8b415&amp;amp;dn=STARS-209  STARS-249  magnet:?xt=urn:btih:257719ffba826b46cbaf80cd5b04663f69198b45&amp;amp;dn=STARS-249  STAR-927  magnet:?xt=urn:btih:ee3cbf70c1f51ec6f04841c66918f4f6593eddae&amp;amp;dn=STAR-927  STAR-971  magnet:?xt=urn:btih:a980986f4a6725296dffb48f7cff4c2df9cc5507&amp;amp;dn=STAR-971  STARS-035  magnet:?xt=urn:btih:c19a77bc8956841b2f0dd362f9ed0074754e9106&amp;amp;dn=STARS-035 </description>
+    </item>
+    
+    <item>
+      <title>安装配置MySQL 5.7</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/mysql57-win/</link>
+      <pubDate>Mon, 07 Feb 2022 12:08:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/mysql57-win/</guid>
+      <description>一、配置和安装 ini配置详见附录
+预配置 设置环境变量 名称：MYSQL57_HOME 赋值：D:\progFiles\mysql-5.7 init data %MYSQL57_HOME%\bin\mysqld --initialize-insecure --console 注册/注销服务 注册 多个版本的MySQL运行：
+%MYSQL57_HOME%\bin\mysqld --install MySQL57 --defaults-file=&amp;#34;D:\progFiles\mysql-5.7\my.ini&amp;#34; 注销 sc delete mysql57 Enable SSL Connections for MySQL 注意： 可以忽略如下警告信息：
+CA certificate ca.pem is self signed.For more information, see Help and Support Center at http://www.mysql.com. Connection TLS Protocol Configuration mysql&amp;gt; SHOW GLOBAL VARIABLES LIKE &amp;#39;tls_version&amp;#39;; To change the value of tls_version, set it at server startup. For example, to permit connections that use the TLSv1.</description>
+    </item>
+    
+    <item>
+      <title>git操作 部分1</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_git_oper1/</link>
+      <pubDate>Sun, 02 Jan 2022 01:38:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_git_oper1/</guid>
+      <description>一、远程仓库回滚 1. 硬性 git reset --hard HEAD~1  &amp;ldquo;~1&amp;quot;表示向前回滚1个提交。 &amp;ldquo;~2&amp;quot;表示向前回滚2个提交，以此类推。  2. 强制推送 git push -f --set-upstream origin master 二、删除github发布 git tag -d [tag] git push origin :[tag] 例如：
+git tag -d v0.3.1 git push origin :v0.3.1 三、修改commit信息 可以修改最后一次提交的信息.
+进入git-cmd或git-bash：
+git commit --amend About：
+ git-bash和git-cmd的区别
+ bash是linux风格的命令行，可以使用windows和linux的命令； cmd是windows风格的命令行，可以使用windows命令；
+ 此外，还有一个最大的不同点，git-cmd是天生就带了系统的PATH环境变量， 这一点会导致如果你运行某些脚本的时候，如果依赖某些安装的程序， 如python、node这些，git-bash就会提示不存在对应的命令， 而git-cmd可以正确运行。    四、合并分支 1. checkout git checkout dev git checkout master 2. merge git merge origin/dev 五、设置user git init ``bash git config user.</description>
+    </item>
+    
+    <item>
+      <title>TDTC Demo</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/demo-tdtc/</link>
+      <pubDate>Tue, 16 Nov 2021 00:18:18 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/demo-tdtc/</guid>
+      <description>系统需求： ref &amp;ldquo;VC Redist&amp;rdquo; - vc 10.0
+  注册下列COM组件
+   xbfInfo.dll repoInfo.dll  callXBFLib  生成/读取xbf文件.
+ 文档请参考  callXBFLibrary - 调用非托管DLL callXBFLibrary - 调用COM  配置文件  xbfConfig.ini
+ [config] type = MySQL  [MS-Access] DB = v:\fde.mdb Pwd = wwsrts12  [MSSQL] Server = ddrwaas2 DB = dddrrewq User = ttrrre Pwd = qwerty  [MySQL] Server = 192.168.1.107 DB = mysql User = DBAdmin Pwd = xbfirst repoFmtGen  生成固定格式的报文。</description>
+    </item>
+    
+    <item>
+      <title>安装redis-server</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_dc_redis_ubuntu/</link>
+      <pubDate>Wed, 08 Sep 2021 08:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_dc_redis_ubuntu/</guid>
+      <description>本文适用范围：
+ WSL1(Ubuntu) 开发环境 Ubuntu 生产环境  1. 安装 推荐使用PPA模式安装redis-server
+1.1 增加PPA sudo apt-add-repository ppa:chris-lea/redis-server sudo apt-get update install sudo apt-get install redis-server 1.2 配置 警告清除 Memory WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add &amp;#39;vm.overcommit_memory = 1&amp;#39; to /etc/sysctl.conf and then reboot or run the command &amp;#39;sysctl vm.overcommit_memory=1&amp;#39; for this to take effect. A: add vm.overcommit_memory=1 edit sysctl.conf:</description>
+    </item>
+    
+    <item>
+      <title>apt的安装问题</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/apt-oper-ubuntu/</link>
+      <pubDate>Thu, 08 Jul 2021 02:20:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/apt-oper-ubuntu/</guid>
+      <description>apt适合手动输入(有交互); apt-get适合脚本(无交互).
+Manage 卸载 apt-get autoremove vsftpd --purge 安装指定版本 apt-get install &amp;lt;package name&amp;gt;=&amp;lt;version&amp;gt; 列出版本 apt-cache madison &amp;lt;&amp;lt;package name&amp;gt;&amp;gt; DebIan sudo using root:
+su - root install:
+apt install sudo chmod 640 /etc/sudoers 在配置文件/etc/sudoers加入：
+tdtc ALL=(ALL:ALL) ALL 把文件权限改为只读:
+chmod 440 /etc/sudoers apt source sudo vi /etc/apt/sources.list 注释掉&amp;quot;deb cdrom:xxx&amp;quot;
+##deb cdrom:xxx Ref  Debian中安装使用sudo命令 Debian取消从光盘安装软件的方式  </description>
+    </item>
+    
+    <item>
+      <title>grub救援模式</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_grub_ubuntu/</link>
+      <pubDate>Tue, 15 Jun 2021 00:19:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_grub_ubuntu/</guid>
+      <description> 出现“grub rescue&amp;gt;”提示符；也称grub救援模式。
+ 1. 设置引导  (hd?,?)：安装的引导分区 在我的机器是(hd0, msdos3)
+ grub rescue&amp;gt;ls grub rescue&amp;gt;ls (hd?,?)/boot/grub grub rescue&amp;gt;set root(hd?,?) grub rescue&amp;gt;set prefix=(hd?,?)/boot/grub insmod one:
+insmod /boot/grub/normal.mod /boot/grub/normal two:
+insmod normal normal 2. 更新grub 在终端上执行：
+sudo grub-install /dev/sda sudo update-grub </description>
+    </item>
+    
+    <item>
+      <title>安装 MariaDB 10.3数据库</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/mysql-mdb-v103/</link>
+      <pubDate>Sun, 02 May 2021 01:08:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/mysql-mdb-v103/</guid>
+      <description>1. 准备安装  卸载旧版本Maria
+ 1) 查询 [tdtc@localhost ~]$ sudo rpm -qa | grep mariadb [sudo] password for tdtc: mariadb-libs-5.5.68-1.el7.x86_64 2) uninstall sudo yum -y remove mariadb* 2. install Step 1: Add MariaDB Yum Repositories /etc/yum.repos.d/mariadb.repo
+[mariadb] name = MariaDB baseurl = http://yum.mariadb.org/10.3/centos7-amd64 gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB gpgcheck=1 Step 2: Install MariaDB Server sudo yum install MariaDB-server MariaDB-client  run  sudo systemctl start mysql.service Step 3: Secure MariaDB Install  Default: Enter</description>
+    </item>
+    
+    <item>
+      <title>计算圆的面积和周长</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/c-console_app/</link>
+      <pubDate>Sat, 01 May 2021 06:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/c-console_app/</guid>
+      <description>IDE Eclipse IDE for C/C++ Developers Dev Env cygwin  主程序 Create Project File -&amp;gt; New -&amp;gt; C/C++ Project &amp;ldquo;C++ Managed Build&amp;rdquo;
+Template  Project type  Executable: Hello World C++ Project  Toolchains  cygwin GCC ansi版 int main(int argc, char* argv[]) {  double dRadius = 3;  if (argc &amp;gt; 1) {  dRadius = atof(argv[1]);  }  /// todo  return 0; } unicode版 int main(int argc, wchar_t* argv[]) {  double dRadius = 3;  if (argc &amp;gt; 1) {  dRadius = _wtof(argv[1]);  }  /// todo  return 0; } C2065: &amp;lsquo;cout&amp;rsquo; : undeclared identifier 强制使用命名空间</description>
+    </item>
+    
+    <item>
+      <title>十六进制转十进制</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/c-string-h2i/</link>
+      <pubDate>Sat, 01 May 2021 05:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/c-string-h2i/</guid>
+      <description>工作原理：
+ 　16进制数 * 16n 之和就是10进制数。
+ 手算 16进制: 0x61E
+0位： E * 160 = 14 1位： 1 * 161 = 16 2位： 6 * 162 = 1536
+10进制： 14+16+1536 = 1566
+code 程序的需要两部分组成：
+ 权值计算 16的几次方，power(16, x)  unsigned long power(int a, int b) {  int i;  unsigned long result = 1;  for(i = 0; i &amp;lt; b; i++)  result = result * a;   return result; }; 单16进制值转10进制值 例如：如果是F，则表示15  switch (ch)  {  case &amp;#39;0&amp;#39;:  iCh = 0;  break;  case &amp;#39;1&amp;#39;:  iCh = 1;  break;  case &amp;#39;2&amp;#39;:  iCh = 2;  break;  case &amp;#39;3&amp;#39;:  iCh = 3;  break;  case &amp;#39;4&amp;#39;:  iCh = 4;  break;  case &amp;#39;5&amp;#39;:  iCh = 5;  break;  case &amp;#39;6&amp;#39;:  iCh = 6;  break;  case &amp;#39;7&amp;#39;:  iCh = 7;  break;  case &amp;#39;8&amp;#39;:  iCh = 8;  break;  case &amp;#39;9&amp;#39;:  iCh = 9;  break;  case &amp;#39;a&amp;#39;:  iCh = 10;  break;  case &amp;#39;b&amp;#39;:  iCh = 11;  break;  case &amp;#39;c&amp;#39;:  iCh = 12;  break;  case &amp;#39;d&amp;#39;:  iCh = 13;  break;  case &amp;#39;e&amp;#39;:  iCh = 14;  break;  case &amp;#39;f&amp;#39;:  iCh = 15;  break;   default:  iCh = -1;  break;  } 为了满足，把所有输入转换为小写字母，可以使用系统函数tolower()或者我们自己写的函数toLower()</description>
+    </item>
+    
+    <item>
+      <title>automake生成makefile</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/c-automake/</link>
+      <pubDate>Sat, 13 Feb 2021 02:20:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/c-automake/</guid>
+      <description>1. 手工(修改或创建)文件 详见附件Makefile.am和configure.ac
+注意: am文件是需要创建的!
+ac文件 生成ac模板
+$ autoscan 会生成configure.scan文件, 重命名为configure.ac
+修改初始化 注意: 所有新修改的值都需要方括号([])
+ 程序属性  AC_INIT([hex2int], [v0.1], [veic_2005@163.com])  目录结构 如果只有本目录, 使用空值  AM_INIT_AUTOMAKE 2. 其他命令  aclocal autoconf autoheader  3. 生成Makefile 输出Makefile.in automake --add-missing 输出Makefile ./configure 手动Makefile  小项目可以。 注意：所有的命令前必须为TAB，不能使空格！
+ #https://stackoverflow.com/questions/1484817/how-do-i-make-a-simple-makefile-for-gcc-on-linux #https://stackoverflow.com/questions/14109724/makefile-missing-separator/14109796 #https://www.gnu.org/software/make/manual/html_node/Pattern-Examples.html#Pattern-Examples #https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html#Automatic-Variables   TARGET = hex2int CC = gcc CFLAGS = -g -Wall   all:$(TARGET)  OBJECTS = $(patsubst %.c, %.o, $(wildcard *.</description>
+    </item>
+    
+    <item>
+      <title>安装memcached</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_memcached_ubuntu/</link>
+      <pubDate>Mon, 01 Feb 2021 09:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_memcached_ubuntu/</guid>
+      <description>VMware: Ubuntu 20.04.2
+ Install and update #sudo apt-get install memcached [0] #sudo apt-get install build-essential #sudo apt-get install libevent-dev* #wget http://memcached.org/files/memcached-1.6.15.tar.gz #tar -zxvf memcached-1.6.15.tar.gz #cd memcached-1.6.15 #./configure &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo make install Start allow port sudo ufw allow 11211 config sudo vi /etc/memcached.conf 修改为服务器的IP:
+# Specify which IP address to listen on. The default is to listen on all IP addresses # This parameter is one of the only security measures that memcached has, so make sure # it&amp;#39;s listening on a firewalled interface.</description>
+    </item>
+    
+    <item>
+      <title>查看版本-Ubuntu</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/version-ubuntu/</link>
+      <pubDate>Sat, 10 Oct 2020 02:12:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/version-ubuntu/</guid>
+      <description>查看Glibc库版本 #apt-cache show libc6 查看内核版本 #uname -a 查看binutils版本 #ld -v 查看ubuntu版本号 #cat /etc/issue </description>
+    </item>
+    
+    <item>
+      <title>设置proxy</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_network_proxy/</link>
+      <pubDate>Fri, 02 Oct 2020 14:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_network_proxy/</guid>
+      <description>OS Windows  set command
+ set http_proxy=http://127.0.0.1:8580 set https_proxy=http://127.0.0.1:8580 Ubuntu export http_proxy=&amp;#34;http://192.168.1.108:1080&amp;#34; export https_proxy=&amp;#34;http://192.168.1.108:1080&amp;#34; software git set proxy git config --global http.proxy http://127.0.0.1:8580  git config --global https.proxy https://127.0.0.1:8580 unset git config --global --unset http.proxy git config --global --unset https.proxy node-js  .npmrc
+ cmd npm config delete https-proxy npm config set http-proxy http://host:port npm config set strict-ssl false file registry=https://registry.npmjs.org/ proxy=http://127.0.0.1:8580/ http-proxy=http://127.0.0.1:8580 strict-ssl=false Agent Website 国内网站代理
+ruby gems 安装指定版本:V1.</description>
+    </item>
+    
+    <item>
+      <title>开启sudo</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_sudo/</link>
+      <pubDate>Tue, 14 Jul 2020 00:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_sudo/</guid>
+      <description>new user $useradd tdtc $passwd tdtc Append group CentOS7- Open wheel $vi /etc/pam.d/su auth required /lib/security/$ISA/pam_wheel.so use_uid Attachment of group members $gpasswd -a tdtc wheel CentOS7 usermod –aG wheel UserName ``  # test Query all users with sudo permissions.  ```bash [tdtc@tdtc102 ~]$ sudo lid -g wheel  We trust you have received the usual lecture from the local System Administrator. It usually boils down to these three things:   #1) Respect the privacy of others.</description>
+    </item>
+    
+    <item>
+      <title>使用fork的server</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/c-bsd_socket-server/</link>
+      <pubDate>Sat, 23 May 2020 08:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/c-bsd_socket-server/</guid>
+      <description>GNU Compiler Collection(GCC)
+ 在“Socket服务器端程序”基础上增加子进程。
+Beej’s Guide Network to Programming  关于Unix/Linux子进程：
+ 相当于Windows的线程
+  调用fork()即可增加子进程。
+要使用fork必须调用waitpid() ！
+waitpid() waitpid函数原型：
+#include&amp;lt;sys/types.h&amp;gt; /* 提供类型pid_t的定义 */#include&amp;lt;sys/wait.h&amp;gt; pid_t waitpid(pid_t pid, int *status, int options);   pid 等于-1时，等待任何一个子进程退出，没有任何限制，此时waitpid和wait的作用一模一样。
+  status 我们设置为NULL。
+  options 提供了一些额外的选项来控制waitpid，WNOHANG常量表示， 即使没有子进程退出，它也会立即返回，不会像wait那样永远等下去。
+  sigaction()  sigaction()是waitpid()的开关
+ 只有给waitpid()信号时，才开启它(waitpid)！ 这时，需要sigaction()。
+sigaction函数原型：
+#include&amp;lt;signal.h&amp;gt;int sigaction(int signum, const struct sigaction *act, struct sigaction *oldact);   signum 等于SIGCHLD时，只有子进程停止或者退出才进行调用。
+  act 一个指向sigaction结构的指针。</description>
+    </item>
+    
+    <item>
+      <title>使用BSD socket</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/vc-bsd_socket/</link>
+      <pubDate>Fri, 22 May 2020 08:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/vc-bsd_socket/</guid>
+      <description>BSD Socket是标准的套接字规范，那么怎么在windows使用他们呢？
+Init &amp;amp; clean 首先要引用&amp;lt;winsock2.h&amp;gt;和ws2_32.lib； 使用struct addrinfo需引用&amp;lt;ws2tcpip.h&amp;gt;。
+程序头: WSAStartup(), 程序尾: WSACleanup();
+code  以下程序在VC9/VC14.1下编译通过
+ 客户端程序 prj1Clt  无getaddrinfo版
+ 注意：InetPton函数只能在Windows Version &amp;gt;=6上实现！
+  // prj1Clt.cpp : This file contains the &amp;#39;main&amp;#39; function. Program execution begins and ends there. //  /** * Networking program is Win version with BSD Socket * Client side * * Author: xiaobin * Date: 2013-12-12 * Modfity: 2020-5-28 */  #include &amp;lt;iostream&amp;gt; #if _MSC_VER &amp;gt; 1800 #include &amp;lt;tchar.</description>
+    </item>
+    
+    <item>
+      <title>Windows的一些设置</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_win_faq1/</link>
+      <pubDate>Mon, 18 May 2020 08:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_win_faq1/</guid>
+      <description>禁止记事本   开始-&amp;gt;运行-&amp;gt;gpedit.msc-&amp;gt;计算机配置-&amp;gt;windows设置-&amp;gt;安全设置-&amp;gt;软件限制策略
+  右键点软件限制策略-&amp;gt;创建软件限制策略
+  点其他规则-&amp;gt;右键新建路径规则-&amp;gt;在“路径”下的空白输入框中“%windir%\notepad.exe“（或者c盘是系统盘的情况下：c:\windows\notepad.exe)-&amp;gt;在“安全级别”中选择“不允许”
+   附：如果你要限制.txt的程序打开，可以在路径中输入*.txt。
+ 日文系统 key101  日文改英文键盘
+ 修改注册表主键： HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\i8042prt\Parameters
+LayerDriver JPN: KBD101.DLL  OverrideKeyboardIdentifier: PCAT_101KEY OverrideKeyboardSubtype: 0x00000000(0) win7+添加日文输入   “区域和语言“ ==&amp;gt; ”键盘和语言“
+  ”键盘和语言“中，点击”更改键盘“， 点”添加“，找到 ”日语（日本）“， 勾选”Microsoft IME“和”日语“，其它不要勾选.
+  按键盘”Alt“+”Shift“即可调出日语输入法.
+文件或目录损坏且无法读取  无法读取的所在逻辑盘E:
+ chkdsk /F E: How to Delete Old Windows Folder in Windows 10 – Access Denied? takeown /F &amp;#34;C:\Windows.old&amp;#34; /A /R /D Y icacls &amp;#34;C:\Windows.</description>
+    </item>
+    
+    <item>
+      <title>UML工具Rose</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/rose-uml/</link>
+      <pubDate>Sun, 17 May 2020 10:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/rose-uml/</guid>
+      <description>安装Rose2007 下载并安装
+ed2k://|file|%5BIBM%E8%BD%AF%E4%BB%B6%E7%B3%BB%E5%88%97%5D.IBM.Rational.Rose.Enterprise.v7.0-TFTISO.bin|621038544|71d09610bb53d2d905d278675b333c75|h=utnlhfjwnzjdp2wecfeujoptd7pqlrps|/ 默认安装即可。
+lic 序号有两种方式：本机和导入Lic
+本机 本地机器作为lic服务器
+1. 修改授权文件。 打开license.dat文件， 大约在文件的中间位置有：SERVER Microsoft ANY DAEMON rational “C:\Program Files\Rational\common\rational.exe” 将其修改为：SERVER 计算机名　ANY DAEMON rational “自己安装的目录\rational.exe”后，保存 2. 拷贝授权检查程序。 将license.dat、 lmgrd.exe 、rational.exe三个文件拷贝到：安装目录\rational\common\ 3. 将授权程序放到控制面板。 将flexlm.cpl拷贝到system32目录下。如win2000系统中为C:\WINNT\system32目录。 4. 设置授权程序。 打开FLEXlm License Manager（控制面板中）， 在Setup页中lmgrd.exe右侧目录填写：C:\Program Files\Rational\Common\lmgrd.exe（若为默认安装目录） License File右侧目录写为：C:\Program Files\Rational\Common\license.dat 5. 查看状态。 回到Control页，点击Start，若出现”Server Started”，则表示已经成功， 可以点击Status,若状态为：计算机名：license server UP(MASTER)则成功（否则，Start-&amp;gt;Status来回点~~）。 6. 修改Server Name。 打开Rational License Key Administrator， 点击工具栏中的&amp;quot;Start WIzard&amp;quot;, 点击下一步， 选择&amp;quot;Point to a Rational License Server to get my licenses&amp;quot; , 点击下一步， 在Server Name中的名字改为自己的计算机名即可。 导入License  IBM Rational License Key Administrator Import a Rational License File   Browse  .</description>
+    </item>
+    
+    <item>
+      <title>U-boot V1.3.4</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/hw-uboot_v134-at91sam9260/</link>
+      <pubDate>Sat, 16 May 2020 01:58:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/hw-uboot_v134-at91sam9260/</guid>
+      <description>关于移植在U-boot文档中这样介绍： README
+If the system board that you have is not listed, then you will need to port U-Boot to your hardware platform. To do this, follow these steps:  1. Add a new configuration option for your board to the toplevel  &amp;#34;Makefile&amp;#34; and to the &amp;#34;MAKEALL&amp;#34; script, using the existing  entries as examples. Note that here and at many other places  boards and other names are listed in alphabetical sort order.</description>
+    </item>
+    
+    <item>
+      <title>面包屑（breadcrumbs）</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/css-bootstrap-breadcrumbs/</link>
+      <pubDate>Sat, 16 May 2020 00:58:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/css-bootstrap-breadcrumbs/</guid>
+      <description>在很多网站上都有一个导航记录栏 - 面包屑；
+官方文档 举例
+&amp;lt;ol class=&amp;#34;breadcrumb&amp;#34;&amp;gt;  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;#34;#&amp;#34;&amp;gt;Home&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;  &amp;lt;li&amp;gt;&amp;lt;a href=&amp;#34;#&amp;#34;&amp;gt;Library&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;  &amp;lt;li class=&amp;#34;active&amp;#34;&amp;gt;Data&amp;lt;/li&amp;gt; &amp;lt;/ol&amp;gt; php example  CodeIgniter v2.2.x/3.x
+ 建立一个php文件 breadcrumb.php
+&amp;lt;ol class=&amp;#34;breadcrumb&amp;#34;&amp;gt;  &amp;lt;?php echo get_breadcrumb($breadData, $menu_prefix); ?&amp;gt;&amp;lt;li class=&amp;#34;active&amp;#34;&amp;gt; &amp;lt;?php echo empty($breadData) ? $this-&amp;gt;Glossary_M-&amp;gt;get_word(&amp;#39;home&amp;#39;, $this-&amp;gt;data[&amp;#39;lang_id&amp;#39;]) : $body; ?&amp;gt; &amp;lt;/li&amp;gt; &amp;lt;/ol&amp;gt; 在helper中建立如下方法：
+function get_breadcrumb($array, $prefix = NULL) { 	$str = &amp;#39;&amp;#39;; 	if (count($array)) { 	foreach ($array as $item) { 	if ($item[&amp;#39;homeFlag&amp;#39;]) { 	// &amp;#39;&amp;lt;li&amp;gt;&amp;lt;a href=&amp;#34;http://&amp;#39; 	$str .</description>
+    </item>
+    
+    <item>
+      <title>CTM1050(CAN)原理图</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/hw-schematic_diagram-ctm1050/</link>
+      <pubDate>Sat, 16 May 2020 00:28:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/hw-schematic_diagram-ctm1050/</guid>
+      <description>Portel DXP 2004
+ CTM1050.7z 提取码: pcah</description>
+    </item>
+    
+    <item>
+      <title>时序图与状态图</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/uml-ommunication_diagram-can/</link>
+      <pubDate>Sat, 16 May 2020 00:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/uml-ommunication_diagram-can/</guid>
+      <description>tool: Rational Rose
+ 功能简介： 当主程序收到CAN口的数据后；根据按键的不同来选择是使用CAN口发送，还是使用UART口发送。
+时序图
+协作图
+down can2uart.mdl 提取码: bb8h</description>
+    </item>
+    
+    <item>
+      <title>CAN数据转发</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/hw-can-uart-key/</link>
+      <pubDate>Fri, 15 May 2020 23:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/hw-can-uart-key/</guid>
+      <description>完结篇 《CAN转COM或CAN-1》介绍了CAN，本篇其余部分。
+  开发板：英蓓特MCB2300（LPC2368）
+  开发工具：MDK3.8a
+  开发主机：Windows XP SP3 中文专业版
+  UART 因为我们使用UART主要是进行发送的，所以关闭接收可以更加快速的进行发送处理。
+控制接收缓存寄存（Receiver Buffer Register）即可达到此目的。
+禁止RBR void preUARTInitRBR( unsigned char i ) {  switch (i) { 	case 0: 	U0IER = IER_THRE | IER_RLS;	/* Disable RBR */ 	break;  	case 1: 	U1IER = IER_THRE | IER_RLS;	/* Disable RBR */ 	break; 	} } 允许RBR void postUARTInitRBR( unsigned char i ) {  switch (i) { 	case 0: 	U0IER = IER_THRE | IER_RLS | IER_RBR;	/* Re-enable RBR */ 	break;  	case 1: 	U1IER = IER_THRE | IER_RLS | IER_RBR;	/* Re-enable RBR */ 	break; 	} } 完成后的UART  NXP的官方例程UART加入RBR后的code</description>
+    </item>
+    
+    <item>
+      <title>Linux与Windows互传数据</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_data_transmission/</link>
+      <pubDate>Fri, 15 May 2020 16:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_data_transmission/</guid>
+      <description>一、光盘方式  VMware
+ 1. 制作ISO 打开UltralISO，把需要的文件拖拽过去即可。
+2. Linux 1) look ls -l /dev | grep cdrom 2) load sudo mount /dev/cdrom /mnt/ 3) unload sudo umount /mnt 二、scp 1. Windows-&amp;gt;Linux Windows的scp包含在putty工具中。
+pscp f:\docker-soft\docker-compose-Linux-x86_64 tdtc@192.168.211.131:/home/tdtc/  pscp f:\docker-soft\protobuf-cpp-3.11.4.tar.gz tdtc@192.168.211.131:/home/tdtc/  pscp f:\docker-soft\go1.13.8.linux-amd64.tar.gz tdtc@192.168.211.131:/home/tdtc 2. Linux-&amp;gt;Windows  注意：仅适用于win10.
+ 1）增加OpenSSH Server 安装OpenSSH 开始菜单-》设置-》应用-》管理可选功能: 开启OpenSSH  注意：关闭Windows防火墙或允许22端口。  2）传送文件  在Linux下操作。
+ scp /home/tdtc/go1.13.8.linux-amd64.tar.gz xiaobin@192.168.211.112:/D:\war </description>
+    </item>
+    
+    <item>
+      <title>Grid system</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/css-bootstrap-grid/</link>
+      <pubDate>Fri, 15 May 2020 14:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/css-bootstrap-grid/</guid>
+      <description> 在V2.3.2中，栅格系统默认是不支持移动设备的； 但V3.0版本，已经默认支持移动设备。
+ v2 Bootstrap(v2) 默认的栅格系统为12列 ，形成一个940px宽的容器，默认没有启用 &amp;ldquo;响应式布局特性&amp;rdquo; 。 如果加入响应式布局CSS文件，栅格系统会自动根据可视窗口的宽度从724px到1170px进行动态调整。 在可视窗口低于767px宽的情况下，列将不再固定并且会在垂直方向堆叠。
+V2.3.2的示例：
+&amp;lt;div class=&amp;#34;row&amp;#34;&amp;gt;  &amp;lt;div class=&amp;#34;span4&amp;#34;&amp;gt;...&amp;lt;/div&amp;gt;  &amp;lt;div class=&amp;#34;span8&amp;#34;&amp;gt;...&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; v3  class变化：.span* -〉.col-md-*
+ Bootstrap(v3) 内置了一套响应式、移动设备优先的流式栅格系统，随着屏幕设备或视口（viewport）尺寸的增加，
+系统会自动分为最多12列。它包含了易于使用的预定义classe，还有强大的mixin用于生成更具语义的布局。
+V3.0的示例：
+&amp;lt;div class=&amp;#34;row&amp;#34;&amp;gt;  &amp;lt;div class=&amp;#34;col-md-4&amp;#34;&amp;gt;...&amp;lt;/div&amp;gt;  &amp;lt;div class=&amp;#34;col-md-8&amp;#34;&amp;gt;...&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; </description>
+    </item>
+    
+    <item>
+      <title>使用WSL在Windows 10</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/dev_wsl_ubuntu/</link>
+      <pubDate>Fri, 15 May 2020 12:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/dev_wsl_ubuntu/</guid>
+      <description>系统要求：x64 OS: Windows 10(1803+)  安装 开启 添加删除程序-&amp;gt;启动或关闭Windows功能， 勾选“适用于 Linux 的 Windows 子系统”
+安装Ubuntu  ltsc只支持手动安装
+ 在powerShell的管理员模式下运行命令
+  1)手动方式
+ 安装手册
+ Add-AppxPackage .\app_name.appx install 点击开始菜单的完成安装。   更改源列表  /etc/apt/sources.list
+ http://archive.ubuntu.com -&amp;gt; https://mirrors.aliyun.com/ubuntu/
+使用 文件互访 例如我们在c:\Users\xiaobin建立一个testTxtFile.txt
+cd /mnt/c/Users/xiaobin/ vi testTxtFile.txt 在WSL就可看到文件内容。
+mv testTxtFile.txt testFile.txt 在windows就可以看到重命名的testFile.txt。
+访问WSL服务  WSL与windows 10共有端口，所以Windows 10已使用的端口，不要再分配给WSL
+ 举例： 首先，在wsl中启动nginx；
+sudo service nginx start 然后访问(回环地址)：127.0.0.1:90 卸载 如果“普通”方式不工作，请使用“命令行”。
+普通 右击“Ubuntu xxx” 图标，选择“Uninstall”即可。
+命令行  适用于 Linux 的 Windows 子系统的命令参考</description>
+    </item>
+    
+    <item>
+      <title>maven的QA</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/java-maven-qa1/</link>
+      <pubDate>Fri, 15 May 2020 10:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/java-maven-qa1/</guid>
+      <description>1. org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER Q:
+Classpath entry org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER will not be exported or published. Runtime ClassNotFoundExceptions may result. A:
+$mvn eclipse:clean reference  what-is-org-eclipse-m2e-maven2-classpath-container-and-how-do-i-make-it-work-in  2. no main manifest attribute java jar Q:
+$java -jar cliDemo-0.0.1-SNAPSHOT.jar no main manifest attribute, in cliDemo-0.0.1-SNAPSHOT.jar A:
+ for win:
+ java -cp cliDemo-0.0.1-SNAPSHOT.jar;C:\Users\xiaobin\.m2\repository\commons-cli\commons-cli\1.4\commons-cli-1.4.jar my.csdn9.ConsoleLauncher --help Reference  how-to-run-jar-files-depend-on-jar-files  3. CoreException: Could not calculate build plan: Plugin org.apache.maven.plugins:maven-compiler-plugin Q:
+CoreException: Could not calculate build plan: Plugin org.</description>
+    </item>
+    
+    <item>
+      <title>安装spark</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_spark_ubuntu/</link>
+      <pubDate>Fri, 15 May 2020 08:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_spark_ubuntu/</guid>
+      <description>WSL: Ubuntu 18.04.1
+ Prepare  Java 8+, Python 2.7+/3.4+ and R 3.1+
+ Spark runs on Java 8+, Python 2.7+/3.4+ and R 3.1+. For the Scala API, Spark 2.4.1 uses Scala 2.12. You will need to use a compatible Scala version (2.12.x). 1. java 设置OpenJDK - Ubuntu
+2. Python sudo apt-get install python 3. R language 1) add ppa sudo add-apt-repository ppa:marutter/rrutter sudo apt-get update 2) install sudo apt-get install r-base r-base-dev Installation 1.</description>
+    </item>
+    
+    <item>
+      <title>设置OpenJDK</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_openjdk_ubuntu/</link>
+      <pubDate>Fri, 15 May 2020 07:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_openjdk_ubuntu/</guid>
+      <description> ubuntu 20.04.2
+ wsl1017@DESKTOP-14G6K9S:~$ java -version  Command &amp;#39;java&amp;#39; not found, but can be installed with:  sudo apt install default-jre sudo apt install openjdk-11-jre-headless sudo apt install openjdk-8-jre-headless installation  install jre  wsl1017@DESKTOP-14G6K9S:/tmp$ sudo apt-get install openjdk-8-jre-headless install jdk  sudo apt-get install openjdk-8-jdk-headless set JAVA home  vi /etc/profile export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 Reference  How to Install OpenJDK JAVA 11/8 in Ubuntu and Debian  </description>
+    </item>
+    
+    <item>
+      <title>mysql的1067错误</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_mysql_error1067/</link>
+      <pubDate>Fri, 15 May 2020 06:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_mysql_error1067/</guid>
+      <description>日志文件问题 由于使用时间比较长积累了很多的日志文件（\data目录下），所以删除之！
+mysql-bin.000001 ... ... mysql-bin.000278 原来删除都留最后一个编号的日志，这次太过彻底~~都删了!
+执行net start mysql： 出现了mysql 1067错误！ 查看，主机名.err文件（lenovo-7c8f808d.err）：
+130416 9:59:23 InnoDB: Started; log sequence number 0 43655 MySQL: File &amp;#39;.\mysql-bin.000278&amp;#39; not found (Errcode: 2) 130416 9:59:23 [ERROR] Failed to open log (file &amp;#39;.\mysql-bin.000278&amp;#39;, errno 2) 130416 9:59:23 [ERROR] Could not open log file 130416 9:59:23 [ERROR] Can&amp;#39;t init tc log 130416 9:59:23 [ERROR] Aborting  130416 9:59:23 InnoDB: Starting shutdown... 130416 9:59:24 InnoDB: Shutdown completed; log sequence number 0 43655 130416 9:59:24 [Note] MySQL: Shutdown complete 告诉我们找不到mysql-bin.</description>
+    </item>
+    
+    <item>
+      <title>无mysql-dev导致的错误</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_mysql_devel/</link>
+      <pubDate>Fri, 15 May 2020 05:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_mysql_devel/</guid>
+      <description>应用程序要访问mysql必须安装mysql-dev，因为它是各种语言与mysql的接口。
+ error info [root@localhost DBD-mysql-4.022]# make cp lib/DBD/mysql.pm blib/lib/DBD/mysql.pm cp lib/DBD/mysql/GetInfo.pm blib/lib/DBD/mysql/GetInfo.pm cp lib/DBD/mysql/INSTALL.pod blib/lib/DBD/mysql/INSTALL.pod cp lib/Bundle/DBD/mysql.pm blib/lib/Bundle/DBD/mysql.pm cc -c -I/usr/local/perl/lib/site_perl/5.16.2/i686-linux/auto/DBI -I/usr/include/mysql -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=4 -m32 -fasynchronous-unwind-tables -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -fno-strict-aliasing -fwrapv -DDBD_MYSQL_WITH_SSL -DDBD_MYSQL_INSERT_ID_IS_GOOD -g -fno-strict-aliasing -pipe -fstack-protector -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -DVERSION=\&amp;#34;4.022\&amp;#34; -DXS_VERSION=\&amp;#34;4.022\&amp;#34; -fPIC &amp;#34;-I/usr/local/perl/lib/5.16.2/i686-linux/CORE&amp;#34; dbdimp.c In file included from dbdimp.c:20: dbdimp.h:23:49: error: mysql.h: No such file or directory dbdimp.h:24:45: error: mysqld_error.h: No such file or directory dbdimp.</description>
+    </item>
+    
+    <item>
+      <title>GitLab使用</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_department_gitlab_man/</link>
+      <pubDate>Fri, 15 May 2020 04:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_department_gitlab_man/</guid>
+      <description>一、注册用户  Name：姓名 Username：用户名 密码：8位
+  等待管理员解锁。
+ 二、增加SSH 1. 生成SSH 在“开始”菜单，选择“TortoiseGit”中的“PuttyGen” 点击“Generate”按钮，然后，鼠标在图中红色方框的区域内不停的移动，即可生成密钥。 “Public key for pasting into OpenShh authorized_keys file:”所有内容既是我们需要的。 2. 设置SSH 用户登录后，进入“ProfileSettings”-&amp;gt;“SSH Keys”
+点击“Add SSH Key” 把上面生成的ssh复制到key中（title会自动生成），点击“Add key” </description>
+    </item>
+    
+    <item>
+      <title>VC升级时出现的问题</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/vc-update-atl/</link>
+      <pubDate>Fri, 15 May 2020 00:28:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/vc-update-atl/</guid>
+      <description>VC6迁移到VC2005以及更高。
+ 1. C1189 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atlcore.h(35): fatal error C1189: #error : This file requires _WIN32_WINNT to be #defined at least to 0x0403. Value 0x0501 or higher is recommended. A:
+ StdAfx.h
+ #define _WIN32_WINNT 0x0400 -&amp;gt;
+#define _WIN32_WINNT 0x0501 2. C1083(atlimpl) c:\users\xiaobin\documents\visual studio 2013\projects\crcfcn_vc\stdafx.cpp(13): fatal error C1083: Cannot open include file: &amp;#39;atlimpl.cpp&amp;#39;: No such file or directory A: solution1 or solution2.
+solution1 Comment out this line stdAfx.</description>
+    </item>
+    
+    <item>
+      <title>Windows串口</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/vc-serial_communication/</link>
+      <pubDate>Fri, 15 May 2020 00:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/vc-serial_communication/</guid>
+      <description>项目导读  串口读写工具 CSerialPort Remon Spekreijse MFC VS2005（VC8）  程序介绍 界面分三块：
+1. 端口配置 1.1 在“Port Number”选择端口号； 1.2 在“Config”配置端口的属性，比如波特率、奇偶校验、数据位、停止位等等。 2. 发送区域 2.1 Loop Send 当我们钩选此复选框时，必须选择“发送频率”，然后才能执行循环发送数据。
+### 2.2 发送频率 选择其一：500、1000、2000毫秒。  如果要更改读取自定义的时间频率：
+ 请将SerialCommView.cpp-Ln292，更为：
+ ((CComboBox *)GetDlgItem(IDC_COMBO1Timer))-&amp;gt;GetWindowTextA(strTemp);)
+   2.3 发送内容框 在“发送信息框”输入内容就可发送数据了！
+2.4 操作流程 A类（自动化） 2.2-》2.3-》2.1
+B类（手动） 2.3-》点击“Send”按钮。
+3. 接收区域 3.1 制式切换 当钩选了“Hex View”复选框，接收到的数据就以16进制显示。
+3.2 清除数据 当点击“Clear”按钮，即清空接收框数据。
+3.3 数据保存 当点击“Save As”按钮，即保存接收框数据；默认文件格式为rtf文件。
+ 操作串口主要分为：初始化串口、读串口、写串口。
+其中，读串口需要使用线程。
+一、初始化串口 在使用串口的时候，我们需要配置串口相关的参数比如，串口号，波特率，数据位，停止位等等。 首先，如果有线程在运行则停止它。防止数据出现错读。然后，建立事件以及把它们的值放到数组中。 这时我们要初始化临界区，准备进入临界编码。如果要设定的串口打开了，我们要关闭它。 建立串口以及设置超时时间设定这时我们要设置等待事件，之后设置RTS为高。获得通讯状态，配置DCB以及清空缓存。 最后退出临界区编码。完成串口的初始化。
+二、类图 三、Github  开发语言: VC2010 sln文件: SerialComm.</description>
+    </item>
+    
+    <item>
+      <title>Delphi调用COM</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/com-crc32-delphi/</link>
+      <pubDate>Thu, 14 May 2020 12:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/com-crc32-delphi/</guid>
+      <description>准备 1. Windows 系统引入 运行 -&amp;gt; Regsvr32 x:/FCV.dll
+2. Delphi 引入 Project -&amp;gt; Import Type Library -&amp;gt;&amp;ldquo;FCV 1.1 Type Library (Version1.1)&amp;rdquo;
+code unitUntMain; interface uses Windows, Messages, SysUtils, Variants, Classes,Graphics, Controls, Forms, Dialogs, StdCtrls, OleServer, FCVLib_TLB;typeTfrmMain = class(TForm)lblFileVal: TLabel;lblFcvVal: TLabel;edtFilePath: TEdit;btnGenFCN: TButton;edtFCVpath: TEdit;btnCalFileValue: TButton;btnReadFCV: TButton;btnCreatFCV: TButton;UCRC321: TUCRC32;procedure btnCreatFCVClick(Sender: TObject);procedure btnGenFCNClick(Sender: TObject);procedure btnCalFileValueClick(Sender: TObject);procedure btnReadFCVClick(Sender: TObject);private{ Private declarations }myFCV: IUCRC32;public{ Public declarations }instanceFlag: Boolean;end;varfrmMain: TfrmMain; implementation{$R *.</description>
+    </item>
+    
+    <item>
+      <title>client和server</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/c-bsd_socket/</link>
+      <pubDate>Thu, 14 May 2020 00:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/c-bsd_socket/</guid>
+      <description>GNU Compiler Collection(GCC)
+ Beej’s Guide Network to Programming 一个简单的客户端和服务器端的程序！
+Client Side:  flow chart getaddrinfo() -&amp;gt; socket() -&amp;gt; connect() -&amp;gt; recv()  #include &amp;lt;stdio.h&amp;gt;#include &amp;lt;string.h&amp;gt;#include &amp;lt;sys/types.h&amp;gt;#include &amp;lt;sys/socket.h&amp;gt;#include &amp;lt;arpa/inet.h&amp;gt;#include &amp;lt;netdb.h&amp;gt; #define SERVIP &amp;#34;192.168.56.112&amp;#34; #define SERVPORT &amp;#34;2349&amp;#34;  int main(int argc, char *argv[]) { 	struct addrinfo hints, *res; 	int status; 	int sockfd; 	int connSta;  	int recvSta; 	char buffer[1024]; 	int len;  	char ipstr[INET_ADDRSTRLEN]; 	void *addr;  	if (argc !</description>
+    </item>
+    
+    <item>
+      <title>铁路车号读取</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/com-ie-repoinfo/</link>
+      <pubDate>Wed, 13 May 2020 16:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/com-ie-repoinfo/</guid>
+      <description>二进制文件工具：Winhex
+   replace(regexp/substr,replacement) 使用这个函数来替换多余的空格。   str.replace(/\s/g, &amp;#34;&amp;#34;);   split(separator,howmany) 字符串转换成字符数组。   string.split(&amp;#34;,&amp;#34;); 一、js部分 我们把所有的方法放到一个对象（RepoInfo）中。
+var RepoInfo = { }; 1. 获取对象 RepoInfo.getObj = function(objName) { 	return new ActiveXObject(objName); 	}; 2. 获取数组 RepoInfo.getArray = function(str) {  var ret = new Array(16);   var string = str.replace(/\s/g, &amp;#34;&amp;#34;);   ret = string.split(&amp;#34;,&amp;#34;);   return ret; }; 3. 解码字串 输入字串校验 如果字串空，退出。</description>
+    </item>
+    
+    <item>
+      <title>测试COM</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/com-ie-test/</link>
+      <pubDate>Wed, 13 May 2020 14:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/com-ie-test/</guid>
+      <description>IDE: Visual Studio 2010
+ 本文参考《创建COM》。
+一、创建COM 1. 增加IE支持 2. 增加方法 Add - 加 STDMETHODIMP CtestSOW::Add(LONG x, LONG y, LONG* ret) { 	// TODO: Add your implementation code here 	*ret = (x + y);  	return S_OK; } Mul - 乘 STDMETHODIMP CtestSOW::Mul(LONG x, LONG y, LONG* ret) { 	// TODO: Add your implementation code here 	*ret = (x * y);  	return S_OK; } Div - 除 STDMETHODIMP CtestSOW::Div(LONG x, LONG y, LONG* ret) { 	// TODO: Add your implementation code here 	*ret = (x / y);  	return S_OK; } 二、测试平台  查看依赖：win8.</description>
+    </item>
+    
+    <item>
+      <title>SafeArray数据</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/com-safearray-vc/</link>
+      <pubDate>Wed, 13 May 2020 12:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/com-safearray-vc/</guid>
+      <description>COM  vc
+ 1. 定义SAFEARRAY变量 SAFEARRAY *pSArray = NULL; 2. 释放此变量 SafeArrayDestroy(pSArray); 3. 建立向量表 pSArray = SafeArrayCreateVector(VT_UI1, 0, 32); 向量变量（VT_UI1）的定义：msdn
+VT_UI1 Variable type is unsigned char. 4. 写入数据 SafeArrayPutElement(pSArray, &amp;amp;l, &amp;amp;inqReport[l]); getInqRepo方法：  AA：屏蔽的数值
+ STDMETHODIMP CRepoFmt::getInqRepo(ULONG iStation, SAFEARRAY** ret) { 	SAFEARRAY *pSArray = NULL;  	unsigned char inqReport[32]; 	unsigned char xorByte = AA; 	int iStationID = 0;  	if (iStation &amp;lt; 1) 	iStationID = 1; 	else 	iStationID = iStation;  	inqReport[0] = AA; 	inqReport[1] = AA; 	inqReport[2] = AA; 	inqReport[3] = AA; 	inqReport[4] = (iStationID % AA); 	inqReport[5] = (iStationID / AA); 	inqReport[6] = AA; 	inqReport[7] = AA; 	inqReport[8] = AA; 	inqReport[9] = AA; 	inqReport[10] = AA; 	inqReport[11] = AA;  	for (int i = 1; i &amp;lt; 18; i++) 	xorByte ^= inqReport[i];  	inqReport[18] = xorByte;  	// Fill the inqReport etc.</description>
+    </item>
+    
+    <item>
+      <title>创建COM</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/</link>
+      <pubDate>Wed, 13 May 2020 12:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/</guid>
+      <description>IDE: Visual Studio 2017
+ 使用Wizard模式创建COM 一、ATL项目向导  使用ATL Project Wizard创建COM
+ 1. 建立ATL工程 File-&amp;gt;New-&amp;gt;Project 选择“MFC/ATL”中“ATL Project”。
+ Note: name即是要生成的DLL文件
+ 2. 工程设置 我们可以自定义设置工程情况。 3. 工程属性 取消编译时注册Dll。
+ Project -&amp;gt; Proerties
+ Linker -&amp;gt; Register Output
+ No
+   二、ATL简单对象向导 1. 创建ATL Simple Object 右击项目名称，选择Add-〉New Item 2. 设置ATL Simple Object progID 附加支持  本选项针对IE支持。
+ 三、添加IDL方法  switch &amp;ldquo;class view&amp;rdquo;
+ Interface(name)-&amp;gt;add-&amp;gt;add method 添加方法名称以及参数  注意：仅安装ucrt（通用Windows sdk）会出现：</description>
+    </item>
+    
+    <item>
+      <title>调用COM</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/c2plus-com-dll/</link>
+      <pubDate>Wed, 13 May 2020 08:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/c2plus-com-dll/</guid>
+      <description>IDE: vs2008 Express(sp1)
+ callXBFLibrary reference COM 注册COM @echo cd /d %~dp0 Regsvr32 xbfInfo.dll Add Reference COM选项卡 添加完成时
+添加事件 import class using System.IO; using xbfInfoLib; 写xbf文件 读Ini文件配置 Boolean flagMSSQL = false; Boolean flagSecu = false; string sectionName = ini.readIniFileVal(&amp;#34;config&amp;#34;, &amp;#34;type&amp;#34;); string strSrv = ini.readIniFileVal(sectionName, &amp;#34;Server&amp;#34;); if (!Equals(strSrv, &amp;#34;&amp;#34;))  flagMSSQL = true; if (flagMSSQL) {  strConn = &amp;#34;Provider=SQLOLEDB.1;&amp;#34;  + &amp;#34;Password=&amp;#34; + ini.readIniFileVal(sectionName, &amp;#34;Pwd&amp;#34;) + &amp;#34;;&amp;#34;  + &amp;#34;Persist Security Info=True;&amp;#34;  + &amp;#34;User ID=&amp;#34; + ini.</description>
+    </item>
+    
+    <item>
+      <title>调用非托管DLL</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/c2plus-unmanaged-dll/</link>
+      <pubDate>Wed, 13 May 2020 00:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/c2plus-unmanaged-dll/</guid>
+      <description>IDE: vs2008 Express(sp1)
+ callXBFLibrary 我们需要使用API函数来读取INI文件。
+建立P/Invoke应用类 在pinvoke.net中查找Win32 API在C#定义。 GetPrivateProfileString 读取Ini文件的API
+[DllImport(&amp;#34;kernel32.dll&amp;#34;, CharSet=CharSet.Unicode)] static extern uint GetPrivateProfileString(  string lpAppName,  string lpKeyName,  string lpDefault,  StringBuilder lpReturnedString,  uint nSize,  string lpFileName);  注意：DllImport属性来自using System.Runtime.InteropServices;
+  lpAppName 小节名 lpKeyName 键名 lpDefault 缺省值 lpReturnedString 返回值 nSize 返回值长度 lpFileName 读取文件的名称  import class  using System.Runtime.InteropServices; readIniFileVal 建立一个公共方法，以供程序使用。
+public string readIniFileVal(string iniFileName, string section, string key) {  StringBuilder retStrBuilder = new StringBuilder(256);  GetPrivateProfileString(  section,  key,  &amp;#34;&amp;#34;,  retStrBuilder,  256,  iniFileName);  return retStrBuilder.</description>
+    </item>
+    
+    <item>
+      <title>活动图（Activity Diagram）</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/uml-activity_diagram-sjz/</link>
+      <pubDate>Mon, 11 May 2020 08:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/uml-activity_diagram-sjz/</guid>
+      <description>根据登录用户的情况来进行各模块的操作。
+ 操作员  (1) 列车顺序表
+ (2) 货车装卸报告（数据处理）
+ (3) 货车装卸报告（查看）
+管理员   (1) 密码管理
+ (2) 查看日志
+ (3) 车种设置
+ (4) 延时费设置
+ (5) 打印通知单（延时费）
+其Activity Diagram如下： Rational Rose文件：flowChart1.mdl 提取码: 62ua 工程repo</description>
+    </item>
+    
+    <item>
+      <title>PNP8550(3.3V 直流蜂鸣器)</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/hw-schematic_diagram-pnp8550/</link>
+      <pubDate>Sun, 10 May 2020 12:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/hw-schematic_diagram-pnp8550/</guid>
+      <description>文件下载: sch20110901.7z 提取码: 6qwv</description>
+    </item>
+    
+    <item>
+      <title>PIC16F877A最小功能板</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/hw-schematic_diagram-pic16f877a/</link>
+      <pubDate>Sun, 10 May 2020 10:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/hw-schematic_diagram-pic16f877a/</guid>
+      <description>一、顶层 主要由端口转换、MCU、复位、键盘、晶振和显示等5部分电路组成。 二、模块层 1. 端口转换电路 2. MCU 3. 复位电路 4. 键盘电路 5. LED电路 备份文件: sch20110411.7z 提取码: 3h95
+参考文章  基于PIC16F877A型单片机的通用单片机控制板（作者：石伟屹）  </description>
+    </item>
+    
+    <item>
+      <title>nRF905 原理图</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/hw-schematic_diagram-nrf905/</link>
+      <pubDate>Sun, 10 May 2020 08:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/hw-schematic_diagram-nrf905/</guid>
+      <description>备份文件：sch20110521.7z 提取码: pcea</description>
+    </item>
+    
+    <item>
+      <title>MAX2323E原理图</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/hw-schematic_diagram-max2323e/</link>
+      <pubDate>Sun, 10 May 2020 00:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/hw-schematic_diagram-max2323e/</guid>
+      <description>MAX2323E(3.3V)+ LPC1752。
+ 文件备份：sch20110723.7z 提取码: ny2j</description>
+    </item>
+    
+    <item>
+      <title>十进制转十六进制</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/c-string-i2h/</link>
+      <pubDate>Sat, 09 May 2020 00:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/c-string-i2h/</guid>
+      <description>工作原理：
+ 规则是从低位到高位 被除数，除以16, 直到商小于16。 将余数加上余商，就是16进制数。
+  被除数   等于转换数 等于商 如果商大于16，就是被除数。  手算 10进制：1566
+ (1) 1566 ÷ 16 = 97 余数为14 (2) 97 ÷ 16 = 6 余数为1
+16进制：第1个余数(14) + 第2个余数(1) + 余商(6) = 0x61E
+code /* * Int2hex.c * * Created on: 2010-07-20 * Author: xiaobin */ #include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt; void int2hex(unsigned long input, char output[]);  int main(int argc, char* argv[]) {  char out[8];  int k;  int input = 0;   if (argc &amp;gt; 1)  input = atol(argv[1]);   int2hex(input, out);   printf(&amp;#34;%s%d%s&amp;#34;, &amp;#34;Integer: &amp;#34;, input, &amp;#34; Hex: 0x&amp;#34;);  for (k = 0; k &amp;lt; 8; k++) {  char ch = out[k];  printf(&amp;#34;%c&amp;#34;, ch);  }  printf(&amp;#34;\n&amp;#34;);   return 0; }  void int2hex(unsigned long input, char output[]) {  int i = 7;  int j;   while (((input % 16) !</description>
+    </item>
+    
+    <item>
+      <title>对Excel进行处理</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_perl_excel/</link>
+      <pubDate>Fri, 08 May 2020 16:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_perl_excel/</guid>
+      <description>有一表格需要进行格式化处理，其要求如下：
+ 档案编号重复 少部分在xls文件中，大部分与数据库冲突。 日期格式错误 正确格式：xxxx-xx-xx 所有汉字的空格问题 非法性别 除了男女之外  code 程序如下：
+#! /usr/bin/perl################################################################################ Author: **斌# Date: 2012-02-22# Version: V0.1############################################################################################################################################################### Modified by: xiaobin (XB)# Modified date: 2012-03-31# Version: V0.3############################################################################################################################################################### Modified by: xiaobin (XB)# Modified date: 2012-04-01# Version: V0.4############################################################################################################################################################### Modified by: # Modified date: # Version: ############################################################################################################################################################### 版权说明： ## 本程序版权归李贵斌所有，解释权属于所有者。 ## 作为一个整体使用时，请附带以上说明。 ## ## 本程序完全免费使用。 ################################################################################################################################################################ 使用说明 ################################################################################# ## 命令行：perl processData.</description>
+    </item>
+    
+    <item>
+      <title>数据库的查询</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_perl_mysql/</link>
+      <pubDate>Fri, 08 May 2020 16:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_perl_mysql/</guid>
+      <description>Perl操作数据库与其他的语言操作数据库没有什么区别。
+  首先，要连接数据库。
+  然后，执行SQL语句。
+  最后，关闭连接。
+  code 循环中为使用游标读取每行数据。
+test.pl
+#! /usr/bin/perl  # test DBI and DBD::mysql  use DBI;  $dsn = &amp;#34;DBI:mysql:database=carnumber;host=localhost;port=3306&amp;#34;;  my $dbh = DBI-&amp;gt;connect($dsn, &amp;#34;root&amp;#34;, &amp;#34;qazxsw&amp;#34;, {&amp;#39;RaiseError&amp;#39; =&amp;gt; 1});   my $strSQL = &amp;#34;select train_number, seriary_number, car_number,&amp;#34;.  &amp;#34; car_marque, past_time from trainOrder where train_number &amp;lt; 100&amp;#34;;  my $sth = $dbh-&amp;gt;prepare($strSQL); $sth-&amp;gt;execute();  print &amp;#34;TN\tSN\tNumber\tMarque\tPastTime\n&amp;#34;; while (my $ref = $sth-&amp;gt;fetchrow_hashref()) { 	print &amp;#34;$ref-&amp;gt;{&amp;#39;train_number&amp;#39;}\t&amp;#34;.</description>
+    </item>
+    
+    <item>
+      <title>使用物理网卡</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_vmware_netadapter/</link>
+      <pubDate>Fri, 08 May 2020 14:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_vmware_netadapter/</guid>
+      <description>宿主OS：Win10(x64)
+Guest OS: Ubuntu 14.04(x64)
+目的：Ubuntu独立使用1块网卡与局域网中的设备或主机通讯。
+问题：宿主机器有两个网卡
+（1）无线网卡（2）有线网卡
+设置VMware：
+I. 编辑-&amp;gt;虚拟网络编辑器 默认设置
+我们更改桥接模式中“桥接到”，即可。（由自动更改为下图） II. 网络适配器 启动NFS，工作正常。
+输出信息如下：
+This is the boot programm!鶷his is the boot programm! Load UBOOT, please wait...... Load UBOOT from 0x10010000 to 0x23f00000 Over   U-Boot 1.3.4 (Mar 18 2015 - 07:00:42)  DRAM: 64 MB MAN_ID: 0x00bf PRO_ID: 0x234b Flash: 2 MB NAND: NAND device: Manufacturer ID: 0xec, Chip ID: 0x76 (/狺掰掰?NAND 64 MiB 3,3V 8-bit) 64 MiB DataFlash:AT45DB161 Nb pages: 4096 Page Size: 528 Size= 2162688 bytes Logical address: 0xD0000000 Area 0: D0000000 to D0003FFF (RO) Area 1: D0004000 to D0007FFF Area 2: D0008000 to D0037FFF (RO) Area 3: D0038000 to D020FFFF In: serial Out: serial Err: serial PHY Detected (mdio-addr 1, ID 0x0013:0x78e2) link up, 100Mbps, full-duplex Hit any key to stop autoboot: 0 ## Booting kernel from Legacy Image at 20400000 .</description>
+    </item>
+    
+    <item>
+      <title>单例模式</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/dp-singleton-java/</link>
+      <pubDate>Fri, 08 May 2020 12:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/dp-singleton-java/</guid>
+      <description>我们知道单例模式，其实就是返回一个被调用类的实例。
+在频繁的进行实例（Instance）创建过程，难免过多的进行new InstanceName()；我们可以只通过调用一个方法解决。
+在进行设计模式的程序实现中xiaobin使用已编写的SSL程序做演示。</description>
+    </item>
+    
+    <item>
+      <title>工厂模式</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/dp-factory-java/</link>
+      <pubDate>Fri, 08 May 2020 10:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/dp-factory-java/</guid>
+      <description>09年5月CSDN一网友提出如下问题：
+设计一个用于管理银行客户的类BankCustomer： 仅描述客户的几个重要方面： 帐号、身份证号、姓名、联系方式、密码、账户余额。 所有的成员变量均用private访问控制，因此每一个成员变量就要有相应的存取器 （getter和setter，即获取和设置其值的相应的成员方法。需要setter还是getter，还是两者都要，视情况而定）
+成员方法：开户（开户时必须要有身份证号），系统自动生成帐号，帐号使用系统时间（格式：&amp;quot;yyyyMMddHHmmss&amp;quot;14位），初始密码为“666666”。注意开户和构造方法之间的关系。存钱、取钱、显示账户信息、修改密码（密码最短要六位）怎样在main中使用这个类，自行安排，要表现出你设计的类的各个方面，并在main中用英语加以注释 类图如下：（使用Enterprise Architect绘制） &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;factory部分&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-
+ Customer： 抽象类（factory祖先类）
+ BankCustomer：继承类（factory类）
+ 〉〉〉〉〉〉〉〉〉〉扩展部分
+ ContactWay：联系方式（factory引用类）
+ IM ：实时消息（ContactWay引用类）
+&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;product部分&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-  Bank： 接口（product接口）
+ Account： 实现类（concrete product类）</description>
+    </item>
+    
+    <item>
+      <title>clone问题</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/jlink-fixed2/</link>
+      <pubDate>Tue, 05 May 2020 10:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/jlink-fixed2/</guid>
+      <description>在J-Link驱动自动升级后，会出现下面情况。
+The connected emulator is a j-link clone. 修改固件  使用UltraEdit打开J-link_V8.bin
+  修改FF00h行  由原来的
+76 B4 32 01 FF FF FF FF FF FF FF FF FF FF FF FF 变更为：
+FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 修改FF30h和FF40h行  由原来的
+(1) FF30h
+68 42 50 2C 4A 46 6C 61 73 68 2C 47 44 42 46 75 (2) FF40h</description>
+    </item>
+    
+    <item>
+      <title>修复山寨版的J-Link</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/jlink-fixed1/</link>
+      <pubDate>Tue, 05 May 2020 08:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/jlink-fixed1/</guid>
+      <description>Fixed J-Link Erase  Power On Jump &amp;ldquo;ERASE&amp;rdquo;(JP3) Wait for 5s Break &amp;ldquo;ERASE&amp;rdquo;(JP3) Power Off  TST  Jump &amp;ldquo;TST&amp;rdquo;(JP1) Power On Wait for 10s Power Off Break &amp;ldquo;TST&amp;rdquo;(JP1)  重新上电后，电脑会弹出发现新硬件：“atm6124.Sys ATMEL AT91xxxxx Test Board”。
+Then PC will find the &amp;ldquo;ATMEL AT91xxxxx Test Board&amp;rdquo;, and Led on(&amp;ldquo;ERR&amp;rdquo;)
+SAM-PROG  注意：必须在x86（32位）下运行！
+ Down at91 isp V1.12
+Exec  SAM-PROG v2.4
+ Setup first, click &amp;ldquo;Browse&amp;rdquo; choose &amp;ldquo;J-link_V8.bin&amp;rdquo;
+Second, Select &amp;ldquo;Set Security Bit&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>安装配置haproxy</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_haproxy/</link>
+      <pubDate>Mon, 04 May 2020 18:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_haproxy/</guid>
+      <description>系统设置 新增用户 $useradd haproxy $passwd haproxy sysctl  /etc/sysctl.conf
+ net.ipv4.tcp_tw_reuse = 1 net.ipv4.ip_local_port_range = 1024 65023 net.ipv4.tcp_max_syn_backlog = 10240 net.ipv4.tcp_max_tw_buckets = 400000 net.ipv4.tcp_max_orphans = 60000 net.ipv4.tcp_synack_retries = 3 net.core.somaxconn = 10000 firewall 1) L7 $firewall-cmd --permanent --zone=public --add-service=http  $firewall-cmd --permanent --zone=public --add-port=6080/tcp 2) L4  mysql
+ $firewall-cmd --permanent --zone=public --add-port=13306/tcp 生效
+$firewall-cmd --reload rsyslog的安装 install $yum install rsyslog config 1) rsyslog  /etc/rsyslog.d/haproxy.conf
+ $ModLoad imudp $UDPServerRun 514 $template Haproxy,”%msg%\n” local2.</description>
+    </item>
+    
+    <item>
+      <title>查找字符串</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/c-string-search/</link>
+      <pubDate>Mon, 04 May 2020 16:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/c-string-search/</guid>
+      <description>我们经常要用到查找某个字符串的功能，使用C++或者其他高级语言实现起来很简单；但是使用C语言实现就不那么easy了。
+切割字符串 strtok函数
+char *strtok_s(  char *strToken,  const char *strDelimit,  char **context );  strToken 要切割的字符串 strDelimit 分隔符 context 为空的字符串地址  匹配字符串 strstr函数
+char *strstr(  const char *str,  const char *strSearch ); // C only  str 被搜索的字符串 strSearch 要搜索的字符串  函数getStrVal_s char *getStrVal_s(char *str, char key[]) { 	char* strDelimit = &amp;#34;;&amp;#34;; 	char *strSeq = &amp;#34;&amp;#34;; 	char *context = NULL;  	char *token = strtok_s((char*)str, strDelimit, &amp;amp;context); 	while (token !</description>
+    </item>
+    
+    <item>
+      <title>倒序排列字符串</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/c-string-inverted/</link>
+      <pubDate>Mon, 04 May 2020 14:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/c-string-inverted/</guid>
+      <description>指针 首先，我们要给出一个长度够用的字符串指针（dest）。   然后，递减这个指针到0。在递减的过程中，dest累加而我们预设的字符串累减。这种方式是指针标准操作方式。 我使用了预设字符串指针地址+这个字符串长度变量这种方式（因为递减长度也是在递减）。
+ 数组 介绍省略。  代码如下：
+#include &amp;lt;string.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;#include &amp;lt;stdio.h&amp;gt;  int main(int argc, char* argv[]) {  char *src = &amp;#34;hello,world&amp;#34;;  int len = strlen(src);   char *dest = NULL;  dest = (char *)malloc(len + 1);  // dest = (char *)malloc(len + 1); // standard: 要为&amp;#39;\0&amp;#39;分配一个空间   char *d = dest;  // char *s = &amp;amp;src[len - 1]; // standard: 指向最后一个字符   /* One way */  while (len-- !</description>
+    </item>
+    
+    <item>
+      <title>c预处理器</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/c-preprocessor1/</link>
+      <pubDate>Mon, 04 May 2020 12:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/c-preprocessor1/</guid>
+      <description>我们在编写C程序时常常与预处理器打交道。
+比如下列华氏转摄氏程序
+/* * celsius.c * * Created on: 2012-11-14 * Author: xiaobin */  #include &amp;lt;stdio.h&amp;gt; #define FREEZING_PT (16.0 *	\ 2) #define SCALE_FACTOR (5.0 / 9.0)  int main(void) { 	float fahrenheit, celsius; 	printf(&amp;#34;Enter Fahrenheit temperature: &amp;#34;); 	scanf(&amp;#34;%g&amp;#34;, &amp;amp;fahrenheit); 	printf(&amp;#34;%g\n&amp;#34;, fahrenheit); 	celsius = (fahrenheit - FREEZING_PT) * SCALE_FACTOR; 	printf(&amp;#34;Celsius equivalent is: %g&amp;#34;, celsius); 	return 0; }  预处理器换行 指令总是在第一个换行符处结束，除非明确地指明要继续。  如果想在下一行继续指令，我们必须在当前行的末尾使用\字符。</description>
+    </item>
+    
+    <item>
+      <title>AK100驱动过时问题</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/mdk-ak100-driver/</link>
+      <pubDate>Mon, 04 May 2020 10:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/mdk-ak100-driver/</guid>
+      <description>IDE：MDKV4.0 - V4.74 AK100驱动：V6.0  现象：&amp;quot;..\TKScope\UL2ARM_TKSCP_DRV_ARM_for_AGDI.dll - Driver is outdated !&amp;quot; 解决办法：
+  删除工程目录中的“TKScope.cfg”
+  重新设置调试器 &amp;ldquo;Target Options&amp;rdquo; -&amp;gt; &amp;ldquo;Debug&amp;rdquo; 选择TKScope 硬件选择（调试器与MCU） 选择调试器 选择MCU对应的调试器
+  其他设置（主要设置、附加设置、TAP设置、程序烧写、初始化宏、硬件自检）请参考“用户手册”。</description>
+    </item>
+    
+    <item>
+      <title>设置固定IP</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/embeded_ip_nfs/</link>
+      <pubDate>Thu, 16 Apr 2020 00:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/embeded_ip_nfs/</guid>
+      <description>开发板访问NFS 服务器IP地址是固定的。
+ 一、U16及以下  （Ubuntu16.04-） 使用root权限更改interfaces文件。
+ #gedit /etc/network/interfaces 完整例子：
+ /etc/network/interfaces
+ auto lo iface lo inet loopback  auto eth0 iface eth0 inet static  address 192.168.0.111 netmask 255.255.255.0 gateway 192.168.0.1 二、U18及以上  （Ubuntu18.04+）
+ #vi /etc/netplan/50-cloud-init.yaml network:  ethernets:  ens32:  #dhcp4: true  addresses:  - 192.168.0.124/24  gateway4: 192.168.0.1  nameservers:  addresses: [192.168.0.1, 219.146.3.226, 219.146.3.230, 219.146.3.238]  optional: true  version: 2  ens32：你的网卡，根据实际情况设置 dhcp4，gateway4：IPv4协议下的。</description>
+    </item>
+    
+    <item>
+      <title>mail的使用</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_mail/</link>
+      <pubDate>Wed, 15 Apr 2020 23:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_mail/</guid>
+      <description>installation Mutt is a small but very powerful text-based mail client for Unix operating systems.
+1) install yum install mutt 2) config $vi ~/.muttrc set sendmail=&amp;#34;/usr/local/msmtp/bin/msmtp&amp;#34; set from = &amp;#34;user@domain.com&amp;#34; set realname = &amp;#34;Realname of the user&amp;#34; received mail:
+set pop_host=&amp;#34;pop.163.com&amp;#34; set pop_user=&amp;#34;love_shidie&amp;#34; set pop_pass=`getpassword email_id` test 1) send mail gpg -d ~/.msmtp/love_shidie-passoword.gpg $mutt -s &amp;#34;test message&amp;#34; -a ~/message121.txt 2) received mail $mutt Press key: G
+Reference  Mutt – A Command Line Email Client to Send Mails from Terminal Mutt: how to safely store password?</description>
+    </item>
+    
+    <item>
+      <title>GNU PG</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_gnupg/</link>
+      <pubDate>Wed, 15 Apr 2020 22:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_gnupg/</guid>
+      <description>The GNU Privacy Guard  Note: normal user login.
+ 1. install $yum install gnupg $yum install rng-tools 2. gen key $gpg --gen-key Press Key: O 输入完，按“Tab”切换到“OK”,按回车。 再输入一次， 3. gen revoke $gpg gen-revoke 7209DBAD Press Key: y 4. encrypt file(password) 1) password-file $vi love_shidie-password  密码文件(明文密码)
+ thisispassword 2) gen gpg file  Gen file: love_shidie-password.gpg
+ $gpg -e -r veic_2005@163.com love_shidie-password Reference  How to use Mutt email client with encrypted passwords  </description>
+    </item>
+    
+    <item>
+      <title>mail的发送</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_mail_msmtp/</link>
+      <pubDate>Wed, 15 Apr 2020 21:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_mail_msmtp/</guid>
+      <description>使用msmtp实现 installation down $wget https://marlam.de/msmtp/releases/msmtp-1.6.8.tar.xz install $xz -d msmtp-1.6.8.tar.xz$tar xvf msmtp-1.6.8.tar$cd msmtp-1.6.8$./configure --prefix=/user/local/msmtp$make Then install using root
+$make install configuration  需要在user的根目录建立一个新文件：.msmtprc
+ $cd ~ $vi .msmtprc $chmod 600 .msmtprc   .msmtprc
+  defaults  logfile ~/.msmtp/msmtp.log  # The SMTP server of the provider. account love_shidie host smtp.163.com from love_shidie@163.com auth login user love_shidie@163.com passwordeval gpg --no-tty -q -d ~/.msmtp/love_shidie-password.gpg  # Set a default account account default: love_shidie r+w $chmod 600 .</description>
+    </item>
+    
+    <item>
+      <title>spark cluster</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_spark_cluster/</link>
+      <pubDate>Wed, 15 Apr 2020 02:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_spark_cluster/</guid>
+      <description>OS: CentOS7
+ Prepare  已经安装了《ZooKeeper multi-server install》 已经安装了《hadoop - cluster》  Stage I: Installation  spark安装 - CentOS Firewall设置请参见《firewall-soft list(port)》 设置OpenJDK请参见《设置OpenJDK - CentOS》 set up   详见Reference[4]
+ Stage II: Run 1. ZK zkServer.sh start 2. Hadoop 1) HDFS see 《hadoop - cluster - 3.1 HDFS》
+2) YARN see 《hadoop - cluster - 3.2 YARN》
+3. Spark  （server3，4）
+ $SPARK_HOME/sbin/start-all.sh 1) other site $SPARK_HOME/sbin/start-master.sh Web: http://192.168.42.109:8082/</description>
+    </item>
+    
+    <item>
+      <title>spark配置</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_spark_config/</link>
+      <pubDate>Wed, 15 Apr 2020 01:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_spark_config/</guid>
+      <description>1. spark env  spark-env.sh
+ 1) hadoop path export HADOOP_HOME=/home/tdtc/app/hadoop/2.7.7 export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop 2) spark worker 使用的内存和cpu core数
+export SPARK_WORKER_MEMORY=128m export SPARK_WORKER_CORES=1 3) recovery(zookeeper) export SPARK_DAEMON_JAVA_OPTS=&amp;#34;-Dspark.deploy.recoveryMode=ZOOKEEPER -Dspark.deploy.zookeeper.url=tdtc201:2181,tdtc202:2181,tdtc203:2181,tdtc204:2181 -Dspark.deploy.zookeeper.dir=/spark2&amp;#34; recoveryMode spark.deploy.recoveryMode=ZOOKEEPER url spark.deploy.zookeeper.url=tdtc201:2181,tdtc202:2181,tdtc203:2181,tdtc204:2181 directory 储存在zk中的位置
+spark.deploy.zookeeper.dir=/spark2 2. slaves  注意：有几个YARN，就设置几个slaves！！！
+ ../conf/slaves
+  tdtc203 tdtc204 Reference  how-to-set-up-spark-with-zookeeper-for-ha  </description>
+    </item>
+    
+    <item>
+      <title>SELinux的开启/关闭</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_selinux/</link>
+      <pubDate>Wed, 15 Apr 2020 00:20:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_selinux/</guid>
+      <description> (root权限)
+ SELinux(Security-Enhanced Linux) 是美国国家安全局（NSA）对于强制访问控制的实现，是 Linux历史上最杰出的新安全子系统。
+1. 临时  临时的意思就是宽容模式(0)强制模式(1)与的切换 默认是：强制模式
+  强制模式  $setenforce 1  宽容模式 临时关闭  $setenforce 0 2. 永久  /etc/selinux/config
+  开启  SELINUX=enforcing  关闭  SELINUX=disabled 3. 查看SELinux的工作模式 getenforce </description>
+    </item>
+    
+    <item>
+      <title>增加用户</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_useradd_centos/</link>
+      <pubDate>Wed, 15 Apr 2020 00:18:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_useradd_centos/</guid>
+      <description>ali云服务器
+ 1. User Add and Set password 1) add user useradd	site_user 2) set passwd passwd -x 180 site_user 3) set home_dir usermod -d /home/fdn site_user 2. assigning permissions  如果多个目录需要设置，则多次重复&amp;quot;(2)设置&amp;quot;即可。
+  文件系统是否支持acl
+ df -T | awk &amp;#39;{print $1,$2,$NF}&amp;#39; | grep &amp;#34;^/dev&amp;#34; grep -i acl /boot/config*  分区是否支持acl
+ 注意：在ali服务器上是vda1。
+  tune2fs -l /dev/vda1 | grep acl 1) 查看  目录的acl设置情况。
+ getfacl	/home/fdn 2) 设置  设置指定目录的acl。</description>
+    </item>
+    
+    <item>
+      <title>spark安装</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_spark_centos/</link>
+      <pubDate>Wed, 15 Apr 2020 00:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_spark_centos/</guid>
+      <description>Spark：v2.4
+ 一、基础软件 1. R-lang sudo yum -y install epel-release sudo yum install R  注意：如果Java没有安装，会附带着安装OpenJDK。
+ 2. Scala wget https://downloads.lightbend.com/scala/2.12.8/scala-2.12.8.tgz tar xvf scala-2.12.8.tgz sudo mv scala-2.12.8 /usr/lib sudo ln -s /usr/lib/scala-2.12.8 /usr/lib/scala 1) add path $vi ~/.bashrc PATH=$PATH:/usr/lib/scala/bin 二、Spark 1. down &amp;amp; unzip  v2.4.1
+ mkdir -p ~/app/spark tar zxvf spark-2.4.1-bin-hadoop2.7.tgz -C ~/app/spark mv ~/app/spark/spark-2.4.1-bin-hadoop2.7 ~/app/spark/2.4.1 2. test ./bin/spark-shell --master local[2] input:
+for (i &amp;lt;- 1 to 3; j &amp;lt;- 1 to 3 if i !</description>
+    </item>
+    
+    <item>
+      <title>Hadoop - cluster</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_hadoop_cluster/</link>
+      <pubDate>Tue, 14 Apr 2020 16:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_hadoop_cluster/</guid>
+      <description>Prepare     server1 server2 server3 server4     NameNode y y     DataNode   y y y   ResourceManager     y y   NodeManager y y y y   Zookeeper y y y y   JournalNode y y y    ZK-FC y y       JobHistor y          Server Name IP Host Name     server1 192.</description>
+    </item>
+    
+    <item>
+      <title>Hadoop配置 - yarn</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_hadoop_cluster_yarn/</link>
+      <pubDate>Tue, 14 Apr 2020 10:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_hadoop_cluster_yarn/</guid>
+      <description>(../etc/hadoop/yarn-site.xml)
+ 1. ResourceManager HA &amp;lt;property&amp;gt;  &amp;lt;name&amp;gt;yarn.resourcemanager.ha.enabled&amp;lt;/name&amp;gt;  &amp;lt;value&amp;gt;true&amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; &amp;lt;property&amp;gt;  &amp;lt;name&amp;gt;yarn.resourcemanager.cluster-id&amp;lt;/name&amp;gt;  &amp;lt;value&amp;gt;cluster1&amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; &amp;lt;property&amp;gt;  &amp;lt;name&amp;gt;yarn.resourcemanager.ha.rm-ids&amp;lt;/name&amp;gt;  &amp;lt;value&amp;gt;rm1,rm2&amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; &amp;lt;property&amp;gt;  &amp;lt;name&amp;gt;yarn.resourcemanager.hostname.rm1&amp;lt;/name&amp;gt;  &amp;lt;value&amp;gt;tdtc203&amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; &amp;lt;property&amp;gt;  &amp;lt;name&amp;gt;yarn.resourcemanager.hostname.rm2&amp;lt;/name&amp;gt;  &amp;lt;value&amp;gt;tdtc204&amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; &amp;lt;property&amp;gt;  &amp;lt;name&amp;gt;yarn.resourcemanager.webapp.address.rm1&amp;lt;/name&amp;gt;  &amp;lt;value&amp;gt;tdtc203:8088&amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; &amp;lt;property&amp;gt;  &amp;lt;name&amp;gt;yarn.resourcemanager.webapp.address.rm2&amp;lt;/name&amp;gt;  &amp;lt;value&amp;gt;tdtc204:8088&amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; &amp;lt;property&amp;gt;  &amp;lt;name&amp;gt;yarn.resourcemanager.zk-address&amp;lt;/name&amp;gt;  &amp;lt;value&amp;gt;tdtc201:2181,tdtc202:2181,tdtc203:2181&amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; 2. Resource Manager Restart  see Reference[3]
+ &amp;lt;property&amp;gt;  &amp;lt;name&amp;gt;yarn.resourcemanager.recovery.enabled&amp;lt;/name&amp;gt;  &amp;lt;value&amp;gt;true&amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; 1) zookeeper &amp;lt;property&amp;gt;  &amp;lt;name&amp;gt;yarn.</description>
+    </item>
+    
+    <item>
+      <title>Hadoop配置 - hdfs</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_hadoop_cluster_hdfs/</link>
+      <pubDate>Tue, 14 Apr 2020 09:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_hadoop_cluster_hdfs/</guid>
+      <description>(../etc/hadoop/hdfs-site.xml)
+ 1. name services &amp;lt;property&amp;gt;  &amp;lt;name&amp;gt;dfs.nameservices&amp;lt;/name&amp;gt;  &amp;lt;value&amp;gt;mycluster&amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; 1) name node &amp;lt;property&amp;gt;  &amp;lt;name&amp;gt;dfs.ha.namenodes.mycluster&amp;lt;/name&amp;gt;  &amp;lt;value&amp;gt;nn1,nn2&amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; 2) RPC(name node) &amp;lt;property&amp;gt;  &amp;lt;name&amp;gt;dfs.namenode.rpc-address.mycluster.nn1&amp;lt;/name&amp;gt;  &amp;lt;value&amp;gt;tdtc201:8020&amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; &amp;lt;property&amp;gt;  &amp;lt;name&amp;gt;dfs.namenode.rpc-address.mycluster.nn2&amp;lt;/name&amp;gt;  &amp;lt;value&amp;gt;tdtc202:8020&amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; 3) Http(name node) &amp;lt;property&amp;gt;  &amp;lt;name&amp;gt;dfs.namenode.http-address.mycluster.nn1&amp;lt;/name&amp;gt;  &amp;lt;value&amp;gt;tdtc201:50070&amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; &amp;lt;property&amp;gt;  &amp;lt;name&amp;gt;dfs.namenode.http-address.mycluster.nn2&amp;lt;/name&amp;gt;  &amp;lt;value&amp;gt;tdtc202:50070&amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; 2. JournalNode 1) quorum journal manager &amp;lt;!-- Journal Node(QJM) --&amp;gt; &amp;lt;property&amp;gt;  &amp;lt;name&amp;gt;dfs.namenode.shared.edits.dir&amp;lt;/name&amp;gt;  &amp;lt;value&amp;gt;qjournal://tdtc201:8485;tdtc202:8485;tdtc203:8485/mycluster&amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; local &amp;lt;property&amp;gt;  &amp;lt;name&amp;gt;dfs.</description>
+    </item>
+    
+    <item>
+      <title>Hadoop配置 - base</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_hadoop_cluster_base/</link>
+      <pubDate>Tue, 14 Apr 2020 08:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_hadoop_cluster_base/</guid>
+      <description>(../etc/hadoop)
+ 1. core-site.xml 1) HDFS  the default path prefix used by the Hadoop FS client when none is given Optionally, you may now configure the default path for Hadoop clients to use the new HA-enabled logical URI. If you used “mycluster” as the nameservice ID earlier, this will be the value of the authority portion of all of your HDFS paths. This may be configured like so, in your core-site.</description>
+    </item>
+    
+    <item>
+      <title>hadoop名词解释</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_hadoop_abbr1/</link>
+      <pubDate>Tue, 14 Apr 2020 03:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_hadoop_abbr1/</guid>
+      <description>QJM and shuffle 1. QJM 1.1 背景 自从hadoop2版本开始，社区引入了NameNode高可用方案。NameNode主从节点间需要同步操作日志来达到主从节点元数据一致。最初业界均通过NFS来实现日志同步，大家之所以选择NFS，一方面因为可以很方便地实现数据共享，另外一方面因为NFS已经发展20多年，已经相对稳定成熟。
+虽然如此，NFS也有缺点不能满足HDFS的在线存储业务：网络单点及其存储节点单点。业界提供了数据共享的一些高可用解决方案，但均不能很好地满足目前HDFS的应用场景。
+   方案 网络单点 存储单点 备注     Mysql HA 无 无   Drbd+heartbeat+NFS 无 无 脑裂；数据有丢失风险   Keepalive+NFS 无 有 数据有丢失风险    为了满足共享日志的高可用性，社区引入QJM。QJM由cloudera开发，实现了读写高可用性，使HDFS达到真正的高可用性成为可能。
+1.2 术语和定义    术语和定义 解释     Epoch 由主节点在启动及其切换为主的时候分配，每次操作JN节点均会检查该值,类似zookeeper中的zxid，此时主NameNode类似zookeeper中的leader，JN节点类似ZK中的Follower   JournalNode QJM存储段进程，提供日志读写，存储，修复等服务   QJM Qurom Journal Manager   startLogSegment 开始一个新的日志段,该日志段状态为接收写入日志的状态   finalizeLogSegment 将文件由正在写入日志的状态转化为不接收写日志的状态   recoverUnfinalizedSegments 主从切换等情况下，恢复没有转换为finalized状态的日志   journalId 日志ID，由配置指定，如qjournal://g42:8485;g35:8485;uhp9:8485/geminifs，则其中的geminifs即为journalId    2.</description>
+    </item>
+    
+    <item>
+      <title>soft-list(port)</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_firewall/</link>
+      <pubDate>Tue, 14 Apr 2020 02:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_firewall/</guid>
+      <description>I. Soft List 1. zk sudo firewall-cmd --permanent --zone=public --add-port=2181/tcp sudo firewall-cmd --permanent --zone=public --add-port=2888/tcp sudo firewall-cmd --permanent --zone=public --add-port=3888/tcp 2. Hadoop sudo firewall-cmd --permanent --zone=public --add-port=10020/tcp sudo firewall-cmd --permanent --zone=public --add-port=19888/tcp sudo firewall-cmd --permanent --zone=public --add-port=8020/tcp sudo firewall-cmd --permanent --zone=public --add-port=50070/tcp sudo firewall-cmd --permanent --zone=public --add-port=8485/tcp sudo firewall-cmd --permanent --zone=public --add-port=8088/tcp sudo firewall-cmd --permanent --zone=public --add-port=8033/tcp 3. Spark sudo firewall-cmd --permanent --zone=public --add-port=6066/tcp sudo firewall-cmd --permanent --zone=public --add-port=7077/tcp sudo firewall-cmd --permanent --zone=public --add-port=8080-8088/tcp  立即生效：</description>
+    </item>
+    
+    <item>
+      <title>ssh相互免密</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_ssh_without_password/</link>
+      <pubDate>Mon, 13 Apr 2020 11:38:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_ssh_without_password/</guid>
+      <description>OS: CentOS 7
+    Ip /etc/hostname     192.168.0.110 host1   192.168.0.111 host2     Note:
+ On every host, run following commands, Use xiaobin112(user) to do all following.
+  Prepare Establish Directory &amp;ldquo;.ssh&amp;rdquo;
+$mkdir ~/.ssh $chmod 700 ~/.ssh Stage I 1. config  另外一种方式为：把所有机器的IP和hostname放在/etc/hosts里，在此不再赘述, 请参见《ZooKeeper multi-server install - 3.FQDN》。
+ $vi ~/.ssh/config Host host1  HostName 192.168.0.110  Port 22  User xiaobin112  Host host2  HostName 192.</description>
+    </item>
+    
+    <item>
+      <title>主备切换 - MySQL&#43;MHA</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/mysql-mha/</link>
+      <pubDate>Mon, 13 Apr 2020 10:38:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/mysql-mha/</guid>
+      <description>在进行安装配置前，请确认已经完成了《MySQL 主从复制》
+  MHA   (V0.58)
+  Manager Node    baidu yun - backup
+   Mha manager Mha node   安装前准备《ssh相互免密》
+ 一、安装    Name IP Memo     mha1 192.168.0.151 Monitor host    使用pscp上传文件请参考《MySQL 主从复制 - 5. test data》
+1. MHA Node  所有MySQL服务器（mysql1、mysql11、mysql12）和MHA 管理机（MHA）都要安装。
+ sudo yum localinstall mha4mysql-node-0.58-0.el7.centos.noarch.rpm 2. MHA Manager  CentOS源有perl-Config-Tiny。</description>
+    </item>
+    
+    <item>
+      <title>MySQL 主从复制</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/mysql-master-slave-replication/</link>
+      <pubDate>Mon, 13 Apr 2020 09:38:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/mysql-master-slave-replication/</guid>
+      <description>在进行配置前，请确认已经安装 mysql5.7 - CentOS7
+ 1. 网络配置 Replication Group 1:
+   Name IP Memo     mysql1 192.168.0.160 Master   mysql11 192.168.0.161 Slave   mysql12 192.168.0.162 Slave    Replication Group 2(Maria DB):
+   Name IP Memo     mysql2 192.168.0.170 Master   mysql21 192.168.0.171 Slave   mysql22 192.168.0.172 Slave    2. Configure MySQL cluster 1) Master Server 《Setting the Replication Master Configuration》</description>
+    </item>
+    
+    <item>
+      <title>安装配置Keepalived</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_keepalived/</link>
+      <pubDate>Mon, 13 Apr 2020 08:38:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_keepalived/</guid>
+      <description>OS: CentOS7 minimal（安装时的选项）
+ 一、安装 0. prepare tool $yum group list 1) dev tools $yum group install &amp;#34;Development Tools&amp;#34; 2) openssl-devel  update see &amp;ldquo;nginx’s load balancing的安装部分的update OpenSSL&amp;rdquo;
+ $yum install openssl-devel 3) libnl $yum install libnl libnl-devel libnfnetlink-devel 1. keepalived  v1.4.5
+ down and unzip $wget http://www.keepalived.org/software/keepalived-1.4.5.tar.gz $ tar zxvf keepalived-1.4.5.tar.gz installation $cd keepalived-1.4.5 $./configure --prefix=/usr/local/keepalived $make Root permission Required
+$make install setup $cp /usr/local/keepalived/sbin/keepalived /usr/sbin/ $mkdir -p /etc/keepalived $cp /usr/local/keepalived/etc/keepalived/keepalived.</description>
+    </item>
+    
+    <item>
+      <title>前端（Web）负载均衡</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_nginx/</link>
+      <pubDate>Mon, 13 Apr 2020 07:38:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_nginx/</guid>
+      <description>OS: CentOS7 minimal（安装时的选项）
+ nginx&amp;rsquo;s load balancing 一、安装 0. prepare $yum -y install gcc gcc-c++ automake pcre pcre-devel zlib zlib-devel open openssl-devel 1) update OpenSSL  default directory: /usr/ssl
+ $wget https://www.openssl.org/source/openssl-1.1.1f.tar.gz 2) setup $./config --prefix=/usr --shared $make  Root permission Required
+ $make install 1. installation sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm sudo yum install -y nginx 1) down  Same as the installed version
+ $curl --progress https://nginx.org/download/nginx-1.16.1.tar.gz | tar xz 2) setup module see param:</description>
+    </item>
+    
+    <item>
+      <title>架设Real Server和Keepalived Server</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_real_keepalived/</link>
+      <pubDate>Mon, 13 Apr 2020 06:38:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_real_keepalived/</guid>
+      <description>os: CentOS7 minimal（安装时的选项） 准备工作： 修改网卡为固定IP - CentOS
+ 总览 Real Server  CentOS7RS1   192.168.0.107
+  Nginx V1.14 Tomcat V7.0.90   CentOS7RS2   192.168.0.102
+  Nginx V1.14 Tomcat V8.5.32  Keepalived Server  CentOS7Master   192.168.0.109
+  CentOS7Bak   192.168.0.110
+ 一、Real Server 1. 安装前准备  Linux下安装Tomcat   ops_tomcat.md
+  nginx - load balancing   ops_nginx.md
+ 2. config ARP 1) ifconfig $yum install net-tools 2) realserver  /etc/init.</description>
+    </item>
+    
+    <item>
+      <title>简单使用vi</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_vi/</link>
+      <pubDate>Mon, 13 Apr 2020 04:38:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_vi/</guid>
+      <description> 此时是浏览状态（命令行模式）！
+ $ vi myfile 浏览状态 移动光标 使用方向键来进行位置的移动。
+编辑状态  要进行文字编辑工作, 按“i”即进入
+ i 删除文字 使用“Backspce”键，删除光标前面的文字。 使用“Delete”键，删除光标后面的文字。
+完成编辑  编辑完成后，要退出编辑状态, 按“ESC”，即完成退出。
+ 菜单状态 按“:”进入菜单状态（底行模式）
+设置行号  输入“set nu”
+ :set nu 查找文字  如果，要查找特定的文字，输入“/要搜索的文字”
+ :/word 继续查找，按“n”（相当于Windows系统的F3功能键）
+保存文件  输入“wq”完成保存并退出。
+ :wq 强退  如果我们只想退出并且不保存文件 输入“q!”
+ :q! </description>
+    </item>
+    
+    <item>
+      <title>共享打印机 - CUPS</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_department_cups/</link>
+      <pubDate>Mon, 13 Apr 2020 03:18:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_department_cups/</guid>
+      <description> Tips: 已经安装了打印机了，我们怎么共享它呢？ 首先，要确保你已经安装了CUPS 然后，共享打印机
+ 安装CUPS #apt-get install cups 客户端设置 在windows连接我们的打印服务器。
+“打印机和传真”-〉“添加打印机” （注意：根据办公环境的网络设置自行填写）
+插入HP的驱动光盘: </description>
+    </item>
+    
+    <item>
+      <title>架设VSFTP服务器</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_department_vsftp/</link>
+      <pubDate>Mon, 13 Apr 2020 03:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_department_vsftp/</guid>
+      <description>Ubuntu版本：14.04 参考Ubuntu14.04的FTP Server文档
+ 安装vsftpd root@tdtc010-Vostro-270:~# apt-get install vsftpd 配置 允许上传 local_enable=YES; write_enable=YES; 允许匿名上传 anon_upload_enable=YES; FAQ 553 Could not create file 执行“快速连接”;提示错误信息：553 Could not create file
+新建一个目录 root@tdtc010-Vostro-270:/srv/ftp# mkdir upload_xp 更改目录权限 默认权限（FileZilla右击文件属性） 更改为可读写：
+root@tdtc010-Vostro-270:/srv/ftp# chmod 777 upload_xp 550 Failed to open file 解决办法： 开启公共权限（读）
+chmod 644 myfile.iso 显示ftp目录信息 在目录下建立一个.message文件即可。 /srv/ftp/upload_xp/.message 文件内容：
+欢迎使用VSFTPD，这个是upload_xp目录 再次，在FileZilla执行上传，显示成功：
+状态:	已连接 状态:	开始上传 D:\360Downloads\perl-5.16.3.tar.gz 命令:	CWD /upload_xp 响应:	250 Directory successfully changed. 命令:	TYPE I 响应:	200 Switching to Binary mode.</description>
+    </item>
+    
+    <item>
+      <title>使用psi</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_department_psi/</link>
+      <pubDate>Mon, 13 Apr 2020 02:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_department_psi/</guid>
+      <description>服务器的搭建 请参考How to install Tigase XMPP server 7.0.2 on Ubuntu 14.04.2
+客户端 我们使用PSI（V1.2）进行服务器的测试。
+1. 注册 2. 增加好友 3. 重连 </description>
+    </item>
+    
+    <item>
+      <title>在阿里云上部署httpd</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_cloud_httpd/</link>
+      <pubDate>Mon, 13 Apr 2020 01:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_cloud_httpd/</guid>
+      <description>Server：ali云服务器ECS OS: CentOS 6/7 (x64) httpd路径: /opt/httpd
+ 两种不同的init系统部署方式 一、SysVinit SysVinit是CentOS6的默认1号进程。
+1. Copy script # cp /opt/httpd/bin/apachectl /etc/rc.d/init.d/httpd 2. Edit script # cd /etc/rc.d/init.d # vi httpd The original file(apachectl)
+#!/bin/sh # # Licensed to the Apache Software Foundation (ASF) under one or more # contributor license agreements. See the NOTICE file distributed with # this work for additional information regarding copyright ownership. # The ASF licenses this file to You under the Apache License, Version 2.</description>
+    </item>
+    
+    <item>
+      <title>在阿里云上部署pure-ftpd</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_cloud_pure-ftpd/</link>
+      <pubDate>Mon, 13 Apr 2020 00:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_cloud_pure-ftpd/</guid>
+      <description>Server：ali云服务器ECS OS: CentOS 7.2 x64
+ 1. 管理防火墙 增加ftp端口 2. 其他系统管理 1) 设置SeLlinux # setsebool -P ftp_home_dir on 2) 设置user # useradd -m fdn -s /sbin/nologin # passwd fdn 3. 安装pure-ftpd # yum install pure-ftpd 1) Setup 使用root简单设置pure-ftpd.conf
+# vi /etc/pure-ftpd/pure-ftpd.conf # If you want simple Unix (/etc/passwd) authentication, uncomment this UnixAuthentication yes  # Cage in every user in his home directory ChrootEveryone yes  # If you want to log all client commands, set this to &amp;#34;yes&amp;#34;.</description>
+    </item>
+    
+    <item>
+      <title>使用spymemcached操作memcached</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/memcached-spy/</link>
+      <pubDate>Sat, 11 Apr 2020 21:08:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/memcached-spy/</guid>
+      <description>offical site
+pom &amp;lt;dependency&amp;gt;  &amp;lt;groupId&amp;gt;com.google.code.simple-spring-memcached&amp;lt;/groupId&amp;gt;  &amp;lt;artifactId&amp;gt;spymemcached-provider&amp;lt;/artifactId&amp;gt;  &amp;lt;version&amp;gt;4.1.3&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; app config  applicationContext.xml
+ &amp;lt;import resource=&amp;#34;simplesm-context.xml&amp;#34; /&amp;gt;  &amp;lt;aop:aspectj-autoproxy /&amp;gt;   &amp;lt;bean name=&amp;#34;defaultMemcachedClient&amp;#34; class=&amp;#34;com.google.code.ssm.CacheFactory&amp;#34;&amp;gt;  &amp;lt;property name=&amp;#34;cacheClientFactory&amp;#34;&amp;gt;  &amp;lt;bean name=&amp;#34;cacheClientFactory&amp;#34; class=&amp;#34;com.google.code.ssm.providers.spymemcached.MemcacheClientFactoryImpl&amp;#34; /&amp;gt;  &amp;lt;/property&amp;gt;  &amp;lt;property name=&amp;#34;addressProvider&amp;#34;&amp;gt;  &amp;lt;bean class=&amp;#34;com.google.code.ssm.config.DefaultAddressProvider&amp;#34;&amp;gt;  &amp;lt;property name=&amp;#34;address&amp;#34; value=&amp;#34;127.0.0.1:11211&amp;#34; /&amp;gt;  &amp;lt;/bean&amp;gt;  &amp;lt;/property&amp;gt;  &amp;lt;property name=&amp;#34;configuration&amp;#34;&amp;gt;  &amp;lt;bean class=&amp;#34;com.google.code.ssm.providers.CacheConfiguration&amp;#34;&amp;gt;  &amp;lt;property name=&amp;#34;consistentHashing&amp;#34; value=&amp;#34;true&amp;#34; /&amp;gt;  &amp;lt;/bean&amp;gt;  &amp;lt;/property&amp;gt;  &amp;lt;/bean&amp;gt; code  service layer</description>
+    </item>
+    
+    <item>
+      <title>在CentOS安装Redis</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/redis-centos7/</link>
+      <pubDate>Sat, 11 Apr 2020 20:58:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/redis-centos7/</guid>
+      <description>0. preinstall 1) yum install $yum groupinstall &amp;#34;Development Tools&amp;#34; $yum install tcl wget 2) verification $gcc -v $make -v $echo &amp;#39;puts [info patchlevel];exit 0&amp;#39; | tclsh  User set  $ useradd redis $ passwd redis 1. installation 1) install $wget http://download.redis.io/releases/redis-4.0.14.tar.gz $tar xzvf redis-4.0.14.tar.gz $cd redis-4.0.14 $make ## Single Core $taskset -c 0 make test ## sudo $make install 2) config $mkdir /etc/redis $mkdir -p /var/redis $cp /home/redis/redis-4.0.14/redis.conf /etc/redis redis.</description>
+    </item>
+    
+    <item>
+      <title>dispatcher - Asynchronous</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/reduxjs-asyn-dispatcher/</link>
+      <pubDate>Fri, 10 Apr 2020 17:26:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/reduxjs-asyn-dispatcher/</guid>
+      <description>1. Program Flow 1) Synchronous 2) Asynchronous 2. redux-saga  about CQRS: Event-sourcing
+ 1) Install npm install --save redux-saga examples
+Reference  UNIDIRECTIONAL USER INTERFACE ARCHITECTURES - André Staltz Clarified CQRS  </description>
+    </item>
+    
+    <item>
+      <title>CSS选择器</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/css-selector-basic/</link>
+      <pubDate>Fri, 10 Apr 2020 16:26:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/css-selector-basic/</guid>
+      <description>web浏览器建议： (1) Google Chrome(V32+) (2) IE(V10+)
+    Selector type CSS 说明     Tag name p {} 对整个网页中标签有效   ID #some-id {} 对网页中指定id有效   Class .some-class {} 对网页中相同类名有效    1. 元素 1) 下级元素 子元素  当前元素的下一级元素。
+ &amp;gt; 后代元素  空格替代 “&amp;gt;” 例如: ol li
+ 就表示当前元素（ol）下的所有li元素。
+2. 属性选择器 属性
+1）设置多个属性 “^” 开头匹配
+“$” 结尾匹配
+&amp;quot;*&amp;quot; 包含匹配
+3. 奇偶选择器 :nth-child 其常用值有：odd和even</description>
+    </item>
+    
+    <item>
+      <title>StringRedisTemplate - redis-cli</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/java-string-redis-template/</link>
+      <pubDate>Fri, 10 Apr 2020 13:26:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/java-string-redis-template/</guid>
+      <description>1. autowired @Autowired StringRedisTemplate stringRedisTemplate; 2. get/set public void redisCliTest() {  String cliVal = stringRedisTemplate.opsForValue().get(&amp;#34;mykey2&amp;#34;);  System.out.println(&amp;#34;redis-cli value: &amp;#34; + cliVal); } code  UserController.java
+ package com.example.demo.controller;  import java.util.List;  import org.springframework.beans.factory.annotation.Autowired; import org.springframework.data.redis.core.StringRedisTemplate; import org.springframework.stereotype.Controller; import org.springframework.ui.Model; import org.springframework.web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.RequestMethod;  import com.example.demo.model.UserDetails; import com.example.demo.service.UserDetailsService;  @Controller @RequestMapping(&amp;#34;/user&amp;#34;) public class UserController {  	@Autowired 	private UserDetailsService userService;  	@Autowired 	StringRedisTemplate stringRedisTemplate;  	@RequestMapping(value = &amp;#34;/listPage&amp;#34;, method = RequestMethod.</description>
+    </item>
+    
+    <item>
+      <title>设置HikariCP</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/java-tomcat-pool-hikaricp/</link>
+      <pubDate>Fri, 10 Apr 2020 12:26:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/java-tomcat-pool-hikaricp/</guid>
+      <description>1. context.xml  tomcat
+ &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;!-- Licensed to the Apache Software Foundation (ASF) under one or more contributor license agreements. See the NOTICE file distributed with this work for additional information regarding copyright ownership. The ASF licenses this file to You under the Apache License, Version 2.0 (the &amp;#34;License&amp;#34;); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.</description>
+    </item>
+    
+    <item>
+      <title>关于Spring Security 4例子的补充</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/java-spring-security/</link>
+      <pubDate>Fri, 10 Apr 2020 11:26:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/java-spring-security/</guid>
+      <description>Spring Security 4 Hibernate Password Encoder Bcrypt Example
+1. 数据表 资料来源于spring-security-remember-me-example
+CREATE TABLE `persistent_logins` (  `series` varchar(64) NOT NULL,  `username` varchar(64) NOT NULL,  `token` varchar(64) NOT NULL,  `last_used` datetime NOT NULL  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;    ALTER TABLE `persistent_logins`  ADD PRIMARY KEY (`series`);  COMMIT; 2. pojo  User.java
+ 其中的缺省值：
+@Column(name = &amp;#34;state&amp;#34;, nullable=true) private String state = &amp;#34;Inactive&amp;#34;; 3. 依赖库  pom.</description>
+    </item>
+    
+    <item>
+      <title>Struts2 &#43; Spring &#43; JPA</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/java-struts-spring-jpa/</link>
+      <pubDate>Fri, 10 Apr 2020 10:26:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/java-struts-spring-jpa/</guid>
+      <description>PART I: Struts2  Refence: 《how to create a struts2 web application》
+ 1. pom.xml 1) Struts2  struts2-spring-plugin
+ &amp;lt;dependency&amp;gt;  &amp;lt;groupId&amp;gt;org.apache.struts&amp;lt;/groupId&amp;gt;  &amp;lt;artifactId&amp;gt;struts2-spring-plugin&amp;lt;/artifactId&amp;gt;  &amp;lt;version&amp;gt;${struts2.version}&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; 2) jsp servlet &amp;lt;dependency&amp;gt;  &amp;lt;groupId&amp;gt;javax.servlet&amp;lt;/groupId&amp;gt;  &amp;lt;artifactId&amp;gt;javax.servlet-api&amp;lt;/artifactId&amp;gt;  &amp;lt;version&amp;gt;3.1.0&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; jstl &amp;lt;!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl --&amp;gt; &amp;lt;dependency&amp;gt;  &amp;lt;groupId&amp;gt;javax.servlet.jsp.jstl&amp;lt;/groupId&amp;gt;  &amp;lt;artifactId&amp;gt;jstl&amp;lt;/artifactId&amp;gt;  &amp;lt;version&amp;gt;1.2&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; 2. web.xml  filter  &amp;lt;filter&amp;gt;  &amp;lt;filter-name&amp;gt;struts2&amp;lt;/filter-name&amp;gt;  &amp;lt;filter-class&amp;gt;org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter&amp;lt;/filter-class&amp;gt; &amp;lt;/filter&amp;gt; 3. struts.xml &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;!DOCTYPE struts PUBLIC &amp;#34;-//Apache Software Foundation//DTD Struts Configuration 2.</description>
+    </item>
+    
+    <item>
+      <title>thymeleaf &#43; Spring Boot &#43; JPA</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/java-springboot-jpa/</link>
+      <pubDate>Fri, 10 Apr 2020 10:26:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/java-springboot-jpa/</guid>
+      <description>1. 自动构建 1) boot向导 2) pom依赖 &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;project xmlns=&amp;#34;http://maven.apache.org/POM/4.0.0&amp;#34; xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34; 	xsi:schemaLocation=&amp;#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&amp;#34;&amp;gt; 	&amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt;  	&amp;lt;groupId&amp;gt;com.example&amp;lt;/groupId&amp;gt; 	&amp;lt;artifactId&amp;gt;demo&amp;lt;/artifactId&amp;gt; 	&amp;lt;version&amp;gt;0.0.2-SNAPSHOT&amp;lt;/version&amp;gt; 	&amp;lt;packaging&amp;gt;jar&amp;lt;/packaging&amp;gt;  	&amp;lt;name&amp;gt;demo-jpa&amp;lt;/name&amp;gt; 	&amp;lt;description&amp;gt;Demo project for Spring Boot&amp;lt;/description&amp;gt;  	&amp;lt;parent&amp;gt; 	&amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; 	&amp;lt;artifactId&amp;gt;spring-boot-starter-parent&amp;lt;/artifactId&amp;gt; 	&amp;lt;version&amp;gt;2.0.2.RELEASE&amp;lt;/version&amp;gt; 	&amp;lt;relativePath/&amp;gt; &amp;lt;!-- lookup parent from repository --&amp;gt; 	&amp;lt;/parent&amp;gt;  	&amp;lt;properties&amp;gt; 	&amp;lt;project.build.sourceEncoding&amp;gt;UTF-8&amp;lt;/project.build.sourceEncoding&amp;gt; 	&amp;lt;project.reporting.outputEncoding&amp;gt;UTF-8&amp;lt;/project.reporting.outputEncoding&amp;gt; 	&amp;lt;java.version&amp;gt;1.8&amp;lt;/java.version&amp;gt; 	&amp;lt;/properties&amp;gt;  	&amp;lt;dependencies&amp;gt; 	&amp;lt;dependency&amp;gt; 	&amp;lt;groupId&amp;gt;org.</description>
+    </item>
+    
+    <item>
+      <title>重构asyn</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/reduxjs-asyn/</link>
+      <pubDate>Fri, 10 Apr 2020 07:26:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/reduxjs-asyn/</guid>
+      <description>0. pre 生成基本框 npm install -g create-react-app create-react-app async clone repo https://github.com/redux-saga/redux-saga.git
+1. copy directorys Copy the examples/async/src from the redux-saga to your async/src.
+2. rename main.js  async/src
+ Rename main.js to index.js
+3. move files  async/src
+ App.css &amp;amp;&amp;amp; logo.svg -&amp;gt;
+ async/src/containers
+ App.css &amp;amp;&amp;amp; logo.svg
+4. modify containers/App.js Add the following two blocks of code.
+import logo from &amp;#39;./logo.svg&amp;#39;; import &amp;#39;./App.css&amp;#39;; &amp;lt;div className=&amp;#34;App&amp;#34;&amp;gt;  &amp;lt;header className=&amp;#34;App-header&amp;#34;&amp;gt;  &amp;lt;img src={logo} className=&amp;#34;App-logo&amp;#34; alt=&amp;#34;logo&amp;#34; /&amp;gt;  &amp;lt;h1 className=&amp;#34;App-title&amp;#34;&amp;gt;Welcome to React&amp;lt;/h1&amp;gt;  &amp;lt;/header&amp;gt;  .</description>
+    </item>
+    
+    <item>
+      <title>powerDesigner生成phy图</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/pd-db-phy/</link>
+      <pubDate>Fri, 10 Apr 2020 02:26:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/pd-db-phy/</guid>
+      <description>使用版本：v16.1
+ 一、连接数据库 1. 新建pdm File-》New Model model types -&amp;gt; physical data model  model name: newmodel-phy dbms: mysql5.0
+ 2. config connect profile DataBase -&amp;gt; Configure connections Connection profile 3. connect Database -&amp;gt; connect Flag: &amp;ldquo;Disconnect&amp;rdquo; Available
+ dcp文件（mysql5-crm.dcp）  [ConnectionProfile]ConnectionType=JDBCDbms=MySQLDisableBind=0Driver=com.mysql.jdbc.DriverJarFiles=D:\war\mysql-connector-java-5.1.48.jarLogId=rootTrimSpaces=0URL=jdbc:mysql://106.14.141.40:3306/crm 二、生成phy图 1. Reverse Engineer File -&amp;gt; Reverse Engineer-&amp;gt;Database 选择数据库： 其他数据库全部反选： 例如： 最后，点击ok生成phy图。
+ Tips：如果想从pdm生成CDM，Tools -&amp;gt; Generate Conceptual Data Model</description>
+    </item>
+    
+    <item>
+      <title>CentOS7安装mysql5.7</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/mysql57-cenos7/</link>
+      <pubDate>Fri, 10 Apr 2020 02:21:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/mysql57-cenos7/</guid>
+      <description> 本安装大部分同《安装 MariaDB 10.3数据库》
+ 1. add repo sudo yum install http://repo.mysql.com/mysql57-community-release-el7.rpm 2. install sudo yum install mysql-community-server 3. init  start  sudo systemctl start mysqld.service change password sudo grep &amp;#34;temporary password&amp;#34; /var/log/mysqld.log mysql -uroot -p Weak password mysql&amp;gt; set global validate_password_policy=0; set password mysql&amp;gt; SET PASSWORD FOR &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; = PASSWORD(&amp;#39;xbfirst80&amp;#39;); Reference   A Quick Guide to Using the MySQL Yum Repository
+  http://repo.mysql.com/
+  </description>
+    </item>
+    
+    <item>
+      <title>打包文件</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/pack-file-linux/</link>
+      <pubDate>Fri, 10 Apr 2020 02:20:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/pack-file-linux/</guid>
+      <description>取消目录所有权限
+ chmod -R 777 /tmp/etc 一、ISO文件 mkisofs -r -o etc.iso /tmp/etc 二、压缩文件 1. zip zip -r etc.zip /tmp/etc 2. tar  仅打包，不压缩！
+ tar -cvf /tmp/etc.tar /etc  gz  tar -zcvf /tmp/etc.tar.gz /etc  bz2  tar -jcvf /tmp/etc.tar.bz2 /etc FAQ This does not look like a tar archive #gzip -d xxxx.tar.gz #tar -xf xxxx.tar 参考文章  18 Tar Command Examples in Linux  c – Creates a new .</description>
+    </item>
+    
+    <item>
+      <title>MySQL导入导出数据库</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/mysql-imp-exp/</link>
+      <pubDate>Fri, 10 Apr 2020 02:18:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/mysql-imp-exp/</guid>
+      <description>导出数据库 $mysqldump dbName &amp;gt; dbName.sql -u user -p  v5.6/5.7  $mysqldump --no-defaults dbName &amp;gt; dbName.sql -u user -p 导入数据库 mysql&amp;gt;CREATE DATABASE `dbName` CHARACTER SET utf8 COLLATE utf8_general_ci;  mysql&amp;gt;USE dbName;  mysql&amp;gt;SOURCE C:/Users/xiaobin/dbName.sql; Reference  MySQL Create Database with UTF8 Character Set Syntax  </description>
+    </item>
+    
+    <item>
+      <title> 使用脚本安装gitlab</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/gitlab-install-shell/</link>
+      <pubDate>Fri, 10 Apr 2020 02:15:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/gitlab-install-shell/</guid>
+      <description>一、安装 1. depend $sudo apt-get update $sudo apt-get install ca-certificates curl openssh-server postfix vim 2. down script $curl -LO https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh 3. exec script $sudo bash ~/script.deb.sh 4. install If it is &amp;ldquo;qiang&amp;rdquo;, please see 《代理set - ubuntu》
+$sudo apt-get install gitlab-ce 5. config 1) ufw $sudo ufw allow http $sudo ufw allow https $sudo ufw allow OpenSSH 2) gitlab.rb $sudo vim /etc/gitlab/gitlab.rb # If your GitLab server does not have a domain name, you will need to use an IP # address instead of a domain and keep the protocol as `http`.</description>
+    </item>
+    
+    <item>
+      <title>dpkg的info问题和file system只读问题</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/dpkg-issues/</link>
+      <pubDate>Fri, 10 Apr 2020 02:10:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/dpkg-issues/</guid>
+      <description>info问题 E: Sub-process /usr/bin/dpkg returned an error code (1) 解决办法：
+cd /var/lib/dpkg sudo mv info info.bak sudo mkdir info 文件系统只读问题 W: Problem unlinking the file /var/cache/apt/pkgcache.bin - RemoveCaches (30: Read-only file system) sudo fsck -Af sudo reboot </description>
+    </item>
+    
+    <item>
+      <title>使用go-bindata</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/go-data-using/</link>
+      <pubDate>Fri, 10 Apr 2020 02:10:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/go-data-using/</guid>
+      <description>安装 $ go get -u github.com/go-bindata/go-bindata/... generation bindata.go $ cd ~/go/src/github.com/xiaobin80/go-micro-services/ $ go-bindata data/... $ mv bindata.go ./data/ 修改包名 package main &amp;mdash;》
+package xxx  此例xxx为data。
+ Reference   go-bindata - github
+  go-micro-services
+  </description>
+    </item>
+    
+    <item>
+      <title>安装MySQL 8.0</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/mysql80-install/</link>
+      <pubDate>Fri, 10 Apr 2020 02:08:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/mysql80-install/</guid>
+      <description>  安装方式：绿色安装
+  OS: Windows
+   大部分过程同《安装MySQL 5.7》！
+ utf8的不同 [MY-013242] [Server] --character-set-server: &amp;#39;utf8&amp;#39; is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous. mysql5 character-set-server=utf8 mysql8 character-set-server=utf8mb4 验证不同  注意：从mysql8.0.4以上，我们将无法直接使用phpMyAdmin来登录！
+ mysql5 mysql_native_password mysql8 caching_sha2_password File my.ini
+[mysqld] datadir=E:/progFiles/mysql-8.0-winx64/data port=3306 innodb_buffer_pool_size=1012M character-set-server=utf8mb4 [client] port=3306 plugin-dir=E:/progFiles/mysql-8.0-winx64/lib/plugin </description>
+    </item>
+    
+    <item>
+      <title>多服务器ZooKeeper安装</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_zookeeper/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_zookeeper/</guid>
+      <description>JDK install see 设置OpenJDK
+ Stage I 1. 《sudo - CentOS》 2. FQDN #127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomain4 #::1 localhost localhost.localdomain localhost6 localhost6.localdomain6 192.168.3.137 tdtc101 192.168.3.138 tdtc102 192.168.3.139 tdtc103 3. 《ssh相互免密》 Stage II 1. unzip $wget https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/zookeeper-3.8.0/apache-zookeeper-3.8.0-bin.tar.gz --no-check-certificate $mkdir -p ~/app/zookeeper $tar xzvf apache-zookeeper-3.8.0-bin.tar.gz -C ~/app/zookeeper $mv ~/app/zookeeper/apache-zookeeper-3.8.0-bin ~/app/zookeeper/3.8.0 2. zk home $sudo vi /etc/bashrc export ZK_HOME=/home/tdtc/app/zookeeper/3.8.0 export PATH=$PATH:$ZK_HOME/bin Stage III 1. zoo.cfg Add the following configuration, and the other options default.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Grid system"/>
+<meta name="twitter:description" content="Bootstrap3"/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Grid system &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/css-bootstrap-grid/" />
+
+    
+        
+    
+
+    
+    <meta property="og:description" content="Bootstrap3" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2020-05-15T14:08:08&#43;08:00" />
+
+    
+    
+
+    <title>Grid system &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="Bootstrap3" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.96.0" />
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/css-bootstrap-grid/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null 
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "Grid system",
+    "name": "Grid system",
+    "wordCount":  32 ,
+    "timeRequired": "PT1M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/post/css-bootstrap-grid/",
+    "datePublished": "2020-05-15T14:08Z",
+    "dateModified": "2020-05-15T14:08Z",
+    
+    
+    "description": "Bootstrap3",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/post/css-bootstrap-grid/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button icon-feed" href="/csdn/index.xml" >&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">Grid system</h1>
+        <small>Bootstrap3</small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2020-05-15T14:08:08&#43;08:00">
+            May 15, 2020
+          </time>
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <blockquote>
+<p>在V2.3.2中，栅格系统默认是不支持移动设备的；  <br>
+但V3.0版本，已经默认支持移动设备。</p>
+</blockquote>
+<h1 id="v2">v2</h1>
+<p><a href="https://v2.bootcss.com/scaffolding.html#gridSystem">Bootstrap(v2)</a> 默认的栅格系统为12列 ，形成一个940px宽的容器，默认没有启用 &ldquo;<a href="http://v2.bootcss.com/scaffolding.html#responsive">响应式布局特性</a>&rdquo; 。 <br>
+如果加入响应式布局CSS文件，栅格系统会自动根据可视窗口的宽度从724px到1170px进行动态调整。 <br>
+在可视窗口低于767px宽的情况下，列将不再固定并且会在垂直方向堆叠。</p>
+<p>V2.3.2的示例：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;row&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;span4&#34;</span><span style="color:#f92672">&gt;</span>...<span style="color:#f92672">&lt;/div&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;span8&#34;</span><span style="color:#f92672">&gt;</span>...<span style="color:#f92672">&lt;/div&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/div&gt;</span>
+</span></span></code></pre></div><h1 id="v3">v3</h1>
+<blockquote>
+<p>class变化：.span* -〉.col-md-*</p>
+</blockquote>
+<p><a href="http://v3.bootcss.com/css/#grid">Bootstrap(v3)</a> 内置了一套响应式、移动设备优先的流式栅格系统，随着屏幕设备或视口（viewport）尺寸的增加，</p>
+<p>系统会自动分为最多12列。它包含了易于使用的<a href="https://v3.bootcss.com/css/#grid-example-basic">预定义classe</a>，还有强大的<a href="https://v3.bootcss.com/css/#grid-less">mixin用于生成更具语义的布局</a>。</p>
+<p>V3.0的示例：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;row&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;col-md-4&#34;</span><span style="color:#f92672">&gt;</span>...<span style="color:#f92672">&lt;/div&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;col-md-8&#34;</span><span style="color:#f92672">&gt;</span>...<span style="color:#f92672">&lt;/div&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/div&gt;</span>
+</span></span></code></pre></div>
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Grid%20system&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fcss-bootstrap-grid%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fcss-bootstrap-grid%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fcss-bootstrap-grid%2f&amp;description=Grid%20system"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fcss-bootstrap-grid%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_data_transmission/">
+          <section class="post">
+              <h2>Linux与Windows互传数据</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/dev_wsl_ubuntu/">
+          <section class="post">
+              <h2>使用WSL在Windows 10</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>
+

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Posts"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/" />
+
+    
+        
+    
+
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="" />
+    
+
+    <title>Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+        <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+    
+    <meta name="generator" content="Hugo 0.96.0" />
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/"
+    },
+    "description":  null 
+}
+  </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/post/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+	<header class="main-header tag-head no-cover">
+
+    <nav class="main-nav overlay clearfix">
+      
+      
+        
+          <a class="menu-button icon-feed" href='/csdn/post/index.xml'>&nbsp;&nbsp;Subscribe</a>
+        
+      
+    </nav>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            <h1 class="page-title">Posts</h1>
+            <h2 class="page-description">
+                
+            </h2>
+        </div>
+    </div>
+</header>
+
+<main class="content" role="main">
+    
+
+	<div class="extra-pagination inner">
+    <nav class="pagination" role="navigation">
+	
+	    <a class="newer-posts" href="/csdn/post/page/7/">&larr; Newer Posts</a>
+	
+	<span class="page-number">Page 8 of 12</span>
+	
+	    <a class="older-posts" href="/csdn/post/page/9/">Older Posts &rarr;</a>
+	
+</nav>
+
+	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_gnupg/">GNU PG</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>The GNU Privacy Guard  Note: normal user login.
+ 1. install $yum install gnupg $yum install rng-tools 2. gen key $gpg --gen-key Press Key: O 输入完，按“Tab”切换到“OK”,按回车。 再输入一次， 3. gen revoke $gpg gen-revoke 7209DBAD Press Key: y 4. encrypt file(password) 1) password-file $vi love_shidie-password  密码文件(明文密码)
+ thisispassword 2) gen gpg file  Gen file: love_shidie-password.gpg
+ $gpg -e -r veic_2005@163.com love_shidie-password Reference  How to use Mutt email client with encrypted passwords   <a class="read-more" href="/csdn/post/ops_gnupg/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-15T22:08:08&#43;08:00">
+            15 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_mail_msmtp/">mail的发送</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>使用msmtp实现 installation down $wget https://marlam.de/msmtp/releases/msmtp-1.6.8.tar.xz install $xz -d msmtp-1.6.8.tar.xz$tar xvf msmtp-1.6.8.tar$cd msmtp-1.6.8$./configure --prefix=/user/local/msmtp$make Then install using root
+$make install configuration  需要在user的根目录建立一个新文件：.msmtprc
+ $cd ~ $vi .msmtprc $chmod 600 .msmtprc   .msmtprc
+  defaults  logfile ~/.msmtp/msmtp.log  # The SMTP server of the provider. account love_shidie host smtp.163.com from love_shidie@163.com auth login user love_shidie@163.com passwordeval gpg --no-tty -q -d ~/.msmtp/love_shidie-password.gpg  # Set a default account account default: love_shidie r+w $chmod 600 . <a class="read-more" href="/csdn/post/ops_mail_msmtp/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-15T21:08:08&#43;08:00">
+            15 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_spark_cluster/">spark cluster</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>OS: CentOS7
+ Prepare  已经安装了《ZooKeeper multi-server install》 已经安装了《hadoop - cluster》  Stage I: Installation  spark安装 - CentOS Firewall设置请参见《firewall-soft list(port)》 设置OpenJDK请参见《设置OpenJDK - CentOS》 set up   详见Reference[4]
+ Stage II: Run 1. ZK zkServer.sh start 2. Hadoop 1) HDFS see 《hadoop - cluster - 3.1 HDFS》
+2) YARN see 《hadoop - cluster - 3.2 YARN》
+3. Spark  （server3，4）
+ $SPARK_HOME/sbin/start-all.sh 1) other site $SPARK_HOME/sbin/start-master.sh Web: http://192.168.42.109:8082/ <a class="read-more" href="/csdn/post/ops_spark_cluster/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-15T02:08:08&#43;08:00">
+            15 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_spark_config/">spark配置</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>1. spark env  spark-env.sh
+ 1) hadoop path export HADOOP_HOME=/home/tdtc/app/hadoop/2.7.7 export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop 2) spark worker 使用的内存和cpu core数
+export SPARK_WORKER_MEMORY=128m export SPARK_WORKER_CORES=1 3) recovery(zookeeper) export SPARK_DAEMON_JAVA_OPTS=&#34;-Dspark.deploy.recoveryMode=ZOOKEEPER -Dspark.deploy.zookeeper.url=tdtc201:2181,tdtc202:2181,tdtc203:2181,tdtc204:2181 -Dspark.deploy.zookeeper.dir=/spark2&#34; recoveryMode spark.deploy.recoveryMode=ZOOKEEPER url spark.deploy.zookeeper.url=tdtc201:2181,tdtc202:2181,tdtc203:2181,tdtc204:2181 directory 储存在zk中的位置
+spark.deploy.zookeeper.dir=/spark2 2. slaves  注意：有几个YARN，就设置几个slaves！！！
+ ../conf/slaves
+  tdtc203 tdtc204 Reference  how-to-set-up-spark-with-zookeeper-for-ha   <a class="read-more" href="/csdn/post/ops_spark_config/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-15T01:08:08&#43;08:00">
+            15 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_selinux/">SELinux的开启/关闭</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p> (root权限)
+ SELinux(Security-Enhanced Linux) 是美国国家安全局（NSA）对于强制访问控制的实现，是 Linux历史上最杰出的新安全子系统。
+1. 临时  临时的意思就是宽容模式(0)强制模式(1)与的切换 默认是：强制模式
+  强制模式  $setenforce 1  宽容模式 临时关闭  $setenforce 0 2. 永久  /etc/selinux/config
+  开启  SELINUX=enforcing  关闭  SELINUX=disabled 3. 查看SELinux的工作模式 getenforce  <a class="read-more" href="/csdn/post/ops_selinux/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-15T00:20:08&#43;08:00">
+            15 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_useradd_centos/">增加用户</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>ali云服务器
+ 1. User Add and Set password 1) add user useradd	site_user 2) set passwd passwd -x 180 site_user 3) set home_dir usermod -d /home/fdn site_user 2. assigning permissions  如果多个目录需要设置，则多次重复&quot;(2)设置&quot;即可。
+  文件系统是否支持acl
+ df -T | awk &#39;{print $1,$2,$NF}&#39; | grep &#34;^/dev&#34; grep -i acl /boot/config*  分区是否支持acl
+ 注意：在ali服务器上是vda1。
+  tune2fs -l /dev/vda1 | grep acl 1) 查看  目录的acl设置情况。
+ getfacl	/home/fdn 2) 设置  设置指定目录的acl。 <a class="read-more" href="/csdn/post/ops_useradd_centos/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-15T00:18:08&#43;08:00">
+            15 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_spark_centos/">spark安装</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Spark：v2.4
+ 一、基础软件 1. R-lang sudo yum -y install epel-release sudo yum install R  注意：如果Java没有安装，会附带着安装OpenJDK。
+ 2. Scala wget https://downloads.lightbend.com/scala/2.12.8/scala-2.12.8.tgz tar xvf scala-2.12.8.tgz sudo mv scala-2.12.8 /usr/lib sudo ln -s /usr/lib/scala-2.12.8 /usr/lib/scala 1) add path $vi ~/.bashrc PATH=$PATH:/usr/lib/scala/bin 二、Spark 1. down &amp; unzip  v2.4.1
+ mkdir -p ~/app/spark tar zxvf spark-2.4.1-bin-hadoop2.7.tgz -C ~/app/spark mv ~/app/spark/spark-2.4.1-bin-hadoop2.7 ~/app/spark/2.4.1 2. test ./bin/spark-shell --master local[2] input:
+for (i &lt;- 1 to 3; j &lt;- 1 to 3 if i ! <a class="read-more" href="/csdn/post/ops_spark_centos/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-15T00:08:08&#43;08:00">
+            15 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_hadoop_cluster/">Hadoop - cluster</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Prepare     server1 server2 server3 server4     NameNode y y     DataNode   y y y   ResourceManager     y y   NodeManager y y y y   Zookeeper y y y y   JournalNode y y y    ZK-FC y y       JobHistor y          Server Name IP Host Name     server1 192. <a class="read-more" href="/csdn/post/ops_hadoop_cluster/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-14T16:08:08&#43;08:00">
+            14 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_hadoop_cluster_yarn/">Hadoop配置 - yarn</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>(../etc/hadoop/yarn-site.xml)
+ 1. ResourceManager HA &lt;property&gt;  &lt;name&gt;yarn.resourcemanager.ha.enabled&lt;/name&gt;  &lt;value&gt;true&lt;/value&gt; &lt;/property&gt; &lt;property&gt;  &lt;name&gt;yarn.resourcemanager.cluster-id&lt;/name&gt;  &lt;value&gt;cluster1&lt;/value&gt; &lt;/property&gt; &lt;property&gt;  &lt;name&gt;yarn.resourcemanager.ha.rm-ids&lt;/name&gt;  &lt;value&gt;rm1,rm2&lt;/value&gt; &lt;/property&gt; &lt;property&gt;  &lt;name&gt;yarn.resourcemanager.hostname.rm1&lt;/name&gt;  &lt;value&gt;tdtc203&lt;/value&gt; &lt;/property&gt; &lt;property&gt;  &lt;name&gt;yarn.resourcemanager.hostname.rm2&lt;/name&gt;  &lt;value&gt;tdtc204&lt;/value&gt; &lt;/property&gt; &lt;property&gt;  &lt;name&gt;yarn.resourcemanager.webapp.address.rm1&lt;/name&gt;  &lt;value&gt;tdtc203:8088&lt;/value&gt; &lt;/property&gt; &lt;property&gt;  &lt;name&gt;yarn.resourcemanager.webapp.address.rm2&lt;/name&gt;  &lt;value&gt;tdtc204:8088&lt;/value&gt; &lt;/property&gt; &lt;property&gt;  &lt;name&gt;yarn.resourcemanager.zk-address&lt;/name&gt;  &lt;value&gt;tdtc201:2181,tdtc202:2181,tdtc203:2181&lt;/value&gt; &lt;/property&gt; 2. Resource Manager Restart  see Reference[3]
+ &lt;property&gt;  &lt;name&gt;yarn.resourcemanager.recovery.enabled&lt;/name&gt;  &lt;value&gt;true&lt;/value&gt; &lt;/property&gt; 1) zookeeper &lt;property&gt;  &lt;name&gt;yarn. <a class="read-more" href="/csdn/post/ops_hadoop_cluster_yarn/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-14T10:08:08&#43;08:00">
+            14 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_hadoop_cluster_hdfs/">Hadoop配置 - hdfs</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>(../etc/hadoop/hdfs-site.xml)
+ 1. name services &lt;property&gt;  &lt;name&gt;dfs.nameservices&lt;/name&gt;  &lt;value&gt;mycluster&lt;/value&gt; &lt;/property&gt; 1) name node &lt;property&gt;  &lt;name&gt;dfs.ha.namenodes.mycluster&lt;/name&gt;  &lt;value&gt;nn1,nn2&lt;/value&gt; &lt;/property&gt; 2) RPC(name node) &lt;property&gt;  &lt;name&gt;dfs.namenode.rpc-address.mycluster.nn1&lt;/name&gt;  &lt;value&gt;tdtc201:8020&lt;/value&gt; &lt;/property&gt; &lt;property&gt;  &lt;name&gt;dfs.namenode.rpc-address.mycluster.nn2&lt;/name&gt;  &lt;value&gt;tdtc202:8020&lt;/value&gt; &lt;/property&gt; 3) Http(name node) &lt;property&gt;  &lt;name&gt;dfs.namenode.http-address.mycluster.nn1&lt;/name&gt;  &lt;value&gt;tdtc201:50070&lt;/value&gt; &lt;/property&gt; &lt;property&gt;  &lt;name&gt;dfs.namenode.http-address.mycluster.nn2&lt;/name&gt;  &lt;value&gt;tdtc202:50070&lt;/value&gt; &lt;/property&gt; 2. JournalNode 1) quorum journal manager &lt;!-- Journal Node(QJM) --&gt; &lt;property&gt;  &lt;name&gt;dfs.namenode.shared.edits.dir&lt;/name&gt;  &lt;value&gt;qjournal://tdtc201:8485;tdtc202:8485;tdtc203:8485/mycluster&lt;/value&gt; &lt;/property&gt; local &lt;property&gt;  &lt;name&gt;dfs. <a class="read-more" href="/csdn/post/ops_hadoop_cluster_hdfs/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-14T09:08:08&#43;08:00">
+            14 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+
+	<nav class="pagination" role="navigation">
+	
+	    <a class="newer-posts" href="/csdn/post/page/7/">&larr; Newer Posts</a>
+	
+	<span class="page-number">Page 8 of 12</span>
+	
+	    <a class="older-posts" href="/csdn/post/page/9/">Older Posts &rarr;</a>
+	
+</nav>
+
+</main>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>

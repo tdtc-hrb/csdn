@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="微信小程序简介"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="微信小程序简介 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/small-site/" />
+
+    
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2022-02-10T02:11:39&#43;08:00" />
+
+    
+    
+
+    <title>微信小程序简介 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content=" 注册及其他说明 基于NW.js的开发工具  微信基本文件  .wxss 等同css文件 .wxml 布局文件 .json 管理文件 .js 主逻辑文件  文件说明  以下基于JS，而不是TypeScript！
+ 一、pages 首页 index目录
+二、项目文件 app 除了布局文件外，包括微信小程序的3个基本文件。" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.96.0" />
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/small-site/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null 
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "微信小程序简介",
+    "name": "微信小程序简介",
+    "wordCount":  42 ,
+    "timeRequired": "PT1M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/post/small-site/",
+    "datePublished": "2022-02-10T02:11Z",
+    "dateModified": "2022-02-10T02:11Z",
+    
+    
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/post/small-site/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button icon-feed" href="/csdn/index.xml" >&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">微信小程序简介</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2022-02-10T02:11:39&#43;08:00">
+            Feb 10, 2022
+          </time>
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <ul>
+<li><a href="https://www.jianshu.com/p/1eb4885a4cc1">注册及其他说明</a></li>
+<li>基于<a href="https://nwjs.io/">NW.js</a>的<a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html">开发工具</a></li>
+</ul>
+<h1 id="微信基本文件">微信基本文件</h1>
+<ul>
+<li>.wxss
+等同css文件</li>
+<li>.wxml
+布局文件</li>
+<li>.json
+管理文件</li>
+<li>.js
+主逻辑文件</li>
+</ul>
+<h1 id="文件说明">文件说明</h1>
+<blockquote>
+<p>以下基于JS，而不是TypeScript！</p>
+</blockquote>
+<h2 id="一pages">一、pages</h2>
+<h3 id="首页">首页</h3>
+<p>index目录</p>
+<h2 id="二项目文件">二、项目文件</h2>
+<h3 id="app">app</h3>
+<p>除了布局文件外，包括微信小程序的3个基本文件。</p>
+<h3 id="project">project</h3>
+<p>项目配置</p>
+<h3 id="sitemap">sitemap</h3>
+<p>站点设置</p>
+<h1 id="hdd600---133httpswwwc996meforumphpmodviewthreadtid586211"><a href="https://www.c996.me/forum.php?mod=viewthread&amp;tid=586211">hdd600 - 133</a></h1>
+<ul>
+<li><a href="https://www.javbus.com/STARS-081">STARS-081</a></li>
+</ul>
+<pre tabindex="0"><code>magnet:?xt=urn:btih:04cfca3dd7f13bab4c40a16263faa1c47ccf5f6b&amp;dn=STARS-081
+</code></pre><ul>
+<li><a href="https://www.javbus.com/STARS-118">STARS-118</a></li>
+</ul>
+<pre tabindex="0"><code>magnet:?xt=urn:btih:cf823c824045d1d0a1e1e805c3b1312ccc012209&amp;dn=STARS-118
+</code></pre><ul>
+<li><a href="https://www.javbus.com/STARS-134">STARS-134</a></li>
+</ul>
+<pre tabindex="0"><code>magnet:?xt=urn:btih:17cff784b4b5d45044d0d1afd091ee74542ebd58&amp;dn=STARS-134
+</code></pre><ul>
+<li><a href="https://www.javbus.com/STARS-209">STARS-209</a></li>
+</ul>
+<pre tabindex="0"><code>magnet:?xt=urn:btih:056611d3df3142bcede86d5cbf85b6a548e8b415&amp;dn=STARS-209
+</code></pre><ul>
+<li><a href="https://www.javbus.com/STARS-249">STARS-249</a></li>
+</ul>
+<pre tabindex="0"><code>magnet:?xt=urn:btih:257719ffba826b46cbaf80cd5b04663f69198b45&amp;dn=STARS-249
+</code></pre><ul>
+<li><a href="https://www.javbus.com/STAR-927">STAR-927</a></li>
+</ul>
+<pre tabindex="0"><code>magnet:?xt=urn:btih:ee3cbf70c1f51ec6f04841c66918f4f6593eddae&amp;dn=STAR-927
+</code></pre><ul>
+<li><a href="https://www.javbus.com/STAR-971">STAR-971</a></li>
+</ul>
+<pre tabindex="0"><code>magnet:?xt=urn:btih:a980986f4a6725296dffb48f7cff4c2df9cc5507&amp;dn=STAR-971
+</code></pre><ul>
+<li><a href="https://www.javbus.com/STARS-035">STARS-035</a></li>
+</ul>
+<pre tabindex="0"><code>magnet:?xt=urn:btih:c19a77bc8956841b2f0dd362f9ed0074754e9106&amp;dn=STARS-035
+</code></pre>
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=%e5%be%ae%e4%bf%a1%e5%b0%8f%e7%a8%8b%e5%ba%8f%e7%ae%80%e4%bb%8b&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fsmall-site%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fsmall-site%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fsmall-site%2f&amp;description=%e5%be%ae%e4%bf%a1%e5%b0%8f%e7%a8%8b%e5%ba%8f%e7%ae%80%e4%bb%8b"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fsmall-site%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_tomcat/">
+          <section class="post">
+              <h2>Tomcat安装</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/mysql57-win/">
+          <section class="post">
+              <h2>安装配置MySQL 5.7</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>
+
