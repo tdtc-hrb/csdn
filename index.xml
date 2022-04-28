@@ -178,16 +178,6 @@ git commit --amend About：
     </item>
     
     <item>
-      <title>多服务器ZooKeeper安装</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_zookeeper/</link>
-      <pubDate>Wed, 14 Jul 2021 01:08:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_zookeeper/</guid>
-      <description>JDK install see 设置OpenJDK
- Stage I 1. 《sudo - CentOS》 2. FQDN #127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomain4 #::1 localhost localhost.localdomain localhost6 localhost6.localdomain6 192.168.0.137 tdtc101 192.168.0.138 tdtc102 192.168.0.139 tdtc103 3. 《ssh相互免密》 Stage II 1. unzip $wget https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/zookeeper-3.6.3/apache-zookeeper-3.6.3-bin.tar.gz $mkdir -p ~/app/zookeeper $tar xzvf apache-zookeeper-3.6.3-bin.tar.gz -C ~/app/zookeeper $mv ~/app/zookeeper/apache-zookeeper-3.6.3-bin ~/app/zookeeper/3.6.3 2. zk home $sudo vi /etc/bashrc export ZK_HOME=/home/tdtc/app/zookeeper/3.6.3 export PATH=$PATH:$ZK_HOME/bin Stage III 1. zoo.cfg Add the following configuration, and the other options default.</description>
-    </item>
-    
-    <item>
       <title>apt的安装问题</title>
       <link>https://tdtc-hrb.github.io/csdn/post/apt-oper-ubuntu/</link>
       <pubDate>Thu, 08 Jul 2021 02:20:39 +0800</pubDate>
@@ -250,6 +240,16 @@ Template  Project type  Executable: Hello World C++ Project  Toolchains  cygwin 
 10进制： 14+16+1536 = 1566
 code 程序的需要两部分组成：
  权值计算 16的几次方，power(16, x)  unsigned long power(int a, int b) {  int i;  unsigned long result = 1;  for(i = 0; i &amp;lt; b; i++)  result = result * a;   return result; }; 单16进制值转10进制值 例如：如果是F，则表示15  switch (ch)  {  case &amp;#39;0&amp;#39;:  iCh = 0;  break;  case &amp;#39;1&amp;#39;:  iCh = 1;  break;  case &amp;#39;2&amp;#39;:  iCh = 2;  break;  case &amp;#39;3&amp;#39;:  iCh = 3;  break;  case &amp;#39;4&amp;#39;:  iCh = 4;  break;  case &amp;#39;5&amp;#39;:  iCh = 5;  break;  case &amp;#39;6&amp;#39;:  iCh = 6;  break;  case &amp;#39;7&amp;#39;:  iCh = 7;  break;  case &amp;#39;8&amp;#39;:  iCh = 8;  break;  case &amp;#39;9&amp;#39;:  iCh = 9;  break;  case &amp;#39;a&amp;#39;:  iCh = 10;  break;  case &amp;#39;b&amp;#39;:  iCh = 11;  break;  case &amp;#39;c&amp;#39;:  iCh = 12;  break;  case &amp;#39;d&amp;#39;:  iCh = 13;  break;  case &amp;#39;e&amp;#39;:  iCh = 14;  break;  case &amp;#39;f&amp;#39;:  iCh = 15;  break;   default:  iCh = -1;  break;  } 为了满足，把所有输入转换为小写字母，可以使用系统函数tolower()或者我们自己写的函数toLower()</description>
+    </item>
+    
+    <item>
+      <title>多服务器ZooKeeper安装</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_zookeeper/</link>
+      <pubDate>Wed, 14 Apr 2021 01:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_zookeeper/</guid>
+      <description>JDK install see 设置OpenJDK
+ Stage I 1. 《sudo - CentOS》 2. FQDN #127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomain4 #::1 localhost localhost.localdomain localhost6 localhost6.localdomain6 192.168.0.137 tdtc101 192.168.0.138 tdtc102 192.168.0.139 tdtc103 3. 《ssh相互免密》 Stage II 1. unzip $wget https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/zookeeper-3.6.3/apache-zookeeper-3.6.3-bin.tar.gz --no-check-certificate $mkdir -p ~/app/zookeeper $tar xzvf apache-zookeeper-3.6.3-bin.tar.gz -C ~/app/zookeeper $mv ~/app/zookeeper/apache-zookeeper-3.6.3-bin ~/app/zookeeper/3.6.3 2. zk home $sudo vi /etc/bashrc export ZK_HOME=/home/tdtc/app/zookeeper/3.6.3 export PATH=$PATH:$ZK_HOME/bin Stage III 1. zoo.cfg Add the following configuration, and the other options default.</description>
     </item>
     
     <item>
