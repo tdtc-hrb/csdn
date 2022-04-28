@@ -20,16 +20,6 @@ ruby gems 安装指定版本:V1.</description>
     </item>
     
     <item>
-      <title>多服务器ZooKeeper安装</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_zookeeper/</link>
-      <pubDate>Tue, 12 Apr 2022 17:08:08 -0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_zookeeper/</guid>
-      <description>JDK install see 设置OpenJDK
- Stage I 1. 《sudo - CentOS》 2. FQDN #127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomain4 #::1 localhost localhost.localdomain localhost6 localhost6.localdomain6 192.168.3.137 tdtc101 192.168.3.138 tdtc102 192.168.3.139 tdtc103 3. 《ssh相互免密》 Stage II 1. unzip $wget https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/zookeeper-3.7.0/apache-zookeeper-3.7.0-bin.tar.gz --no-check-certificate $mkdir -p ~/app/zookeeper $tar xzvf apache-zookeeper-3.7.0-bin.tar.gz -C ~/app/zookeeper $mv ~/app/zookeeper/apache-zookeeper-3.7.0-bin ~/app/zookeeper/3.7.0 2. zk home $sudo vi /etc/bashrc export ZK_HOME=/home/tdtc/app/zookeeper/3.7.0 export PATH=$PATH:$ZK_HOME/bin Stage III 1. zoo.cfg Add the following configuration, and the other options default.</description>
-    </item>
-    
-    <item>
       <title>Linux修改网卡为固定IP</title>
       <link>https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/</link>
       <pubDate>Wed, 13 Apr 2022 08:38:08 +0800</pubDate>
@@ -185,6 +175,16 @@ git commit --amend About：
       <description>本文适用范围：
  WSL1(Ubuntu) 开发环境 Ubuntu 生产环境  1. 安装 推荐使用PPA模式安装redis-server
 1.1 增加PPA sudo apt-add-repository ppa:chris-lea/redis-server sudo apt-get update install sudo apt-get install redis-server 1.2 配置 警告清除 Memory WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add &amp;#39;vm.overcommit_memory = 1&amp;#39; to /etc/sysctl.conf and then reboot or run the command &amp;#39;sysctl vm.overcommit_memory=1&amp;#39; for this to take effect. A: add vm.overcommit_memory=1 edit sysctl.conf:</description>
+    </item>
+    
+    <item>
+      <title>多服务器ZooKeeper安装</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_zookeeper/</link>
+      <pubDate>Wed, 14 Jul 2021 01:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_zookeeper/</guid>
+      <description>JDK install see 设置OpenJDK
+ Stage I 1. 《sudo - CentOS》 2. FQDN #127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomain4 #::1 localhost localhost.localdomain localhost6 localhost6.localdomain6 192.168.0.137 tdtc101 192.168.0.138 tdtc102 192.168.0.139 tdtc103 3. 《ssh相互免密》 Stage II 1. unzip $wget https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/zookeeper-3.6.3/apache-zookeeper-3.6.3-bin.tar.gz $mkdir -p ~/app/zookeeper $tar xzvf apache-zookeeper-3.6.3-bin.tar.gz -C ~/app/zookeeper $mv ~/app/zookeeper/apache-zookeeper-3.6.3-bin ~/app/zookeeper/3.6.3 2. zk home $sudo vi /etc/bashrc export ZK_HOME=/home/tdtc/app/zookeeper/3.6.3 export PATH=$PATH:$ZK_HOME/bin Stage III 1. zoo.cfg Add the following configuration, and the other options default.</description>
     </item>
     
     <item>

@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="ZooKeeper multi-server install" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2022-04-12T17:08:08-08:00" />
+    <meta property="article:published_time" content="2021-07-14T01:08:08&#43;08:00" />
 
     
     
@@ -92,15 +92,15 @@
     },
     "headline": "多服务器ZooKeeper安装",
     "name": "多服务器ZooKeeper安装",
-    "wordCount":  141 ,
+    "wordCount":  140 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/ops_zookeeper/",
-    "datePublished": "2022-04-12T17:08Z",
-    "dateModified": "2022-04-12T17:08Z",
+    "datePublished": "2021-07-14T01:08Z",
+    "dateModified": "2021-07-14T01:08Z",
     
     
     "description": "ZooKeeper multi-server install",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2022-04-12T17:08:08-08:00">
-            Apr 12, 2022
+          <time class="post-date" datetime="2021-07-14T01:08:08&#43;08:00">
+            Jul 14, 2021
           </time>
         
          
@@ -185,19 +185,19 @@
 <h2 id="2-fqdn">2. FQDN</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#::1         localhost localhost.localdomain localhost6 localhost6.localdomain6</span>
-</span></span><span style="display:flex;"><span>192.168.3.137 tdtc101
-</span></span><span style="display:flex;"><span>192.168.3.138 tdtc102
-</span></span><span style="display:flex;"><span>192.168.3.139 tdtc103
+</span></span><span style="display:flex;"><span>192.168.0.137 tdtc101
+</span></span><span style="display:flex;"><span>192.168.0.138 tdtc102
+</span></span><span style="display:flex;"><span>192.168.0.139 tdtc103
 </span></span></code></pre></div><h2 id="3-ssh相互免密httpstdtc-hrbgithubiocsdnpostops_ssh_without_password">3. 《<a href="https://tdtc-hrb.github.io/csdn/post/ops_ssh_without_password/">ssh相互免密</a>》</h2>
 <h1 id="stage-ii">Stage II</h1>
 <h2 id="1-unzip">1. unzip</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/zookeeper-3.7.0/apache-zookeeper-3.7.0-bin.tar.gz --no-check-certificate
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/zookeeper-3.6.3/apache-zookeeper-3.6.3-bin.tar.gz
 </span></span><span style="display:flex;"><span>$mkdir -p ~/app/zookeeper
-</span></span><span style="display:flex;"><span>$tar xzvf apache-zookeeper-3.7.0-bin.tar.gz -C ~/app/zookeeper
-</span></span><span style="display:flex;"><span>$mv ~/app/zookeeper/apache-zookeeper-3.7.0-bin ~/app/zookeeper/3.7.0
+</span></span><span style="display:flex;"><span>$tar xzvf apache-zookeeper-3.6.3-bin.tar.gz -C ~/app/zookeeper
+</span></span><span style="display:flex;"><span>$mv ~/app/zookeeper/apache-zookeeper-3.6.3-bin ~/app/zookeeper/3.6.3
 </span></span></code></pre></div><h2 id="2-zk-home">2. zk home</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo vi /etc/bashrc
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export ZK_HOME<span style="color:#f92672">=</span>/home/tdtc/app/zookeeper/3.7.0
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export ZK_HOME<span style="color:#f92672">=</span>/home/tdtc/app/zookeeper/3.6.3
 </span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span>$PATH:$ZK_HOME/bin
 </span></span></code></pre></div><h1 id="stage-iii">Stage III</h1>
 <h2 id="1-zoocfg">1. zoo.cfg</h2>
@@ -212,9 +212,9 @@
 <blockquote>
 <p>Note: Windows CMD</p>
 </blockquote>
-<pre tabindex="0"><code class="language-CMD" data-lang="CMD">pscp d:\zk-clu\zoo.cfg tdtc@192.168.3.107:/home/tdtc/app/zookeeper/3.7.0/conf
-pscp d:\zk-clu\zoo.cfg tdtc@192.168.3.108:/home/tdtc/app/zookeeper/3.7.0/conf
-pscp d:\zk-clu\zoo.cfg tdtc@192.168.3.109:/home/tdtc/app/zookeeper/3.7.0/conf
+<pre tabindex="0"><code class="language-CMD" data-lang="CMD">pscp d:\zk-clu\zoo.cfg tdtc@192.168.0.107:/home/tdtc/app/zookeeper/3.6.3/conf
+pscp d:\zk-clu\zoo.cfg tdtc@192.168.0.108:/home/tdtc/app/zookeeper/3.6.3/conf
+pscp d:\zk-clu\zoo.cfg tdtc@192.168.0.109:/home/tdtc/app/zookeeper/3.6.3/conf
 </code></pre><h2 id="2-zk-id">2. zk id</h2>
 <blockquote>
 <p>create a file named myid under the data directory</p>
@@ -234,7 +234,7 @@ pscp d:\zk-clu\zoo.cfg tdtc@192.168.3.109:/home/tdtc/app/zookeeper/3.7.0/conf
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ae81ff">3</span>
 </span></span></code></pre></div><h1 id="stage-iv">Stage IV</h1>
 <h2 id="0-fw-setup">0. fw setup</h2>
-<p><a href="https://tdtc-hrb.github.io/csdn/post/ops_firewall">soft-list(port) - firewall</a></p>
+<p><a href="https://tdtc-hrb.github.io/csdn/post/ops_firewall.md">soft-list(port) - firewall</a></p>
 <h2 id="1-run">1. run</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$zkServer.sh start
 </span></span></code></pre></div><h2 id="2-status">2. status</h2>
@@ -295,17 +295,17 @@ pscp d:\zk-clu\zoo.cfg tdtc@192.168.3.109:/home/tdtc/app/zookeeper/3.7.0/conf
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_network_proxy/">
+      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_dc_redis_ubuntu/">
           <section class="post">
-              <h2>设置proxy</h2>
+              <h2>安装redis-server</h2>
               
           </section>
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_network_adapter_linux/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/apt-oper-ubuntu/">
           <section class="post">
-              <h2>Linux修改网卡为固定IP</h2>
+              <h2>apt的安装问题</h2>
           </section>
       </a>
   

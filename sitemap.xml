@@ -11,9 +11,6 @@
     <loc>https://tdtc-hrb.github.io/csdn/</loc>
     <lastmod>2022-04-17T14:08:08+08:00</lastmod>
   </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/ops_zookeeper/</loc>
-    <lastmod>2022-04-12T17:08:08-08:00</lastmod>
-  </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/</loc>
     <lastmod>2022-04-13T08:38:08+08:00</lastmod>
   </url><url>
@@ -49,6 +46,9 @@
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/ops_dc_redis_ubuntu/</loc>
     <lastmod>2021-09-08T08:08:08+08:00</lastmod>
+  </url><url>
+    <loc>https://tdtc-hrb.github.io/csdn/post/ops_zookeeper/</loc>
+    <lastmod>2021-07-14T01:08:08+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/apt-oper-ubuntu/</loc>
     <lastmod>2021-07-08T02:20:39+08:00</lastmod>
