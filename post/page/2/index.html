@@ -164,6 +164,31 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql57-win/">安装配置MySQL 5.7</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>一、配置和安装 ini配置详见附录
+预配置 设置环境变量 名称：MYSQL57_HOME 赋值：D:\progFiles\mysql-5.7 init data %MYSQL57_HOME%\bin\mysqld --initialize-insecure --console 注册/注销服务 注册 多个版本的MySQL运行：
+%MYSQL57_HOME%\bin\mysqld --install MySQL57 --defaults-file=&#34;D:\progFiles\mysql-5.7\my.ini&#34; 注销 sc delete mysql57 Enable SSL Connections for MySQL 注意： 可以忽略如下警告信息：
+CA certificate ca.pem is self signed.For more information, see Help and Support Center at http://www.mysql.com. Connection TLS Protocol Configuration mysql&gt; SHOW GLOBAL VARIABLES LIKE &#39;tls_version&#39;; To change the value of tls_version, set it at server startup. For example, to permit connections that use the TLSv1. <a class="read-more" href="/csdn/post/mysql57-win/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-02-07T12:08:39&#43;08:00">
+            7 Feb 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_git_oper1/">git操作 部分1</a></h2>
     </header>
     <section class="post-excerpt">
@@ -393,30 +418,6 @@ $ autoscan 会生成configure.scan文件, 重命名为configure.ac
         
         <time class="post-date" datetime="2021-02-13T02:20:39&#43;08:00">
             13 Feb 2021
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_memcached_ubuntu/">安装memcached</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>VMware: Ubuntu 20.04.2
- Install and update #sudo apt-get install memcached [0] #sudo apt-get install build-essential #sudo apt-get install libevent-dev* #wget http://memcached.org/files/memcached-1.6.15.tar.gz #tar -zxvf memcached-1.6.15.tar.gz #cd memcached-1.6.15 #./configure &amp;&amp; make &amp;&amp; sudo make install Start allow port sudo ufw allow 11211 config sudo vi /etc/memcached.conf 修改为服务器的IP:
-# Specify which IP address to listen on. The default is to listen on all IP addresses # This parameter is one of the only security measures that memcached has, so make sure # it&#39;s listening on a firewalled interface. <a class="read-more" href="/csdn/post/ops_memcached_ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2021-02-01T09:08:08&#43;08:00">
-            1 Feb 2021
         </time>
     </footer>
 </article>

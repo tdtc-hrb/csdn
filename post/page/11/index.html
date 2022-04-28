@@ -164,6 +164,29 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/java-string-redis-template/">StringRedisTemplate - redis-cli</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>1. autowired @Autowired StringRedisTemplate stringRedisTemplate; 2. get/set public void redisCliTest() {  String cliVal = stringRedisTemplate.opsForValue().get(&#34;mykey2&#34;);  System.out.println(&#34;redis-cli value: &#34; + cliVal); } code  UserController.java
+ package com.example.demo.controller;  import java.util.List;  import org.springframework.beans.factory.annotation.Autowired; import org.springframework.data.redis.core.StringRedisTemplate; import org.springframework.stereotype.Controller; import org.springframework.ui.Model; import org.springframework.web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.RequestMethod;  import com.example.demo.model.UserDetails; import com.example.demo.service.UserDetailsService;  @Controller @RequestMapping(&#34;/user&#34;) public class UserController {  	@Autowired 	private UserDetailsService userService;  	@Autowired 	StringRedisTemplate stringRedisTemplate;  	@RequestMapping(value = &#34;/listPage&#34;, method = RequestMethod. <a class="read-more" href="/csdn/post/java-string-redis-template/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-10T13:26:39&#43;08:00">
+            10 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/java-tomcat-pool-hikaricp/">设置HikariCP</a></h2>
     </header>
     <section class="post-excerpt">
@@ -379,29 +402,6 @@ import logo from &#39;./logo.svg&#39;; import &#39;./App.css&#39;; &lt;div class
 
         
         <time class="post-date" datetime="2020-04-10T02:18:39&#43;08:00">
-            10 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/gitlab-install-shell/"> 使用脚本安装gitlab</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>一、安装 1. depend $sudo apt-get update $sudo apt-get install ca-certificates curl openssh-server postfix vim 2. down script $curl -LO https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh 3. exec script $sudo bash ~/script.deb.sh 4. install If it is &ldquo;qiang&rdquo;, please see 《代理set - ubuntu》
-$sudo apt-get install gitlab-ce 5. config 1) ufw $sudo ufw allow http $sudo ufw allow https $sudo ufw allow OpenSSH 2) gitlab.rb $sudo vim /etc/gitlab/gitlab.rb # If your GitLab server does not have a domain name, you will need to use an IP # address instead of a domain and keep the protocol as `http`. <a class="read-more" href="/csdn/post/gitlab-install-shell/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-10T02:15:39&#43;08:00">
             10 Apr 2020
         </time>
     </footer>

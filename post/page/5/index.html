@@ -164,6 +164,31 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_department_gitlab_man/">GitLab使用</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>一、注册用户  Name：姓名 Username：用户名 密码：8位
+  等待管理员解锁。
+ 二、增加SSH 1. 生成SSH 在“开始”菜单，选择“TortoiseGit”中的“PuttyGen” 点击“Generate”按钮，然后，鼠标在图中红色方框的区域内不停的移动，即可生成密钥。 “Public key for pasting into OpenShh authorized_keys file:”所有内容既是我们需要的。 2. 设置SSH 用户登录后，进入“ProfileSettings”-&gt;“SSH Keys”
+点击“Add SSH Key” 把上面生成的ssh复制到key中（title会自动生成），点击“Add key”  <a class="read-more" href="/csdn/post/ops_department_gitlab_man/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-15T04:08:08&#43;08:00">
+            15 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/vc-update-atl/">VC升级时出现的问题</a></h2>
     </header>
     <section class="post-excerpt">
@@ -396,33 +421,6 @@ VT_UI1 Variable type is unsigned char. 4. 写入数据 SafeArrayPutElement(pSArr
 
         
         <time class="post-date" datetime="2020-05-13T08:08:08&#43;08:00">
-            13 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/c2plus-unmanaged-dll/">调用非托管DLL</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>IDE: vs2008 Express(sp1)
- callXBFLibrary 我们需要使用API函数来读取INI文件。
-建立P/Invoke应用类 在pinvoke.net中查找Win32 API在C#定义。 GetPrivateProfileString 读取Ini文件的API
-[DllImport(&#34;kernel32.dll&#34;, CharSet=CharSet.Unicode)] static extern uint GetPrivateProfileString(  string lpAppName,  string lpKeyName,  string lpDefault,  StringBuilder lpReturnedString,  uint nSize,  string lpFileName);  注意：DllImport属性来自using System.Runtime.InteropServices;
-  lpAppName 小节名 lpKeyName 键名 lpDefault 缺省值 lpReturnedString 返回值 nSize 返回值长度 lpFileName 读取文件的名称  import class  using System.Runtime.InteropServices; readIniFileVal 建立一个公共方法，以供程序使用。
-public string readIniFileVal(string iniFileName, string section, string key) {  StringBuilder retStrBuilder = new StringBuilder(256);  GetPrivateProfileString(  section,  key,  &#34;&#34;,  retStrBuilder,  256,  iniFileName);  return retStrBuilder. <a class="read-more" href="/csdn/post/c2plus-unmanaged-dll/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-13T00:08:08&#43;08:00">
             13 May 2020
         </time>
     </footer>

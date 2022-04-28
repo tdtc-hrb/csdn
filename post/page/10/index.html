@@ -164,6 +164,39 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_vi/">简单使用vi</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p> 此时是浏览状态（命令行模式）！
+ $ vi myfile 浏览状态 移动光标 使用方向键来进行位置的移动。
+编辑状态  要进行文字编辑工作, 按“i”即进入
+ i 删除文字 使用“Backspce”键，删除光标前面的文字。 使用“Delete”键，删除光标后面的文字。
+完成编辑  编辑完成后，要退出编辑状态, 按“ESC”，即完成退出。
+ 菜单状态 按“:”进入菜单状态（底行模式）
+设置行号  输入“set nu”
+ :set nu 查找文字  如果，要查找特定的文字，输入“/要搜索的文字”
+ :/word 继续查找，按“n”（相当于Windows系统的F3功能键）
+保存文件  输入“wq”完成保存并退出。
+ :wq 强退  如果我们只想退出并且不保存文件 输入“q!”
+ :q!  <a class="read-more" href="/csdn/post/ops_vi/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-13T04:38:08&#43;08:00">
+            13 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_department_cups/">共享打印机 - CUPS</a></h2>
     </header>
     <section class="post-excerpt">
@@ -394,29 +427,6 @@ Reference  UNIDIRECTIONAL USER INTERFACE ARCHITECTURES - André Staltz Clarified
 
         
         <time class="post-date" datetime="2020-04-10T16:26:39&#43;08:00">
-            10 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/java-string-redis-template/">StringRedisTemplate - redis-cli</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>1. autowired @Autowired StringRedisTemplate stringRedisTemplate; 2. get/set public void redisCliTest() {  String cliVal = stringRedisTemplate.opsForValue().get(&#34;mykey2&#34;);  System.out.println(&#34;redis-cli value: &#34; + cliVal); } code  UserController.java
- package com.example.demo.controller;  import java.util.List;  import org.springframework.beans.factory.annotation.Autowired; import org.springframework.data.redis.core.StringRedisTemplate; import org.springframework.stereotype.Controller; import org.springframework.ui.Model; import org.springframework.web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.RequestMethod;  import com.example.demo.model.UserDetails; import com.example.demo.service.UserDetailsService;  @Controller @RequestMapping(&#34;/user&#34;) public class UserController {  	@Autowired 	private UserDetailsService userService;  	@Autowired 	StringRedisTemplate stringRedisTemplate;  	@RequestMapping(value = &#34;/listPage&#34;, method = RequestMethod. <a class="read-more" href="/csdn/post/java-string-redis-template/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-10T13:26:39&#43;08:00">
             10 Apr 2020
         </time>
     </footer>

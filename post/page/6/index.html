@@ -164,6 +164,33 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c2plus-unmanaged-dll/">调用非托管DLL</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>IDE: vs2008 Express(sp1)
+ callXBFLibrary 我们需要使用API函数来读取INI文件。
+建立P/Invoke应用类 在pinvoke.net中查找Win32 API在C#定义。 GetPrivateProfileString 读取Ini文件的API
+[DllImport(&#34;kernel32.dll&#34;, CharSet=CharSet.Unicode)] static extern uint GetPrivateProfileString(  string lpAppName,  string lpKeyName,  string lpDefault,  StringBuilder lpReturnedString,  uint nSize,  string lpFileName);  注意：DllImport属性来自using System.Runtime.InteropServices;
+  lpAppName 小节名 lpKeyName 键名 lpDefault 缺省值 lpReturnedString 返回值 nSize 返回值长度 lpFileName 读取文件的名称  import class  using System.Runtime.InteropServices; readIniFileVal 建立一个公共方法，以供程序使用。
+public string readIniFileVal(string iniFileName, string section, string key) {  StringBuilder retStrBuilder = new StringBuilder(256);  GetPrivateProfileString(  section,  key,  &#34;&#34;,  retStrBuilder,  256,  iniFileName);  return retStrBuilder. <a class="read-more" href="/csdn/post/c2plus-unmanaged-dll/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-13T00:08:08&#43;08:00">
+            13 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/uml-activity_diagram-sjz/">活动图（Activity Diagram）</a></h2>
     </header>
     <section class="post-excerpt">
@@ -387,30 +414,6 @@ This is the boot programm!鶷his is the boot programm! Load UBOOT, please wait..
 
         
         <time class="post-date" datetime="2020-05-08T14:08:08&#43;08:00">
-            8 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/dp-singleton-java/">单例模式</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>我们知道单例模式，其实就是返回一个被调用类的实例。
-在频繁的进行实例（Instance）创建过程，难免过多的进行new InstanceName()；我们可以只通过调用一个方法解决。
-在进行设计模式的程序实现中xiaobin使用已编写的SSL程序做演示。 <a class="read-more" href="/csdn/post/dp-singleton-java/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-08T12:08:08&#43;08:00">
             8 May 2020
         </time>
     </footer>

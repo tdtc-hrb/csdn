@@ -162,6 +162,29 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/gitlab-install-shell/"> 使用脚本安装gitlab</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>一、安装 1. depend $sudo apt-get update $sudo apt-get install ca-certificates curl openssh-server postfix vim 2. down script $curl -LO https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh 3. exec script $sudo bash ~/script.deb.sh 4. install If it is &ldquo;qiang&rdquo;, please see 《代理set - ubuntu》
+$sudo apt-get install gitlab-ce 5. config 1) ufw $sudo ufw allow http $sudo ufw allow https $sudo ufw allow OpenSSH 2) gitlab.rb $sudo vim /etc/gitlab/gitlab.rb # If your GitLab server does not have a domain name, you will need to use an IP # address instead of a domain and keep the protocol as `http`. <a class="read-more" href="/csdn/post/gitlab-install-shell/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-10T02:15:39&#43;08:00">
+            10 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/dpkg-issues/">dpkg的info问题和file system只读问题</a></h2>
     </header>
     <section class="post-excerpt">
@@ -231,29 +254,6 @@ package xxx  此例xxx为data。
         
         <time class="post-date" datetime="2020-04-10T02:08:39&#43;08:00">
             10 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_zookeeper/">多服务器ZooKeeper安装</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>JDK install see 设置OpenJDK
- Stage I 1. 《sudo - CentOS》 2. FQDN #127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomain4 #::1 localhost localhost.localdomain localhost6 localhost6.localdomain6 192.168.3.137 tdtc101 192.168.3.138 tdtc102 192.168.3.139 tdtc103 3. 《ssh相互免密》 Stage II 1. unzip $wget https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/zookeeper-3.8.0/apache-zookeeper-3.8.0-bin.tar.gz --no-check-certificate $mkdir -p ~/app/zookeeper $tar xzvf apache-zookeeper-3.8.0-bin.tar.gz -C ~/app/zookeeper $mv ~/app/zookeeper/apache-zookeeper-3.8.0-bin ~/app/zookeeper/3.8.0 2. zk home $sudo vi /etc/bashrc export ZK_HOME=/home/tdtc/app/zookeeper/3.8.0 export PATH=$PATH:$ZK_HOME/bin Stage III 1. zoo.cfg Add the following configuration, and the other options default. <a class="read-more" href="/csdn/post/ops_zookeeper/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="0001-01-01T00:00:00Z">
-            1 Jan 0001
         </time>
     </footer>
 </article>

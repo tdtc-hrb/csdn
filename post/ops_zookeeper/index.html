@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="ZooKeeper multi-server install" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="0001-01-01T00:00:00Z" />
+    <meta property="article:published_time" content="2022-04-12T17:08:08-08:00" />
 
     
     
@@ -99,8 +99,8 @@
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/ops_zookeeper/",
-    "datePublished": "0001-01-01T00:00Z",
-    "dateModified": "0001-01-01T00:00Z",
+    "datePublished": "2022-04-12T17:08Z",
+    "dateModified": "2022-04-12T17:08Z",
     
     
     "description": "ZooKeeper multi-server install",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="0001-01-01T00:00:00Z">
-            Jan 1, 0001
+          <time class="post-date" datetime="2022-04-12T17:08:08-08:00">
+            Apr 12, 2022
           </time>
         
          
@@ -191,13 +191,13 @@
 </span></span></code></pre></div><h2 id="3-ssh相互免密httpstdtc-hrbgithubiocsdnpostops_ssh_without_password">3. 《<a href="https://tdtc-hrb.github.io/csdn/post/ops_ssh_without_password/">ssh相互免密</a>》</h2>
 <h1 id="stage-ii">Stage II</h1>
 <h2 id="1-unzip">1. unzip</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/zookeeper-3.8.0/apache-zookeeper-3.8.0-bin.tar.gz --no-check-certificate
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/zookeeper-3.7.0/apache-zookeeper-3.7.0-bin.tar.gz --no-check-certificate
 </span></span><span style="display:flex;"><span>$mkdir -p ~/app/zookeeper
-</span></span><span style="display:flex;"><span>$tar xzvf apache-zookeeper-3.8.0-bin.tar.gz -C ~/app/zookeeper
-</span></span><span style="display:flex;"><span>$mv ~/app/zookeeper/apache-zookeeper-3.8.0-bin ~/app/zookeeper/3.8.0
+</span></span><span style="display:flex;"><span>$tar xzvf apache-zookeeper-3.7.0-bin.tar.gz -C ~/app/zookeeper
+</span></span><span style="display:flex;"><span>$mv ~/app/zookeeper/apache-zookeeper-3.7.0-bin ~/app/zookeeper/3.7.0
 </span></span></code></pre></div><h2 id="2-zk-home">2. zk home</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo vi /etc/bashrc
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export ZK_HOME<span style="color:#f92672">=</span>/home/tdtc/app/zookeeper/3.8.0
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export ZK_HOME<span style="color:#f92672">=</span>/home/tdtc/app/zookeeper/3.7.0
 </span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span>$PATH:$ZK_HOME/bin
 </span></span></code></pre></div><h1 id="stage-iii">Stage III</h1>
 <h2 id="1-zoocfg">1. zoo.cfg</h2>
@@ -212,9 +212,9 @@
 <blockquote>
 <p>Note: Windows CMD</p>
 </blockquote>
-<pre tabindex="0"><code class="language-CMD" data-lang="CMD">pscp d:\zk-clu\zoo.cfg tdtc@192.168.3.107:/home/tdtc/app/zookeeper/3.8.0/conf
-pscp d:\zk-clu\zoo.cfg tdtc@192.168.3.108:/home/tdtc/app/zookeeper/3.8.0/conf
-pscp d:\zk-clu\zoo.cfg tdtc@192.168.3.109:/home/tdtc/app/zookeeper/3.8.0/conf
+<pre tabindex="0"><code class="language-CMD" data-lang="CMD">pscp d:\zk-clu\zoo.cfg tdtc@192.168.3.107:/home/tdtc/app/zookeeper/3.7.0/conf
+pscp d:\zk-clu\zoo.cfg tdtc@192.168.3.108:/home/tdtc/app/zookeeper/3.7.0/conf
+pscp d:\zk-clu\zoo.cfg tdtc@192.168.3.109:/home/tdtc/app/zookeeper/3.7.0/conf
 </code></pre><h2 id="2-zk-id">2. zk id</h2>
 <blockquote>
 <p>create a file named myid under the data directory</p>
@@ -295,13 +295,19 @@ pscp d:\zk-clu\zoo.cfg tdtc@192.168.3.109:/home/tdtc/app/zookeeper/3.8.0/conf
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/mysql80-install/">
+      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_network_proxy/">
           <section class="post">
-              <h2>安装MySQL 8.0</h2>
+              <h2>设置proxy</h2>
               
           </section>
       </a>
   
+  
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_network_adapter_linux/">
+          <section class="post">
+              <h2>Linux修改网卡为固定IP</h2>
+          </section>
+      </a>
   
 </aside>
 
