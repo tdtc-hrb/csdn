@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.96.0" />
+    <meta name="generator" content="Hugo 0.97.3" />
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -158,6 +158,31 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_network_proxy/">设置proxy</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>OS Windows  set command
+ set http_proxy=http://127.0.0.1:8580 set https_proxy=http://127.0.0.1:8580 Ubuntu export http_proxy=&#34;http://192.168.1.108:1080&#34; export https_proxy=&#34;http://192.168.1.108:1080&#34; software git set proxy git config --global http.proxy http://127.0.0.1:8580  git config --global https.proxy https://127.0.0.1:8580 unset git config --global --unset http.proxy git config --global --unset https.proxy node-js  .npmrc
+ cmd npm config delete https-proxy npm config set http-proxy http://host:port npm config set strict-ssl false file registry=https://registry.npmjs.org/ proxy=http://127.0.0.1:8580/ http-proxy=http://127.0.0.1:8580 strict-ssl=false Agent Website 国内网站代理
+ruby gems 安装指定版本:V1. <a class="read-more" href="/csdn/post/ops_network_proxy/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-04-16T14:08:08&#43;08:00">
+            16 Apr 2022
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -355,7 +380,7 @@ java 7 package my.csdn2;  import java.util.concurrent.ExecutorService; import ja
 二、项目文件 app 除了布局文件外，包括微信小程序的3个基本文件。
 project 项目配置
 sitemap 站点设置
-hdd600 - 133  STARS-081  magnet:?xt=urn:btih:04cfca3dd7f13bab4c40a16263faa1c47ccf5f6b&amp;dn=STARS-081  STARS-118  magnet:?xt=urn:btih:cf823c824045d1d0a1e1e805c3b1312ccc012209&amp;dn=STARS-118  STARS-134  magnet:?xt=urn:btih:17cff784b4b5d45044d0d1afd091ee74542ebd58&amp;dn=STARS-134  STARS-209  magnet:?xt=urn:btih:056611d3df3142bcede86d5cbf85b6a548e8b415&amp;dn=STARS-209  STARS-249  magnet:?xt=urn:btih:257719ffba826b46cbaf80cd5b04663f69198b45&amp;dn=STARS-249  STAR-927  magnet:?xt=urn:btih:ee3cbf70c1f51ec6f04841c66918f4f6593eddae&amp;dn=STAR-927  STAR-971  magnet:?xt=urn:btih:a980986f4a6725296dffb48f7cff4c2df9cc5507&amp;dn=STAR-971  STARS-035  magnet:?xt=urn:btih:c19a77bc8956841b2f0dd362f9ed0074754e9106&amp;dn=STARS-035  <a class="read-more" href="/csdn/post/small-site/">&raquo;</a></p>
+hdd600 - 133  STARS-081  magnet:?xt=urn:btih:04cfca3dd7f13bab4c40a16263faa1c47ccf5f6b&amp;dn=STARS-081  STARS-118  magnet:?xt=urn:btih:cf823c824045d1d0a1e1e805c3b1312ccc012209&amp;dn=STARS-118  STARS-134  magnet:?xt=urn:btih:17cff784b4b5d45044d0d1afd091ee74542ebd58&amp;dn=STARS-134  STARS-209  magnet:?xt=urn:btih:056611d3df3142bcede86d5cbf85b6a548e8b415&amp;dn=STARS-209  STARS-249  magnet:?xt=urn:btih:257719ffba826b46cbaf80cd5b04663f69198b45&amp;dn=STARS-249  STAR-927  magnet:?xt=urn:btih:ee3cbf70c1f51ec6f04841c66918f4f6593eddae&amp;dn=STAR-927  STAR-971  magnet:?xt=urn:btih:a980986f4a6725296dffb48f7cff4c2df9cc5507&amp;dn=STAR-971  STARS-035  magnet:?xt=urn:btih:c19a77bc8956841b2f0dd362f9ed0074754e9106&amp;dn=STARS-035  STARS-224  magnet:?xt=urn:btih:65B3857E94C566FA04B2F6722CFD72DBC32E44A4)  <a class="read-more" href="/csdn/post/small-site/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -391,34 +416,6 @@ CA certificate ca.pem is self signed.For more information, see Help and Support 
         
         <time class="post-date" datetime="2022-02-07T12:08:39&#43;08:00">
             7 Feb 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_git_oper1/">git操作 部分1</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>一、远程仓库回滚 1. 硬性 git reset --hard HEAD~1  &ldquo;~1&quot;表示向前回滚1个提交。 &ldquo;~2&quot;表示向前回滚2个提交，以此类推。  2. 强制推送 git push -f --set-upstream origin master 二、删除github发布 git tag -d [tag] git push origin :[tag] 例如：
-git tag -d v0.3.1 git push origin :v0.3.1 三、修改commit信息 可以修改最后一次提交的信息.
-进入git-cmd或git-bash：
-git commit --amend About：
- git-bash和git-cmd的区别
- bash是linux风格的命令行，可以使用windows和linux的命令； cmd是windows风格的命令行，可以使用windows命令；
- 此外，还有一个最大的不同点，git-cmd是天生就带了系统的PATH环境变量， 这一点会导致如果你运行某些脚本的时候，如果依赖某些安装的程序， 如python、node这些，git-bash就会提示不存在对应的命令， 而git-cmd可以正确运行。    四、合并分支 1. checkout git checkout dev git checkout master 2. merge git merge origin/dev 五、设置user git init ``bash git config user. <a class="read-more" href="/csdn/post/ops_git_oper1/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-01-02T01:38:08&#43;08:00">
-            2 Jan 2022
         </time>
     </footer>
 </article>

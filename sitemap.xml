@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/</loc>
-    <lastmod>2022-04-13T08:38:08+08:00</lastmod>
-  </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/</loc>
-    <lastmod>2022-04-13T08:38:08+08:00</lastmod>
+    <lastmod>2022-04-16T14:08:08+08:00</lastmod>
+  </url><url>
+    <loc>https://tdtc-hrb.github.io/csdn/post/ops_network_proxy/</loc>
+    <lastmod>2022-04-16T14:08:08+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/</loc>
+    <lastmod>2022-04-16T14:08:08+08:00</lastmod>
+  </url><url>
+    <loc>https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/</loc>
     <lastmod>2022-04-13T08:38:08+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/nodejs-ubuntu/</loc>
@@ -85,9 +88,6 @@
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/version-ubuntu/</loc>
     <lastmod>2020-10-10T02:12:39+08:00</lastmod>
-  </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/ops_network_proxy/</loc>
-    <lastmod>2020-10-02T14:08:08+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/ops_sudo/</loc>
     <lastmod>2020-07-14T00:08:08+08:00</lastmod>

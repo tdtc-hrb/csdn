@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.96.0" />
+    <meta name="generator" content="Hugo 0.97.3" />
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,6 +160,34 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_git_oper1/">git操作 部分1</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>一、远程仓库回滚 1. 硬性 git reset --hard HEAD~1  &ldquo;~1&quot;表示向前回滚1个提交。 &ldquo;~2&quot;表示向前回滚2个提交，以此类推。  2. 强制推送 git push -f --set-upstream origin master 二、删除github发布 git tag -d [tag] git push origin :[tag] 例如：
+git tag -d v0.3.1 git push origin :v0.3.1 三、修改commit信息 可以修改最后一次提交的信息.
+进入git-cmd或git-bash：
+git commit --amend About：
+ git-bash和git-cmd的区别
+ bash是linux风格的命令行，可以使用windows和linux的命令； cmd是windows风格的命令行，可以使用windows命令；
+ 此外，还有一个最大的不同点，git-cmd是天生就带了系统的PATH环境变量， 这一点会导致如果你运行某些脚本的时候，如果依赖某些安装的程序， 如python、node这些，git-bash就会提示不存在对应的命令， 而git-cmd可以正确运行。    四、合并分支 1. checkout git checkout dev git checkout master 2. merge git merge origin/dev 五、设置user git init ``bash git config user. <a class="read-more" href="/csdn/post/ops_git_oper1/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-01-02T01:38:08&#43;08:00">
+            2 Jan 2022
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -389,40 +417,6 @@ $ autoscan 会生成configure.scan文件, 重命名为configure.ac
         
         <time class="post-date" datetime="2021-02-01T09:08:08&#43;08:00">
             1 Feb 2021
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/version-ubuntu/">查看版本-Ubuntu</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>查看Glibc库版本 #apt-cache show libc6 查看内核版本 #uname -a 查看binutils版本 #ld -v 查看ubuntu版本号 #cat /etc/issue  <a class="read-more" href="/csdn/post/version-ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        on
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/glibc/">#Glibc</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/sh/">#sh</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/%E5%86%85%E6%A0%B8/">#内核</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/binutils/">#binutils</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/system/">#system</a>,
-            
-        
-        <time class="post-date" datetime="2020-10-10T02:12:39&#43;08:00">
-            10 Oct 2020
         </time>
     </footer>
 </article>

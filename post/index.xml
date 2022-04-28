@@ -6,7 +6,19 @@
     <description>Recent content in Posts on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 13 Apr 2022 08:38:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 16 Apr 2022 14:08:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>设置proxy</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_network_proxy/</link>
+      <pubDate>Sat, 16 Apr 2022 14:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_network_proxy/</guid>
+      <description>OS Windows  set command
+ set http_proxy=http://127.0.0.1:8580 set https_proxy=http://127.0.0.1:8580 Ubuntu export http_proxy=&amp;#34;http://192.168.1.108:1080&amp;#34; export https_proxy=&amp;#34;http://192.168.1.108:1080&amp;#34; software git set proxy git config --global http.proxy http://127.0.0.1:8580  git config --global https.proxy https://127.0.0.1:8580 unset git config --global --unset http.proxy git config --global --unset https.proxy node-js  .npmrc
+ cmd npm config delete https-proxy npm config set http-proxy http://host:port npm config set strict-ssl false file registry=https://registry.npmjs.org/ proxy=http://127.0.0.1:8580/ http-proxy=http://127.0.0.1:8580 strict-ssl=false Agent Website 国内网站代理
+ruby gems 安装指定版本:V1.</description>
+    </item>
+    
     <item>
       <title>Linux修改网卡为固定IP</title>
       <link>https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/</link>
@@ -111,7 +123,7 @@ java 7 package my.csdn2;  import java.util.concurrent.ExecutorService; import ja
 二、项目文件 app 除了布局文件外，包括微信小程序的3个基本文件。
 project 项目配置
 sitemap 站点设置
-hdd600 - 133  STARS-081  magnet:?xt=urn:btih:04cfca3dd7f13bab4c40a16263faa1c47ccf5f6b&amp;amp;dn=STARS-081  STARS-118  magnet:?xt=urn:btih:cf823c824045d1d0a1e1e805c3b1312ccc012209&amp;amp;dn=STARS-118  STARS-134  magnet:?xt=urn:btih:17cff784b4b5d45044d0d1afd091ee74542ebd58&amp;amp;dn=STARS-134  STARS-209  magnet:?xt=urn:btih:056611d3df3142bcede86d5cbf85b6a548e8b415&amp;amp;dn=STARS-209  STARS-249  magnet:?xt=urn:btih:257719ffba826b46cbaf80cd5b04663f69198b45&amp;amp;dn=STARS-249  STAR-927  magnet:?xt=urn:btih:ee3cbf70c1f51ec6f04841c66918f4f6593eddae&amp;amp;dn=STAR-927  STAR-971  magnet:?xt=urn:btih:a980986f4a6725296dffb48f7cff4c2df9cc5507&amp;amp;dn=STAR-971  STARS-035  magnet:?xt=urn:btih:c19a77bc8956841b2f0dd362f9ed0074754e9106&amp;amp;dn=STARS-035 </description>
+hdd600 - 133  STARS-081  magnet:?xt=urn:btih:04cfca3dd7f13bab4c40a16263faa1c47ccf5f6b&amp;amp;dn=STARS-081  STARS-118  magnet:?xt=urn:btih:cf823c824045d1d0a1e1e805c3b1312ccc012209&amp;amp;dn=STARS-118  STARS-134  magnet:?xt=urn:btih:17cff784b4b5d45044d0d1afd091ee74542ebd58&amp;amp;dn=STARS-134  STARS-209  magnet:?xt=urn:btih:056611d3df3142bcede86d5cbf85b6a548e8b415&amp;amp;dn=STARS-209  STARS-249  magnet:?xt=urn:btih:257719ffba826b46cbaf80cd5b04663f69198b45&amp;amp;dn=STARS-249  STAR-927  magnet:?xt=urn:btih:ee3cbf70c1f51ec6f04841c66918f4f6593eddae&amp;amp;dn=STAR-927  STAR-971  magnet:?xt=urn:btih:a980986f4a6725296dffb48f7cff4c2df9cc5507&amp;amp;dn=STAR-971  STARS-035  magnet:?xt=urn:btih:c19a77bc8956841b2f0dd362f9ed0074754e9106&amp;amp;dn=STARS-035  STARS-224  magnet:?xt=urn:btih:65B3857E94C566FA04B2F6722CFD72DBC32E44A4) </description>
     </item>
     
     <item>
@@ -263,18 +275,6 @@ $ autoscan 会生成configure.scan文件, 重命名为configure.ac
       
       <guid>https://tdtc-hrb.github.io/csdn/post/version-ubuntu/</guid>
       <description>查看Glibc库版本 #apt-cache show libc6 查看内核版本 #uname -a 查看binutils版本 #ld -v 查看ubuntu版本号 #cat /etc/issue </description>
-    </item>
-    
-    <item>
-      <title>设置proxy</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_network_proxy/</link>
-      <pubDate>Fri, 02 Oct 2020 14:08:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_network_proxy/</guid>
-      <description>OS Windows  set command
- set http_proxy=http://127.0.0.1:8580 set https_proxy=http://127.0.0.1:8580 Ubuntu export http_proxy=&amp;#34;http://192.168.1.108:1080&amp;#34; export https_proxy=&amp;#34;http://192.168.1.108:1080&amp;#34; software git set proxy git config --global http.proxy http://127.0.0.1:8580  git config --global https.proxy https://127.0.0.1:8580 unset git config --global --unset http.proxy git config --global --unset https.proxy node-js  .npmrc
- cmd npm config delete https-proxy npm config set http-proxy http://host:port npm config set strict-ssl false file registry=https://registry.npmjs.org/ proxy=http://127.0.0.1:8580/ http-proxy=http://127.0.0.1:8580 strict-ssl=false Agent Website 国内网站代理
-ruby gems 安装指定版本:V1.</description>
     </item>
     
     <item>
