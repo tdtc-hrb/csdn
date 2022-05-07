@@ -6,7 +6,21 @@
     <description>Recent content in Posts on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 17 Apr 2022 14:08:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 07 May 2022 00:08:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>十进制转十六进制</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/c-string-i2h/</link>
+      <pubDate>Sat, 07 May 2022 00:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/c-string-i2h/</guid>
+      <description>工作原理：
+ 规则是从低位到高位 被除数，除以16, 直到商小于16。 将余数加上余商，就是16进制数。
+  被除数   等于转换数 等于商 如果商大于16，就是被除数。  手算 10进制：1566
+ (1) 1566 ÷ 16 = 97 余数为14 (2) 97 ÷ 16 = 6 余数为1
+16进制：第1个余数(14) + 第2个余数(1) + 余商(6) = 0x61E
+code /* * Int2hex.c * * Created on: 2010-07-20 * Author: xiaobin */ #include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt; void int2hex(unsigned long long input, char output[]);  int main(int argc, char* argv[]) {  int iDigit = 12 - 2; // 2205071409 // date: 2022.</description>
+    </item>
+    
     <item>
       <title>设置proxy</title>
       <link>https://tdtc-hrb.github.io/csdn/post/ops_network_proxy/</link>
@@ -743,20 +757,6 @@ public string readIniFileVal(string iniFileName, string section, string key) {  
       <guid>https://tdtc-hrb.github.io/csdn/post/hw-schematic_diagram-max2323e/</guid>
       <description>MAX2323E(3.3V)+ LPC1752。
  文件备份：sch20110723.7z 提取码: ny2j</description>
-    </item>
-    
-    <item>
-      <title>十进制转十六进制</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/c-string-i2h/</link>
-      <pubDate>Sat, 09 May 2020 00:08:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/c-string-i2h/</guid>
-      <description>工作原理：
- 规则是从低位到高位 被除数，除以16, 直到商小于16。 将余数加上余商，就是16进制数。
-  被除数   等于转换数 等于商 如果商大于16，就是被除数。  手算 10进制：1566
- (1) 1566 ÷ 16 = 97 余数为14 (2) 97 ÷ 16 = 6 余数为1
-16进制：第1个余数(14) + 第2个余数(1) + 余商(6) = 0x61E
-code /* * Int2hex.c * * Created on: 2010-07-20 * Author: xiaobin */ #include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt; void int2hex(unsigned long input, char output[]);  int main(int argc, char* argv[]) {  char out[8];  int k;  int input = 0;   if (argc &amp;gt; 1)  input = atol(argv[1]);   int2hex(input, out);   printf(&amp;#34;%s%d%s&amp;#34;, &amp;#34;Integer: &amp;#34;, input, &amp;#34; Hex: 0x&amp;#34;);  for (k = 0; k &amp;lt; 8; k++) {  char ch = out[k];  printf(&amp;#34;%c&amp;#34;, ch);  }  printf(&amp;#34;\n&amp;#34;);   return 0; }  void int2hex(unsigned long input, char output[]) {  int i = 7;  int j;   while (((input % 16) !</description>
     </item>
     
     <item>

@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.97.3" />
+    <meta name="generator" content="Hugo 0.98.0" />
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,6 +160,30 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c2plus-com-dll/">调用COM</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>IDE: vs2008 Express(sp1)
+ callXBFLibrary reference COM 注册COM @echo cd /d %~dp0 Regsvr32 xbfInfo.dll Add Reference COM选项卡 添加完成时
+添加事件 import class using System.IO; using xbfInfoLib; 写xbf文件 读Ini文件配置 Boolean flagMSSQL = false; Boolean flagSecu = false; string sectionName = ini.readIniFileVal(&#34;config&#34;, &#34;type&#34;); string strSrv = ini.readIniFileVal(sectionName, &#34;Server&#34;); if (!Equals(strSrv, &#34;&#34;))  flagMSSQL = true; if (flagMSSQL) {  strConn = &#34;Provider=SQLOLEDB.1;&#34;  + &#34;Password=&#34; + ini.readIniFileVal(sectionName, &#34;Pwd&#34;) + &#34;;&#34;  + &#34;Persist Security Info=True;&#34;  + &#34;User ID=&#34; + ini. <a class="read-more" href="/csdn/post/c2plus-com-dll/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-13T08:08:08&#43;08:00">
+            13 May 2020
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -305,33 +329,6 @@ public string readIniFileVal(string iniFileName, string section, string key) {  
         
         <time class="post-date" datetime="2020-05-10T00:08:08&#43;08:00">
             10 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/c-string-i2h/">十进制转十六进制</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>工作原理：
- 规则是从低位到高位 被除数，除以16, 直到商小于16。 将余数加上余商，就是16进制数。
-  被除数   等于转换数 等于商 如果商大于16，就是被除数。  手算 10进制：1566
- (1) 1566 ÷ 16 = 97 余数为14 (2) 97 ÷ 16 = 6 余数为1
-16进制：第1个余数(14) + 第2个余数(1) + 余商(6) = 0x61E
-code /* * Int2hex.c * * Created on: 2010-07-20 * Author: xiaobin */ #include &lt;stdio.h&gt;#include &lt;stdlib.h&gt; void int2hex(unsigned long input, char output[]);  int main(int argc, char* argv[]) {  char out[8];  int k;  int input = 0;   if (argc &gt; 1)  input = atol(argv[1]);   int2hex(input, out);   printf(&#34;%s%d%s&#34;, &#34;Integer: &#34;, input, &#34; Hex: 0x&#34;);  for (k = 0; k &lt; 8; k++) {  char ch = out[k];  printf(&#34;%c&#34;, ch);  }  printf(&#34;\n&#34;);   return 0; }  void int2hex(unsigned long input, char output[]) {  int i = 7;  int j;   while (((input % 16) ! <a class="read-more" href="/csdn/post/c-string-i2h/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-09T00:08:08&#43;08:00">
-            9 May 2020
         </time>
     </footer>
 </article>

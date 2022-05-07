@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.97.3" />
+    <meta name="generator" content="Hugo 0.98.0" />
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,6 +160,29 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_mysql_devel/">无mysql-dev导致的错误</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>应用程序要访问mysql必须安装mysql-dev，因为它是各种语言与mysql的接口。
+ error info [root@localhost DBD-mysql-4.022]# make cp lib/DBD/mysql.pm blib/lib/DBD/mysql.pm cp lib/DBD/mysql/GetInfo.pm blib/lib/DBD/mysql/GetInfo.pm cp lib/DBD/mysql/INSTALL.pod blib/lib/DBD/mysql/INSTALL.pod cp lib/Bundle/DBD/mysql.pm blib/lib/Bundle/DBD/mysql.pm cc -c -I/usr/local/perl/lib/site_perl/5.16.2/i686-linux/auto/DBI -I/usr/include/mysql -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=4 -m32 -fasynchronous-unwind-tables -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -fno-strict-aliasing -fwrapv -DDBD_MYSQL_WITH_SSL -DDBD_MYSQL_INSERT_ID_IS_GOOD -g -fno-strict-aliasing -pipe -fstack-protector -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -DVERSION=\&#34;4.022\&#34; -DXS_VERSION=\&#34;4.022\&#34; -fPIC &#34;-I/usr/local/perl/lib/5.16.2/i686-linux/CORE&#34; dbdimp.c In file included from dbdimp.c:20: dbdimp.h:23:49: error: mysql.h: No such file or directory dbdimp.h:24:45: error: mysqld_error.h: No such file or directory dbdimp. <a class="read-more" href="/csdn/post/ops_mysql_devel/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-15T05:08:08&#43;08:00">
+            15 May 2020
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -397,30 +420,6 @@ VT_UI1 Variable type is unsigned char. 4. 写入数据 SafeArrayPutElement(pSArr
 
         
         <time class="post-date" datetime="2020-05-13T12:08:08&#43;08:00">
-            13 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/c2plus-com-dll/">调用COM</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>IDE: vs2008 Express(sp1)
- callXBFLibrary reference COM 注册COM @echo cd /d %~dp0 Regsvr32 xbfInfo.dll Add Reference COM选项卡 添加完成时
-添加事件 import class using System.IO; using xbfInfoLib; 写xbf文件 读Ini文件配置 Boolean flagMSSQL = false; Boolean flagSecu = false; string sectionName = ini.readIniFileVal(&#34;config&#34;, &#34;type&#34;); string strSrv = ini.readIniFileVal(sectionName, &#34;Server&#34;); if (!Equals(strSrv, &#34;&#34;))  flagMSSQL = true; if (flagMSSQL) {  strConn = &#34;Provider=SQLOLEDB.1;&#34;  + &#34;Password=&#34; + ini.readIniFileVal(sectionName, &#34;Pwd&#34;) + &#34;;&#34;  + &#34;Persist Security Info=True;&#34;  + &#34;User ID=&#34; + ini. <a class="read-more" href="/csdn/post/c2plus-com-dll/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-13T08:08:08&#43;08:00">
             13 May 2020
         </time>
     </footer>

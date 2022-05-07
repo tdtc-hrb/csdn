@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.97.3" />
+    <meta name="generator" content="Hugo 0.98.0" />
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,6 +160,34 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c-automake/">automake生成makefile</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>1. 手工(修改或创建)文件 详见附件Makefile.am和configure.ac
+注意: am文件是需要创建的!
+ac文件 生成ac模板
+$ autoscan 会生成configure.scan文件, 重命名为configure.ac
+修改初始化 注意: 所有新修改的值都需要方括号([])
+ 程序属性  AC_INIT([hex2int], [v0.1], [veic_2005@163.com])  目录结构 如果只有本目录, 使用空值  AM_INIT_AUTOMAKE 2. 其他命令  aclocal autoconf autoheader  3. 生成Makefile 输出Makefile.in automake --add-missing 输出Makefile ./configure 手动Makefile  小项目可以。 注意：所有的命令前必须为TAB，不能使空格！
+ #https://stackoverflow.com/questions/1484817/how-do-i-make-a-simple-makefile-for-gcc-on-linux #https://stackoverflow.com/questions/14109724/makefile-missing-separator/14109796 #https://www.gnu.org/software/make/manual/html_node/Pattern-Examples.html#Pattern-Examples #https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html#Automatic-Variables   TARGET = hex2int CC = gcc CFLAGS = -g -Wall   all:$(TARGET)  OBJECTS = $(patsubst %.c, %.o, $(wildcard *. <a class="read-more" href="/csdn/post/c-automake/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2021-02-13T02:20:39&#43;08:00">
+            13 Feb 2021
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -408,29 +436,6 @@ function get_breadcrumb($array, $prefix = NULL) { 	$str = &#39;&#39;; 	if (count
 
         
         <time class="post-date" datetime="2020-05-16T00:58:08&#43;08:00">
-            16 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/hw-schematic_diagram-ctm1050/">CTM1050(CAN)原理图</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>Portel DXP 2004
- CTM1050.7z 提取码: pcah <a class="read-more" href="/csdn/post/hw-schematic_diagram-ctm1050/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-16T00:28:08&#43;08:00">
             16 May 2020
         </time>
     </footer>
