@@ -92,7 +92,7 @@
     },
     "headline": "创建COM",
     "name": "创建COM",
-    "wordCount":  118 ,
+    "wordCount":  138 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
@@ -178,9 +178,9 @@
 
     <section class="post-content">
       <blockquote>
-<p>IDE: Visual Studio 2019</p>
+<p>IDE: Visual Studio 2019(v16.11)</p>
 </blockquote>
-<h1 id="使用wizard模式创建com">使用Wizard模式创建COM</h1>
+<p>使用Wizard模式创建COM</p>
 <h1 id="一atl项目向导">一、ATL项目向导</h1>
 <blockquote>
 <p>使用ATL Project Wizard创建COM</p>
@@ -211,34 +211,44 @@
 </blockquote>
 <h1 id="二atl简单对象向导">二、ATL简单对象向导</h1>
 <h2 id="1-创建atl-simple-object">1. 创建ATL Simple Object</h2>
-<p>右击项目名称，选择Add-〉New Item
-<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20200313201050286.png" alt="vc ui"></p>
-<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20200313201948199.png" alt="vc ui"></p>
+<p>右击项目名称，选择Add-〉New Item</p>
+<!-- vs2017: https://gitee.com/xiaobin80/csdn/raw/master/images/20200313201050286.png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-simple1.png" alt="atl simple object - item"></p>
+<!-- vs2017: https://gitee.com/xiaobin80/csdn/raw/master/images/20200313201948199.png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-simple2.png" alt="atl simple object - new"></p>
 <h2 id="2-设置atl-simple-object">2. 设置ATL Simple Object</h2>
+<ul>
+<li>progID</li>
+<li>附加支持</li>
+</ul>
 <h3 id="progid">progID</h3>
-<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20200313202352422.png" alt="vc ui"></p>
+<p>progID: Simple Object ID</p>
+<!-- vs2017: https://gitee.com/xiaobin80/csdn/raw/master/images/20200313202352422.png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-simple3.png" alt="atl simple object - progID"></p>
 <h3 id="附加支持">附加支持</h3>
 <blockquote>
 <p>本选项针对IE支持。</p>
 </blockquote>
-<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20200313202901252.png" alt="vc ui"></p>
+<p>Other -&gt; Support:</p>
+<!-- vs2017: https://gitee.com/xiaobin80/csdn/raw/master/images/20200313202901252.png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-simple4.png" alt="atl simple object - Support"></p>
 <h1 id="三添加idl方法">三、添加IDL方法</h1>
 <blockquote>
-<p>switch &ldquo;class view&rdquo;</p>
+<p>Tab switching from &ldquo;Solution Explorer&rdquo; to &ldquo;Class View&rdquo;</p>
 </blockquote>
-<p>Interface(name)-&gt;add-&gt;add method <br>
-<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20200313210151687.png" alt="vc ui"></p>
-<p>添加方法名称以及参数 <br>
-<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20200313210840198.png" alt="vc ui"></p>
+<p>Interface(name) -&gt; add -&gt; add method</p>
+<!-- vs2017: https://gitee.com/xiaobin80/csdn/raw/master/images/20200313210151687.png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-interface1.png" alt="atl interface - add"></p>
+<p>添加方法名称以及参数</p>
+<!-- vs2017: https://gitee.com/xiaobin80/csdn/raw/master/images/20200313210840198.png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-interface2.png" alt="atl interface - property"></p>
+<h2 id="注意">注意</h2>
 <blockquote>
-<p>注意：仅安装ucrt（通用Windows sdk）会出现：</p>
+<p>仅安装ucrt（通用Windows sdk）会出现：</p>
 </blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>  cannot find the resource compiler dll. please make sure the path is correct.
-</span></span></code></pre></div><blockquote>
-<blockquote>
-<p>解决办法：安装Windows 8.1/Windows 10 SDK</p>
-</blockquote>
-</blockquote>
+</span></span></code></pre></div><p>解决办法： <br>
+安装Windows 8.1/Windows 10 SDK</p>
 <h1 id="四test">四、test</h1>
 <blockquote>
 <p>使用VB来测试</p>
