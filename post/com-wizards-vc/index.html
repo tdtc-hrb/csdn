@@ -92,7 +92,7 @@
     },
     "headline": "创建COM",
     "name": "创建COM",
-    "wordCount":  138 ,
+    "wordCount":  178 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
@@ -250,12 +250,35 @@
 </span></span></code></pre></div><p>解决办法： <br>
 安装Windows 8.1/Windows 10 SDK</p>
 <h1 id="四test">四、test</h1>
-<blockquote>
-<p>使用VB来测试</p>
-</blockquote>
-<p>工程-》引用
-<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20200510193432839.png" alt="vb6 ui"></p>
-<p>代码：</p>
+<p>在vbox使用Win8.1安装VB6来测试;</p>
+<h2 id="vs6-sp6">Vs6 SP6</h2>
+<ul>
+<li><a href="https://dl.winworldpc.com/Microsoft%20Visual%20Studio%206.0%20Service%20Pack%205%20(2001)%20%5BEN%20FR%20SP%5D%20(ISO).7z">SP5</a> <br>
+exec &ldquo;SetupSp5.exe&rdquo;</li>
+<li><a href="https://dl.winworldpc.com/Microsoft%20Visual%20Studio%206.0%20Service%20Pack%206.7z">SP6</a> <br>
+exec &ldquo;SetupSp6.exe&rdquo;</li>
+<li><a href="https://www.microsoft.com/en-us/download/details.aspx?id=50722">SP6 Security Rollup Update</a></li>
+</ul>
+<h2 id="vb6-environment">VB6 environment</h2>
+<p>VM: Virtual Box(v6)
+OS: Windows 8.1 Professional(x86)
+VS: <a href="https://winworldpc.com/product/microsoft-visual-stu/60">v6.0</a></p>
+<h3 id="vc-env">VC Env</h3>
+<p><a href="https://aka.ms/vs/17/release/vc_redist.x86.exe">Vc142</a></p>
+<p>从主机(Windows 10)拷贝下列两个文件放到atl的dll目录里：</p>
+<ul>
+<li>vcruntime140d.dll</li>
+</ul>
+<pre tabindex="0"><code>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Redist\MSVC\14.29.30133\x86\Microsoft.VC142.CRT\
+</code></pre><ul>
+<li>ucrtbased.dll</li>
+</ul>
+<pre tabindex="0"><code>C:\Windows\SysWOW64\
+</code></pre><h2 id="vb6-project">VB6 Project</h2>
+<p>Project -&gt; References</p>
+<!-- 中文版VB6: https://gitee.com/xiaobin80/csdn/raw/master/images/20200510193432839.png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-import81.png" alt="vb6 import dll"></p>
+<p>按钮事件：</p>
 <pre tabindex="0"><code class="language-vb6" data-lang="vb6">Private Sub Command1_Click()
   Dim obj As New testATLLib.testSOW
   Dim int1 As Long
@@ -263,18 +286,19 @@
   int1 = obj.Add(2, 3)
   Label1.Caption = int1
 End Sub
-</code></pre><p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20200510193735439.png" alt="program ui"></p>
+</code></pre><!-- Windows Xp sp3 运行: https://gitee.com/xiaobin80/csdn/raw/master/images/20200510193735439.png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-exec81.png" alt="Windows 8.1(x86) 运行"></p>
 <h1 id="参考文章">参考文章</h1>
 <blockquote>
 <p>MSDN</p>
 </blockquote>
 <ul>
-<li><a href="https://docs.microsoft.com/en-us/cpp/atl/reference/atl-project-wizard?redirectedfrom=MSDN&amp;view=vs-2017">ATL 项目向导</a></li>
-<li><a href="https://docs.microsoft.com/en-us/cpp/atl/reference/application-settings-atl-project-wizard?redirectedfrom=MSDN&amp;view=vs-2017">ATL 项目向导的应用程序设置</a></li>
-<li><a href="https://docs.microsoft.com/en-us/cpp/atl/reference/adding-an-atl-simple-object?redirectedfrom=MSDN&amp;view=vs-2017">添加 ATL 简单对象</a></li>
-<li><a href="https://docs.microsoft.com/en-us/cpp/atl/reference/atl-simple-object-wizard?redirectedfrom=MSDN&amp;view=vs-2017">ATL 简单对象向导</a></li>
-<li><a href="https://docs.microsoft.com/en-us/cpp/atl/reference/options-atl-simple-object-wizard?redirectedfrom=MSDN&amp;view=vs-2017">ATL 简单对象向导的&quot;选项&quot;</a></li>
-<li><a href="https://docs.microsoft.com/en-us/cpp/ide/adding-a-method-visual-cpp?redirectedfrom=MSDN&amp;view=vs-2017">添加方法</a></li>
+<li><a href="https://docs.microsoft.com/en-us/cpp/atl/reference/atl-project-wizard?redirectedfrom=MSDN&amp;view=vs-2019">ATL 项目向导</a></li>
+<li><a href="https://docs.microsoft.com/en-us/cpp/atl/reference/application-settings-atl-project-wizard?redirectedfrom=MSDN&amp;view=vs-2019">ATL 项目向导的应用程序设置</a></li>
+<li><a href="https://docs.microsoft.com/en-us/cpp/atl/reference/adding-an-atl-simple-object?redirectedfrom=MSDN&amp;view=vs-2019">添加 ATL 简单对象</a></li>
+<li><a href="https://docs.microsoft.com/en-us/cpp/atl/reference/atl-simple-object-wizard?redirectedfrom=MSDN&amp;view=vs-2019">ATL 简单对象向导</a></li>
+<li><a href="https://docs.microsoft.com/en-us/cpp/atl/reference/options-atl-simple-object-wizard?redirectedfrom=MSDN&amp;view=vs-2019">ATL 简单对象向导的&quot;选项&quot;</a></li>
+<li><a href="https://docs.microsoft.com/en-us/cpp/ide/adding-a-method-visual-cpp?redirectedfrom=MSDN&amp;view=vs-2019">添加方法</a></li>
 <li><a href="https://devblogs.microsoft.com/cppblog/changes-to-project-templates-and-code-wizards-in-15-3/">Changes to Project Templates and Code Wizards in 15.3</a></li>
 </ul>
 
