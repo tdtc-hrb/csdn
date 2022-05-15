@@ -164,6 +164,31 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_mysql_error1067/">mysql的1067错误</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>日志文件问题 由于使用时间比较长积累了很多的日志文件（\data目录下），所以删除之！
+mysql-bin.000001 ... ... mysql-bin.000278 原来删除都留最后一个编号的日志，这次太过彻底~~都删了!
+执行net start mysql： 出现了mysql 1067错误！ 查看，主机名.err文件（lenovo-7c8f808d.err）：
+130416 9:59:23 InnoDB: Started; log sequence number 0 43655 MySQL: File &#39;.\mysql-bin.000278&#39; not found (Errcode: 2) 130416 9:59:23 [ERROR] Failed to open log (file &#39;.\mysql-bin.000278&#39;, errno 2) 130416 9:59:23 [ERROR] Could not open log file 130416 9:59:23 [ERROR] Can&#39;t init tc log 130416 9:59:23 [ERROR] Aborting  130416 9:59:23 InnoDB: Starting shutdown... 130416 9:59:24 InnoDB: Shutdown completed; log sequence number 0 43655 130416 9:59:24 [Note] MySQL: Shutdown complete 告诉我们找不到mysql-bin. <a class="read-more" href="/csdn/post/ops_mysql_error1067/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-15T06:08:08&#43;08:00">
+            15 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_mysql_devel/">无mysql-dev导致的错误</a></h2>
     </header>
     <section class="post-excerpt">
@@ -379,38 +404,6 @@ var RepoInfo = { }; 1. 获取对象 RepoInfo.getObj = function(objName) { 	retur
  1. 定义SAFEARRAY变量 SAFEARRAY *pSArray = NULL; 2. 释放此变量 SafeArrayDestroy(pSArray); 3. 建立向量表 pSArray = SafeArrayCreateVector(VT_UI1, 0, 32); 向量变量（VT_UI1）的定义：msdn
 VT_UI1 Variable type is unsigned char. 4. 写入数据 SafeArrayPutElement(pSArray, &amp;l, &amp;inqReport[l]); getInqRepo方法：  AA：屏蔽的数值
  STDMETHODIMP CRepoFmt::getInqRepo(ULONG iStation, SAFEARRAY** ret) { 	SAFEARRAY *pSArray = NULL;  	unsigned char inqReport[32]; 	unsigned char xorByte = AA; 	int iStationID = 0;  	if (iStation &lt; 1) 	iStationID = 1; 	else 	iStationID = iStation;  	inqReport[0] = AA; 	inqReport[1] = AA; 	inqReport[2] = AA; 	inqReport[3] = AA; 	inqReport[4] = (iStationID % AA); 	inqReport[5] = (iStationID / AA); 	inqReport[6] = AA; 	inqReport[7] = AA; 	inqReport[8] = AA; 	inqReport[9] = AA; 	inqReport[10] = AA; 	inqReport[11] = AA;  	for (int i = 1; i &lt; 18; i++) 	xorByte ^= inqReport[i];  	inqReport[18] = xorByte;  	// Fill the inqReport etc. <a class="read-more" href="/csdn/post/com-safearray-vc/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-13T12:08:08&#43;08:00">
-            13 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/com-wizards-vc/">创建COM</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>IDE: Visual Studio 2017
- 使用Wizard模式创建COM 一、ATL项目向导  使用ATL Project Wizard创建COM
- 1. 建立ATL工程 File-&gt;New-&gt;Project 选择“MFC/ATL”中“ATL Project”。
- Note: name即是要生成的DLL文件
- 2. 工程设置 我们可以自定义设置工程情况。 3. 工程属性 取消编译时注册Dll。
- Project -&gt; Proerties
- Linker -&gt; Register Output
- No
-   二、ATL简单对象向导 1. 创建ATL Simple Object 右击项目名称，选择Add-〉New Item 2. 设置ATL Simple Object progID 附加支持  本选项针对IE支持。
- 三、添加IDL方法  switch &ldquo;class view&rdquo;
- Interface(name)-&gt;add-&gt;add method 添加方法名称以及参数  注意：仅安装ucrt（通用Windows sdk）会出现： <a class="read-more" href="/csdn/post/com-wizards-vc/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">

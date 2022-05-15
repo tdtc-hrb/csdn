@@ -164,6 +164,29 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_zookeeper/">多服务器ZooKeeper安装</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>JDK install see 设置OpenJDK
+ Stage I 1. 《sudo - CentOS》 2. FQDN #127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomain4 #::1 localhost localhost.localdomain localhost6 localhost6.localdomain6 192.168.0.137 tdtc101 192.168.0.138 tdtc102 192.168.0.139 tdtc103 3. 《ssh相互免密》 Stage II 1. unzip $wget https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/zookeeper-3.6.3/apache-zookeeper-3.6.3-bin.tar.gz --no-check-certificate $mkdir -p ~/app/zookeeper $tar xzvf apache-zookeeper-3.6.3-bin.tar.gz -C ~/app/zookeeper $mv ~/app/zookeeper/apache-zookeeper-3.6.3-bin ~/app/zookeeper/3.6.3 2. zk home $sudo vi /etc/bashrc export ZK_HOME=/home/tdtc/app/zookeeper/3.6.3 export PATH=$PATH:$ZK_HOME/bin Stage III 1. zoo.cfg Add the following configuration, and the other options default. <a class="read-more" href="/csdn/post/ops_zookeeper/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2021-04-14T01:08:08&#43;08:00">
+            14 Apr 2021
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/c-automake/">automake生成makefile</a></h2>
     </header>
     <section class="post-excerpt">
@@ -409,33 +432,6 @@ If the system board that you have is not listed, then you will need to port U-Bo
 
         
         <time class="post-date" datetime="2020-05-16T01:58:08&#43;08:00">
-            16 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/css-bootstrap-breadcrumbs/">面包屑（breadcrumbs）</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>在很多网站上都有一个导航记录栏 - 面包屑；
-官方文档 举例
-&lt;ol class=&#34;breadcrumb&#34;&gt;  &lt;li&gt;&lt;a href=&#34;#&#34;&gt;Home&lt;/a&gt;&lt;/li&gt;  &lt;li&gt;&lt;a href=&#34;#&#34;&gt;Library&lt;/a&gt;&lt;/li&gt;  &lt;li class=&#34;active&#34;&gt;Data&lt;/li&gt; &lt;/ol&gt; php example  CodeIgniter v2.2.x/3.x
- 建立一个php文件 breadcrumb.php
-&lt;ol class=&#34;breadcrumb&#34;&gt;  &lt;?php echo get_breadcrumb($breadData, $menu_prefix); ?&gt;&lt;li class=&#34;active&#34;&gt; &lt;?php echo empty($breadData) ? $this-&gt;Glossary_M-&gt;get_word(&#39;home&#39;, $this-&gt;data[&#39;lang_id&#39;]) : $body; ?&gt; &lt;/li&gt; &lt;/ol&gt; 在helper中建立如下方法：
-function get_breadcrumb($array, $prefix = NULL) { 	$str = &#39;&#39;; 	if (count($array)) { 	foreach ($array as $item) { 	if ($item[&#39;homeFlag&#39;]) { 	// &#39;&lt;li&gt;&lt;a href=&#34;http://&#39; 	$str . <a class="read-more" href="/csdn/post/css-bootstrap-breadcrumbs/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-16T00:58:08&#43;08:00">
             16 May 2020
         </time>
     </footer>

@@ -6,7 +6,26 @@
     <description>Recent content in Posts on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 07 May 2022 00:08:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 May 2022 12:08:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>创建COM</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/</link>
+      <pubDate>Fri, 13 May 2022 12:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/</guid>
+      <description>IDE: Visual Studio 2019
+ 使用Wizard模式创建COM 一、ATL项目向导  使用ATL Project Wizard创建COM
+ 1. 建立ATL工程 File-&amp;gt;New-&amp;gt;Project [//]: (vs2017: https://gitee.com/xiaobin80/csdn/raw/master/images/20200201162120769.png) 选择“MFC/ATL”中“ATL Project”。
+ Note: name即是要生成的DLL文件
+ 2. 工程设置 我们可以自定义工程情况。 [//]: (vs2017: https://gitee.com/xiaobin80/csdn/raw/master/images/20200201171441614.png) 3. 工程属性 取消编译时注册Dll。
+ Project -&amp;gt; Properties
+ Linker -&amp;gt; Register Output
+ No
+   二、ATL简单对象向导 1. 创建ATL Simple Object 右击项目名称，选择Add-〉New Item 2. 设置ATL Simple Object progID 附加支持  本选项针对IE支持。
+ 三、添加IDL方法  switch &amp;ldquo;class view&amp;rdquo;
+ Interface(name)-&amp;gt;add-&amp;gt;add method 添加方法名称以及参数  注意：仅安装ucrt（通用Windows sdk）会出现：</description>
+    </item>
+    
     <item>
       <title>十进制转十六进制</title>
       <link>https://tdtc-hrb.github.io/csdn/post/c-string-i2h/</link>
@@ -657,25 +676,6 @@ var RepoInfo = { }; 1. 获取对象 RepoInfo.getObj = function(objName) { 	retur
  1. 定义SAFEARRAY变量 SAFEARRAY *pSArray = NULL; 2. 释放此变量 SafeArrayDestroy(pSArray); 3. 建立向量表 pSArray = SafeArrayCreateVector(VT_UI1, 0, 32); 向量变量（VT_UI1）的定义：msdn
 VT_UI1 Variable type is unsigned char. 4. 写入数据 SafeArrayPutElement(pSArray, &amp;amp;l, &amp;amp;inqReport[l]); getInqRepo方法：  AA：屏蔽的数值
  STDMETHODIMP CRepoFmt::getInqRepo(ULONG iStation, SAFEARRAY** ret) { 	SAFEARRAY *pSArray = NULL;  	unsigned char inqReport[32]; 	unsigned char xorByte = AA; 	int iStationID = 0;  	if (iStation &amp;lt; 1) 	iStationID = 1; 	else 	iStationID = iStation;  	inqReport[0] = AA; 	inqReport[1] = AA; 	inqReport[2] = AA; 	inqReport[3] = AA; 	inqReport[4] = (iStationID % AA); 	inqReport[5] = (iStationID / AA); 	inqReport[6] = AA; 	inqReport[7] = AA; 	inqReport[8] = AA; 	inqReport[9] = AA; 	inqReport[10] = AA; 	inqReport[11] = AA;  	for (int i = 1; i &amp;lt; 18; i++) 	xorByte ^= inqReport[i];  	inqReport[18] = xorByte;  	// Fill the inqReport etc.</description>
-    </item>
-    
-    <item>
-      <title>创建COM</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/</link>
-      <pubDate>Wed, 13 May 2020 12:08:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/</guid>
-      <description>IDE: Visual Studio 2017
- 使用Wizard模式创建COM 一、ATL项目向导  使用ATL Project Wizard创建COM
- 1. 建立ATL工程 File-&amp;gt;New-&amp;gt;Project 选择“MFC/ATL”中“ATL Project”。
- Note: name即是要生成的DLL文件
- 2. 工程设置 我们可以自定义设置工程情况。 3. 工程属性 取消编译时注册Dll。
- Project -&amp;gt; Proerties
- Linker -&amp;gt; Register Output
- No
-   二、ATL简单对象向导 1. 创建ATL Simple Object 右击项目名称，选择Add-〉New Item 2. 设置ATL Simple Object progID 附加支持  本选项针对IE支持。
- 三、添加IDL方法  switch &amp;ldquo;class view&amp;rdquo;
- Interface(name)-&amp;gt;add-&amp;gt;add method 添加方法名称以及参数  注意：仅安装ucrt（通用Windows sdk）会出现：</description>
     </item>
     
     <item>
