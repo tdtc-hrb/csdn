@@ -15,9 +15,9 @@
       <guid>https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/</guid>
       <description>IDE: Visual Studio 2019
  使用Wizard模式创建COM 一、ATL项目向导  使用ATL Project Wizard创建COM
- 1. 建立ATL工程 File-&amp;gt;New-&amp;gt;Project [//]: &amp;lt;&amp;gt; (vs2017: https://gitee.com/xiaobin80/csdn/raw/master/images/20200201162120769.png) 选择“MFC/ATL”中“ATL Project”。
+ 1. 建立ATL工程 File-&amp;gt;New-&amp;gt;Project [//]: # (vs2017: https://gitee.com/xiaobin80/csdn/raw/master/images/20200201162120769.png) 选择“MFC/ATL”中“ATL Project”。
  Note: name即是要生成的DLL文件
- 2. 工程设置 我们可以自定义工程情况。 [//]: &amp;lt;&amp;gt; (vs2017: https://gitee.com/xiaobin80/csdn/raw/master/images/20200201171441614.png) 3. 工程属性 取消编译时注册Dll。
+ 2. 工程设置 我们可以自定义工程情况。 [//]: # (vs2017: https://gitee.com/xiaobin80/csdn/raw/master/images/20200201171441614.png) 3. 工程属性 取消编译时注册Dll。
  Project -&amp;gt; Properties
  Linker -&amp;gt; Register Output
  No
