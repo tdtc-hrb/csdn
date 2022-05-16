@@ -6,7 +6,20 @@
     <description>Recent content on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 15 May 2022 18:08:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 May 2022 00:18:18 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TDTC Demo</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/demo-tdtc/</link>
+      <pubDate>Mon, 16 May 2022 00:18:18 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/demo-tdtc/</guid>
+      <description>系统需求： ref &amp;ldquo;VC Redist&amp;rdquo; - vc 10.0
+  注册下列COM组件
+   xbfInfo.dll repoInfo.dll  callXBFLib  生成/读取xbf文件.
+ 文档请参考  callXBFLibrary - 调用非托管DLL callXBFLibrary - 调用COM  配置文件  xbfConfig.ini
+ [config] type = MySQL  [MS-Access] DB = v:\fde.mdb Pwd = wwsrts12  [MSSQL] Server = ddrwaas2 DB = dddrrewq User = ttrrre Pwd = qwerty  [MySQL] Server = 192.168.1.107 DB = mysql User = DBAdmin Pwd = xbfirst repoFmtGen  生成固定格式的报文。</description>
+    </item>
+    
     <item>
       <title>测试COM</title>
       <link>https://tdtc-hrb.github.io/csdn/post/com-ie-test/</link>
@@ -201,19 +214,6 @@ git commit --amend About：
  git-bash和git-cmd的区别
  bash是linux风格的命令行，可以使用windows和linux的命令； cmd是windows风格的命令行，可以使用windows命令；
  此外，还有一个最大的不同点，git-cmd是天生就带了系统的PATH环境变量， 这一点会导致如果你运行某些脚本的时候，如果依赖某些安装的程序， 如python、node这些，git-bash就会提示不存在对应的命令， 而git-cmd可以正确运行。    四、合并分支 1. checkout git checkout dev git checkout master 2. merge git merge origin/dev 五、设置user git init ``bash git config user.</description>
-    </item>
-    
-    <item>
-      <title>TDTC Demo</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/demo-tdtc/</link>
-      <pubDate>Tue, 16 Nov 2021 00:18:18 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/demo-tdtc/</guid>
-      <description>系统需求： ref &amp;ldquo;VC Redist&amp;rdquo; - vc 10.0
-  注册下列COM组件
-   xbfInfo.dll repoInfo.dll  callXBFLib  生成/读取xbf文件.
- 文档请参考  callXBFLibrary - 调用非托管DLL callXBFLibrary - 调用COM  配置文件  xbfConfig.ini
- [config] type = MySQL  [MS-Access] DB = v:\fde.mdb Pwd = wwsrts12  [MSSQL] Server = ddrwaas2 DB = dddrrewq User = ttrrre Pwd = qwerty  [MySQL] Server = 192.168.1.107 DB = mysql User = DBAdmin Pwd = xbfirst repoFmtGen  生成固定格式的报文。</description>
     </item>
     
     <item>
