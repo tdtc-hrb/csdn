@@ -164,6 +164,29 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_openjdk_ubuntu/">设置OpenJDK</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p> ubuntu 20.04.2
+ wsl1017@DESKTOP-14G6K9S:~$ java -version  Command &#39;java&#39; not found, but can be installed with:  sudo apt install default-jre sudo apt install openjdk-11-jre-headless sudo apt install openjdk-8-jre-headless installation  install jre  wsl1017@DESKTOP-14G6K9S:/tmp$ sudo apt-get install openjdk-8-jre-headless install jdk  sudo apt-get install openjdk-8-jdk-headless set JAVA home  vi /etc/profile export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 Reference  How to Install OpenJDK JAVA 11/8 in Ubuntu and Debian   <a class="read-more" href="/csdn/post/ops_openjdk_ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-15T07:08:08&#43;08:00">
+            15 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_mysql_error1067/">mysql的1067错误</a></h2>
     </header>
     <section class="post-excerpt">
@@ -364,30 +387,6 @@ var RepoInfo = { }; 1. 获取对象 RepoInfo.getObj = function(objName) { 	retur
 
         
         <time class="post-date" datetime="2020-05-13T16:08:08&#43;08:00">
-            13 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/com-ie-test/">测试COM</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>IDE: Visual Studio 2010
- 本文参考《创建COM》。
-一、创建COM 1. 增加IE支持 2. 增加方法 Add - 加 STDMETHODIMP CtestSOW::Add(LONG x, LONG y, LONG* ret) { 	// TODO: Add your implementation code here 	*ret = (x + y);  	return S_OK; } Mul - 乘 STDMETHODIMP CtestSOW::Mul(LONG x, LONG y, LONG* ret) { 	// TODO: Add your implementation code here 	*ret = (x * y);  	return S_OK; } Div - 除 STDMETHODIMP CtestSOW::Div(LONG x, LONG y, LONG* ret) { 	// TODO: Add your implementation code here 	*ret = (x / y);  	return S_OK; } 二、测试平台  查看依赖：win8. <a class="read-more" href="/csdn/post/com-ie-test/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-13T14:08:08&#43;08:00">
             13 May 2020
         </time>
     </footer>
