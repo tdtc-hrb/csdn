@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.98.0" />
+    <meta name="generator" content="Hugo 0.99.0" />
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,6 +160,31 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_spark_ubuntu/">安装spark</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>WSL: Ubuntu 18.04.1
+ Prepare  Java 8+, Python 2.7+/3.4+ and R 3.1+
+ Spark runs on Java 8+, Python 2.7+/3.4+ and R 3.1+. For the Scala API, Spark 2.4.1 uses Scala 2.12. You will need to use a compatible Scala version (2.12.x). 1. java 设置OpenJDK - Ubuntu
+2. Python sudo apt-get install python 3. R language 1) add ppa sudo add-apt-repository ppa:marutter/rrutter sudo apt-get update 2) install sudo apt-get install r-base r-base-dev Installation 1. <a class="read-more" href="/csdn/post/ops_spark_ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-15T08:08:08&#43;08:00">
+            15 May 2020
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -279,42 +304,6 @@ solution1 Comment out this line stdAfx. <a class="read-more" href="/csdn/post/vc
 
         
         <time class="post-date" datetime="2020-05-15T00:28:08&#43;08:00">
-            15 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/vc-serial_communication/">Windows串口</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>项目导读  串口读写工具 CSerialPort Remon Spekreijse MFC VS2005（VC8）  程序介绍 界面分三块：
-1. 端口配置 1.1 在“Port Number”选择端口号； 1.2 在“Config”配置端口的属性，比如波特率、奇偶校验、数据位、停止位等等。 2. 发送区域 2.1 Loop Send 当我们钩选此复选框时，必须选择“发送频率”，然后才能执行循环发送数据。
-### 2.2 发送频率 选择其一：500、1000、2000毫秒。  如果要更改读取自定义的时间频率：
- 请将SerialCommView.cpp-Ln292，更为：
- ((CComboBox *)GetDlgItem(IDC_COMBO1Timer))-&gt;GetWindowTextA(strTemp);)
-   2.3 发送内容框 在“发送信息框”输入内容就可发送数据了！
-2.4 操作流程 A类（自动化） 2.2-》2.3-》2.1
-B类（手动） 2.3-》点击“Send”按钮。
-3. 接收区域 3.1 制式切换 当钩选了“Hex View”复选框，接收到的数据就以16进制显示。
-3.2 清除数据 当点击“Clear”按钮，即清空接收框数据。
-3.3 数据保存 当点击“Save As”按钮，即保存接收框数据；默认文件格式为rtf文件。
- 操作串口主要分为：初始化串口、读串口、写串口。
-其中，读串口需要使用线程。
-一、初始化串口 在使用串口的时候，我们需要配置串口相关的参数比如，串口号，波特率，数据位，停止位等等。 首先，如果有线程在运行则停止它。防止数据出现错读。然后，建立事件以及把它们的值放到数组中。 这时我们要初始化临界区，准备进入临界编码。如果要设定的串口打开了，我们要关闭它。 建立串口以及设置超时时间设定这时我们要设置等待事件，之后设置RTS为高。获得通讯状态，配置DCB以及清空缓存。 最后退出临界区编码。完成串口的初始化。
-二、类图 三、Github  开发语言: VC2010 sln文件: SerialComm. <a class="read-more" href="/csdn/post/vc-serial_communication/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-15T00:08:08&#43;08:00">
             15 May 2020
         </time>
     </footer>

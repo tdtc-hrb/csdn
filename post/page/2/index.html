@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.98.0" />
+    <meta name="generator" content="Hugo 0.99.0" />
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,6 +160,37 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_network_adapter_centos/">CentOS修改网卡为固定IP</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>View $ip addr  1 is loopback 2 is the current network card
+ Setup auto Start job network adapter.
+ONBOOT=yes static cd /etc/sysconfig/network-scripts $sudo vi ifcfg-*  *: current network card
+ BOOTPROTO=static IPADDR=192.168.1.186 NETMASK=255.255.255.0 GATEWAY=192.168.1.1 DNS1=211.161.191.235 DNS2=211.161.122.197 virtual machine vmware 设置Network Adapter为Bridged
+缺省/etc/sysconfig/network-scripts/ifcfg-eth0
+ default: eth0
+ vbox 设置Network Adapter为Bridged
+缺省/etc/sysconfig/network-scripts/ifcfg-enp0XX
+ default: enp0s3
+ ssh $sudo yum install openssh  <a class="read-more" href="/csdn/post/ops_network_adapter_centos/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-03-13T08:38:08-08:00">
+            13 Mar 2022
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -388,29 +419,6 @@ sudo grub-install /dev/sda sudo update-grub  <a class="read-more" href="/csdn/po
         
         <time class="post-date" datetime="2021-05-02T01:08:39&#43;08:00">
             2 May 2021
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/c-console_app/">计算圆的面积和周长</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>IDE Eclipse IDE for C/C++ Developers Dev Env cygwin  主程序 Create Project File -&gt; New -&gt; C/C++ Project &ldquo;C++ Managed Build&rdquo;
-Template  Project type  Executable: Hello World C++ Project  Toolchains  cygwin GCC ansi版 int main(int argc, char* argv[]) {  double dRadius = 3;  if (argc &gt; 1) {  dRadius = atof(argv[1]);  }  /// todo  return 0; } unicode版 int main(int argc, wchar_t* argv[]) {  double dRadius = 3;  if (argc &gt; 1) {  dRadius = _wtof(argv[1]);  }  /// todo  return 0; } C2065: &lsquo;cout&rsquo; : undeclared identifier 强制使用命名空间 <a class="read-more" href="/csdn/post/c-console_app/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2021-05-01T06:08:08&#43;08:00">
-            1 May 2021
         </time>
     </footer>
 </article>
