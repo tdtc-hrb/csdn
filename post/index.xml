@@ -13,7 +13,7 @@
       <pubDate>Tue, 17 May 2022 08:18:18 +0800</pubDate>
       
       <guid>https://tdtc-hrb.github.io/csdn/post/demo-tdtc/</guid>
-      <description>系统需求： Mixed(x86 and x64): Windows 10 - Windows Vista Pure(x86): Windows XP - Windows 3.1
+      <description>系统需求 Mixed(x86 and x64): Windows 10 - Windows Vista Pure(x86): Windows XP - Windows 3.1
 ref &amp;ldquo;VC Redist&amp;rdquo;
   注册下列COM组件
   xbfInfo.dllrepoInfo.dll callXBFLib  生成/读取xbf文件.
