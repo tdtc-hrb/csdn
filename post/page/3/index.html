@@ -164,6 +164,30 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql-mdb-v103/">安装 MariaDB 10.3数据库</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>1. 准备安装  卸载旧版本Maria
+ 1) 查询 [tdtc@localhost ~]$ sudo rpm -qa | grep mariadb [sudo] password for tdtc: mariadb-libs-5.5.68-1.el7.x86_64 2) uninstall sudo yum -y remove mariadb* 2. install Step 1: Add MariaDB Yum Repositories /etc/yum.repos.d/mariadb.repo
+[mariadb] name = MariaDB baseurl = http://yum.mariadb.org/10.3/centos7-amd64 gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB gpgcheck=1 Step 2: Install MariaDB Server sudo yum install MariaDB-server MariaDB-client  run  sudo systemctl start mysql.service Step 3: Secure MariaDB Install  Default: Enter <a class="read-more" href="/csdn/post/mysql-mdb-v103/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2021-05-02T01:08:39&#43;08:00">
+            2 May 2021
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/c-console_app/">计算圆的面积和周长</a></h2>
     </header>
     <section class="post-excerpt">
@@ -339,42 +363,6 @@ $ autoscan 会生成configure.scan文件, 重命名为configure.ac
         
         <time class="post-date" datetime="2020-07-14T00:08:08&#43;08:00">
             14 Jul 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/c-bsd_socket-server/">使用fork的server</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>GNU Compiler Collection(GCC)
- 在“Socket服务器端程序”基础上增加子进程。
-Beej’s Guide Network to Programming  关于Unix/Linux子进程：
- 相当于Windows的线程
-  调用fork()即可增加子进程。
-要使用fork必须调用waitpid() ！
-waitpid() waitpid函数原型：
-#include&lt;sys/types.h&gt; /* 提供类型pid_t的定义 */#include&lt;sys/wait.h&gt; pid_t waitpid(pid_t pid, int *status, int options);   pid 等于-1时，等待任何一个子进程退出，没有任何限制，此时waitpid和wait的作用一模一样。
-  status 我们设置为NULL。
-  options 提供了一些额外的选项来控制waitpid，WNOHANG常量表示， 即使没有子进程退出，它也会立即返回，不会像wait那样永远等下去。
-  sigaction()  sigaction()是waitpid()的开关
- 只有给waitpid()信号时，才开启它(waitpid)！ 这时，需要sigaction()。
-sigaction函数原型：
-#include&lt;signal.h&gt;int sigaction(int signum, const struct sigaction *act, struct sigaction *oldact);   signum 等于SIGCHLD时，只有子进程停止或者退出才进行调用。
-  act 一个指向sigaction结构的指针。 <a class="read-more" href="/csdn/post/c-bsd_socket-server/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-23T08:08:08&#43;08:00">
-            23 May 2020
         </time>
     </footer>
 </article>
