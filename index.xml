@@ -6,16 +6,16 @@
     <description>Recent content on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 16 May 2022 00:18:18 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 May 2022 08:18:18 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TDTC Demo</title>
       <link>https://tdtc-hrb.github.io/csdn/post/demo-tdtc/</link>
-      <pubDate>Mon, 16 May 2022 00:18:18 +0800</pubDate>
+      <pubDate>Mon, 16 May 2022 08:18:18 +0800</pubDate>
       
       <guid>https://tdtc-hrb.github.io/csdn/post/demo-tdtc/</guid>
-      <description>系统需求： ref &amp;ldquo;VC Redist&amp;rdquo; - vc 10.0
+      <description>系统需求： ref &amp;ldquo;VC Redist&amp;rdquo;
   注册下列COM组件
-   xbfInfo.dll repoInfo.dll  callXBFLib  生成/读取xbf文件.
+  xbfInfo.dllrepoInfo.dll callXBFLib  生成/读取xbf文件.
  文档请参考  callXBFLibrary - 调用非托管DLL callXBFLibrary - 调用COM  配置文件  xbfConfig.ini
  [config] type = MySQL  [MS-Access] DB = v:\fde.mdb Pwd = wwsrts12  [MSSQL] Server = ddrwaas2 DB = dddrrewq User = ttrrre Pwd = qwerty  [MySQL] Server = 192.168.1.107 DB = mysql User = DBAdmin Pwd = xbfirst repoFmtGen  生成固定格式的报文。</description>
     </item>
