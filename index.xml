@@ -201,6 +201,21 @@ ONBOOT=yes static cd /etc/sysconfig/network-scripts $sudo vi ifcfg-*  *: current
     </item>
     
     <item>
+      <title>automake生成makefile</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/c-automake/</link>
+      <pubDate>Sun, 13 Mar 2022 02:20:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/c-automake/</guid>
+      <description>1. 手工(修改或创建)文件 详见附件Makefile.am和configure.ac
+注意: am文件是需要创建的!
+ac文件 生成ac模板
+$ autoscan 会生成configure.scan文件, 重命名为configure.ac
+修改初始化 注意: 所有新修改的值都需要方括号([])
+ 程序属性  AC_INIT([hex2int], [v0.1], [veic_2005@163.com])  目录结构 如果只有本目录, 使用空值  AM_INIT_AUTOMAKE 2. 其他命令  aclocal autoconf autoheader  3. 生成Makefile 输出Makefile.in automake --add-missing 输出Makefile ./configure 手动Makefile  小项目可以。 注意：所有的命令前必须为TAB，不能使空格！
+ #https://stackoverflow.com/questions/1484817/how-do-i-make-a-simple-makefile-for-gcc-on-linux #https://stackoverflow.com/questions/14109724/makefile-missing-separator/14109796 #https://www.gnu.org/software/make/manual/html_node/Pattern-Examples.html#Pattern-Examples #https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html#Automatic-Variables   TARGET = hex2int CC = gcc CFLAGS = -g -Wall   all:$(TARGET)  OBJECTS = $(patsubst %.c, %.o, $(wildcard *.</description>
+    </item>
+    
+    <item>
       <title>java的grammar</title>
       <link>https://tdtc-hrb.github.io/csdn/post/java-grammar/</link>
       <pubDate>Tue, 08 Mar 2022 02:09:28 +0800</pubDate>
@@ -347,21 +362,6 @@ code 程序的需要两部分组成：
       <guid>https://tdtc-hrb.github.io/csdn/post/ops_zookeeper/</guid>
       <description>JDK install see 设置OpenJDK
  Stage I 1. 《sudo - CentOS》 2. FQDN #127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomain4 #::1 localhost localhost.localdomain localhost6 localhost6.localdomain6 192.168.0.137 tdtc101 192.168.0.138 tdtc102 192.168.0.139 tdtc103 3. 《ssh相互免密》 Stage II 1. unzip $wget https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/zookeeper-3.6.3/apache-zookeeper-3.6.3-bin.tar.gz --no-check-certificate $mkdir -p ~/app/zookeeper $tar xzvf apache-zookeeper-3.6.3-bin.tar.gz -C ~/app/zookeeper $mv ~/app/zookeeper/apache-zookeeper-3.6.3-bin ~/app/zookeeper/3.6.3 2. zk home $sudo vi /etc/bashrc export ZK_HOME=/home/tdtc/app/zookeeper/3.6.3 export PATH=$PATH:$ZK_HOME/bin Stage III 1. zoo.cfg Add the following configuration, and the other options default.</description>
-    </item>
-    
-    <item>
-      <title>automake生成makefile</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/c-automake/</link>
-      <pubDate>Sat, 13 Feb 2021 02:20:39 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/c-automake/</guid>
-      <description>1. 手工(修改或创建)文件 详见附件Makefile.am和configure.ac
-注意: am文件是需要创建的!
-ac文件 生成ac模板
-$ autoscan 会生成configure.scan文件, 重命名为configure.ac
-修改初始化 注意: 所有新修改的值都需要方括号([])
- 程序属性  AC_INIT([hex2int], [v0.1], [veic_2005@163.com])  目录结构 如果只有本目录, 使用空值  AM_INIT_AUTOMAKE 2. 其他命令  aclocal autoconf autoheader  3. 生成Makefile 输出Makefile.in automake --add-missing 输出Makefile ./configure 手动Makefile  小项目可以。 注意：所有的命令前必须为TAB，不能使空格！
- #https://stackoverflow.com/questions/1484817/how-do-i-make-a-simple-makefile-for-gcc-on-linux #https://stackoverflow.com/questions/14109724/makefile-missing-separator/14109796 #https://www.gnu.org/software/make/manual/html_node/Pattern-Examples.html#Pattern-Examples #https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html#Automatic-Variables   TARGET = hex2int CC = gcc CFLAGS = -g -Wall   all:$(TARGET)  OBJECTS = $(patsubst %.c, %.o, $(wildcard *.</description>
     </item>
     
     <item>
