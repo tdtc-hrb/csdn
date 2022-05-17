@@ -36,13 +36,14 @@ ref &amp;ldquo;VC Redist&amp;rdquo;
     <item>
       <title>Windows串口</title>
       <link>https://tdtc-hrb.github.io/csdn/post/vc-serial_communication/</link>
-      <pubDate>Sun, 15 May 2022 00:08:08 +0800</pubDate>
+      <pubDate>Sun, 15 May 2022 08:08:08 +0800</pubDate>
       
       <guid>https://tdtc-hrb.github.io/csdn/post/vc-serial_communication/</guid>
       <description>串口读写工具
- CSerialPort Remon Spekreijse MFC Vs2013（VC12）/Vs2019(VC14.2)  程序介绍 界面分三块：
+ CSerialPort  author: Remon Spekreijse  MFC Vs2013(VC12)/Vs2019(VC14.2)  程序介绍 界面分三块：
 1. 端口配置 1.1 在“Port Number”选择端口号； 1.2 在“Config”配置端口的属性，比如波特率、奇偶校验、数据位、停止位等等。 2. 发送区域 2.1 Loop Send 当我们钩选此复选框时，必须选择“发送频率”，然后才能执行循环发送数据。
-### 2.2 发送频率 选择其一：500、1000、2000毫秒。  如果要更改读取自定义的时间频率：
+### 2.2 发送频率 选择其一：500、1000、2000毫秒。
+ 如果要更改读取自定义的时间频率：
  请将SerialCommView.cpp-Ln292，更为：
  ((CComboBox *)GetDlgItem(IDC_COMBO1Timer))-&amp;gt;GetWindowTextA(strTemp);)
    2.3 发送内容框 在“发送信息框”输入内容就可发送数据了！

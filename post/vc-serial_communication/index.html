@@ -13,7 +13,7 @@
 
 
 <meta name="twitter:title" content="Windows串口"/>
-<meta name="twitter:description" content="vc"/>
+<meta name="twitter:description" content="Visual C&#43;&#43;"/>
 <meta name="twitter:site" content="@"/>
 
 
@@ -27,9 +27,9 @@
     
 
     
-    <meta property="og:description" content="vc" />
+    <meta property="og:description" content="Visual C&#43;&#43;" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2022-05-15T00:08:08&#43;08:00" />
+    <meta property="article:published_time" content="2022-05-15T08:08:08&#43;08:00" />
 
     
     
@@ -37,7 +37,7 @@
     <title>Windows串口 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
 
     
-    <meta name="description" content="vc" />
+    <meta name="description" content="Visual C&#43;&#43;" />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -92,18 +92,18 @@
     },
     "headline": "Windows串口",
     "name": "Windows串口",
-    "wordCount":  65 ,
+    "wordCount":  66 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/vc-serial_communication/",
-    "datePublished": "2022-05-15T00:08Z",
-    "dateModified": "2022-05-15T00:08Z",
+    "datePublished": "2022-05-15T08:08Z",
+    "dateModified": "2022-05-15T08:08Z",
     
     
-    "description": "vc",
+    "description": "Visual C++",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://tdtc-hrb.github.io/csdn/post/vc-serial_communication/"
@@ -164,11 +164,11 @@
 
     <header class="post-header">
         <h1 class="post-title">Windows串口</h1>
-        <small>vc</small>
+        <small>Visual C&#43;&#43;</small>
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2022-05-15T00:08:08&#43;08:00">
+          <time class="post-date" datetime="2022-05-15T08:08:08&#43;08:00">
             May 15, 2022
           </time>
         
@@ -178,26 +178,32 @@
 
     <section class="post-content">
       <p>串口读写工具</p>
+<!-- Program on Windows XP - 1: https://gitee.com/xiaobin80/csdn/raw/master/images/20150118233218968.png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/prog81-0.png" alt="Program on Windows 8.1 - UI: no serial device"></p>
+<!-- Program on Windows XP - 2: https://gitee.com/xiaobin80/csdn/raw/master/images/20150118233246359.png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/prog81-1.png" alt="Program on Windows 8.1 - UI"></p>
 <ul>
-<li>CSerialPort <br>
-Remon Spekreijse</li>
-<li>MFC <br>
-Vs2013（VC12）/Vs2019(VC14.2)</li>
+<li>CSerialPort</li>
 </ul>
-<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20150118233218968.png" alt="program xp1"></p>
-<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20150118233246359.png" alt="program xp2"></p>
+<pre tabindex="0"><code>author: Remon Spekreijse
+</code></pre><ul>
+<li>MFC <br>
+Vs2013(VC12)/Vs2019(VC14.2)</li>
+</ul>
 <h1 id="程序介绍">程序介绍</h1>
 <p>界面分三块：</p>
 <h2 id="1-端口配置">1. 端口配置</h2>
 <h3 id="11-在port-number选择端口号">1.1 在“Port Number”选择端口号；</h3>
 <h3 id="12-在config配置端口的属性比如波特率奇偶校验数据位停止位等等">1.2 在“Config”配置端口的属性，比如波特率、奇偶校验、数据位、停止位等等。</h3>
-<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20150119144350996.png" alt="program xp3"></p>
+<!-- Program on Windows XP - 3: https://gitee.com/xiaobin80/csdn/raw/master/images/20150119144350996.png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/prog81-2.png" alt="Program on Windows 8.1 - Setting Serial Communication Number"></p>
 <h2 id="2-发送区域">2. 发送区域</h2>
 <h3 id="21-loop-send">2.1 Loop Send</h3>
 <p>当我们钩选此复选框时，必须选择“发送频率”，然后才能执行循环发送数据。</p>
 <p>### 2.2 发送频率 <br>
-选择其一：500、1000、2000毫秒。
-<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20150119144408343.png" alt="program xp4"></p>
+选择其一：500、1000、2000毫秒。</p>
+<!-- Program on Windows XP - 4: https://gitee.com/xiaobin80/csdn/raw/master/images/20150119144408343.png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/prog81-3.png" alt="Program on Windows 8.1 - Setting time"></p>
 <blockquote>
 <p>如果要更改读取自定义的时间频率：</p>
 <blockquote>
