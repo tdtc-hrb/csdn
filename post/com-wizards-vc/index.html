@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="atl" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2022-05-13T12:08:08&#43;08:00" />
+    <meta property="article:published_time" content="2022-05-17T12:08:08&#43;08:00" />
 
     
     
@@ -92,15 +92,15 @@
     },
     "headline": "创建COM",
     "name": "创建COM",
-    "wordCount":  178 ,
+    "wordCount":  172 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/",
-    "datePublished": "2022-05-13T12:08Z",
-    "dateModified": "2022-05-13T12:08Z",
+    "datePublished": "2022-05-17T12:08Z",
+    "dateModified": "2022-05-17T12:08Z",
     
     
     "description": "atl",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2022-05-13T12:08:08&#43;08:00">
-            May 13, 2022
+          <time class="post-date" datetime="2022-05-17T12:08:08&#43;08:00">
+            May 17, 2022
           </time>
         
          
@@ -250,22 +250,17 @@
 </span></span></code></pre></div><p>解决办法： <br>
 安装Windows 8.1/Windows 10 SDK</p>
 <h1 id="四test">四、test</h1>
-<p>在vbox使用Win8.1安装VB6来测试;</p>
-<h2 id="vs6-sp6">Vs6 SP6</h2>
+<p>使用VB6进行测试.</p>
 <ul>
-<li><a href="https://dl.winworldpc.com/Microsoft%20Visual%20Studio%206.0%20Service%20Pack%205%20(2001)%20%5BEN%20FR%20SP%5D%20(ISO).7z">SP5</a> <br>
-exec &ldquo;SetupSp5.exe&rdquo;</li>
-<li><a href="https://dl.winworldpc.com/Microsoft%20Visual%20Studio%206.0%20Service%20Pack%206.7z">SP6</a> <br>
-exec &ldquo;SetupSp6.exe&rdquo;</li>
-<li><a href="https://www.microsoft.com/en-us/download/details.aspx?id=50722">SP6 Security Rollup Update</a></li>
+<li>OS <br>
+Windows 8.1 Professional(x86)</li>
+<li>VS<br>
+<a href="https://winworldpc.com/product/microsoft-visual-stu/60">v6.0</a></li>
 </ul>
-<h2 id="vb6-environment">VB6 environment</h2>
-<p>VM: Virtual Box(v6)
-OS: Windows 8.1 Professional(x86)
-VS: <a href="https://winworldpc.com/product/microsoft-visual-stu/60">v6.0</a></p>
-<h3 id="vc-env">VC Env</h3>
-<p><a href="https://aka.ms/vs/17/release/vc_redist.x86.exe">Vc142</a></p>
-<p>从主机(Windows 10)拷贝下列两个文件放到atl的dll目录里：</p>
+<h2 id="os">Os</h2>
+<p><a href="https://aka.ms/vs/17/release/vc_redist.x86.exe">Vc 14.2</a></p>
+<h3 id="debug版本">Debug版本</h3>
+<p>从宿主机拷贝下列文件放到testATL.dll所在的目录：</p>
 <ul>
 <li>vcruntime140d.dll</li>
 </ul>
@@ -274,7 +269,15 @@ VS: <a href="https://winworldpc.com/product/microsoft-visual-stu/60">v6.0</a></p
 <li>ucrtbased.dll</li>
 </ul>
 <pre tabindex="0"><code>C:\Windows\SysWOW64\
-</code></pre><h2 id="vb6-project">VB6 Project</h2>
+</code></pre><h2 id="vs">VS</h2>
+<ul>
+<li><a href="https://dl.winworldpc.com/Microsoft%20Visual%20Studio%206.0%20Service%20Pack%205%20(2001)%20%5BEN%20FR%20SP%5D%20(ISO).7z">SP5</a> <br>
+exec &ldquo;SetupSp5.exe&rdquo;</li>
+<li><a href="https://dl.winworldpc.com/Microsoft%20Visual%20Studio%206.0%20Service%20Pack%206.7z">SP6</a> <br>
+exec &ldquo;SetupSp6.exe&rdquo;</li>
+<li><a href="https://www.microsoft.com/en-us/download/details.aspx?id=50722">SP6 Security Rollup Update</a></li>
+</ul>
+<h3 id="vb6-project">VB6 Project</h3>
 <p>Project -&gt; References</p>
 <!-- 中文版VB6: https://gitee.com/xiaobin80/csdn/raw/master/images/20200510193432839.png -->
 <p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-import81.png" alt="vb6 import dll"></p>
@@ -352,17 +355,10 @@ End Sub
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/vc-serial_communication/">
-          <section class="post">
-              <h2>Windows串口</h2>
-              
-          </section>
-      </a>
   
-  
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/vc-bsd_socket/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/demo-tdtc/">
           <section class="post">
-              <h2>使用BSD socket</h2>
+              <h2>TDTC Demo</h2>
           </section>
       </a>
   
