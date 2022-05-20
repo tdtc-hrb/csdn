@@ -6,24 +6,11 @@
     <description>Recent content on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 18 May 2022 10:08:39 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>安装boost库(VC)</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/vc-boost/</link>
-      <pubDate>Wed, 18 May 2022 10:08:39 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/vc-boost/</guid>
-      <description>vs2008 cl 提示不可用.
- vs2012 Gen b2时出错。
-  支持的VC版本(已测)
-   名称 VS版本     msvc-12.0 VS2013   msvc-14.0 VS2015   msvc-14.1 VS2017   msvc-14.2 VS2019    1. 编译  在 x86 Native Tools Command Prompt for VS 2019 下运行
- About b2 vs bjam as of Boost 1.47.0, the official name of the executable was changed to b2. Gen b2 bootstrap.</description>
-    </item>
-    
+    <lastBuildDate>Wed, 18 May 2022 12:08:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>创建COM</title>
       <link>https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/</link>
-      <pubDate>Tue, 17 May 2022 12:08:08 +0800</pubDate>
+      <pubDate>Wed, 18 May 2022 12:08:08 +0800</pubDate>
       
       <guid>https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/</guid>
       <description>IDE: Visual Studio 2019(v16.11)
@@ -42,6 +29,19 @@
 附加支持  本选项针对IE支持。
  Other -&amp;gt; Support:
 三、添加IDL方法  Tab switching from &amp;ldquo;Solution Explorer&amp;rdquo; to &amp;ldquo;Class View&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>安装boost库(VC)</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/vc-boost/</link>
+      <pubDate>Wed, 18 May 2022 10:08:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/vc-boost/</guid>
+      <description>vs2008 cl 提示不可用.
+ vs2012 Gen b2时出错。
+  支持的VC版本(已测)
+   名称 VS版本     msvc-12.0 VS2013   msvc-14.0 VS2015   msvc-14.1 VS2017   msvc-14.2 VS2019    1. 编译  在 x86 Native Tools Command Prompt for VS 2019 下运行
+ About b2 vs bjam as of Boost 1.47.0, the official name of the executable was changed to b2. Gen b2 bootstrap.</description>
     </item>
     
     <item>
