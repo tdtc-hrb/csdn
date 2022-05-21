@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="atl" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2022-05-18T16:08:08&#43;08:00" />
+    <meta property="article:published_time" content="2022-05-18T18:08:08&#43;08:00" />
 
     
     
@@ -92,15 +92,15 @@
     },
     "headline": "创建COM",
     "name": "创建COM",
-    "wordCount":  173 ,
-    "timeRequired": "PT1M",
+    "wordCount":  292 ,
+    "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/",
-    "datePublished": "2022-05-18T16:08Z",
-    "dateModified": "2022-05-18T16:08Z",
+    "datePublished": "2022-05-18T18:08Z",
+    "dateModified": "2022-05-18T18:08Z",
     
     
     "description": "atl",
@@ -168,7 +168,7 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2022-05-18T16:08:08&#43;08:00">
+          <time class="post-date" datetime="2022-05-18T18:08:08&#43;08:00">
             May 18, 2022
           </time>
         
@@ -281,10 +281,20 @@ Windows 8.1 Professional(x86)</li>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
 </span></span></code></pre></div><p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-exec81.png" alt="Windows 8.1(x86) 运行">
 拷贝Interop.testATLLib.dll和WindowsApplication1.exe即可运行</p>
+<h2 id="issues">Issues</h2>
+<p>Q: Vs 2012+</p>
+<pre tabindex="0"><code>System.Runtime.InteropServices.COMException (0x80040154): 
+Retrieving the COM class factory for component with CLSID 
+{7A6E7413-F0E2-41B8-9BB7-036229C90FE5} failed due to the following 
+error: 80040154 Class not registered (Exception from HRESULT: 0x80040154 (REGDB_E_CLASSNOTREG)).
+</code></pre><p>A: vs高版本已经使用<a href="https://stackoverflow.com/a/4664073">32/64位</a> <br>
+It means the class id 877AA945-1CB2-411C-ACD7-C70B1F9E2E32 is not in the registry.</p>
+<p>You can verify this by opening regedit.exe, browsing to HKEY_CLASSES_ROOT\CLSID{877AA945-1CB2-411C-ACD7-C70B1F9E2E32}. <br>
+If your running a 32-bit app on a 64 bit OS, look for HKEY_CLASSES_ROOT\Wow6432Node\CLSID{877AA945-1CB2-411C-ACD7-C70B1F9E2E32}</p>
+<p>If it is there, it may be some other issue but it is probably missing. <br>
+To resolve this you will usually run the installer that distributes this COM object. <br>
+If you don&rsquo;t have one and you know what dll implements the object, you can run regsvr32.exe (or regasm.exe for a managed dll).</p>
 <h1 id="参考文章">参考文章</h1>
-<blockquote>
-<p>MSDN</p>
-</blockquote>
 <ul>
 <li><a href="https://docs.microsoft.com/en-us/cpp/atl/reference/atl-project-wizard?redirectedfrom=MSDN&amp;view=vs-2019">ATL 项目向导</a></li>
 <li><a href="https://docs.microsoft.com/en-us/cpp/atl/reference/application-settings-atl-project-wizard?redirectedfrom=MSDN&amp;view=vs-2019">ATL 项目向导的应用程序设置</a></li>
