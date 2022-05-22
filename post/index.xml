@@ -6,7 +6,16 @@
     <description>Recent content in Posts on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 18 May 2022 20:08:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 May 2022 05:38:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tomcat安装</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</link>
+      <pubDate>Thu, 19 May 2022 05:38:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</guid>
+      <description>Servlet Spec JSP Spec EL Spec WebSocket Spec Authentication (JASIC) Spec Apache Tomcat Version Latest Released Version Supported Java Versions     5.0 3.0 4.0 2.0 2.0 10.0.x 10.0.21 8 and later   4.0 2.3 3.0 1.1 1.1 9.0.x 9.0.63 8 and later   3.1 2.3 3.0 1.1 1.1 8.5.x 8.5.78 7 and later    0. 安装JDK  RHEL/CentOS 参见 设置OpenJDK - CentOS Ubuntu参见 设置OpenJDK - Ubuntu  1.</description>
+    </item>
+    
     <item>
       <title>创建COM</title>
       <link>https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/</link>
@@ -241,15 +250,6 @@ $ autoscan 会生成configure.scan文件, 重命名为configure.ac
   At least May 2026 for Eclipse Adoptium
   lambda 我们使用实现Runnable的不同来做对比。
 java 7 package my.csdn2;  import java.util.concurrent.ExecutorService; import java.util.concurrent.Executors;  public class RunnableThread implements Runnable {  	public int mul(int x, int y) { 	int result = 0;  	result = x * y;  	return result; 	}  	public void run() { 	// TODO Auto-generated method stub 	for (int i = 0; i &amp;lt; 5; i++) { 	for (int j = 0; j &amp;lt; 5; j++) { 	System.</description>
-    </item>
-    
-    <item>
-      <title>Tomcat安装</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</link>
-      <pubDate>Sat, 05 Mar 2022 05:38:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</guid>
-      <description>Servlet Spec JSP Spec EL Spec WebSocket Spec Authentication (JASIC) Spec Apache Tomcat Version Latest Released Version Supported Java Versions     5.0 3.0 4.0 2.0 2.0 10.0.x 10.0.17 8 and later   4.0 2.3 3.0 1.1 1.1 9.0.x 9.0.59 8 and later   3.1 2.3 3.0 1.1 1.1 8.5.x 8.5.76 7 and later    0. 安装JDK  RHEL/CentOS 参见 设置OpenJDK - CentOS Ubuntu参见 设置OpenJDK - Ubuntu</description>
     </item>
     
     <item>
