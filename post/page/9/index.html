@@ -164,6 +164,30 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_hadoop_cluster_yarn/">Hadoop配置 - yarn</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>(../etc/hadoop/yarn-site.xml)
+ 1. ResourceManager HA &lt;property&gt;  &lt;name&gt;yarn.resourcemanager.ha.enabled&lt;/name&gt;  &lt;value&gt;true&lt;/value&gt; &lt;/property&gt; &lt;property&gt;  &lt;name&gt;yarn.resourcemanager.cluster-id&lt;/name&gt;  &lt;value&gt;cluster1&lt;/value&gt; &lt;/property&gt; &lt;property&gt;  &lt;name&gt;yarn.resourcemanager.ha.rm-ids&lt;/name&gt;  &lt;value&gt;rm1,rm2&lt;/value&gt; &lt;/property&gt; &lt;property&gt;  &lt;name&gt;yarn.resourcemanager.hostname.rm1&lt;/name&gt;  &lt;value&gt;tdtc203&lt;/value&gt; &lt;/property&gt; &lt;property&gt;  &lt;name&gt;yarn.resourcemanager.hostname.rm2&lt;/name&gt;  &lt;value&gt;tdtc204&lt;/value&gt; &lt;/property&gt; &lt;property&gt;  &lt;name&gt;yarn.resourcemanager.webapp.address.rm1&lt;/name&gt;  &lt;value&gt;tdtc203:8088&lt;/value&gt; &lt;/property&gt; &lt;property&gt;  &lt;name&gt;yarn.resourcemanager.webapp.address.rm2&lt;/name&gt;  &lt;value&gt;tdtc204:8088&lt;/value&gt; &lt;/property&gt; &lt;property&gt;  &lt;name&gt;yarn.resourcemanager.zk-address&lt;/name&gt;  &lt;value&gt;tdtc201:2181,tdtc202:2181,tdtc203:2181&lt;/value&gt; &lt;/property&gt; 2. Resource Manager Restart  see Reference[3]
+ &lt;property&gt;  &lt;name&gt;yarn.resourcemanager.recovery.enabled&lt;/name&gt;  &lt;value&gt;true&lt;/value&gt; &lt;/property&gt; 1) zookeeper &lt;property&gt;  &lt;name&gt;yarn. <a class="read-more" href="/csdn/post/ops_hadoop_cluster_yarn/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-14T10:08:08&#43;08:00">
+            14 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_hadoop_cluster_hdfs/">Hadoop配置 - hdfs</a></h2>
     </header>
     <section class="post-excerpt">
@@ -387,35 +411,6 @@ $make install setup $cp /usr/local/keepalived/sbin/keepalived /usr/sbin/ $mkdir 
 
         
         <time class="post-date" datetime="2020-04-13T07:38:08&#43;08:00">
-            13 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_real_keepalived/">架设Real Server和Keepalived Server</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>os: CentOS7 minimal（安装时的选项） 准备工作： 修改网卡为固定IP - CentOS
- 总览 Real Server  CentOS7RS1   192.168.0.107
-  Nginx V1.14 Tomcat V7.0.90   CentOS7RS2   192.168.0.102
-  Nginx V1.14 Tomcat V8.5.32  Keepalived Server  CentOS7Master   192.168.0.109
-  CentOS7Bak   192.168.0.110
- 一、Real Server 1. 安装前准备  Linux下安装Tomcat   ops_tomcat.md
-  nginx - load balancing   ops_nginx.md
- 2. config ARP 1) ifconfig $yum install net-tools 2) realserver  /etc/init. <a class="read-more" href="/csdn/post/ops_real_keepalived/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-13T06:38:08&#43;08:00">
             13 Apr 2020
         </time>
     </footer>

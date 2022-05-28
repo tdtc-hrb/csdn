@@ -164,6 +164,38 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_win_faq1/">Windows的一些设置</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>禁止记事本   开始-&gt;运行-&gt;gpedit.msc-&gt;计算机配置-&gt;windows设置-&gt;安全设置-&gt;软件限制策略
+  右键点软件限制策略-&gt;创建软件限制策略
+  点其他规则-&gt;右键新建路径规则-&gt;在“路径”下的空白输入框中“%windir%\notepad.exe“（或者c盘是系统盘的情况下：c:\windows\notepad.exe)-&gt;在“安全级别”中选择“不允许”
+   附：如果你要限制.txt的程序打开，可以在路径中输入*.txt。
+ 日文系统 key101  日文改英文键盘
+ 修改注册表主键： HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\i8042prt\Parameters
+LayerDriver JPN: KBD101.DLL  OverrideKeyboardIdentifier: PCAT_101KEY OverrideKeyboardSubtype: 0x00000000(0) win7+添加日文输入   “区域和语言“ ==&gt; ”键盘和语言“
+  ”键盘和语言“中，点击”更改键盘“， 点”添加“，找到 ”日语（日本）“， 勾选”Microsoft IME“和”日语“，其它不要勾选.
+  按键盘”Alt“+”Shift“即可调出日语输入法.
+文件或目录损坏且无法读取  无法读取的所在逻辑盘E:
+ chkdsk /F E: How to Delete Old Windows Folder in Windows 10 – Access Denied? takeown /F &#34;C:\Windows.old&#34; /A /R /D Y icacls &#34;C:\Windows. <a class="read-more" href="/csdn/post/ops_win_faq1/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-18T08:08:08&#43;08:00">
+            18 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/rose-uml/">UML工具Rose</a></h2>
     </header>
     <section class="post-excerpt">
@@ -401,34 +433,6 @@ sudo service nginx start 然后访问(回环地址)：127.0.0.1:90 卸载 如果
 
         
         <time class="post-date" datetime="2020-05-15T12:08:08&#43;08:00">
-            15 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/java-maven-qa1/">maven的QA</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>1. org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER Q:
-Classpath entry org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER will not be exported or published. Runtime ClassNotFoundExceptions may result. A:
-$mvn eclipse:clean reference  what-is-org-eclipse-m2e-maven2-classpath-container-and-how-do-i-make-it-work-in  2. no main manifest attribute java jar Q:
-$java -jar cliDemo-0.0.1-SNAPSHOT.jar no main manifest attribute, in cliDemo-0.0.1-SNAPSHOT.jar A:
- for win:
- java -cp cliDemo-0.0.1-SNAPSHOT.jar;C:\Users\xiaobin\.m2\repository\commons-cli\commons-cli\1.4\commons-cli-1.4.jar my.csdn9.ConsoleLauncher --help Reference  how-to-run-jar-files-depend-on-jar-files  3. CoreException: Could not calculate build plan: Plugin org.apache.maven.plugins:maven-compiler-plugin Q:
-CoreException: Could not calculate build plan: Plugin org. <a class="read-more" href="/csdn/post/java-maven-qa1/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-15T10:08:08&#43;08:00">
             15 May 2020
         </time>
     </footer>

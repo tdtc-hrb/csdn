@@ -164,6 +164,34 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/java-maven-qa1/">maven的QA</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>1. org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER Q:
+Classpath entry org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER will not be exported or published. Runtime ClassNotFoundExceptions may result. A:
+$mvn eclipse:clean reference  what-is-org-eclipse-m2e-maven2-classpath-container-and-how-do-i-make-it-work-in  2. no main manifest attribute java jar Q:
+$java -jar cliDemo-0.0.1-SNAPSHOT.jar no main manifest attribute, in cliDemo-0.0.1-SNAPSHOT.jar A:
+ for win:
+ java -cp cliDemo-0.0.1-SNAPSHOT.jar;C:\Users\xiaobin\.m2\repository\commons-cli\commons-cli\1.4\commons-cli-1.4.jar my.csdn9.ConsoleLauncher --help Reference  how-to-run-jar-files-depend-on-jar-files  3. CoreException: Could not calculate build plan: Plugin org.apache.maven.plugins:maven-compiler-plugin Q:
+CoreException: Could not calculate build plan: Plugin org. <a class="read-more" href="/csdn/post/java-maven-qa1/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-15T10:08:08&#43;08:00">
+            15 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_spark_ubuntu/">安装spark</a></h2>
     </header>
     <section class="post-excerpt">
@@ -376,31 +404,6 @@ var RepoInfo = { }; 1. 获取对象 RepoInfo.getObj = function(objName) { 	retur
 
         
         <time class="post-date" datetime="2020-05-13T16:08:08&#43;08:00">
-            13 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/com-safearray-vc/">SafeArray数据</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>COM  vc
- 1. 定义SAFEARRAY变量 SAFEARRAY *pSArray = NULL; 2. 释放此变量 SafeArrayDestroy(pSArray); 3. 建立向量表 pSArray = SafeArrayCreateVector(VT_UI1, 0, 32); 向量变量（VT_UI1）的定义：msdn
-VT_UI1 Variable type is unsigned char. 4. 写入数据 SafeArrayPutElement(pSArray, &amp;l, &amp;inqReport[l]); getInqRepo方法：  AA：屏蔽的数值
- STDMETHODIMP CRepoFmt::getInqRepo(ULONG iStation, SAFEARRAY** ret) { 	SAFEARRAY *pSArray = NULL;  	unsigned char inqReport[32]; 	unsigned char xorByte = AA; 	int iStationID = 0;  	if (iStation &lt; 1) 	iStationID = 1; 	else 	iStationID = iStation;  	inqReport[0] = AA; 	inqReport[1] = AA; 	inqReport[2] = AA; 	inqReport[3] = AA; 	inqReport[4] = (iStationID % AA); 	inqReport[5] = (iStationID / AA); 	inqReport[6] = AA; 	inqReport[7] = AA; 	inqReport[8] = AA; 	inqReport[9] = AA; 	inqReport[10] = AA; 	inqReport[11] = AA;  	for (int i = 1; i &lt; 18; i++) 	xorByte ^= inqReport[i];  	inqReport[18] = xorByte;  	// Fill the inqReport etc. <a class="read-more" href="/csdn/post/com-safearray-vc/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-13T12:08:08&#43;08:00">
             13 May 2020
         </time>
     </footer>

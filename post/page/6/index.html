@@ -164,6 +164,31 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/com-safearray-vc/">SafeArray数据</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>COM  vc
+ 1. 定义SAFEARRAY变量 SAFEARRAY *pSArray = NULL; 2. 释放此变量 SafeArrayDestroy(pSArray); 3. 建立向量表 pSArray = SafeArrayCreateVector(VT_UI1, 0, 32); 向量变量（VT_UI1）的定义：msdn
+VT_UI1 Variable type is unsigned char. 4. 写入数据 SafeArrayPutElement(pSArray, &amp;l, &amp;inqReport[l]); getInqRepo方法：  AA：屏蔽的数值
+ STDMETHODIMP CRepoFmt::getInqRepo(ULONG iStation, SAFEARRAY** ret) { 	SAFEARRAY *pSArray = NULL;  	unsigned char inqReport[32]; 	unsigned char xorByte = AA; 	int iStationID = 0;  	if (iStation &lt; 1) 	iStationID = 1; 	else 	iStationID = iStation;  	inqReport[0] = AA; 	inqReport[1] = AA; 	inqReport[2] = AA; 	inqReport[3] = AA; 	inqReport[4] = (iStationID % AA); 	inqReport[5] = (iStationID / AA); 	inqReport[6] = AA; 	inqReport[7] = AA; 	inqReport[8] = AA; 	inqReport[9] = AA; 	inqReport[10] = AA; 	inqReport[11] = AA;  	for (int i = 1; i &lt; 18; i++) 	xorByte ^= inqReport[i];  	inqReport[18] = xorByte;  	// Fill the inqReport etc. <a class="read-more" href="/csdn/post/com-safearray-vc/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-13T12:08:08&#43;08:00">
+            13 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/c2plus-com-dll/">调用COM</a></h2>
     </header>
     <section class="post-excerpt">
@@ -380,37 +405,6 @@ test.pl
 
         
         <time class="post-date" datetime="2020-05-08T16:08:08&#43;08:00">
-            8 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_vmware_netadapter/">使用物理网卡</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>宿主OS：Win10(x64)
-Guest OS: Ubuntu 14.04(x64)
-目的：Ubuntu独立使用1块网卡与局域网中的设备或主机通讯。
-问题：宿主机器有两个网卡
-（1）无线网卡（2）有线网卡
-设置VMware：
-I. 编辑-&gt;虚拟网络编辑器 默认设置
-我们更改桥接模式中“桥接到”，即可。（由自动更改为下图） II. 网络适配器 启动NFS，工作正常。
-输出信息如下：
-This is the boot programm!鶷his is the boot programm! Load UBOOT, please wait...... Load UBOOT from 0x10010000 to 0x23f00000 Over   U-Boot 1.3.4 (Mar 18 2015 - 07:00:42)  DRAM: 64 MB MAN_ID: 0x00bf PRO_ID: 0x234b Flash: 2 MB NAND: NAND device: Manufacturer ID: 0xec, Chip ID: 0x76 (/狺掰掰?NAND 64 MiB 3,3V 8-bit) 64 MiB DataFlash:AT45DB161 Nb pages: 4096 Page Size: 528 Size= 2162688 bytes Logical address: 0xD0000000 Area 0: D0000000 to D0003FFF (RO) Area 1: D0004000 to D0007FFF Area 2: D0008000 to D0037FFF (RO) Area 3: D0038000 to D020FFFF In: serial Out: serial Err: serial PHY Detected (mdio-addr 1, ID 0x0013:0x78e2) link up, 100Mbps, full-duplex Hit any key to stop autoboot: 0 ## Booting kernel from Legacy Image at 20400000 . <a class="read-more" href="/csdn/post/ops_vmware_netadapter/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-08T14:08:08&#43;08:00">
             8 May 2020
         </time>
     </footer>

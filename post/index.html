@@ -166,7 +166,7 @@
     </header>
     <section class="post-excerpt">
         
-            <p>Servlet Spec JSP Spec EL Spec WebSocket Spec Authentication (JASIC) Spec Apache Tomcat Version Latest Released Version Supported Java Versions     5.0 3.0 4.0 2.0 2.0 10.0.x 10.0.21 8 and later   4.0 2.3 3.0 1.1 1.1 9.0.x 9.0.63 8 and later   3.1 2.3 3.0 1.1 1.1 8.5.x 8.5.78 7 and later    0. 安装JDK  RHEL/CentOS 参见 设置OpenJDK - CentOS Ubuntu参见 设置OpenJDK - Ubuntu  1. <a class="read-more" href="/csdn/post/ops_tomcat/">&raquo;</a></p>
+            <p>Servlet Spec JSP Spec EL Spec WebSocket Spec Authentication (JASIC) Spec Apache Tomcat Version Latest Released Version Supported Java Versions     5.0 3.0 4.0 2.0 2.0 10.0.x 10.0.21 8 and later   4.0 2.3 3.0 1.1 1.1 9.0.x 9.0.63 8 and later   3.1 2.3 3.0 1.1 1.1 8.5.x 8.5.79 7 and later    0. 安装JDK  RHEL/CentOS 参见 设置OpenJDK - CentOS Ubuntu参见 设置OpenJDK - Ubuntu  1. <a class="read-more" href="/csdn/post/ops_tomcat/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -175,8 +175,8 @@
         
 
         
-        <time class="post-date" datetime="2022-05-19T05:38:08&#43;08:00">
-            19 May 2022
+        <time class="post-date" datetime="2022-05-24T05:38:08&#43;08:00">
+            24 May 2022
         </time>
     </footer>
 </article>
@@ -371,6 +371,30 @@ B类（手动） 2.3-》点击“Send”按钮。
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_openjdk_centos/">设置OpenJDK</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>1. install  jre
+ sudo yum install java -y jdk sudo yum install java-1.8.0-openjdk-devel 2. set path sudo vi /etc/profile export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.332.b09-1.el7_9.x86_64 export CLASSPATH=.:$JAVA_HOME/jre/lib/:. export PATH=$PATH:$JAVA_HOME/bin $su root $source /etc/profile About path 3.3. INSTALL OPENJDK ON RED HAT ENTERPRISE LINUX - 2.Optional: Set the JAVA_HOME environment variable
+Reference  How to install Java on CentOS 7 OpenJDK Version Info - Releases   <a class="read-more" href="/csdn/post/ops_openjdk_centos/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-05-14T08:08:08-08:00">
+            14 May 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/vc-bsd_socket/">使用BSD socket</a></h2>
     </header>
     <section class="post-excerpt">
@@ -419,31 +443,6 @@ code /* * Int2hex.c * * Created on: 2010-07-20 * Author: xiaobin */ #include &lt
         
         <time class="post-date" datetime="2022-05-07T00:08:08&#43;08:00">
             7 May 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_network_proxy/">设置proxy</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>OS Windows  set command
- set http_proxy=http://127.0.0.1:8580 set https_proxy=http://127.0.0.1:8580 Ubuntu export http_proxy=&#34;http://192.168.1.108:1080&#34; export https_proxy=&#34;http://192.168.1.108:1080&#34; software git set proxy git config --global http.proxy http://127.0.0.1:8580  git config --global https.proxy https://127.0.0.1:8580 unset git config --global --unset http.proxy git config --global --unset https.proxy node-js  .npmrc
- cmd npm config delete https-proxy npm config set http-proxy http://host:port npm config set strict-ssl false file registry=https://registry.npmjs.org/ proxy=http://127.0.0.1:8580/ http-proxy=http://127.0.0.1:8580 strict-ssl=false Agent Website 国内网站代理
-ruby gems 安装指定版本:V1. <a class="read-more" href="/csdn/post/ops_network_proxy/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-04-17T14:08:08&#43;08:00">
-            17 Apr 2022
         </time>
     </footer>
 </article>

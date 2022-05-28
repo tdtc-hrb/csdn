@@ -3,13 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://tdtc-hrb.github.io/csdn/post/</loc>
-    <lastmod>2022-05-19T05:38:08+08:00</lastmod>
+    <lastmod>2022-05-24T05:38:08+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</loc>
-    <lastmod>2022-05-19T05:38:08+08:00</lastmod>
+    <lastmod>2022-05-24T05:38:08+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/</loc>
-    <lastmod>2022-05-19T05:38:08+08:00</lastmod>
+    <lastmod>2022-05-24T05:38:08+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/</loc>
     <lastmod>2022-05-18T20:08:08+08:00</lastmod>
@@ -29,6 +29,9 @@
     <loc>https://tdtc-hrb.github.io/csdn/post/vc-serial_communication/</loc>
     <lastmod>2022-05-15T08:08:08+08:00</lastmod>
   </url><url>
+    <loc>https://tdtc-hrb.github.io/csdn/post/ops_openjdk_centos/</loc>
+    <lastmod>2022-05-14T08:08:08-08:00</lastmod>
+  </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/vc-bsd_socket/</loc>
     <lastmod>2022-05-12T08:08:08+08:00</lastmod>
   </url><url>
@@ -44,8 +47,8 @@
     <loc>https://tdtc-hrb.github.io/csdn/post/nodejs-ubuntu/</loc>
     <lastmod>2022-04-10T23:08:39+08:00</lastmod>
   </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/ops_openjdk_centos/</loc>
-    <lastmod>2022-03-14T02:08:08-08:00</lastmod>
+    <loc>https://tdtc-hrb.github.io/csdn/post/dpkg-issues/</loc>
+    <lastmod>2022-04-10T02:10:39+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_centos/</loc>
     <lastmod>2022-03-13T08:38:08-08:00</lastmod>
@@ -379,9 +382,6 @@
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/gitlab-install-shell/</loc>
     <lastmod>2020-04-10T02:15:39+08:00</lastmod>
-  </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/dpkg-issues/</loc>
-    <lastmod>2020-04-10T02:10:39+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/go-data-using/</loc>
     <lastmod>2020-04-10T02:10:39+08:00</lastmod>
