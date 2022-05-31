@@ -164,6 +164,33 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c-string-i2h/">十进制转十六进制</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>工作原理：
+ 规则是从低位到高位 被除数，除以16, 直到商小于16。 将余数加上余商，就是16进制数。
+  被除数   等于转换数 等于商 如果商大于16，就是被除数。  手算 10进制：1566
+ (1) 1566 ÷ 16 = 97 余数为14 (2) 97 ÷ 16 = 6 余数为1
+16进制：第1个余数(14) + 第2个余数(1) + 余商(6) = 0x61E
+code /* * Int2hex.c * * Created on: 2010-07-20 * Author: xiaobin */ #include &lt;stdio.h&gt;#include &lt;stdlib.h&gt; void int2hex(unsigned long long input, char output[]);  int main(int argc, char* argv[]) {  int iDigit = 12 - 2; // 2205071409 // date: 2022. <a class="read-more" href="/csdn/post/c-string-i2h/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-05-07T00:08:08&#43;08:00">
+            7 May 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_network_proxy/">设置proxy</a></h2>
     </header>
     <section class="post-excerpt">
@@ -397,34 +424,6 @@ CA certificate ca.pem is self signed.For more information, see Help and Support 
         
         <time class="post-date" datetime="2022-02-07T12:08:39&#43;08:00">
             7 Feb 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_git_oper1/">git操作 部分1</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>一、远程仓库回滚 1. 硬性 git reset --hard HEAD~1  &ldquo;~1&quot;表示向前回滚1个提交。 &ldquo;~2&quot;表示向前回滚2个提交，以此类推。  2. 强制推送 git push -f --set-upstream origin master 二、删除github发布 git tag -d [tag] git push origin :[tag] 例如：
-git tag -d v0.3.1 git push origin :v0.3.1 三、修改commit信息 可以修改最后一次提交的信息.
-进入git-cmd或git-bash：
-git commit --amend About：
- git-bash和git-cmd的区别
- bash是linux风格的命令行，可以使用windows和linux的命令； cmd是windows风格的命令行，可以使用windows命令；
- 此外，还有一个最大的不同点，git-cmd是天生就带了系统的PATH环境变量， 这一点会导致如果你运行某些脚本的时候，如果依赖某些安装的程序， 如python、node这些，git-bash就会提示不存在对应的命令， 而git-cmd可以正确运行。    四、合并分支 1. checkout git checkout dev git checkout master 2. merge git merge origin/dev 五、设置user git init ``bash git config user. <a class="read-more" href="/csdn/post/ops_git_oper1/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-01-02T01:38:08&#43;08:00">
-            2 Jan 2022
         </time>
     </footer>
 </article>

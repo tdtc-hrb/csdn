@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="atl工程" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2020-05-15T00:28:08&#43;08:00" />
+    <meta property="article:published_time" content="2022-05-31T00:28:08&#43;08:00" />
 
     
     
@@ -92,15 +92,15 @@
     },
     "headline": "VC升级时出现的问题",
     "name": "VC升级时出现的问题",
-    "wordCount":  402 ,
-    "timeRequired": "PT2M",
+    "wordCount":  439 ,
+    "timeRequired": "PT3M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/vc-update-atl/",
-    "datePublished": "2020-05-15T00:28Z",
-    "dateModified": "2020-05-15T00:28Z",
+    "datePublished": "2022-05-31T00:28Z",
+    "dateModified": "2022-05-31T00:28Z",
     
     
     "description": "atl工程",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2020-05-15T00:28:08&#43;08:00">
-            May 15, 2020
+          <time class="post-date" datetime="2022-05-31T00:28:08&#43;08:00">
+            May 31, 2022
           </time>
         
          
@@ -178,9 +178,11 @@
 
     <section class="post-content">
       <blockquote>
-<p>VC6迁移到VC2005以及更高。</p>
+<p>VC6迁移到VC2008+</p>
 </blockquote>
-<h1 id="1-c1189">1. C1189</h1>
+<h1 id="atl">ATL</h1>
+<p>Active Template Library (ATL)</p>
+<h2 id="c1189">C1189</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>c:<span style="color:#ae81ff">\p</span>rogram files<span style="color:#ae81ff">\m</span>icrosoft visual studio 10.0<span style="color:#ae81ff">\v</span>c<span style="color:#ae81ff">\a</span>tlmfc<span style="color:#ae81ff">\i</span>nclude<span style="color:#ae81ff">\a</span>tlcore.h<span style="color:#f92672">(</span>35<span style="color:#f92672">)</span>:
 </span></span><span style="display:flex;"><span>fatal error C1189: <span style="color:#75715e">#error :  This file requires _WIN32_WINNT to be #defined at least to 0x0403. Value 0x0501 or higher is recommended.</span>
 </span></span></code></pre></div><p>A:</p>
@@ -190,11 +192,11 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#define _WIN32_WINNT 0x0400
 </span></span></span></code></pre></div><p>-&gt;</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#define _WIN32_WINNT 0x0501
-</span></span></span></code></pre></div><h1 id="2-c1083atlimpl">2. C1083(atlimpl)</h1>
+</span></span></span></code></pre></div><h2 id="c1083atlimpl">C1083(atlimpl)</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>c:<span style="color:#ae81ff">\u</span>sers<span style="color:#ae81ff">\x</span>iaobin<span style="color:#ae81ff">\d</span>ocuments<span style="color:#ae81ff">\v</span>isual studio 2013<span style="color:#ae81ff">\p</span>rojects<span style="color:#ae81ff">\c</span>rcfcn_vc<span style="color:#ae81ff">\s</span>tdafx.cpp<span style="color:#f92672">(</span>13<span style="color:#f92672">)</span>:
 </span></span><span style="display:flex;"><span>fatal error C1083: Cannot open include file: <span style="color:#e6db74">&#39;atlimpl.cpp&#39;</span>: No such file or directory
 </span></span></code></pre></div><p>A: solution1 or solution2.</p>
-<h2 id="solution1">solution1</h2>
+<h3 id="solution1">solution1</h3>
 <p>Comment out this line <br>
 stdAfx.cpp</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">// stdafx.cpp : source file that includes just the standard includes
@@ -209,7 +211,7 @@ stdAfx.cpp</p>
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#endif
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//#include &lt;atlimpl.cpp&gt;
-</span></span></span></code></pre></div><h2 id="solution2">solution2</h2>
+</span></span></span></code></pre></div><h3 id="solution2">solution2</h3>
 <p>Copy this file to the Project folder，</p>
 <p>atlimpl.cpp</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">// This is a part of the Active Template Library.
@@ -240,23 +242,23 @@ stdAfx.cpp</p>
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#endif
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;atlimpl.cpp&#34;</span><span style="color:#75715e">
-</span></span></span></code></pre></div><h1 id="3-file-formatdsw-and-dsp">3. file format(.dsw and .dsp)</h1>
+</span></span></span></code></pre></div><h2 id="file-formatdsw-and-dsp">file format(.dsw and .dsp)</h2>
 <p>Download the source code (released)  </p>
 <p>Q: When opening a project, &ldquo;cannot load the project due to a corrupt project file&rdquo;. </p>
 <p>A: Just convert .dsw and .dsp to &ldquo;Windows (CR LF)&quot;. </p>
-<h1 id="4-error-d8016">4. Error D8016</h1>
+<h2 id="error-d8016">Error D8016</h2>
 <p>Q: &lsquo;/ZI&rsquo; and &lsquo;/Gy-&rsquo; command-line options are incompatible    </p>
 <p>A: Configuration Properties -&gt; C/C++ -&gt; Debug Information Format   
     Program Database for Edit And Continue(/ZI) =&gt; Program Database(/Zi)</p>
-<h1 id="5-error-msb3075">5. Error MSB3075</h1>
+<h2 id="error-msb3075">Error MSB3075</h2>
 <p>Q: The command &ldquo;regsvr32 /s /c &ldquo;D:\projects\crcfcn - Copy.\Debug\FCV.dll&rdquo;    
   echo regsvr32 exec. time &gt; &ldquo;.\Debug\regsvr32.trg&rdquo;    </p>
 <p>A: Project &gt; Properties &gt; Configuration Properties &gt; Custom Build Step    
 Command line: Empty content.    
   <a href="https://social.msdn.microsoft.com/Forums/vstudio/en-US/97f50350-e37a-46ba-a921-8f4afa29db03/error-msb3073-exited-with-code-3">https://social.msdn.microsoft.com/Forums/vstudio/en-US/97f50350-e37a-46ba-a921-8f4afa29db03/error-msb3073-exited-with-code-3</a></p>
-<h1 id="6-error-msb8011">6. error MSB8011</h1>
+<h2 id="error-msb8011">error MSB8011</h2>
 <p>A: Project&ndash;&gt;Propertier&ndash;&gt;Linker&ndash;&gt;General&ndash;&gt;Register Output&ndash;&gt;NO</p>
-<h1 id="7-excluded-files">7. Excluded files</h1>
+<h2 id="excluded-files">Excluded files</h2>
 <blockquote>
 <p>提交代码时不需要的文件</p>
 </blockquote>
@@ -280,11 +282,21 @@ Command line: Empty content.    
 <li>MSbuild
 <a href="https://docs.microsoft.com/en-us/cpp/porting/build-system-changes?view=vs-2019">.vcxproj.user</a></li>
 </ul>
-<h1 id="8-register-output">8. Register Output</h1>
+<h2 id="register-output">Register Output</h2>
 <p>我们更改为不要在注册表注册！</p>
 <p>“project property” -&gt;“Configuration Properties” -&gt; “Linker”下的选项“Register Output”为 “No”；</p>
-<h1 id="9-validate-parameters">9. Validate Parameters</h1>
+<h2 id="validate-parameters">Validate Parameters</h2>
 <p>“project property” -&gt;“Configuration Properties”-&gt;&ldquo;MIDL&rdquo;-&gt;“Advanced”下的选项&quot;Validate Parameters&quot;为“Yes(/robust)”</p>
+<h1 id="crt">Crt</h1>
+<p>C runtime Library (CRT)</p>
+<h2 id="_s-issue">_s issue</h2>
+<p>当我们在vs2012+使用不带_s的方法时，会出现编译警告或错误。 <br>
+在stdafx.h 最上面的次一行加入如下:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>define_CRT_SECURE_NO_DEPRECATE
+</span></span></code></pre></div><h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://social.msdn.microsoft.com/Forums/vstudio/en-US/f3565ee2-813b-4082-8b80-328caa0a14c9/to-disable-deprecation-use-crtsecurenowarnings-see-online-help-for-details-i-am-creating-a-c?forum=vcgeneral">To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. I am creating a C program using C++ ,it gives me error of scanf.Use scan_f instead.Y is it so. </a></li>
+</ul>
 
     </section>
 
@@ -336,17 +348,10 @@ Command line: Empty content.    
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_department_gitlab_man/">
-          <section class="post">
-              <h2>GitLab使用</h2>
-              
-          </section>
-      </a>
   
-  
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/com-crc32-delphi/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/demo-tdtc/">
           <section class="post">
-              <h2>Delphi调用COM</h2>
+              <h2>TDTC Demo</h2>
           </section>
       </a>
   
