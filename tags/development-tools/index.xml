@@ -13,7 +13,7 @@
       <pubDate>Sat, 11 Apr 2020 20:58:39 +0800</pubDate>
       
       <guid>https://tdtc-hrb.github.io/csdn/post/redis-centos7/</guid>
-      <description>0. preinstall 1) yum install $yum groupinstall &amp;#34;Development Tools&amp;#34; $yum install tcl wget 2) verification $gcc -v $make -v $echo &amp;#39;puts [info patchlevel];exit 0&amp;#39; | tclsh  User set  $ useradd redis $ passwd redis 1. installation 1) install $wget http://download.redis.io/releases/redis-4.0.14.tar.gz $tar xzvf redis-4.0.14.tar.gz $cd redis-4.0.14 $make ## Single Core $taskset -c 0 make test ## sudo $make install 2) config $mkdir /etc/redis $mkdir -p /var/redis $cp /home/redis/redis-4.0.14/redis.conf /etc/redis redis.</description>
+      <description>0. preinstall 1) yum install $yum groupinstall &amp;#34;Development Tools&amp;#34; $yum install tcl wget 2) verification $gcc -v $make -v $echo &amp;#39;puts [info patchlevel];exit 0&amp;#39; | tclsh User set $ useradd redis $ passwd redis 1. installation 1) install $wget http://download.redis.io/releases/redis-4.0.14.tar.gz $tar xzvf redis-4.0.14.tar.gz $cd redis-4.0.14 $make ## Single Core $taskset -c 0 make test ## sudo $make install 2) config $mkdir /etc/redis $mkdir -p /var/redis $cp /home/redis/redis-4.0.14/redis.conf /etc/redis redis.conf port 6379	#default port is already 6379.</description>
     </item>
     
   </channel>

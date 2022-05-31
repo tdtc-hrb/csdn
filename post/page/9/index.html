@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.99.1" />
+    <meta name="generator" content="Hugo 0.100.0" />
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -169,8 +169,8 @@
     <section class="post-excerpt">
         
             <p>(../etc/hadoop/yarn-site.xml)
- 1. ResourceManager HA &lt;property&gt;  &lt;name&gt;yarn.resourcemanager.ha.enabled&lt;/name&gt;  &lt;value&gt;true&lt;/value&gt; &lt;/property&gt; &lt;property&gt;  &lt;name&gt;yarn.resourcemanager.cluster-id&lt;/name&gt;  &lt;value&gt;cluster1&lt;/value&gt; &lt;/property&gt; &lt;property&gt;  &lt;name&gt;yarn.resourcemanager.ha.rm-ids&lt;/name&gt;  &lt;value&gt;rm1,rm2&lt;/value&gt; &lt;/property&gt; &lt;property&gt;  &lt;name&gt;yarn.resourcemanager.hostname.rm1&lt;/name&gt;  &lt;value&gt;tdtc203&lt;/value&gt; &lt;/property&gt; &lt;property&gt;  &lt;name&gt;yarn.resourcemanager.hostname.rm2&lt;/name&gt;  &lt;value&gt;tdtc204&lt;/value&gt; &lt;/property&gt; &lt;property&gt;  &lt;name&gt;yarn.resourcemanager.webapp.address.rm1&lt;/name&gt;  &lt;value&gt;tdtc203:8088&lt;/value&gt; &lt;/property&gt; &lt;property&gt;  &lt;name&gt;yarn.resourcemanager.webapp.address.rm2&lt;/name&gt;  &lt;value&gt;tdtc204:8088&lt;/value&gt; &lt;/property&gt; &lt;property&gt;  &lt;name&gt;yarn.resourcemanager.zk-address&lt;/name&gt;  &lt;value&gt;tdtc201:2181,tdtc202:2181,tdtc203:2181&lt;/value&gt; &lt;/property&gt; 2. Resource Manager Restart  see Reference[3]
- &lt;property&gt;  &lt;name&gt;yarn.resourcemanager.recovery.enabled&lt;/name&gt;  &lt;value&gt;true&lt;/value&gt; &lt;/property&gt; 1) zookeeper &lt;property&gt;  &lt;name&gt;yarn. <a class="read-more" href="/csdn/post/ops_hadoop_cluster_yarn/">&raquo;</a></p>
+1. ResourceManager HA &lt;property&gt; &lt;name&gt;yarn.resourcemanager.ha.enabled&lt;/name&gt; &lt;value&gt;true&lt;/value&gt; &lt;/property&gt; &lt;property&gt; &lt;name&gt;yarn.resourcemanager.cluster-id&lt;/name&gt; &lt;value&gt;cluster1&lt;/value&gt; &lt;/property&gt; &lt;property&gt; &lt;name&gt;yarn.resourcemanager.ha.rm-ids&lt;/name&gt; &lt;value&gt;rm1,rm2&lt;/value&gt; &lt;/property&gt; &lt;property&gt; &lt;name&gt;yarn.resourcemanager.hostname.rm1&lt;/name&gt; &lt;value&gt;tdtc203&lt;/value&gt; &lt;/property&gt; &lt;property&gt; &lt;name&gt;yarn.resourcemanager.hostname.rm2&lt;/name&gt; &lt;value&gt;tdtc204&lt;/value&gt; &lt;/property&gt; &lt;property&gt; &lt;name&gt;yarn.resourcemanager.webapp.address.rm1&lt;/name&gt; &lt;value&gt;tdtc203:8088&lt;/value&gt; &lt;/property&gt; &lt;property&gt; &lt;name&gt;yarn.resourcemanager.webapp.address.rm2&lt;/name&gt; &lt;value&gt;tdtc204:8088&lt;/value&gt; &lt;/property&gt; &lt;property&gt; &lt;name&gt;yarn.resourcemanager.zk-address&lt;/name&gt; &lt;value&gt;tdtc201:2181,tdtc202:2181,tdtc203:2181&lt;/value&gt; &lt;/property&gt; 2. Resource Manager Restart see Reference[3]
+&lt;property&gt; &lt;name&gt;yarn.resourcemanager.recovery.enabled&lt;/name&gt; &lt;value&gt;true&lt;/value&gt; &lt;/property&gt; 1) zookeeper &lt;property&gt; &lt;name&gt;yarn.resourcemanager.store.class&lt;/name&gt; &lt;value&gt;org.apache.hadoop.yarn.server.resourcemanager.recovery.ZKRMStateStore&lt;/value&gt; &lt;/property&gt; 3. Aux Service（Auxiliary Service） 1) base &lt;property&gt; &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt; &lt;value&gt;mapreduce_shuffle&lt;/value&gt; &lt;/property&gt; 2) spark &lt;property&gt; &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt; &lt;value&gt;spark_shuffle,mapreduce_shuffle&lt;/value&gt; &lt;/property&gt; 4. log aggregation yarn-default. <a class="read-more" href="/csdn/post/ops_hadoop_cluster_yarn/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -193,7 +193,7 @@
     <section class="post-excerpt">
         
             <p>(../etc/hadoop/hdfs-site.xml)
- 1. name services &lt;property&gt;  &lt;name&gt;dfs.nameservices&lt;/name&gt;  &lt;value&gt;mycluster&lt;/value&gt; &lt;/property&gt; 1) name node &lt;property&gt;  &lt;name&gt;dfs.ha.namenodes.mycluster&lt;/name&gt;  &lt;value&gt;nn1,nn2&lt;/value&gt; &lt;/property&gt; 2) RPC(name node) &lt;property&gt;  &lt;name&gt;dfs.namenode.rpc-address.mycluster.nn1&lt;/name&gt;  &lt;value&gt;tdtc201:8020&lt;/value&gt; &lt;/property&gt; &lt;property&gt;  &lt;name&gt;dfs.namenode.rpc-address.mycluster.nn2&lt;/name&gt;  &lt;value&gt;tdtc202:8020&lt;/value&gt; &lt;/property&gt; 3) Http(name node) &lt;property&gt;  &lt;name&gt;dfs.namenode.http-address.mycluster.nn1&lt;/name&gt;  &lt;value&gt;tdtc201:50070&lt;/value&gt; &lt;/property&gt; &lt;property&gt;  &lt;name&gt;dfs.namenode.http-address.mycluster.nn2&lt;/name&gt;  &lt;value&gt;tdtc202:50070&lt;/value&gt; &lt;/property&gt; 2. JournalNode 1) quorum journal manager &lt;!-- Journal Node(QJM) --&gt; &lt;property&gt;  &lt;name&gt;dfs.namenode.shared.edits.dir&lt;/name&gt;  &lt;value&gt;qjournal://tdtc201:8485;tdtc202:8485;tdtc203:8485/mycluster&lt;/value&gt; &lt;/property&gt; local &lt;property&gt;  &lt;name&gt;dfs. <a class="read-more" href="/csdn/post/ops_hadoop_cluster_hdfs/">&raquo;</a></p>
+1. name services &lt;property&gt; &lt;name&gt;dfs.nameservices&lt;/name&gt; &lt;value&gt;mycluster&lt;/value&gt; &lt;/property&gt; 1) name node &lt;property&gt; &lt;name&gt;dfs.ha.namenodes.mycluster&lt;/name&gt; &lt;value&gt;nn1,nn2&lt;/value&gt; &lt;/property&gt; 2) RPC(name node) &lt;property&gt; &lt;name&gt;dfs.namenode.rpc-address.mycluster.nn1&lt;/name&gt; &lt;value&gt;tdtc201:8020&lt;/value&gt; &lt;/property&gt; &lt;property&gt; &lt;name&gt;dfs.namenode.rpc-address.mycluster.nn2&lt;/name&gt; &lt;value&gt;tdtc202:8020&lt;/value&gt; &lt;/property&gt; 3) Http(name node) &lt;property&gt; &lt;name&gt;dfs.namenode.http-address.mycluster.nn1&lt;/name&gt; &lt;value&gt;tdtc201:50070&lt;/value&gt; &lt;/property&gt; &lt;property&gt; &lt;name&gt;dfs.namenode.http-address.mycluster.nn2&lt;/name&gt; &lt;value&gt;tdtc202:50070&lt;/value&gt; &lt;/property&gt; 2. JournalNode 1) quorum journal manager &lt;!-- Journal Node(QJM) --&gt; &lt;property&gt; &lt;name&gt;dfs.namenode.shared.edits.dir&lt;/name&gt; &lt;value&gt;qjournal://tdtc201:8485;tdtc202:8485;tdtc203:8485/mycluster&lt;/value&gt; &lt;/property&gt; local &lt;property&gt; &lt;name&gt;dfs.journalnode.edits.dir&lt;/name&gt; &lt;value&gt;/home/tdtc/app/hadoop/data/journaldata&lt;/value&gt; &lt;/property&gt; 3. failover 1) support class &lt;!-- the Java class that HDFS clients use to contact the Active NameNode --&gt; &lt;property&gt; &lt;name&gt;dfs. <a class="read-more" href="/csdn/post/ops_hadoop_cluster_hdfs/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -216,7 +216,7 @@
     <section class="post-excerpt">
         
             <p>(../etc/hadoop)
- 1. core-site.xml 1) HDFS  the default path prefix used by the Hadoop FS client when none is given Optionally, you may now configure the default path for Hadoop clients to use the new HA-enabled logical URI. If you used “mycluster” as the nameservice ID earlier, this will be the value of the authority portion of all of your HDFS paths. This may be configured like so, in your core-site. <a class="read-more" href="/csdn/post/ops_hadoop_cluster_base/">&raquo;</a></p>
+1. core-site.xml 1) HDFS the default path prefix used by the Hadoop FS client when none is given Optionally, you may now configure the default path for Hadoop clients to use the new HA-enabled logical URI. If you used “mycluster” as the nameservice ID earlier, this will be the value of the authority portion of all of your HDFS paths. This may be configured like so, in your core-site. <a class="read-more" href="/csdn/post/ops_hadoop_cluster_base/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -240,8 +240,9 @@
         
             <p>QJM and shuffle 1. QJM 1.1 背景 自从hadoop2版本开始，社区引入了NameNode高可用方案。NameNode主从节点间需要同步操作日志来达到主从节点元数据一致。最初业界均通过NFS来实现日志同步，大家之所以选择NFS，一方面因为可以很方便地实现数据共享，另外一方面因为NFS已经发展20多年，已经相对稳定成熟。
 虽然如此，NFS也有缺点不能满足HDFS的在线存储业务：网络单点及其存储节点单点。业界提供了数据共享的一些高可用解决方案，但均不能很好地满足目前HDFS的应用场景。
-   方案 网络单点 存储单点 备注     Mysql HA 无 无   Drbd+heartbeat+NFS 无 无 脑裂；数据有丢失风险   Keepalive+NFS 无 有 数据有丢失风险    为了满足共享日志的高可用性，社区引入QJM。QJM由cloudera开发，实现了读写高可用性，使HDFS达到真正的高可用性成为可能。
-1.2 术语和定义    术语和定义 解释     Epoch 由主节点在启动及其切换为主的时候分配，每次操作JN节点均会检查该值,类似zookeeper中的zxid，此时主NameNode类似zookeeper中的leader，JN节点类似ZK中的Follower   JournalNode QJM存储段进程，提供日志读写，存储，修复等服务   QJM Qurom Journal Manager   startLogSegment 开始一个新的日志段,该日志段状态为接收写入日志的状态   finalizeLogSegment 将文件由正在写入日志的状态转化为不接收写日志的状态   recoverUnfinalizedSegments 主从切换等情况下，恢复没有转换为finalized状态的日志   journalId 日志ID，由配置指定，如qjournal://g42:8485;g35:8485;uhp9:8485/geminifs，则其中的geminifs即为journalId    2. <a class="read-more" href="/csdn/post/ops_hadoop_abbr1/">&raquo;</a></p>
+方案 网络单点 存储单点 备注 Mysql HA 无 无 Drbd+heartbeat+NFS 无 无 脑裂；数据有丢失风险 Keepalive+NFS 无 有 数据有丢失风险 为了满足共享日志的高可用性，社区引入QJM。QJM由cloudera开发，实现了读写高可用性，使HDFS达到真正的高可用性成为可能。
+1.2 术语和定义 术语和定义 解释 Epoch 由主节点在启动及其切换为主的时候分配，每次操作JN节点均会检查该值,类似zookeeper中的zxid，此时主NameNode类似zookeeper中的leader，JN节点类似ZK中的Follower JournalNode QJM存储段进程，提供日志读写，存储，修复等服务 QJM Qurom Journal Manager startLogSegment 开始一个新的日志段,该日志段状态为接收写入日志的状态 finalizeLogSegment 将文件由正在写入日志的状态转化为不接收写日志的状态 recoverUnfinalizedSegments 主从切换等情况下，恢复没有转换为finalized状态的日志 journalId 日志ID，由配置指定，如qjournal://g42:8485;g35:8485;uhp9:8485/geminifs，则其中的geminifs即为journalId 2. shuffle 作者：Lijie Xu 链接：https://www.zhihu.com/question/27643595/answer/127473409 来源：知乎 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+从逻辑角度来讲，Shuffle 过程就是一个 GroupByKey 的过程，两者没有本质区别。 只是 MapReduce 为了方便 GroupBy 存在于不同 partition 中的 key/value records，就提前对 key 进行排序。Spark 认为很多应用不需要对 key 排序，就默认没有在 GroupBy 的过程中对 key 排序。 <a class="read-more" href="/csdn/post/ops_hadoop_abbr1/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -269,7 +270,7 @@
     </header>
     <section class="post-excerpt">
         
-            <p>I. Soft List 1. zk sudo firewall-cmd --permanent --zone=public --add-port=2181/tcp sudo firewall-cmd --permanent --zone=public --add-port=2888/tcp sudo firewall-cmd --permanent --zone=public --add-port=3888/tcp 2. Hadoop sudo firewall-cmd --permanent --zone=public --add-port=10020/tcp sudo firewall-cmd --permanent --zone=public --add-port=19888/tcp sudo firewall-cmd --permanent --zone=public --add-port=8020/tcp sudo firewall-cmd --permanent --zone=public --add-port=50070/tcp sudo firewall-cmd --permanent --zone=public --add-port=8485/tcp sudo firewall-cmd --permanent --zone=public --add-port=8088/tcp sudo firewall-cmd --permanent --zone=public --add-port=8033/tcp 3. Spark sudo firewall-cmd --permanent --zone=public --add-port=6066/tcp sudo firewall-cmd --permanent --zone=public --add-port=7077/tcp sudo firewall-cmd --permanent --zone=public --add-port=8080-8088/tcp  立即生效： <a class="read-more" href="/csdn/post/ops_firewall/">&raquo;</a></p>
+            <p>I. Soft List 1. zk sudo firewall-cmd --permanent --zone=public --add-port=2181/tcp sudo firewall-cmd --permanent --zone=public --add-port=2888/tcp sudo firewall-cmd --permanent --zone=public --add-port=3888/tcp 2. Hadoop sudo firewall-cmd --permanent --zone=public --add-port=10020/tcp sudo firewall-cmd --permanent --zone=public --add-port=19888/tcp sudo firewall-cmd --permanent --zone=public --add-port=8020/tcp sudo firewall-cmd --permanent --zone=public --add-port=50070/tcp sudo firewall-cmd --permanent --zone=public --add-port=8485/tcp sudo firewall-cmd --permanent --zone=public --add-port=8088/tcp sudo firewall-cmd --permanent --zone=public --add-port=8033/tcp 3. Spark sudo firewall-cmd --permanent --zone=public --add-port=6066/tcp sudo firewall-cmd --permanent --zone=public --add-port=7077/tcp sudo firewall-cmd --permanent --zone=public --add-port=8080-8088/tcp 立即生效： <a class="read-more" href="/csdn/post/ops_firewall/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -292,11 +293,11 @@
     <section class="post-excerpt">
         
             <p>OS: CentOS 7
-    Ip /etc/hostname     192.168.0.110 host1   192.168.0.111 host2     Note:
- On every host, run following commands, Use xiaobin112(user) to do all following.
-  Prepare Establish Directory &ldquo;.ssh&rdquo;
-$mkdir ~/.ssh $chmod 700 ~/.ssh Stage I 1. config  另外一种方式为：把所有机器的IP和hostname放在/etc/hosts里，在此不再赘述, 请参见《ZooKeeper multi-server install - 3.FQDN》。
- $vi ~/.ssh/config Host host1  HostName 192.168.0.110  Port 22  User xiaobin112  Host host2  HostName 192. <a class="read-more" href="/csdn/post/ops_ssh_without_password/">&raquo;</a></p>
+Ip /etc/hostname 192.168.0.110 host1 192.168.0.111 host2 Note:
+On every host, run following commands, Use xiaobin112(user) to do all following.
+Prepare Establish Directory &ldquo;.ssh&rdquo;
+$mkdir ~/.ssh $chmod 700 ~/.ssh Stage I 1. config 另外一种方式为：把所有机器的IP和hostname放在/etc/hosts里，在此不再赘述, 请参见《ZooKeeper multi-server install - 3.FQDN》。
+$vi ~/.ssh/config Host host1 HostName 192.168.0.110 Port 22 User xiaobin112 Host host2 HostName 192.168.0.111 Port 22 User xiaobin112 2. r+w $chmod 600 ~/.ssh/config Stage II 1. gen (Just press ENTER for all input values) ssh-keygen -t rsa -P &#39;&#39; 2. <a class="read-more" href="/csdn/post/ops_ssh_without_password/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -319,12 +320,16 @@ $mkdir ~/.ssh $chmod 700 ~/.ssh Stage I 1. config  另外一种方式为：把�
     <section class="post-excerpt">
         
             <p>在进行安装配置前，请确认已经完成了《MySQL 主从复制》
-  MHA   (V0.58)
-  Manager Node    baidu yun - backup
-   Mha manager Mha node   安装前准备《ssh相互免密》
- 一、安装    Name IP Memo     mha1 192.168.0.151 Monitor host    使用pscp上传文件请参考《MySQL 主从复制 - 5. test data》
-1. MHA Node  所有MySQL服务器（mysql1、mysql11、mysql12）和MHA 管理机（MHA）都要安装。
- sudo yum localinstall mha4mysql-node-0.58-0.el7.centos.noarch.rpm 2. MHA Manager  CentOS源有perl-Config-Tiny。 <a class="read-more" href="/csdn/post/mysql-mha/">&raquo;</a></p>
+MHA (V0.58)
+Manager Node baidu yun - backup
+Mha manager Mha node 安装前准备《ssh相互免密》
+一、安装 Name IP Memo mha1 192.168.0.151 Monitor host 使用pscp上传文件请参考《MySQL 主从复制 - 5. test data》
+1. MHA Node 所有MySQL服务器（mysql1、mysql11、mysql12）和MHA 管理机（MHA）都要安装。
+sudo yum localinstall mha4mysql-node-0.58-0.el7.centos.noarch.rpm 2. MHA Manager CentOS源有perl-Config-Tiny。
+sudo yum install perl-Config-Tiny 安装epel，可以找到perl-Log-Dispatch、perl-Parallel-ForkManager。
+sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm sudo yum install perl-Log-Dispatch perl-Parallel-ForkManager -y 安装manager
+sudo yum localinstall mha4mysql-manager-0.58-0.el7.centos.noarch.rpm 3. MySQL主从配置 （补充部分）
+1) repl user Slave Server（mysql11, mysql12） <a class="read-more" href="/csdn/post/mysql-mha/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -347,9 +352,13 @@ $mkdir ~/.ssh $chmod 700 ~/.ssh Stage I 1. config  另外一种方式为：把�
     <section class="post-excerpt">
         
             <p>在进行配置前，请确认已经安装 mysql5.7 - CentOS7
- 1. 网络配置 Replication Group 1:
-   Name IP Memo     mysql1 192.168.0.160 Master   mysql11 192.168.0.161 Slave   mysql12 192.168.0.162 Slave    Replication Group 2(Maria DB):
-   Name IP Memo     mysql2 192.168.0.170 Master   mysql21 192.168.0.171 Slave   mysql22 192.168.0.172 Slave    2. Configure MySQL cluster 1) Master Server 《Setting the Replication Master Configuration》 <a class="read-more" href="/csdn/post/mysql-master-slave-replication/">&raquo;</a></p>
+1. 网络配置 Replication Group 1:
+Name IP Memo mysql1 192.168.0.160 Master mysql11 192.168.0.161 Slave mysql12 192.168.0.162 Slave Replication Group 2(Maria DB):
+Name IP Memo mysql2 192.168.0.170 Master mysql21 192.168.0.171 Slave mysql22 192.168.0.172 Slave 2. Configure MySQL cluster 1) Master Server 《Setting the Replication Master Configuration》
+/etc/my.cnf
+[mysqld] log-bin=mysql160-bin server-id=160 2) Slave Server 《Setting the Replication Slave Configuration》
+/etc/my.cnf
+Slave 1 [mysqld] server-id=161 Slave 2 [mysqld] server-id=162 3. <a class="read-more" href="/csdn/post/mysql-master-slave-replication/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -372,10 +381,10 @@ $mkdir ~/.ssh $chmod 700 ~/.ssh Stage I 1. config  另外一种方式为：把�
     <section class="post-excerpt">
         
             <p>OS: CentOS7 minimal（安装时的选项）
- 一、安装 0. prepare tool $yum group list 1) dev tools $yum group install &#34;Development Tools&#34; 2) openssl-devel  update see &ldquo;nginx’s load balancing的安装部分的update OpenSSL&rdquo;
- $yum install openssl-devel 3) libnl $yum install libnl libnl-devel libnfnetlink-devel 1. keepalived  v1.4.5
- down and unzip $wget http://www.keepalived.org/software/keepalived-1.4.5.tar.gz $ tar zxvf keepalived-1.4.5.tar.gz installation $cd keepalived-1.4.5 $./configure --prefix=/usr/local/keepalived $make Root permission Required
-$make install setup $cp /usr/local/keepalived/sbin/keepalived /usr/sbin/ $mkdir -p /etc/keepalived $cp /usr/local/keepalived/etc/keepalived/keepalived. <a class="read-more" href="/csdn/post/ops_keepalived/">&raquo;</a></p>
+一、安装 0. prepare tool $yum group list 1) dev tools $yum group install &#34;Development Tools&#34; 2) openssl-devel update see &ldquo;nginx’s load balancing的安装部分的update OpenSSL&rdquo;
+$yum install openssl-devel 3) libnl $yum install libnl libnl-devel libnfnetlink-devel 1. keepalived v1.4.5
+down and unzip $wget http://www.keepalived.org/software/keepalived-1.4.5.tar.gz $ tar zxvf keepalived-1.4.5.tar.gz installation $cd keepalived-1.4.5 $./configure --prefix=/usr/local/keepalived $make Root permission Required
+$make install setup $cp /usr/local/keepalived/sbin/keepalived /usr/sbin/ $mkdir -p /etc/keepalived $cp /usr/local/keepalived/etc/keepalived/keepalived.conf /etc/keepalived/keepalived.conf $cp /usr/local/keepalived/etc/sysconfig/keepalived /etc/sysconfig/ $cp /tmp/keepalived-1. <a class="read-more" href="/csdn/post/ops_keepalived/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -398,10 +407,10 @@ $make install setup $cp /usr/local/keepalived/sbin/keepalived /usr/sbin/ $mkdir 
     <section class="post-excerpt">
         
             <p>OS: CentOS7 minimal（安装时的选项）
- nginx&rsquo;s load balancing 一、安装 0. prepare $yum -y install gcc gcc-c++ automake pcre pcre-devel zlib zlib-devel open openssl-devel 1) update OpenSSL  default directory: /usr/ssl
- $wget https://www.openssl.org/source/openssl-1.1.1f.tar.gz 2) setup $./config --prefix=/usr --shared $make  Root permission Required
- $make install 1. installation sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm sudo yum install -y nginx 1) down  Same as the installed version
- $curl --progress https://nginx.org/download/nginx-1.16.1.tar.gz | tar xz 2) setup module see param: <a class="read-more" href="/csdn/post/ops_nginx/">&raquo;</a></p>
+nginx&rsquo;s load balancing 一、安装 0. prepare $yum -y install gcc gcc-c++ automake pcre pcre-devel zlib zlib-devel open openssl-devel 1) update OpenSSL default directory: /usr/ssl
+$wget https://www.openssl.org/source/openssl-1.1.1f.tar.gz 2) setup $./config --prefix=/usr --shared $make Root permission Required
+$make install 1. installation sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm sudo yum install -y nginx 1) down Same as the installed version
+$curl --progress https://nginx.org/download/nginx-1.16.1.tar.gz | tar xz 2) setup module see param: <a class="read-more" href="/csdn/post/ops_nginx/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">

@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.99.1" />
+    <meta name="generator" content="Hugo 0.100.0" />
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -168,7 +168,7 @@
     </header>
     <section class="post-excerpt">
         
-            <p>new user $useradd tdtc $passwd tdtc Append group CentOS7- Open wheel $vi /etc/pam.d/su auth required /lib/security/$ISA/pam_wheel.so use_uid Attachment of group members $gpasswd -a tdtc wheel CentOS7 usermod –aG wheel UserName ``  # test Query all users with sudo permissions.  ```bash [tdtc@tdtc102 ~]$ sudo lid -g wheel  We trust you have received the usual lecture from the local System Administrator. It usually boils down to these three things:   #1) Respect the privacy of others. <a class="read-more" href="/csdn/post/ops_sudo/">&raquo;</a></p>
+            <p>new user $useradd tdtc $passwd tdtc Append group CentOS7- Open wheel $vi /etc/pam.d/su auth required /lib/security/$ISA/pam_wheel.so use_uid Attachment of group members $gpasswd -a tdtc wheel CentOS7 usermod –aG wheel UserName `` # test Query all users with sudo permissions. ```bash [tdtc@tdtc102 ~]$ sudo lid -g wheel We trust you have received the usual lecture from the local System Administrator. It usually boils down to these three things: #1) Respect the privacy of others. <a class="read-more" href="/csdn/post/ops_sudo/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -190,17 +190,18 @@
     </header>
     <section class="post-excerpt">
         
-            <p>禁止记事本   开始-&gt;运行-&gt;gpedit.msc-&gt;计算机配置-&gt;windows设置-&gt;安全设置-&gt;软件限制策略
-  右键点软件限制策略-&gt;创建软件限制策略
-  点其他规则-&gt;右键新建路径规则-&gt;在“路径”下的空白输入框中“%windir%\notepad.exe“（或者c盘是系统盘的情况下：c:\windows\notepad.exe)-&gt;在“安全级别”中选择“不允许”
-   附：如果你要限制.txt的程序打开，可以在路径中输入*.txt。
- 日文系统 key101  日文改英文键盘
- 修改注册表主键： HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\i8042prt\Parameters
-LayerDriver JPN: KBD101.DLL  OverrideKeyboardIdentifier: PCAT_101KEY OverrideKeyboardSubtype: 0x00000000(0) win7+添加日文输入   “区域和语言“ ==&gt; ”键盘和语言“
-  ”键盘和语言“中，点击”更改键盘“， 点”添加“，找到 ”日语（日本）“， 勾选”Microsoft IME“和”日语“，其它不要勾选.
-  按键盘”Alt“+”Shift“即可调出日语输入法.
-文件或目录损坏且无法读取  无法读取的所在逻辑盘E:
- chkdsk /F E: How to Delete Old Windows Folder in Windows 10 – Access Denied? takeown /F &#34;C:\Windows.old&#34; /A /R /D Y icacls &#34;C:\Windows. <a class="read-more" href="/csdn/post/ops_win_faq1/">&raquo;</a></p>
+            <p>禁止记事本 开始-&gt;运行-&gt;gpedit.msc-&gt;计算机配置-&gt;windows设置-&gt;安全设置-&gt;软件限制策略
+右键点软件限制策略-&gt;创建软件限制策略
+点其他规则-&gt;右键新建路径规则-&gt;在“路径”下的空白输入框中“%windir%\notepad.exe“（或者c盘是系统盘的情况下：c:\windows\notepad.exe)-&gt;在“安全级别”中选择“不允许”
+附：如果你要限制.txt的程序打开，可以在路径中输入*.txt。
+日文系统 key101 日文改英文键盘
+修改注册表主键： HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\i8042prt\Parameters
+LayerDriver JPN: KBD101.DLL OverrideKeyboardIdentifier: PCAT_101KEY OverrideKeyboardSubtype: 0x00000000(0) win7+添加日文输入 “区域和语言“ ==&gt; ”键盘和语言“
+”键盘和语言“中，点击”更改键盘“， 点”添加“，找到 ”日语（日本）“， 勾选”Microsoft IME“和”日语“，其它不要勾选.
+按键盘”Alt“+”Shift“即可调出日语输入法.
+文件或目录损坏且无法读取 无法读取的所在逻辑盘E:
+chkdsk /F E: How to Delete Old Windows Folder in Windows 10 – Access Denied? takeown /F &#34;C:\Windows.old&#34; /A /R /D Y icacls &#34;C:\Windows.old&#34; /T /grant administrators:F rmdir /s /q &#34;C:\Windows.old&#34; notepad++ 关闭历史文件 打开首选项-&gt;备份 √“记住最后打开的文件” 把对勾去掉即可。
+ssh - It is also possible that a host key has just been changed D:\program-d\putty0. <a class="read-more" href="/csdn/post/ops_win_faq1/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -226,7 +227,7 @@ LayerDriver JPN: KBD101.DLL  OverrideKeyboardIdentifier: PCAT_101KEY OverrideKey
 ed2k://|file|%5BIBM%E8%BD%AF%E4%BB%B6%E7%B3%BB%E5%88%97%5D.IBM.Rational.Rose.Enterprise.v7.0-TFTISO.bin|621038544|71d09610bb53d2d905d278675b333c75|h=utnlhfjwnzjdp2wecfeujoptd7pqlrps|/ 默认安装即可。
 lic 序号有两种方式：本机和导入Lic
 本机 本地机器作为lic服务器
-1. 修改授权文件。 打开license.dat文件， 大约在文件的中间位置有：SERVER Microsoft ANY DAEMON rational “C:\Program Files\Rational\common\rational.exe” 将其修改为：SERVER 计算机名　ANY DAEMON rational “自己安装的目录\rational.exe”后，保存 2. 拷贝授权检查程序。 将license.dat、 lmgrd.exe 、rational.exe三个文件拷贝到：安装目录\rational\common\ 3. 将授权程序放到控制面板。 将flexlm.cpl拷贝到system32目录下。如win2000系统中为C:\WINNT\system32目录。 4. 设置授权程序。 打开FLEXlm License Manager（控制面板中）， 在Setup页中lmgrd.exe右侧目录填写：C:\Program Files\Rational\Common\lmgrd.exe（若为默认安装目录） License File右侧目录写为：C:\Program Files\Rational\Common\license.dat 5. 查看状态。 回到Control页，点击Start，若出现”Server Started”，则表示已经成功， 可以点击Status,若状态为：计算机名：license server UP(MASTER)则成功（否则，Start-&gt;Status来回点~~）。 6. 修改Server Name。 打开Rational License Key Administrator， 点击工具栏中的&quot;Start WIzard&quot;, 点击下一步， 选择&quot;Point to a Rational License Server to get my licenses&quot; , 点击下一步， 在Server Name中的名字改为自己的计算机名即可。 导入License  IBM Rational License Key Administrator Import a Rational License File   Browse  . <a class="read-more" href="/csdn/post/rose-uml/">&raquo;</a></p>
+1. 修改授权文件。 打开license.dat文件， 大约在文件的中间位置有：SERVER Microsoft ANY DAEMON rational “C:\Program Files\Rational\common\rational.exe” 将其修改为：SERVER 计算机名　ANY DAEMON rational “自己安装的目录\rational.exe”后，保存2. 拷贝授权检查程序。 将license.dat、 lmgrd.exe 、rational.exe三个文件拷贝到：安装目录\rational\common\3. 将授权程序放到控制面板。 将flexlm.cpl拷贝到system32目录下。如win2000系统中为C:\WINNT\system32目录。4. 设置授权程序。 打开FLEXlm License Manager（控制面板中）， 在Setup页中lmgrd.exe右侧目录填写：C:\Program Files\Rational\Common\lmgrd.exe（若为默认安装目录） License File右侧目录写为：C:\Program Files\Rational\Common\license.dat5. 查看状态。 回到Control页，点击Start，若出现”Server Started”，则表示已经成功， 可以点击Status,若状态为：计算机名：license server UP(MASTER)则成功（否则，Start-&gt;Status来回点~~）。6. 修改Server Name。 打开Rational License Key Administrator， 点击工具栏中的&quot;Start WIzard&quot;, 点击下一步， 选择&quot;Point to a Rational License Server to get my licenses&quot; , 点击下一步， 在Server Name中的名字改为自己的计算机名即可。导入License IBM Rational License Key Administrator Import a Rational License File Browse . <a class="read-more" href="/csdn/post/rose-uml/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -249,7 +250,7 @@ lic 序号有两种方式：本机和导入Lic
     <section class="post-excerpt">
         
             <p>关于移植在U-boot文档中这样介绍： README
-If the system board that you have is not listed, then you will need to port U-Boot to your hardware platform. To do this, follow these steps:  1. Add a new configuration option for your board to the toplevel  &#34;Makefile&#34; and to the &#34;MAKEALL&#34; script, using the existing  entries as examples. Note that here and at many other places  boards and other names are listed in alphabetical sort order. <a class="read-more" href="/csdn/post/hw-uboot_v134-at91sam9260/">&raquo;</a></p>
+If the system board that you have is not listed, then you will need to port U-Boot to your hardware platform. To do this, follow these steps: 1. Add a new configuration option for your board to the toplevel &#34;Makefile&#34; and to the &#34;MAKEALL&#34; script, using the existing entries as examples. Note that here and at many other places boards and other names are listed in alphabetical sort order. <a class="read-more" href="/csdn/post/hw-uboot_v134-at91sam9260/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -273,10 +274,10 @@ If the system board that you have is not listed, then you will need to port U-Bo
         
             <p>在很多网站上都有一个导航记录栏 - 面包屑；
 官方文档 举例
-&lt;ol class=&#34;breadcrumb&#34;&gt;  &lt;li&gt;&lt;a href=&#34;#&#34;&gt;Home&lt;/a&gt;&lt;/li&gt;  &lt;li&gt;&lt;a href=&#34;#&#34;&gt;Library&lt;/a&gt;&lt;/li&gt;  &lt;li class=&#34;active&#34;&gt;Data&lt;/li&gt; &lt;/ol&gt; php example  CodeIgniter v2.2.x/3.x
- 建立一个php文件 breadcrumb.php
-&lt;ol class=&#34;breadcrumb&#34;&gt;  &lt;?php echo get_breadcrumb($breadData, $menu_prefix); ?&gt;&lt;li class=&#34;active&#34;&gt; &lt;?php echo empty($breadData) ? $this-&gt;Glossary_M-&gt;get_word(&#39;home&#39;, $this-&gt;data[&#39;lang_id&#39;]) : $body; ?&gt; &lt;/li&gt; &lt;/ol&gt; 在helper中建立如下方法：
-function get_breadcrumb($array, $prefix = NULL) { 	$str = &#39;&#39;; 	if (count($array)) { 	foreach ($array as $item) { 	if ($item[&#39;homeFlag&#39;]) { 	// &#39;&lt;li&gt;&lt;a href=&#34;http://&#39; 	$str . <a class="read-more" href="/csdn/post/css-bootstrap-breadcrumbs/">&raquo;</a></p>
+&lt;ol class=&#34;breadcrumb&#34;&gt; &lt;li&gt;&lt;a href=&#34;#&#34;&gt;Home&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&#34;#&#34;&gt;Library&lt;/a&gt;&lt;/li&gt; &lt;li class=&#34;active&#34;&gt;Data&lt;/li&gt; &lt;/ol&gt; php example CodeIgniter v2.2.x/3.x
+建立一个php文件 breadcrumb.php
+&lt;ol class=&#34;breadcrumb&#34;&gt; &lt;?php echo get_breadcrumb($breadData, $menu_prefix); ?&gt; &lt;li class=&#34;active&#34;&gt; &lt;?php echo empty($breadData) ? $this-&gt;Glossary_M-&gt;get_word(&#39;home&#39;, $this-&gt;data[&#39;lang_id&#39;]) : $body; ?&gt; &lt;/li&gt; &lt;/ol&gt; 在helper中建立如下方法：
+function get_breadcrumb($array, $prefix = NULL) { $str = &#39;&#39;; if (count($array)) { foreach ($array as $item) { if ($item[&#39;homeFlag&#39;]) { // &#39;&lt;li&gt;&lt;a href=&#34;http://&#39; $str .= &#39;&lt;li&gt;&lt;a href=&#34;&#39; . $item[&#39;linkAddr&#39;] . <a class="read-more" href="/csdn/post/css-bootstrap-breadcrumbs/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -299,7 +300,7 @@ function get_breadcrumb($array, $prefix = NULL) { 	$str = &#39;&#39;; 	if (count
     <section class="post-excerpt">
         
             <p>Portel DXP 2004
- CTM1050.7z 提取码: pcah <a class="read-more" href="/csdn/post/hw-schematic_diagram-ctm1050/">&raquo;</a></p>
+CTM1050.7z 提取码: pcah <a class="read-more" href="/csdn/post/hw-schematic_diagram-ctm1050/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -322,7 +323,7 @@ function get_breadcrumb($array, $prefix = NULL) { 	$str = &#39;&#39;; 	if (count
     <section class="post-excerpt">
         
             <p>tool: Rational Rose
- 功能简介： 当主程序收到CAN口的数据后；根据按键的不同来选择是使用CAN口发送，还是使用UART口发送。
+功能简介： 当主程序收到CAN口的数据后；根据按键的不同来选择是使用CAN口发送，还是使用UART口发送。
 时序图
 协作图
 down can2uart.mdl 提取码: bb8h <a class="read-more" href="/csdn/post/uml-ommunication_diagram-can/">&raquo;</a></p>
@@ -348,12 +349,12 @@ down can2uart.mdl 提取码: bb8h <a class="read-more" href="/csdn/post/uml-ommu
     <section class="post-excerpt">
         
             <p>完结篇 《CAN转COM或CAN-1》介绍了CAN，本篇其余部分。
-  开发板：英蓓特MCB2300（LPC2368）
-  开发工具：MDK3.8a
-  开发主机：Windows XP SP3 中文专业版
-  UART 因为我们使用UART主要是进行发送的，所以关闭接收可以更加快速的进行发送处理。
+开发板：英蓓特MCB2300（LPC2368）
+开发工具：MDK3.8a
+开发主机：Windows XP SP3 中文专业版
+UART 因为我们使用UART主要是进行发送的，所以关闭接收可以更加快速的进行发送处理。
 控制接收缓存寄存（Receiver Buffer Register）即可达到此目的。
-禁止RBR void preUARTInitRBR( unsigned char i ) {  switch (i) { 	case 0: 	U0IER = IER_THRE | IER_RLS;	/* Disable RBR */ 	break;  	case 1: 	U1IER = IER_THRE | IER_RLS;	/* Disable RBR */ 	break; 	} } 允许RBR void postUARTInitRBR( unsigned char i ) {  switch (i) { 	case 0: 	U0IER = IER_THRE | IER_RLS | IER_RBR;	/* Re-enable RBR */ 	break;  	case 1: 	U1IER = IER_THRE | IER_RLS | IER_RBR;	/* Re-enable RBR */ 	break; 	} } 完成后的UART  NXP的官方例程UART加入RBR后的code <a class="read-more" href="/csdn/post/hw-can-uart-key/">&raquo;</a></p>
+禁止RBR void preUARTInitRBR( unsigned char i ) { switch (i) { case 0: U0IER = IER_THRE | IER_RLS;	/* Disable RBR */ break; case 1: U1IER = IER_THRE | IER_RLS;	/* Disable RBR */ break; } } 允许RBR void postUARTInitRBR( unsigned char i ) { switch (i) { case 0: U0IER = IER_THRE | IER_RLS | IER_RBR;	/* Re-enable RBR */ break; case 1: U1IER = IER_THRE | IER_RLS | IER_RBR;	/* Re-enable RBR */ break; } } 完成后的UART NXP的官方例程UART加入RBR后的code <a class="read-more" href="/csdn/post/hw-can-uart-key/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -375,12 +376,12 @@ down can2uart.mdl 提取码: bb8h <a class="read-more" href="/csdn/post/uml-ommu
     </header>
     <section class="post-excerpt">
         
-            <p>一、光盘方式  VMware
- 1. 制作ISO 打开UltralISO，把需要的文件拖拽过去即可。
+            <p>一、光盘方式 VMware
+1. 制作ISO 打开UltralISO，把需要的文件拖拽过去即可。
 2. Linux 1) look ls -l /dev | grep cdrom 2) load sudo mount /dev/cdrom /mnt/ 3) unload sudo umount /mnt 二、scp 1. Windows-&gt;Linux Windows的scp包含在putty工具中。
-pscp f:\docker-soft\docker-compose-Linux-x86_64 tdtc@192.168.211.131:/home/tdtc/  pscp f:\docker-soft\protobuf-cpp-3.11.4.tar.gz tdtc@192.168.211.131:/home/tdtc/  pscp f:\docker-soft\go1.13.8.linux-amd64.tar.gz tdtc@192.168.211.131:/home/tdtc 2. Linux-&gt;Windows  注意：仅适用于win10.
- 1）增加OpenSSH Server 安装OpenSSH 开始菜单-》设置-》应用-》管理可选功能: 开启OpenSSH  注意：关闭Windows防火墙或允许22端口。  2）传送文件  在Linux下操作。
- scp /home/tdtc/go1.13.8.linux-amd64.tar.gz xiaobin@192.168.211.112:/D:\war  <a class="read-more" href="/csdn/post/ops_data_transmission/">&raquo;</a></p>
+pscp f:\docker-soft\docker-compose-Linux-x86_64 tdtc@192.168.211.131:/home/tdtc/ pscp f:\docker-soft\protobuf-cpp-3.11.4.tar.gz tdtc@192.168.211.131:/home/tdtc/ pscp f:\docker-soft\go1.13.8.linux-amd64.tar.gz tdtc@192.168.211.131:/home/tdtc 2. Linux-&gt;Windows 注意：仅适用于win10.
+1）增加OpenSSH Server 安装OpenSSH 开始菜单-》设置-》应用-》管理可选功能: 开启OpenSSH 注意：关闭Windows防火墙或允许22端口。 2）传送文件 在Linux下操作。
+scp /home/tdtc/go1.13.8.linux-amd64.tar.gz xiaobin@192.168.211.112:/D:\war  <a class="read-more" href="/csdn/post/ops_data_transmission/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -403,13 +404,13 @@ pscp f:\docker-soft\docker-compose-Linux-x86_64 tdtc@192.168.211.131:/home/tdtc/
     <section class="post-excerpt">
         
             <p> 在V2.3.2中，栅格系统默认是不支持移动设备的； 但V3.0版本，已经默认支持移动设备。
- v2 Bootstrap(v2) 默认的栅格系统为12列 ，形成一个940px宽的容器，默认没有启用 &ldquo;响应式布局特性&rdquo; 。 如果加入响应式布局CSS文件，栅格系统会自动根据可视窗口的宽度从724px到1170px进行动态调整。 在可视窗口低于767px宽的情况下，列将不再固定并且会在垂直方向堆叠。
+v2 Bootstrap(v2) 默认的栅格系统为12列 ，形成一个940px宽的容器，默认没有启用 &ldquo;响应式布局特性&rdquo; 。 如果加入响应式布局CSS文件，栅格系统会自动根据可视窗口的宽度从724px到1170px进行动态调整。 在可视窗口低于767px宽的情况下，列将不再固定并且会在垂直方向堆叠。
 V2.3.2的示例：
-&lt;div class=&#34;row&#34;&gt;  &lt;div class=&#34;span4&#34;&gt;...&lt;/div&gt;  &lt;div class=&#34;span8&#34;&gt;...&lt;/div&gt; &lt;/div&gt; v3  class变化：.span* -〉.col-md-*
- Bootstrap(v3) 内置了一套响应式、移动设备优先的流式栅格系统，随着屏幕设备或视口（viewport）尺寸的增加，
+&lt;div class=&#34;row&#34;&gt; &lt;div class=&#34;span4&#34;&gt;...&lt;/div&gt; &lt;div class=&#34;span8&#34;&gt;...&lt;/div&gt; &lt;/div&gt; v3 class变化：.span* -〉.col-md-*
+Bootstrap(v3) 内置了一套响应式、移动设备优先的流式栅格系统，随着屏幕设备或视口（viewport）尺寸的增加，
 系统会自动分为最多12列。它包含了易于使用的预定义classe，还有强大的mixin用于生成更具语义的布局。
 V3.0的示例：
-&lt;div class=&#34;row&#34;&gt;  &lt;div class=&#34;col-md-4&#34;&gt;...&lt;/div&gt;  &lt;div class=&#34;col-md-8&#34;&gt;...&lt;/div&gt; &lt;/div&gt;  <a class="read-more" href="/csdn/post/css-bootstrap-grid/">&raquo;</a></p>
+&lt;div class=&#34;row&#34;&gt; &lt;div class=&#34;col-md-4&#34;&gt;...&lt;/div&gt; &lt;div class=&#34;col-md-8&#34;&gt;...&lt;/div&gt; &lt;/div&gt;  <a class="read-more" href="/csdn/post/css-bootstrap-grid/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">

@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.99.1" />
+    <meta name="generator" content="Hugo 0.100.0" />
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -168,12 +168,13 @@
     </header>
     <section class="post-excerpt">
         
-            <p>开发板访问NFS 服务器IP地址是固定的。
- 一、U16及以下  （Ubuntu16.04-） 使用root权限更改interfaces文件。
- #gedit /etc/network/interfaces 完整例子：
- /etc/network/interfaces
- auto lo iface lo inet loopback  auto eth0 iface eth0 inet static  address 192.168.0.111 netmask 255.255.255.0 gateway 192.168.0.1 二、U18及以上  （Ubuntu18.04+）
- #vi /etc/netplan/50-cloud-init.yaml network:  ethernets:  ens32:  #dhcp4: true  addresses:  - 192.168.0.124/24  gateway4: 192.168.0.1  nameservers:  addresses: [192.168.0.1, 219.146.3.226, 219.146.3.230, 219.146.3.238]  optional: true  version: 2  ens32：你的网卡，根据实际情况设置 dhcp4，gateway4：IPv4协议下的。 <a class="read-more" href="/csdn/post/embeded_ip_nfs/">&raquo;</a></p>
+            <p> 开发板访问NFS 服务器IP地址是固定的。
+一、U16及以下 （Ubuntu16.04-） 使用root权限更改interfaces文件。
+#gedit /etc/network/interfaces 完整例子：
+/etc/network/interfaces
+auto lo iface lo inet loopback auto eth0 iface eth0 inet static address 192.168.0.111 netmask 255.255.255.0 gateway 192.168.0.1 二、U18及以上 （Ubuntu18.04+）
+#vi /etc/netplan/50-cloud-init.yaml network: ethernets: ens32: #dhcp4: true addresses: - 192.168.0.124/24 gateway4: 192.168.0.1 nameservers: addresses: [192.168.0.1, 219.146.3.226, 219.146.3.230, 219.146.3.238] optional: true version: 2 ens32：你的网卡，根据实际情况设置 dhcp4，gateway4：IPv4协议下的。
+apply #netplan apply Reference network interface configuration 网络配置 - ubuntu Ubuntu 18.04修改IP地址 - zhengchaooo  <a class="read-more" href="/csdn/post/embeded_ip_nfs/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -198,7 +199,7 @@
             <p>installation Mutt is a small but very powerful text-based mail client for Unix operating systems.
 1) install yum install mutt 2) config $vi ~/.muttrc set sendmail=&#34;/usr/local/msmtp/bin/msmtp&#34; set from = &#34;user@domain.com&#34; set realname = &#34;Realname of the user&#34; received mail:
 set pop_host=&#34;pop.163.com&#34; set pop_user=&#34;love_shidie&#34; set pop_pass=`getpassword email_id` test 1) send mail gpg -d ~/.msmtp/love_shidie-passoword.gpg $mutt -s &#34;test message&#34; -a ~/message121.txt 2) received mail $mutt Press key: G
-Reference  Mutt – A Command Line Email Client to Send Mails from Terminal Mutt: how to safely store password? <a class="read-more" href="/csdn/post/ops_mail/">&raquo;</a></p>
+Reference Mutt – A Command Line Email Client to Send Mails from Terminal Mutt: how to safely store password? <a class="read-more" href="/csdn/post/ops_mail/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -220,10 +221,10 @@ Reference  Mutt – A Command Line Email Client to Send Mails from Terminal Mutt
     </header>
     <section class="post-excerpt">
         
-            <p>The GNU Privacy Guard  Note: normal user login.
- 1. install $yum install gnupg $yum install rng-tools 2. gen key $gpg --gen-key Press Key: O 输入完，按“Tab”切换到“OK”,按回车。 再输入一次， 3. gen revoke $gpg gen-revoke 7209DBAD Press Key: y 4. encrypt file(password) 1) password-file $vi love_shidie-password  密码文件(明文密码)
- thisispassword 2) gen gpg file  Gen file: love_shidie-password.gpg
- $gpg -e -r veic_2005@163.com love_shidie-password Reference  How to use Mutt email client with encrypted passwords   <a class="read-more" href="/csdn/post/ops_gnupg/">&raquo;</a></p>
+            <p>The GNU Privacy Guard Note: normal user login.
+1. install $yum install gnupg $yum install rng-tools 2. gen key $gpg --gen-key Press Key: O 输入完，按“Tab”切换到“OK”,按回车。 再输入一次， 3. gen revoke $gpg gen-revoke 7209DBAD Press Key: y 4. encrypt file(password) 1) password-file $vi love_shidie-password 密码文件(明文密码)
+thisispassword 2) gen gpg file Gen file: love_shidie-password.gpg
+$gpg -e -r veic_2005@163.com love_shidie-password Reference How to use Mutt email client with encrypted passwords  <a class="read-more" href="/csdn/post/ops_gnupg/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -246,9 +247,9 @@ Reference  Mutt – A Command Line Email Client to Send Mails from Terminal Mutt
     <section class="post-excerpt">
         
             <p>使用msmtp实现 installation down $wget https://marlam.de/msmtp/releases/msmtp-1.6.8.tar.xz install $xz -d msmtp-1.6.8.tar.xz$tar xvf msmtp-1.6.8.tar$cd msmtp-1.6.8$./configure --prefix=/user/local/msmtp$make Then install using root
-$make install configuration  需要在user的根目录建立一个新文件：.msmtprc
- $cd ~ $vi .msmtprc $chmod 600 .msmtprc   .msmtprc
-  defaults  logfile ~/.msmtp/msmtp.log  # The SMTP server of the provider. account love_shidie host smtp.163.com from love_shidie@163.com auth login user love_shidie@163.com passwordeval gpg --no-tty -q -d ~/.msmtp/love_shidie-password.gpg  # Set a default account account default: love_shidie r+w $chmod 600 . <a class="read-more" href="/csdn/post/ops_mail_msmtp/">&raquo;</a></p>
+$make install configuration 需要在user的根目录建立一个新文件：.msmtprc
+$cd ~ $vi .msmtprc $chmod 600 .msmtprc .msmtprc
+defaults logfile ~/.msmtp/msmtp.log # The SMTP server of the provider. account love_shidie host smtp.163.com from love_shidie@163.com auth login user love_shidie@163.com passwordeval gpg --no-tty -q -d ~/.msmtp/love_shidie-password.gpg # Set a default account account default: love_shidie r+w $chmod 600 . <a class="read-more" href="/csdn/post/ops_mail_msmtp/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -271,11 +272,15 @@ $make install configuration  需要在user的根目录建立一个新文件：.m
     <section class="post-excerpt">
         
             <p>OS: CentOS7
- Prepare  已经安装了《ZooKeeper multi-server install》 已经安装了《hadoop - cluster》  Stage I: Installation  spark安装 - CentOS Firewall设置请参见《firewall-soft list(port)》 设置OpenJDK请参见《设置OpenJDK - CentOS》 set up   详见Reference[4]
- Stage II: Run 1. ZK zkServer.sh start 2. Hadoop 1) HDFS see 《hadoop - cluster - 3.1 HDFS》
+Prepare 已经安装了《ZooKeeper multi-server install》 已经安装了《hadoop - cluster》 Stage I: Installation spark安装 - CentOS Firewall设置请参见《firewall-soft list(port)》 设置OpenJDK请参见《设置OpenJDK - CentOS》 set up 详见Reference[4]
+Stage II: Run 1. ZK zkServer.sh start 2. Hadoop 1) HDFS see 《hadoop - cluster - 3.1 HDFS》
 2) YARN see 《hadoop - cluster - 3.2 YARN》
-3. Spark  （server3，4）
- $SPARK_HOME/sbin/start-all.sh 1) other site $SPARK_HOME/sbin/start-master.sh Web: http://192.168.42.109:8082/ <a class="read-more" href="/csdn/post/ops_spark_cluster/">&raquo;</a></p>
+3. Spark （server3，4）
+$SPARK_HOME/sbin/start-all.sh 1) other site $SPARK_HOME/sbin/start-master.sh Web: http://192.168.42.109:8082/
+http://192.168.42.110:8082/
+or http://192.168.42.109:8081/
+http://192.168.42.110:8081/
+Stage III: Stop $SPARK_HOME/sbin/stop-all.sh Reference Running Spark on YARN hadoop - cluster 《Spark学习之路 （二）Spark2. <a class="read-more" href="/csdn/post/ops_spark_cluster/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -297,12 +302,12 @@ $make install configuration  需要在user的根目录建立一个新文件：.m
     </header>
     <section class="post-excerpt">
         
-            <p>1. spark env  spark-env.sh
- 1) hadoop path export HADOOP_HOME=/home/tdtc/app/hadoop/2.7.7 export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop 2) spark worker 使用的内存和cpu core数
+            <p>1. spark env spark-env.sh
+1) hadoop path export HADOOP_HOME=/home/tdtc/app/hadoop/2.7.7 export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop 2) spark worker 使用的内存和cpu core数
 export SPARK_WORKER_MEMORY=128m export SPARK_WORKER_CORES=1 3) recovery(zookeeper) export SPARK_DAEMON_JAVA_OPTS=&#34;-Dspark.deploy.recoveryMode=ZOOKEEPER -Dspark.deploy.zookeeper.url=tdtc201:2181,tdtc202:2181,tdtc203:2181,tdtc204:2181 -Dspark.deploy.zookeeper.dir=/spark2&#34; recoveryMode spark.deploy.recoveryMode=ZOOKEEPER url spark.deploy.zookeeper.url=tdtc201:2181,tdtc202:2181,tdtc203:2181,tdtc204:2181 directory 储存在zk中的位置
-spark.deploy.zookeeper.dir=/spark2 2. slaves  注意：有几个YARN，就设置几个slaves！！！
- ../conf/slaves
-  tdtc203 tdtc204 Reference  how-to-set-up-spark-with-zookeeper-for-ha   <a class="read-more" href="/csdn/post/ops_spark_config/">&raquo;</a></p>
+spark.deploy.zookeeper.dir=/spark2 2. slaves 注意：有几个YARN，就设置几个slaves！！！
+../conf/slaves
+tdtc203 tdtc204 Reference how-to-set-up-spark-with-zookeeper-for-ha  <a class="read-more" href="/csdn/post/ops_spark_config/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -325,10 +330,10 @@ spark.deploy.zookeeper.dir=/spark2 2. slaves  注意：有几个YARN，就设置
     <section class="post-excerpt">
         
             <p> (root权限)
- SELinux(Security-Enhanced Linux) 是美国国家安全局（NSA）对于强制访问控制的实现，是 Linux历史上最杰出的新安全子系统。
-1. 临时  临时的意思就是宽容模式(0)强制模式(1)与的切换 默认是：强制模式
-  强制模式  $setenforce 1  宽容模式 临时关闭  $setenforce 0 2. 永久  /etc/selinux/config
-  开启  SELINUX=enforcing  关闭  SELINUX=disabled 3. 查看SELinux的工作模式 getenforce  <a class="read-more" href="/csdn/post/ops_selinux/">&raquo;</a></p>
+SELinux(Security-Enhanced Linux) 是美国国家安全局（NSA）对于强制访问控制的实现，是 Linux历史上最杰出的新安全子系统。
+1. 临时 临时的意思就是宽容模式(0)强制模式(1)与的切换 默认是：强制模式
+强制模式 $setenforce 1 宽容模式 临时关闭 $setenforce 0 2. 永久 /etc/selinux/config
+开启 SELINUX=enforcing 关闭 SELINUX=disabled 3. 查看SELinux的工作模式 getenforce  <a class="read-more" href="/csdn/post/ops_selinux/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -350,13 +355,14 @@ spark.deploy.zookeeper.dir=/spark2 2. slaves  注意：有几个YARN，就设置
     </header>
     <section class="post-excerpt">
         
-            <p>ali云服务器
- 1. User Add and Set password 1) add user useradd	site_user 2) set passwd passwd -x 180 site_user 3) set home_dir usermod -d /home/fdn site_user 2. assigning permissions  如果多个目录需要设置，则多次重复&quot;(2)设置&quot;即可。
-  文件系统是否支持acl
- df -T | awk &#39;{print $1,$2,$NF}&#39; | grep &#34;^/dev&#34; grep -i acl /boot/config*  分区是否支持acl
- 注意：在ali服务器上是vda1。
-  tune2fs -l /dev/vda1 | grep acl 1) 查看  目录的acl设置情况。
- getfacl	/home/fdn 2) 设置  设置指定目录的acl。 <a class="read-more" href="/csdn/post/ops_useradd_centos/">&raquo;</a></p>
+            <p> ali云服务器
+1. User Add and Set password 1) add user useradd	site_user 2) set passwd passwd -x 180 site_user 3) set home_dir usermod -d /home/fdn site_user 2. assigning permissions 如果多个目录需要设置，则多次重复&quot;(2)设置&quot;即可。
+文件系统是否支持acl
+df -T | awk &#39;{print $1,$2,$NF}&#39; | grep &#34;^/dev&#34; grep -i acl /boot/config* 分区是否支持acl
+注意：在ali服务器上是vda1。
+tune2fs -l /dev/vda1 | grep acl 1) 查看 目录的acl设置情况。
+getfacl	/home/fdn 2) 设置 设置指定目录的acl。
+setfacl -m user:site_user:rwx /home/fdn 参考文章 《在 Linux 上给用户赋予指定目录的读写权限》 《setfacl命令》 Unix / Linux change a user&rsquo;s home directory - usermod give read write access to directory in linux  <a class="read-more" href="/csdn/post/ops_useradd_centos/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -379,9 +385,9 @@ spark.deploy.zookeeper.dir=/spark2 2. slaves  注意：有几个YARN，就设置
     <section class="post-excerpt">
         
             <p>Spark：v2.4
- 一、基础软件 1. R-lang sudo yum -y install epel-release sudo yum install R  注意：如果Java没有安装，会附带着安装OpenJDK。
- 2. Scala wget https://downloads.lightbend.com/scala/2.12.8/scala-2.12.8.tgz tar xvf scala-2.12.8.tgz sudo mv scala-2.12.8 /usr/lib sudo ln -s /usr/lib/scala-2.12.8 /usr/lib/scala 1) add path $vi ~/.bashrc PATH=$PATH:/usr/lib/scala/bin 二、Spark 1. down &amp; unzip  v2.4.1
- mkdir -p ~/app/spark tar zxvf spark-2.4.1-bin-hadoop2.7.tgz -C ~/app/spark mv ~/app/spark/spark-2.4.1-bin-hadoop2.7 ~/app/spark/2.4.1 2. test ./bin/spark-shell --master local[2] input:
+一、基础软件 1. R-lang sudo yum -y install epel-release sudo yum install R 注意：如果Java没有安装，会附带着安装OpenJDK。
+2. Scala wget https://downloads.lightbend.com/scala/2.12.8/scala-2.12.8.tgz tar xvf scala-2.12.8.tgz sudo mv scala-2.12.8 /usr/lib sudo ln -s /usr/lib/scala-2.12.8 /usr/lib/scala 1) add path $vi ~/.bashrc PATH=$PATH:/usr/lib/scala/bin 二、Spark 1. down &amp; unzip v2.4.1
+mkdir -p ~/app/spark tar zxvf spark-2.4.1-bin-hadoop2.7.tgz -C ~/app/spark mv ~/app/spark/spark-2.4.1-bin-hadoop2.7 ~/app/spark/2.4.1 2. test ./bin/spark-shell --master local[2] input:
 for (i &lt;- 1 to 3; j &lt;- 1 to 3 if i ! <a class="read-more" href="/csdn/post/ops_spark_centos/">&raquo;</a></p>
         
     </section>
@@ -404,7 +410,9 @@ for (i &lt;- 1 to 3; j &lt;- 1 to 3 if i ! <a class="read-more" href="/csdn/post
     </header>
     <section class="post-excerpt">
         
-            <p>Prepare     server1 server2 server3 server4     NameNode y y     DataNode   y y y   ResourceManager     y y   NodeManager y y y y   Zookeeper y y y y   JournalNode y y y    ZK-FC y y       JobHistor y          Server Name IP Host Name     server1 192. <a class="read-more" href="/csdn/post/ops_hadoop_cluster/">&raquo;</a></p>
+            <p>Prepare server1 server2 server3 server4 NameNode y y DataNode y y y ResourceManager y y NodeManager y y y y Zookeeper y y y y JournalNode y y y ZK-FC y y JobHistor y Server Name IP Host Name server1 192.168.42.107 tdtc201 server2 192.168.42.108 tdtc202 server3 192.168.42.109 tdtc203 server4 192.168.42.110 tdtc204 1. zk zkServer.sh start 安装详见《ZooKeeper multi-server install》
+2. Open firewall Stage I: Installation 1. Unzip /home/$USER/app/hadoop/$version 路径参考Oracle11g
+mkdir -p ~/app/hadoop tar zxvf hadoop-2. <a class="read-more" href="/csdn/post/ops_hadoop_cluster/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">

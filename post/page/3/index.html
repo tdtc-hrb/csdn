@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.99.1" />
+    <meta name="generator" content="Hugo 0.100.0" />
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -168,13 +168,13 @@
     </header>
     <section class="post-excerpt">
         
-            <p>一、远程仓库回滚 1. 硬性 git reset --hard HEAD~1  &ldquo;~1&quot;表示向前回滚1个提交。 &ldquo;~2&quot;表示向前回滚2个提交，以此类推。  2. 强制推送 git push -f --set-upstream origin master 二、删除github发布 git tag -d [tag] git push origin :[tag] 例如：
+            <p>一、远程仓库回滚 1. 硬性 git reset --hard HEAD~1 &ldquo;~1&quot;表示向前回滚1个提交。 &ldquo;~2&quot;表示向前回滚2个提交，以此类推。 2. 强制推送 git push -f --set-upstream origin master 二、删除github发布 git tag -d [tag] git push origin :[tag] 例如：
 git tag -d v0.3.1 git push origin :v0.3.1 三、修改commit信息 可以修改最后一次提交的信息.
 进入git-cmd或git-bash：
 git commit --amend About：
- git-bash和git-cmd的区别
- bash是linux风格的命令行，可以使用windows和linux的命令； cmd是windows风格的命令行，可以使用windows命令；
- 此外，还有一个最大的不同点，git-cmd是天生就带了系统的PATH环境变量， 这一点会导致如果你运行某些脚本的时候，如果依赖某些安装的程序， 如python、node这些，git-bash就会提示不存在对应的命令， 而git-cmd可以正确运行。    四、合并分支 1. checkout git checkout dev git checkout master 2. merge git merge origin/dev 五、设置user git init ``bash git config user. <a class="read-more" href="/csdn/post/ops_git_oper1/">&raquo;</a></p>
+git-bash和git-cmd的区别
+bash是linux风格的命令行，可以使用windows和linux的命令； cmd是windows风格的命令行，可以使用windows命令；
+此外，还有一个最大的不同点，git-cmd是天生就带了系统的PATH环境变量， 这一点会导致如果你运行某些脚本的时候，如果依赖某些安装的程序， 如python、node这些，git-bash就会提示不存在对应的命令， 而git-cmd可以正确运行。 四、合并分支 1. checkout git checkout dev git checkout master 2. merge git merge origin/dev 五、设置user git init ``bash git config user.name &ldquo;xiaobin80&rdquo; git config user. <a class="read-more" href="/csdn/post/ops_git_oper1/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -197,8 +197,9 @@ git commit --amend About：
     <section class="post-excerpt">
         
             <p>本文适用范围：
- WSL1(Ubuntu) 开发环境 Ubuntu 生产环境  1. 安装 推荐使用PPA模式安装redis-server
-1.1 增加PPA sudo apt-add-repository ppa:chris-lea/redis-server sudo apt-get update install sudo apt-get install redis-server 1.2 配置 警告清除 Memory WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add &#39;vm.overcommit_memory = 1&#39; to /etc/sysctl.conf and then reboot or run the command &#39;sysctl vm.overcommit_memory=1&#39; for this to take effect. A: add vm.overcommit_memory=1 edit sysctl.conf: <a class="read-more" href="/csdn/post/ops_dc_redis_ubuntu/">&raquo;</a></p>
+WSL1(Ubuntu) 开发环境 Ubuntu 生产环境 1. 安装 推荐使用PPA模式安装redis-server
+1.1 增加PPA sudo apt-add-repository ppa:chris-lea/redis-server sudo apt-get update install sudo apt-get install redis-server 1.2 配置 警告清除 Memory WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add &#39;vm.overcommit_memory = 1&#39; to /etc/sysctl.conf and then reboot or run the command &#39;sysctl vm.overcommit_memory=1&#39; for this to take effect. A: add vm.overcommit_memory=1 edit sysctl.conf:
+sudo vi /etc/sysctl. <a class="read-more" href="/csdn/post/ops_dc_redis_ubuntu/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -226,7 +227,7 @@ su - root install:
 apt install sudo chmod 640 /etc/sudoers 在配置文件/etc/sudoers加入：
 tdtc ALL=(ALL:ALL) ALL 把文件权限改为只读:
 chmod 440 /etc/sudoers apt source sudo vi /etc/apt/sources.list 注释掉&quot;deb cdrom:xxx&quot;
-##deb cdrom:xxx Ref  Debian中安装使用sudo命令 Debian取消从光盘安装软件的方式   <a class="read-more" href="/csdn/post/apt-oper-ubuntu/">&raquo;</a></p>
+##deb cdrom:xxx Ref Debian中安装使用sudo命令 Debian取消从光盘安装软件的方式  <a class="read-more" href="/csdn/post/apt-oper-ubuntu/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -249,8 +250,8 @@ chmod 440 /etc/sudoers apt source sudo vi /etc/apt/sources.list 注释掉&quot;d
     <section class="post-excerpt">
         
             <p> 出现“grub rescue&gt;”提示符；也称grub救援模式。
- 1. 设置引导  (hd?,?)：安装的引导分区 在我的机器是(hd0, msdos3)
- grub rescue&gt;ls grub rescue&gt;ls (hd?,?)/boot/grub grub rescue&gt;set root(hd?,?) grub rescue&gt;set prefix=(hd?,?)/boot/grub insmod one:
+1. 设置引导 (hd?,?)：安装的引导分区 在我的机器是(hd0, msdos3)
+grub rescue&gt;ls grub rescue&gt;ls (hd?,?)/boot/grub grub rescue&gt;set root(hd?,?) grub rescue&gt;set prefix=(hd?,?)/boot/grub insmod one:
 insmod /boot/grub/normal.mod /boot/grub/normal two:
 insmod normal normal 2. 更新grub 在终端上执行：
 sudo grub-install /dev/sda sudo update-grub  <a class="read-more" href="/csdn/post/ops_grub_ubuntu/">&raquo;</a></p>
@@ -275,9 +276,10 @@ sudo grub-install /dev/sda sudo update-grub  <a class="read-more" href="/csdn/po
     </header>
     <section class="post-excerpt">
         
-            <p>1. 准备安装  卸载旧版本Maria
- 1) 查询 [tdtc@localhost ~]$ sudo rpm -qa | grep mariadb [sudo] password for tdtc: mariadb-libs-5.5.68-1.el7.x86_64 2) uninstall sudo yum -y remove mariadb* 2. install Step 1: Add MariaDB Yum Repositories /etc/yum.repos.d/mariadb.repo
-[mariadb] name = MariaDB baseurl = http://yum.mariadb.org/10.3/centos7-amd64 gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB gpgcheck=1 Step 2: Install MariaDB Server sudo yum install MariaDB-server MariaDB-client  run  sudo systemctl start mysql.service Step 3: Secure MariaDB Install  Default: Enter <a class="read-more" href="/csdn/post/mysql-mdb-v103/">&raquo;</a></p>
+            <p>1. 准备安装 卸载旧版本Maria
+1) 查询 [tdtc@localhost ~]$ sudo rpm -qa | grep mariadb [sudo] password for tdtc: mariadb-libs-5.5.68-1.el7.x86_64 2) uninstall sudo yum -y remove mariadb* 2. install Step 1: Add MariaDB Yum Repositories /etc/yum.repos.d/mariadb.repo
+[mariadb] name = MariaDB baseurl = http://yum.mariadb.org/10.3/centos7-amd64 gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB gpgcheck=1 Step 2: Install MariaDB Server sudo yum install MariaDB-server MariaDB-client run sudo systemctl start mysql.service Step 3: Secure MariaDB Install Default: Enter
+[tdtc@localhost ~]$ sudo /usr/bin/mysql_secure_installation NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB SERVERS IN PRODUCTION USE! <a class="read-more" href="/csdn/post/mysql-mdb-v103/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -299,8 +301,8 @@ sudo grub-install /dev/sda sudo update-grub  <a class="read-more" href="/csdn/po
     </header>
     <section class="post-excerpt">
         
-            <p>IDE Eclipse IDE for C/C++ Developers Dev Env cygwin  主程序 Create Project File -&gt; New -&gt; C/C++ Project &ldquo;C++ Managed Build&rdquo;
-Template  Project type  Executable: Hello World C++ Project  Toolchains  cygwin GCC ansi版 int main(int argc, char* argv[]) {  double dRadius = 3;  if (argc &gt; 1) {  dRadius = atof(argv[1]);  }  /// todo  return 0; } unicode版 int main(int argc, wchar_t* argv[]) {  double dRadius = 3;  if (argc &gt; 1) {  dRadius = _wtof(argv[1]);  }  /// todo  return 0; } C2065: &lsquo;cout&rsquo; : undeclared identifier 强制使用命名空间 <a class="read-more" href="/csdn/post/c-console_app/">&raquo;</a></p>
+            <p>IDE Eclipse IDE for C/C++ Developers Dev Env cygwin 主程序 Create Project File -&gt; New -&gt; C/C++ Project &ldquo;C++ Managed Build&rdquo;
+Template Project type Executable: Hello World C++ Project Toolchains cygwin GCC ansi版 int main(int argc, char* argv[]) { double dRadius = 3; if (argc &gt; 1) { dRadius = atof(argv[1]); } /// todo return 0; } unicode版 int main(int argc, wchar_t* argv[]) { double dRadius = 3; if (argc &gt; 1) { dRadius = _wtof(argv[1]); } /// todo return 0; } C2065: &lsquo;cout&rsquo; : undeclared identifier 强制使用命名空间 <a class="read-more" href="/csdn/post/c-console_app/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -323,12 +325,12 @@ Template  Project type  Executable: Hello World C++ Project  Toolchains  cygwin 
     <section class="post-excerpt">
         
             <p>工作原理：
- 　16进制数 * 16n 之和就是10进制数。
- 手算 16进制: 0x61E
+16进制数 * 16n 之和就是10进制数。
+手算 16进制: 0x61E
 0位： E * 160 = 14 1位： 1 * 161 = 16 2位： 6 * 162 = 1536
 10进制： 14+16+1536 = 1566
 code 程序的需要两部分组成：
- 权值计算 16的几次方，power(16, x)  unsigned long power(int a, int b) {  int i;  unsigned long result = 1;  for(i = 0; i &lt; b; i++)  result = result * a;   return result; }; 单16进制值转10进制值 例如：如果是F，则表示15  switch (ch)  {  case &#39;0&#39;:  iCh = 0;  break;  case &#39;1&#39;:  iCh = 1;  break;  case &#39;2&#39;:  iCh = 2;  break;  case &#39;3&#39;:  iCh = 3;  break;  case &#39;4&#39;:  iCh = 4;  break;  case &#39;5&#39;:  iCh = 5;  break;  case &#39;6&#39;:  iCh = 6;  break;  case &#39;7&#39;:  iCh = 7;  break;  case &#39;8&#39;:  iCh = 8;  break;  case &#39;9&#39;:  iCh = 9;  break;  case &#39;a&#39;:  iCh = 10;  break;  case &#39;b&#39;:  iCh = 11;  break;  case &#39;c&#39;:  iCh = 12;  break;  case &#39;d&#39;:  iCh = 13;  break;  case &#39;e&#39;:  iCh = 14;  break;  case &#39;f&#39;:  iCh = 15;  break;   default:  iCh = -1;  break;  } 为了满足，把所有输入转换为小写字母，可以使用系统函数tolower()或者我们自己写的函数toLower() <a class="read-more" href="/csdn/post/c-string-h2i/">&raquo;</a></p>
+权值计算 16的几次方，power(16, x) unsigned long power(int a, int b) { int i; unsigned long result = 1; for(i = 0; i &lt; b; i++) result = result * a; return result; }; 单16进制值转10进制值 例如：如果是F，则表示15 switch (ch) { case &#39;0&#39;: iCh = 0; break; case &#39;1&#39;: iCh = 1; break; case &#39;2&#39;: iCh = 2; break; case &#39;3&#39;: iCh = 3; break; case &#39;4&#39;: iCh = 4; break; case &#39;5&#39;: iCh = 5; break; case &#39;6&#39;: iCh = 6; break; case &#39;7&#39;: iCh = 7; break; case &#39;8&#39;: iCh = 8; break; case &#39;9&#39;: iCh = 9; break; case &#39;a&#39;: iCh = 10; break; case &#39;b&#39;: iCh = 11; break; case &#39;c&#39;: iCh = 12; break; case &#39;d&#39;: iCh = 13; break; case &#39;e&#39;: iCh = 14; break; case &#39;f&#39;: iCh = 15; break; default: iCh = -1; break; } 为了满足，把所有输入转换为小写字母，可以使用系统函数tolower()或者我们自己写的函数toLower() <a class="read-more" href="/csdn/post/c-string-h2i/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -351,7 +353,7 @@ code 程序的需要两部分组成：
     <section class="post-excerpt">
         
             <p>JDK install see 设置OpenJDK
- Stage I 1. 《sudo - CentOS》 2. FQDN #127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomain4 #::1 localhost localhost.localdomain localhost6 localhost6.localdomain6 192.168.0.137 tdtc101 192.168.0.138 tdtc102 192.168.0.139 tdtc103 3. 《ssh相互免密》 Stage II 1. unzip $wget https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/zookeeper-3.6.3/apache-zookeeper-3.6.3-bin.tar.gz --no-check-certificate $mkdir -p ~/app/zookeeper $tar xzvf apache-zookeeper-3.6.3-bin.tar.gz -C ~/app/zookeeper $mv ~/app/zookeeper/apache-zookeeper-3.6.3-bin ~/app/zookeeper/3.6.3 2. zk home $sudo vi /etc/bashrc export ZK_HOME=/home/tdtc/app/zookeeper/3.6.3 export PATH=$PATH:$ZK_HOME/bin Stage III 1. zoo.cfg Add the following configuration, and the other options default. <a class="read-more" href="/csdn/post/ops_zookeeper/">&raquo;</a></p>
+Stage I 1. 《sudo - CentOS》 2. FQDN #127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomain4 #::1 localhost localhost.localdomain localhost6 localhost6.localdomain6 192.168.0.137 tdtc101 192.168.0.138 tdtc102 192.168.0.139 tdtc103 3. 《ssh相互免密》 Stage II 1. unzip $wget https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/zookeeper-3.6.3/apache-zookeeper-3.6.3-bin.tar.gz --no-check-certificate $mkdir -p ~/app/zookeeper $tar xzvf apache-zookeeper-3.6.3-bin.tar.gz -C ~/app/zookeeper $mv ~/app/zookeeper/apache-zookeeper-3.6.3-bin ~/app/zookeeper/3.6.3 2. zk home $sudo vi /etc/bashrc export ZK_HOME=/home/tdtc/app/zookeeper/3.6.3 export PATH=$PATH:$ZK_HOME/bin Stage III 1. zoo.cfg Add the following configuration, and the other options default. <a class="read-more" href="/csdn/post/ops_zookeeper/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -374,7 +376,7 @@ code 程序的需要两部分组成：
     <section class="post-excerpt">
         
             <p>VMware: Ubuntu 20.04.2
- Install and update #sudo apt-get install memcached [0] #sudo apt-get install build-essential #sudo apt-get install libevent-dev* #wget http://memcached.org/files/memcached-1.6.15.tar.gz #tar -zxvf memcached-1.6.15.tar.gz #cd memcached-1.6.15 #./configure &amp;&amp; make &amp;&amp; sudo make install Start allow port sudo ufw allow 11211 config sudo vi /etc/memcached.conf 修改为服务器的IP:
+Install and update #sudo apt-get install memcached [0] #sudo apt-get install build-essential #sudo apt-get install libevent-dev* #wget http://memcached.org/files/memcached-1.6.15.tar.gz #tar -zxvf memcached-1.6.15.tar.gz #cd memcached-1.6.15 #./configure &amp;&amp; make &amp;&amp; sudo make install Start allow port sudo ufw allow 11211 config sudo vi /etc/memcached.conf 修改为服务器的IP:
 # Specify which IP address to listen on. The default is to listen on all IP addresses # This parameter is one of the only security measures that memcached has, so make sure # it&#39;s listening on a firewalled interface. <a class="read-more" href="/csdn/post/ops_memcached_ubuntu/">&raquo;</a></p>
         
     </section>

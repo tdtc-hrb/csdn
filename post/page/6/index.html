@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.99.1" />
+    <meta name="generator" content="Hugo 0.100.0" />
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -168,10 +168,10 @@
     </header>
     <section class="post-excerpt">
         
-            <p>COM  vc
- 1. 定义SAFEARRAY变量 SAFEARRAY *pSArray = NULL; 2. 释放此变量 SafeArrayDestroy(pSArray); 3. 建立向量表 pSArray = SafeArrayCreateVector(VT_UI1, 0, 32); 向量变量（VT_UI1）的定义：msdn
-VT_UI1 Variable type is unsigned char. 4. 写入数据 SafeArrayPutElement(pSArray, &amp;l, &amp;inqReport[l]); getInqRepo方法：  AA：屏蔽的数值
- STDMETHODIMP CRepoFmt::getInqRepo(ULONG iStation, SAFEARRAY** ret) { 	SAFEARRAY *pSArray = NULL;  	unsigned char inqReport[32]; 	unsigned char xorByte = AA; 	int iStationID = 0;  	if (iStation &lt; 1) 	iStationID = 1; 	else 	iStationID = iStation;  	inqReport[0] = AA; 	inqReport[1] = AA; 	inqReport[2] = AA; 	inqReport[3] = AA; 	inqReport[4] = (iStationID % AA); 	inqReport[5] = (iStationID / AA); 	inqReport[6] = AA; 	inqReport[7] = AA; 	inqReport[8] = AA; 	inqReport[9] = AA; 	inqReport[10] = AA; 	inqReport[11] = AA;  	for (int i = 1; i &lt; 18; i++) 	xorByte ^= inqReport[i];  	inqReport[18] = xorByte;  	// Fill the inqReport etc. <a class="read-more" href="/csdn/post/com-safearray-vc/">&raquo;</a></p>
+            <p>COM vc
+1. 定义SAFEARRAY变量 SAFEARRAY *pSArray = NULL; 2. 释放此变量 SafeArrayDestroy(pSArray); 3. 建立向量表 pSArray = SafeArrayCreateVector(VT_UI1, 0, 32); 向量变量（VT_UI1）的定义：msdn
+VT_UI1 Variable type is unsigned char. 4. 写入数据 SafeArrayPutElement(pSArray, &amp;l, &amp;inqReport[l]); getInqRepo方法： AA：屏蔽的数值
+STDMETHODIMP CRepoFmt::getInqRepo(ULONG iStation, SAFEARRAY** ret) { SAFEARRAY *pSArray = NULL; unsigned char inqReport[32]; unsigned char xorByte = AA; int iStationID = 0; if (iStation &lt; 1) iStationID = 1; else iStationID = iStation; inqReport[0] = AA; inqReport[1] = AA; inqReport[2] = AA; inqReport[3] = AA; inqReport[4] = (iStationID % AA); inqReport[5] = (iStationID / AA); inqReport[6] = AA; inqReport[7] = AA; inqReport[8] = AA; inqReport[9] = AA; inqReport[10] = AA; inqReport[11] = AA; for (int i = 1; i &lt; 18; i++) xorByte ^= inqReport[i]; inqReport[18] = xorByte; // Fill the inqReport etc. <a class="read-more" href="/csdn/post/com-safearray-vc/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -194,8 +194,8 @@ VT_UI1 Variable type is unsigned char. 4. 写入数据 SafeArrayPutElement(pSArr
     <section class="post-excerpt">
         
             <p>IDE: vs2008 Express(sp1)
- callXBFLibrary reference COM 注册COM @echo cd /d %~dp0 Regsvr32 xbfInfo.dll Add Reference COM选项卡 添加完成时
-添加事件 import class using System.IO; using xbfInfoLib; 写xbf文件 读Ini文件配置 Boolean flagMSSQL = false; Boolean flagSecu = false; string sectionName = ini.readIniFileVal(&#34;config&#34;, &#34;type&#34;); string strSrv = ini.readIniFileVal(sectionName, &#34;Server&#34;); if (!Equals(strSrv, &#34;&#34;))  flagMSSQL = true; if (flagMSSQL) {  strConn = &#34;Provider=SQLOLEDB.1;&#34;  + &#34;Password=&#34; + ini.readIniFileVal(sectionName, &#34;Pwd&#34;) + &#34;;&#34;  + &#34;Persist Security Info=True;&#34;  + &#34;User ID=&#34; + ini. <a class="read-more" href="/csdn/post/c2plus-com-dll/">&raquo;</a></p>
+callXBFLibrary reference COM 注册COM @echo cd /d %~dp0 Regsvr32 xbfInfo.dll Add Reference COM选项卡 添加完成时
+添加事件 import class using System.IO; using xbfInfoLib; 写xbf文件 读Ini文件配置 Boolean flagMSSQL = false; Boolean flagSecu = false; string sectionName = ini.readIniFileVal(&#34;config&#34;, &#34;type&#34;); string strSrv = ini.readIniFileVal(sectionName, &#34;Server&#34;); if (!Equals(strSrv, &#34;&#34;)) flagMSSQL = true; if (flagMSSQL) { strConn = &#34;Provider=SQLOLEDB.1;&#34; + &#34;Password=&#34; + ini.readIniFileVal(sectionName, &#34;Pwd&#34;) + &#34;;&#34; + &#34;Persist Security Info=True;&#34; + &#34;User ID=&#34; + ini. <a class="read-more" href="/csdn/post/c2plus-com-dll/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -218,11 +218,11 @@ VT_UI1 Variable type is unsigned char. 4. 写入数据 SafeArrayPutElement(pSArr
     <section class="post-excerpt">
         
             <p>IDE: vs2008 Express(sp1)
- callXBFLibrary 我们需要使用API函数来读取INI文件。
+callXBFLibrary 我们需要使用API函数来读取INI文件。
 建立P/Invoke应用类 在pinvoke.net中查找Win32 API在C#定义。 GetPrivateProfileString 读取Ini文件的API
-[DllImport(&#34;kernel32.dll&#34;, CharSet=CharSet.Unicode)] static extern uint GetPrivateProfileString(  string lpAppName,  string lpKeyName,  string lpDefault,  StringBuilder lpReturnedString,  uint nSize,  string lpFileName);  注意：DllImport属性来自using System.Runtime.InteropServices;
-  lpAppName 小节名 lpKeyName 键名 lpDefault 缺省值 lpReturnedString 返回值 nSize 返回值长度 lpFileName 读取文件的名称  import class  using System.Runtime.InteropServices; readIniFileVal 建立一个公共方法，以供程序使用。
-public string readIniFileVal(string iniFileName, string section, string key) {  StringBuilder retStrBuilder = new StringBuilder(256);  GetPrivateProfileString(  section,  key,  &#34;&#34;,  retStrBuilder,  256,  iniFileName);  return retStrBuilder. <a class="read-more" href="/csdn/post/c2plus-unmanaged-dll/">&raquo;</a></p>
+[DllImport(&#34;kernel32.dll&#34;, CharSet=CharSet.Unicode)] static extern uint GetPrivateProfileString( string lpAppName, string lpKeyName, string lpDefault, StringBuilder lpReturnedString, uint nSize, string lpFileName); 注意：DllImport属性来自using System.Runtime.InteropServices;
+lpAppName 小节名 lpKeyName 键名 lpDefault 缺省值 lpReturnedString 返回值 nSize 返回值长度 lpFileName 读取文件的名称 import class using System.Runtime.InteropServices; readIniFileVal 建立一个公共方法，以供程序使用。
+public string readIniFileVal(string iniFileName, string section, string key) { StringBuilder retStrBuilder = new StringBuilder(256); GetPrivateProfileString( section, key, &#34;&#34;, retStrBuilder, 256, iniFileName); return retStrBuilder. <a class="read-more" href="/csdn/post/c2plus-unmanaged-dll/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -245,14 +245,14 @@ public string readIniFileVal(string iniFileName, string section, string key) {  
     <section class="post-excerpt">
         
             <p>根据登录用户的情况来进行各模块的操作。
- 操作员  (1) 列车顺序表
- (2) 货车装卸报告（数据处理）
- (3) 货车装卸报告（查看）
-管理员   (1) 密码管理
- (2) 查看日志
- (3) 车种设置
- (4) 延时费设置
- (5) 打印通知单（延时费）
+操作员 (1) 列车顺序表
+(2) 货车装卸报告（数据处理）
+(3) 货车装卸报告（查看）
+管理员 (1) 密码管理
+(2) 查看日志
+(3) 车种设置
+(4) 延时费设置
+(5) 打印通知单（延时费）
 其Activity Diagram如下： Rational Rose文件：flowChart1.mdl 提取码: 62ua 工程repo <a class="read-more" href="/csdn/post/uml-activity_diagram-sjz/">&raquo;</a></p>
         
     </section>
@@ -298,7 +298,7 @@ public string readIniFileVal(string iniFileName, string section, string key) {  
     <section class="post-excerpt">
         
             <p>一、顶层 主要由端口转换、MCU、复位、键盘、晶振和显示等5部分电路组成。 二、模块层 1. 端口转换电路 2. MCU 3. 复位电路 4. 键盘电路 5. LED电路 备份文件: sch20110411.7z 提取码: 3h95
-参考文章  基于PIC16F877A型单片机的通用单片机控制板（作者：石伟屹）   <a class="read-more" href="/csdn/post/hw-schematic_diagram-pic16f877a/">&raquo;</a></p>
+参考文章 基于PIC16F877A型单片机的通用单片机控制板（作者：石伟屹）  <a class="read-more" href="/csdn/post/hw-schematic_diagram-pic16f877a/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -343,7 +343,7 @@ public string readIniFileVal(string iniFileName, string section, string key) {  
     <section class="post-excerpt">
         
             <p>MAX2323E(3.3V)+ LPC1752。
- 文件备份：sch20110723.7z 提取码: ny2j <a class="read-more" href="/csdn/post/hw-schematic_diagram-max2323e/">&raquo;</a></p>
+文件备份：sch20110723.7z 提取码: ny2j <a class="read-more" href="/csdn/post/hw-schematic_diagram-max2323e/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -366,7 +366,7 @@ public string readIniFileVal(string iniFileName, string section, string key) {  
     <section class="post-excerpt">
         
             <p>有一表格需要进行格式化处理，其要求如下：
- 档案编号重复 少部分在xls文件中，大部分与数据库冲突。 日期格式错误 正确格式：xxxx-xx-xx 所有汉字的空格问题 非法性别 除了男女之外  code 程序如下：
+档案编号重复 少部分在xls文件中，大部分与数据库冲突。 日期格式错误 正确格式：xxxx-xx-xx 所有汉字的空格问题 非法性别 除了男女之外 code 程序如下：
 #! /usr/bin/perl################################################################################ Author: **斌# Date: 2012-02-22# Version: V0.1############################################################################################################################################################### Modified by: xiaobin (XB)# Modified date: 2012-03-31# Version: V0.3############################################################################################################################################################### Modified by: xiaobin (XB)# Modified date: 2012-04-01# Version: V0.4############################################################################################################################################################### Modified by: # Modified date: # Version: ############################################################################################################################################################### 版权说明： ## 本程序版权归李贵斌所有，解释权属于所有者。 ## 作为一个整体使用时，请附带以上说明。 ## ## 本程序完全免费使用。 ################################################################################################################################################################ 使用说明 ################################################################################# ## 命令行：perl processData. <a class="read-more" href="/csdn/post/ops_perl_excel/">&raquo;</a></p>
         
     </section>
@@ -390,12 +390,12 @@ public string readIniFileVal(string iniFileName, string section, string key) {  
     <section class="post-excerpt">
         
             <p>Perl操作数据库与其他的语言操作数据库没有什么区别。
-  首先，要连接数据库。
-  然后，执行SQL语句。
-  最后，关闭连接。
-  code 循环中为使用游标读取每行数据。
+首先，要连接数据库。
+然后，执行SQL语句。
+最后，关闭连接。
+code 循环中为使用游标读取每行数据。
 test.pl
-#! /usr/bin/perl  # test DBI and DBD::mysql  use DBI;  $dsn = &#34;DBI:mysql:database=carnumber;host=localhost;port=3306&#34;;  my $dbh = DBI-&gt;connect($dsn, &#34;root&#34;, &#34;qazxsw&#34;, {&#39;RaiseError&#39; =&gt; 1});   my $strSQL = &#34;select train_number, seriary_number, car_number,&#34;.  &#34; car_marque, past_time from trainOrder where train_number &lt; 100&#34;;  my $sth = $dbh-&gt;prepare($strSQL); $sth-&gt;execute();  print &#34;TN\tSN\tNumber\tMarque\tPastTime\n&#34;; while (my $ref = $sth-&gt;fetchrow_hashref()) { 	print &#34;$ref-&gt;{&#39;train_number&#39;}\t&#34;. <a class="read-more" href="/csdn/post/ops_perl_mysql/">&raquo;</a></p>
+#! /usr/bin/perl # test DBI and DBD::mysql use DBI; $dsn = &#34;DBI:mysql:database=carnumber;host=localhost;port=3306&#34;; my $dbh = DBI-&gt;connect($dsn, &#34;root&#34;, &#34;qazxsw&#34;, {&#39;RaiseError&#39; =&gt; 1}); my $strSQL = &#34;select train_number, seriary_number, car_number,&#34;. &#34; car_marque, past_time from trainOrder where train_number &lt; 100&#34;; my $sth = $dbh-&gt;prepare($strSQL); $sth-&gt;execute(); print &#34;TN\tSN\tNumber\tMarque\tPastTime\n&#34;; while (my $ref = $sth-&gt;fetchrow_hashref()) { print &#34;$ref-&gt;{&#39;train_number&#39;}\t&#34;. &#34;$ref-&gt;{&#39;seriary_number&#39;}\t&#34;. &#34;$ref-&gt;{&#39;car_number&#39;}\t&#34;. &#34;$ref-&gt;{&#39;car_marque&#39;}\t&#34;. &#34;$ref-&gt;{&#39;past_time&#39;}\n&#34;; } $sth-&gt;finish(); $dbh-&gt;disconnect();  <a class="read-more" href="/csdn/post/ops_perl_mysql/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">

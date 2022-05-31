@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.99.1" />
+    <meta name="generator" content="Hugo 0.100.0" />
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -168,21 +168,24 @@
     </header>
     <section class="post-excerpt">
         
-            <p>系统要求：x64 OS: Windows 10(1803+)  安装 开启 添加删除程序-&gt;启动或关闭Windows功能， 勾选“适用于 Linux 的 Windows 子系统”
-安装Ubuntu  ltsc只支持手动安装
- 在powerShell的管理员模式下运行命令
-  1)手动方式
- 安装手册
- Add-AppxPackage .\app_name.appx install 点击开始菜单的完成安装。   更改源列表  /etc/apt/sources.list
- http://archive.ubuntu.com -&gt; https://mirrors.aliyun.com/ubuntu/
+            <p>系统要求：x64 OS: Windows 10(1803+) 安装 开启 添加删除程序-&gt;启动或关闭Windows功能， 勾选“适用于 Linux 的 Windows 子系统”
+安装Ubuntu ltsc只支持手动安装
+在powerShell的管理员模式下运行命令
+1)手动方式
+安装手册
+Add-AppxPackage .\app_name.appx install 点击开始菜单的完成安装。 更改源列表 /etc/apt/sources.list
+http://archive.ubuntu.com -&gt; https://mirrors.aliyun.com/ubuntu/
 使用 文件互访 例如我们在c:\Users\xiaobin建立一个testTxtFile.txt
 cd /mnt/c/Users/xiaobin/ vi testTxtFile.txt 在WSL就可看到文件内容。
 mv testTxtFile.txt testFile.txt 在windows就可以看到重命名的testFile.txt。
-访问WSL服务  WSL与windows 10共有端口，所以Windows 10已使用的端口，不要再分配给WSL
- 举例： 首先，在wsl中启动nginx；
+访问WSL服务 WSL与windows 10共有端口，所以Windows 10已使用的端口，不要再分配给WSL
+举例： 首先，在wsl中启动nginx；
 sudo service nginx start 然后访问(回环地址)：127.0.0.1:90 卸载 如果“普通”方式不工作，请使用“命令行”。
 普通 右击“Ubuntu xxx” 图标，选择“Uninstall”即可。
-命令行  适用于 Linux 的 Windows 子系统的命令参考 <a class="read-more" href="/csdn/post/dev_wsl_ubuntu/">&raquo;</a></p>
+命令行 适用于 Linux 的 Windows 子系统的命令参考
+旧版本 v1803-
+lxrun /uninstall 新版本 v1803+
+wslconfig /u Ref How to Configure Static IP Address on Ubuntu 20. <a class="read-more" href="/csdn/post/dev_wsl_ubuntu/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -206,11 +209,11 @@ sudo service nginx start 然后访问(回环地址)：127.0.0.1:90 卸载 如果
         
             <p>1. org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER Q:
 Classpath entry org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER will not be exported or published. Runtime ClassNotFoundExceptions may result. A:
-$mvn eclipse:clean reference  what-is-org-eclipse-m2e-maven2-classpath-container-and-how-do-i-make-it-work-in  2. no main manifest attribute java jar Q:
+$mvn eclipse:clean reference what-is-org-eclipse-m2e-maven2-classpath-container-and-how-do-i-make-it-work-in 2. no main manifest attribute java jar Q:
 $java -jar cliDemo-0.0.1-SNAPSHOT.jar no main manifest attribute, in cliDemo-0.0.1-SNAPSHOT.jar A:
- for win:
- java -cp cliDemo-0.0.1-SNAPSHOT.jar;C:\Users\xiaobin\.m2\repository\commons-cli\commons-cli\1.4\commons-cli-1.4.jar my.csdn9.ConsoleLauncher --help Reference  how-to-run-jar-files-depend-on-jar-files  3. CoreException: Could not calculate build plan: Plugin org.apache.maven.plugins:maven-compiler-plugin Q:
-CoreException: Could not calculate build plan: Plugin org. <a class="read-more" href="/csdn/post/java-maven-qa1/">&raquo;</a></p>
+for win:
+java -cp cliDemo-0.0.1-SNAPSHOT.jar;C:\Users\xiaobin\.m2\repository\commons-cli\commons-cli\1.4\commons-cli-1.4.jar my.csdn9.ConsoleLauncher --help Reference how-to-run-jar-files-depend-on-jar-files 3. CoreException: Could not calculate build plan: Plugin org.apache.maven.plugins:maven-compiler-plugin Q:
+CoreException: Could not calculate build plan: Plugin org.apache.maven.plugins:maven-compiler-plugin:3.1 or one of its dependencies could not be resolved: Failure to find org. <a class="read-more" href="/csdn/post/java-maven-qa1/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -233,8 +236,8 @@ CoreException: Could not calculate build plan: Plugin org. <a class="read-more" 
     <section class="post-excerpt">
         
             <p>WSL: Ubuntu 18.04.1
- Prepare  Java 8+, Python 2.7+/3.4+ and R 3.1+
- Spark runs on Java 8+, Python 2.7+/3.4+ and R 3.1+. For the Scala API, Spark 2.4.1 uses Scala 2.12. You will need to use a compatible Scala version (2.12.x). 1. java 设置OpenJDK - Ubuntu
+Prepare Java 8+, Python 2.7+/3.4+ and R 3.1+
+Spark runs on Java 8+, Python 2.7+/3.4+ and R 3.1+. For the Scala API, Spark 2.4.1 uses Scala 2.12. You will need to use a compatible Scala version (2.12.x). 1. java 设置OpenJDK - Ubuntu
 2. Python sudo apt-get install python 3. R language 1) add ppa sudo add-apt-repository ppa:marutter/rrutter sudo apt-get update 2) install sudo apt-get install r-base r-base-dev Installation 1. <a class="read-more" href="/csdn/post/ops_spark_ubuntu/">&raquo;</a></p>
         
     </section>
@@ -258,7 +261,7 @@ CoreException: Could not calculate build plan: Plugin org. <a class="read-more" 
     <section class="post-excerpt">
         
             <p> ubuntu 20.04.2
- wsl1017@DESKTOP-14G6K9S:~$ java -version  Command &#39;java&#39; not found, but can be installed with:  sudo apt install default-jre sudo apt install openjdk-11-jre-headless sudo apt install openjdk-8-jre-headless installation  install jre  wsl1017@DESKTOP-14G6K9S:/tmp$ sudo apt-get install openjdk-8-jre-headless install jdk  sudo apt-get install openjdk-8-jdk-headless set JAVA home  vi /etc/profile export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 Reference  How to Install OpenJDK JAVA 11/8 in Ubuntu and Debian   <a class="read-more" href="/csdn/post/ops_openjdk_ubuntu/">&raquo;</a></p>
+wsl1017@DESKTOP-14G6K9S:~$ java -version Command &#39;java&#39; not found, but can be installed with: sudo apt install default-jre sudo apt install openjdk-11-jre-headless sudo apt install openjdk-8-jre-headless installation install jre wsl1017@DESKTOP-14G6K9S:/tmp$ sudo apt-get install openjdk-8-jre-headless install jdk sudo apt-get install openjdk-8-jdk-headless set JAVA home vi /etc/profile export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 Reference How to Install OpenJDK JAVA 11/8 in Ubuntu and Debian  <a class="read-more" href="/csdn/post/ops_openjdk_ubuntu/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -283,7 +286,7 @@ CoreException: Could not calculate build plan: Plugin org. <a class="read-more" 
             <p>日志文件问题 由于使用时间比较长积累了很多的日志文件（\data目录下），所以删除之！
 mysql-bin.000001 ... ... mysql-bin.000278 原来删除都留最后一个编号的日志，这次太过彻底~~都删了!
 执行net start mysql： 出现了mysql 1067错误！ 查看，主机名.err文件（lenovo-7c8f808d.err）：
-130416 9:59:23 InnoDB: Started; log sequence number 0 43655 MySQL: File &#39;.\mysql-bin.000278&#39; not found (Errcode: 2) 130416 9:59:23 [ERROR] Failed to open log (file &#39;.\mysql-bin.000278&#39;, errno 2) 130416 9:59:23 [ERROR] Could not open log file 130416 9:59:23 [ERROR] Can&#39;t init tc log 130416 9:59:23 [ERROR] Aborting  130416 9:59:23 InnoDB: Starting shutdown... 130416 9:59:24 InnoDB: Shutdown completed; log sequence number 0 43655 130416 9:59:24 [Note] MySQL: Shutdown complete 告诉我们找不到mysql-bin. <a class="read-more" href="/csdn/post/ops_mysql_error1067/">&raquo;</a></p>
+130416 9:59:23 InnoDB: Started; log sequence number 0 43655 MySQL: File &#39;.\mysql-bin.000278&#39; not found (Errcode: 2) 130416 9:59:23 [ERROR] Failed to open log (file &#39;.\mysql-bin.000278&#39;, errno 2) 130416 9:59:23 [ERROR] Could not open log file 130416 9:59:23 [ERROR] Can&#39;t init tc log 130416 9:59:23 [ERROR] Aborting 130416 9:59:23 InnoDB: Starting shutdown... 130416 9:59:24 InnoDB: Shutdown completed; log sequence number 0 43655 130416 9:59:24 [Note] MySQL: Shutdown complete 告诉我们找不到mysql-bin. <a class="read-more" href="/csdn/post/ops_mysql_error1067/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -306,7 +309,7 @@ mysql-bin.000001 ... ... mysql-bin.000278 原来删除都留最后一个编号�
     <section class="post-excerpt">
         
             <p>应用程序要访问mysql必须安装mysql-dev，因为它是各种语言与mysql的接口。
- error info [root@localhost DBD-mysql-4.022]# make cp lib/DBD/mysql.pm blib/lib/DBD/mysql.pm cp lib/DBD/mysql/GetInfo.pm blib/lib/DBD/mysql/GetInfo.pm cp lib/DBD/mysql/INSTALL.pod blib/lib/DBD/mysql/INSTALL.pod cp lib/Bundle/DBD/mysql.pm blib/lib/Bundle/DBD/mysql.pm cc -c -I/usr/local/perl/lib/site_perl/5.16.2/i686-linux/auto/DBI -I/usr/include/mysql -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=4 -m32 -fasynchronous-unwind-tables -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -fno-strict-aliasing -fwrapv -DDBD_MYSQL_WITH_SSL -DDBD_MYSQL_INSERT_ID_IS_GOOD -g -fno-strict-aliasing -pipe -fstack-protector -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -DVERSION=\&#34;4.022\&#34; -DXS_VERSION=\&#34;4.022\&#34; -fPIC &#34;-I/usr/local/perl/lib/5.16.2/i686-linux/CORE&#34; dbdimp.c In file included from dbdimp.c:20: dbdimp.h:23:49: error: mysql.h: No such file or directory dbdimp.h:24:45: error: mysqld_error.h: No such file or directory dbdimp. <a class="read-more" href="/csdn/post/ops_mysql_devel/">&raquo;</a></p>
+error info [root@localhost DBD-mysql-4.022]# make cp lib/DBD/mysql.pm blib/lib/DBD/mysql.pm cp lib/DBD/mysql/GetInfo.pm blib/lib/DBD/mysql/GetInfo.pm cp lib/DBD/mysql/INSTALL.pod blib/lib/DBD/mysql/INSTALL.pod cp lib/Bundle/DBD/mysql.pm blib/lib/Bundle/DBD/mysql.pm cc -c -I/usr/local/perl/lib/site_perl/5.16.2/i686-linux/auto/DBI -I/usr/include/mysql -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=4 -m32 -fasynchronous-unwind-tables -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -fno-strict-aliasing -fwrapv -DDBD_MYSQL_WITH_SSL -DDBD_MYSQL_INSERT_ID_IS_GOOD -g -fno-strict-aliasing -pipe -fstack-protector -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -DVERSION=\&#34;4.022\&#34; -DXS_VERSION=\&#34;4.022\&#34; -fPIC &#34;-I/usr/local/perl/lib/5.16.2/i686-linux/CORE&#34; dbdimp.c In file included from dbdimp.c:20: dbdimp.h:23:49: error: mysql.h: No such file or directory dbdimp.h:24:45: error: mysqld_error.h: No such file or directory dbdimp. <a class="read-more" href="/csdn/post/ops_mysql_devel/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -328,9 +331,9 @@ mysql-bin.000001 ... ... mysql-bin.000278 原来删除都留最后一个编号�
     </header>
     <section class="post-excerpt">
         
-            <p>一、注册用户  Name：姓名 Username：用户名 密码：8位
-  等待管理员解锁。
- 二、增加SSH 1. 生成SSH 在“开始”菜单，选择“TortoiseGit”中的“PuttyGen” 点击“Generate”按钮，然后，鼠标在图中红色方框的区域内不停的移动，即可生成密钥。 “Public key for pasting into OpenShh authorized_keys file:”所有内容既是我们需要的。 2. 设置SSH 用户登录后，进入“ProfileSettings”-&gt;“SSH Keys”
+            <p>一、注册用户 Name：姓名 Username：用户名 密码：8位
+等待管理员解锁。
+二、增加SSH 1. 生成SSH 在“开始”菜单，选择“TortoiseGit”中的“PuttyGen” 点击“Generate”按钮，然后，鼠标在图中红色方框的区域内不停的移动，即可生成密钥。 “Public key for pasting into OpenShh authorized_keys file:”所有内容既是我们需要的。 2. 设置SSH 用户登录后，进入“ProfileSettings”-&gt;“SSH Keys”
 点击“Add SSH Key” 把上面生成的ssh复制到key中（title会自动生成），点击“Add key”  <a class="read-more" href="/csdn/post/ops_department_gitlab_man/">&raquo;</a></p>
         
     </section>
@@ -378,8 +381,8 @@ code unitUntMain; interface uses Windows, Messages, SysUtils, Variants, Classes
     <section class="post-excerpt">
         
             <p>GNU Compiler Collection(GCC)
- Beej’s Guide Network to Programming 一个简单的客户端和服务器端的程序！
-Client Side:  flow chart getaddrinfo() -&gt; socket() -&gt; connect() -&gt; recv()  #include &lt;stdio.h&gt;#include &lt;string.h&gt;#include &lt;sys/types.h&gt;#include &lt;sys/socket.h&gt;#include &lt;arpa/inet.h&gt;#include &lt;netdb.h&gt; #define SERVIP &#34;192.168.56.112&#34; #define SERVPORT &#34;2349&#34;  int main(int argc, char *argv[]) { 	struct addrinfo hints, *res; 	int status; 	int sockfd; 	int connSta;  	int recvSta; 	char buffer[1024]; 	int len;  	char ipstr[INET_ADDRSTRLEN]; 	void *addr;  	if (argc ! <a class="read-more" href="/csdn/post/c-bsd_socket/">&raquo;</a></p>
+Beej’s Guide Network to Programming 一个简单的客户端和服务器端的程序！
+Client Side: flow chart getaddrinfo() -&gt; socket() -&gt; connect() -&gt; recv() #include &lt;stdio.h&gt; #include &lt;string.h&gt; #include &lt;sys/types.h&gt; #include &lt;sys/socket.h&gt; #include &lt;arpa/inet.h&gt; #include &lt;netdb.h&gt; #define SERVIP &#34;192.168.56.112&#34; #define SERVPORT &#34;2349&#34; int main(int argc, char *argv[]) { struct addrinfo hints, *res; int status; int sockfd; int connSta; int recvSta; char buffer[1024]; int len; char ipstr[INET_ADDRSTRLEN]; void *addr; if (argc != 3) { fprintf(stderr, &#34;Usage: Not Server IP And Port! <a class="read-more" href="/csdn/post/c-bsd_socket/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -402,8 +405,11 @@ Client Side:  flow chart getaddrinfo() -&gt; socket() -&gt; connect() -&gt; recv
     <section class="post-excerpt">
         
             <p>二进制文件工具：Winhex
-   replace(regexp/substr,replacement) 使用这个函数来替换多余的空格。   str.replace(/\s/g, &#34;&#34;);   split(separator,howmany) 字符串转换成字符数组。   string.split(&#34;,&#34;); 一、js部分 我们把所有的方法放到一个对象（RepoInfo）中。
-var RepoInfo = { }; 1. 获取对象 RepoInfo.getObj = function(objName) { 	return new ActiveXObject(objName); 	}; 2. 获取数组 RepoInfo.getArray = function(str) {  var ret = new Array(16);   var string = str.replace(/\s/g, &#34;&#34;);   ret = string.split(&#34;,&#34;);   return ret; }; 3. 解码字串 输入字串校验 如果字串空，退出。 <a class="read-more" href="/csdn/post/com-ie-repoinfo/">&raquo;</a></p>
+replace(regexp/substr,replacement) 使用这个函数来替换多余的空格。 str.replace(/\s/g, &#34;&#34;); split(separator,howmany) 字符串转换成字符数组。 string.split(&#34;,&#34;); 一、js部分 我们把所有的方法放到一个对象（RepoInfo）中。
+var RepoInfo = { }; 1. 获取对象 RepoInfo.getObj = function(objName) { return new ActiveXObject(objName); }; 2. 获取数组 RepoInfo.getArray = function(str) { var ret = new Array(16); var string = str.replace(/\s/g, &#34;&#34;); ret = string.split(&#34;,&#34;); return ret; }; 3. 解码字串 输入字串校验 如果字串空，退出。
+输出框清空 每次赋值前，清空。
+执行COM中的方法 在获取对象非空的情况下，执行。
+RepoInfo.decode = function(string) { if (string == null) return; var obj = RepoInfo.getObj(&#34;repoInfo.LabelInfo&#34;); var edtView = document. <a class="read-more" href="/csdn/post/com-ie-repoinfo/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
