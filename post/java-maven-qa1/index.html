@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="stackoverflow.com" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2020-05-15T10:08:08&#43;08:00" />
+    <meta property="article:published_time" content="2022-05-15T10:08:08&#43;08:00" />
 
     
     
@@ -92,15 +92,15 @@
     },
     "headline": "maven的QA",
     "name": "maven的QA",
-    "wordCount":  143 ,
+    "wordCount":  201 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/java-maven-qa1/",
-    "datePublished": "2020-05-15T10:08Z",
-    "dateModified": "2020-05-15T10:08Z",
+    "datePublished": "2022-05-15T10:08Z",
+    "dateModified": "2022-05-15T10:08Z",
     
     
     "description": "stackoverflow.com",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2020-05-15T10:08:08&#43;08:00">
-            May 15, 2020
+          <time class="post-date" datetime="2022-05-15T10:08:08&#43;08:00">
+            May 15, 2022
           </time>
         
          
@@ -209,7 +209,23 @@
 <ul>
 <li><a href="http://www.cnblogs.com/liaojie970/p/5509760.html">cnblog - liaojie</a></li>
 </ul>
-<h1 id="4-how-to-add-oracle-jdbc-driver-in-your-maven-local-repository">4. How to add Oracle JDBC driver in your Maven local repository</h1>
+<h1 id="4-proxy">4. Proxy</h1>
+<p>conf/settings.xml</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>  <span style="color:#75715e">&lt;!-- proxies
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   | This is a list of proxies which can be used on this machine to connect to the network.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   | Unless otherwise specified (by system property or command-line switch), the first proxy
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   | specification in this list marked as active will be used.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   |--&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;proxies&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;proxy&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;id&gt;</span>optional<span style="color:#f92672">&lt;/id&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;active&gt;</span>true<span style="color:#f92672">&lt;/active&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;protocol&gt;</span>http<span style="color:#f92672">&lt;/protocol&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;host&gt;</span>127.0.0.1<span style="color:#f92672">&lt;/host&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;port&gt;</span>8580<span style="color:#f92672">&lt;/port&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/proxy&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/proxies&gt;</span>
+</span></span></code></pre></div><h1 id="5-how-to-add-oracle-jdbc-driver-in-your-maven-local-repository">5. How to add Oracle JDBC driver in your Maven local repository</h1>
 <h2 id="down-ojdbc6jarhttpwwworaclecomtechnetworkdatabaseenterprise-editionjdbc-112010-090769html">down <a href="http://www.oracle.com/technetwork/database/enterprise-edition/jdbc-112010-090769.html">ojdbc6.jar</a></h2>
 <h2 id="exec">exec</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn install:install-file -Dfile<span style="color:#f92672">=</span>D:/war/lib/ojdbc6.jar -DgroupId<span style="color:#f92672">=</span>com.oracle -DartifactId<span style="color:#f92672">=</span>ojdbc6 -Dversion<span style="color:#f92672">=</span>11.2.0 -Dpackaging<span style="color:#f92672">=</span>jar
@@ -271,17 +287,17 @@
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/dev_wsl_ubuntu/">
+      <a class="read-next-story" style="no-cover" href="/csdn/post/com-ie-test/">
           <section class="post">
-              <h2>使用WSL在Windows 10</h2>
+              <h2>测试COM</h2>
               
           </section>
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_spark_ubuntu/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/vc-serial_communication/">
           <section class="post">
-              <h2>安装spark</h2>
+              <h2>Windows串口</h2>
           </section>
       </a>
   

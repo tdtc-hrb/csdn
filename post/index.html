@@ -369,6 +369,34 @@ code /** * Version: 0.2 * * Description: Add signal * */ #include &lt;stdio. <a 
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/java-maven-qa1/">maven的QA</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>1. org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER Q:
+Classpath entry org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER will not be exported or published. Runtime ClassNotFoundExceptions may result. A:
+$mvn eclipse:clean reference what-is-org-eclipse-m2e-maven2-classpath-container-and-how-do-i-make-it-work-in 2. no main manifest attribute java jar Q:
+$java -jar cliDemo-0.0.1-SNAPSHOT.jar no main manifest attribute, in cliDemo-0.0.1-SNAPSHOT.jar A:
+for win:
+java -cp cliDemo-0.0.1-SNAPSHOT.jar;C:\Users\xiaobin\.m2\repository\commons-cli\commons-cli\1.4\commons-cli-1.4.jar my.csdn9.ConsoleLauncher --help Reference how-to-run-jar-files-depend-on-jar-files 3. CoreException: Could not calculate build plan: Plugin org.apache.maven.plugins:maven-compiler-plugin Q:
+CoreException: Could not calculate build plan: Plugin org.apache.maven.plugins:maven-compiler-plugin:3.1 or one of its dependencies could not be resolved: Failure to find org. <a class="read-more" href="/csdn/post/java-maven-qa1/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-05-15T10:08:08&#43;08:00">
+            15 May 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/vc-serial_communication/">Windows串口</a></h2>
     </header>
     <section class="post-excerpt">
@@ -426,34 +454,6 @@ Reference How to install Java on CentOS 7 OpenJDK Version Info - Releases  <a cl
         
         <time class="post-date" datetime="2022-05-14T08:08:08-08:00">
             14 May 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/vc-bsd_socket/">使用BSD socket</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>BSD Socket是标准的套接字规范，那么怎么在windows使用他们呢？
-Init &amp; clean 首先要引用&lt;winsock2.h&gt;和ws2_32.lib； 使用struct addrinfo需引用&lt;ws2tcpip.h&gt;。
-程序头: WSAStartup(), 程序尾: WSACleanup();
-code 以下程序在VC9/VC14.1下编译通过
-客户端程序 prj1Clt 无getaddrinfo版
-注意：InetPton函数只能在Windows Version &gt;=6上实现！
-// prj1Clt.cpp : This file contains the &#39;main&#39; function. Program execution begins and ends there. // /** * Networking program is Win version with BSD Socket * Client side * * Author: xiaobin * Date: 2013-12-12 * Modfity: 2020-5-28 */ #include &lt;iostream&gt; #if _MSC_VER &gt; 1800 #include &lt;tchar.h&gt; #endif #ifdef _WIN32 #include &lt;winsock2. <a class="read-more" href="/csdn/post/vc-bsd_socket/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-05-12T08:08:08&#43;08:00">
-            12 May 2022
         </time>
     </footer>
 </article>

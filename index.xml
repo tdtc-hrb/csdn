@@ -124,6 +124,21 @@ code /** * Version: 0.2 * * Description: Add signal * */ #include &amp;lt;stdio.
     </item>
     
     <item>
+      <title>maven的QA</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/java-maven-qa1/</link>
+      <pubDate>Sun, 15 May 2022 10:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/java-maven-qa1/</guid>
+      <description>1. org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER Q:
+Classpath entry org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER will not be exported or published. Runtime ClassNotFoundExceptions may result. A:
+$mvn eclipse:clean reference what-is-org-eclipse-m2e-maven2-classpath-container-and-how-do-i-make-it-work-in 2. no main manifest attribute java jar Q:
+$java -jar cliDemo-0.0.1-SNAPSHOT.jar no main manifest attribute, in cliDemo-0.0.1-SNAPSHOT.jar A:
+for win:
+java -cp cliDemo-0.0.1-SNAPSHOT.jar;C:\Users\xiaobin\.m2\repository\commons-cli\commons-cli\1.4\commons-cli-1.4.jar my.csdn9.ConsoleLauncher --help Reference how-to-run-jar-files-depend-on-jar-files 3. CoreException: Could not calculate build plan: Plugin org.apache.maven.plugins:maven-compiler-plugin Q:
+CoreException: Could not calculate build plan: Plugin org.apache.maven.plugins:maven-compiler-plugin:3.1 or one of its dependencies could not be resolved: Failure to find org.</description>
+    </item>
+    
+    <item>
       <title>Windows串口</title>
       <link>https://tdtc-hrb.github.io/csdn/post/vc-serial_communication/</link>
       <pubDate>Sun, 15 May 2022 08:08:08 +0800</pubDate>
@@ -604,21 +619,6 @@ sudo service nginx start 然后访问(回环地址)：127.0.0.1:90 卸载 如果
 旧版本 v1803-
 lxrun /uninstall 新版本 v1803+
 wslconfig /u Ref How to Configure Static IP Address on Ubuntu 20.</description>
-    </item>
-    
-    <item>
-      <title>maven的QA</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/java-maven-qa1/</link>
-      <pubDate>Fri, 15 May 2020 10:08:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/java-maven-qa1/</guid>
-      <description>1. org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER Q:
-Classpath entry org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER will not be exported or published. Runtime ClassNotFoundExceptions may result. A:
-$mvn eclipse:clean reference what-is-org-eclipse-m2e-maven2-classpath-container-and-how-do-i-make-it-work-in 2. no main manifest attribute java jar Q:
-$java -jar cliDemo-0.0.1-SNAPSHOT.jar no main manifest attribute, in cliDemo-0.0.1-SNAPSHOT.jar A:
-for win:
-java -cp cliDemo-0.0.1-SNAPSHOT.jar;C:\Users\xiaobin\.m2\repository\commons-cli\commons-cli\1.4\commons-cli-1.4.jar my.csdn9.ConsoleLauncher --help Reference how-to-run-jar-files-depend-on-jar-files 3. CoreException: Could not calculate build plan: Plugin org.apache.maven.plugins:maven-compiler-plugin Q:
-CoreException: Could not calculate build plan: Plugin org.apache.maven.plugins:maven-compiler-plugin:3.1 or one of its dependencies could not be resolved: Failure to find org.</description>
     </item>
     
     <item>

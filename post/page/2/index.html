@@ -164,6 +164,34 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/vc-bsd_socket/">使用BSD socket</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>BSD Socket是标准的套接字规范，那么怎么在windows使用他们呢？
+Init &amp; clean 首先要引用&lt;winsock2.h&gt;和ws2_32.lib； 使用struct addrinfo需引用&lt;ws2tcpip.h&gt;。
+程序头: WSAStartup(), 程序尾: WSACleanup();
+code 以下程序在VC9/VC14.1下编译通过
+客户端程序 prj1Clt 无getaddrinfo版
+注意：InetPton函数只能在Windows Version &gt;=6上实现！
+// prj1Clt.cpp : This file contains the &#39;main&#39; function. Program execution begins and ends there. // /** * Networking program is Win version with BSD Socket * Client side * * Author: xiaobin * Date: 2013-12-12 * Modfity: 2020-5-28 */ #include &lt;iostream&gt; #if _MSC_VER &gt; 1800 #include &lt;tchar.h&gt; #endif #ifdef _WIN32 #include &lt;winsock2. <a class="read-more" href="/csdn/post/vc-bsd_socket/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-05-12T08:08:08&#43;08:00">
+            12 May 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/java-springboot-jpa/">thymeleaf &#43; Spring Boot &#43; JPA</a></h2>
     </header>
     <section class="post-excerpt">
@@ -395,33 +423,6 @@ java 7 package my.csdn2; import java.util.concurrent.ExecutorService; import jav
         
         <time class="post-date" datetime="2022-03-08T02:09:28&#43;08:00">
             8 Mar 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/small-site/">微信小程序简介</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p> 注册及其他说明 基于NW.js的开发工具 微信基本文件 .wxss 等同css文件 .wxml 布局文件 .json 管理文件 .js 主逻辑文件 文件说明 以下基于JS，而不是TypeScript！
-一、pages 首页 index目录
-二、项目文件 app 除了布局文件外，包括微信小程序的3个基本文件。
-project 项目配置
-sitemap 站点设置
-hdd600 - 133 STARS-081 magnet:?xt=urn:btih:04cfca3dd7f13bab4c40a16263faa1c47ccf5f6b&amp;dn=STARS-081 STARS-118 magnet:?xt=urn:btih:cf823c824045d1d0a1e1e805c3b1312ccc012209&amp;dn=STARS-118 STARS-134 magnet:?xt=urn:btih:17cff784b4b5d45044d0d1afd091ee74542ebd58&amp;dn=STARS-134 STARS-209 magnet:?xt=urn:btih:056611d3df3142bcede86d5cbf85b6a548e8b415&amp;dn=STARS-209 STARS-249 magnet:?xt=urn:btih:257719ffba826b46cbaf80cd5b04663f69198b45&amp;dn=STARS-249 STAR-927 magnet:?xt=urn:btih:ee3cbf70c1f51ec6f04841c66918f4f6593eddae&amp;dn=STAR-927 STAR-971 magnet:?xt=urn:btih:a980986f4a6725296dffb48f7cff4c2df9cc5507&amp;dn=STAR-971 STARS-035 magnet:?xt=urn:btih:c19a77bc8956841b2f0dd362f9ed0074754e9106&amp;dn=STARS-035 STARS-224 magnet:?xt=urn:btih:65B3857E94C566FA04B2F6722CFD72DBC32E44A4)  <a class="read-more" href="/csdn/post/small-site/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-02-10T02:11:39&#43;08:00">
-            10 Feb 2022
         </time>
     </footer>
 </article>
