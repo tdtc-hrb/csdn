@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.100.1" />
+    <meta name="generator" content="Hugo 0.100.2" />
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,6 +160,33 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/com-ie-repoinfo/">铁路车号读取</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>二进制文件工具：Winhex
+replace(regexp/substr,replacement) 使用这个函数来替换多余的空格。 str.replace(/\s/g, &#34;&#34;); split(separator,howmany) 字符串转换成字符数组。 string.split(&#34;,&#34;); 一、js部分 我们把所有的方法放到一个对象（RepoInfo）中。
+var RepoInfo = { }; 1. 获取对象 RepoInfo.getObj = function(objName) { return new ActiveXObject(objName); }; 2. 获取数组 RepoInfo.getArray = function(str) { var ret = new Array(16); var string = str.replace(/\s/g, &#34;&#34;); ret = string.split(&#34;,&#34;); return ret; }; 3. 解码字串 输入字串校验 如果字串空，退出。
+输出框清空 每次赋值前，清空。
+执行COM中的方法 在获取对象非空的情况下，执行。
+RepoInfo.decode = function(string) { if (string == null) return; var obj = RepoInfo.getObj(&#34;repoInfo.LabelInfo&#34;); var edtView = document. <a class="read-more" href="/csdn/post/com-ie-repoinfo/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-13T16:08:08&#43;08:00">
+            13 May 2020
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -368,34 +395,6 @@ public string readIniFileVal(string iniFileName, string section, string key) { S
             <p>有一表格需要进行格式化处理，其要求如下：
 档案编号重复 少部分在xls文件中，大部分与数据库冲突。 日期格式错误 正确格式：xxxx-xx-xx 所有汉字的空格问题 非法性别 除了男女之外 code 程序如下：
 #! /usr/bin/perl################################################################################ Author: **斌# Date: 2012-02-22# Version: V0.1############################################################################################################################################################### Modified by: xiaobin (XB)# Modified date: 2012-03-31# Version: V0.3############################################################################################################################################################### Modified by: xiaobin (XB)# Modified date: 2012-04-01# Version: V0.4############################################################################################################################################################### Modified by: # Modified date: # Version: ############################################################################################################################################################### 版权说明： ## 本程序版权归李贵斌所有，解释权属于所有者。 ## 作为一个整体使用时，请附带以上说明。 ## ## 本程序完全免费使用。 ################################################################################################################################################################ 使用说明 ################################################################################# ## 命令行：perl processData. <a class="read-more" href="/csdn/post/ops_perl_excel/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-08T16:08:08&#43;08:00">
-            8 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_perl_mysql/">数据库的查询</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>Perl操作数据库与其他的语言操作数据库没有什么区别。
-首先，要连接数据库。
-然后，执行SQL语句。
-最后，关闭连接。
-code 循环中为使用游标读取每行数据。
-test.pl
-#! /usr/bin/perl # test DBI and DBD::mysql use DBI; $dsn = &#34;DBI:mysql:database=carnumber;host=localhost;port=3306&#34;; my $dbh = DBI-&gt;connect($dsn, &#34;root&#34;, &#34;qazxsw&#34;, {&#39;RaiseError&#39; =&gt; 1}); my $strSQL = &#34;select train_number, seriary_number, car_number,&#34;. &#34; car_marque, past_time from trainOrder where train_number &lt; 100&#34;; my $sth = $dbh-&gt;prepare($strSQL); $sth-&gt;execute(); print &#34;TN\tSN\tNumber\tMarque\tPastTime\n&#34;; while (my $ref = $sth-&gt;fetchrow_hashref()) { print &#34;$ref-&gt;{&#39;train_number&#39;}\t&#34;. &#34;$ref-&gt;{&#39;seriary_number&#39;}\t&#34;. &#34;$ref-&gt;{&#39;car_number&#39;}\t&#34;. &#34;$ref-&gt;{&#39;car_marque&#39;}\t&#34;. &#34;$ref-&gt;{&#39;past_time&#39;}\n&#34;; } $sth-&gt;finish(); $dbh-&gt;disconnect();  <a class="read-more" href="/csdn/post/ops_perl_mysql/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">

@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.100.1" />
+    <meta name="generator" content="Hugo 0.100.2" />
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,6 +160,35 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/css-bootstrap-grid/">Grid system</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p> 在V2.3.2中，栅格系统默认是不支持移动设备的； 但V3.0版本，已经默认支持移动设备。
+v2 Bootstrap(v2) 默认的栅格系统为12列 ，形成一个940px宽的容器，默认没有启用 &ldquo;响应式布局特性&rdquo; 。 如果加入响应式布局CSS文件，栅格系统会自动根据可视窗口的宽度从724px到1170px进行动态调整。 在可视窗口低于767px宽的情况下，列将不再固定并且会在垂直方向堆叠。
+V2.3.2的示例：
+&lt;div class=&#34;row&#34;&gt; &lt;div class=&#34;span4&#34;&gt;...&lt;/div&gt; &lt;div class=&#34;span8&#34;&gt;...&lt;/div&gt; &lt;/div&gt; v3 class变化：.span* -〉.col-md-*
+Bootstrap(v3) 内置了一套响应式、移动设备优先的流式栅格系统，随着屏幕设备或视口（viewport）尺寸的增加，
+系统会自动分为最多12列。它包含了易于使用的预定义classe，还有强大的mixin用于生成更具语义的布局。
+V3.0的示例：
+&lt;div class=&#34;row&#34;&gt; &lt;div class=&#34;col-md-4&#34;&gt;...&lt;/div&gt; &lt;div class=&#34;col-md-8&#34;&gt;...&lt;/div&gt; &lt;/div&gt;  <a class="read-more" href="/csdn/post/css-bootstrap-grid/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-15T14:08:08&#43;08:00">
+            15 May 2020
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -393,33 +422,6 @@ Client Side: flow chart getaddrinfo() -&gt; socket() -&gt; connect() -&gt; recv(
         
         <time class="post-date" datetime="2020-05-14T00:08:08&#43;08:00">
             14 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/com-ie-repoinfo/">铁路车号读取</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>二进制文件工具：Winhex
-replace(regexp/substr,replacement) 使用这个函数来替换多余的空格。 str.replace(/\s/g, &#34;&#34;); split(separator,howmany) 字符串转换成字符数组。 string.split(&#34;,&#34;); 一、js部分 我们把所有的方法放到一个对象（RepoInfo）中。
-var RepoInfo = { }; 1. 获取对象 RepoInfo.getObj = function(objName) { return new ActiveXObject(objName); }; 2. 获取数组 RepoInfo.getArray = function(str) { var ret = new Array(16); var string = str.replace(/\s/g, &#34;&#34;); ret = string.split(&#34;,&#34;); return ret; }; 3. 解码字串 输入字串校验 如果字串空，退出。
-输出框清空 每次赋值前，清空。
-执行COM中的方法 在获取对象非空的情况下，执行。
-RepoInfo.decode = function(string) { if (string == null) return; var obj = RepoInfo.getObj(&#34;repoInfo.LabelInfo&#34;); var edtView = document. <a class="read-more" href="/csdn/post/com-ie-repoinfo/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-13T16:08:08&#43;08:00">
-            13 May 2020
         </time>
     </footer>
 </article>

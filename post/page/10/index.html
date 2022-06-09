@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.100.1" />
+    <meta name="generator" content="Hugo 0.100.2" />
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,6 +160,32 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_nginx/">前端（Web）负载均衡</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>OS: CentOS7 minimal（安装时的选项）
+nginx&rsquo;s load balancing 一、安装 0. prepare $yum -y install gcc gcc-c++ automake pcre pcre-devel zlib zlib-devel open openssl-devel 1) update OpenSSL default directory: /usr/ssl
+$wget https://www.openssl.org/source/openssl-1.1.1f.tar.gz 2) setup $./config --prefix=/usr --shared $make Root permission Required
+$make install 1. installation sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm sudo yum install -y nginx 1) down Same as the installed version
+$curl --progress https://nginx.org/download/nginx-1.16.1.tar.gz | tar xz 2) setup module see param: <a class="read-more" href="/csdn/post/ops_nginx/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-13T07:38:08&#43;08:00">
+            13 Apr 2020
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -405,30 +431,6 @@ pom &lt;dependency&gt; &lt;groupId&gt;com.google.code.simple-spring-memcached&lt
         
         <time class="post-date" datetime="2020-04-11T20:58:39&#43;08:00">
             11 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/reduxjs-asyn-dispatcher/">dispatcher - Asynchronous</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>1. Program Flow 1) Synchronous 2) Asynchronous 2. redux-saga about CQRS: Event-sourcing
-1) Install npm install --save redux-saga examples
-Reference UNIDIRECTIONAL USER INTERFACE ARCHITECTURES - André Staltz Clarified CQRS  <a class="read-more" href="/csdn/post/reduxjs-asyn-dispatcher/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-10T17:26:39&#43;08:00">
-            10 Apr 2020
         </time>
     </footer>
 </article>
