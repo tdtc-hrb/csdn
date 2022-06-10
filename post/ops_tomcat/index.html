@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="Linux下tomcat的配置" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2022-05-24T05:38:08&#43;08:00" />
+    <meta property="article:published_time" content="2022-05-29T05:38:08&#43;08:00" />
 
     
     
@@ -92,15 +92,15 @@
     },
     "headline": "Tomcat安装",
     "name": "Tomcat安装",
-    "wordCount":  147 ,
-    "timeRequired": "PT1M",
+    "wordCount":  316 ,
+    "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/ops_tomcat/",
-    "datePublished": "2022-05-24T05:38Z",
-    "dateModified": "2022-05-24T05:38Z",
+    "datePublished": "2022-05-29T05:38Z",
+    "dateModified": "2022-05-29T05:38Z",
     
     
     "description": "Linux下tomcat的配置",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2022-05-24T05:38:08&#43;08:00">
-            May 24, 2022
+          <time class="post-date" datetime="2022-05-29T05:38:08&#43;08:00">
+            May 29, 2022
           </time>
         
          
@@ -192,6 +192,16 @@
 </thead>
 <tbody>
 <tr>
+<td>6.0</td>
+<td>3.1</td>
+<td>5.0</td>
+<td>2.1</td>
+<td>3.0</td>
+<td>10.1.x</td>
+<td>10.1.0-M16 (beta)</td>
+<td>Jakarta EE 9.1</td>
+</tr>
+<tr>
 <td>5.0</td>
 <td>3.0</td>
 <td>4.0</td>
@@ -199,7 +209,7 @@
 <td>2.0</td>
 <td>10.0.x</td>
 <td>10.0.21</td>
-<td>8 and later</td>
+<td>Jakarta EE 9</td>
 </tr>
 <tr>
 <td>4.0</td>
@@ -223,25 +233,117 @@
 </tr>
 </tbody>
 </table>
-<h1 id="0-安装jdk">0. 安装JDK</h1>
+<h1 id="installation">installation</h1>
+<table>
+<thead>
+<tr>
+<th>Platform version</th>
+<th>Released</th>
+<th>Specification</th>
+<th>Java SE Support</th>
+<th>Important Changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jakarta EE 10</td>
+<td>2022-03-31</td>
+<td>10</td>
+<td>Java SE 17/Java SE 11</td>
+<td>Removal of deprecated items in Servlet, Faces, CDI and EJB (Entity Beans and Embeddable Container). CDI-Build Time.</td>
+</tr>
+<tr>
+<td>Jakarta EE 9.1</td>
+<td>2021-05-25[10]</td>
+<td>9.1</td>
+<td>Java SE 11/Java SE 8</td>
+<td>JDK 11 support</td>
+</tr>
+<tr>
+<td>Jakarta EE 9</td>
+<td>2020-12-08[11]</td>
+<td>9</td>
+<td>Java SE 8</td>
+<td>API namespace move from javax to jakarta</td>
+</tr>
+<tr>
+<td>Jakarta EE 8</td>
+<td>2019-09-10[12]</td>
+<td>8</td>
+<td>Java SE 8</td>
+<td>Full compatiblity with Java EE 8</td>
+</tr>
+<tr>
+<td>Java EE 8</td>
+<td>2017-08-31</td>
+<td>JSR 366</td>
+<td>Java SE 8</td>
+<td>HTTP/2 and CDI based Security</td>
+</tr>
+<tr>
+<td>Java EE 7</td>
+<td>2013-05-28</td>
+<td>JSR 342</td>
+<td>Java SE 7</td>
+<td>WebSocket, JSON and HTML5 support</td>
+</tr>
+<tr>
+<td>Java EE 6</td>
+<td>2009-12-10</td>
+<td>JSR 316</td>
+<td>Java SE 6</td>
+<td>CDI managed Beans and REST</td>
+</tr>
+<tr>
+<td>Java EE 5</td>
+<td>2006-05-11</td>
+<td>JSR 244</td>
+<td>Java SE 5</td>
+<td>Java annotations</td>
+</tr>
+<tr>
+<td>J2EE 1.4</td>
+<td>2003-11-11</td>
+<td>JSR 151</td>
+<td>J2SE 1.4</td>
+<td>WS-I interoperable web services</td>
+</tr>
+<tr>
+<td>J2EE 1.3</td>
+<td>2001-09-24</td>
+<td>JSR 58</td>
+<td>J2SE 1.3</td>
+<td>Java connector architecture</td>
+</tr>
+<tr>
+<td>J2EE 1.2</td>
+<td>1999-12-17</td>
+<td>1.2</td>
+<td>J2SE 1.2</td>
+<td>Initial specification release</td>
+</tr>
+</tbody>
+</table>
+<h2 id="安装jdk">安装JDK</h2>
 <ul>
 <li>RHEL/CentOS <br>
 参见 <a href="https://tdtc-hrb.github.io/csdn/post/ops_openjdk_centos/">设置OpenJDK - CentOS</a></li>
 <li>Ubuntu参见 <br>
 <a href="https://tdtc-hrb.github.io/csdn/post/ops_openjdk_ubuntu/">设置OpenJDK - Ubuntu</a></li>
 </ul>
-<h1 id="1-安装tomcat">1. 安装Tomcat</h1>
+<h2 id="安装tomcat">安装Tomcat</h2>
 <blockquote>
 <p>下载并 解压</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-9/v9.0.63/bin/apache-tomcat-9.0.63.tar.gz
-</span></span><span style="display:flex;"><span>$tar -zxvf apache-tomcat-9.0.63.tar.gz
-</span></span></code></pre></div><h2 id="1-移动文件夹">1) 移动文件夹</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-9/v9.0.64/bin/apache-tomcat-9.0.64.tar.gz
+</span></span><span style="display:flex;"><span>$tar -zxvf apache-tomcat-9.0.64.tar.gz
+</span></span></code></pre></div><h3 id="移动文件夹">移动文件夹</h3>
 <blockquote>
 <p>拷贝并重命名为tomcat</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo cp -R apache-tomcat-9.0.63 /usr/local/tomcat
-</span></span></code></pre></div><h2 id="2-fw">2. fw</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo cp -R apache-tomcat-9.0.64 /usr/local/tomcat
+</span></span></code></pre></div><h1 id="执行tomcat">执行Tomcat</h1>
+<h2 id="allow-fw">allow fw</h2>
 <blockquote>
 <p>centos/rhel:</p>
 </blockquote>
@@ -251,23 +353,15 @@
 <p>centos5/6:</p>
 </blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo iptables -A INPUT -p tcp --dport <span style="color:#ae81ff">8080</span> -j ACCEPT
-</span></span></code></pre></div><h1 id="3-执行tomcat">3. 执行Tomcat</h1>
-<blockquote>
-<p>为了给tdtc(普通用户)有执行Tomcat的权利。</p>
-</blockquote>
-<ul>
-<li>使用超级用户</li>
-</ul>
+</span></span></code></pre></div><h2 id="授权">授权</h2>
+<p>给tdtc(普通用户)有执行Tomcat的权利.</p>
+<p>使用超级用户:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$su - root
-</span></span></code></pre></div><ul>
-<li>授权文件夹</li>
-</ul>
+</span></span></code></pre></div><p>授权文件夹:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$chown -R tdtc /usr/local/tomcat
-</span></span></code></pre></div><ul>
-<li>返回普通用户</li>
-</ul>
+</span></span></code></pre></div><p>返回普通用户:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$exit
-</span></span></code></pre></div><h2 id="1-管理app">1) 管理app</h2>
+</span></span></code></pre></div><h2 id="管理app">管理app</h2>
 <blockquote>
 <p>修改../conf/tomcat-users.xml <br>
 增加manager-gui角色，并授权给tomcat用户。</p>
@@ -333,17 +427,17 @@
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/demo-tdtc/">
+      <a class="read-next-story" style="no-cover" href="/csdn/post/vc-update-atl/">
           <section class="post">
-              <h2>TDTC Demo</h2>
+              <h2>VC升级时出现的问题</h2>
               
           </section>
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/com-wizards-vc/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/demo-tdtc/">
           <section class="post">
-              <h2>创建COM</h2>
+              <h2>TDTC Demo</h2>
           </section>
       </a>
   
