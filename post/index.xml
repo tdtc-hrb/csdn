@@ -6,7 +6,20 @@
     <description>Recent content in Posts on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 11 Jun 2022 12:38:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Jun 2022 16:08:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>铁路车号读取</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/com-ie-repoinfo/</link>
+      <pubDate>Mon, 13 Jun 2022 16:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/com-ie-repoinfo/</guid>
+      <description>二进制文件工具：EditPlus Edit -&amp;gt; Hex Viewer replace(regexp/substr,replacement) 使用这个函数来替换多余的空格。 str.replace(/\s/g, &amp;#34;&amp;#34;); split(separator,howmany) 字符串转换成字符数组。 string.split(&amp;#34;,&amp;#34;); 一、js部分 我们把所有的方法放到一个对象（RepoInfo）中。
+var RepoInfo = { }; 1. 获取对象 RepoInfo.getObj = function(objName) { return new ActiveXObject(objName); }; 2. 获取数组 RepoInfo.getArray = function(str) { var ret = new Array(16); var string = str.replace(/\s/g, &amp;#34;&amp;#34;); ret = string.split(&amp;#34;,&amp;#34;); return ret; }; 3. 解码字串 输入字串校验 如果字串空，退出。
+输出框清空 每次赋值前，清空。
+执行COM中的方法 在获取对象非空的情况下，执行。
+RepoInfo.decode = function(string) { if (string == null) return; var obj = RepoInfo.</description>
+    </item>
+    
     <item>
       <title>Tomcat安装</title>
       <link>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</link>
@@ -696,20 +709,6 @@ code unitUntMain; interface uses Windows, Messages, SysUtils, Variants, Classes
       <description>GNU Compiler Collection(GCC)
 Beej’s Guide Network to Programming 一个简单的客户端和服务器端的程序！
 Client Side: flow chart getaddrinfo() -&amp;gt; socket() -&amp;gt; connect() -&amp;gt; recv() #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;string.h&amp;gt; #include &amp;lt;sys/types.h&amp;gt; #include &amp;lt;sys/socket.h&amp;gt; #include &amp;lt;arpa/inet.h&amp;gt; #include &amp;lt;netdb.h&amp;gt; #define SERVIP &amp;#34;192.168.56.112&amp;#34; #define SERVPORT &amp;#34;2349&amp;#34; int main(int argc, char *argv[]) { struct addrinfo hints, *res; int status; int sockfd; int connSta; int recvSta; char buffer[1024]; int len; char ipstr[INET_ADDRSTRLEN]; void *addr; if (argc != 3) { fprintf(stderr, &amp;#34;Usage: Not Server IP And Port!</description>
-    </item>
-    
-    <item>
-      <title>铁路车号读取</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/com-ie-repoinfo/</link>
-      <pubDate>Wed, 13 May 2020 16:08:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/com-ie-repoinfo/</guid>
-      <description>二进制文件工具：Winhex
-replace(regexp/substr,replacement) 使用这个函数来替换多余的空格。 str.replace(/\s/g, &amp;#34;&amp;#34;); split(separator,howmany) 字符串转换成字符数组。 string.split(&amp;#34;,&amp;#34;); 一、js部分 我们把所有的方法放到一个对象（RepoInfo）中。
-var RepoInfo = { }; 1. 获取对象 RepoInfo.getObj = function(objName) { return new ActiveXObject(objName); }; 2. 获取数组 RepoInfo.getArray = function(str) { var ret = new Array(16); var string = str.replace(/\s/g, &amp;#34;&amp;#34;); ret = string.split(&amp;#34;,&amp;#34;); return ret; }; 3. 解码字串 输入字串校验 如果字串空，退出。
-输出框清空 每次赋值前，清空。
-执行COM中的方法 在获取对象非空的情况下，执行。
-RepoInfo.decode = function(string) { if (string == null) return; var obj = RepoInfo.getObj(&amp;#34;repoInfo.LabelInfo&amp;#34;); var edtView = document.</description>
     </item>
     
     <item>
