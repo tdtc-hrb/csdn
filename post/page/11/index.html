@@ -164,6 +164,40 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/redis-centos7/">在CentOS安装Redis</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>0. preinstall 1) yum install $yum groupinstall &#34;Development Tools&#34; $yum install tcl wget 2) verification $gcc -v $make -v $echo &#39;puts [info patchlevel];exit 0&#39; | tclsh User set $ useradd redis $ passwd redis 1. installation 1) install $wget http://download.redis.io/releases/redis-4.0.14.tar.gz $tar xzvf redis-4.0.14.tar.gz $cd redis-4.0.14 $make ## Single Core $taskset -c 0 make test ## sudo $make install 2) config $mkdir /etc/redis $mkdir -p /var/redis $cp /home/redis/redis-4.0.14/redis.conf /etc/redis redis.conf port 6379	#default port is already 6379. <a class="read-more" href="/csdn/post/redis-centos7/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        on
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/redis/">#Redis</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/centos7/">#CentOS7</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/development-tools/">#Development Tools</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/wget/">#wget</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/limitnofile/">#LimitNOFILE</a>,
+            
+        
+        <time class="post-date" datetime="2020-04-11T20:58:39&#43;08:00">
+            11 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/reduxjs-asyn-dispatcher/">dispatcher - Asynchronous</a></h2>
     </header>
     <section class="post-excerpt">
@@ -307,37 +341,6 @@ springframework.version v4.3.14.RELEASE springsecurity.version v4.2.4.RELEASE hi
 
         
         <time class="post-date" datetime="2020-04-10T10:26:39&#43;08:00">
-            10 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/reduxjs-asyn/">重构asyn</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>0. pre 生成基本框 npm install -g create-react-app create-react-app async clone repo https://github.com/redux-saga/redux-saga.git
-1. copy directorys Copy the examples/async/src from the redux-saga to your async/src.
-2. rename main.js async/src
-Rename main.js to index.js
-3. move files async/src
-App.css &amp;&amp; logo.svg -&gt;
-async/src/containers
-App.css &amp;&amp; logo.svg
-4. modify containers/App.js Add the following two blocks of code.
-import logo from &#39;./logo.svg&#39;; import &#39;./App.css&#39;; &lt;div className=&#34;App&#34;&gt; &lt;header className=&#34;App-header&#34;&gt; &lt;img src={logo} className=&#34;App-logo&#34; alt=&#34;logo&#34; /&gt; &lt;h1 className=&#34;App-title&#34;&gt;Welcome to React&lt;/h1&gt; &lt;/header&gt; . <a class="read-more" href="/csdn/post/reduxjs-asyn/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-10T07:26:39&#43;08:00">
             10 Apr 2020
         </time>
     </footer>

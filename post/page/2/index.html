@@ -164,6 +164,46 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/vc-serial_communication/">Windows串口</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>串口读写工具
+PC has no serial device
+PC has serial device
+CSerialPort author: Remon Spekreijse MFC Vs2013(VC12)/Vs2019(VC14.2) 程序介绍 界面分三块：
+1. 端口配置 1.1 在“Port Number”选择端口号； 1.2 在“Config”配置端口的属性，比如波特率、奇偶校验、数据位、停止位等等。 Setting Serial Communication Number
+2. 发送区域 2.1 Loop Send 当我们钩选此复选框时，必须选择“发送频率”，然后才能执行循环发送数据。
+### 2.2 发送频率 选择其一：500、1000、2000毫秒。
+Setting time
+如果要更改读取自定义的时间频率：
+请将SerialCommView.cpp-Ln292，更为：
+((CComboBox *)GetDlgItem(IDC_COMBO1Timer))-&gt;GetWindowTextA(strTemp);)
+2.3 发送内容框 在“发送信息框”输入内容就可发送数据了！
+2.4 操作流程 A类（自动化） 2.2-》2.3-》2.1
+B类（手动） 2.3-》点击“Send”按钮。
+3. 接收区域 3.1 制式切换 当钩选了“Hex View”复选框，接收到的数据就以16进制显示。
+3.2 清除数据 当点击“Clear”按钮，即清空接收框数据。
+3.3 数据保存 当点击“Save As”按钮，即保存接收框数据；默认文件格式为rtf文件。
+操作串口 主要分为：初始化串口、读/写串口。
+其中，读串口需要使用线程。 <a class="read-more" href="/csdn/post/vc-serial_communication/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-05-15T08:08:08&#43;08:00">
+            15 May 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_openjdk_centos/">设置OpenJDK</a></h2>
     </header>
     <section class="post-excerpt">
@@ -392,34 +432,6 @@ ssh $sudo yum install openssh  <a class="read-more" href="/csdn/post/ops_network
 
         
         <time class="post-date" datetime="2022-03-13T08:38:08-08:00">
-            13 Mar 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/c-automake/">automake生成makefile</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>1. 手工(修改或创建)文件 详见附件Makefile.am和configure.ac
-注意: am文件是需要创建的!
-ac文件 生成ac模板
-$ autoscan 会生成configure.scan文件, 重命名为configure.ac
-修改初始化 注意: 所有新修改的值都需要方括号([])
-程序属性 AC_INIT([hex2int], [v0.1], [veic_2005@163.com]) 目录结构 如果只有本目录, 使用空值 AM_INIT_AUTOMAKE 2. 其他命令 aclocal autoconf autoheader 3. 生成Makefile 输出Makefile.in automake --add-missing 输出Makefile ./configure 手动Makefile 小项目可以。 注意：所有的命令前必须为TAB，不能使空格！
-#https://stackoverflow.com/questions/1484817/how-do-i-make-a-simple-makefile-for-gcc-on-linux #https://stackoverflow.com/questions/14109724/makefile-missing-separator/14109796 #https://www.gnu.org/software/make/manual/html_node/Pattern-Examples.html#Pattern-Examples #https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html#Automatic-Variables TARGET = hex2int CC = gcc CFLAGS = -g -Wall all:$(TARGET) OBJECTS = $(patsubst %.c, %.o, $(wildcard *.c)) HEADERS = $(wildcard *.h) %.o: %.c $(HEADERS) $(CC) -c $(CFLAGS) $&lt; -o $@ $(TARGET): $(OBJECTS) $(CC) $(OBJECTS) -Wall -o $@ clean: -rm -f *. <a class="read-more" href="/csdn/post/c-automake/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-03-13T02:20:39&#43;08:00">
             13 Mar 2022
         </time>
     </footer>

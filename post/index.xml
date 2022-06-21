@@ -30,6 +30,24 @@ RepoInfo.decode = function(string) { if (string == null) return; var obj = RepoI
     </item>
     
     <item>
+      <title>重构asyn</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/reduxjs-asyn/</link>
+      <pubDate>Fri, 10 Jun 2022 07:26:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/reduxjs-asyn/</guid>
+      <description>0. pre 生成基本框 npm install -g create-react-app create-react-app async clone repo https://github.com/redux-saga/redux-saga.git
+1. copy directorys Copy the examples/async/src from the redux-saga to your async/src.
+2. rename main.js async/src
+Rename main.js to index.js
+3. move files async/src
+App.css &amp;amp;&amp;amp; logo.svg -&amp;gt;
+async/src/containers
+App.css &amp;amp;&amp;amp; logo.svg
+4. modify containers/App.js Add the following two blocks of code.
+import logo from &amp;#39;./logo.svg&amp;#39;; import &amp;#39;./App.css&amp;#39;; &amp;lt;div className=&amp;#34;App&amp;#34;&amp;gt; &amp;lt;header className=&amp;#34;App-header&amp;#34;&amp;gt; &amp;lt;img src={logo} className=&amp;#34;App-logo&amp;#34; alt=&amp;#34;logo&amp;#34; /&amp;gt; &amp;lt;h1 className=&amp;#34;App-title&amp;#34;&amp;gt;Welcome to React&amp;lt;/h1&amp;gt; &amp;lt;/header&amp;gt; .</description>
+    </item>
+    
+    <item>
       <title>VC升级时出现的问题</title>
       <link>https://tdtc-hrb.github.io/csdn/post/vc-update-atl/</link>
       <pubDate>Tue, 31 May 2022 14:28:08 +0800</pubDate>
@@ -1426,24 +1444,6 @@ springframework.version v4.3.14.RELEASE springsecurity.version v4.2.4.RELEASE hi
       <description>PART I: Struts2 Refence: 《how to create a struts2 web application》
 1. pom.xml 1) Struts2 struts2-spring-plugin
 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.apache.struts&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;struts2-spring-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;${struts2.version}&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; 2) jsp servlet &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;javax.servlet&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;javax.servlet-api&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.1.0&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; jstl &amp;lt;!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;javax.servlet.jsp.jstl&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jstl&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.2&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; 2. web.xml filter &amp;lt;filter&amp;gt; &amp;lt;filter-name&amp;gt;struts2&amp;lt;/filter-name&amp;gt; &amp;lt;filter-class&amp;gt;org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter&amp;lt;/filter-class&amp;gt; &amp;lt;/filter&amp;gt; 3. struts.xml &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;!DOCTYPE struts PUBLIC &amp;#34;-//Apache Software Foundation//DTD Struts Configuration 2.5//EN&amp;#34; &amp;#34;http://struts.apache.org/dtds/struts-2.5.dtd&amp;#34;&amp;gt; &amp;lt;struts&amp;gt; &amp;lt;constant name=&amp;#34;struts.devMode&amp;#34; value=&amp;#34;true&amp;#34; /&amp;gt; &amp;lt;package name=&amp;#34;basicstruts2&amp;#34; extends=&amp;#34;struts-default&amp;#34;&amp;gt; &amp;lt;action name=&amp;#34;index&amp;#34;&amp;gt; &amp;lt;result&amp;gt;/index.</description>
-    </item>
-    
-    <item>
-      <title>重构asyn</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/reduxjs-asyn/</link>
-      <pubDate>Fri, 10 Apr 2020 07:26:39 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/reduxjs-asyn/</guid>
-      <description>0. pre 生成基本框 npm install -g create-react-app create-react-app async clone repo https://github.com/redux-saga/redux-saga.git
-1. copy directorys Copy the examples/async/src from the redux-saga to your async/src.
-2. rename main.js async/src
-Rename main.js to index.js
-3. move files async/src
-App.css &amp;amp;&amp;amp; logo.svg -&amp;gt;
-async/src/containers
-App.css &amp;amp;&amp;amp; logo.svg
-4. modify containers/App.js Add the following two blocks of code.
-import logo from &amp;#39;./logo.svg&amp;#39;; import &amp;#39;./App.css&amp;#39;; &amp;lt;div className=&amp;#34;App&amp;#34;&amp;gt; &amp;lt;header className=&amp;#34;App-header&amp;#34;&amp;gt; &amp;lt;img src={logo} className=&amp;#34;App-logo&amp;#34; alt=&amp;#34;logo&amp;#34; /&amp;gt; &amp;lt;h1 className=&amp;#34;App-title&amp;#34;&amp;gt;Welcome to React&amp;lt;/h1&amp;gt; &amp;lt;/header&amp;gt; .</description>
     </item>
     
     <item>
