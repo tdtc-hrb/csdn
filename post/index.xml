@@ -307,6 +307,17 @@ curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash - install sudo apt
     </item>
     
     <item>
+      <title>dispatcher - Asynchronous</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/reduxjs-asyn-dispatcher/</link>
+      <pubDate>Sun, 10 Apr 2022 17:26:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/reduxjs-asyn-dispatcher/</guid>
+      <description>1. Program Flow 1) Synchronous 2) Asynchronous 2. redux-saga about CQRS: Event-sourcing
+1) Install npm install --save redux-saga examples
+Reference UNIDIRECTIONAL USER INTERFACE ARCHITECTURES - André Staltz Clarified CQRS </description>
+    </item>
+    
+    <item>
       <title>dpkg的info问题和file system只读问题</title>
       <link>https://tdtc-hrb.github.io/csdn/post/dpkg-issues/</link>
       <pubDate>Sun, 10 Apr 2022 02:10:39 +0800</pubDate>
@@ -1371,17 +1382,6 @@ pom &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.google.code.simple-spr
       
       <guid>https://tdtc-hrb.github.io/csdn/post/redis-centos7/</guid>
       <description>0. preinstall 1) yum install $yum groupinstall &amp;#34;Development Tools&amp;#34; $yum install tcl wget 2) verification $gcc -v $make -v $echo &amp;#39;puts [info patchlevel];exit 0&amp;#39; | tclsh User set $ useradd redis $ passwd redis 1. installation 1) install $wget http://download.redis.io/releases/redis-4.0.14.tar.gz $tar xzvf redis-4.0.14.tar.gz $cd redis-4.0.14 $make ## Single Core $taskset -c 0 make test ## sudo $make install 2) config $mkdir /etc/redis $mkdir -p /var/redis $cp /home/redis/redis-4.0.14/redis.conf /etc/redis redis.conf port 6379	#default port is already 6379.</description>
-    </item>
-    
-    <item>
-      <title>dispatcher - Asynchronous</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/reduxjs-asyn-dispatcher/</link>
-      <pubDate>Fri, 10 Apr 2020 17:26:39 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/reduxjs-asyn-dispatcher/</guid>
-      <description>1. Program Flow 1) Synchronous 2) Asynchronous 2. redux-saga about CQRS: Event-sourcing
-1) Install npm install --save redux-saga examples
-Reference UNIDIRECTIONAL USER INTERFACE ARCHITECTURES - André Staltz Clarified CQRS </description>
     </item>
     
     <item>
