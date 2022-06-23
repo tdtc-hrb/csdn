@@ -6,14 +6,15 @@
     <description>Recent content in LimitNOFILE on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 11 Apr 2020 20:58:39 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/tags/limitnofile/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Jun 2022 00:58:39 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/tags/limitnofile/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在CentOS安装Redis</title>
       <link>https://tdtc-hrb.github.io/csdn/post/redis-centos7/</link>
-      <pubDate>Sat, 11 Apr 2020 20:58:39 +0800</pubDate>
+      <pubDate>Sat, 11 Jun 2022 00:58:39 +0800</pubDate>
       
       <guid>https://tdtc-hrb.github.io/csdn/post/redis-centos7/</guid>
-      <description>0. preinstall 1) yum install $yum groupinstall &amp;#34;Development Tools&amp;#34; $yum install tcl wget 2) verification $gcc -v $make -v $echo &amp;#39;puts [info patchlevel];exit 0&amp;#39; | tclsh User set $ useradd redis $ passwd redis 1. installation 1) install $wget http://download.redis.io/releases/redis-4.0.14.tar.gz $tar xzvf redis-4.0.14.tar.gz $cd redis-4.0.14 $make ## Single Core $taskset -c 0 make test ## sudo $make install 2) config $mkdir /etc/redis $mkdir -p /var/redis $cp /home/redis/redis-4.0.14/redis.conf /etc/redis redis.conf port 6379	#default port is already 6379.</description>
+      <description>0. preinstall User set $ useradd tdtc $ passwd tdtc 1) yum install $sudo yum groupinstall &amp;#34;Development Tools&amp;#34; $sudo yum install tcl wget v6+ Just to clarify: there is no way this issue will be fixed, Redis &amp;gt;= 6 will require a C11 compiler.
+sudo yum install centos-release-scl sudo yum install devtoolset-8 scl enable devtoolset-8 bash 2) verification $gcc -v $make -v $echo &amp;#39;puts [info patchlevel];exit 0&amp;#39; | tclsh 1. installation 1) install $wget https://download.</description>
     </item>
     
   </channel>

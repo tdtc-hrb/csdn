@@ -164,6 +164,32 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_selinux/">SELinux的开启/关闭</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p> (root权限)
+SELinux(Security-Enhanced Linux) 是美国国家安全局（NSA）对于强制访问控制的实现，是 Linux历史上最杰出的新安全子系统。
+1. 临时 临时的意思就是宽容模式(0)强制模式(1)与的切换 默认是：强制模式
+强制模式 $setenforce 1 宽容模式 临时关闭 $setenforce 0 2. 永久 /etc/selinux/config
+开启 SELINUX=enforcing 关闭 SELINUX=disabled 3. 查看SELinux的工作模式 getenforce  <a class="read-more" href="/csdn/post/ops_selinux/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-15T00:20:08&#43;08:00">
+            15 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_useradd_centos/">增加用户</a></h2>
     </header>
     <section class="post-excerpt">
@@ -386,38 +412,6 @@ $vi ~/.ssh/config Host host1 HostName 192.168.0.110 Port 22 User xiaobin112 Host
 
         
         <time class="post-date" datetime="2020-04-13T11:38:08&#43;08:00">
-            13 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/mysql-mha/">主备切换 - MySQL&#43;MHA</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>在进行安装配置前，请确认已经完成了《MySQL 主从复制》
-MHA (V0.58)
-Manager Node baidu yun - backup
-Mha manager Mha node 安装前准备《ssh相互免密》
-一、安装 Name IP Memo mha1 192.168.0.151 Monitor host 使用pscp上传文件请参考《MySQL 主从复制 - 5. test data》
-1. MHA Node 所有MySQL服务器（mysql1、mysql11、mysql12）和MHA 管理机（MHA）都要安装。
-sudo yum localinstall mha4mysql-node-0.58-0.el7.centos.noarch.rpm 2. MHA Manager CentOS源有perl-Config-Tiny。
-sudo yum install perl-Config-Tiny 安装epel，可以找到perl-Log-Dispatch、perl-Parallel-ForkManager。
-sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm sudo yum install perl-Log-Dispatch perl-Parallel-ForkManager -y 安装manager
-sudo yum localinstall mha4mysql-manager-0.58-0.el7.centos.noarch.rpm 3. MySQL主从配置 （补充部分）
-1) repl user Slave Server（mysql11, mysql12） <a class="read-more" href="/csdn/post/mysql-mha/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-13T10:38:08&#43;08:00">
             13 Apr 2020
         </time>
     </footer>

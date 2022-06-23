@@ -164,6 +164,30 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_cloud_pure-ftpd/">在阿里云上部署pure-ftpd</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Server：ali云服务器ECS OS: CentOS 7.2 x64
+1. 管理防火墙 增加ftp端口 2. 其他系统管理 1) 设置SeLlinux # setsebool -P ftp_home_dir on 2) 设置user # useradd -m fdn -s /sbin/nologin # passwd fdn 3. 安装pure-ftpd # yum install pure-ftpd 1) Setup 使用root简单设置pure-ftpd.conf
+# vi /etc/pure-ftpd/pure-ftpd.conf # If you want simple Unix (/etc/passwd) authentication, uncomment this UnixAuthentication yes # Cage in every user in his home directory ChrootEveryone yes # If you want to log all client commands, set this to &#34;yes&#34;. <a class="read-more" href="/csdn/post/ops_cloud_pure-ftpd/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-13T00:08:08&#43;08:00">
+            13 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/memcached-spy/">使用spymemcached操作memcached</a></h2>
     </header>
     <section class="post-excerpt">
@@ -181,40 +205,6 @@ pom &lt;dependency&gt; &lt;groupId&gt;com.google.code.simple-spring-memcached&lt
 
         
         <time class="post-date" datetime="2020-04-11T21:08:39&#43;08:00">
-            11 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/redis-centos7/">在CentOS安装Redis</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>0. preinstall 1) yum install $yum groupinstall &#34;Development Tools&#34; $yum install tcl wget 2) verification $gcc -v $make -v $echo &#39;puts [info patchlevel];exit 0&#39; | tclsh User set $ useradd redis $ passwd redis 1. installation 1) install $wget http://download.redis.io/releases/redis-4.0.14.tar.gz $tar xzvf redis-4.0.14.tar.gz $cd redis-4.0.14 $make ## Single Core $taskset -c 0 make test ## sudo $make install 2) config $mkdir /etc/redis $mkdir -p /var/redis $cp /home/redis/redis-4.0.14/redis.conf /etc/redis redis.conf port 6379	#default port is already 6379. <a class="read-more" href="/csdn/post/redis-centos7/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        on
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/redis/">#Redis</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/centos7/">#CentOS7</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/development-tools/">#Development Tools</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/wget/">#wget</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/limitnofile/">#LimitNOFILE</a>,
-            
-        
-        <time class="post-date" datetime="2020-04-11T20:58:39&#43;08:00">
             11 Apr 2020
         </time>
     </footer>
