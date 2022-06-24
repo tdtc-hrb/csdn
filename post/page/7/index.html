@@ -164,6 +164,29 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/hw-schematic_diagram-pic16f877a/">PIC16F877A最小功能板</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>一、顶层 主要由端口转换、MCU、复位、键盘、晶振和显示等5部分电路组成。 二、模块层 1. 端口转换电路 2. MCU 3. 复位电路 4. 键盘电路 5. LED电路 备份文件: sch20110411.7z 提取码: 3h95
+参考文章 基于PIC16F877A型单片机的通用单片机控制板（作者：石伟屹）  <a class="read-more" href="/csdn/post/hw-schematic_diagram-pic16f877a/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-10T10:08:08&#43;08:00">
+            10 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/hw-schematic_diagram-nrf905/">nRF905 原理图</a></h2>
     </header>
     <section class="post-excerpt">
@@ -398,32 +421,6 @@ Note: J-link_V8.bin is example file, It must be modified to use. <a class="read-
         
         <time class="post-date" datetime="2020-05-05T08:08:08&#43;08:00">
             5 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_haproxy/">安装配置haproxy</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>系统设置 新增用户 $useradd haproxy $passwd haproxy sysctl /etc/sysctl.conf
-net.ipv4.tcp_tw_reuse = 1 net.ipv4.ip_local_port_range = 1024 65023 net.ipv4.tcp_max_syn_backlog = 10240 net.ipv4.tcp_max_tw_buckets = 400000 net.ipv4.tcp_max_orphans = 60000 net.ipv4.tcp_synack_retries = 3 net.core.somaxconn = 10000 firewall 1) L7 $firewall-cmd --permanent --zone=public --add-service=http $firewall-cmd --permanent --zone=public --add-port=6080/tcp 2) L4 mysql
-$firewall-cmd --permanent --zone=public --add-port=13306/tcp 生效
-$firewall-cmd --reload rsyslog的安装 install $yum install rsyslog config 1) rsyslog /etc/rsyslog.d/haproxy.conf
-$ModLoad imudp $UDPServerRun 514 $template Haproxy,”%msg%\n” local2.=info -/var/log/haproxy.log;Haproxy local2.notice -/var/log/haproxy-status.log;Haproxy ### keep logs in localhost ## local2. <a class="read-more" href="/csdn/post/ops_haproxy/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-04T18:08:08&#43;08:00">
-            4 May 2020
         </time>
     </footer>
 </article>

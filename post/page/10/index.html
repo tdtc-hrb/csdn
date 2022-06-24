@@ -164,6 +164,33 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_ssh_without_password/">ssh相互免密</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>OS: CentOS 7
+Ip /etc/hostname 192.168.0.110 host1 192.168.0.111 host2 Note:
+On every host, run following commands, Use xiaobin112(user) to do all following.
+Prepare Establish Directory &ldquo;.ssh&rdquo;
+$mkdir ~/.ssh $chmod 700 ~/.ssh Stage I 1. config 另外一种方式为：把所有机器的IP和hostname放在/etc/hosts里，在此不再赘述, 请参见《ZooKeeper multi-server install - 3.FQDN》。
+$vi ~/.ssh/config Host host1 HostName 192.168.0.110 Port 22 User xiaobin112 Host host2 HostName 192.168.0.111 Port 22 User xiaobin112 2. r+w $chmod 600 ~/.ssh/config Stage II 1. gen (Just press ENTER for all input values) ssh-keygen -t rsa -P &#39;&#39; 2. <a class="read-more" href="/csdn/post/ops_ssh_without_password/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-13T11:38:08&#43;08:00">
+            13 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/mysql-mha/">主备切换 - MySQL&#43;MHA</a></h2>
     </header>
     <section class="post-excerpt">
@@ -409,31 +436,6 @@ chmod 644 myfile.iso 显示ftp目录信息 在目录下建立一个.message文�
 
         
         <time class="post-date" datetime="2020-04-13T02:08:08&#43;08:00">
-            13 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_cloud_httpd/">在阿里云上部署httpd</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>Server：ali云服务器ECS OS: CentOS 6/7 (x64) httpd路径: /opt/httpd
-两种不同的init系统部署方式 一、SysVinit SysVinit是CentOS6的默认1号进程。
-1. Copy script # cp /opt/httpd/bin/apachectl /etc/rc.d/init.d/httpd 2. Edit script # cd /etc/rc.d/init.d # vi httpd The original file(apachectl)
-#!/bin/sh # # Licensed to the Apache Software Foundation (ASF) under one or more # contributor license agreements. See the NOTICE file distributed with # this work for additional information regarding copyright ownership. # The ASF licenses this file to You under the Apache License, Version 2. <a class="read-more" href="/csdn/post/ops_cloud_httpd/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-13T01:08:08&#43;08:00">
             13 Apr 2020
         </time>
     </footer>

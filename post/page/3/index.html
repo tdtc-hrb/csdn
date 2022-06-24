@@ -164,6 +164,31 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/nodejs-ubuntu/">在Ubuntu下安装NodeJS</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>1.node.js v12.x/16.x
+v12.x:
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - v16.x:
+curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash - install sudo apt-get install -y nodejs 2. yarn js curl --silent --show-error https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo &#34;deb https://dl.yarnpkg.com/debian/ stable main&#34; | sudo tee /etc/apt/sources.list.d/yarn.list sudo apt-get update sudo apt-get install yarn  <a class="read-more" href="/csdn/post/nodejs-ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-04-10T23:08:39&#43;08:00">
+            10 Apr 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/reduxjs-asyn-dispatcher/">dispatcher - Asynchronous</a></h2>
     </header>
     <section class="post-excerpt">
@@ -394,34 +419,6 @@ sudo vi /etc/sysctl. <a class="read-more" href="/csdn/post/ops_dc_redis_ubuntu/"
         
         <time class="post-date" datetime="2021-09-08T08:08:08&#43;08:00">
             8 Sep 2021
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/apt-oper-ubuntu/">apt的安装问题</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>apt适合手动输入(有交互); apt-get适合脚本(无交互).
-Manage 卸载 apt-get autoremove vsftpd --purge 安装指定版本 apt-get install &lt;package name&gt;=&lt;version&gt; 列出版本 apt-cache madison &lt;&lt;package name&gt;&gt; DebIan sudo using root:
-su - root install:
-apt install sudo chmod 640 /etc/sudoers 在配置文件/etc/sudoers加入：
-tdtc ALL=(ALL:ALL) ALL 把文件权限改为只读:
-chmod 440 /etc/sudoers apt source sudo vi /etc/apt/sources.list 注释掉&quot;deb cdrom:xxx&quot;
-##deb cdrom:xxx Ref Debian中安装使用sudo命令 Debian取消从光盘安装软件的方式  <a class="read-more" href="/csdn/post/apt-oper-ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2021-07-08T02:20:39&#43;08:00">
-            8 Jul 2021
         </time>
     </footer>
 </article>

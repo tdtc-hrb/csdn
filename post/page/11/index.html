@@ -164,6 +164,31 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_cloud_httpd/">在阿里云上部署httpd</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Server：ali云服务器ECS OS: CentOS 6/7 (x64) httpd路径: /opt/httpd
+两种不同的init系统部署方式 一、SysVinit SysVinit是CentOS6的默认1号进程。
+1. Copy script # cp /opt/httpd/bin/apachectl /etc/rc.d/init.d/httpd 2. Edit script # cd /etc/rc.d/init.d # vi httpd The original file(apachectl)
+#!/bin/sh # # Licensed to the Apache Software Foundation (ASF) under one or more # contributor license agreements. See the NOTICE file distributed with # this work for additional information regarding copyright ownership. # The ASF licenses this file to You under the Apache License, Version 2. <a class="read-more" href="/csdn/post/ops_cloud_httpd/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-13T01:08:08&#43;08:00">
+            13 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_cloud_pure-ftpd/">在阿里云上部署pure-ftpd</a></h2>
     </header>
     <section class="post-excerpt">
@@ -382,30 +407,6 @@ http://repo.mysql.com/ <a class="read-more" href="/csdn/post/mysql57-cenos7/">&r
 
         
         <time class="post-date" datetime="2020-04-10T02:21:39&#43;08:00">
-            10 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/pack-file-linux/">打包文件</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>取消目录所有权限
-chmod -R 777 /tmp/etc 一、ISO文件 mkisofs -r -o etc.iso /tmp/etc 二、压缩文件 1. zip zip -r etc.zip /tmp/etc 2. tar 仅打包，不压缩！
-tar -cvf /tmp/etc.tar /etc gz tar -zcvf /tmp/etc.tar.gz /etc bz2 tar -jcvf /tmp/etc.tar.bz2 /etc FAQ This does not look like a tar archive #gzip -d xxxx.tar.gz #tar -xf xxxx.tar 参考文章 18 Tar Command Examples in Linux c – Creates a new .tar archive file. v – Verbosely show the . <a class="read-more" href="/csdn/post/pack-file-linux/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-10T02:20:39&#43;08:00">
             10 Apr 2020
         </time>
     </footer>

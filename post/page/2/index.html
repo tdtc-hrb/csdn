@@ -164,6 +164,45 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c-bsd_socket-server/">使用fork的server</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>GNU Compiler Collection(GCC)
+在“Socket服务器端程序”基础上增加子进程。
+Beej’s Guide Network to Programming 关于Unix/Linux子进程：
+相当于Windows的线程
+调用fork()即可增加子进程。
+要使用fork必须调用waitpid() ！
+waitpid() waitpid函数原型：
+#include&lt;sys/types.h&gt; /* 提供类型pid_t的定义 */ #include&lt;sys/wait.h&gt; pid_t waitpid(pid_t pid, int *status, int options); pid 等于-1时，等待任何一个子进程退出，没有任何限制，此时waitpid和wait的作用一模一样。
+status 我们设置为NULL。
+options 提供了一些额外的选项来控制waitpid，WNOHANG常量表示， 即使没有子进程退出，它也会立即返回，不会像wait那样永远等下去。
+sigaction() sigaction()是waitpid()的开关
+只有给waitpid()信号时，才开启它(waitpid)！ 这时，需要sigaction()。
+sigaction函数原型：
+#include&lt;signal.h&gt; int sigaction(int signum, const struct sigaction *act, struct sigaction *oldact); signum 等于SIGCHLD时，只有子进程停止或者退出才进行调用。
+act 一个指向sigaction结构的指针。
+oldact 一般废止不用。
+我们主要设置结构sigaction的sa_handler、sa_mask和sa_flags三个成员变量即可！
+code /** * Version: 0.2 * * Description: Add signal * */ #include &lt;stdio. <a class="read-more" href="/csdn/post/c-bsd_socket-server/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-05-16T08:08:08&#43;08:00">
+            16 May 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/com-ie-test/">测试COM</a></h2>
     </header>
     <section class="post-excerpt">
@@ -407,31 +446,6 @@ Ubuntu 设置static IP cd /etc/netplan/ sudo vi 00-installer-config.yaml #This i
         
         <time class="post-date" datetime="2022-04-13T08:38:08&#43;08:00">
             13 Apr 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/nodejs-ubuntu/">在Ubuntu下安装NodeJS</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>1.node.js v12.x/16.x
-v12.x:
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - v16.x:
-curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash - install sudo apt-get install -y nodejs 2. yarn js curl --silent --show-error https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo &#34;deb https://dl.yarnpkg.com/debian/ stable main&#34; | sudo tee /etc/apt/sources.list.d/yarn.list sudo apt-get update sudo apt-get install yarn  <a class="read-more" href="/csdn/post/nodejs-ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-04-10T23:08:39&#43;08:00">
-            10 Apr 2022
         </time>
     </footer>
 </article>

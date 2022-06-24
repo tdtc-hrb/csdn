@@ -164,6 +164,32 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_haproxy/">安装配置haproxy</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>系统设置 新增用户 $useradd haproxy $passwd haproxy sysctl /etc/sysctl.conf
+net.ipv4.tcp_tw_reuse = 1 net.ipv4.ip_local_port_range = 1024 65023 net.ipv4.tcp_max_syn_backlog = 10240 net.ipv4.tcp_max_tw_buckets = 400000 net.ipv4.tcp_max_orphans = 60000 net.ipv4.tcp_synack_retries = 3 net.core.somaxconn = 10000 firewall 1) L7 $firewall-cmd --permanent --zone=public --add-service=http $firewall-cmd --permanent --zone=public --add-port=6080/tcp 2) L4 mysql
+$firewall-cmd --permanent --zone=public --add-port=13306/tcp 生效
+$firewall-cmd --reload rsyslog的安装 install $yum install rsyslog config 1) rsyslog /etc/rsyslog.d/haproxy.conf
+$ModLoad imudp $UDPServerRun 514 $template Haproxy,”%msg%\n” local2.=info -/var/log/haproxy.log;Haproxy local2.notice -/var/log/haproxy-status.log;Haproxy ### keep logs in localhost ## local2. <a class="read-more" href="/csdn/post/ops_haproxy/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-04T18:08:08&#43;08:00">
+            4 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/c-string-search/">查找字符串</a></h2>
     </header>
     <section class="post-excerpt">
@@ -392,33 +418,6 @@ Stage III: Stop $SPARK_HOME/sbin/stop-all.sh Reference Running Spark on YARN had
 
         
         <time class="post-date" datetime="2020-04-15T02:08:08&#43;08:00">
-            15 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_spark_config/">spark配置</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>1. spark env spark-env.sh
-1) hadoop path export HADOOP_HOME=/home/tdtc/app/hadoop/2.7.7 export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop 2) spark worker 使用的内存和cpu core数
-export SPARK_WORKER_MEMORY=128m export SPARK_WORKER_CORES=1 3) recovery(zookeeper) export SPARK_DAEMON_JAVA_OPTS=&#34;-Dspark.deploy.recoveryMode=ZOOKEEPER -Dspark.deploy.zookeeper.url=tdtc201:2181,tdtc202:2181,tdtc203:2181,tdtc204:2181 -Dspark.deploy.zookeeper.dir=/spark2&#34; recoveryMode spark.deploy.recoveryMode=ZOOKEEPER url spark.deploy.zookeeper.url=tdtc201:2181,tdtc202:2181,tdtc203:2181,tdtc204:2181 directory 储存在zk中的位置
-spark.deploy.zookeeper.dir=/spark2 2. slaves 注意：有几个YARN，就设置几个slaves！！！
-../conf/slaves
-tdtc203 tdtc204 Reference how-to-set-up-spark-with-zookeeper-for-ha  <a class="read-more" href="/csdn/post/ops_spark_config/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-15T01:08:08&#43;08:00">
             15 Apr 2020
         </time>
     </footer>
