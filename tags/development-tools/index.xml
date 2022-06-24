@@ -6,11 +6,11 @@
     <description>Recent content in Development Tools on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 11 Jun 2022 02:58:39 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/tags/development-tools/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Jun 2022 04:58:39 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/tags/development-tools/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在RHEL/CentOS安装Redis</title>
       <link>https://tdtc-hrb.github.io/csdn/post/redis-centos7/</link>
-      <pubDate>Sat, 11 Jun 2022 02:58:39 +0800</pubDate>
+      <pubDate>Sat, 11 Jun 2022 04:58:39 +0800</pubDate>
       
       <guid>https://tdtc-hrb.github.io/csdn/post/redis-centos7/</guid>
       <description>0. preinstall User set $ useradd tdtc $ passwd tdtc Yum Repo 1) yum install $sudo yum groupinstall &amp;#34;Development Tools&amp;#34; $sudo yum install tcl wget v6+ Just to clarify: there is no way this issue will be fixed, Redis &amp;gt;= 6 will require a C11 compiler.
