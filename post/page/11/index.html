@@ -164,6 +164,58 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_department_vsftp/">架设VSFTP服务器</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Ubuntu版本：14.04 参考Ubuntu14.04的FTP Server文档
+安装vsftpd root@tdtc010-Vostro-270:~# apt-get install vsftpd 配置 允许上传 local_enable=YES; write_enable=YES; 允许匿名上传 anon_upload_enable=YES; FAQ 553 Could not create file 执行“快速连接”;提示错误信息：553 Could not create file
+新建一个目录 root@tdtc010-Vostro-270:/srv/ftp# mkdir upload_xp 更改目录权限 默认权限（FileZilla右击文件属性） 更改为可读写：
+root@tdtc010-Vostro-270:/srv/ftp# chmod 777 upload_xp 550 Failed to open file 解决办法： 开启公共权限（读）
+chmod 644 myfile.iso 显示ftp目录信息 在目录下建立一个.message文件即可。 /srv/ftp/upload_xp/.message 文件内容：
+欢迎使用VSFTPD，这个是upload_xp目录 再次，在FileZilla执行上传，显示成功：
+状态:	已连接 状态:	开始上传 D:\360Downloads\perl-5.16.3.tar.gz 命令:	CWD /upload_xp 响应:	250 Directory successfully changed. 命令:	TYPE I 响应:	200 Switching to Binary mode. <a class="read-more" href="/csdn/post/ops_department_vsftp/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-13T03:08:08&#43;08:00">
+            13 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_department_psi/">使用psi</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>服务器的搭建 请参考How to install Tigase XMPP server 7.0.2 on Ubuntu 14.04.2
+客户端 我们使用PSI（V1.2）进行服务器的测试。
+1. 注册 2. 增加好友 3. 重连  <a class="read-more" href="/csdn/post/ops_department_psi/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-13T02:08:08&#43;08:00">
+            13 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_cloud_httpd/">在阿里云上部署httpd</a></h2>
     </header>
     <section class="post-excerpt">
@@ -357,56 +409,6 @@ springframework.version v4.3.14.RELEASE springsecurity.version v4.2.4.RELEASE hi
 
         
         <time class="post-date" datetime="2020-04-10T10:26:39&#43;08:00">
-            10 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/pd-db-phy/">powerDesigner生成phy图</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>使用版本：v16.1
-一、连接数据库 1. 新建pdm File-》New Model model types -&gt; physical data model model name: newmodel-phy dbms: mysql5.0
-2. config connect profile DataBase -&gt; Configure connections Connection profile 3. connect Database -&gt; connect Flag: &ldquo;Disconnect&rdquo; Available
-dcp文件（mysql5-crm.dcp） [ConnectionProfile]ConnectionType=JDBCDbms=MySQLDisableBind=0Driver=com.mysql.jdbc.DriverJarFiles=D:\war\mysql-connector-java-5.1.48.jarLogId=rootTrimSpaces=0URL=jdbc:mysql://106.14.141.40:3306/crm 二、生成phy图 1. Reverse Engineer File -&gt; Reverse Engineer-&gt;Database 选择数据库： 其他数据库全部反选： 例如： 最后，点击ok生成phy图。
-Tips：如果想从pdm生成CDM，Tools -&gt; Generate Conceptual Data Model <a class="read-more" href="/csdn/post/pd-db-phy/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-10T02:26:39&#43;08:00">
-            10 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/mysql57-cenos7/">CentOS7安装mysql5.7</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>本安装大部分同《安装 MariaDB 10.3数据库》
-1. add repo sudo yum install http://repo.mysql.com/mysql57-community-release-el7.rpm 2. install sudo yum install mysql-community-server 3. init start sudo systemctl start mysqld.service change password sudo grep &#34;temporary password&#34; /var/log/mysqld.log mysql -uroot -p Weak password mysql&gt; set global validate_password_policy=0; set password mysql&gt; SET PASSWORD FOR &#39;root&#39;@&#39;localhost&#39; = PASSWORD(&#39;xbfirst80&#39;); Reference A Quick Guide to Using the MySQL Yum Repository
-http://repo.mysql.com/ <a class="read-more" href="/csdn/post/mysql57-cenos7/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-10T02:21:39&#43;08:00">
             10 Apr 2020
         </time>
     </footer>

@@ -164,6 +164,104 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/com-wizards-vc/">创建COM</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>IDE: Visual Studio 2019(v16.11)
+使用Wizard模式创建COM
+一、ATL项目向导 使用ATL Project Wizard创建COM
+1. 建立ATL工程 File-&gt;New-&gt;Project
+选择“MFC/ATL”中“ATL Project”。
+Note: name即是要生成的DLL文件
+2. 工程设置 我们可以自定义工程情况。
+3. 工程属性 取消编译时注册Dll。
+Project -&gt; Properties
+Linker -&gt; Register Output
+No
+二、ATL简单对象向导 1. 创建ATL Simple Object 右击项目名称，选择Add-〉New Item
+2. 设置ATL Simple Object progID 附加支持 progID progID: Simple Object ID
+附加支持 本选项针对IE支持。
+Other -&gt; Support:
+三、添加IDL方法 Tab switching from &ldquo;Solution Explorer&rdquo; to &ldquo;Class View&rdquo;
+Interface(name) -&gt; add -&gt; add method
+添加方法名称以及参数 <a class="read-more" href="/csdn/post/com-wizards-vc/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-05-18T20:08:08&#43;08:00">
+            18 May 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/vc-boost/">安装boost库(VC)</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>vs2008 cl 提示不可用.
+vs2012 Gen b2时出错。
+支持的VC版本(已测)
+名称 VS版本 msvc-12.0 VS2013 msvc-14.0 VS2015 msvc-14.1 VS2017 msvc-14.2 VS2019 1. 编译 在 x86 Native Tools Command Prompt for VS 2019 下运行
+About b2 vs bjam as of Boost 1.47.0, the official name of the executable was changed to b2. Gen b2 bootstrap.bat VS2013 b2 stage --toolset=msvc-12.0 --without-graph --without-graph_parallel --without-math --without-mpi --without-python --without-serialization --without-wave --stagedir=&#34;C:\boost\bin\vc120&#34; link=static runtime-link=shared runtime-link=static threading=multi debug release VS2015 b2 stage --toolset=msvc-14. <a class="read-more" href="/csdn/post/vc-boost/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-05-18T10:08:39&#43;08:00">
+            18 May 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_win_faq1/">Windows的一些设置</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>禁止记事本 开始-&gt;运行-&gt;gpedit.msc-&gt;计算机配置-&gt;windows设置-&gt;安全设置-&gt;软件限制策略
+右键点软件限制策略-&gt;创建软件限制策略
+点其他规则-&gt;右键新建路径规则-&gt;在“路径”下的空白输入框中“%windir%\notepad.exe“（或者c盘是系统盘的情况下：c:\windows\notepad.exe)-&gt;在“安全级别”中选择“不允许”
+附：如果你要限制.txt的程序打开，可以在路径中输入*.txt。
+日文系统 key101 日文改英文键盘
+修改注册表主键： HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\i8042prt\Parameters
+LayerDriver JPN: KBD101.DLL OverrideKeyboardIdentifier: PCAT_101KEY OverrideKeyboardSubtype: 0x00000000(0) win7+添加日文输入 “区域和语言“ ==&gt; ”键盘和语言“
+”键盘和语言“中，点击”更改键盘“， 点”添加“，找到 ”日语（日本）“， 勾选”Microsoft IME“和”日语“，其它不要勾选.
+按键盘”Alt“+”Shift“即可调出日语输入法.
+文件或目录损坏且无法读取 无法读取的所在逻辑盘E:
+chkdsk /F E: How to Delete Old Windows Folder in Windows 10 – Access Denied? takeown /F &#34;C:\Windows.old&#34; /A /R /D Y icacls &#34;C:\Windows.old&#34; /T /grant administrators:F rmdir /s /q &#34;C:\Windows.old&#34; notepad++ 关闭历史文件 打开首选项-&gt;备份 √“记住最后打开的文件” 把对勾去掉即可。
+ssh - It is also possible that a host key has just been changed D:\program-d\putty0. <a class="read-more" href="/csdn/post/ops_win_faq1/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-05-18T08:08:08&#43;08:00">
+            18 May 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/c-bsd_socket-server/">使用fork的server</a></h2>
     </header>
     <section class="post-excerpt">
@@ -363,89 +461,6 @@ code 以下程序在VC9/VC14.1下编译通过
         
         <time class="post-date" datetime="2022-05-10T10:26:39&#43;08:00">
             10 May 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/c-string-i2h/">十进制转十六进制</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>工作原理：
-规则是从低位到高位 被除数，除以16, 直到商小于16。 将余数加上余商，就是16进制数。
-被除数 等于转换数 等于商 如果商大于16，就是被除数。 手算 10进制：1566
-(1) 1566 ÷ 16 = 97 余数为14 (2) 97 ÷ 16 = 6 余数为1
-16进制：第1个余数(14) + 第2个余数(1) + 余商(6) = 0x61E
-code /* * Int2hex.c * * Created on: 2010-07-20 * Author: xiaobin */ #include &lt;stdio.h&gt; #include &lt;stdlib.h&gt; void int2hex(unsigned long long input, char output[]); int main(int argc, char* argv[]) { int iDigit = 12 - 2; // 2205071409 // date: 2022. <a class="read-more" href="/csdn/post/c-string-i2h/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-05-07T00:08:08&#43;08:00">
-            7 May 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_network_proxy/">设置proxy</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>OS Windows set command
-set http_proxy=http://127.0.0.1:8580 set https_proxy=http://127.0.0.1:8580 Ubuntu export http_proxy=&#34;http://192.168.1.108:1080&#34; export https_proxy=&#34;http://192.168.1.108:1080&#34; software git set proxy git config --global http.proxy http://127.0.0.1:8580 git config --global https.proxy https://127.0.0.1:8580 unset git config --global --unset http.proxy git config --global --unset https.proxy node-js .npmrc
-cmd npm config delete https-proxy npm config set http-proxy http://host:port npm config set strict-ssl false file registry=https://registry.npmjs.org/ proxy=http://127.0.0.1:8580/ http-proxy=http://127.0.0.1:8580 strict-ssl=false Agent Website 国内网站代理
-ruby gems 安装指定版本:V1.17.3
-gem install bundler -v 1. <a class="read-more" href="/csdn/post/ops_network_proxy/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-04-17T14:08:08&#43;08:00">
-            17 Apr 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_network_adapter_linux/">Linux修改网卡为固定IP</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>CentOS View $ip addr 1 is loopback 2 is the current network card
-Setup auto Start job network adapter.
-ONBOOT=yes static cd /etc/sysconfig/network-scripts $sudo vi ifcfg-* *: current network card
-BOOTPROTO=static IPADDR=192.168.1.186 NETMASK=255.255.255.0 GATEWAY=192.168.1.1 DNS1=211.161.191.235 DNS2=211.161.122.197 virtual machine 设置Network Adapter为Bridged
-vmware 缺省/etc/sysconfig/network-scripts/ifcfg-eth0
-default: eth0
-vbox 缺省/etc/sysconfig/network-scripts/ifcfg-enp0XX
-default: enp0s3
-Ubuntu 设置static IP cd /etc/netplan/ sudo vi 00-installer-config.yaml #This is the network config written by &#39;subiquity&#39; network: ethernets: enp0s3: dhcp4: no addresses: - 192. <a class="read-more" href="/csdn/post/ops_network_adapter_linux/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-04-13T08:38:08&#43;08:00">
-            13 Apr 2022
         </time>
     </footer>
 </article>

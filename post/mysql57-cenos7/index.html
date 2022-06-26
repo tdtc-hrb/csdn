@@ -12,13 +12,13 @@
 
 
 
-<meta name="twitter:title" content="CentOS7安装mysql5.7"/>
+<meta name="twitter:title" content="CentOS7/8安装mysql5.7"/>
 <meta name="twitter:description" content=""/>
 <meta name="twitter:site" content="@"/>
 
 
 
-  	<meta property="og:title" content="CentOS7安装mysql5.7 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:title" content="CentOS7/8安装mysql5.7 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
   	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
   	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/mysql57-cenos7/" />
 
@@ -29,16 +29,16 @@
     
     <meta property="og:description" content="" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2020-04-10T02:21:39&#43;08:00" />
+    <meta property="article:published_time" content="2022-06-10T02:21:39&#43;08:00" />
 
     
     
 
-    <title>CentOS7安装mysql5.7 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+    <title>CentOS7/8安装mysql5.7 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
 
     
     <meta name="description" content="本安装大部分同《安装 MariaDB 10.3数据库》
-1. add repo sudo yum install http://repo.mysql.com/mysql57-community-release-el7.rpm 2. install sudo yum install mysql-community-ser" />
+Installation 1. add repo sudo yum install http://repo.mysql.com/mysql57-community-release-el7.rpm 2. install CentOS7 sudo yum instal" />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -91,17 +91,17 @@
             
         ]
     },
-    "headline": "CentOS7安装mysql5.7",
-    "name": "CentOS7安装mysql5.7",
-    "wordCount":  59 ,
+    "headline": "CentOS7/8安装mysql5.7",
+    "name": "CentOS7/8安装mysql5.7",
+    "wordCount":  120 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/mysql57-cenos7/",
-    "datePublished": "2020-04-10T02:21Z",
-    "dateModified": "2020-04-10T02:21Z",
+    "datePublished": "2022-06-10T02:21Z",
+    "dateModified": "2022-06-10T02:21Z",
     
     
     "description": "",
@@ -164,13 +164,13 @@
   <article class="post post">
 
     <header class="post-header">
-        <h1 class="post-title">CentOS7安装mysql5.7</h1>
+        <h1 class="post-title">CentOS7/8安装mysql5.7</h1>
         <small></small>
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2020-04-10T02:21:39&#43;08:00">
-            Apr 10, 2020
+          <time class="post-date" datetime="2022-06-10T02:21:39&#43;08:00">
+            Jun 10, 2022
           </time>
         
          
@@ -181,11 +181,27 @@
       <blockquote>
 <p>本安装大部分同<a href="https://blog.csdn.net/xiaobin_HLJ80/article/details/9420353">《安装 MariaDB 10.3数据库》</a></p>
 </blockquote>
-<h1 id="1-add-repo">1. add repo</h1>
+<h1 id="installation">Installation</h1>
+<h2 id="1-add-repo">1. add repo</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install http://repo.mysql.com/mysql57-community-release-el7.rpm
-</span></span></code></pre></div><h1 id="2-install">2. install</h1>
+</span></span></code></pre></div><h2 id="2-install">2. install</h2>
+<h2 id="centos7">CentOS7</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install mysql-community-server
-</span></span></code></pre></div><h1 id="3-init">3. init</h1>
+</span></span></code></pre></div><h2 id="centos8">CentOS8</h2>
+<p>Install after doing the following(disable default repo, config-manager, close gpgcheck):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf install mysql-community-server
+</span></span></code></pre></div><h3 id="disable-default-repo">disable default repo</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf remove @mysql
+</span></span><span style="display:flex;"><span>sudo dnf module reset mysql
+</span></span><span style="display:flex;"><span>sudo dnf module disable mysql
+</span></span></code></pre></div><h3 id="config-manager">config-manager</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf config-manager --disable mysql80-community
+</span></span><span style="display:flex;"><span>sudo dnf config-manager --enable mysql57-community
+</span></span></code></pre></div><h3 id="close-gpgcheck">close gpgcheck</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/yum.repos.d/mysql-community.repo
+</span></span></code></pre></div><p>mysql-community.repo:</p>
+<pre tabindex="0"><code>gpgcheck=0
+</code></pre><h2 id="3-init">3. init</h2>
 <ul>
 <li>start</li>
 </ul>
@@ -199,12 +215,8 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql&gt; SET PASSWORD FOR <span style="color:#e6db74">&#39;root&#39;</span>@<span style="color:#e6db74">&#39;localhost&#39;</span> <span style="color:#f92672">=</span> PASSWORD<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;xbfirst80&#39;</span><span style="color:#f92672">)</span>;
 </span></span></code></pre></div><h1 id="reference">Reference</h1>
 <ul>
-<li>
-<p><a href="https://dev.mysql.com/doc/mysql-yum-repo-quick-guide/en/">A Quick Guide to Using the MySQL Yum Repository</a></p>
-</li>
-<li>
-<p><a href="http://repo.mysql.com/">http://repo.mysql.com/</a></p>
-</li>
+<li><a href="https://dev.mysql.com/doc/mysql-yum-repo-quick-guide/en/">A Quick Guide to Using the MySQL Yum Repository</a></li>
+<li><a href="https://computingforgeeks.com/install-mysql-5-7-on-centos-rhel-linux/">Install MySQL 5.7 on CentOS 8 / RHEL 8 Linux</a></li>
 </ul>
 
     </section>
@@ -221,7 +233,7 @@
     
 <section class="share">
   <h4>Share this post</h4>
-  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=CentOS7%e5%ae%89%e8%a3%85mysql5.7&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fmysql57-cenos7%2f"
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=CentOS7%2f8%e5%ae%89%e8%a3%85mysql5.7&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fmysql57-cenos7%2f"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="hidden">Twitter</span>
   </a>
@@ -229,7 +241,7 @@
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="hidden">Facebook</span>
   </a>
-  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fmysql57-cenos7%2f&amp;description=CentOS7%e5%ae%89%e8%a3%85mysql5.7"
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fmysql57-cenos7%2f&amp;description=CentOS7%2f8%e5%ae%89%e8%a3%85mysql5.7"
       onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
       <span class="hidden">Pinterest</span>
   </a>
@@ -257,17 +269,17 @@
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/pd-db-phy/">
+      <a class="read-next-story" style="no-cover" href="/csdn/post/reduxjs-asyn/">
           <section class="post">
-              <h2>powerDesigner生成phy图</h2>
+              <h2>重构asyn</h2>
               
           </section>
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/pack-file-linux/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/mysql57-win/">
           <section class="post">
-              <h2>打包文件</h2>
+              <h2>安装配置MySQL 5.7</h2>
           </section>
       </a>
   

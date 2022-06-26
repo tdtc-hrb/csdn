@@ -162,6 +162,32 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql80-install/">安装MySQL 8.0</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>安装方式 绿色安装 VC Redist vc14.0 redist utf8的不同 [MY-013242] [Server] --character-set-server: &#39;utf8&#39; is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous. mysql5 character-set-server=utf8 mysql8 character-set-server=utf8mb4 验证不同 注意： mysql8.0.4， 我们将无法直接使用phpMyAdmin来登录！
+使用phpMyAdmin需要设置MySQL5.7兼容模式：
+authentication_policy=mysql_native_password,, mysql5 mysql_native_password mysql8 caching_sha2_password Init Dirctory Data:
+%MYSQL80_HOME%\bin\mysqld --initialize --console Uploads: manually create the folder &ldquo;Uploads&rdquo;.
+change password %MYSQL57_HOME%\bin\mysqladmin -uroot gen@#$! <a class="read-more" href="/csdn/post/mysql80-install/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-06-20T02:08:39&#43;08:00">
+            20 Jun 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/demo-tdtc/">TDTC Demo</a></h2>
     </header>
     <section class="post-excerpt">
@@ -339,6 +365,57 @@ import logo from &#39;./logo.svg&#39;; import &#39;./App.css&#39;; &lt;div class
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql57-cenos7/">CentOS7/8安装mysql5.7</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>本安装大部分同《安装 MariaDB 10.3数据库》
+Installation 1. add repo sudo yum install http://repo.mysql.com/mysql57-community-release-el7.rpm 2. install CentOS7 sudo yum install mysql-community-server CentOS8 Install after doing the following(disable default repo, config-manager, close gpgcheck):
+sudo dnf install mysql-community-server disable default repo sudo dnf remove @mysql sudo dnf module reset mysql sudo dnf module disable mysql config-manager sudo dnf config-manager --disable mysql80-community sudo dnf config-manager --enable mysql57-community close gpgcheck sudo vi /etc/yum.repos.d/mysql-community.repo mysql-community.repo:
+gpgcheck=0 3. init start sudo systemctl start mysqld. <a class="read-more" href="/csdn/post/mysql57-cenos7/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-06-10T02:21:39&#43;08:00">
+            10 Jun 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql57-win/">安装配置MySQL 5.7</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>一、配置和安装 ini配置详见附录
+预配置 需要vc12 redist
+设置环境变量 名称：MYSQL57_HOME 赋值：D:\progFiles\mysql-5.7 init data %MYSQL57_HOME%\bin\mysqld --initialize-insecure --console 注册/注销服务 注册 多个版本的MySQL运行：
+%MYSQL57_HOME%\bin\mysqld --install MySQL57 --defaults-file=&#34;D:\progFiles\mysql-5.7\my.ini&#34; 注销 sc delete mysql57 Enable SSL Connections for MySQL 注意： 可以忽略如下警告信息：
+CA certificate ca.pem is self signed.For more information, see Help and Support Center at http://www.mysql.com. Connection TLS Protocol Configuration mysql&gt; SHOW GLOBAL VARIABLES LIKE &#39;tls_version&#39;; To change the value of tls_version, set it at server startup. For example, to permit connections that use the TLSv1. <a class="read-more" href="/csdn/post/mysql57-win/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-06-07T12:08:39&#43;08:00">
+            7 Jun 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/vc-update-atl/">VC升级时出现的问题</a></h2>
     </header>
     <section class="post-excerpt">
@@ -360,104 +437,6 @@ solution1 Comment out this line stdAfx. <a class="read-more" href="/csdn/post/vc
         
         <time class="post-date" datetime="2022-05-31T14:28:08&#43;08:00">
             31 May 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/com-wizards-vc/">创建COM</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>IDE: Visual Studio 2019(v16.11)
-使用Wizard模式创建COM
-一、ATL项目向导 使用ATL Project Wizard创建COM
-1. 建立ATL工程 File-&gt;New-&gt;Project
-选择“MFC/ATL”中“ATL Project”。
-Note: name即是要生成的DLL文件
-2. 工程设置 我们可以自定义工程情况。
-3. 工程属性 取消编译时注册Dll。
-Project -&gt; Properties
-Linker -&gt; Register Output
-No
-二、ATL简单对象向导 1. 创建ATL Simple Object 右击项目名称，选择Add-〉New Item
-2. 设置ATL Simple Object progID 附加支持 progID progID: Simple Object ID
-附加支持 本选项针对IE支持。
-Other -&gt; Support:
-三、添加IDL方法 Tab switching from &ldquo;Solution Explorer&rdquo; to &ldquo;Class View&rdquo;
-Interface(name) -&gt; add -&gt; add method
-添加方法名称以及参数 <a class="read-more" href="/csdn/post/com-wizards-vc/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-05-18T20:08:08&#43;08:00">
-            18 May 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/vc-boost/">安装boost库(VC)</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>vs2008 cl 提示不可用.
-vs2012 Gen b2时出错。
-支持的VC版本(已测)
-名称 VS版本 msvc-12.0 VS2013 msvc-14.0 VS2015 msvc-14.1 VS2017 msvc-14.2 VS2019 1. 编译 在 x86 Native Tools Command Prompt for VS 2019 下运行
-About b2 vs bjam as of Boost 1.47.0, the official name of the executable was changed to b2. Gen b2 bootstrap.bat VS2013 b2 stage --toolset=msvc-12.0 --without-graph --without-graph_parallel --without-math --without-mpi --without-python --without-serialization --without-wave --stagedir=&#34;C:\boost\bin\vc120&#34; link=static runtime-link=shared runtime-link=static threading=multi debug release VS2015 b2 stage --toolset=msvc-14. <a class="read-more" href="/csdn/post/vc-boost/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-05-18T10:08:39&#43;08:00">
-            18 May 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_win_faq1/">Windows的一些设置</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>禁止记事本 开始-&gt;运行-&gt;gpedit.msc-&gt;计算机配置-&gt;windows设置-&gt;安全设置-&gt;软件限制策略
-右键点软件限制策略-&gt;创建软件限制策略
-点其他规则-&gt;右键新建路径规则-&gt;在“路径”下的空白输入框中“%windir%\notepad.exe“（或者c盘是系统盘的情况下：c:\windows\notepad.exe)-&gt;在“安全级别”中选择“不允许”
-附：如果你要限制.txt的程序打开，可以在路径中输入*.txt。
-日文系统 key101 日文改英文键盘
-修改注册表主键： HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\i8042prt\Parameters
-LayerDriver JPN: KBD101.DLL OverrideKeyboardIdentifier: PCAT_101KEY OverrideKeyboardSubtype: 0x00000000(0) win7+添加日文输入 “区域和语言“ ==&gt; ”键盘和语言“
-”键盘和语言“中，点击”更改键盘“， 点”添加“，找到 ”日语（日本）“， 勾选”Microsoft IME“和”日语“，其它不要勾选.
-按键盘”Alt“+”Shift“即可调出日语输入法.
-文件或目录损坏且无法读取 无法读取的所在逻辑盘E:
-chkdsk /F E: How to Delete Old Windows Folder in Windows 10 – Access Denied? takeown /F &#34;C:\Windows.old&#34; /A /R /D Y icacls &#34;C:\Windows.old&#34; /T /grant administrators:F rmdir /s /q &#34;C:\Windows.old&#34; notepad++ 关闭历史文件 打开首选项-&gt;备份 √“记住最后打开的文件” 把对勾去掉即可。
-ssh - It is also possible that a host key has just been changed D:\program-d\putty0. <a class="read-more" href="/csdn/post/ops_win_faq1/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-05-18T08:08:08&#43;08:00">
-            18 May 2022
         </time>
     </footer>
 </article>

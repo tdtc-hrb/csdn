@@ -6,7 +6,20 @@
     <description>Recent content in Posts on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 17 Jun 2022 08:18:18 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Jun 2022 02:08:39 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>安装MySQL 8.0</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/mysql80-install/</link>
+      <pubDate>Mon, 20 Jun 2022 02:08:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/mysql80-install/</guid>
+      <description>安装方式 绿色安装 VC Redist vc14.0 redist utf8的不同 [MY-013242] [Server] --character-set-server: &amp;#39;utf8&amp;#39; is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous. mysql5 character-set-server=utf8 mysql8 character-set-server=utf8mb4 验证不同 注意： mysql8.0.4， 我们将无法直接使用phpMyAdmin来登录！
+使用phpMyAdmin需要设置MySQL5.7兼容模式：
+authentication_policy=mysql_native_password,, mysql5 mysql_native_password mysql8 caching_sha2_password Init Dirctory Data:
+%MYSQL80_HOME%\bin\mysqld --initialize --console Uploads: manually create the folder &amp;ldquo;Uploads&amp;rdquo;.
+change password %MYSQL57_HOME%\bin\mysqladmin -uroot gen@#$!</description>
+    </item>
+    
     <item>
       <title>TDTC Demo</title>
       <link>https://tdtc-hrb.github.io/csdn/post/demo-tdtc/</link>
@@ -82,6 +95,31 @@ async/src/containers
 App.css &amp;amp;&amp;amp; logo.svg
 4. modify containers/App.js Add the following two blocks of code.
 import logo from &amp;#39;./logo.svg&amp;#39;; import &amp;#39;./App.css&amp;#39;; &amp;lt;div className=&amp;#34;App&amp;#34;&amp;gt; &amp;lt;header className=&amp;#34;App-header&amp;#34;&amp;gt; &amp;lt;img src={logo} className=&amp;#34;App-logo&amp;#34; alt=&amp;#34;logo&amp;#34; /&amp;gt; &amp;lt;h1 className=&amp;#34;App-title&amp;#34;&amp;gt;Welcome to React&amp;lt;/h1&amp;gt; &amp;lt;/header&amp;gt; .</description>
+    </item>
+    
+    <item>
+      <title>CentOS7/8安装mysql5.7</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/mysql57-cenos7/</link>
+      <pubDate>Fri, 10 Jun 2022 02:21:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/mysql57-cenos7/</guid>
+      <description>本安装大部分同《安装 MariaDB 10.3数据库》
+Installation 1. add repo sudo yum install http://repo.mysql.com/mysql57-community-release-el7.rpm 2. install CentOS7 sudo yum install mysql-community-server CentOS8 Install after doing the following(disable default repo, config-manager, close gpgcheck):
+sudo dnf install mysql-community-server disable default repo sudo dnf remove @mysql sudo dnf module reset mysql sudo dnf module disable mysql config-manager sudo dnf config-manager --disable mysql80-community sudo dnf config-manager --enable mysql57-community close gpgcheck sudo vi /etc/yum.repos.d/mysql-community.repo mysql-community.repo:
+gpgcheck=0 3. init start sudo systemctl start mysqld.</description>
+    </item>
+    
+    <item>
+      <title>安装配置MySQL 5.7</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/mysql57-win/</link>
+      <pubDate>Tue, 07 Jun 2022 12:08:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/mysql57-win/</guid>
+      <description>一、配置和安装 ini配置详见附录
+预配置 需要vc12 redist
+设置环境变量 名称：MYSQL57_HOME 赋值：D:\progFiles\mysql-5.7 init data %MYSQL57_HOME%\bin\mysqld --initialize-insecure --console 注册/注销服务 注册 多个版本的MySQL运行：
+%MYSQL57_HOME%\bin\mysqld --install MySQL57 --defaults-file=&amp;#34;D:\progFiles\mysql-5.7\my.ini&amp;#34; 注销 sc delete mysql57 Enable SSL Connections for MySQL 注意： 可以忽略如下警告信息：
+CA certificate ca.pem is self signed.For more information, see Help and Support Center at http://www.mysql.com. Connection TLS Protocol Configuration mysql&amp;gt; SHOW GLOBAL VARIABLES LIKE &amp;#39;tls_version&amp;#39;; To change the value of tls_version, set it at server startup. For example, to permit connections that use the TLSv1.</description>
     </item>
     
     <item>
@@ -408,18 +446,6 @@ java 7 package my.csdn2; import java.util.concurrent.ExecutorService; import jav
 project 项目配置
 sitemap 站点设置
 hdd600 - 133 STARS-081 magnet:?xt=urn:btih:04cfca3dd7f13bab4c40a16263faa1c47ccf5f6b&amp;amp;dn=STARS-081 STARS-118 magnet:?xt=urn:btih:cf823c824045d1d0a1e1e805c3b1312ccc012209&amp;amp;dn=STARS-118 STARS-134 magnet:?xt=urn:btih:17cff784b4b5d45044d0d1afd091ee74542ebd58&amp;amp;dn=STARS-134 STARS-209 magnet:?xt=urn:btih:056611d3df3142bcede86d5cbf85b6a548e8b415&amp;amp;dn=STARS-209 STARS-249 magnet:?xt=urn:btih:257719ffba826b46cbaf80cd5b04663f69198b45&amp;amp;dn=STARS-249 STAR-927 magnet:?xt=urn:btih:ee3cbf70c1f51ec6f04841c66918f4f6593eddae&amp;amp;dn=STAR-927 STAR-971 magnet:?xt=urn:btih:a980986f4a6725296dffb48f7cff4c2df9cc5507&amp;amp;dn=STAR-971 STARS-035 magnet:?xt=urn:btih:c19a77bc8956841b2f0dd362f9ed0074754e9106&amp;amp;dn=STARS-035 STARS-224 magnet:?xt=urn:btih:65B3857E94C566FA04B2F6722CFD72DBC32E44A4) </description>
-    </item>
-    
-    <item>
-      <title>安装配置MySQL 5.7</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/mysql57-win/</link>
-      <pubDate>Mon, 07 Feb 2022 12:08:39 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/mysql57-win/</guid>
-      <description>一、配置和安装 ini配置详见附录
-预配置 设置环境变量 名称：MYSQL57_HOME 赋值：D:\progFiles\mysql-5.7 init data %MYSQL57_HOME%\bin\mysqld --initialize-insecure --console 注册/注销服务 注册 多个版本的MySQL运行：
-%MYSQL57_HOME%\bin\mysqld --install MySQL57 --defaults-file=&amp;#34;D:\progFiles\mysql-5.7\my.ini&amp;#34; 注销 sc delete mysql57 Enable SSL Connections for MySQL 注意： 可以忽略如下警告信息：
-CA certificate ca.pem is self signed.For more information, see Help and Support Center at http://www.mysql.com. Connection TLS Protocol Configuration mysql&amp;gt; SHOW GLOBAL VARIABLES LIKE &amp;#39;tls_version&amp;#39;; To change the value of tls_version, set it at server startup. For example, to permit connections that use the TLSv1.</description>
     </item>
     
     <item>
@@ -1474,17 +1500,6 @@ Tips：如果想从pdm生成CDM，Tools -&amp;gt; Generate Conceptual Data Model
     </item>
     
     <item>
-      <title>CentOS7安装mysql5.7</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/mysql57-cenos7/</link>
-      <pubDate>Fri, 10 Apr 2020 02:21:39 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/mysql57-cenos7/</guid>
-      <description>本安装大部分同《安装 MariaDB 10.3数据库》
-1. add repo sudo yum install http://repo.mysql.com/mysql57-community-release-el7.rpm 2. install sudo yum install mysql-community-server 3. init start sudo systemctl start mysqld.service change password sudo grep &amp;#34;temporary password&amp;#34; /var/log/mysqld.log mysql -uroot -p Weak password mysql&amp;gt; set global validate_password_policy=0; set password mysql&amp;gt; SET PASSWORD FOR &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; = PASSWORD(&amp;#39;xbfirst80&amp;#39;); Reference A Quick Guide to Using the MySQL Yum Repository
-http://repo.mysql.com/</description>
-    </item>
-    
-    <item>
       <title>打包文件</title>
       <link>https://tdtc-hrb.github.io/csdn/post/pack-file-linux/</link>
       <pubDate>Fri, 10 Apr 2020 02:20:39 +0800</pubDate>
@@ -1524,20 +1539,6 @@ $sudo apt-get install gitlab-ce 5. config 1) ufw $sudo ufw allow http $sudo ufw 
 package xxx 此例xxx为data。
 Reference go-bindata - github
 go-micro-services</description>
-    </item>
-    
-    <item>
-      <title>安装MySQL 8.0</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/mysql80-install/</link>
-      <pubDate>Fri, 10 Apr 2020 02:08:39 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/mysql80-install/</guid>
-      <description> 安装方式：绿色安装
-OS: Windows
-大部分过程同《安装MySQL 5.7》！
-utf8的不同 [MY-013242] [Server] --character-set-server: &amp;#39;utf8&amp;#39; is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous. mysql5 character-set-server=utf8 mysql8 character-set-server=utf8mb4 验证不同 注意：从mysql8.0.4以上，我们将无法直接使用phpMyAdmin来登录！
-mysql5 mysql_native_password mysql8 caching_sha2_password File my.ini
-[mysqld] datadir=E:/progFiles/mysql-8.0-winx64/data port=3306 innodb_buffer_pool_size=1012M character-set-server=utf8mb4 [client] port=3306 plugin-dir=E:/progFiles/mysql-8.0-winx64/lib/plugin </description>
     </item>
     
   </channel>

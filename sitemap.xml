@@ -3,12 +3,15 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://tdtc-hrb.github.io/csdn/post/</loc>
-    <lastmod>2022-06-17T08:18:18+08:00</lastmod>
+    <lastmod>2022-06-20T02:08:39+08:00</lastmod>
   </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/demo-tdtc/</loc>
-    <lastmod>2022-06-17T08:18:18+08:00</lastmod>
+    <loc>https://tdtc-hrb.github.io/csdn/post/mysql80-install/</loc>
+    <lastmod>2022-06-20T02:08:39+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/</loc>
+    <lastmod>2022-06-20T02:08:39+08:00</lastmod>
+  </url><url>
+    <loc>https://tdtc-hrb.github.io/csdn/post/demo-tdtc/</loc>
     <lastmod>2022-06-17T08:18:18+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/com-ie-repoinfo/</loc>
@@ -52,6 +55,12 @@
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/reduxjs-asyn/</loc>
     <lastmod>2022-06-10T07:26:39+08:00</lastmod>
+  </url><url>
+    <loc>https://tdtc-hrb.github.io/csdn/post/mysql57-cenos7/</loc>
+    <lastmod>2022-06-10T02:21:39+08:00</lastmod>
+  </url><url>
+    <loc>https://tdtc-hrb.github.io/csdn/post/mysql57-win/</loc>
+    <lastmod>2022-06-07T12:08:39+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/vc-update-atl/</loc>
     <lastmod>2022-05-31T14:28:08+08:00</lastmod>
@@ -115,9 +124,6 @@
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/small-site/</loc>
     <lastmod>2022-02-10T02:11:39+08:00</lastmod>
-  </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/mysql57-win/</loc>
-    <lastmod>2022-02-07T12:08:39+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/ops_git_oper1/</loc>
     <lastmod>2022-01-02T01:38:08+08:00</lastmod>
@@ -383,9 +389,6 @@
     <loc>https://tdtc-hrb.github.io/csdn/post/pd-db-phy/</loc>
     <lastmod>2020-04-10T02:26:39+08:00</lastmod>
   </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/mysql57-cenos7/</loc>
-    <lastmod>2020-04-10T02:21:39+08:00</lastmod>
-  </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/pack-file-linux/</loc>
     <lastmod>2020-04-10T02:20:39+08:00</lastmod>
   </url><url>
@@ -397,9 +400,6 @@
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/go-data-using/</loc>
     <lastmod>2020-04-10T02:10:39+08:00</lastmod>
-  </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/mysql80-install/</loc>
-    <lastmod>2020-04-10T02:08:39+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/categories/</loc>
   </url>

@@ -164,6 +164,89 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c-string-i2h/">十进制转十六进制</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>工作原理：
+规则是从低位到高位 被除数，除以16, 直到商小于16。 将余数加上余商，就是16进制数。
+被除数 等于转换数 等于商 如果商大于16，就是被除数。 手算 10进制：1566
+(1) 1566 ÷ 16 = 97 余数为14 (2) 97 ÷ 16 = 6 余数为1
+16进制：第1个余数(14) + 第2个余数(1) + 余商(6) = 0x61E
+code /* * Int2hex.c * * Created on: 2010-07-20 * Author: xiaobin */ #include &lt;stdio.h&gt; #include &lt;stdlib.h&gt; void int2hex(unsigned long long input, char output[]); int main(int argc, char* argv[]) { int iDigit = 12 - 2; // 2205071409 // date: 2022. <a class="read-more" href="/csdn/post/c-string-i2h/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-05-07T00:08:08&#43;08:00">
+            7 May 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_network_proxy/">设置proxy</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>OS Windows set command
+set http_proxy=http://127.0.0.1:8580 set https_proxy=http://127.0.0.1:8580 Ubuntu export http_proxy=&#34;http://192.168.1.108:1080&#34; export https_proxy=&#34;http://192.168.1.108:1080&#34; software git set proxy git config --global http.proxy http://127.0.0.1:8580 git config --global https.proxy https://127.0.0.1:8580 unset git config --global --unset http.proxy git config --global --unset https.proxy node-js .npmrc
+cmd npm config delete https-proxy npm config set http-proxy http://host:port npm config set strict-ssl false file registry=https://registry.npmjs.org/ proxy=http://127.0.0.1:8580/ http-proxy=http://127.0.0.1:8580 strict-ssl=false Agent Website 国内网站代理
+ruby gems 安装指定版本:V1.17.3
+gem install bundler -v 1. <a class="read-more" href="/csdn/post/ops_network_proxy/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-04-17T14:08:08&#43;08:00">
+            17 Apr 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_network_adapter_linux/">Linux修改网卡为固定IP</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>CentOS View $ip addr 1 is loopback 2 is the current network card
+Setup auto Start job network adapter.
+ONBOOT=yes static cd /etc/sysconfig/network-scripts $sudo vi ifcfg-* *: current network card
+BOOTPROTO=static IPADDR=192.168.1.186 NETMASK=255.255.255.0 GATEWAY=192.168.1.1 DNS1=211.161.191.235 DNS2=211.161.122.197 virtual machine 设置Network Adapter为Bridged
+vmware 缺省/etc/sysconfig/network-scripts/ifcfg-eth0
+default: eth0
+vbox 缺省/etc/sysconfig/network-scripts/ifcfg-enp0XX
+default: enp0s3
+Ubuntu 设置static IP cd /etc/netplan/ sudo vi 00-installer-config.yaml #This is the network config written by &#39;subiquity&#39; network: ethernets: enp0s3: dhcp4: no addresses: - 192. <a class="read-more" href="/csdn/post/ops_network_adapter_linux/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-04-13T08:38:08&#43;08:00">
+            13 Apr 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/nodejs-ubuntu/">在Ubuntu下安装NodeJS</a></h2>
     </header>
     <section class="post-excerpt">
@@ -341,84 +424,6 @@ hdd600 - 133 STARS-081 magnet:?xt=urn:btih:04cfca3dd7f13bab4c40a16263faa1c47ccf5
         
         <time class="post-date" datetime="2022-02-10T02:11:39&#43;08:00">
             10 Feb 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/mysql57-win/">安装配置MySQL 5.7</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>一、配置和安装 ini配置详见附录
-预配置 设置环境变量 名称：MYSQL57_HOME 赋值：D:\progFiles\mysql-5.7 init data %MYSQL57_HOME%\bin\mysqld --initialize-insecure --console 注册/注销服务 注册 多个版本的MySQL运行：
-%MYSQL57_HOME%\bin\mysqld --install MySQL57 --defaults-file=&#34;D:\progFiles\mysql-5.7\my.ini&#34; 注销 sc delete mysql57 Enable SSL Connections for MySQL 注意： 可以忽略如下警告信息：
-CA certificate ca.pem is self signed.For more information, see Help and Support Center at http://www.mysql.com. Connection TLS Protocol Configuration mysql&gt; SHOW GLOBAL VARIABLES LIKE &#39;tls_version&#39;; To change the value of tls_version, set it at server startup. For example, to permit connections that use the TLSv1. <a class="read-more" href="/csdn/post/mysql57-win/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-02-07T12:08:39&#43;08:00">
-            7 Feb 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_git_oper1/">git操作 部分1</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>一、远程仓库回滚 1. 硬性 git reset --hard HEAD~1 &ldquo;~1&quot;表示向前回滚1个提交。 &ldquo;~2&quot;表示向前回滚2个提交，以此类推。 2. 强制推送 git push -f --set-upstream origin master 二、删除github发布 git tag -d [tag] git push origin :[tag] 例如：
-git tag -d v0.3.1 git push origin :v0.3.1 三、修改commit信息 可以修改最后一次提交的信息.
-进入git-cmd或git-bash：
-git commit --amend About：
-git-bash和git-cmd的区别
-bash是linux风格的命令行，可以使用windows和linux的命令； cmd是windows风格的命令行，可以使用windows命令；
-此外，还有一个最大的不同点，git-cmd是天生就带了系统的PATH环境变量， 这一点会导致如果你运行某些脚本的时候，如果依赖某些安装的程序， 如python、node这些，git-bash就会提示不存在对应的命令， 而git-cmd可以正确运行。 四、合并分支 1. checkout git checkout dev git checkout master 2. merge git merge origin/dev 五、设置user git init ``bash git config user.name &ldquo;xiaobin80&rdquo; git config user. <a class="read-more" href="/csdn/post/ops_git_oper1/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-01-02T01:38:08&#43;08:00">
-            2 Jan 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_dc_redis_ubuntu/">安装redis-server</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>本文适用范围：
-WSL1(Ubuntu) 开发环境 Ubuntu 生产环境 1. 安装 推荐使用PPA模式安装redis-server
-1.1 增加PPA sudo apt-add-repository ppa:chris-lea/redis-server sudo apt-get update install sudo apt-get install redis-server 1.2 配置 警告清除 Memory WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add &#39;vm.overcommit_memory = 1&#39; to /etc/sysctl.conf and then reboot or run the command &#39;sysctl vm.overcommit_memory=1&#39; for this to take effect. A: add vm.overcommit_memory=1 edit sysctl.conf:
-sudo vi /etc/sysctl. <a class="read-more" href="/csdn/post/ops_dc_redis_ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2021-09-08T08:08:08&#43;08:00">
-            8 Sep 2021
         </time>
     </footer>
 </article>
