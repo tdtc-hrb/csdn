@@ -164,6 +164,37 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/dp-factory-java/">工厂模式</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>09年5月CSDN一网友提出如下问题：
+设计一个用于管理银行客户的类BankCustomer： 仅描述客户的几个重要方面： 帐号、身份证号、姓名、联系方式、密码、账户余额。 所有的成员变量均用private访问控制，因此每一个成员变量就要有相应的存取器 （getter和setter，即获取和设置其值的相应的成员方法。需要setter还是getter，还是两者都要，视情况而定）
+成员方法：开户（开户时必须要有身份证号），系统自动生成帐号，帐号使用系统时间（格式：&quot;yyyyMMddHHmmss&quot;14位），初始密码为“666666”。注意开户和构造方法之间的关系。存钱、取钱、显示账户信息、修改密码（密码最短要六位）怎样在main中使用这个类，自行安排，要表现出你设计的类的各个方面，并在main中用英语加以注释类图如下：（使用Enterprise Architect绘制） &mdash;&mdash;&mdash;&mdash;factory部分&mdash;&mdash;&mdash;&mdash;-
+Customer： 抽象类（factory祖先类）
+BankCustomer：继承类（factory类）
+〉〉〉〉〉〉〉〉〉〉扩展部分
+ContactWay：联系方式（factory引用类）
+IM ：实时消息（ContactWay引用类）
+&mdash;&mdash;&mdash;&mdash;product部分&mdash;&mdash;&mdash;&mdash;- Bank： 接口（product接口）
+Account： 实现类（concrete product类） <a class="read-more" href="/csdn/post/dp-factory-java/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-08T10:08:08&#43;08:00">
+            8 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/jlink-fixed2/">clone问题</a></h2>
     </header>
     <section class="post-excerpt">
@@ -395,31 +426,6 @@ Reference Mutt – A Command Line Email Client to Send Mails from Terminal Mutt:
 
         
         <time class="post-date" datetime="2020-04-15T23:08:08&#43;08:00">
-            15 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_gnupg/">GNU PG</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>The GNU Privacy Guard Note: normal user login.
-1. install $yum install gnupg $yum install rng-tools 2. gen key $gpg --gen-key Press Key: O 输入完，按“Tab”切换到“OK”,按回车。 再输入一次， 3. gen revoke $gpg gen-revoke 7209DBAD Press Key: y 4. encrypt file(password) 1) password-file $vi love_shidie-password 密码文件(明文密码)
-thisispassword 2) gen gpg file Gen file: love_shidie-password.gpg
-$gpg -e -r veic_2005@163.com love_shidie-password Reference How to use Mutt email client with encrypted passwords  <a class="read-more" href="/csdn/post/ops_gnupg/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-15T22:08:08&#43;08:00">
             15 Apr 2020
         </time>
     </footer>

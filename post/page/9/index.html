@@ -164,6 +164,31 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_gnupg/">GNU PG</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>The GNU Privacy Guard Note: normal user login.
+1. install $yum install gnupg $yum install rng-tools 2. gen key $gpg --gen-key Press Key: O 输入完，按“Tab”切换到“OK”,按回车。 再输入一次， 3. gen revoke $gpg gen-revoke 7209DBAD Press Key: y 4. encrypt file(password) 1) password-file $vi love_shidie-password 密码文件(明文密码)
+thisispassword 2) gen gpg file Gen file: love_shidie-password.gpg
+$gpg -e -r veic_2005@163.com love_shidie-password Reference How to use Mutt email client with encrypted passwords  <a class="read-more" href="/csdn/post/ops_gnupg/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-15T22:08:08&#43;08:00">
+            15 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_mail_msmtp/">mail的发送</a></h2>
     </header>
     <section class="post-excerpt">
@@ -391,29 +416,6 @@ mkdir -p ~/app/hadoop tar zxvf hadoop-2. <a class="read-more" href="/csdn/post/o
 
         
         <time class="post-date" datetime="2020-04-14T09:08:08&#43;08:00">
-            14 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_hadoop_cluster_base/">Hadoop配置 - base</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>(../etc/hadoop)
-1. core-site.xml 1) HDFS the default path prefix used by the Hadoop FS client when none is given Optionally, you may now configure the default path for Hadoop clients to use the new HA-enabled logical URI. If you used “mycluster” as the nameservice ID earlier, this will be the value of the authority portion of all of your HDFS paths. This may be configured like so, in your core-site. <a class="read-more" href="/csdn/post/ops_hadoop_cluster_base/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-14T08:08:08&#43;08:00">
             14 Apr 2020
         </time>
     </footer>

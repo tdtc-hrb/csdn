@@ -162,6 +162,39 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql80-cenos8/">CentOS8安装mysql8.0</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Installing and Setting up the Percona Server for MySQL 8.0 Repository yum install -y https://repo.percona.com/yum/percona-release-latest.noarch.rpm disable mysql module repo:
+percona-release setup ps80 Installing and Setting up the Percona Server for MySQL 8.0 Binaries yum -y install percona-server-server Launch:
+systemctl start mysqldsystemctl status mysqld change password sudo grep &#34;temporary password&#34; /var/log/mysqld.log mysql -uroot -p Change default password：
+ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;qaz1!Xsw2@&#39;; Weak password mysql&gt; set global validate_password.policy=0; set password ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;xbfirst80&#39;; Ref Installing Percona Server for MySQL on Rocky Linux 8 How to Change MySQL Password Policy Level  <a class="read-more" href="/csdn/post/mysql80-cenos8/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        on
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/rocky-linux-8/">#Rocky Linux 8</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/alma-linux-8/">#Alma Linux 8</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/percona8/">#Percona8</a>,
+            
+        
+        <time class="post-date" datetime="2022-06-27T03:21:39&#43;08:00">
+            27 Jun 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/mysql80-install/">安装MySQL 8.0</a></h2>
     </header>
     <section class="post-excerpt">
@@ -409,34 +442,6 @@ CA certificate ca.pem is self signed.For more information, see Help and Support 
         
         <time class="post-date" datetime="2022-06-07T12:08:39&#43;08:00">
             7 Jun 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/vc-update-atl/">VC升级时出现的问题</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>VC6迁移到VC2008+
-ATL Active Template Library (ATL)
-C1189 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atlcore.h(35): fatal error C1189: #error : This file requires _WIN32_WINNT to be #defined at least to 0x0403. Value 0x0501 or higher is recommended. A:
-StdAfx.h
-#define _WIN32_WINNT 0x0400 -&gt;
-#define _WIN32_WINNT 0x0501 C1083(atlimpl) c:\users\xiaobin\documents\visual studio 2013\projects\crcfcn_vc\stdafx.cpp(13): fatal error C1083: Cannot open include file: &#39;atlimpl.cpp&#39;: No such file or directory A: solution1 or solution2.
-solution1 Comment out this line stdAfx. <a class="read-more" href="/csdn/post/vc-update-atl/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-05-31T14:28:08&#43;08:00">
-            31 May 2022
         </time>
     </footer>
 </article>
