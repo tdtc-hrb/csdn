@@ -290,6 +290,30 @@ ssh - It is also possible that a host key has just been changed D:\program-d\put
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_network_proxy/">设置proxy</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>OS Windows set command
+set http_proxy=http://127.0.0.1:8580 set https_proxy=http://127.0.0.1:8580 Ubuntu export http_proxy=&#34;http://192.168.1.108:1080&#34; export https_proxy=&#34;http://192.168.1.108:1080&#34; With user and password Set up the server in the tool: Check &ldquo;Run xxx as Server(listens 0.0.0.)&rdquo;
+export http_proxy=http://USERNAME:PASSWORD@192.168.1.108:8580/ Ref How to set up proxy using http_proxy &amp; https_proxy environment variable in Linux? software git set proxy git config --global http.proxy http://127.0.0.1:8580 git config --global https.proxy https://127.0.0.1:8580 unset git config --global --unset http.proxy git config --global --unset https. <a class="read-more" href="/csdn/post/ops_network_proxy/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-05-17T14:08:08&#43;08:00">
+            17 May 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/c-bsd_socket-server/">使用fork的server</a></h2>
     </header>
     <section class="post-excerpt">
@@ -439,34 +463,6 @@ Reference How to install Java on CentOS 7 OpenJDK Version Info - Releases  <a cl
         
         <time class="post-date" datetime="2022-05-14T08:08:08-08:00">
             14 May 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/vc-bsd_socket/">使用BSD socket</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>BSD Socket是标准的套接字规范，那么怎么在windows使用他们呢？
-Init &amp; clean 首先要引用&lt;winsock2.h&gt;和ws2_32.lib； 使用struct addrinfo需引用&lt;ws2tcpip.h&gt;。
-程序头: WSAStartup(), 程序尾: WSACleanup();
-code 以下程序在VC9/VC14.1下编译通过
-客户端程序 prj1Clt 无getaddrinfo版
-注意：InetPton函数只能在Windows Version &gt;=6上实现！
-// prj1Clt.cpp : This file contains the &#39;main&#39; function. Program execution begins and ends there. // /** * Networking program is Win version with BSD Socket * Client side * * Author: xiaobin * Date: 2013-12-12 * Modfity: 2020-5-28 */ #include &lt;iostream&gt; #if _MSC_VER &gt; 1800 #include &lt;tchar.h&gt; #endif #ifdef _WIN32 #include &lt;winsock2. <a class="read-more" href="/csdn/post/vc-bsd_socket/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-05-12T08:08:08&#43;08:00">
-            12 May 2022
         </time>
     </footer>
 </article>

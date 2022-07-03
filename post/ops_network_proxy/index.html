@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="如何使用代理工具" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2022-04-17T14:08:08&#43;08:00" />
+    <meta property="article:published_time" content="2022-05-17T14:08:08&#43;08:00" />
 
     
     
@@ -92,15 +92,15 @@
     },
     "headline": "设置proxy",
     "name": "设置proxy",
-    "wordCount":  100 ,
+    "wordCount":  133 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/ops_network_proxy/",
-    "datePublished": "2022-04-17T14:08Z",
-    "dateModified": "2022-04-17T14:08Z",
+    "datePublished": "2022-05-17T14:08Z",
+    "dateModified": "2022-05-17T14:08Z",
     
     
     "description": "如何使用代理工具",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2022-04-17T14:08:08&#43;08:00">
-            Apr 17, 2022
+          <time class="post-date" datetime="2022-05-17T14:08:08&#43;08:00">
+            May 17, 2022
           </time>
         
          
@@ -187,7 +187,15 @@
 </span></span></code></pre></div><h2 id="ubuntu">Ubuntu</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export http_proxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://192.168.1.108:1080&#34;</span>
 </span></span><span style="display:flex;"><span>export https_proxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://192.168.1.108:1080&#34;</span>
-</span></span></code></pre></div><h1 id="software">software</h1>
+</span></span></code></pre></div><h3 id="with-user-and-password">With user and password</h3>
+<p>Set up the server in the tool: <br>
+Check &ldquo;Run xxx as Server(listens 0.0.0.)&rdquo;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export http_proxy<span style="color:#f92672">=</span>http://USERNAME:PASSWORD@192.168.1.108:8580/
+</span></span></code></pre></div><h2 id="ref">Ref</h2>
+<ul>
+<li><a href="https://www.golinuxcloud.com/set-up-proxy-http-proxy-environment-variable/">How to set up proxy using http_proxy &amp; https_proxy environment variable in Linux?</a></li>
+</ul>
+<h1 id="software">software</h1>
 <h2 id="git">git</h2>
 <h3 id="set-proxy">set proxy</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config --global http.proxy http://127.0.0.1:8580
@@ -285,17 +293,17 @@
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/c-string-i2h/">
+      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_win_faq1/">
           <section class="post">
-              <h2>十进制转十六进制</h2>
+              <h2>Windows的一些设置</h2>
               
           </section>
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_network_adapter_linux/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/c-bsd_socket-server/">
           <section class="post">
-              <h2>Linux修改网卡为固定IP</h2>
+              <h2>使用fork的server</h2>
           </section>
       </a>
   

@@ -209,6 +209,17 @@ ssh - It is also possible that a host key has just been changed D:\program-d\put
     </item>
     
     <item>
+      <title>设置proxy</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_network_proxy/</link>
+      <pubDate>Tue, 17 May 2022 14:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_network_proxy/</guid>
+      <description>OS Windows set command
+set http_proxy=http://127.0.0.1:8580 set https_proxy=http://127.0.0.1:8580 Ubuntu export http_proxy=&amp;#34;http://192.168.1.108:1080&amp;#34; export https_proxy=&amp;#34;http://192.168.1.108:1080&amp;#34; With user and password Set up the server in the tool: Check &amp;ldquo;Run xxx as Server(listens 0.0.0.)&amp;rdquo;
+export http_proxy=http://USERNAME:PASSWORD@192.168.1.108:8580/ Ref How to set up proxy using http_proxy &amp;amp; https_proxy environment variable in Linux? software git set proxy git config --global http.proxy http://127.0.0.1:8580 git config --global https.proxy https://127.0.0.1:8580 unset git config --global --unset http.proxy git config --global --unset https.</description>
+    </item>
+    
+    <item>
       <title>使用fork的server</title>
       <link>https://tdtc-hrb.github.io/csdn/post/c-bsd_socket-server/</link>
       <pubDate>Mon, 16 May 2022 08:08:08 +0800</pubDate>
@@ -335,19 +346,6 @@ code 以下程序在VC9/VC14.1下编译通过
 (1) 1566 ÷ 16 = 97 余数为14 (2) 97 ÷ 16 = 6 余数为1
 16进制：第1个余数(14) + 第2个余数(1) + 余商(6) = 0x61E
 code /* * Int2hex.c * * Created on: 2010-07-20 * Author: xiaobin */ #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;stdlib.h&amp;gt; void int2hex(unsigned long long input, char output[]); int main(int argc, char* argv[]) { int iDigit = 12 - 2; // 2205071409 // date: 2022.</description>
-    </item>
-    
-    <item>
-      <title>设置proxy</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_network_proxy/</link>
-      <pubDate>Sun, 17 Apr 2022 14:08:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_network_proxy/</guid>
-      <description>OS Windows set command
-set http_proxy=http://127.0.0.1:8580 set https_proxy=http://127.0.0.1:8580 Ubuntu export http_proxy=&amp;#34;http://192.168.1.108:1080&amp;#34; export https_proxy=&amp;#34;http://192.168.1.108:1080&amp;#34; software git set proxy git config --global http.proxy http://127.0.0.1:8580 git config --global https.proxy https://127.0.0.1:8580 unset git config --global --unset http.proxy git config --global --unset https.proxy node-js .npmrc
-cmd npm config delete https-proxy npm config set http-proxy http://host:port npm config set strict-ssl false file registry=https://registry.npmjs.org/ proxy=http://127.0.0.1:8580/ http-proxy=http://127.0.0.1:8580 strict-ssl=false Agent Website 国内网站代理
-ruby gems 安装指定版本:V1.17.3
-gem install bundler -v 1.</description>
     </item>
     
     <item>
