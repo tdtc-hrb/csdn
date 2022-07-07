@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2022-06-20T02:08:39&#43;08:00" />
+    <meta property="article:published_time" content="2022-07-07T02:08:39&#43;08:00" />
 
     
     
@@ -37,7 +37,7 @@
     <title>安装MySQL 8.0 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
 
     
-    <meta name="description" content="安装方式 绿色安装 VC Redist vc14.0 redist utf8的不同 [MY-013242] [Server] --character-set-server: &amp;#39;utf8&amp;#39; is currently an alias for the character set UTF8MB3, but w" />
+    <meta name="description" content="MySQL 5 &amp;amp; 8 utf8 [MY-013242] [Server] --character-set-server: &amp;#39;utf8&amp;#39; is currently an alias for the character set UTF8MB3, but will be an alias for U" />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -92,15 +92,15 @@
     },
     "headline": "安装MySQL 8.0",
     "name": "安装MySQL 8.0",
-    "wordCount":  2279 ,
-    "timeRequired": "PT11M",
+    "wordCount":  191 ,
+    "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/mysql80-install/",
-    "datePublished": "2022-06-20T02:08Z",
-    "dateModified": "2022-06-20T02:08Z",
+    "datePublished": "2022-07-07T02:08Z",
+    "dateModified": "2022-07-07T02:08Z",
     
     
     "description": "",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2022-06-20T02:08:39&#43;08:00">
-            Jun 20, 2022
+          <time class="post-date" datetime="2022-07-07T02:08:39&#43;08:00">
+            Jul 7, 2022
           </time>
         
          
@@ -177,29 +177,52 @@
     </header>
 
     <section class="post-content">
-      <ul>
+      <h1 id="mysql-5--8">MySQL 5 &amp; 8</h1>
+<h2 id="utf8">utf8</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>[MY<span style="color:#f92672">-</span><span style="color:#ae81ff">013242</span>] [Server] <span style="color:#75715e">--character-set-server: &#39;utf8&#39; is currently an alias for the character set UTF8MB3,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>but will be an <span style="color:#66d9ef">alias</span> <span style="color:#66d9ef">for</span> UTF8MB4 <span style="color:#66d9ef">in</span> a future release. Please consider <span style="color:#66d9ef">using</span> UTF8MB4 <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">to</span> be unambiguous.
+</span></span></code></pre></div><ul>
+<li>mysql5</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>character<span style="color:#f92672">-</span><span style="color:#66d9ef">set</span><span style="color:#f92672">-</span>server<span style="color:#f92672">=</span>utf8
+</span></span></code></pre></div><ul>
+<li>mysql8</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>character<span style="color:#f92672">-</span><span style="color:#66d9ef">set</span><span style="color:#f92672">-</span>server<span style="color:#f92672">=</span>utf8mb4
+</span></span></code></pre></div><h2 id="validate-password">validate password</h2>
+<p>注意： <a href="https://mysqlserverteam.com/mysql-8-0-4-new-default-authentication-plugin-caching_sha2_password/">mysql8.0.4</a>，
+我们将无法直接使用phpMyAdmin来登录！</p>
+<p>使用phpMyAdmin需要设置MySQL5.7兼容模式：</p>
+<pre tabindex="0"><code>authentication_policy=mysql_native_password,,
+</code></pre><ul>
+<li>mysql5</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>mysql_native_password
+</span></span></code></pre></div><ul>
+<li>mysql8</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>caching_sha2_password
+</span></span></code></pre></div><h1 id="ubuntu">Ubuntu</h1>
+<p>install mysql8:</p>
+<pre tabindex="0"><code>sudo apt install mysql-server
+</code></pre><pre tabindex="0"><code>sudo systemctl start mysql.service
+</code></pre><h2 id="config-mysql-secure">config mysql secure</h2>
+<pre tabindex="0"><code>sudo mysql
+</code></pre><p>password rule:</p>
+<pre tabindex="0"><code>SHOW VARIABLES LIKE &#39;validate_password%&#39;;
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;root&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span> IDENTIFIED <span style="color:#66d9ef">WITH</span> mysql_native_password <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;xbfirst80&#39;</span>;
+</span></span></code></pre></div><pre tabindex="0"><code>sudo mysql_secure_installation
+</code></pre><h2 id="add-user">add user</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;DBAdmin&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span> IDENTIFIED <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;xb80first&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">ALL</span> <span style="color:#66d9ef">PRIVILEGES</span> <span style="color:#66d9ef">ON</span> <span style="color:#f92672">*</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;DBAdmin&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span> <span style="color:#66d9ef">WITH</span> <span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">OPTION</span>;
+</span></span><span style="display:flex;"><span>flush <span style="color:#66d9ef">privileges</span>;
+</span></span></code></pre></div><h1 id="windows">Windows</h1>
+<ul>
 <li>安装方式 <br>
 绿色安装</li>
 <li>VC Redist <br>
 <a href="https://docs.microsoft.com/en-US/cpp/windows/latest-supported-vc-redist?view=msvc-170#visual-studio-2015-2017-2019-and-2022">vc14.0 redist</a></li>
 </ul>
-<h1 id="utf8的不同">utf8的不同</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>[MY<span style="color:#f92672">-</span><span style="color:#ae81ff">013242</span>] [Server] <span style="color:#75715e">--character-set-server: &#39;utf8&#39; is currently an alias for the character set UTF8MB3,
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>but will be an <span style="color:#66d9ef">alias</span> <span style="color:#66d9ef">for</span> UTF8MB4 <span style="color:#66d9ef">in</span> a future release. Please consider <span style="color:#66d9ef">using</span> UTF8MB4 <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">to</span> be unambiguous.
-</span></span></code></pre></div><h2 id="mysql5">mysql5</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>character<span style="color:#f92672">-</span><span style="color:#66d9ef">set</span><span style="color:#f92672">-</span>server<span style="color:#f92672">=</span>utf8
-</span></span></code></pre></div><h2 id="mysql8">mysql8</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>character<span style="color:#f92672">-</span><span style="color:#66d9ef">set</span><span style="color:#f92672">-</span>server<span style="color:#f92672">=</span>utf8mb4
-</span></span></code></pre></div><h1 id="验证不同">验证不同</h1>
-<p>注意： <a href="https://mysqlserverteam.com/mysql-8-0-4-new-default-authentication-plugin-caching_sha2_password/">mysql8.0.4</a>，
-我们将无法直接使用phpMyAdmin来登录！</p>
-<p>使用phpMyAdmin需要设置MySQL5.7兼容模式：</p>
-<pre tabindex="0"><code>authentication_policy=mysql_native_password,,
-</code></pre><h2 id="mysql5-1">mysql5</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>mysql_native_password
-</span></span></code></pre></div><h2 id="mysql8-1">mysql8</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>caching_sha2_password
-</span></span></code></pre></div><h1 id="init">Init</h1>
 <h2 id="dirctory">Dirctory</h2>
 <p>Data:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>%MYSQL80_HOME%\bin\mysqld --initialize --console
@@ -209,351 +232,14 @@ manually create the folder &ldquo;Uploads&rdquo;.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>%MYSQL57_HOME%\bin\mysqladmin -uroot gen@#$!pw7 password xbfirst80
 </span></span></code></pre></div><h2 id="dba">Dba</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;DBAdmin&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span> IDENTIFIED <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;xbfirst&#39;</span>;
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">ALL</span> <span style="color:#66d9ef">PRIVILEGES</span> <span style="color:#66d9ef">ON</span> <span style="color:#f92672">*</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;DBAdmin&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span> <span style="color:#66d9ef">WITH</span> <span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">OPTION</span>;
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>FLUSH <span style="color:#66d9ef">PRIVILEGES</span>;
-</span></span></code></pre></div><h2 id="file">File</h2>
-<p>ini template file: the file obtained after installing with <a href="https://dev.mysql.com/downloads/windows/installer/8.0.html">MSI Installer</a>.</p>
-<pre tabindex="0"><code>C:\ProgramData\MySQL\MySQL Server 8.0\my.ini
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#f92672">#</span> Other <span style="color:#66d9ef">default</span> tuning <span style="color:#66d9ef">values</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> MySQL Server Instance Configuration File
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#75715e">----------------------------------------------------------------------
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">#</span> <span style="color:#66d9ef">Generated</span> <span style="color:#66d9ef">by</span> the MySQL Server Instance Configuration Wizard
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> Installation Instructions
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#75715e">----------------------------------------------------------------------
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#66d9ef">On</span> Linux you can <span style="color:#66d9ef">copy</span> this file <span style="color:#66d9ef">to</span> <span style="color:#f92672">/</span>etc<span style="color:#f92672">/</span>my.cnf <span style="color:#66d9ef">to</span> <span style="color:#66d9ef">set</span> <span style="color:#66d9ef">global</span> <span style="color:#66d9ef">options</span>,
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> mysql<span style="color:#f92672">-</span><span style="color:#66d9ef">data</span><span style="color:#f92672">-</span>dir<span style="color:#f92672">/</span>my.cnf <span style="color:#66d9ef">to</span> <span style="color:#66d9ef">set</span> server<span style="color:#f92672">-</span><span style="color:#66d9ef">specific</span> <span style="color:#66d9ef">options</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> (<span style="color:#f92672">@</span>localstatedir<span style="color:#f92672">@</span> <span style="color:#66d9ef">for</span> this installation) <span style="color:#66d9ef">or</span> <span style="color:#66d9ef">to</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#f92672">~/</span>.my.cnf <span style="color:#66d9ef">to</span> <span style="color:#66d9ef">set</span> <span style="color:#66d9ef">user</span><span style="color:#f92672">-</span><span style="color:#66d9ef">specific</span> <span style="color:#66d9ef">options</span>.
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#66d9ef">On</span> Windows, <span style="color:#66d9ef">when</span> MySQL has been installed <span style="color:#66d9ef">using</span> MySQL Installer you
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> should keep this file <span style="color:#66d9ef">in</span> the ProgramData directory <span style="color:#66d9ef">of</span> your server
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> (e.<span style="color:#66d9ef">g</span>. <span style="color:#66d9ef">C</span>:<span style="color:#960050;background-color:#1e0010">\</span>ProgramData<span style="color:#960050;background-color:#1e0010">\</span>MySQL<span style="color:#960050;background-color:#1e0010">\</span>MySQL Server X.Y). <span style="color:#66d9ef">To</span> make sure the server
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#66d9ef">reads</span> the config file, use the startup <span style="color:#66d9ef">option</span> <span style="color:#e6db74">&#34;--defaults-file&#34;</span>. 
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#66d9ef">To</span> run the server <span style="color:#66d9ef">from</span> the command line, <span style="color:#66d9ef">execute</span> this <span style="color:#66d9ef">in</span> a 
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> command line shell, e.<span style="color:#66d9ef">g</span>.
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> mysqld <span style="color:#75715e">--defaults-file=&#34;C:\Program Files\MySQL\MySQL Server X.Y\my.ini&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#66d9ef">To</span> install the server <span style="color:#66d9ef">as</span> a Windows service manually, <span style="color:#66d9ef">execute</span> this <span style="color:#66d9ef">in</span> a 
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> command line shell, e.<span style="color:#66d9ef">g</span>.
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> mysqld <span style="color:#75715e">--install MySQLXY --defaults-file=&#34;C:\Program Files\MySQL\MySQL Server X.Y\my.ini&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#66d9ef">And</span> <span style="color:#66d9ef">then</span> <span style="color:#66d9ef">execute</span> this <span style="color:#66d9ef">in</span> a command line shell <span style="color:#66d9ef">to</span> <span style="color:#66d9ef">start</span> the server, e.<span style="color:#66d9ef">g</span>.
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> net <span style="color:#66d9ef">start</span> MySQLXY
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> Guidelines <span style="color:#66d9ef">for</span> editing this file
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#75715e">----------------------------------------------------------------------
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#66d9ef">In</span> this file, you can use <span style="color:#66d9ef">all</span> long <span style="color:#66d9ef">options</span> that the program supports.
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#66d9ef">If</span> you want <span style="color:#66d9ef">to</span> know the <span style="color:#66d9ef">options</span> a program supports, <span style="color:#66d9ef">start</span> the program
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#66d9ef">with</span> the <span style="color:#e6db74">&#34;--help&#34;</span> <span style="color:#66d9ef">option</span>.
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#66d9ef">More</span> detailed information about the individual <span style="color:#66d9ef">options</span> can also be
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#66d9ef">found</span> <span style="color:#66d9ef">in</span> the manual.
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#66d9ef">For</span> advice <span style="color:#66d9ef">on</span> how <span style="color:#66d9ef">to</span> change settings please see
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> https:<span style="color:#f92672">//</span>dev.mysql.com<span style="color:#f92672">/</span>doc<span style="color:#f92672">/</span>refman<span style="color:#f92672">/</span><span style="color:#ae81ff">8</span>.<span style="color:#ae81ff">0</span><span style="color:#f92672">/</span>en<span style="color:#f92672">/</span>server<span style="color:#f92672">-</span>configuration<span style="color:#f92672">-</span><span style="color:#66d9ef">defaults</span>.html
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> CLIENT SECTION
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#75715e">----------------------------------------------------------------------
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> The following <span style="color:#66d9ef">options</span> will be <span style="color:#66d9ef">read</span> <span style="color:#66d9ef">by</span> MySQL client applications.
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> Note that <span style="color:#66d9ef">only</span> client applications shipped <span style="color:#66d9ef">by</span> MySQL <span style="color:#66d9ef">are</span> guaranteed
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#66d9ef">to</span> <span style="color:#66d9ef">read</span> this section. <span style="color:#66d9ef">If</span> you want your own MySQL client program <span style="color:#66d9ef">to</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> honor these <span style="color:#66d9ef">values</span>, you need <span style="color:#66d9ef">to</span> specify it <span style="color:#66d9ef">as</span> an <span style="color:#66d9ef">option</span> during the
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> MySQL client library initialization.
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span>
-</span></span><span style="display:flex;"><span>[client]
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> pipe<span style="color:#f92672">=</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> socket<span style="color:#f92672">=</span>MYSQL
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>port<span style="color:#f92672">=</span><span style="color:#ae81ff">3306</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[mysql]
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">no</span><span style="color:#f92672">-</span>beep
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#66d9ef">default</span><span style="color:#f92672">-</span>character<span style="color:#f92672">-</span><span style="color:#66d9ef">set</span><span style="color:#f92672">=</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> SERVER SECTION
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#75715e">----------------------------------------------------------------------
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> The following <span style="color:#66d9ef">options</span> will be <span style="color:#66d9ef">read</span> <span style="color:#66d9ef">by</span> the MySQL Server. Make sure that
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> you have installed the server correctly (see above) so it <span style="color:#66d9ef">reads</span> this 
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> file.
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> server_type<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
-</span></span><span style="display:flex;"><span>[mysqld]
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> The <span style="color:#66d9ef">next</span> three <span style="color:#66d9ef">options</span> <span style="color:#66d9ef">are</span> mutually <span style="color:#66d9ef">exclusive</span> <span style="color:#66d9ef">to</span> SERVER_PORT below.
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> skip<span style="color:#f92672">-</span>networking
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> enable<span style="color:#f92672">-</span>named<span style="color:#f92672">-</span>pipe
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> shared<span style="color:#f92672">-</span>memory
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> shared<span style="color:#f92672">-</span>memory<span style="color:#f92672">-</span>base<span style="color:#f92672">-</span>name<span style="color:#f92672">=</span>MYSQL
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> The Pipe the MySQL Server will use.
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> socket<span style="color:#f92672">=</span>MYSQL
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> The <span style="color:#66d9ef">access</span> control <span style="color:#66d9ef">granted</span> <span style="color:#66d9ef">to</span> clients <span style="color:#66d9ef">on</span> the named pipe created <span style="color:#66d9ef">by</span> the MySQL Server.
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> named<span style="color:#f92672">-</span>pipe<span style="color:#f92672">-</span><span style="color:#66d9ef">full</span><span style="color:#f92672">-</span><span style="color:#66d9ef">access</span><span style="color:#f92672">-</span><span style="color:#66d9ef">group</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> The TCP<span style="color:#f92672">/</span>IP Port the MySQL Server will <span style="color:#66d9ef">listen</span> <span style="color:#66d9ef">on</span>
-</span></span><span style="display:flex;"><span>port<span style="color:#f92672">=</span><span style="color:#ae81ff">3306</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> Path <span style="color:#66d9ef">to</span> installation directory. <span style="color:#66d9ef">All</span> paths <span style="color:#66d9ef">are</span> usually resolved <span style="color:#66d9ef">relative</span> <span style="color:#66d9ef">to</span> this.
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> basedir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;C:/Program Files/MySQL/MySQL Server 8.0/&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> Path <span style="color:#66d9ef">to</span> the <span style="color:#66d9ef">database</span> root
-</span></span><span style="display:flex;"><span>datadir<span style="color:#f92672">=</span>D:<span style="color:#f92672">/</span>progFiles<span style="color:#f92672">/</span>mysql<span style="color:#f92672">-</span><span style="color:#ae81ff">8</span>.<span style="color:#ae81ff">0</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#66d9ef">Data</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> The <span style="color:#66d9ef">default</span> character <span style="color:#66d9ef">set</span> that will be used <span style="color:#66d9ef">when</span> a <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">schema</span> <span style="color:#66d9ef">or</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">is</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> created <span style="color:#66d9ef">and</span> <span style="color:#66d9ef">no</span> character <span style="color:#66d9ef">set</span> <span style="color:#66d9ef">is</span> <span style="color:#66d9ef">defined</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> character<span style="color:#f92672">-</span><span style="color:#66d9ef">set</span><span style="color:#f92672">-</span>server<span style="color:#f92672">=</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> Administers multifactor authentication (MFA) capabilities. It applies <span style="color:#66d9ef">to</span> the authentication
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> factor<span style="color:#f92672">-</span>related clauses <span style="color:#66d9ef">of</span> <span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> <span style="color:#66d9ef">and</span> <span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">USER</span> statements used <span style="color:#66d9ef">to</span> manage MySQL account
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> definitions, <span style="color:#66d9ef">where</span> <span style="color:#960050;background-color:#1e0010">“</span>factor<span style="color:#960050;background-color:#1e0010">”</span> corresponds <span style="color:#66d9ef">to</span> an authentication <span style="color:#66d9ef">method</span> <span style="color:#66d9ef">or</span> plugin associated
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#66d9ef">with</span> an account.
-</span></span><span style="display:flex;"><span>authentication_policy<span style="color:#f92672">=</span>mysql_native_password,,
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> The <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">storage</span> engine that will be used <span style="color:#66d9ef">when</span> <span style="color:#66d9ef">create</span> <span style="color:#66d9ef">new</span> tables <span style="color:#66d9ef">when</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">default</span><span style="color:#f92672">-</span><span style="color:#66d9ef">storage</span><span style="color:#f92672">-</span>engine<span style="color:#f92672">=</span>INNODB
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#66d9ef">Set</span> the <span style="color:#66d9ef">SQL</span> <span style="color:#66d9ef">mode</span> <span style="color:#66d9ef">to</span> <span style="color:#66d9ef">strict</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">sql</span><span style="color:#f92672">-</span><span style="color:#66d9ef">mode</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#66d9ef">General</span> <span style="color:#66d9ef">and</span> Slow logging.
-</span></span><span style="display:flex;"><span>log<span style="color:#f92672">-</span><span style="color:#66d9ef">output</span><span style="color:#f92672">=</span>FILE
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">general</span><span style="color:#f92672">-</span>log<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>general_log_file<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;DESKTOP-4KL0N5T.log&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>slow<span style="color:#f92672">-</span>query<span style="color:#f92672">-</span>log<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>slow_query_log_file<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;DESKTOP-4KL0N5T-slow.log&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>long_query_time<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> Error Logging.
-</span></span><span style="display:flex;"><span>log<span style="color:#f92672">-</span>error<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;DESKTOP-4KL0N5T.err&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#f92672">*****</span> <span style="color:#66d9ef">Group</span> Replication Related <span style="color:#f92672">*****</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> Specifies the base name <span style="color:#66d9ef">to</span> use <span style="color:#66d9ef">for</span> binary log files. <span style="color:#66d9ef">With</span> binary logging
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> enabled, the server logs <span style="color:#66d9ef">all</span> statements that change <span style="color:#66d9ef">data</span> <span style="color:#66d9ef">to</span> the binary
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> log, which <span style="color:#66d9ef">is</span> used <span style="color:#66d9ef">for</span> backup <span style="color:#66d9ef">and</span> replication.
-</span></span><span style="display:flex;"><span>log<span style="color:#f92672">-</span>bin<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;DESKTOP-4KL0N5T-bin&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#f92672">*****</span> <span style="color:#66d9ef">Group</span> Replication Related <span style="color:#f92672">*****</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> Specifies the server ID. <span style="color:#66d9ef">For</span> servers that <span style="color:#66d9ef">are</span> used <span style="color:#66d9ef">in</span> a replication topology,
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> you must specify a <span style="color:#66d9ef">unique</span> server ID <span style="color:#66d9ef">for</span> <span style="color:#66d9ef">each</span> replication server, <span style="color:#66d9ef">in</span> the
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> range <span style="color:#66d9ef">from</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">to</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">^</span><span style="color:#ae81ff">32</span> <span style="color:#960050;background-color:#1e0010">−</span> <span style="color:#ae81ff">1</span>. <span style="color:#960050;background-color:#1e0010">“</span><span style="color:#66d9ef">Unique</span><span style="color:#960050;background-color:#1e0010">”</span> means that <span style="color:#66d9ef">each</span> ID must be different
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#66d9ef">from</span> <span style="color:#66d9ef">every</span> other ID <span style="color:#66d9ef">in</span> use <span style="color:#66d9ef">by</span> <span style="color:#66d9ef">any</span> other <span style="color:#66d9ef">source</span> <span style="color:#66d9ef">or</span> replica.
-</span></span><span style="display:flex;"><span>server<span style="color:#f92672">-</span>id<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> NOTE: <span style="color:#66d9ef">Modify</span> this value <span style="color:#66d9ef">after</span> Server initialization won<span style="color:#e6db74">&#39;t take effect.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">lower_case_table_names=1
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Secure File Priv.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">secure-file-priv=&#34;D:/progFiles/mysql-8.0/Uploads&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># The maximum amount of concurrent sessions the MySQL server will
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># allow. One of these connections will be reserved for a user with
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># SUPER privileges to allow the administrator to login even if the
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># connection limit has been reached.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">max_connections=151
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># The number of open tables for all threads. Increasing this value
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># increases the number of file descriptors that mysqld requires.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Therefore you have to make sure to set the amount of open files
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># allowed to at least 4096 in the variable &#34;open-files-limit&#34; in
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># section [mysqld_safe]
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">table_open_cache=4000
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Maximum size for internal (in-memory) temporary tables. If a table
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># grows larger than this value, it is automatically converted to disk
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># based table This limitation is for a single table. There can be many
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># of them.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">tmp_table_size=651M
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># How many threads we should keep in a cache for reuse. When a client
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># disconnects, the client&#39;</span>s threads <span style="color:#66d9ef">are</span> put <span style="color:#66d9ef">in</span> the <span style="color:#66d9ef">cache</span> <span style="color:#66d9ef">if</span> there aren<span style="color:#e6db74">&#39;t
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># more than thread_cache_size threads from before.  This greatly reduces
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># the amount of thread creations needed if you have a lot of new
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># connections. (Normally this doesn&#39;</span>t give a notable performance
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> improvement <span style="color:#66d9ef">if</span> you have a good thread <span style="color:#66d9ef">implementation</span>.)
-</span></span><span style="display:flex;"><span>thread_cache_size<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#***</span> MyISAM <span style="color:#66d9ef">Specific</span> <span style="color:#66d9ef">options</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> The maximum <span style="color:#66d9ef">size</span> <span style="color:#66d9ef">of</span> the <span style="color:#66d9ef">temporary</span> file MySQL <span style="color:#66d9ef">is</span> allowed <span style="color:#66d9ef">to</span> use while
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> recreating the <span style="color:#66d9ef">index</span> (during REPAIR, <span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">or</span> <span style="color:#66d9ef">LOAD</span> <span style="color:#66d9ef">DATA</span> INFILE.
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#66d9ef">If</span> the file<span style="color:#f92672">-</span><span style="color:#66d9ef">size</span> would be bigger <span style="color:#66d9ef">than</span> this, the <span style="color:#66d9ef">index</span> will be created
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> through the <span style="color:#66d9ef">key</span> <span style="color:#66d9ef">cache</span> (which <span style="color:#66d9ef">is</span> slower).
-</span></span><span style="display:flex;"><span>myisam_max_sort_file_size<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span><span style="color:#66d9ef">G</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> The <span style="color:#66d9ef">size</span> <span style="color:#66d9ef">of</span> the buffer that <span style="color:#66d9ef">is</span> allocated <span style="color:#66d9ef">when</span> sorting MyISAM indexes
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> during a REPAIR <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">or</span> <span style="color:#66d9ef">when</span> creating indexes <span style="color:#66d9ef">with</span> <span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">INDEX</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#66d9ef">or</span> <span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span>.
-</span></span><span style="display:flex;"><span>myisam_sort_buffer_size<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span><span style="color:#66d9ef">G</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#66d9ef">Size</span> <span style="color:#66d9ef">of</span> the <span style="color:#66d9ef">Key</span> Buffer, used <span style="color:#66d9ef">to</span> <span style="color:#66d9ef">cache</span> <span style="color:#66d9ef">index</span> blocks <span style="color:#66d9ef">for</span> MyISAM tables.
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#66d9ef">Do</span> <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">set</span> it larger <span style="color:#66d9ef">than</span> <span style="color:#ae81ff">30</span><span style="color:#f92672">%</span> <span style="color:#66d9ef">of</span> your available memory, <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">some</span> memory
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#66d9ef">is</span> also required <span style="color:#66d9ef">by</span> the OS <span style="color:#66d9ef">to</span> <span style="color:#66d9ef">cache</span> <span style="color:#66d9ef">rows</span>. Even <span style="color:#66d9ef">if</span> you<span style="color:#e6db74">&#39;re not using
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># MyISAM tables, you should still set it to 8-64M as it will also be
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># used for internal temporary disk tables.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">key_buffer_size=8M
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Size of the buffer used for doing full table scans of MyISAM tables.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Allocated per thread, if a full scan is needed.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">read_buffer_size=64K
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">read_rnd_buffer_size=256K
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">#*** INNODB Specific options ***
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># innodb_data_home_dir=
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Use this option if you have a MySQL server with InnoDB support enabled
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># but you do not plan to use it. This will save memory and disk space
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># and speed up some things.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># skip-innodb
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># If set to 1, InnoDB will flush (fsync) the transaction logs to the
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># disk at each commit, which offers full ACID behavior. If you are
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># willing to compromise this safety, and you are running small
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># transactions, you may set this to 0 or 2 to reduce disk I/O to the
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># logs. Value 0 means that the log is only written to the log file and
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># the log file flushed to disk approximately once per second. Value 2
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># means the log is written to the log file at each commit, but the log
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># file is only flushed to disk approximately once per second.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">innodb_flush_log_at_trx_commit=1
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># The size of the buffer InnoDB uses for buffering log data. As soon as
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># it is full, InnoDB will have to flush it to disk. As it is flushed
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># once per second anyway, it does not make sense to have it very large
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># (even with long transactions).
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">innodb_log_buffer_size=1M
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># InnoDB, unlike MyISAM, uses a buffer pool to cache both indexes and
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># row data. The bigger you set this the less disk I/O is needed to
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># access data in tables. On a dedicated database server you may set this
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># parameter up to 80% of the machine physical memory size. Do not set it
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># too large, though, because competition of the physical memory may
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># cause paging in the operating system.  Note that on 32bit systems you
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># might be limited to 2-3.5G of user level memory per process, so do not
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># set it too high.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">innodb_buffer_pool_size=128M
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Size of each log file in a log group. You should set the combined size
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># of log files to about 25%-100% of your buffer pool size to avoid
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># unneeded buffer pool flush activity on log file overwrite. However,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># note that a larger logfile size will increase the time needed for the
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># recovery process.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">innodb_log_file_size=48M
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Number of threads allowed inside the InnoDB kernel. The optimal value
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># depends highly on the application, hardware as well as the OS
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># scheduler properties. A too high value may lead to thread thrashing.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">innodb_thread_concurrency=17
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># The increment size (in MB) for extending the size of an auto-extend InnoDB system tablespace file when it becomes full.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">innodb_autoextend_increment=64
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># The number of regions that the InnoDB buffer pool is divided into.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># For systems with buffer pools in the multi-gigabyte range, dividing the buffer pool into separate instances can improve concurrency,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># by reducing contention as different threads read and write to cached pages.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">innodb_buffer_pool_instances=8
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Determines the number of threads that can enter InnoDB concurrently.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">innodb_concurrency_tickets=5000
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Specifies how long in milliseconds (ms) a block inserted into the old sublist must stay there after its first access before
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># it can be moved to the new sublist.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">innodb_old_blocks_time=1000
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># When this variable is enabled, InnoDB updates statistics during metadata statements.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">innodb_stats_on_metadata=0
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># When innodb_file_per_table is enabled (the default in 5.6.6 and higher), InnoDB stores the data and indexes for each newly created table
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># in a separate .ibd file, rather than in the system tablespace.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">innodb_file_per_table=1
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Use the following list of values: 0 for crc32, 1 for strict_crc32, 2 for innodb, 3 for strict_innodb, 4 for none, 5 for strict_none.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">innodb_checksum_algorithm=0
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># The number of outstanding connection requests MySQL can have.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># This option is useful when the main MySQL thread gets many connection requests in a very short time.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># It then takes some time (although very little) for the main thread to check the connection and start a new thread.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># The back_log value indicates how many requests can be stacked during this short time before MySQL momentarily
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># stops answering new requests.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># You need to increase this only if you expect a large number of connections in a short period of time.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">back_log=80
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># If this is set to a nonzero value, all tables are closed every flush_time seconds to free up resources and
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># synchronize unflushed data to disk.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># This option is best used only on systems with minimal resources.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">flush_time=0
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># The minimum size of the buffer that is used for plain index scans, range index scans, and joins that do not use
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># indexes and thus perform full table scans.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">join_buffer_size=256K
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># The maximum size of one packet or any generated or intermediate string, or any parameter sent by the
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># mysql_stmt_send_long_data() C API function.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">max_allowed_packet=64M
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># If more than this many successive connection requests from a host are interrupted without a successful connection,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># the server blocks that host from performing further connections.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">max_connect_errors=100
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Changes the number of file descriptors available to mysqld.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># You should try increasing the value of this option if mysqld gives you the error &#34;Too many open files&#34;.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">open_files_limit=8161
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># If you see many sort_merge_passes per second in SHOW GLOBAL STATUS output, you can consider increasing the
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># sort_buffer_size value to speed up ORDER BY or GROUP BY operations that cannot be improved with query optimization
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># or improved indexing.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">sort_buffer_size=256K
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># The number of table definitions (from .frm files) that can be stored in the definition cache.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># If you use a large number of tables, you can create a large table definition cache to speed up opening of tables.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># The table definition cache takes less space and does not use file descriptors, unlike the normal table cache.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># The minimum and default values are both 400.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">table_definition_cache=2000
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Specify the maximum size of a row-based binary log event, in bytes.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Rows are grouped into events smaller than this size if possible. The value should be a multiple of 256.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">binlog_row_event_max_size=8K
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># If the value of this variable is greater than 0, a replica synchronizes its master.info file to disk.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># (using fdatasync()) after every sync_source_info events.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">sync_source_info=10000
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># If the value of this variable is greater than 0, the MySQL server synchronizes its relay log to disk.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># (using fdatasync()) after every sync_relay_log writes to the relay log.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">sync_relay_log=10000
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># If the value of this variable is greater than 0, a replica synchronizes its relay-log.info file to disk.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># (using fdatasync()) after every sync_relay_log_info transactions.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">sync_relay_log_info=10000
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Load mysql plugins at start.&#34;plugin_x ; plugin_y&#34;.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># plugin_load
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># The TCP/IP Port the MySQL Server X Protocol will listen on.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">loose_mysqlx_port=34060
-</span></span></span></code></pre></div><h1 id="参考文档">参考文档</h1>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">ALL</span> <span style="color:#66d9ef">PRIVILEGES</span> <span style="color:#66d9ef">ON</span> <span style="color:#f92672">*</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;DBAdmin&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span> <span style="color:#66d9ef">WITH</span> <span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">OPTION</span>;
+</span></span><span style="display:flex;"><span>FLUSH <span style="color:#66d9ef">PRIVILEGES</span>;
+</span></span></code></pre></div><h1 id="参考文档">参考文档</h1>
 <ul>
-<li><a href="https://dev.mysql.com/doc/refman/8.0/en/data-directory-initialization.html">2.10.1 Initializing the Data Directory</a></li>
+<li><a href="https://stackoverflow.com/a/72115499">MySQL installation on Ubuntu 20.04 error when using mysql_secure_installation</a></li>
+<li><a href="https://exerror.com/failed-error-set-password-has-no-significance-for-user-rootlocalhost-as-the-authentication-method-used-doesnt-store-authentication-data-in-the-mysql-server/">Failed! Error: SET PASSWORD has no significance for user ‘root’@’localhost’ as the authentication method used doesn’t store authentication data in the MySQL server</a></li>
 <li><a href="https://tdtc-hrb.github.io/csdn/post/mysql57-win/">安装MySQL 5.7</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04">How To Install MySQL on Ubuntu 20.04</a></li>
 </ul>
 
     </section>
@@ -606,17 +292,10 @@ manually create the folder &ldquo;Uploads&rdquo;.</p>
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/mysql80-cenos8/">
+  
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/mysql80-cenos8/">
           <section class="post">
               <h2>CentOS8安装mysql8.0</h2>
-              
-          </section>
-      </a>
-  
-  
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/demo-tdtc/">
-          <section class="post">
-              <h2>TDTC Demo</h2>
           </section>
       </a>
   

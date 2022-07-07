@@ -6,7 +6,19 @@
     <description>Recent content on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 27 Jun 2022 03:21:39 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Jul 2022 02:08:39 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>安装MySQL 8.0</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/mysql80-install/</link>
+      <pubDate>Thu, 07 Jul 2022 02:08:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/mysql80-install/</guid>
+      <description>MySQL 5 &amp;amp; 8 utf8 [MY-013242] [Server] --character-set-server: &amp;#39;utf8&amp;#39; is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous. mysql5 character-set-server=utf8 mysql8 character-set-server=utf8mb4 validate password 注意： mysql8.0.4， 我们将无法直接使用phpMyAdmin来登录！
+使用phpMyAdmin需要设置MySQL5.7兼容模式：
+authentication_policy=mysql_native_password,, mysql5 mysql_native_password mysql8 caching_sha2_password Ubuntu install mysql8:
+sudo apt install mysql-server sudo systemctl start mysql.service config mysql secure sudo mysql password rule:</description>
+    </item>
+    
     <item>
       <title>CentOS8安装mysql8.0</title>
       <link>https://tdtc-hrb.github.io/csdn/post/mysql80-cenos8/</link>
@@ -17,19 +29,6 @@
 percona-release setup ps80 Installing and Setting up the Percona Server for MySQL 8.0 Binaries yum -y install percona-server-server Launch:
 systemctl start mysqldsystemctl status mysqld change password sudo grep &amp;#34;temporary password&amp;#34; /var/log/mysqld.log mysql -uroot -p Change default password：
 ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED BY &amp;#39;qaz1!Xsw2@&amp;#39;; Weak password mysql&amp;gt; set global validate_password.policy=0; set password ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED BY &amp;#39;xbfirst80&amp;#39;; Ref Installing Percona Server for MySQL on Rocky Linux 8 How to Change MySQL Password Policy Level </description>
-    </item>
-    
-    <item>
-      <title>安装MySQL 8.0</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/mysql80-install/</link>
-      <pubDate>Mon, 20 Jun 2022 02:08:39 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/mysql80-install/</guid>
-      <description>安装方式 绿色安装 VC Redist vc14.0 redist utf8的不同 [MY-013242] [Server] --character-set-server: &amp;#39;utf8&amp;#39; is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous. mysql5 character-set-server=utf8 mysql8 character-set-server=utf8mb4 验证不同 注意： mysql8.0.4， 我们将无法直接使用phpMyAdmin来登录！
-使用phpMyAdmin需要设置MySQL5.7兼容模式：
-authentication_policy=mysql_native_password,, mysql5 mysql_native_password mysql8 caching_sha2_password Init Dirctory Data:
-%MYSQL80_HOME%\bin\mysqld --initialize --console Uploads: manually create the folder &amp;ldquo;Uploads&amp;rdquo;.
-change password %MYSQL57_HOME%\bin\mysqladmin -uroot gen@#$!</description>
     </item>
     
     <item>
