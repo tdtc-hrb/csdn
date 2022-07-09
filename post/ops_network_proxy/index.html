@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="如何使用代理工具" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2022-05-17T14:08:08&#43;08:00" />
+    <meta property="article:published_time" content="2022-06-17T14:08:08&#43;08:00" />
 
     
     
@@ -92,15 +92,15 @@
     },
     "headline": "设置proxy",
     "name": "设置proxy",
-    "wordCount":  133 ,
+    "wordCount":  144 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/ops_network_proxy/",
-    "datePublished": "2022-05-17T14:08Z",
-    "dateModified": "2022-05-17T14:08Z",
+    "datePublished": "2022-06-17T14:08Z",
+    "dateModified": "2022-06-17T14:08Z",
     
     
     "description": "如何使用代理工具",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2022-05-17T14:08:08&#43;08:00">
-            May 17, 2022
+          <time class="post-date" datetime="2022-06-17T14:08:08&#43;08:00">
+            Jun 17, 2022
           </time>
         
          
@@ -210,12 +210,15 @@ Check &ldquo;Run xxx as Server(listens 0.0.0.)&rdquo;</p>
 </blockquote>
 <h3 id="cmd">cmd</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm config delete https-proxy
+</span></span><span style="display:flex;"><span>npm config set proxy http://host:port
 </span></span><span style="display:flex;"><span>npm config set http-proxy http://host:port
+</span></span><span style="display:flex;"><span>npm config set https-proxy http://host:port
 </span></span><span style="display:flex;"><span>npm config set strict-ssl false
 </span></span></code></pre></div><h3 id="file">file</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>registry<span style="color:#f92672">=</span>https://registry.npmjs.org/
 </span></span><span style="display:flex;"><span>proxy<span style="color:#f92672">=</span>http://127.0.0.1:8580/
 </span></span><span style="display:flex;"><span>http-proxy<span style="color:#f92672">=</span>http://127.0.0.1:8580
+</span></span><span style="display:flex;"><span>https-proxy<span style="color:#f92672">=</span>http://127.0.0.1:8580
 </span></span><span style="display:flex;"><span>strict-ssl<span style="color:#f92672">=</span>false
 </span></span></code></pre></div><h1 id="agent-website">Agent Website</h1>
 <p>国内网站代理</p>
@@ -293,17 +296,17 @@ Check &ldquo;Run xxx as Server(listens 0.0.0.)&rdquo;</p>
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_win_faq1/">
+      <a class="read-next-story" style="no-cover" href="/csdn/post/mysql80-cenos8/">
           <section class="post">
-              <h2>Windows的一些设置</h2>
+              <h2>CentOS8安装mysql8.0</h2>
               
           </section>
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/c-bsd_socket-server/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/demo-tdtc/">
           <section class="post">
-              <h2>使用fork的server</h2>
+              <h2>TDTC Demo</h2>
           </section>
       </a>
   

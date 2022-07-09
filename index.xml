@@ -6,7 +6,19 @@
     <description>Recent content on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 07 Jul 2022 02:08:39 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Jul 2022 23:08:39 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在Ubuntu下安装NodeJS</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/nodejs-ubuntu/</link>
+      <pubDate>Sat, 09 Jul 2022 23:08:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/nodejs-ubuntu/</guid>
+      <description>1.node.js v18.x/16.x
+v18.x:
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - v16.x:
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - install sudo apt-get install -y nodejs 2. yarn js curl --silent --show-error https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo &amp;#34;deb https://dl.yarnpkg.com/debian/ stable main&amp;#34; | sudo tee /etc/apt/sources.list.d/yarn.list sudo apt-get update sudo apt-get install yarn Ref How to Install Yarn on Ubuntu 18.04 </description>
+    </item>
+    
     <item>
       <title>安装MySQL 8.0</title>
       <link>https://tdtc-hrb.github.io/csdn/post/mysql80-install/</link>
@@ -29,6 +41,17 @@ sudo apt install mysql-server sudo systemctl start mysql.service config mysql se
 percona-release setup ps80 Installing and Setting up the Percona Server for MySQL 8.0 Binaries yum -y install percona-server-server Launch:
 systemctl start mysqldsystemctl status mysqld change password sudo grep &amp;#34;temporary password&amp;#34; /var/log/mysqld.log mysql -uroot -p Change default password：
 ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED BY &amp;#39;qaz1!Xsw2@&amp;#39;; Weak password mysql&amp;gt; set global validate_password.policy=0; set password ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED BY &amp;#39;xbfirst80&amp;#39;; Ref Installing Percona Server for MySQL on Rocky Linux 8 How to Change MySQL Password Policy Level </description>
+    </item>
+    
+    <item>
+      <title>设置proxy</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_network_proxy/</link>
+      <pubDate>Fri, 17 Jun 2022 14:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_network_proxy/</guid>
+      <description>OS Windows set command
+set http_proxy=http://127.0.0.1:8580 set https_proxy=http://127.0.0.1:8580 Ubuntu export http_proxy=&amp;#34;http://192.168.1.108:1080&amp;#34; export https_proxy=&amp;#34;http://192.168.1.108:1080&amp;#34; With user and password Set up the server in the tool: Check &amp;ldquo;Run xxx as Server(listens 0.0.0.)&amp;rdquo;
+export http_proxy=http://USERNAME:PASSWORD@192.168.1.108:8580/ Ref How to set up proxy using http_proxy &amp;amp; https_proxy environment variable in Linux? software git set proxy git config --global http.proxy http://127.0.0.1:8580 git config --global https.proxy https://127.0.0.1:8580 unset git config --global --unset http.proxy git config --global --unset https.</description>
     </item>
     
     <item>
@@ -208,17 +231,6 @@ ssh - It is also possible that a host key has just been changed D:\program-d\put
     </item>
     
     <item>
-      <title>设置proxy</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_network_proxy/</link>
-      <pubDate>Tue, 17 May 2022 14:08:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_network_proxy/</guid>
-      <description>OS Windows set command
-set http_proxy=http://127.0.0.1:8580 set https_proxy=http://127.0.0.1:8580 Ubuntu export http_proxy=&amp;#34;http://192.168.1.108:1080&amp;#34; export https_proxy=&amp;#34;http://192.168.1.108:1080&amp;#34; With user and password Set up the server in the tool: Check &amp;ldquo;Run xxx as Server(listens 0.0.0.)&amp;rdquo;
-export http_proxy=http://USERNAME:PASSWORD@192.168.1.108:8580/ Ref How to set up proxy using http_proxy &amp;amp; https_proxy environment variable in Linux? software git set proxy git config --global http.proxy http://127.0.0.1:8580 git config --global https.proxy https://127.0.0.1:8580 unset git config --global --unset http.proxy git config --global --unset https.</description>
-    </item>
-    
-    <item>
       <title>使用fork的server</title>
       <link>https://tdtc-hrb.github.io/csdn/post/c-bsd_socket-server/</link>
       <pubDate>Mon, 16 May 2022 08:08:08 +0800</pubDate>
@@ -362,18 +374,6 @@ default: eth0
 vbox 缺省/etc/sysconfig/network-scripts/ifcfg-enp0XX
 default: enp0s3
 Ubuntu 设置static IP cd /etc/netplan/ sudo vi 00-installer-config.yaml #This is the network config written by &amp;#39;subiquity&amp;#39; network: ethernets: enp0s3: dhcp4: no addresses: - 192.</description>
-    </item>
-    
-    <item>
-      <title>在Ubuntu下安装NodeJS</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/nodejs-ubuntu/</link>
-      <pubDate>Sun, 10 Apr 2022 23:08:39 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/nodejs-ubuntu/</guid>
-      <description>1.node.js v12.x/16.x
-v12.x:
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - v16.x:
-curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash - install sudo apt-get install -y nodejs 2. yarn js curl --silent --show-error https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo &amp;#34;deb https://dl.yarnpkg.com/debian/ stable main&amp;#34; | sudo tee /etc/apt/sources.list.d/yarn.list sudo apt-get update sudo apt-get install yarn </description>
     </item>
     
     <item>
