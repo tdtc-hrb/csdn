@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2022-07-07T02:08:39&#43;08:00" />
+    <meta property="article:published_time" content="2022-07-07T06:08:39&#43;08:00" />
 
     
     
@@ -37,7 +37,7 @@
     <title>安装MySQL 8.0 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
 
     
-    <meta name="description" content="MySQL 5 &amp;amp; 8 utf8 [MY-013242] [Server] --character-set-server: &amp;#39;utf8&amp;#39; is currently an alias for the character set UTF8MB3, but will be an alias for U" />
+    <meta name="description" content="MySQL 5 &amp;amp; 8 remote server bind-address=0.0.0.0 utf8 [MY-013242] [Server] --character-set-server: &amp;#39;utf8&amp;#39; is currently an alias for the character set " />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -92,15 +92,15 @@
     },
     "headline": "安装MySQL 8.0",
     "name": "安装MySQL 8.0",
-    "wordCount":  191 ,
-    "timeRequired": "PT1M",
+    "wordCount":  219 ,
+    "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/mysql80-install/",
-    "datePublished": "2022-07-07T02:08Z",
-    "dateModified": "2022-07-07T02:08Z",
+    "datePublished": "2022-07-07T06:08Z",
+    "dateModified": "2022-07-07T06:08Z",
     
     
     "description": "",
@@ -168,7 +168,7 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2022-07-07T02:08:39&#43;08:00">
+          <time class="post-date" datetime="2022-07-07T06:08:39&#43;08:00">
             Jul 7, 2022
           </time>
         
@@ -178,7 +178,9 @@
 
     <section class="post-content">
       <h1 id="mysql-5--8">MySQL 5 &amp; 8</h1>
-<h2 id="utf8">utf8</h2>
+<h2 id="remote-server">remote server</h2>
+<pre tabindex="0"><code>bind-address=0.0.0.0
+</code></pre><h2 id="utf8">utf8</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>[MY<span style="color:#f92672">-</span><span style="color:#ae81ff">013242</span>] [Server] <span style="color:#75715e">--character-set-server: &#39;utf8&#39; is currently an alias for the character set UTF8MB3,
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>but will be an <span style="color:#66d9ef">alias</span> <span style="color:#66d9ef">for</span> UTF8MB4 <span style="color:#66d9ef">in</span> a future release. Please consider <span style="color:#66d9ef">using</span> UTF8MB4 <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">to</span> be unambiguous.
 </span></span></code></pre></div><ul>
@@ -213,8 +215,13 @@
 </code></pre><h2 id="add-user">add user</h2>
 <p>password rule:</p>
 <pre tabindex="0"><code>SHOW VARIABLES LIKE &#39;validate_password%&#39;;
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;DBAdmin&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span> IDENTIFIED <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;xb80first&#39;</span>;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">ALL</span> <span style="color:#66d9ef">PRIVILEGES</span> <span style="color:#66d9ef">ON</span> <span style="color:#f92672">*</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;DBAdmin&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span> <span style="color:#66d9ef">WITH</span> <span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">OPTION</span>;
+</code></pre><p>DBA:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;DBAdmin&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;&#39; IDENTIFIED BY &#39;</span>xb80first<span style="color:#e6db74">&#39;;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">GRANT ALL PRIVILEGES ON *.* TO &#39;</span>DBAdmin<span style="color:#e6db74">&#39;@&#39;</span>localhost<span style="color:#e6db74">&#39;&#39;</span> <span style="color:#66d9ef">WITH</span> <span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">OPTION</span>;
+</span></span><span style="display:flex;"><span>flush <span style="color:#66d9ef">privileges</span>;
+</span></span></code></pre></div><p>remote user:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;tdtc2022&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;%&#39;</span> IDENTIFIED <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;qaz1xsw2&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">SELECT</span>,<span style="color:#66d9ef">INSERT</span>,<span style="color:#66d9ef">UPDATE</span>,<span style="color:#66d9ef">DELETE</span> <span style="color:#66d9ef">ON</span> carnumber.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;tdtc2022&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;%&#39;</span>;
 </span></span><span style="display:flex;"><span>flush <span style="color:#66d9ef">privileges</span>;
 </span></span></code></pre></div><h1 id="windows">Windows</h1>
 <ul>
@@ -231,6 +238,7 @@ manually create the folder &ldquo;Uploads&rdquo;.</p>
 <h2 id="change-password">change password</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>%MYSQL57_HOME%\bin\mysqladmin -uroot gen@#$!pw7 password xbfirst80
 </span></span></code></pre></div><h2 id="dba">Dba</h2>
+<p>local user:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;DBAdmin&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span> IDENTIFIED <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;xbfirst&#39;</span>;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">ALL</span> <span style="color:#66d9ef">PRIVILEGES</span> <span style="color:#66d9ef">ON</span> <span style="color:#f92672">*</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;DBAdmin&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span> <span style="color:#66d9ef">WITH</span> <span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">OPTION</span>;
 </span></span><span style="display:flex;"><span>FLUSH <span style="color:#66d9ef">PRIVILEGES</span>;
@@ -240,6 +248,7 @@ manually create the folder &ldquo;Uploads&rdquo;.</p>
 <li><a href="https://exerror.com/failed-error-set-password-has-no-significance-for-user-rootlocalhost-as-the-authentication-method-used-doesnt-store-authentication-data-in-the-mysql-server/">Failed! Error: SET PASSWORD has no significance for user ‘root’@’localhost’ as the authentication method used doesn’t store authentication data in the MySQL server</a></li>
 <li><a href="https://tdtc-hrb.github.io/csdn/post/mysql57-win/">安装MySQL 5.7</a></li>
 <li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04">How To Install MySQL on Ubuntu 20.04</a></li>
+<li><a href="https://stackoverflow.com/a/16288118">Mysql adding user for remote access</a></li>
 </ul>
 
     </section>
