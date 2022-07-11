@@ -164,6 +164,39 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_vi/">简单使用vi</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p> 此时是浏览状态（命令行模式）！
+$ vi myfile 浏览状态 移动光标 使用方向键来进行位置的移动。
+编辑状态 要进行文字编辑工作, 按“i”即进入
+i 删除文字 使用“Backspce”键，删除光标前面的文字。 使用“Delete”键，删除光标后面的文字。
+完成编辑 编辑完成后，要退出编辑状态, 按“ESC”，即完成退出。
+菜单状态 按“:”进入菜单状态（底行模式）
+设置行号 输入“set nu”
+:set nu 查找文字 如果，要查找特定的文字，输入“/要搜索的文字”
+:/word 继续查找，按“n”（相当于Windows系统的F3功能键）
+保存文件 输入“wq”完成保存并退出。
+:wq 强退 如果我们只想退出并且不保存文件 输入“q!”
+:q!  <a class="read-more" href="/csdn/post/ops_vi/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-13T04:38:08&#43;08:00">
+            13 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_department_cups/">共享打印机 - CUPS</a></h2>
     </header>
     <section class="post-excerpt">
@@ -383,33 +416,6 @@ package com.example.demo.controller; import java.util.List; import org.springfra
 
         
         <time class="post-date" datetime="2020-04-10T12:26:39&#43;08:00">
-            10 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/java-spring-security/">关于Spring Security 4例子的补充</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>Spring Security 4 Hibernate Password Encoder Bcrypt Example
-1. 数据表 资料来源于spring-security-remember-me-example
-CREATE TABLE `persistent_logins` ( `series` varchar(64) NOT NULL, `username` varchar(64) NOT NULL, `token` varchar(64) NOT NULL, `last_used` datetime NOT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8; ALTER TABLE `persistent_logins` ADD PRIMARY KEY (`series`); COMMIT; 2. pojo User.java
-其中的缺省值：
-@Column(name = &#34;state&#34;, nullable=true) private String state = &#34;Inactive&#34;; 3. 依赖库 pom.xml
-springframework.version v4.3.14.RELEASE springsecurity.version v4.2.4.RELEASE hibernate.version v5.1.13.Final mysql.connector.version v5.1.46 validation api V2.0.1 hibernate validator v5. <a class="read-more" href="/csdn/post/java-spring-security/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-10T11:26:39&#43;08:00">
             10 Apr 2020
         </time>
     </footer>

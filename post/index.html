@@ -162,6 +162,32 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/pack-file-linux/">打包文件</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>取消目录所有权限
+chmod -R 777 /tmp/etc 一、ISO文件 mkisofs -r -o etc.iso /tmp/etc 二、压缩文件 1. zip zip -r etc.zip /tmp/etc 2. tar 仅打包，不压缩！
+tar -cvf /tmp/etc.tar /etc transform --transform s/OLD_NAME/NEW_NAME/ gz tar -zcvf /tmp/etc.tar.gz /etc transform:
+tar -zcvf /tmp/etc.tar.gz /etc --transform s/etc/myetc/ bz2 tar -jcvf /tmp/etc.tar.bz2 /etc transform:
+tar -jcvf /tmp/etc.tar.bz2 /etc --transform s/etc/myetc/ FAQ This does not look like a tar archive #gzip -d xxxx.tar.gz #tar -xf xxxx.tar 参考文章 18 Tar Command Examples in Linux c – Creates a new . <a class="read-more" href="/csdn/post/pack-file-linux/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-07-10T02:20:39&#43;08:00">
+            10 Jul 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/nodejs-ubuntu/">在Ubuntu下安装NodeJS</a></h2>
     </header>
     <section class="post-excerpt">
@@ -408,37 +434,6 @@ sudo yum install centos-release-scl sudo yum install devtoolset-8 scl enable dev
         
         <time class="post-date" datetime="2022-06-11T04:58:39&#43;08:00">
             11 Jun 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/reduxjs-asyn/">重构asyn</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>0. pre 生成基本框 npm install -g create-react-app create-react-app async clone repo https://github.com/redux-saga/redux-saga.git
-1. copy directorys Copy the examples/async/src from the redux-saga to your async/src.
-2. rename main.js async/src
-Rename main.js to index.js
-3. move files async/src
-App.css &amp;&amp; logo.svg -&gt;
-async/src/containers
-App.css &amp;&amp; logo.svg
-4. modify containers/App.js Add the following two blocks of code.
-import logo from &#39;./logo.svg&#39;; import &#39;./App.css&#39;; &lt;div className=&#34;App&#34;&gt; &lt;header className=&#34;App-header&#34;&gt; &lt;img src={logo} className=&#34;App-logo&#34; alt=&#34;logo&#34; /&gt; &lt;h1 className=&#34;App-title&#34;&gt;Welcome to React&lt;/h1&gt; &lt;/header&gt; . <a class="read-more" href="/csdn/post/reduxjs-asyn/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-06-10T07:26:39&#43;08:00">
-            10 Jun 2022
         </time>
     </footer>
 </article>

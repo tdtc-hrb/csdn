@@ -164,6 +164,31 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_mail/">mail的使用</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>installation Mutt is a small but very powerful text-based mail client for Unix operating systems.
+1) install yum install mutt 2) config $vi ~/.muttrc set sendmail=&#34;/usr/local/msmtp/bin/msmtp&#34; set from = &#34;user@domain.com&#34; set realname = &#34;Realname of the user&#34; received mail:
+set pop_host=&#34;pop.163.com&#34; set pop_user=&#34;love_shidie&#34; set pop_pass=`getpassword email_id` test 1) send mail gpg -d ~/.msmtp/love_shidie-passoword.gpg $mutt -s &#34;test message&#34; -a ~/message121.txt 2) received mail $mutt Press key: G
+Reference Mutt – A Command Line Email Client to Send Mails from Terminal Mutt: how to safely store password? <a class="read-more" href="/csdn/post/ops_mail/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-15T23:08:08&#43;08:00">
+            15 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_gnupg/">GNU PG</a></h2>
     </header>
     <section class="post-excerpt">
@@ -393,29 +418,6 @@ mkdir -p ~/app/hadoop tar zxvf hadoop-2. <a class="read-more" href="/csdn/post/o
 
         
         <time class="post-date" datetime="2020-04-14T10:08:08&#43;08:00">
-            14 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_hadoop_cluster_hdfs/">Hadoop配置 - hdfs</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>(../etc/hadoop/hdfs-site.xml)
-1. name services &lt;property&gt; &lt;name&gt;dfs.nameservices&lt;/name&gt; &lt;value&gt;mycluster&lt;/value&gt; &lt;/property&gt; 1) name node &lt;property&gt; &lt;name&gt;dfs.ha.namenodes.mycluster&lt;/name&gt; &lt;value&gt;nn1,nn2&lt;/value&gt; &lt;/property&gt; 2) RPC(name node) &lt;property&gt; &lt;name&gt;dfs.namenode.rpc-address.mycluster.nn1&lt;/name&gt; &lt;value&gt;tdtc201:8020&lt;/value&gt; &lt;/property&gt; &lt;property&gt; &lt;name&gt;dfs.namenode.rpc-address.mycluster.nn2&lt;/name&gt; &lt;value&gt;tdtc202:8020&lt;/value&gt; &lt;/property&gt; 3) Http(name node) &lt;property&gt; &lt;name&gt;dfs.namenode.http-address.mycluster.nn1&lt;/name&gt; &lt;value&gt;tdtc201:50070&lt;/value&gt; &lt;/property&gt; &lt;property&gt; &lt;name&gt;dfs.namenode.http-address.mycluster.nn2&lt;/name&gt; &lt;value&gt;tdtc202:50070&lt;/value&gt; &lt;/property&gt; 2. JournalNode 1) quorum journal manager &lt;!-- Journal Node(QJM) --&gt; &lt;property&gt; &lt;name&gt;dfs.namenode.shared.edits.dir&lt;/name&gt; &lt;value&gt;qjournal://tdtc201:8485;tdtc202:8485;tdtc203:8485/mycluster&lt;/value&gt; &lt;/property&gt; local &lt;property&gt; &lt;name&gt;dfs.journalnode.edits.dir&lt;/name&gt; &lt;value&gt;/home/tdtc/app/hadoop/data/journaldata&lt;/value&gt; &lt;/property&gt; 3. failover 1) support class &lt;!-- the Java class that HDFS clients use to contact the Active NameNode --&gt; &lt;property&gt; &lt;name&gt;dfs. <a class="read-more" href="/csdn/post/ops_hadoop_cluster_hdfs/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-14T09:08:08&#43;08:00">
             14 Apr 2020
         </time>
     </footer>

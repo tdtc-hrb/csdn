@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="在Linux下使用光盘（ISO）和压缩文件来打包文件" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2020-04-10T02:20:39&#43;08:00" />
+    <meta property="article:published_time" content="2022-07-10T02:20:39&#43;08:00" />
 
     
     
@@ -92,15 +92,15 @@
     },
     "headline": "打包文件",
     "name": "打包文件",
-    "wordCount":  110 ,
+    "wordCount":  127 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/pack-file-linux/",
-    "datePublished": "2020-04-10T02:20Z",
-    "dateModified": "2020-04-10T02:20Z",
+    "datePublished": "2022-07-10T02:20Z",
+    "dateModified": "2022-07-10T02:20Z",
     
     
     "description": "在Linux下使用光盘（ISO）和压缩文件来打包文件",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2020-04-10T02:20:39&#43;08:00">
-            Apr 10, 2020
+          <time class="post-date" datetime="2022-07-10T02:20:39&#43;08:00">
+            Jul 10, 2022
           </time>
         
          
@@ -192,13 +192,17 @@
 </blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -cvf /tmp/etc.tar /etc
 </span></span></code></pre></div><ul>
-<li>gz</li>
+<li>transform</li>
 </ul>
+<pre tabindex="0"><code>--transform s/OLD_NAME/NEW_NAME/
+</code></pre><h3 id="gz">gz</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -zcvf /tmp/etc.tar.gz /etc
-</span></span></code></pre></div><ul>
-<li>bz2</li>
-</ul>
+</span></span></code></pre></div><p>transform:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -zcvf /tmp/etc.tar.gz /etc --transform s/etc/myetc/
+</span></span></code></pre></div><h3 id="bz2">bz2</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -jcvf /tmp/etc.tar.bz2 /etc
+</span></span></code></pre></div><p>transform:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -jcvf /tmp/etc.tar.bz2 /etc --transform s/etc/myetc/
 </span></span></code></pre></div><h1 id="faq">FAQ</h1>
 <h2 id="this-does-not-look-like-a-tar-archive">This does not look like a tar archive</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#gzip -d xxxx.tar.gz</span>
@@ -276,17 +280,10 @@
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/pd-db-phy/">
-          <section class="post">
-              <h2>powerDesigner生成phy图</h2>
-              
-          </section>
-      </a>
   
-  
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/mysql-imp-exp/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/nodejs-ubuntu/">
           <section class="post">
-              <h2>MySQL导入导出数据库</h2>
+              <h2>在Ubuntu下安装NodeJS</h2>
           </section>
       </a>
   

@@ -6,7 +6,20 @@
     <description>Recent content in Posts on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 09 Jul 2022 23:08:39 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Jul 2022 02:20:39 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>打包文件</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/pack-file-linux/</link>
+      <pubDate>Sun, 10 Jul 2022 02:20:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/pack-file-linux/</guid>
+      <description>取消目录所有权限
+chmod -R 777 /tmp/etc 一、ISO文件 mkisofs -r -o etc.iso /tmp/etc 二、压缩文件 1. zip zip -r etc.zip /tmp/etc 2. tar 仅打包，不压缩！
+tar -cvf /tmp/etc.tar /etc transform --transform s/OLD_NAME/NEW_NAME/ gz tar -zcvf /tmp/etc.tar.gz /etc transform:
+tar -zcvf /tmp/etc.tar.gz /etc --transform s/etc/myetc/ bz2 tar -jcvf /tmp/etc.tar.bz2 /etc transform:
+tar -jcvf /tmp/etc.tar.bz2 /etc --transform s/etc/myetc/ FAQ This does not look like a tar archive #gzip -d xxxx.tar.gz #tar -xf xxxx.tar 参考文章 18 Tar Command Examples in Linux c – Creates a new .</description>
+    </item>
+    
     <item>
       <title>在Ubuntu下安装NodeJS</title>
       <link>https://tdtc-hrb.github.io/csdn/post/nodejs-ubuntu/</link>
@@ -1506,17 +1519,6 @@ springframework.version v4.3.14.RELEASE springsecurity.version v4.2.4.RELEASE hi
 2. config connect profile DataBase -&amp;gt; Configure connections Connection profile 3. connect Database -&amp;gt; connect Flag: &amp;ldquo;Disconnect&amp;rdquo; Available
 dcp文件（mysql5-crm.dcp） [ConnectionProfile]ConnectionType=JDBCDbms=MySQLDisableBind=0Driver=com.mysql.jdbc.DriverJarFiles=D:\war\mysql-connector-java-5.1.48.jarLogId=rootTrimSpaces=0URL=jdbc:mysql://106.14.141.40:3306/crm 二、生成phy图 1. Reverse Engineer File -&amp;gt; Reverse Engineer-&amp;gt;Database 选择数据库： 其他数据库全部反选： 例如： 最后，点击ok生成phy图。
 Tips：如果想从pdm生成CDM，Tools -&amp;gt; Generate Conceptual Data Model</description>
-    </item>
-    
-    <item>
-      <title>打包文件</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/pack-file-linux/</link>
-      <pubDate>Fri, 10 Apr 2020 02:20:39 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/pack-file-linux/</guid>
-      <description>取消目录所有权限
-chmod -R 777 /tmp/etc 一、ISO文件 mkisofs -r -o etc.iso /tmp/etc 二、压缩文件 1. zip zip -r etc.zip /tmp/etc 2. tar 仅打包，不压缩！
-tar -cvf /tmp/etc.tar /etc gz tar -zcvf /tmp/etc.tar.gz /etc bz2 tar -jcvf /tmp/etc.tar.bz2 /etc FAQ This does not look like a tar archive #gzip -d xxxx.tar.gz #tar -xf xxxx.tar 参考文章 18 Tar Command Examples in Linux c – Creates a new .tar archive file. v – Verbosely show the .</description>
     </item>
     
     <item>
