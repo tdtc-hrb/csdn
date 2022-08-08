@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/</loc>
-    <lastmod>2022-07-10T02:20:39+08:00</lastmod>
+    <loc>https://tdtc-hrb.github.io/csdn/post/c-automake/</loc>
+    <lastmod>2022-08-08T02:20:39+08:00</lastmod>
   </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/pack-file-linux/</loc>
-    <lastmod>2022-07-10T02:20:39+08:00</lastmod>
+    <loc>https://tdtc-hrb.github.io/csdn/post/</loc>
+    <lastmod>2022-08-08T02:20:39+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/</loc>
+    <lastmod>2022-08-08T02:20:39+08:00</lastmod>
+  </url><url>
+    <loc>https://tdtc-hrb.github.io/csdn/post/pack-file-linux/</loc>
     <lastmod>2022-07-10T02:20:39+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/nodejs-ubuntu/</loc>
@@ -130,9 +133,6 @@
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_centos/</loc>
     <lastmod>2022-03-13T08:38:08-08:00</lastmod>
-  </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/c-automake/</loc>
-    <lastmod>2022-03-13T02:20:39+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/java-grammar/</loc>
     <lastmod>2022-03-08T02:09:28+08:00</lastmod>

@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="在Cygwin中执行测试" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2022-03-13T02:20:39&#43;08:00" />
+    <meta property="article:published_time" content="2022-08-08T02:20:39&#43;08:00" />
 
     
     
@@ -92,15 +92,15 @@
     },
     "headline": "automake生成makefile",
     "name": "automake生成makefile",
-    "wordCount":  162 ,
+    "wordCount":  177 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/c-automake/",
-    "datePublished": "2022-03-13T02:20Z",
-    "dateModified": "2022-03-13T02:20Z",
+    "datePublished": "2022-08-08T02:20Z",
+    "dateModified": "2022-08-08T02:20Z",
     
     
     "description": "在Cygwin中执行测试",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2022-03-13T02:20:39&#43;08:00">
-            Mar 13, 2022
+          <time class="post-date" datetime="2022-08-08T02:20:39&#43;08:00">
+            Aug 8, 2022
           </time>
         
          
@@ -177,14 +177,12 @@
     </header>
 
     <section class="post-content">
-      <h1 id="1-手工修改或创建文件">1. 手工(修改或创建)文件</h1>
-<p>详见附件<sup>Makefile.am</sup>和<sup>configure.ac</sup></p>
-<p>注意: am文件是需要创建的!</p>
-<h2 id="ac文件">ac文件</h2>
-<p>生成ac模板</p>
+      <p>注意: am文件是需要手工创建的!</p>
+<h1 id="1-ac文件">1. ac文件</h1>
+<p>生成configure.scan文件, 并重命名为configure.ac</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ autoscan
-</span></span></code></pre></div><p>会生成configure.scan文件, 重命名为configure.ac</p>
-<h3 id="修改初始化">修改初始化</h3>
+</span></span><span style="display:flex;"><span>$ mv configure.scan configure.ac
+</span></span></code></pre></div><h2 id="修改配置">修改配置</h2>
 <p>注意: 所有新修改的值都需要方括号([])</p>
 <ul>
 <li>程序属性</li>
@@ -195,18 +193,35 @@
 如果只有本目录, 使用空值</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AM_INIT_AUTOMAKE
-</span></span></code></pre></div><h1 id="2-其他命令">2. 其他命令</h1>
-<ul>
-<li>aclocal</li>
-<li>autoconf</li>
-<li>autoheader</li>
+</span></span></code></pre></div><ul>
+<li>检查编译器
+<a href="http://www.adp-gmbh.ch/misc/tools/configure/configure_in.html#ac_prog_cc">C compiler</a>:</li>
 </ul>
-<h1 id="3-生成makefile">3. 生成Makefile</h1>
-<h2 id="输出makefilein">输出Makefile.in</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>automake --add-missing
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_PROG_CC
+</span></span></code></pre></div><p><a href="http://www.adp-gmbh.ch/misc/tools/configure/configure_in.html#ac_prog_cxx">C++ compiler</a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_PROG_CXX
+</span></span></code></pre></div><ul>
+<li><a href="https://www.gnu.org/software/autoconf/manual/autoconf-2.71/html_node/Configuration-Files.html">输出Makefile.in</a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_CONFIG_FILES<span style="color:#f92672">([</span>Makefile<span style="color:#f92672">])</span>
+</span></span></code></pre></div><ul>
+<li>检查system头文件</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_CHECK_HEADERS<span style="color:#f92672">([</span>string.h<span style="color:#f92672">])</span>
+</span></span></code></pre></div><h1 id="2-生成makefile">2. 生成Makefile</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aclocal
+</span></span><span style="display:flex;"><span>autoconf
+</span></span></code></pre></div><h2 id="自定义宏可选">自定义宏(可选)</h2>
+<p>在ac file中的定义：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_CONFIG_HEADERS<span style="color:#f92672">([</span>config.h<span style="color:#f92672">])</span>
+</span></span></code></pre></div><p>执行：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>autoheader
 </span></span></code></pre></div><h2 id="输出makefile">输出Makefile</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>automake --add-missing
+</span></span></code></pre></div><p>输出Makefile:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./configure
-</span></span></code></pre></div><h2 id="手动makefile">手动Makefile</h2>
+</span></span></code></pre></div><h1 id="附件">附件</h1>
+<h2 id="手动makefile">手动Makefile</h2>
 <blockquote>
 <p>小项目可以。
 注意：所有的命令前必须为TAB，不能使空格！</p>
@@ -236,8 +251,7 @@
 </span></span><span style="display:flex;"><span>clean:
 </span></span><span style="display:flex;"><span>	-rm -f *.o
 </span></span><span style="display:flex;"><span>	-rm -f <span style="color:#66d9ef">$(</span>TARGET<span style="color:#66d9ef">)</span>
-</span></span></code></pre></div><h1 id="附件">附件</h1>
-<h2 id="源代码">源代码</h2>
+</span></span></code></pre></div><h2 id="源代码">源代码</h2>
 <p>参见<a href="https://tdtc-hrb.github.io/csdn/post/c-string-h2i/">十六进制转十进制</a></p>
 <ul>
 <li>main.c <br>
@@ -256,7 +270,7 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#                                               -*- Autoconf -*-</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Process this file with autoconf to produce a configure script.</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>AC_PREREQ<span style="color:#f92672">([</span>2.69<span style="color:#f92672">])</span>
+</span></span><span style="display:flex;"><span>AC_PREREQ<span style="color:#f92672">([</span>2.71<span style="color:#f92672">])</span>
 </span></span><span style="display:flex;"><span>AC_INIT<span style="color:#f92672">([</span>hex2int<span style="color:#f92672">]</span>, <span style="color:#f92672">[</span>v0.1<span style="color:#f92672">]</span>, <span style="color:#f92672">[</span>veic_2005@163.com<span style="color:#f92672">])</span>
 </span></span><span style="display:flex;"><span>AM_INIT_AUTOMAKE
 </span></span><span style="display:flex;"><span>AC_CONFIG_SRCDIR<span style="color:#f92672">([</span>hex2int.c<span style="color:#f92672">])</span>
@@ -278,7 +292,7 @@
 </span></span><span style="display:flex;"><span>AC_OUTPUT
 </span></span></code></pre></div><h1 id="参考文档">参考文档</h1>
 <ul>
-<li><a href="https://www.cnblogs.com/gaowengang/p/6170098.html">automake - 使用 autotools 工具集</a></li>
+<li><a href="https://blog.csdn.net/initphp/article/details/43705765">Linux c 开发 - Autotools使用详细解读</a></li>
 <li><a href="https://www.gnu.org/software/automake/manual/automake.html#Modernize-AM_005fINIT_005fAUTOMAKE-invocation">老版本init automake错误</a></li>
 </ul>
 
@@ -332,17 +346,10 @@
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_network_adapter_centos/">
-          <section class="post">
-              <h2>CentOS修改网卡为固定IP</h2>
-              
-          </section>
-      </a>
   
-  
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/java-grammar/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/pack-file-linux/">
           <section class="post">
-              <h2>java的grammar</h2>
+              <h2>打包文件</h2>
           </section>
       </a>
   

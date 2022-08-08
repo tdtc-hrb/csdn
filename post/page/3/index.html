@@ -164,6 +164,34 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/java-maven-qa1/">maven的QA</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>1. org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER Q:
+Classpath entry org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER will not be exported or published. Runtime ClassNotFoundExceptions may result. A:
+$mvn eclipse:clean reference what-is-org-eclipse-m2e-maven2-classpath-container-and-how-do-i-make-it-work-in 2. no main manifest attribute java jar Q:
+$java -jar cliDemo-0.0.1-SNAPSHOT.jar no main manifest attribute, in cliDemo-0.0.1-SNAPSHOT.jar A:
+for win:
+java -cp cliDemo-0.0.1-SNAPSHOT.jar;C:\Users\xiaobin\.m2\repository\commons-cli\commons-cli\1.4\commons-cli-1.4.jar my.csdn9.ConsoleLauncher --help Reference how-to-run-jar-files-depend-on-jar-files 3. CoreException: Could not calculate build plan: Plugin org.apache.maven.plugins:maven-compiler-plugin Q:
+CoreException: Could not calculate build plan: Plugin org.apache.maven.plugins:maven-compiler-plugin:3.1 or one of its dependencies could not be resolved: Failure to find org. <a class="read-more" href="/csdn/post/java-maven-qa1/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-05-15T10:08:08&#43;08:00">
+            15 May 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/vc-serial_communication/">Windows串口</a></h2>
     </header>
     <section class="post-excerpt">
@@ -405,34 +433,6 @@ ssh $sudo yum install openssh  <a class="read-more" href="/csdn/post/ops_network
 
         
         <time class="post-date" datetime="2022-03-13T08:38:08-08:00">
-            13 Mar 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/c-automake/">automake生成makefile</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>1. 手工(修改或创建)文件 详见附件Makefile.am和configure.ac
-注意: am文件是需要创建的!
-ac文件 生成ac模板
-$ autoscan 会生成configure.scan文件, 重命名为configure.ac
-修改初始化 注意: 所有新修改的值都需要方括号([])
-程序属性 AC_INIT([hex2int], [v0.1], [veic_2005@163.com]) 目录结构 如果只有本目录, 使用空值 AM_INIT_AUTOMAKE 2. 其他命令 aclocal autoconf autoheader 3. 生成Makefile 输出Makefile.in automake --add-missing 输出Makefile ./configure 手动Makefile 小项目可以。 注意：所有的命令前必须为TAB，不能使空格！
-#https://stackoverflow.com/questions/1484817/how-do-i-make-a-simple-makefile-for-gcc-on-linux #https://stackoverflow.com/questions/14109724/makefile-missing-separator/14109796 #https://www.gnu.org/software/make/manual/html_node/Pattern-Examples.html#Pattern-Examples #https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html#Automatic-Variables TARGET = hex2int CC = gcc CFLAGS = -g -Wall all:$(TARGET) OBJECTS = $(patsubst %.c, %.o, $(wildcard *.c)) HEADERS = $(wildcard *.h) %.o: %.c $(HEADERS) $(CC) -c $(CFLAGS) $&lt; -o $@ $(TARGET): $(OBJECTS) $(CC) $(OBJECTS) -Wall -o $@ clean: -rm -f *. <a class="read-more" href="/csdn/post/c-automake/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-03-13T02:20:39&#43;08:00">
             13 Mar 2022
         </time>
     </footer>

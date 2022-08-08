@@ -162,6 +162,36 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c-automake/">automake生成makefile</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>注意: am文件是需要手工创建的!
+1. ac文件 生成configure.scan文件, 并重命名为configure.ac
+$ autoscan $ mv configure.scan configure.ac 修改配置 注意: 所有新修改的值都需要方括号([])
+程序属性 AC_INIT([hex2int], [v0.1], [veic_2005@163.com]) 目录结构 如果只有本目录, 使用空值 AM_INIT_AUTOMAKE 检查编译器 C compiler: AC_PROG_CC C++ compiler:
+AC_PROG_CXX 输出Makefile.in AC_CONFIG_FILES([Makefile]) 检查system头文件 AC_CHECK_HEADERS([string.h]) 2. 生成Makefile aclocal autoconf 自定义宏(可选) 在ac file中的定义：
+AC_CONFIG_HEADERS([config.h]) 执行：
+autoheader 输出Makefile automake --add-missing 输出Makefile:
+./configure 附件 手动Makefile 小项目可以。 注意：所有的命令前必须为TAB，不能使空格！
+#https://stackoverflow.com/questions/1484817/how-do-i-make-a-simple-makefile-for-gcc-on-linux #https://stackoverflow.com/questions/14109724/makefile-missing-separator/14109796 #https://www.gnu.org/software/make/manual/html_node/Pattern-Examples.html#Pattern-Examples #https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html#Automatic-Variables TARGET = hex2int CC = gcc CFLAGS = -g -Wall all:$(TARGET) OBJECTS = $(patsubst %. <a class="read-more" href="/csdn/post/c-automake/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-08-08T02:20:39&#43;08:00">
+            8 Aug 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/pack-file-linux/">打包文件</a></h2>
     </header>
     <section class="post-excerpt">
@@ -398,41 +428,6 @@ rpm -ivh yum-metadata-parser-1.1.4-10.el7.x86_64.rpmrpm -ivh yum-3.4.3-168.el7.
 
         
         <time class="post-date" datetime="2022-06-11T12:38:08&#43;08:00">
-            11 Jun 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/redis-centos7/">在RHEL/CentOS安装Redis</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>0. preinstall User set $ useradd tdtc $ passwd tdtc Yum Repo 1) yum install $sudo yum groupinstall &#34;Development Tools&#34; $sudo yum install tcl wget v6+ Just to clarify: there is no way this issue will be fixed, Redis &gt;= 6 will require a C11 compiler.
-sudo yum install centos-release-scl sudo yum install devtoolset-8 scl enable devtoolset-8 bash 2) verification $gcc -v $make -v $echo &#39;puts [info patchlevel];exit 0&#39; | tclsh 1. <a class="read-more" href="/csdn/post/redis-centos7/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        on
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/redis/">#Redis</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/centos7/">#CentOS7</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/development-tools/">#Development Tools</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/wget/">#wget</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/rhel/">#RHEL</a>,
-            
-        
-        <time class="post-date" datetime="2022-06-11T04:58:39&#43;08:00">
             11 Jun 2022
         </time>
     </footer>
