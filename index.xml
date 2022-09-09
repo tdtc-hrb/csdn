@@ -6,7 +6,17 @@
     <description>Recent content on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 08 Aug 2022 02:20:39 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Sep 2022 06:08:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>计算圆的面积和周长</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/c-console_app/</link>
+      <pubDate>Thu, 01 Sep 2022 06:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/c-console_app/</guid>
+      <description>IDE Eclipse IDE for C/C++ Developers Dev Env cygwin 主程序 Create Project File -&amp;gt; New -&amp;gt; C/C++ Project &amp;ldquo;C++ Managed Build&amp;rdquo;
+Template Project type Executable: Hello World C++ Project Toolchains cygwin GCC ansi版 int main(int argc, char* argv[]) { double dRadius = 3; if (argc &amp;gt; 1) { dRadius = atof(argv[1]); } /// todo return 0; } unicode版 int main(int argc, wchar_t* argv[]) { double dRadius = 3; if (argc &amp;gt; 1) { dRadius = _wtof(argv[1]); } /// todo return 0; } C2065: &amp;lsquo;cout&amp;rsquo; : undeclared identifier 强制使用命名空间</description>
+    </item>
+    
     <item>
       <title>automake生成makefile</title>
       <link>https://tdtc-hrb.github.io/csdn/post/c-automake/</link>
@@ -538,16 +548,6 @@ sudo grub-install /dev/sda sudo update-grub </description>
 1) 查询 [tdtc@localhost ~]$ sudo rpm -qa | grep mariadb [sudo] password for tdtc: mariadb-libs-5.5.68-1.el7.x86_64 2) uninstall sudo yum -y remove mariadb* 2. install Step 1: Add MariaDB Yum Repositories /etc/yum.repos.d/mariadb.repo
 [mariadb] name = MariaDB baseurl = http://yum.mariadb.org/10.3/centos7-amd64 gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB gpgcheck=1 Step 2: Install MariaDB Server sudo yum install MariaDB-server MariaDB-client run sudo systemctl start mysql.service Step 3: Secure MariaDB Install Default: Enter
 [tdtc@localhost ~]$ sudo /usr/bin/mysql_secure_installation NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB SERVERS IN PRODUCTION USE!</description>
-    </item>
-    
-    <item>
-      <title>计算圆的面积和周长</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/c-console_app/</link>
-      <pubDate>Sat, 01 May 2021 06:08:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/c-console_app/</guid>
-      <description>IDE Eclipse IDE for C/C++ Developers Dev Env cygwin 主程序 Create Project File -&amp;gt; New -&amp;gt; C/C++ Project &amp;ldquo;C++ Managed Build&amp;rdquo;
-Template Project type Executable: Hello World C++ Project Toolchains cygwin GCC ansi版 int main(int argc, char* argv[]) { double dRadius = 3; if (argc &amp;gt; 1) { dRadius = atof(argv[1]); } /// todo return 0; } unicode版 int main(int argc, wchar_t* argv[]) { double dRadius = 3; if (argc &amp;gt; 1) { dRadius = _wtof(argv[1]); } /// todo return 0; } C2065: &amp;lsquo;cout&amp;rsquo; : undeclared identifier 强制使用命名空间</description>
     </item>
     
     <item>
