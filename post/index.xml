@@ -362,6 +362,17 @@ Reference How to install Java on CentOS 7 OpenJDK Version Info - Releases </desc
     </item>
     
     <item>
+      <title>调用COM</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/c2plus-com-dll/</link>
+      <pubDate>Fri, 13 May 2022 08:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/c2plus-com-dll/</guid>
+      <description>IDE: vs2008 Express(sp1)
+callXBFLibrary reference COM 注册COM @echo cd /d %~dp0 Regsvr32 xbfInfo.dll Add Reference COM选项卡 添加完成时
+添加事件 import class using System.IO; using xbfInfoLib; 写xbf文件 读Ini文件配置 Boolean flagMSSQL = false; Boolean flagSecu = false; string sectionName = ini.readIniFileVal(&amp;#34;config&amp;#34;, &amp;#34;type&amp;#34;); string strSrv = ini.readIniFileVal(sectionName, &amp;#34;Server&amp;#34;); if (!Equals(strSrv, &amp;#34;&amp;#34;)) flagMSSQL = true; if (flagMSSQL) { strConn = &amp;#34;Provider=SQLOLEDB.1;&amp;#34; + &amp;#34;Password=&amp;#34; + ini.readIniFileVal(sectionName, &amp;#34;Pwd&amp;#34;) + &amp;#34;;&amp;#34; + &amp;#34;Persist Security Info=True;&amp;#34; + &amp;#34;User ID=&amp;#34; + ini.</description>
+    </item>
+    
+    <item>
       <title>使用BSD socket</title>
       <link>https://tdtc-hrb.github.io/csdn/post/vc-bsd_socket/</link>
       <pubDate>Thu, 12 May 2022 08:08:08 +0800</pubDate>
@@ -823,17 +834,6 @@ Client Side: flow chart getaddrinfo() -&amp;gt; socket() -&amp;gt; connect() -&a
 1. 定义SAFEARRAY变量 SAFEARRAY *pSArray = NULL; 2. 释放此变量 SafeArrayDestroy(pSArray); 3. 建立向量表 pSArray = SafeArrayCreateVector(VT_UI1, 0, 32); 向量变量（VT_UI1）的定义：msdn
 VT_UI1 Variable type is unsigned char. 4. 写入数据 SafeArrayPutElement(pSArray, &amp;amp;l, &amp;amp;inqReport[l]); getInqRepo方法： AA：屏蔽的数值
 STDMETHODIMP CRepoFmt::getInqRepo(ULONG iStation, SAFEARRAY** ret) { SAFEARRAY *pSArray = NULL; unsigned char inqReport[32]; unsigned char xorByte = AA; int iStationID = 0; if (iStation &amp;lt; 1) iStationID = 1; else iStationID = iStation; inqReport[0] = AA; inqReport[1] = AA; inqReport[2] = AA; inqReport[3] = AA; inqReport[4] = (iStationID % AA); inqReport[5] = (iStationID / AA); inqReport[6] = AA; inqReport[7] = AA; inqReport[8] = AA; inqReport[9] = AA; inqReport[10] = AA; inqReport[11] = AA; for (int i = 1; i &amp;lt; 18; i++) xorByte ^= inqReport[i]; inqReport[18] = xorByte; // Fill the inqReport etc.</description>
-    </item>
-    
-    <item>
-      <title>调用COM</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/c2plus-com-dll/</link>
-      <pubDate>Wed, 13 May 2020 08:08:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/c2plus-com-dll/</guid>
-      <description>IDE: vs2008 Express(sp1)
-callXBFLibrary reference COM 注册COM @echo cd /d %~dp0 Regsvr32 xbfInfo.dll Add Reference COM选项卡 添加完成时
-添加事件 import class using System.IO; using xbfInfoLib; 写xbf文件 读Ini文件配置 Boolean flagMSSQL = false; Boolean flagSecu = false; string sectionName = ini.readIniFileVal(&amp;#34;config&amp;#34;, &amp;#34;type&amp;#34;); string strSrv = ini.readIniFileVal(sectionName, &amp;#34;Server&amp;#34;); if (!Equals(strSrv, &amp;#34;&amp;#34;)) flagMSSQL = true; if (flagMSSQL) { strConn = &amp;#34;Provider=SQLOLEDB.1;&amp;#34; + &amp;#34;Password=&amp;#34; + ini.readIniFileVal(sectionName, &amp;#34;Pwd&amp;#34;) + &amp;#34;;&amp;#34; + &amp;#34;Persist Security Info=True;&amp;#34; + &amp;#34;User ID=&amp;#34; + ini.</description>
     </item>
     
     <item>

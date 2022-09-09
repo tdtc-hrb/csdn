@@ -281,6 +281,30 @@ Reference How to install Java on CentOS 7 OpenJDK Version Info - Releases  <a cl
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c2plus-com-dll/">调用COM</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>IDE: vs2008 Express(sp1)
+callXBFLibrary reference COM 注册COM @echo cd /d %~dp0 Regsvr32 xbfInfo.dll Add Reference COM选项卡 添加完成时
+添加事件 import class using System.IO; using xbfInfoLib; 写xbf文件 读Ini文件配置 Boolean flagMSSQL = false; Boolean flagSecu = false; string sectionName = ini.readIniFileVal(&#34;config&#34;, &#34;type&#34;); string strSrv = ini.readIniFileVal(sectionName, &#34;Server&#34;); if (!Equals(strSrv, &#34;&#34;)) flagMSSQL = true; if (flagMSSQL) { strConn = &#34;Provider=SQLOLEDB.1;&#34; + &#34;Password=&#34; + ini.readIniFileVal(sectionName, &#34;Pwd&#34;) + &#34;;&#34; + &#34;Persist Security Info=True;&#34; + &#34;User ID=&#34; + ini. <a class="read-more" href="/csdn/post/c2plus-com-dll/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-05-13T08:08:08&#43;08:00">
+            13 May 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/vc-bsd_socket/">使用BSD socket</a></h2>
     </header>
     <section class="post-excerpt">
@@ -404,29 +428,6 @@ Reference UNIDIRECTIONAL USER INTERFACE ARCHITECTURES - André Staltz Clarified 
 
         
         <time class="post-date" datetime="2022-04-10T17:26:39&#43;08:00">
-            10 Apr 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/dpkg-issues/">dpkg的info问题和file system只读问题</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>Install sudo dpkg -i debName.deb issues info问题 E: Sub-process /usr/bin/dpkg returned an error code (1) 解决办法：
-cd /var/lib/dpkg sudo mv info info.bak sudo mkdir info 文件系统只读问题 W: Problem unlinking the file /var/cache/apt/pkgcache.bin - RemoveCaches (30: Read-only file system) sudo fsck -Af sudo reboot  <a class="read-more" href="/csdn/post/dpkg-issues/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-04-10T02:10:39&#43;08:00">
             10 Apr 2022
         </time>
     </footer>
