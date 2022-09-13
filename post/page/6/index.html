@@ -164,6 +164,34 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/hw-can-uart-key/">CAN数据转发</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>完结篇 《CAN转COM或CAN-1》介绍了CAN，本篇其余部分。
+开发板：英蓓特MCB2300（LPC2368）
+开发工具：MDK3.8a
+开发主机：Windows XP SP3 中文专业版
+UART 因为我们使用UART主要是进行发送的，所以关闭接收可以更加快速的进行发送处理。
+控制接收缓存寄存（Receiver Buffer Register）即可达到此目的。
+禁止RBR void preUARTInitRBR( unsigned char i ) { switch (i) { case 0: U0IER = IER_THRE | IER_RLS;	/* Disable RBR */ break; case 1: U1IER = IER_THRE | IER_RLS;	/* Disable RBR */ break; } } 允许RBR void postUARTInitRBR( unsigned char i ) { switch (i) { case 0: U0IER = IER_THRE | IER_RLS | IER_RBR;	/* Re-enable RBR */ break; case 1: U1IER = IER_THRE | IER_RLS | IER_RBR;	/* Re-enable RBR */ break; } } 完成后的UART NXP的官方例程UART加入RBR后的code <a class="read-more" href="/csdn/post/hw-can-uart-key/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-15T23:08:08&#43;08:00">
+            15 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_data_transmission/">Linux与Windows互传数据</a></h2>
     </header>
     <section class="post-excerpt">
@@ -396,30 +424,6 @@ code unitUntMain; interface uses Windows, Messages, SysUtils, Variants, Classes
 
         
         <time class="post-date" datetime="2020-05-14T12:08:08&#43;08:00">
-            14 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/c-bsd_socket/">client和server</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>GNU Compiler Collection(GCC)
-Beej’s Guide Network to Programming 一个简单的客户端和服务器端的程序！
-Client Side: flow chart getaddrinfo() -&gt; socket() -&gt; connect() -&gt; recv() #include &lt;stdio.h&gt; #include &lt;string.h&gt; #include &lt;sys/types.h&gt; #include &lt;sys/socket.h&gt; #include &lt;arpa/inet.h&gt; #include &lt;netdb.h&gt; #define SERVIP &#34;192.168.56.112&#34; #define SERVPORT &#34;2349&#34; int main(int argc, char *argv[]) { struct addrinfo hints, *res; int status; int sockfd; int connSta; int recvSta; char buffer[1024]; int len; char ipstr[INET_ADDRSTRLEN]; void *addr; if (argc != 3) { fprintf(stderr, &#34;Usage: Not Server IP And Port! <a class="read-more" href="/csdn/post/c-bsd_socket/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-14T00:08:08&#43;08:00">
             14 May 2020
         </time>
     </footer>

@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="元素, 属性选择器, 奇偶选择器" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2020-04-10T16:26:39&#43;08:00" />
+    <meta property="article:published_time" content="2022-04-10T16:26:39&#43;08:00" />
 
     
     
@@ -92,15 +92,15 @@
     },
     "headline": "CSS选择器",
     "name": "CSS选择器",
-    "wordCount":  51 ,
+    "wordCount":  54 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/css-selector-basic/",
-    "datePublished": "2020-04-10T16:26Z",
-    "dateModified": "2020-04-10T16:26Z",
+    "datePublished": "2022-04-10T16:26Z",
+    "dateModified": "2022-04-10T16:26Z",
     
     
     "description": "元素, 属性选择器, 奇偶选择器",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2020-04-10T16:26:39&#43;08:00">
-            Apr 10, 2020
+          <time class="post-date" datetime="2022-04-10T16:26:39&#43;08:00">
+            Apr 10, 2022
           </time>
         
          
@@ -177,11 +177,11 @@
     </header>
 
     <section class="post-content">
-      <blockquote>
-<p>web浏览器建议： <br>
-(1) Google Chrome(V32+) <br>
-(2) IE(V10+)</p>
-</blockquote>
+      <p>浏览器建议：</p>
+<ul>
+<li>Google Chrome <a href="https://dl.google.com/release2/h8vnfiy7pvn3lxy9ehfsaxlrnnukgff8jnodrp0y21vrlem4x71lor5zzkliyh8fv3sryayu5uk5zi20ep7dwfnwr143dzxqijv/49.0.2623.112_chrome_installer.exe">v49.0.2623.112</a></li>
+<li>IE11</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -208,8 +208,12 @@
 </tr>
 </tbody>
 </table>
-<h1 id="1-元素">1. 元素</h1>
-<h2 id="1-下级元素">1) 下级元素</h2>
+<h1 id="元素">元素</h1>
+<p>document的<a href="https://www.w3school.com.cn/css/css_selector_type.asp">元素</a>就是最基本的选择器。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>html {color:black;}
+</span></span><span style="display:flex;"><span>h1 {color:blue;}
+</span></span><span style="display:flex;"><span>h2 {color:silver;}
+</span></span></code></pre></div><h2 id="下级元素">下级元素</h2>
 <h3 id="子元素httpswwww3schoolcomcncsscss_selector_childasp"><a href="https://www.w3school.com.cn/css/css_selector_child.asp">子元素</a></h3>
 <blockquote>
 <p>当前元素的下一级元素。</p>
@@ -217,16 +221,25 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">&gt;</span>
 </span></span></code></pre></div><h3 id="后代元素httpswwww3schoolcomcncsscss_selector_descendantasp"><a href="https://www.w3school.com.cn/css/css_selector_descendant.asp">后代元素</a></h3>
 <blockquote>
-<p>空格替代 “&gt;” <br>
-例如: ol li</p>
+<p>空格替代 “&gt;”
+例如:</p>
 </blockquote>
-<p>就表示当前元素（ol）下的所有li元素。</p>
-<h1 id="2-属性选择器">2. 属性选择器</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>ol li
+</span></span></code></pre></div><p>就表示当前元素（ol）下的所有li元素。</p>
+<h1 id="属性选择器">属性选择器</h1>
 <p><a href="https://www.w3school.com.cn/cssref/selector_attribute.asp">属性</a></p>
 <h2 id="1设置多个属性">1）设置多个属性</h2>
+<ul>
+<li>
 <p><a href="https://www.w3school.com.cn/cssref/selector_attr_begin.asp">“^” 开头匹配</a></p>
+</li>
+<li>
 <p><a href="https://www.w3school.com.cn/cssref/selector_attr_end.asp">“$” 结尾匹配</a></p>
+</li>
+<li>
 <p><a href="https://www.w3school.com.cn/cssref/selector_attr_contain.asp">&quot;*&quot; 包含匹配</a></p>
+</li>
+</ul>
 <h1 id="3-奇偶选择器">3. 奇偶选择器</h1>
 <p><a href="https://www.w3school.com.cn/cssref/selector_nth-child.asp">:nth-child</a> 其常用值有：odd和even</p>
 
@@ -280,17 +293,17 @@
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/memcached-spy/">
+      <a class="read-next-story" style="no-cover" href="/csdn/post/reduxjs-asyn-dispatcher/">
           <section class="post">
-              <h2>使用spymemcached操作memcached</h2>
+              <h2>dispatcher - Asynchronous</h2>
               
           </section>
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/java-string-redis-template/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/dpkg-issues/">
           <section class="post">
-              <h2>StringRedisTemplate - redis-cli</h2>
+              <h2>dpkg的info问题和file system只读问题</h2>
           </section>
       </a>
   

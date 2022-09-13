@@ -164,6 +164,30 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_hadoop_cluster_yarn/">Hadoop配置 - yarn</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>(../etc/hadoop/yarn-site.xml)
+1. ResourceManager HA &lt;property&gt; &lt;name&gt;yarn.resourcemanager.ha.enabled&lt;/name&gt; &lt;value&gt;true&lt;/value&gt; &lt;/property&gt; &lt;property&gt; &lt;name&gt;yarn.resourcemanager.cluster-id&lt;/name&gt; &lt;value&gt;cluster1&lt;/value&gt; &lt;/property&gt; &lt;property&gt; &lt;name&gt;yarn.resourcemanager.ha.rm-ids&lt;/name&gt; &lt;value&gt;rm1,rm2&lt;/value&gt; &lt;/property&gt; &lt;property&gt; &lt;name&gt;yarn.resourcemanager.hostname.rm1&lt;/name&gt; &lt;value&gt;tdtc203&lt;/value&gt; &lt;/property&gt; &lt;property&gt; &lt;name&gt;yarn.resourcemanager.hostname.rm2&lt;/name&gt; &lt;value&gt;tdtc204&lt;/value&gt; &lt;/property&gt; &lt;property&gt; &lt;name&gt;yarn.resourcemanager.webapp.address.rm1&lt;/name&gt; &lt;value&gt;tdtc203:8088&lt;/value&gt; &lt;/property&gt; &lt;property&gt; &lt;name&gt;yarn.resourcemanager.webapp.address.rm2&lt;/name&gt; &lt;value&gt;tdtc204:8088&lt;/value&gt; &lt;/property&gt; &lt;property&gt; &lt;name&gt;yarn.resourcemanager.zk-address&lt;/name&gt; &lt;value&gt;tdtc201:2181,tdtc202:2181,tdtc203:2181&lt;/value&gt; &lt;/property&gt; 2. Resource Manager Restart see Reference[3]
+&lt;property&gt; &lt;name&gt;yarn.resourcemanager.recovery.enabled&lt;/name&gt; &lt;value&gt;true&lt;/value&gt; &lt;/property&gt; 1) zookeeper &lt;property&gt; &lt;name&gt;yarn.resourcemanager.store.class&lt;/name&gt; &lt;value&gt;org.apache.hadoop.yarn.server.resourcemanager.recovery.ZKRMStateStore&lt;/value&gt; &lt;/property&gt; 3. Aux Service（Auxiliary Service） 1) base &lt;property&gt; &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt; &lt;value&gt;mapreduce_shuffle&lt;/value&gt; &lt;/property&gt; 2) spark &lt;property&gt; &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt; &lt;value&gt;spark_shuffle,mapreduce_shuffle&lt;/value&gt; &lt;/property&gt; 4. log aggregation yarn-default. <a class="read-more" href="/csdn/post/ops_hadoop_cluster_yarn/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-14T10:08:08&#43;08:00">
+            14 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_hadoop_cluster_hdfs/">Hadoop配置 - hdfs</a></h2>
     </header>
     <section class="post-excerpt">
@@ -396,36 +420,6 @@ $curl --progress https://nginx.org/download/nginx-1.16.1.tar.gz | tar xz 2) setu
 
         
         <time class="post-date" datetime="2020-04-13T07:38:08&#43;08:00">
-            13 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_real_keepalived/">架设Real Server和Keepalived Server</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>os: CentOS7 minimal（安装时的选项） 准备工作： 修改网卡为固定IP - CentOS
-总览 Real Server CentOS7RS1 192.168.0.107
-Nginx V1.14 Tomcat V7.0.90 CentOS7RS2 192.168.0.102
-Nginx V1.14 Tomcat V8.5.32 Keepalived Server CentOS7Master 192.168.0.109
-CentOS7Bak 192.168.0.110
-一、Real Server 1. 安装前准备 Linux下安装Tomcat ops_tomcat.md
-nginx - load balancing ops_nginx.md
-2. config ARP 1) ifconfig $yum install net-tools 2) realserver /etc/init.d/realserver
-#vi /etc/init.d/realserver #!/bin/bash SNS_VIP=192.168.0.220 case &#34;$1&#34; in start) ifconfig lo:0 $SNS_VIP netmask 255.255.255.255 broadcast $SNS_VIP /sbin/route add -host $SNS_VIP dev lo:0 echo &#34;1&#34; &gt;/proc/sys/net/ipv4/conf/lo/arp_ignore echo &#34;2&#34; &gt;/proc/sys/net/ipv4/conf/lo/arp_announce echo &#34;1&#34; &gt;/proc/sys/net/ipv4/conf/all/arp_ignore echo &#34;2&#34; &gt;/proc/sys/net/ipv4/conf/all/arp_announce sysctl -p &gt;/dev/null 2&gt;&amp;1 echo &#34;RealServer Start OK&#34; ;; stop) ifconfig lo:0 down route del $SNS_VIP &gt;/dev/null 2&gt;&amp;1 echo &#34;0&#34; &gt;/proc/sys/net/ipv4/conf/lo/arp_ignore echo &#34;0&#34; &gt;/proc/sys/net/ipv4/conf/lo/arp_announce echo &#34;0&#34; &gt;/proc/sys/net/ipv4/conf/all/arp_ignore echo &#34;0&#34; &gt;/proc/sys/net/ipv4/conf/all/arp_announce echo &#34;RealServer Stoped&#34; ;; *) echo &#34;Usage: $0 {start|stop}&#34; exit 1 esac exit 0 2. <a class="read-more" href="/csdn/post/ops_real_keepalived/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-13T06:38:08&#43;08:00">
             13 Apr 2020
         </time>
     </footer>

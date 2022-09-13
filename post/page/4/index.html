@@ -164,6 +164,37 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/css-selector-basic/">CSS选择器</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>浏览器建议：
+Google Chrome v49.0.2623.112 IE11 Selector type CSS 说明 Tag name p {} 对整个网页中标签有效 ID #some-id {} 对网页中指定id有效 Class .some-class {} 对网页中相同类名有效 元素 document的元素就是最基本的选择器。
+html {color:black;} h1 {color:blue;} h2 {color:silver;} 下级元素 子元素 当前元素的下一级元素。
+&gt; 后代元素 空格替代 “&gt;” 例如:
+ol li 就表示当前元素（ol）下的所有li元素。
+属性选择器 属性
+1）设置多个属性 “^” 开头匹配
+“$” 结尾匹配
+&quot;*&quot; 包含匹配
+3. 奇偶选择器 :nth-child 其常用值有：odd和even <a class="read-more" href="/csdn/post/css-selector-basic/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-04-10T16:26:39&#43;08:00">
+            10 Apr 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/dpkg-issues/">dpkg的info问题和file system只读问题</a></h2>
     </header>
     <section class="post-excerpt">
@@ -397,34 +428,6 @@ sudo grub-install /dev/sda sudo update-grub  <a class="read-more" href="/csdn/po
         
         <time class="post-date" datetime="2021-05-02T01:08:39&#43;08:00">
             2 May 2021
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/c-string-h2i/">十六进制转十进制</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>工作原理：
-16进制数 * 16n 之和就是10进制数。
-手算 16进制: 0x61E
-0位： E * 160 = 14 1位： 1 * 161 = 16 2位： 6 * 162 = 1536
-10进制： 14+16+1536 = 1566
-code 程序的需要两部分组成：
-权值计算 16的几次方，power(16, x) unsigned long power(int a, int b) { int i; unsigned long result = 1; for(i = 0; i &lt; b; i++) result = result * a; return result; }; 单16进制值转10进制值 例如：如果是F，则表示15 switch (ch) { case &#39;0&#39;: iCh = 0; break; case &#39;1&#39;: iCh = 1; break; case &#39;2&#39;: iCh = 2; break; case &#39;3&#39;: iCh = 3; break; case &#39;4&#39;: iCh = 4; break; case &#39;5&#39;: iCh = 5; break; case &#39;6&#39;: iCh = 6; break; case &#39;7&#39;: iCh = 7; break; case &#39;8&#39;: iCh = 8; break; case &#39;9&#39;: iCh = 9; break; case &#39;a&#39;: iCh = 10; break; case &#39;b&#39;: iCh = 11; break; case &#39;c&#39;: iCh = 12; break; case &#39;d&#39;: iCh = 13; break; case &#39;e&#39;: iCh = 14; break; case &#39;f&#39;: iCh = 15; break; default: iCh = -1; break; } 为了满足，把所有输入转换为小写字母，可以使用系统函数tolower()或者我们自己写的函数toLower() <a class="read-more" href="/csdn/post/c-string-h2i/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2021-05-01T05:08:08&#43;08:00">
-            1 May 2021
         </time>
     </footer>
 </article>
