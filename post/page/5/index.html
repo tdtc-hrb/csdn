@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.102.3" />
+    <meta name="generator" content="Hugo 0.103.0" />
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,6 +160,31 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql-mdb-v103/">安装 MariaDB 10.3数据库</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>1. 准备安装 卸载旧版本Maria
+1) 查询 [tdtc@localhost ~]$ sudo rpm -qa | grep mariadb [sudo] password for tdtc: mariadb-libs-5.5.68-1.el7.x86_64 2) uninstall sudo yum -y remove mariadb* 2. install Step 1: Add MariaDB Yum Repositories /etc/yum.repos.d/mariadb.repo
+[mariadb] name = MariaDB baseurl = http://yum.mariadb.org/10.3/centos7-amd64 gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB gpgcheck=1 Step 2: Install MariaDB Server sudo yum install MariaDB-server MariaDB-client run sudo systemctl start mysql.service Step 3: Secure MariaDB Install Default: Enter
+[tdtc@localhost ~]$ sudo /usr/bin/mysql_secure_installation NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB SERVERS IN PRODUCTION USE! <a class="read-more" href="/csdn/post/mysql-mdb-v103/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2021-05-02T01:08:39&#43;08:00">
+            2 May 2021
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -386,32 +411,6 @@ CTM1050.7z 提取码: pcah <a class="read-more" href="/csdn/post/hw-schematic_di
 
         
         <time class="post-date" datetime="2020-05-16T00:28:08&#43;08:00">
-            16 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/uml-ommunication_diagram-can/">时序图与状态图</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>tool: Rational Rose
-功能简介： 当主程序收到CAN口的数据后；根据按键的不同来选择是使用CAN口发送，还是使用UART口发送。
-时序图
-协作图
-down can2uart.mdl 提取码: bb8h <a class="read-more" href="/csdn/post/uml-ommunication_diagram-can/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-16T00:08:08&#43;08:00">
             16 May 2020
         </time>
     </footer>

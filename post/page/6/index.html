@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.102.3" />
+    <meta name="generator" content="Hugo 0.103.0" />
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -164,6 +164,32 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/uml-ommunication_diagram-can/">时序图与状态图</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>tool: Rational Rose
+功能简介： 当主程序收到CAN口的数据后；根据按键的不同来选择是使用CAN口发送，还是使用UART口发送。
+时序图
+协作图
+down can2uart.mdl 提取码: bb8h <a class="read-more" href="/csdn/post/uml-ommunication_diagram-can/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-16T00:08:08&#43;08:00">
+            16 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/hw-can-uart-key/">CAN数据转发</a></h2>
     </header>
     <section class="post-excerpt">
@@ -240,45 +266,6 @@ V3.0的示例：
 
         
         <time class="post-date" datetime="2020-05-15T14:08:08&#43;08:00">
-            15 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/dev_wsl_ubuntu/">使用WSL在Windows 10</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>系统要求：x64 OS: Windows 10(1803+) 安装 开启 添加删除程序-&gt;启动或关闭Windows功能， 勾选“适用于 Linux 的 Windows 子系统”
-安装Ubuntu ltsc只支持手动安装
-在powerShell的管理员模式下运行命令
-1)手动方式
-安装手册
-Add-AppxPackage .\app_name.appx install 点击开始菜单的完成安装。 更改源列表 /etc/apt/sources.list
-http://archive.ubuntu.com -&gt; https://mirrors.aliyun.com/ubuntu/
-使用 文件互访 例如我们在c:\Users\xiaobin建立一个testTxtFile.txt
-cd /mnt/c/Users/xiaobin/ vi testTxtFile.txt 在WSL就可看到文件内容。
-mv testTxtFile.txt testFile.txt 在windows就可以看到重命名的testFile.txt。
-访问WSL服务 WSL与windows 10共有端口，所以Windows 10已使用的端口，不要再分配给WSL
-举例： 首先，在wsl中启动nginx；
-sudo service nginx start 然后访问(回环地址)：127.0.0.1:90 卸载 如果“普通”方式不工作，请使用“命令行”。
-普通 右击“Ubuntu xxx” 图标，选择“Uninstall”即可。
-命令行 适用于 Linux 的 Windows 子系统的命令参考
-旧版本 v1803-
-lxrun /uninstall 新版本 v1803+
-wslconfig /u Ref How to Configure Static IP Address on Ubuntu 20. <a class="read-more" href="/csdn/post/dev_wsl_ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-15T12:08:08&#43;08:00">
             15 May 2020
         </time>
     </footer>
