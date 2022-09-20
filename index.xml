@@ -6,7 +6,20 @@
     <description>Recent content on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 01 Sep 2022 08:08:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Sep 2022 07:38:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>前端（Web）负载均衡</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_nginx/</link>
+      <pubDate>Tue, 13 Sep 2022 07:38:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_nginx/</guid>
+      <description>OS: CentOS7 minimal（安装时的选项）
+nginx&amp;rsquo;s load balancing 一、安装 0. prepare $yum -y install gcc gcc-c++ automake pcre pcre-devel zlib zlib-devel open openssl-devel 1) update OpenSSL default directory: /usr/ssl
+wget https://www.openssl.org/source/openssl-1.1.1q.tar.gz --no-check-certificate 2) setup $./config --prefix=/usr --shared $make Root permission Required
+sudo make install 1. installation sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm sudo yum install -y nginx 1) down Same as the installed version
+$curl --progress https://nginx.org/download/nginx-1.22.0.tar.gz | tar xz 2) setup module see param:</description>
+    </item>
+    
     <item>
       <title>计算圆的面积和周长</title>
       <link>https://tdtc-hrb.github.io/csdn/post/c-console_app/</link>
@@ -1339,19 +1352,6 @@ Slave 1 [mysqld] server-id=161 Slave 2 [mysqld] server-id=162 3.</description>
 $yum install openssl-devel 3) libnl $yum install libnl libnl-devel libnfnetlink-devel 1. keepalived v1.4.5
 down and unzip $wget http://www.keepalived.org/software/keepalived-1.4.5.tar.gz $ tar zxvf keepalived-1.4.5.tar.gz installation $cd keepalived-1.4.5 $./configure --prefix=/usr/local/keepalived $make Root permission Required
 $make install setup $cp /usr/local/keepalived/sbin/keepalived /usr/sbin/ $mkdir -p /etc/keepalived $cp /usr/local/keepalived/etc/keepalived/keepalived.conf /etc/keepalived/keepalived.conf $cp /usr/local/keepalived/etc/sysconfig/keepalived /etc/sysconfig/ $cp /tmp/keepalived-1.</description>
-    </item>
-    
-    <item>
-      <title>前端（Web）负载均衡</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_nginx/</link>
-      <pubDate>Mon, 13 Apr 2020 07:38:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_nginx/</guid>
-      <description>OS: CentOS7 minimal（安装时的选项）
-nginx&amp;rsquo;s load balancing 一、安装 0. prepare $yum -y install gcc gcc-c++ automake pcre pcre-devel zlib zlib-devel open openssl-devel 1) update OpenSSL default directory: /usr/ssl
-$wget https://www.openssl.org/source/openssl-1.1.1f.tar.gz 2) setup $./config --prefix=/usr --shared $make Root permission Required
-$make install 1. installation sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm sudo yum install -y nginx 1) down Same as the installed version
-$curl --progress https://nginx.org/download/nginx-1.16.1.tar.gz | tar xz 2) setup module see param:</description>
     </item>
     
     <item>

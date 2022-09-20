@@ -162,6 +162,32 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_nginx/">前端（Web）负载均衡</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>OS: CentOS7 minimal（安装时的选项）
+nginx&rsquo;s load balancing 一、安装 0. prepare $yum -y install gcc gcc-c++ automake pcre pcre-devel zlib zlib-devel open openssl-devel 1) update OpenSSL default directory: /usr/ssl
+wget https://www.openssl.org/source/openssl-1.1.1q.tar.gz --no-check-certificate 2) setup $./config --prefix=/usr --shared $make Root permission Required
+sudo make install 1. installation sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm sudo yum install -y nginx 1) down Same as the installed version
+$curl --progress https://nginx.org/download/nginx-1.22.0.tar.gz | tar xz 2) setup module see param: <a class="read-more" href="/csdn/post/ops_nginx/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-09-13T07:38:08&#43;08:00">
+            13 Sep 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/c-console_app/">计算圆的面积和周长</a></h2>
     </header>
     <section class="post-excerpt">
@@ -394,42 +420,6 @@ RepoInfo.decode = function(string) { if (string == null) return; var obj = RepoI
         
         <time class="post-date" datetime="2022-06-13T16:08:08&#43;08:00">
             13 Jun 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_rhel_repo/">RHEL更换CentOS Yum</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>v7.x Red Hat Enterprise Linux7.x
-Yum Repo rpm -aq|grep yum|xargs rpm -e --nodepsrpm -ivh http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/wget-1.14-18.el7_6.1.x86_64.rpm down:
-wget http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/yum-metadata-parser-1.1.4-10.el7.x86_64.rpmwget http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/yum-3.4.3-168.el7.centos.noarch.rpmwget http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/yum-plugin-fastestmirror-1.1.31-54.el7_8.noarch.rpm install:
-rpm -ivh yum-metadata-parser-1.1.4-10.el7.x86_64.rpmrpm -ivh yum-3.4.3-168.el7.centos.noarch.rpm yum-plugin-fastestmirror-1.1.31-54.el7_8.noarch.rpm repo file /etc/yum.repos.d/CentOS-Base.repo CentOS-Base.repo - cento7
-# CentOS-Base.repo## The mirror system uses the connecting IP address of the client and the# update status of each mirror to pick mirrors that are updated to and# geographically close to the client. <a class="read-more" href="/csdn/post/ops_rhel_repo/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        on
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/yum/">#yum</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/centos7/">#CentOS7</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/epel-release/">#epel-release</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/7.9.2009/">#7.9.2009</a>,
-            
-        
-        <time class="post-date" datetime="2022-06-12T12:58:39&#43;08:00">
-            12 Jun 2022
         </time>
     </footer>
 </article>
