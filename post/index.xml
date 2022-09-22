@@ -504,6 +504,17 @@ cd /var/lib/dpkg sudo mv info info.bak sudo mkdir info 文件系统只读问题 
     </item>
     
     <item>
+      <title>使用go-bindata</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/go-data-using/</link>
+      <pubDate>Sun, 10 Apr 2022 02:10:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/go-data-using/</guid>
+      <description>安装 $ go get -u github.com/go-bindata/go-bindata/... generation bindata.go $ cd ~/go/src/github.com/xiaobin80/go-micro-services/ $ go-bindata data/... $ mv bindata.go ./data/ 修改包名 package main &amp;mdash;》
+package xxx 此例xxx为data。
+Reference go-bindata go-micro-services </description>
+    </item>
+    
+    <item>
       <title>CentOS修改网卡为固定IP</title>
       <link>https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_centos/</link>
       <pubDate>Sun, 13 Mar 2022 08:38:08 -0800</pubDate>
@@ -1539,18 +1550,6 @@ Tips：如果想从pdm生成CDM，Tools -&amp;gt; Generate Conceptual Data Model
       <guid>https://tdtc-hrb.github.io/csdn/post/gitlab-install-shell/</guid>
       <description>一、安装 1. depend $sudo apt-get update $sudo apt-get install ca-certificates curl openssh-server postfix vim 2. down script $curl -LO https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh 3. exec script $sudo bash ~/script.deb.sh 4. install If it is &amp;ldquo;qiang&amp;rdquo;, please see 《代理set - ubuntu》
 $sudo apt-get install gitlab-ce 5. config 1) ufw $sudo ufw allow http $sudo ufw allow https $sudo ufw allow OpenSSH 2) gitlab.rb $sudo vim /etc/gitlab/gitlab.rb # If your GitLab server does not have a domain name, you will need to use an IP # address instead of a domain and keep the protocol as `http`.</description>
-    </item>
-    
-    <item>
-      <title>使用go-bindata</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/go-data-using/</link>
-      <pubDate>Fri, 10 Apr 2020 02:10:39 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/go-data-using/</guid>
-      <description>安装 $ go get -u github.com/go-bindata/go-bindata/... generation bindata.go $ cd ~/go/src/github.com/xiaobin80/go-micro-services/ $ go-bindata data/... $ mv bindata.go ./data/ 修改包名 package main &amp;mdash;》
-package xxx 此例xxx为data。
-Reference go-bindata - github
-go-micro-services</description>
     </item>
     
   </channel>

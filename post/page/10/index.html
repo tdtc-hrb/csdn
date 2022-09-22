@@ -164,6 +164,32 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_spark_centos/">spark安装</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Spark：v2.4
+一、基础软件 1. R-lang sudo yum -y install epel-release sudo yum install R 注意：如果Java没有安装，会附带着安装OpenJDK。
+2. Scala wget https://downloads.lightbend.com/scala/2.12.8/scala-2.12.8.tgz tar xvf scala-2.12.8.tgz sudo mv scala-2.12.8 /usr/lib sudo ln -s /usr/lib/scala-2.12.8 /usr/lib/scala 1) add path $vi ~/.bashrc PATH=$PATH:/usr/lib/scala/bin 二、Spark 1. down &amp; unzip v2.4.1
+mkdir -p ~/app/spark tar zxvf spark-2.4.1-bin-hadoop2.7.tgz -C ~/app/spark mv ~/app/spark/spark-2.4.1-bin-hadoop2.7 ~/app/spark/2.4.1 2. test ./bin/spark-shell --master local[2] input:
+for (i &lt;- 1 to 3; j &lt;- 1 to 3 if i ! <a class="read-more" href="/csdn/post/ops_spark_centos/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-15T00:08:08&#43;08:00">
+            15 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_hadoop_cluster/">Hadoop - cluster</a></h2>
     </header>
     <section class="post-excerpt">
@@ -392,32 +418,6 @@ Slave 1 [mysqld] server-id=161 Slave 2 [mysqld] server-id=162 3. <a class="read-
 
         
         <time class="post-date" datetime="2020-04-13T09:38:08&#43;08:00">
-            13 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_keepalived/">安装配置Keepalived</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>OS: CentOS7 minimal（安装时的选项）
-一、安装 0. prepare tool $yum group list 1) dev tools $yum group install &#34;Development Tools&#34; 2) openssl-devel update see &ldquo;nginx’s load balancing的安装部分的update OpenSSL&rdquo;
-$yum install openssl-devel 3) libnl $yum install libnl libnl-devel libnfnetlink-devel 1. keepalived v1.4.5
-down and unzip $wget http://www.keepalived.org/software/keepalived-1.4.5.tar.gz $ tar zxvf keepalived-1.4.5.tar.gz installation $cd keepalived-1.4.5 $./configure --prefix=/usr/local/keepalived $make Root permission Required
-$make install setup $cp /usr/local/keepalived/sbin/keepalived /usr/sbin/ $mkdir -p /etc/keepalived $cp /usr/local/keepalived/etc/keepalived/keepalived.conf /etc/keepalived/keepalived.conf $cp /usr/local/keepalived/etc/sysconfig/keepalived /etc/sysconfig/ $cp /tmp/keepalived-1. <a class="read-more" href="/csdn/post/ops_keepalived/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-13T08:38:08&#43;08:00">
             13 Apr 2020
         </time>
     </footer>

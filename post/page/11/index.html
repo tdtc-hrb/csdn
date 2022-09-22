@@ -164,6 +164,32 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_keepalived/">安装配置Keepalived</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>OS: CentOS7 minimal（安装时的选项）
+一、安装 0. prepare tool $yum group list 1) dev tools $yum group install &#34;Development Tools&#34; 2) openssl-devel update see &ldquo;nginx’s load balancing的安装部分的update OpenSSL&rdquo;
+$yum install openssl-devel 3) libnl $yum install libnl libnl-devel libnfnetlink-devel 1. keepalived v1.4.5
+down and unzip $wget http://www.keepalived.org/software/keepalived-1.4.5.tar.gz $ tar zxvf keepalived-1.4.5.tar.gz installation $cd keepalived-1.4.5 $./configure --prefix=/usr/local/keepalived $make Root permission Required
+$make install setup $cp /usr/local/keepalived/sbin/keepalived /usr/sbin/ $mkdir -p /etc/keepalived $cp /usr/local/keepalived/etc/keepalived/keepalived.conf /etc/keepalived/keepalived.conf $cp /usr/local/keepalived/etc/sysconfig/keepalived /etc/sysconfig/ $cp /tmp/keepalived-1. <a class="read-more" href="/csdn/post/ops_keepalived/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-13T08:38:08&#43;08:00">
+            13 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_real_keepalived/">架设Real Server和Keepalived Server</a></h2>
     </header>
     <section class="post-excerpt">
@@ -393,29 +419,6 @@ package com.example.demo.controller; import java.util.List; import org.springfra
 
         
         <time class="post-date" datetime="2020-04-10T13:26:39&#43;08:00">
-            10 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/java-tomcat-pool-hikaricp/">设置HikariCP</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>1. context.xml tomcat
-&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt; &lt;!-- Licensed to the Apache Software Foundation (ASF) under one or more contributor license agreements. See the NOTICE file distributed with this work for additional information regarding copyright ownership. The ASF licenses this file to You under the Apache License, Version 2.0 (the &#34;License&#34;); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www. <a class="read-more" href="/csdn/post/java-tomcat-pool-hikaricp/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-10T12:26:39&#43;08:00">
             10 Apr 2020
         </time>
     </footer>
