@@ -164,6 +164,33 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c-string-i2h/">十进制转十六进制</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>工作原理：
+规则是从低位到高位 被除数，除以16, 直到商小于16。 将余数加上余商，就是16进制数。
+被除数 等于转换数 等于商 如果商大于16，就是被除数。 手算 10进制：1566
+(1) 1566 ÷ 16 = 97 余数为14 (2) 97 ÷ 16 = 6 余数为1
+16进制：第1个余数(14) + 第2个余数(1) + 余商(6) = 0x61E
+code /* * Int2hex.c * * Created on: 2010-07-20 * Author: xiaobin */ #include &lt;stdio.h&gt; #include &lt;stdlib.h&gt; void int2hex(unsigned long long input, char output[]); int main(int argc, char* argv[]) { int iDigit = 12 - 2; // 2205071409 // date: 2022. <a class="read-more" href="/csdn/post/c-string-i2h/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-05-07T00:08:08&#43;08:00">
+            7 May 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_network_adapter_linux/">Linux修改网卡为固定IP</a></h2>
     </header>
     <section class="post-excerpt">
@@ -401,31 +428,6 @@ bash是linux风格的命令行，可以使用windows和linux的命令； cmd是w
         
         <time class="post-date" datetime="2022-01-02T01:38:08&#43;08:00">
             2 Jan 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_dc_redis_ubuntu/">安装redis-server</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>本文适用范围：
-WSL1(Ubuntu) 开发环境 Ubuntu 生产环境 1. 安装 推荐使用PPA模式安装redis-server
-1.1 增加PPA sudo apt-add-repository ppa:chris-lea/redis-server sudo apt-get update install sudo apt-get install redis-server 1.2 配置 警告清除 Memory WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add &#39;vm.overcommit_memory = 1&#39; to /etc/sysctl.conf and then reboot or run the command &#39;sysctl vm.overcommit_memory=1&#39; for this to take effect. A: add vm.overcommit_memory=1 edit sysctl.conf:
-sudo vi /etc/sysctl. <a class="read-more" href="/csdn/post/ops_dc_redis_ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2021-09-08T08:08:08&#43;08:00">
-            8 Sep 2021
         </time>
     </footer>
 </article>

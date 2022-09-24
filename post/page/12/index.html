@@ -162,6 +162,29 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/java-string-redis-template/">StringRedisTemplate - redis-cli</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>1. autowired @Autowired StringRedisTemplate stringRedisTemplate; 2. get/set public void redisCliTest() { String cliVal = stringRedisTemplate.opsForValue().get(&#34;mykey2&#34;); System.out.println(&#34;redis-cli value: &#34; + cliVal); } code UserController.java
+package com.example.demo.controller; import java.util.List; import org.springframework.beans.factory.annotation.Autowired; import org.springframework.data.redis.core.StringRedisTemplate; import org.springframework.stereotype.Controller; import org.springframework.ui.Model; import org.springframework.web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.RequestMethod; import com.example.demo.model.UserDetails; import com.example.demo.service.UserDetailsService; @Controller @RequestMapping(&#34;/user&#34;) public class UserController { @Autowired private UserDetailsService userService; @Autowired StringRedisTemplate stringRedisTemplate; @RequestMapping(value = &#34;/listPage&#34;, method = RequestMethod.GET) public String findAll(Model model) { List&lt;UserDetails&gt; users = userService. <a class="read-more" href="/csdn/post/java-string-redis-template/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-10T13:26:39&#43;08:00">
+            10 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/java-tomcat-pool-hikaricp/">设置HikariCP</a></h2>
     </header>
     <section class="post-excerpt">
@@ -254,28 +277,6 @@ Tips：如果想从pdm生成CDM，Tools -&gt; Generate Conceptual Data Model <a 
 
         
         <time class="post-date" datetime="2020-04-10T02:26:39&#43;08:00">
-            10 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/mysql-imp-exp/">MySQL导入导出数据库</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>导出数据库 $mysqldump dbName &gt; dbName.sql -u user -p v5.6/5.7 $mysqldump --no-defaults dbName &gt; dbName.sql -u user -p 导入数据库 mysql&gt;CREATE DATABASE `dbName` CHARACTER SET utf8 COLLATE utf8_general_ci; mysql&gt;USE dbName; mysql&gt;SOURCE C:/Users/xiaobin/dbName.sql; Reference MySQL Create Database with UTF8 Character Set Syntax  <a class="read-more" href="/csdn/post/mysql-imp-exp/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-10T02:18:39&#43;08:00">
             10 Apr 2020
         </time>
     </footer>

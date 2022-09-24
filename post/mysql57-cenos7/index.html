@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2022-09-24T04:21:39&#43;08:00" />
+    <meta property="article:published_time" content="2022-09-24T06:21:39&#43;08:00" />
 
     
     
@@ -93,15 +93,15 @@ Installation 1. add repo sudo yum install http://repo.mysql.com/mysql57-communit
     },
     "headline": "CentOS7/8安装mysql5.7",
     "name": "CentOS7/8安装mysql5.7",
-    "wordCount":  132 ,
+    "wordCount":  145 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/mysql57-cenos7/",
-    "datePublished": "2022-09-24T04:21Z",
-    "dateModified": "2022-09-24T04:21Z",
+    "datePublished": "2022-09-24T06:21Z",
+    "dateModified": "2022-09-24T06:21Z",
     
     
     "description": "",
@@ -169,7 +169,7 @@ Installation 1. add repo sudo yum install http://repo.mysql.com/mysql57-communit
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2022-09-24T04:21:39&#43;08:00">
+          <time class="post-date" datetime="2022-09-24T06:21:39&#43;08:00">
             Sep 24, 2022
           </time>
         
@@ -208,13 +208,24 @@ Installation 1. add repo sudo yum install http://repo.mysql.com/mysql57-communit
 <li>start</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl start mysqld.service
-</span></span></code></pre></div><h2 id="change-password">change password</h2>
+</span></span></code></pre></div><ul>
+<li>login</li>
+</ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo grep <span style="color:#e6db74">&#34;temporary password&#34;</span> /var/log/mysqld.log
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql -uroot -p
-</span></span></code></pre></div><h3 id="weak-password">Weak password</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql&gt; set global validate_password_policy<span style="color:#f92672">=</span>0;
-</span></span></code></pre></div><h3 id="set-password">set password</h3>
+</span></span></code></pre></div><ul>
+<li>
+<p>change policy</p>
+</li>
+<li>
+<p>change root password</p>
+</li>
+</ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql&gt; SET PASSWORD FOR <span style="color:#e6db74">&#39;root&#39;</span>@<span style="color:#e6db74">&#39;localhost&#39;</span> <span style="color:#f92672">=</span> PASSWORD<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;xbfirst80&#39;</span><span style="color:#f92672">)</span>;
+</span></span></code></pre></div><h3 id="change-policy">change policy</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql&gt; SHOW VARIABLES LIKE <span style="color:#e6db74">&#39;validate_password%&#39;</span>;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql&gt; SET GLOBAL validate_password_length <span style="color:#f92672">=</span> 6;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql&gt; set global validate_password_policy<span style="color:#f92672">=</span>0;
 </span></span></code></pre></div><h1 id="reference">Reference</h1>
 <ul>
 <li><a href="https://dev.mysql.com/doc/mysql-yum-repo-quick-guide/en/">A Quick Guide to Using the MySQL Yum Repository</a></li>

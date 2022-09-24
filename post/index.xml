@@ -6,11 +6,11 @@
     <description>Recent content in Posts on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 24 Sep 2022 04:21:39 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Sep 2022 06:21:39 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CentOS7/8安装mysql5.7</title>
       <link>https://tdtc-hrb.github.io/csdn/post/mysql57-cenos7/</link>
-      <pubDate>Sat, 24 Sep 2022 04:21:39 +0800</pubDate>
+      <pubDate>Sat, 24 Sep 2022 06:21:39 +0800</pubDate>
       
       <guid>https://tdtc-hrb.github.io/csdn/post/mysql57-cenos7/</guid>
       <description>本安装大部分同&amp;ldquo;安装 MariaDB 10.3数据库&amp;rdquo;
@@ -30,6 +30,16 @@ nginx&amp;rsquo;s load balancing 一、安装 0. prepare $yum -y install gcc gcc
 wget https://www.openssl.org/source/openssl-1.1.1q.tar.gz --no-check-certificate 2) setup $./config --prefix=/usr --shared $make Root permission Required
 sudo make install 1. installation sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm sudo yum install -y nginx 1) down Same as the installed version
 $curl --progress https://nginx.org/download/nginx-1.22.0.tar.gz | tar xz 2) setup module see param:</description>
+    </item>
+    
+    <item>
+      <title>MySQL导入导出数据库</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/mysql-imp-exp/</link>
+      <pubDate>Sat, 10 Sep 2022 02:18:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/mysql-imp-exp/</guid>
+      <description>导出数据库 $mysqldump dbName &amp;gt; dbName.sql -u user -p v5.6/5.7 $mysqldump --no-defaults dbName &amp;gt; dbName.sql -u user -p 导入数据库 mysql&amp;gt;CREATE DATABASE `dbName` CHARACTER SET utf8 COLLATE utf8_general_ci; mysql&amp;gt;USE dbName; win mysql&amp;gt;SOURCE C:/Users/xiaobin/dbName.sql; Linux mysql&amp;gt;SOURCE /home/xiaobin/dbName.sql; upload win10
+scp D:\progFiles\carnumber.sql tdtc@192.168.0.151:/home/tdtc/ create user mysql&amp;gt; CREATE USER &amp;#39;DBAdmin&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED BY &amp;#39;xbfirst&amp;#39;; mysql&amp;gt; GRANT ALL PRIVILEGES ON *.* TO &amp;#39;DBAdmin&amp;#39;@&amp;#39;localhost&amp;#39; WITH GRANT OPTION; mysql&amp;gt; flush privileges; Reference MySQL Create Database with UTF8 Character Set Syntax </description>
     </item>
     
     <item>
@@ -1531,15 +1541,6 @@ springframework.version v4.3.14.RELEASE springsecurity.version v4.2.4.RELEASE hi
 2. config connect profile DataBase -&amp;gt; Configure connections Connection profile 3. connect Database -&amp;gt; connect Flag: &amp;ldquo;Disconnect&amp;rdquo; Available
 dcp文件（mysql5-crm.dcp） [ConnectionProfile]ConnectionType=JDBCDbms=MySQLDisableBind=0Driver=com.mysql.jdbc.DriverJarFiles=D:\war\mysql-connector-java-5.1.48.jarLogId=rootTrimSpaces=0URL=jdbc:mysql://106.14.141.40:3306/crm 二、生成phy图 1. Reverse Engineer File -&amp;gt; Reverse Engineer-&amp;gt;Database 选择数据库： 其他数据库全部反选： 例如： 最后，点击ok生成phy图。
 Tips：如果想从pdm生成CDM，Tools -&amp;gt; Generate Conceptual Data Model</description>
-    </item>
-    
-    <item>
-      <title>MySQL导入导出数据库</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/mysql-imp-exp/</link>
-      <pubDate>Fri, 10 Apr 2020 02:18:39 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/mysql-imp-exp/</guid>
-      <description>导出数据库 $mysqldump dbName &amp;gt; dbName.sql -u user -p v5.6/5.7 $mysqldump --no-defaults dbName &amp;gt; dbName.sql -u user -p 导入数据库 mysql&amp;gt;CREATE DATABASE `dbName` CHARACTER SET utf8 COLLATE utf8_general_ci; mysql&amp;gt;USE dbName; mysql&amp;gt;SOURCE C:/Users/xiaobin/dbName.sql; Reference MySQL Create Database with UTF8 Character Set Syntax </description>
     </item>
     
     <item>
