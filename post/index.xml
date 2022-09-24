@@ -6,7 +6,19 @@
     <description>Recent content in Posts on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 13 Sep 2022 07:38:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Sep 2022 04:21:39 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CentOS7/8安装mysql5.7</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/mysql57-cenos7/</link>
+      <pubDate>Sat, 24 Sep 2022 04:21:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/mysql57-cenos7/</guid>
+      <description>本安装大部分同&amp;ldquo;安装 MariaDB 10.3数据库&amp;rdquo;
+Installation 1. add repo sudo yum install http://repo.mysql.com/mysql57-community-release-el7.rpm 2. install import GPG:
+sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022 CentOS7 sudo yum install mysql-community-server CentOS8 Install after doing the following(disable default repo, config-manager, close gpgcheck):
+sudo dnf install mysql-community-server disable default repo sudo dnf remove @mysql sudo dnf module reset mysql sudo dnf module disable mysql config-manager sudo dnf config-manager --disable mysql80-community sudo dnf config-manager --enable mysql57-community close gpgcheck sudo vi /etc/yum.</description>
+    </item>
+    
     <item>
       <title>前端（Web）负载均衡</title>
       <link>https://tdtc-hrb.github.io/csdn/post/ops_nginx/</link>
@@ -182,18 +194,6 @@ async/src/containers
 App.css &amp;amp;&amp;amp; logo.svg
 4. modify containers/App.js Add the following two blocks of code.
 import logo from &amp;#39;./logo.svg&amp;#39;; import &amp;#39;./App.css&amp;#39;; &amp;lt;div className=&amp;#34;App&amp;#34;&amp;gt; &amp;lt;header className=&amp;#34;App-header&amp;#34;&amp;gt; &amp;lt;img src={logo} className=&amp;#34;App-logo&amp;#34; alt=&amp;#34;logo&amp;#34; /&amp;gt; &amp;lt;h1 className=&amp;#34;App-title&amp;#34;&amp;gt;Welcome to React&amp;lt;/h1&amp;gt; &amp;lt;/header&amp;gt; .</description>
-    </item>
-    
-    <item>
-      <title>CentOS7/8安装mysql5.7</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/mysql57-cenos7/</link>
-      <pubDate>Fri, 10 Jun 2022 04:21:39 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/mysql57-cenos7/</guid>
-      <description>本安装大部分同《安装 MariaDB 10.3数据库》
-Installation 1. add repo sudo yum install http://repo.mysql.com/mysql57-community-release-el7.rpm 2. install CentOS7 sudo yum install mysql-community-server CentOS8 Install after doing the following(disable default repo, config-manager, close gpgcheck):
-sudo dnf install mysql-community-server disable default repo sudo dnf remove @mysql sudo dnf module reset mysql sudo dnf module disable mysql config-manager sudo dnf config-manager --disable mysql80-community sudo dnf config-manager --enable mysql57-community close gpgcheck sudo vi /etc/yum.repos.d/mysql-community.repo mysql-community.repo:
-gpgcheck=0 3. init start sudo systemctl start mysqld.</description>
     </item>
     
     <item>
