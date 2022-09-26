@@ -162,6 +162,30 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_gnupg/">GNU PG的使用</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>The GNU Privacy Guard
+1. install $yum install gnupg $yum install rng-tools 2. gen key $gpg --gen-key Decompose 20180804215500757.png step: Press Key: enter Press Key: enter Press Key: enter Press Key: y Real name: xiaobin Email address: veic_2005@163 Comment: enter(press key) Press Key: O 输入完，按“Tab”切换到“OK”,按回车。 再输入一次， 3. gen revoke $gpg gen-revoke 7209DBAD Press Key: y 4. encrypt file(password) 1) password-file $vi love_shidie-password 密码文件(明文密码)
+thisispassword 2) gen gpg file Gen file: love_shidie-password. <a class="read-more" href="/csdn/post/ops_gnupg/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-09-25T00:08:08&#43;08:00">
+            25 Sep 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/mysql57-cenos7/">CentOS7/8安装mysql5.7</a></h2>
     </header>
     <section class="post-excerpt">
@@ -180,31 +204,6 @@ sudo dnf install mysql-community-server disable default repo sudo dnf remove @my
         
         <time class="post-date" datetime="2022-09-24T06:21:39&#43;08:00">
             24 Sep 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_gnupg/">GNU PG的使用</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>The GNU Privacy Guard
-1. install $yum install gnupg $yum install rng-tools 2. gen key $gpg --gen-key //20180804215500757.png Press Key: enter Press Key: enter Press Key: enter Press Key: y Real name: xiaobin Email address: veic_2005@163 Comment: enter(press key) Press Key: O 输入完，按“Tab”切换到“OK”,按回车。 再输入一次， 3. gen revoke $gpg gen-revoke 7209DBAD Press Key: y 4. encrypt file(password) 1) password-file $vi love_shidie-password 密码文件(明文密码)
-thisispassword 2) gen gpg file Gen file: love_shidie-password.gpg
-$gpg -e -r veic_2005@163. <a class="read-more" href="/csdn/post/ops_gnupg/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-09-15T22:08:08&#43;08:00">
-            15 Sep 2022
         </time>
     </footer>
 </article>

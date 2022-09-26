@@ -6,7 +6,18 @@
     <description>Recent content on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 24 Sep 2022 06:21:39 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Sep 2022 00:08:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GNU PG的使用</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_gnupg/</link>
+      <pubDate>Sun, 25 Sep 2022 00:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_gnupg/</guid>
+      <description>The GNU Privacy Guard
+1. install $yum install gnupg $yum install rng-tools 2. gen key $gpg --gen-key Decompose 20180804215500757.png step: Press Key: enter Press Key: enter Press Key: enter Press Key: y Real name: xiaobin Email address: veic_2005@163 Comment: enter(press key) Press Key: O 输入完，按“Tab”切换到“OK”,按回车。 再输入一次， 3. gen revoke $gpg gen-revoke 7209DBAD Press Key: y 4. encrypt file(password) 1) password-file $vi love_shidie-password 密码文件(明文密码)
+thisispassword 2) gen gpg file Gen file: love_shidie-password.</description>
+    </item>
+    
     <item>
       <title>CentOS7/8安装mysql5.7</title>
       <link>https://tdtc-hrb.github.io/csdn/post/mysql57-cenos7/</link>
@@ -17,18 +28,6 @@
 Installation 1. add repo sudo yum install http://repo.mysql.com/mysql57-community-release-el7.rpm 2. install import GPG:
 sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022 CentOS7 sudo yum install mysql-community-server CentOS8 Install after doing the following(disable default repo, config-manager, close gpgcheck):
 sudo dnf install mysql-community-server disable default repo sudo dnf remove @mysql sudo dnf module reset mysql sudo dnf module disable mysql config-manager sudo dnf config-manager --disable mysql80-community sudo dnf config-manager --enable mysql57-community close gpgcheck sudo vi /etc/yum.</description>
-    </item>
-    
-    <item>
-      <title>GNU PG的使用</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_gnupg/</link>
-      <pubDate>Thu, 15 Sep 2022 22:08:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_gnupg/</guid>
-      <description>The GNU Privacy Guard
-1. install $yum install gnupg $yum install rng-tools 2. gen key $gpg --gen-key //20180804215500757.png Press Key: enter Press Key: enter Press Key: enter Press Key: y Real name: xiaobin Email address: veic_2005@163 Comment: enter(press key) Press Key: O 输入完，按“Tab”切换到“OK”,按回车。 再输入一次， 3. gen revoke $gpg gen-revoke 7209DBAD Press Key: y 4. encrypt file(password) 1) password-file $vi love_shidie-password 密码文件(明文密码)
-thisispassword 2) gen gpg file Gen file: love_shidie-password.gpg
-$gpg -e -r veic_2005@163.</description>
     </item>
     
     <item>
