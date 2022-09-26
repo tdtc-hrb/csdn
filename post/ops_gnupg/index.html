@@ -92,7 +92,7 @@
     },
     "headline": "GNU PG的使用",
     "name": "GNU PG的使用",
-    "wordCount":  86 ,
+    "wordCount":  116 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
@@ -203,7 +203,12 @@ Press Key: y
 再输入一次，
 <img src="https://github.com/tdtc-hrb/csdn/raw/master/images/2018080422004955.png" alt="gen key 4"></p>
 <p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20180804220108336.png" alt="gen key 5"></p>
-<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20180804220815965.png" alt="gen key 6"></p>
+<h2 id="21-gen-random">2.1 gen random</h2>
+<p>Generate random numbers and done. <br>
+Open a new terminal:</p>
+<pre tabindex="0"><code>rngd -f -r /dev/urandom
+</code></pre><p>The old terminal shows the result：
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20180804220815965.png" alt="gen key 6"></p>
 <h1 id="3-gen-revoke">3. gen revoke</h1>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$gpg gen-revoke 7209DBAD
 </span></span></code></pre></div><p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/2018080422175625.png" alt="gen revoke 1">
@@ -226,6 +231,7 @@ Press Key: y
 </span></span></code></pre></div><h1 id="reference">Reference</h1>
 <ul>
 <li><a href="http://xmodulo.com/mutt-email-client-encrypted-passwords.html">How to use Mutt email client with encrypted passwords</a></li>
+<li><a href="https://linux-audit.com/gpg-key-generation-not-enough-random-bytes-available/">GPG key generation: Not enough random bytes available.</a></li>
 </ul>
 
     </section>

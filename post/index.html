@@ -167,8 +167,8 @@
     <section class="post-excerpt">
         
             <p>The GNU Privacy Guard
-1. install $yum install gnupg $yum install rng-tools 2. gen key $gpg --gen-key Decompose 20180804215500757.png step: Press Key: enter Press Key: enter Press Key: enter Press Key: y Real name: xiaobin Email address: veic_2005@163 Comment: enter(press key) Press Key: O 输入完，按“Tab”切换到“OK”,按回车。 再输入一次， 3. gen revoke $gpg gen-revoke 7209DBAD Press Key: y 4. encrypt file(password) 1) password-file $vi love_shidie-password 密码文件(明文密码)
-thisispassword 2) gen gpg file Gen file: love_shidie-password. <a class="read-more" href="/csdn/post/ops_gnupg/">&raquo;</a></p>
+1. install $yum install gnupg $yum install rng-tools 2. gen key $gpg --gen-key Decompose 20180804215500757.png step: Press Key: enter Press Key: enter Press Key: enter Press Key: y Real name: xiaobin Email address: veic_2005@163 Comment: enter(press key) Press Key: O 输入完，按“Tab”切换到“OK”,按回车。 再输入一次， 2.1 gen random Generate random numbers and done. Open a new terminal:
+rngd -f -r /dev/urandom The old terminal shows the result： 3. gen revoke $gpg gen-revoke 7209DBAD Press Key: y 4. <a class="read-more" href="/csdn/post/ops_gnupg/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
