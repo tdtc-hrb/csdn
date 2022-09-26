@@ -26,9 +26,9 @@ sudo dnf install mysql-community-server disable default repo sudo dnf remove @my
       
       <guid>https://tdtc-hrb.github.io/csdn/post/ops_gnupg/</guid>
       <description>The GNU Privacy Guard
-1. install $yum install gnupg $yum install rng-tools 2. gen key $gpg --gen-key Press Key: O 输入完，按“Tab”切换到“OK”,按回车。 再输入一次， 3. gen revoke $gpg gen-revoke 7209DBAD Press Key: y 4. encrypt file(password) 1) password-file $vi love_shidie-password 密码文件(明文密码)
+1. install $yum install gnupg $yum install rng-tools 2. gen key $gpg --gen-key //20180804215500757.png Press Key: enter Press Key: enter Press Key: enter Press Key: y Real name: xiaobin Email address: veic_2005@163 Comment: enter(press key) Press Key: O 输入完，按“Tab”切换到“OK”,按回车。 再输入一次， 3. gen revoke $gpg gen-revoke 7209DBAD Press Key: y 4. encrypt file(password) 1) password-file $vi love_shidie-password 密码文件(明文密码)
 thisispassword 2) gen gpg file Gen file: love_shidie-password.gpg
-$gpg -e -r veic_2005@163.com love_shidie-password Reference How to use Mutt email client with encrypted passwords </description>
+$gpg -e -r veic_2005@163.</description>
     </item>
     
     <item>
