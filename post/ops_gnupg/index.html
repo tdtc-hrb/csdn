@@ -12,13 +12,13 @@
 
 
 
-<meta name="twitter:title" content="GNU PG"/>
-<meta name="twitter:description" content="mail的其他文章：mail的发送、mail的使用"/>
+<meta name="twitter:title" content="GNU PG的使用"/>
+<meta name="twitter:description" content="CentOS"/>
 <meta name="twitter:site" content="@"/>
 
 
 
-  	<meta property="og:title" content="GNU PG &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:title" content="GNU PG的使用 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
   	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
   	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/ops_gnupg/" />
 
@@ -27,17 +27,17 @@
     
 
     
-    <meta property="og:description" content="mail的其他文章：mail的发送、mail的使用" />
+    <meta property="og:description" content="CentOS" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2020-04-15T22:08:08&#43;08:00" />
+    <meta property="article:published_time" content="2022-09-15T22:08:08&#43;08:00" />
 
     
     
 
-    <title>GNU PG &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+    <title>GNU PG的使用 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
 
     
-    <meta name="description" content="mail的其他文章：mail的发送、mail的使用" />
+    <meta name="description" content="CentOS" />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -90,20 +90,20 @@
             
         ]
     },
-    "headline": "GNU PG",
-    "name": "GNU PG",
-    "wordCount":  66 ,
+    "headline": "GNU PG的使用",
+    "name": "GNU PG的使用",
+    "wordCount":  62 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/ops_gnupg/",
-    "datePublished": "2020-04-15T22:08Z",
-    "dateModified": "2020-04-15T22:08Z",
+    "datePublished": "2022-09-15T22:08Z",
+    "dateModified": "2022-09-15T22:08Z",
     
     
-    "description": "mail的其他文章：mail的发送、mail的使用",
+    "description": "CentOS",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://tdtc-hrb.github.io/csdn/post/ops_gnupg/"
@@ -163,13 +163,13 @@
   <article class="post post">
 
     <header class="post-header">
-        <h1 class="post-title">GNU PG</h1>
-        <small>mail的其他文章：mail的发送、mail的使用</small>
+        <h1 class="post-title">GNU PG的使用</h1>
+        <small>CentOS</small>
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2020-04-15T22:08:08&#43;08:00">
-            Apr 15, 2020
+          <time class="post-date" datetime="2022-09-15T22:08:08&#43;08:00">
+            Sep 15, 2022
           </time>
         
          
@@ -177,31 +177,28 @@
     </header>
 
     <section class="post-content">
-      <h1 id="the-gnu-privacy-guard">The GNU Privacy Guard</h1>
-<blockquote>
-<p>Note: normal user login.</p>
-</blockquote>
+      <p>The GNU Privacy Guard</p>
 <h1 id="1-install">1. install</h1>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum install gnupg
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum install rng-tools
 </span></span></code></pre></div><h1 id="2-gen-key">2. gen key</h1>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$gpg --gen-key
-</span></span></code></pre></div><p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20180804215500757.png" alt="gen key 1">
+</span></span></code></pre></div><p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20180804215500757.png" alt="gen key 1">
 Press Key: O
-<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20180804215653837.png" alt="gen key 2">
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20180804215653837.png" alt="gen key 2">
 输入完，按“Tab”切换到“OK”,按回车。
-<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20180804215907772.png" alt="gen key 3">
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20180804215907772.png" alt="gen key 3">
 再输入一次，
-<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/2018080422004955.png" alt="gen key 4"></p>
-<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20180804220108336.png" alt="gen key 5"></p>
-<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20180804220815965.png" alt="gen key 6"></p>
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/2018080422004955.png" alt="gen key 4"></p>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20180804220108336.png" alt="gen key 5"></p>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20180804220815965.png" alt="gen key 6"></p>
 <h1 id="3-gen-revoke">3. gen revoke</h1>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$gpg gen-revoke 7209DBAD
-</span></span></code></pre></div><p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/2018080422175625.png" alt="gen revoke 1">
+</span></span></code></pre></div><p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/2018080422175625.png" alt="gen revoke 1">
 Press Key: y
-<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20180804221854384.png" alt="gen revoke 2"></p>
-<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20180804221940975.png" alt="gen revoke 3"></p>
-<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20180804222142625.png" alt="gen revoke 4"></p>
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20180804221854384.png" alt="gen revoke 2"></p>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20180804221940975.png" alt="gen revoke 3"></p>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20180804222142625.png" alt="gen revoke 4"></p>
 <h1 id="4-encrypt-filepassword">4. encrypt file(password)</h1>
 <h2 id="1-password-file">1) password-file</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$vi love_shidie-password
@@ -233,7 +230,7 @@ Press Key: y
     
 <section class="share">
   <h4>Share this post</h4>
-  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=GNU%20PG&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_gnupg%2f"
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=GNU%20PG%e7%9a%84%e4%bd%bf%e7%94%a8&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_gnupg%2f"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="hidden">Twitter</span>
   </a>
@@ -241,7 +238,7 @@ Press Key: y
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="hidden">Facebook</span>
   </a>
-  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_gnupg%2f&amp;description=GNU%20PG"
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_gnupg%2f&amp;description=GNU%20PG%e7%9a%84%e4%bd%bf%e7%94%a8"
       onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
       <span class="hidden">Pinterest</span>
   </a>
@@ -269,17 +266,17 @@ Press Key: y
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_mail/">
+      <a class="read-next-story" style="no-cover" href="/csdn/post/mysql57-cenos7/">
           <section class="post">
-              <h2>mail的使用</h2>
+              <h2>CentOS7/8安装mysql5.7</h2>
               
           </section>
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_mail_msmtp/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_nginx/">
           <section class="post">
-              <h2>mail的发送</h2>
+              <h2>前端（Web）负载均衡</h2>
           </section>
       </a>
   

@@ -164,6 +164,31 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c-string-search/">查找字符串</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>我们经常要用到查找某个字符串的功能，使用C++或者其他高级语言实现起来很简单；但是使用C语言实现就不那么easy了。
+切割字符串 strtok函数
+char *strtok_s( char *strToken, const char *strDelimit, char **context ); strToken 要切割的字符串 strDelimit 分隔符 context 为空的字符串地址 匹配字符串 strstr函数
+char *strstr( const char *str, const char *strSearch ); // C only str 被搜索的字符串 strSearch 要搜索的字符串 函数getStrVal_s char *getStrVal_s(char *str, char key[]) { char* strDelimit = &#34;;&#34;; char *strSeq = &#34;&#34;; char *context = NULL; char *token = strtok_s((char*)str, strDelimit, &amp;context); while (token != NULL) { char* temp = strstr(token, key); if (temp ! <a class="read-more" href="/csdn/post/c-string-search/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-04T16:08:08&#43;08:00">
+            4 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/c-string-inverted/">倒序排列字符串</a></h2>
     </header>
     <section class="post-excerpt">
@@ -286,31 +311,6 @@ Reference Mutt – A Command Line Email Client to Send Mails from Terminal Mutt:
 
         
         <time class="post-date" datetime="2020-04-15T23:08:08&#43;08:00">
-            15 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_gnupg/">GNU PG</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>The GNU Privacy Guard Note: normal user login.
-1. install $yum install gnupg $yum install rng-tools 2. gen key $gpg --gen-key Press Key: O 输入完，按“Tab”切换到“OK”,按回车。 再输入一次， 3. gen revoke $gpg gen-revoke 7209DBAD Press Key: y 4. encrypt file(password) 1) password-file $vi love_shidie-password 密码文件(明文密码)
-thisispassword 2) gen gpg file Gen file: love_shidie-password.gpg
-$gpg -e -r veic_2005@163.com love_shidie-password Reference How to use Mutt email client with encrypted passwords  <a class="read-more" href="/csdn/post/ops_gnupg/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-15T22:08:08&#43;08:00">
             15 Apr 2020
         </time>
     </footer>

@@ -164,6 +164,32 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/rose-uml/">UML工具Rose</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>安装Rose2007 下载并安装
+ed2k://|file|%5BIBM%E8%BD%AF%E4%BB%B6%E7%B3%BB%E5%88%97%5D.IBM.Rational.Rose.Enterprise.v7.0-TFTISO.bin|621038544|71d09610bb53d2d905d278675b333c75|h=utnlhfjwnzjdp2wecfeujoptd7pqlrps|/ 默认安装即可。
+lic 序号有两种方式：本机和导入Lic
+本机 本地机器作为lic服务器
+1. 修改授权文件。 打开license.dat文件， 大约在文件的中间位置有：SERVER Microsoft ANY DAEMON rational “C:\Program Files\Rational\common\rational.exe” 将其修改为：SERVER 计算机名　ANY DAEMON rational “自己安装的目录\rational.exe”后，保存2. 拷贝授权检查程序。 将license.dat、 lmgrd.exe 、rational.exe三个文件拷贝到：安装目录\rational\common\3. 将授权程序放到控制面板。 将flexlm.cpl拷贝到system32目录下。如win2000系统中为C:\WINNT\system32目录。4. 设置授权程序。 打开FLEXlm License Manager（控制面板中）， 在Setup页中lmgrd.exe右侧目录填写：C:\Program Files\Rational\Common\lmgrd.exe（若为默认安装目录） License File右侧目录写为：C:\Program Files\Rational\Common\license.dat5. 查看状态。 回到Control页，点击Start，若出现”Server Started”，则表示已经成功， 可以点击Status,若状态为：计算机名：license server UP(MASTER)则成功（否则，Start-&gt;Status来回点~~）。6. 修改Server Name。 打开Rational License Key Administrator， 点击工具栏中的&quot;Start WIzard&quot;, 点击下一步， 选择&quot;Point to a Rational License Server to get my licenses&quot; , 点击下一步， 在Server Name中的名字改为自己的计算机名即可。导入License IBM Rational License Key Administrator Import a Rational License File Browse . <a class="read-more" href="/csdn/post/rose-uml/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-17T10:08:08&#43;08:00">
+            17 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/hw-uboot_v134-at91sam9260/">U-boot V1.3.4</a></h2>
     </header>
     <section class="post-excerpt">
@@ -387,31 +413,6 @@ wsl1017@DESKTOP-14G6K9S:~$ java -version Command &#39;java&#39; not found, but c
 
         
         <time class="post-date" datetime="2020-05-15T07:08:08&#43;08:00">
-            15 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_mysql_error1067/">mysql的1067错误</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>日志文件问题 由于使用时间比较长积累了很多的日志文件（\data目录下），所以删除之！
-mysql-bin.000001 ... ... mysql-bin.000278 原来删除都留最后一个编号的日志，这次太过彻底~~都删了!
-执行net start mysql： 出现了mysql 1067错误！ 查看，主机名.err文件（lenovo-7c8f808d.err）：
-130416 9:59:23 InnoDB: Started; log sequence number 0 43655 MySQL: File &#39;.\mysql-bin.000278&#39; not found (Errcode: 2) 130416 9:59:23 [ERROR] Failed to open log (file &#39;.\mysql-bin.000278&#39;, errno 2) 130416 9:59:23 [ERROR] Could not open log file 130416 9:59:23 [ERROR] Can&#39;t init tc log 130416 9:59:23 [ERROR] Aborting 130416 9:59:23 InnoDB: Starting shutdown... 130416 9:59:24 InnoDB: Shutdown completed; log sequence number 0 43655 130416 9:59:24 [Note] MySQL: Shutdown complete 告诉我们找不到mysql-bin. <a class="read-more" href="/csdn/post/ops_mysql_error1067/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-15T06:08:08&#43;08:00">
             15 May 2020
         </time>
     </footer>

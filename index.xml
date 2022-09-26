@@ -20,6 +20,18 @@ sudo dnf install mysql-community-server disable default repo sudo dnf remove @my
     </item>
     
     <item>
+      <title>GNU PG的使用</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_gnupg/</link>
+      <pubDate>Thu, 15 Sep 2022 22:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_gnupg/</guid>
+      <description>The GNU Privacy Guard
+1. install $yum install gnupg $yum install rng-tools 2. gen key $gpg --gen-key Press Key: O 输入完，按“Tab”切换到“OK”,按回车。 再输入一次， 3. gen revoke $gpg gen-revoke 7209DBAD Press Key: y 4. encrypt file(password) 1) password-file $vi love_shidie-password 密码文件(明文密码)
+thisispassword 2) gen gpg file Gen file: love_shidie-password.gpg
+$gpg -e -r veic_2005@163.com love_shidie-password Reference How to use Mutt email client with encrypted passwords </description>
+    </item>
+    
+    <item>
       <title>前端（Web）负载均衡</title>
       <link>https://tdtc-hrb.github.io/csdn/post/ops_nginx/</link>
       <pubDate>Tue, 13 Sep 2022 07:38:08 +0800</pubDate>
@@ -1149,18 +1161,6 @@ apply #netplan apply Reference network interface configuration 网络配置 - ub
 1) install yum install mutt 2) config $vi ~/.muttrc set sendmail=&amp;#34;/usr/local/msmtp/bin/msmtp&amp;#34; set from = &amp;#34;user@domain.com&amp;#34; set realname = &amp;#34;Realname of the user&amp;#34; received mail:
 set pop_host=&amp;#34;pop.163.com&amp;#34; set pop_user=&amp;#34;love_shidie&amp;#34; set pop_pass=`getpassword email_id` test 1) send mail gpg -d ~/.msmtp/love_shidie-passoword.gpg $mutt -s &amp;#34;test message&amp;#34; -a ~/message121.txt 2) received mail $mutt Press key: G
 Reference Mutt – A Command Line Email Client to Send Mails from Terminal Mutt: how to safely store password?</description>
-    </item>
-    
-    <item>
-      <title>GNU PG</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_gnupg/</link>
-      <pubDate>Wed, 15 Apr 2020 22:08:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_gnupg/</guid>
-      <description>The GNU Privacy Guard Note: normal user login.
-1. install $yum install gnupg $yum install rng-tools 2. gen key $gpg --gen-key Press Key: O 输入完，按“Tab”切换到“OK”,按回车。 再输入一次， 3. gen revoke $gpg gen-revoke 7209DBAD Press Key: y 4. encrypt file(password) 1) password-file $vi love_shidie-password 密码文件(明文密码)
-thisispassword 2) gen gpg file Gen file: love_shidie-password.gpg
-$gpg -e -r veic_2005@163.com love_shidie-password Reference How to use Mutt email client with encrypted passwords </description>
     </item>
     
     <item>

@@ -187,6 +187,31 @@ sudo dnf install mysql-community-server disable default repo sudo dnf remove @my
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_gnupg/">GNU PG的使用</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>The GNU Privacy Guard
+1. install $yum install gnupg $yum install rng-tools 2. gen key $gpg --gen-key Press Key: O 输入完，按“Tab”切换到“OK”,按回车。 再输入一次， 3. gen revoke $gpg gen-revoke 7209DBAD Press Key: y 4. encrypt file(password) 1) password-file $vi love_shidie-password 密码文件(明文密码)
+thisispassword 2) gen gpg file Gen file: love_shidie-password.gpg
+$gpg -e -r veic_2005@163.com love_shidie-password Reference How to use Mutt email client with encrypted passwords  <a class="read-more" href="/csdn/post/ops_gnupg/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-09-15T22:08:08&#43;08:00">
+            15 Sep 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_nginx/">前端（Web）负载均衡</a></h2>
     </header>
     <section class="post-excerpt">
@@ -391,30 +416,6 @@ ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;qaz1!Xsw2@&#39;
         
         <time class="post-date" datetime="2022-06-27T03:21:39&#43;08:00">
             27 Jun 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_network_proxy/">设置proxy</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>OS Windows set command
-set http_proxy=http://127.0.0.1:8580 set https_proxy=http://127.0.0.1:8580 Ubuntu export http_proxy=&#34;http://192.168.1.108:1080&#34; export https_proxy=&#34;http://192.168.1.108:1080&#34; With user and password Set up the server in the tool: Check &ldquo;Run xxx as Server(listens 0.0.0.)&rdquo;
-export http_proxy=http://USERNAME:PASSWORD@192.168.1.108:8580/ Ref How to set up proxy using http_proxy &amp; https_proxy environment variable in Linux? software git set proxy git config --global http.proxy http://127.0.0.1:8580 git config --global https.proxy https://127.0.0.1:8580 unset git config --global --unset http.proxy git config --global --unset https. <a class="read-more" href="/csdn/post/ops_network_proxy/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-06-17T14:08:08&#43;08:00">
-            17 Jun 2022
         </time>
     </footer>
 </article>
