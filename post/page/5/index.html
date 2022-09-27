@@ -164,6 +164,37 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_network_adapter_centos/">CentOS修改网卡为固定IP</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>View $ip addr 1 is loopback 2 is the current network card
+Setup auto Start job network adapter.
+ONBOOT=yes static cd /etc/sysconfig/network-scripts $sudo vi ifcfg-* *: current network card
+BOOTPROTO=static IPADDR=192.168.1.186 NETMASK=255.255.255.0 GATEWAY=192.168.1.1 DNS1=211.161.191.235 DNS2=211.161.122.197 virtual machine vmware 设置Network Adapter为Bridged
+缺省/etc/sysconfig/network-scripts/ifcfg-eth0
+default: eth0
+vbox 设置Network Adapter为Bridged
+缺省/etc/sysconfig/network-scripts/ifcfg-enp0XX
+default: enp0s3
+ssh $sudo yum install openssh  <a class="read-more" href="/csdn/post/ops_network_adapter_centos/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-03-13T08:38:08-08:00">
+            13 Mar 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/java-grammar/">java的grammar</a></h2>
     </header>
     <section class="post-excerpt">
@@ -394,30 +425,6 @@ Stage I 1. 《sudo - CentOS》 2. FQDN #127.0.0.1 localhost localhost.localdomai
         
         <time class="post-date" datetime="2021-04-14T01:08:08&#43;08:00">
             14 Apr 2021
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_memcached_ubuntu/">安装memcached</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>VMware: Ubuntu 20.04.2
-Install and update #sudo apt-get install memcached [0] #sudo apt-get install build-essential #sudo apt-get install libevent-dev* #wget http://memcached.org/files/memcached-1.6.15.tar.gz #tar -zxvf memcached-1.6.15.tar.gz #cd memcached-1.6.15 #./configure &amp;&amp; make &amp;&amp; sudo make install Start allow port sudo ufw allow 11211 config sudo vi /etc/memcached.conf 修改为服务器的IP:
-# Specify which IP address to listen on. The default is to listen on all IP addresses # This parameter is one of the only security measures that memcached has, so make sure # it&#39;s listening on a firewalled interface. <a class="read-more" href="/csdn/post/ops_memcached_ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2021-02-01T09:08:08&#43;08:00">
-            1 Feb 2021
         </time>
     </footer>
 </article>

@@ -164,6 +164,34 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/vc-bsd_socket/">使用BSD socket</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>BSD Socket是标准的套接字规范，那么怎么在windows使用他们呢？
+Init &amp; clean 首先要引用&lt;winsock2.h&gt;和ws2_32.lib； 使用struct addrinfo需引用&lt;ws2tcpip.h&gt;。
+程序头: WSAStartup(), 程序尾: WSACleanup();
+code 以下程序在VC9/VC14.1下编译通过
+客户端程序 prj1Clt 无getaddrinfo版
+注意：InetPton函数只能在Windows Version &gt;=6上实现！
+// prj1Clt.cpp : This file contains the &#39;main&#39; function. Program execution begins and ends there. // /** * Networking program is Win version with BSD Socket * Client side * * Author: xiaobin * Date: 2013-12-12 * Modfity: 2020-5-28 */ #include &lt;iostream&gt; #if _MSC_VER &gt; 1800 #include &lt;tchar.h&gt; #endif #ifdef _WIN32 #include &lt;winsock2. <a class="read-more" href="/csdn/post/vc-bsd_socket/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-05-12T08:08:08&#43;08:00">
+            12 May 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/java-springboot-jpa/">thymeleaf &#43; Spring Boot &#43; JPA</a></h2>
     </header>
     <section class="post-excerpt">
@@ -392,37 +420,6 @@ Reference go-bindata go-micro-services  <a class="read-more" href="/csdn/post/go
         
         <time class="post-date" datetime="2022-04-10T02:10:39&#43;08:00">
             10 Apr 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_network_adapter_centos/">CentOS修改网卡为固定IP</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>View $ip addr 1 is loopback 2 is the current network card
-Setup auto Start job network adapter.
-ONBOOT=yes static cd /etc/sysconfig/network-scripts $sudo vi ifcfg-* *: current network card
-BOOTPROTO=static IPADDR=192.168.1.186 NETMASK=255.255.255.0 GATEWAY=192.168.1.1 DNS1=211.161.191.235 DNS2=211.161.122.197 virtual machine vmware 设置Network Adapter为Bridged
-缺省/etc/sysconfig/network-scripts/ifcfg-eth0
-default: eth0
-vbox 设置Network Adapter为Bridged
-缺省/etc/sysconfig/network-scripts/ifcfg-enp0XX
-default: enp0s3
-ssh $sudo yum install openssh  <a class="read-more" href="/csdn/post/ops_network_adapter_centos/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-03-13T08:38:08-08:00">
-            13 Mar 2022
         </time>
     </footer>
 </article>

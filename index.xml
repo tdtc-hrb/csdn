@@ -6,7 +6,25 @@
     <description>Recent content on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 25 Sep 2022 00:08:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 27 Sep 2022 00:38:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>主备切换 - MySQL&#43;MHA</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/mysql-mha/</link>
+      <pubDate>Tue, 27 Sep 2022 00:38:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/mysql-mha/</guid>
+      <description>在进行安装配置前，请确认已经完成了 MySQL 主从复制
+MHA (V0.58)
+Manager Node baidu yun - backup
+Mha manager Mha node 安装前准备 ssh相互免密
+一、安装 Name IP Memo mha1 192.168.0.151 Monitor host 使用pscp上传文件请参考 MySQL 主从复制 - 5. test data
+1. MHA Node 所有MySQL服务器（mysql1、mysql11、mysql12）和MHA 管理机（MHA）都要安装。
+sudo yum localinstall mha4mysql-node-0.58-0.el7.centos.noarch.rpm 2. MHA Manager CentOS源有perl-Config-Tiny。
+sudo yum install perl-Config-Tiny 安装epel， 可以找到perl-Log-Dispatch、perl-Parallel-ForkManager。
+sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm sudo yum install perl-Log-Dispatch perl-Parallel-ForkManager -y 安装manager
+sudo yum localinstall mha4mysql-manager-0.58-0.el7.centos.noarch.rpm 3. MySQL主从配置 （补充部分）</description>
+    </item>
+    
     <item>
       <title>GNU PG的使用</title>
       <link>https://tdtc-hrb.github.io/csdn/post/ops_gnupg/</link>
@@ -1352,25 +1370,6 @@ On every host, run following commands, Use xiaobin112(user) to do all following.
 Prepare Establish Directory &amp;ldquo;.ssh&amp;rdquo;
 $mkdir ~/.ssh $chmod 700 ~/.ssh Stage I 1. config 另外一种方式为：把所有机器的IP和hostname放在/etc/hosts里，在此不再赘述, 请参见《ZooKeeper multi-server install - 3.FQDN》。
 $vi ~/.ssh/config Host host1 HostName 192.168.0.110 Port 22 User xiaobin112 Host host2 HostName 192.168.0.111 Port 22 User xiaobin112 2. r+w $chmod 600 ~/.ssh/config Stage II 1. gen (Just press ENTER for all input values) ssh-keygen -t rsa -P &amp;#39;&amp;#39; 2.</description>
-    </item>
-    
-    <item>
-      <title>主备切换 - MySQL&#43;MHA</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/mysql-mha/</link>
-      <pubDate>Mon, 13 Apr 2020 10:38:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/mysql-mha/</guid>
-      <description>在进行安装配置前，请确认已经完成了《MySQL 主从复制》
-MHA (V0.58)
-Manager Node baidu yun - backup
-Mha manager Mha node 安装前准备《ssh相互免密》
-一、安装 Name IP Memo mha1 192.168.0.151 Monitor host 使用pscp上传文件请参考《MySQL 主从复制 - 5. test data》
-1. MHA Node 所有MySQL服务器（mysql1、mysql11、mysql12）和MHA 管理机（MHA）都要安装。
-sudo yum localinstall mha4mysql-node-0.58-0.el7.centos.noarch.rpm 2. MHA Manager CentOS源有perl-Config-Tiny。
-sudo yum install perl-Config-Tiny 安装epel，可以找到perl-Log-Dispatch、perl-Parallel-ForkManager。
-sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm sudo yum install perl-Log-Dispatch perl-Parallel-ForkManager -y 安装manager
-sudo yum localinstall mha4mysql-manager-0.58-0.el7.centos.noarch.rpm 3. MySQL主从配置 （补充部分）
-1) repl user Slave Server（mysql11, mysql12）</description>
     </item>
     
     <item>

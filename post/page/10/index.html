@@ -164,6 +164,37 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_spark_cluster/">spark cluster</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>OS: CentOS7
+Prepare 已经安装了《ZooKeeper multi-server install》 已经安装了《hadoop - cluster》 Stage I: Installation spark安装 - CentOS Firewall设置请参见《firewall-soft list(port)》 设置OpenJDK请参见《设置OpenJDK - CentOS》 set up 详见Reference[4]
+Stage II: Run 1. ZK zkServer.sh start 2. Hadoop 1) HDFS see 《hadoop - cluster - 3.1 HDFS》
+2) YARN see 《hadoop - cluster - 3.2 YARN》
+3. Spark （server3，4）
+$SPARK_HOME/sbin/start-all.sh 1) other site $SPARK_HOME/sbin/start-master.sh Web: http://192.168.42.109:8082/
+http://192.168.42.110:8082/
+or http://192.168.42.109:8081/
+http://192.168.42.110:8081/
+Stage III: Stop $SPARK_HOME/sbin/stop-all.sh Reference Running Spark on YARN hadoop - cluster 《Spark学习之路 （二）Spark2. <a class="read-more" href="/csdn/post/ops_spark_cluster/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-15T02:08:08&#43;08:00">
+            15 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_spark_config/">spark配置</a></h2>
     </header>
     <section class="post-excerpt">
@@ -390,28 +421,6 @@ mkdir -p ~/app/hadoop tar zxvf hadoop-2. <a class="read-more" href="/csdn/post/o
             
         
         <time class="post-date" datetime="2020-04-14T03:08:08&#43;08:00">
-            14 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_firewall/">soft-list(port)</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>I. Soft List 1. zk sudo firewall-cmd --permanent --zone=public --add-port=2181/tcp sudo firewall-cmd --permanent --zone=public --add-port=2888/tcp sudo firewall-cmd --permanent --zone=public --add-port=3888/tcp 2. Hadoop sudo firewall-cmd --permanent --zone=public --add-port=10020/tcp sudo firewall-cmd --permanent --zone=public --add-port=19888/tcp sudo firewall-cmd --permanent --zone=public --add-port=8020/tcp sudo firewall-cmd --permanent --zone=public --add-port=50070/tcp sudo firewall-cmd --permanent --zone=public --add-port=8485/tcp sudo firewall-cmd --permanent --zone=public --add-port=8088/tcp sudo firewall-cmd --permanent --zone=public --add-port=8033/tcp 3. Spark sudo firewall-cmd --permanent --zone=public --add-port=6066/tcp sudo firewall-cmd --permanent --zone=public --add-port=7077/tcp sudo firewall-cmd --permanent --zone=public --add-port=8080-8088/tcp 立即生效： <a class="read-more" href="/csdn/post/ops_firewall/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-14T02:08:08&#43;08:00">
             14 Apr 2020
         </time>
     </footer>
