@@ -469,6 +469,22 @@ code /* * Int2hex.c * * Created on: 2010-07-20 * Author: xiaobin */ #include &am
     </item>
     
     <item>
+      <title>MySQL 主从复制</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/mysql-master-slave-replication/</link>
+      <pubDate>Wed, 13 Apr 2022 09:38:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/mysql-master-slave-replication/</guid>
+      <description>在进行配置前，请确认已经安装 mysql5.7 - CentOS
+1. 网络配置 Replication Group 1:
+Name IP Memo mysql1 192.168.0.160 Master mysql11 192.168.0.161 Slave mysql12 192.168.0.162 Slave Replication Group 2(Maria DB):
+Name IP Memo mysql2 192.168.0.170 Master mysql21 192.168.0.171 Slave mysql22 192.168.0.172 Slave 2. Configure MySQL cluster 1) Master Server Setting the Replication Master Configuration
+/etc/my.cnf
+[mysqld] log-bin=mysql160-bin server-id=160 2) Slave Server Setting the Replication Slave Configuration
+/etc/my.cnf
+Slave 1 [mysqld] server-id=161 Slave 2 [mysqld] server-id=162 3.</description>
+    </item>
+    
+    <item>
       <title>Linux修改网卡为固定IP</title>
       <link>https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/</link>
       <pubDate>Wed, 13 Apr 2022 08:38:08 +0800</pubDate>
@@ -1355,22 +1371,6 @@ sudo yum install perl-Config-Tiny 安装epel，可以找到perl-Log-Dispatch、p
 sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm sudo yum install perl-Log-Dispatch perl-Parallel-ForkManager -y 安装manager
 sudo yum localinstall mha4mysql-manager-0.58-0.el7.centos.noarch.rpm 3. MySQL主从配置 （补充部分）
 1) repl user Slave Server（mysql11, mysql12）</description>
-    </item>
-    
-    <item>
-      <title>MySQL 主从复制</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/mysql-master-slave-replication/</link>
-      <pubDate>Mon, 13 Apr 2020 09:38:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/mysql-master-slave-replication/</guid>
-      <description>在进行配置前，请确认已经安装 mysql5.7 - CentOS7
-1. 网络配置 Replication Group 1:
-Name IP Memo mysql1 192.168.0.160 Master mysql11 192.168.0.161 Slave mysql12 192.168.0.162 Slave Replication Group 2(Maria DB):
-Name IP Memo mysql2 192.168.0.170 Master mysql21 192.168.0.171 Slave mysql22 192.168.0.172 Slave 2. Configure MySQL cluster 1) Master Server 《Setting the Replication Master Configuration》
-/etc/my.cnf
-[mysqld] log-bin=mysql160-bin server-id=160 2) Slave Server 《Setting the Replication Slave Configuration》
-/etc/my.cnf
-Slave 1 [mysqld] server-id=161 Slave 2 [mysqld] server-id=162 3.</description>
     </item>
     
     <item>

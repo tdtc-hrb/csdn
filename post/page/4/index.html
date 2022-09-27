@@ -213,6 +213,35 @@ code /* * Int2hex.c * * Created on: 2010-07-20 * Author: xiaobin */ #include &lt
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql-master-slave-replication/">MySQL 主从复制</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>在进行配置前，请确认已经安装 mysql5.7 - CentOS
+1. 网络配置 Replication Group 1:
+Name IP Memo mysql1 192.168.0.160 Master mysql11 192.168.0.161 Slave mysql12 192.168.0.162 Slave Replication Group 2(Maria DB):
+Name IP Memo mysql2 192.168.0.170 Master mysql21 192.168.0.171 Slave mysql22 192.168.0.172 Slave 2. Configure MySQL cluster 1) Master Server Setting the Replication Master Configuration
+/etc/my.cnf
+[mysqld] log-bin=mysql160-bin server-id=160 2) Slave Server Setting the Replication Slave Configuration
+/etc/my.cnf
+Slave 1 [mysqld] server-id=161 Slave 2 [mysqld] server-id=162 3. <a class="read-more" href="/csdn/post/mysql-master-slave-replication/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-04-13T09:38:08&#43;08:00">
+            13 Apr 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_network_adapter_linux/">Linux修改网卡为固定IP</a></h2>
     </header>
     <section class="post-excerpt">
@@ -394,32 +423,6 @@ ssh $sudo yum install openssh  <a class="read-more" href="/csdn/post/ops_network
         
         <time class="post-date" datetime="2022-03-13T08:38:08-08:00">
             13 Mar 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/java-grammar/">java的grammar</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>JDK8:
-March 2022 for Oracle (commercial)
-At least May 2026 for Eclipse Adoptium
-lambda 我们使用实现Runnable的不同来做对比。
-java 7 package my.csdn2; import java.util.concurrent.ExecutorService; import java.util.concurrent.Executors; public class RunnableThread implements Runnable { public int mul(int x, int y) { int result = 0; result = x * y; return result; } public void run() { // TODO Auto-generated method stub for (int i = 0; i &lt; 5; i++) { for (int j = 0; j &lt; 5; j++) { System. <a class="read-more" href="/csdn/post/java-grammar/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-03-08T02:09:28&#43;08:00">
-            8 Mar 2022
         </time>
     </footer>
 </article>

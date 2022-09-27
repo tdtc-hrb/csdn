@@ -164,6 +164,33 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_ssh_without_password/">ssh相互免密</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>OS: CentOS 7
+Ip /etc/hostname 192.168.0.110 host1 192.168.0.111 host2 Note:
+On every host, run following commands, Use xiaobin112(user) to do all following.
+Prepare Establish Directory &ldquo;.ssh&rdquo;
+$mkdir ~/.ssh $chmod 700 ~/.ssh Stage I 1. config 另外一种方式为：把所有机器的IP和hostname放在/etc/hosts里，在此不再赘述, 请参见《ZooKeeper multi-server install - 3.FQDN》。
+$vi ~/.ssh/config Host host1 HostName 192.168.0.110 Port 22 User xiaobin112 Host host2 HostName 192.168.0.111 Port 22 User xiaobin112 2. r+w $chmod 600 ~/.ssh/config Stage II 1. gen (Just press ENTER for all input values) ssh-keygen -t rsa -P &#39;&#39; 2. <a class="read-more" href="/csdn/post/ops_ssh_without_password/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-13T11:38:08&#43;08:00">
+            13 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/mysql-mha/">主备切换 - MySQL&#43;MHA</a></h2>
     </header>
     <section class="post-excerpt">
@@ -188,35 +215,6 @@ sudo yum localinstall mha4mysql-manager-0.58-0.el7.centos.noarch.rpm 3. MySQL主
 
         
         <time class="post-date" datetime="2020-04-13T10:38:08&#43;08:00">
-            13 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/mysql-master-slave-replication/">MySQL 主从复制</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>在进行配置前，请确认已经安装 mysql5.7 - CentOS7
-1. 网络配置 Replication Group 1:
-Name IP Memo mysql1 192.168.0.160 Master mysql11 192.168.0.161 Slave mysql12 192.168.0.162 Slave Replication Group 2(Maria DB):
-Name IP Memo mysql2 192.168.0.170 Master mysql21 192.168.0.171 Slave mysql22 192.168.0.172 Slave 2. Configure MySQL cluster 1) Master Server 《Setting the Replication Master Configuration》
-/etc/my.cnf
-[mysqld] log-bin=mysql160-bin server-id=160 2) Slave Server 《Setting the Replication Slave Configuration》
-/etc/my.cnf
-Slave 1 [mysqld] server-id=161 Slave 2 [mysqld] server-id=162 3. <a class="read-more" href="/csdn/post/mysql-master-slave-replication/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-13T09:38:08&#43;08:00">
             13 Apr 2020
         </time>
     </footer>

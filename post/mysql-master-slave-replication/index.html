@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="本系列包括主备切换 - MySQL&#43;MHA" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2020-04-13T09:38:08&#43;08:00" />
+    <meta property="article:published_time" content="2022-04-13T09:38:08&#43;08:00" />
 
     
     
@@ -99,8 +99,8 @@
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/mysql-master-slave-replication/",
-    "datePublished": "2020-04-13T09:38Z",
-    "dateModified": "2020-04-13T09:38Z",
+    "datePublished": "2022-04-13T09:38Z",
+    "dateModified": "2022-04-13T09:38Z",
     
     
     "description": "本系列包括主备切换 - MySQL+MHA",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2020-04-13T09:38:08&#43;08:00">
-            Apr 13, 2020
+          <time class="post-date" datetime="2022-04-13T09:38:08&#43;08:00">
+            Apr 13, 2022
           </time>
         
          
@@ -178,7 +178,7 @@
 
     <section class="post-content">
       <blockquote>
-<p>在进行配置前，请确认已经安装 <a href="https://xiaobin80.gitee.io/csdn/post/mysql57-cenos7/">mysql5.7 - CentOS7</a></p>
+<p>在进行配置前，请确认已经安装 <a href="https://tdtc-hrb.github.io/csdn/post/mysql57-cenos7/">mysql5.7 - CentOS</a></p>
 </blockquote>
 <h1 id="1-网络配置">1. 网络配置</h1>
 <p>Replication Group 1:</p>
@@ -237,7 +237,7 @@
 </table>
 <h1 id="2-configure-mysql-cluster">2. Configure MySQL cluster</h1>
 <h2 id="1-master-server">1) Master Server</h2>
-<p>《<a href="https://dev.mysql.com/doc/refman/5.7/en/replication-howto-masterbaseconfig.html">Setting the Replication Master Configuration</a>》</p>
+<p><a href="https://dev.mysql.com/doc/refman/5.7/en/replication-howto-masterbaseconfig.html">Setting the Replication Master Configuration</a></p>
 <blockquote>
 <p>/etc/my.cnf</p>
 </blockquote>
@@ -245,7 +245,7 @@
 </span></span><span style="display:flex;"><span>log-bin<span style="color:#f92672">=</span>mysql160-bin
 </span></span><span style="display:flex;"><span>server-id<span style="color:#f92672">=</span><span style="color:#ae81ff">160</span>
 </span></span></code></pre></div><h2 id="2-slave-server">2) Slave Server</h2>
-<p>《<a href="https://dev.mysql.com/doc/refman/5.7/en/replication-setup-slaves.html">Setting the Replication Slave Configuration</a>》</p>
+<p><a href="https://dev.mysql.com/doc/refman/5.7/en/replication-setup-slaves.html">Setting the Replication Slave Configuration</a></p>
 <blockquote>
 <p>/etc/my.cnf</p>
 </blockquote>
@@ -261,9 +261,9 @@
 </span></span><span style="display:flex;"><span>server-id<span style="color:#f92672">=</span><span style="color:#ae81ff">162</span>
 </span></span></code></pre></div><h1 id="3-replication-user">3. replication user</h1>
 <blockquote>
-<p>Master Server</p>
+<p>Master Server
+<a href="https://dev.mysql.com/doc/refman/5.7/en/replication-howto-repuser.html">Creating a User for Replication</a></p>
 </blockquote>
-<p>《<a href="https://dev.mysql.com/doc/refman/5.7/en/replication-howto-repuser.html">Creating a User for Replication</a>》</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;repl&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;192.168.0.%&#39;</span> IDENTIFIED <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;qaz1!Xsw2@&#39;</span>;
 </span></span><span style="display:flex;"><span>mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">GRANT</span> REPLICATION SLAVE <span style="color:#66d9ef">ON</span> <span style="color:#f92672">*</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;repl&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;192.168.0.%&#39;</span>;
 </span></span></code></pre></div><h1 id="4-通信">4. 通信</h1>
@@ -284,7 +284,7 @@
 </blockquote>
 <p><a href="https://dev.mysql.com/doc/refman/5.7/en/replication-howto-masterstatus.html">Obtaining the Replication Master Binary Log Coordinates</a></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>mysql <span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">SHOW</span> MASTER STATUS;
-</span></span></code></pre></div><p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20190227204027156.png" alt="sql status"></p>
+</span></span></code></pre></div><p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20190227204027156.png" alt="sql status"></p>
 <h2 id="2-赋值">2) 赋值</h2>
 <p>在Savle 1与2中执行。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>mysql <span style="color:#f92672">&gt;</span> CHANGE MASTER <span style="color:#66d9ef">TO</span> MASTER_HOST<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;192.168.0.160&#39;</span>, <span style="color:#960050;background-color:#1e0010">\</span>
@@ -372,17 +372,17 @@
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/mysql-mha/">
+      <a class="read-next-story" style="no-cover" href="/csdn/post/c-string-i2h/">
           <section class="post">
-              <h2>主备切换 - MySQL&#43;MHA</h2>
+              <h2>十进制转十六进制</h2>
               
           </section>
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_keepalived/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_network_adapter_linux/">
           <section class="post">
-              <h2>安装配置Keepalived</h2>
+              <h2>Linux修改网卡为固定IP</h2>
           </section>
       </a>
   

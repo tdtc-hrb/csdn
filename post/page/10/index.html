@@ -164,6 +164,33 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_spark_config/">spark配置</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>1. spark env spark-env.sh
+1) hadoop path export HADOOP_HOME=/home/tdtc/app/hadoop/2.7.7 export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop 2) spark worker 使用的内存和cpu core数
+export SPARK_WORKER_MEMORY=128m export SPARK_WORKER_CORES=1 3) recovery(zookeeper) export SPARK_DAEMON_JAVA_OPTS=&#34;-Dspark.deploy.recoveryMode=ZOOKEEPER -Dspark.deploy.zookeeper.url=tdtc201:2181,tdtc202:2181,tdtc203:2181,tdtc204:2181 -Dspark.deploy.zookeeper.dir=/spark2&#34; recoveryMode spark.deploy.recoveryMode=ZOOKEEPER url spark.deploy.zookeeper.url=tdtc201:2181,tdtc202:2181,tdtc203:2181,tdtc204:2181 directory 储存在zk中的位置
+spark.deploy.zookeeper.dir=/spark2 2. slaves 注意：有几个YARN，就设置几个slaves！！！
+../conf/slaves
+tdtc203 tdtc204 Reference how-to-set-up-spark-with-zookeeper-for-ha  <a class="read-more" href="/csdn/post/ops_spark_config/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-15T01:08:08&#43;08:00">
+            15 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_selinux/">SELinux的开启/关闭</a></h2>
     </header>
     <section class="post-excerpt">
@@ -386,33 +413,6 @@ mkdir -p ~/app/hadoop tar zxvf hadoop-2. <a class="read-more" href="/csdn/post/o
         
         <time class="post-date" datetime="2020-04-14T02:08:08&#43;08:00">
             14 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_ssh_without_password/">ssh相互免密</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>OS: CentOS 7
-Ip /etc/hostname 192.168.0.110 host1 192.168.0.111 host2 Note:
-On every host, run following commands, Use xiaobin112(user) to do all following.
-Prepare Establish Directory &ldquo;.ssh&rdquo;
-$mkdir ~/.ssh $chmod 700 ~/.ssh Stage I 1. config 另外一种方式为：把所有机器的IP和hostname放在/etc/hosts里，在此不再赘述, 请参见《ZooKeeper multi-server install - 3.FQDN》。
-$vi ~/.ssh/config Host host1 HostName 192.168.0.110 Port 22 User xiaobin112 Host host2 HostName 192.168.0.111 Port 22 User xiaobin112 2. r+w $chmod 600 ~/.ssh/config Stage II 1. gen (Just press ENTER for all input values) ssh-keygen -t rsa -P &#39;&#39; 2. <a class="read-more" href="/csdn/post/ops_ssh_without_password/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-13T11:38:08&#43;08:00">
-            13 Apr 2020
         </time>
     </footer>
 </article>
