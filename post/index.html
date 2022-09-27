@@ -268,6 +268,32 @@ $curl --progress https://nginx.org/download/nginx-1.22.0.tar.gz | tar xz 2) setu
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/pd-db-phy/">powerDesigner生成phy图</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>使用版本：v16.1
+一、连接数据库 1. 新建pdm File-》New Model model types -&gt; physical data model model name: newmodel-phy dbms: mysql5.0
+2. config connect profile DataBase -&gt; Configure connections Connection profile 3. connect Database -&gt; connect Flag: &ldquo;Disconnect&rdquo; Available
+dcp文件（mysql5-crm.dcp） [ConnectionProfile]ConnectionType=JDBCDbms=MySQLDisableBind=0Driver=com.mysql.jdbc.DriverJarFiles=D:\war\mysql-connector-java-5.1.49.jarLogId=rootTrimSpaces=0URL=jdbc:mysql://106.14.141.40:3306/crm 二、生成phy图 1. Reverse Engineer File -&gt; Reverse Engineer-&gt;Database 选择数据库： 其他数据库全部反选： 例如： 最后，点击ok生成phy图。
+Tips：如果想从pdm生成CDM，Tools -&gt; Generate Conceptual Data Model <a class="read-more" href="/csdn/post/pd-db-phy/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-09-10T02:26:39&#43;08:00">
+            10 Sep 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/mysql-imp-exp/">MySQL导入导出数据库</a></h2>
     </header>
     <section class="post-excerpt">
@@ -388,31 +414,6 @@ curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - install sudo a
         
         <time class="post-date" datetime="2022-07-09T23:08:39&#43;08:00">
             9 Jul 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/mysql80-install/">安装MySQL 8.0</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>MySQL 5 &amp; 8 remote server bind-address=0.0.0.0 utf8 [MY-013242] [Server] --character-set-server: &#39;utf8&#39; is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous. mysql5 character-set-server=utf8 mysql8 character-set-server=utf8mb4 validate password 注意： mysql8.0.4， 我们将无法直接使用phpMyAdmin来登录！
-使用phpMyAdmin需要设置MySQL5.7兼容模式：
-authentication_policy=mysql_native_password,, mysql5 mysql_native_password mysql8 caching_sha2_password Ubuntu install mysql8:
-sudo apt install mysql-server sudo systemctl start mysql.service config mysql secure sudo mysql ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH mysql_native_password by &#39;xbfirst80&#39;; sudo mysql_secure_installation add user password rule: <a class="read-more" href="/csdn/post/mysql80-install/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-07-07T06:08:39&#43;08:00">
-            7 Jul 2022
         </time>
     </footer>
 </article>

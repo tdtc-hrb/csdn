@@ -162,6 +162,31 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/memcached-spy/">使用spymemcached操作memcached</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>offical site
+pom &lt;dependency&gt; &lt;groupId&gt;com.google.code.simple-spring-memcached&lt;/groupId&gt; &lt;artifactId&gt;spymemcached-provider&lt;/artifactId&gt; &lt;version&gt;4.1.3&lt;/version&gt; &lt;/dependency&gt; app config applicationContext.xml
+&lt;import resource=&#34;simplesm-context.xml&#34; /&gt; &lt;aop:aspectj-autoproxy /&gt; &lt;bean name=&#34;defaultMemcachedClient&#34; class=&#34;com.google.code.ssm.CacheFactory&#34;&gt; &lt;property name=&#34;cacheClientFactory&#34;&gt; &lt;bean name=&#34;cacheClientFactory&#34; class=&#34;com.google.code.ssm.providers.spymemcached.MemcacheClientFactoryImpl&#34; /&gt; &lt;/property&gt; &lt;property name=&#34;addressProvider&#34;&gt; &lt;bean class=&#34;com.google.code.ssm.config.DefaultAddressProvider&#34;&gt; &lt;property name=&#34;address&#34; value=&#34;127.0.0.1:11211&#34; /&gt; &lt;/bean&gt; &lt;/property&gt; &lt;property name=&#34;configuration&#34;&gt; &lt;bean class=&#34;com.google.code.ssm.providers.CacheConfiguration&#34;&gt; &lt;property name=&#34;consistentHashing&#34; value=&#34;true&#34; /&gt; &lt;/bean&gt; &lt;/property&gt; &lt;/bean&gt; code service layer
+@Override @ReadThroughSingleCache(namespace = &#34;carnum&#34;, expiration = 300) public List&lt;TrainOrder&gt; getCarList(String year, String month, @ParameterValueKeyProvider int trainNumber) { // TODO Auto-generated method stub return trainOrderDao. <a class="read-more" href="/csdn/post/memcached-spy/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-11T21:08:39&#43;08:00">
+            11 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/java-string-redis-template/">StringRedisTemplate - redis-cli</a></h2>
     </header>
     <section class="post-excerpt">
@@ -251,32 +276,6 @@ springframework.version v4.3.14.RELEASE springsecurity.version v4.2.4.RELEASE hi
 
         
         <time class="post-date" datetime="2020-04-10T10:26:39&#43;08:00">
-            10 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/pd-db-phy/">powerDesigner生成phy图</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>使用版本：v16.1
-一、连接数据库 1. 新建pdm File-》New Model model types -&gt; physical data model model name: newmodel-phy dbms: mysql5.0
-2. config connect profile DataBase -&gt; Configure connections Connection profile 3. connect Database -&gt; connect Flag: &ldquo;Disconnect&rdquo; Available
-dcp文件（mysql5-crm.dcp） [ConnectionProfile]ConnectionType=JDBCDbms=MySQLDisableBind=0Driver=com.mysql.jdbc.DriverJarFiles=D:\war\mysql-connector-java-5.1.48.jarLogId=rootTrimSpaces=0URL=jdbc:mysql://106.14.141.40:3306/crm 二、生成phy图 1. Reverse Engineer File -&gt; Reverse Engineer-&gt;Database 选择数据库： 其他数据库全部反选： 例如： 最后，点击ok生成phy图。
-Tips：如果想从pdm生成CDM，Tools -&gt; Generate Conceptual Data Model <a class="read-more" href="/csdn/post/pd-db-phy/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-10T02:26:39&#43;08:00">
             10 Apr 2020
         </time>
     </footer>

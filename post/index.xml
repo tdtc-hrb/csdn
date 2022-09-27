@@ -62,6 +62,19 @@ $curl --progress https://nginx.org/download/nginx-1.22.0.tar.gz | tar xz 2) setu
     </item>
     
     <item>
+      <title>powerDesigner生成phy图</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/pd-db-phy/</link>
+      <pubDate>Sat, 10 Sep 2022 02:26:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/pd-db-phy/</guid>
+      <description>使用版本：v16.1
+一、连接数据库 1. 新建pdm File-》New Model model types -&amp;gt; physical data model model name: newmodel-phy dbms: mysql5.0
+2. config connect profile DataBase -&amp;gt; Configure connections Connection profile 3. connect Database -&amp;gt; connect Flag: &amp;ldquo;Disconnect&amp;rdquo; Available
+dcp文件（mysql5-crm.dcp） [ConnectionProfile]ConnectionType=JDBCDbms=MySQLDisableBind=0Driver=com.mysql.jdbc.DriverJarFiles=D:\war\mysql-connector-java-5.1.49.jarLogId=rootTrimSpaces=0URL=jdbc:mysql://106.14.141.40:3306/crm 二、生成phy图 1. Reverse Engineer File -&amp;gt; Reverse Engineer-&amp;gt;Database 选择数据库： 其他数据库全部反选： 例如： 最后，点击ok生成phy图。
+Tips：如果想从pdm生成CDM，Tools -&amp;gt; Generate Conceptual Data Model</description>
+    </item>
+    
+    <item>
       <title>MySQL导入导出数据库</title>
       <link>https://tdtc-hrb.github.io/csdn/post/mysql-imp-exp/</link>
       <pubDate>Sat, 10 Sep 2022 02:18:39 +0800</pubDate>
@@ -1526,19 +1539,6 @@ springframework.version v4.3.14.RELEASE springsecurity.version v4.2.4.RELEASE hi
       <description>PART I: Struts2 Refence: 《how to create a struts2 web application》
 1. pom.xml 1) Struts2 struts2-spring-plugin
 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.apache.struts&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;struts2-spring-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;${struts2.version}&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; 2) jsp servlet &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;javax.servlet&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;javax.servlet-api&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.1.0&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; jstl &amp;lt;!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;javax.servlet.jsp.jstl&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jstl&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.2&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; 2. web.xml filter &amp;lt;filter&amp;gt; &amp;lt;filter-name&amp;gt;struts2&amp;lt;/filter-name&amp;gt; &amp;lt;filter-class&amp;gt;org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter&amp;lt;/filter-class&amp;gt; &amp;lt;/filter&amp;gt; 3. struts.xml &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;!DOCTYPE struts PUBLIC &amp;#34;-//Apache Software Foundation//DTD Struts Configuration 2.5//EN&amp;#34; &amp;#34;http://struts.apache.org/dtds/struts-2.5.dtd&amp;#34;&amp;gt; &amp;lt;struts&amp;gt; &amp;lt;constant name=&amp;#34;struts.devMode&amp;#34; value=&amp;#34;true&amp;#34; /&amp;gt; &amp;lt;package name=&amp;#34;basicstruts2&amp;#34; extends=&amp;#34;struts-default&amp;#34;&amp;gt; &amp;lt;action name=&amp;#34;index&amp;#34;&amp;gt; &amp;lt;result&amp;gt;/index.</description>
-    </item>
-    
-    <item>
-      <title>powerDesigner生成phy图</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/pd-db-phy/</link>
-      <pubDate>Fri, 10 Apr 2020 02:26:39 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/pd-db-phy/</guid>
-      <description>使用版本：v16.1
-一、连接数据库 1. 新建pdm File-》New Model model types -&amp;gt; physical data model model name: newmodel-phy dbms: mysql5.0
-2. config connect profile DataBase -&amp;gt; Configure connections Connection profile 3. connect Database -&amp;gt; connect Flag: &amp;ldquo;Disconnect&amp;rdquo; Available
-dcp文件（mysql5-crm.dcp） [ConnectionProfile]ConnectionType=JDBCDbms=MySQLDisableBind=0Driver=com.mysql.jdbc.DriverJarFiles=D:\war\mysql-connector-java-5.1.48.jarLogId=rootTrimSpaces=0URL=jdbc:mysql://106.14.141.40:3306/crm 二、生成phy图 1. Reverse Engineer File -&amp;gt; Reverse Engineer-&amp;gt;Database 选择数据库： 其他数据库全部反选： 例如： 最后，点击ok生成phy图。
-Tips：如果想从pdm生成CDM，Tools -&amp;gt; Generate Conceptual Data Model</description>
     </item>
     
     <item>

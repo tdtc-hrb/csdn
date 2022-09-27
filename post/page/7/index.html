@@ -164,6 +164,33 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_data_transmission/">Linux与Windows互传数据</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>一、光盘方式 VMware
+1. 制作ISO 打开UltralISO，把需要的文件拖拽过去即可。
+2. Linux 1) look ls -l /dev | grep cdrom 2) load sudo mount /dev/cdrom /mnt/ 3) unload sudo umount /mnt 二、scp 1. Windows-&gt;Linux Windows的scp包含在putty工具中。
+pscp f:\docker-soft\docker-compose-Linux-x86_64 tdtc@192.168.211.131:/home/tdtc/ pscp f:\docker-soft\protobuf-cpp-3.11.4.tar.gz tdtc@192.168.211.131:/home/tdtc/ pscp f:\docker-soft\go1.13.8.linux-amd64.tar.gz tdtc@192.168.211.131:/home/tdtc 2. Linux-&gt;Windows 注意：仅适用于win10.
+1）增加OpenSSH Server 安装OpenSSH 开始菜单-》设置-》应用-》管理可选功能: 开启OpenSSH 注意：关闭Windows防火墙或允许22端口。 2）传送文件 在Linux下操作。
+scp /home/tdtc/go1.13.8.linux-amd64.tar.gz xiaobin@192.168.211.112:/D:\war  <a class="read-more" href="/csdn/post/ops_data_transmission/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-15T16:08:08&#43;08:00">
+            15 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/css-bootstrap-grid/">Grid system</a></h2>
     </header>
     <section class="post-excerpt">
@@ -379,33 +406,6 @@ STDMETHODIMP CRepoFmt::getInqRepo(ULONG iStation, SAFEARRAY** ret) { SAFEARRAY *
 
         
         <time class="post-date" datetime="2020-05-13T12:08:08&#43;08:00">
-            13 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/c2plus-unmanaged-dll/">调用非托管DLL</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>IDE: vs2008 Express(sp1)
-callXBFLibrary 我们需要使用API函数来读取INI文件。
-建立P/Invoke应用类 在pinvoke.net中查找Win32 API在C#定义。 GetPrivateProfileString 读取Ini文件的API
-[DllImport(&#34;kernel32.dll&#34;, CharSet=CharSet.Unicode)] static extern uint GetPrivateProfileString( string lpAppName, string lpKeyName, string lpDefault, StringBuilder lpReturnedString, uint nSize, string lpFileName); 注意：DllImport属性来自using System.Runtime.InteropServices;
-lpAppName 小节名 lpKeyName 键名 lpDefault 缺省值 lpReturnedString 返回值 nSize 返回值长度 lpFileName 读取文件的名称 import class using System.Runtime.InteropServices; readIniFileVal 建立一个公共方法，以供程序使用。
-public string readIniFileVal(string iniFileName, string section, string key) { StringBuilder retStrBuilder = new StringBuilder(256); GetPrivateProfileString( section, key, &#34;&#34;, retStrBuilder, 256, iniFileName); return retStrBuilder. <a class="read-more" href="/csdn/post/c2plus-unmanaged-dll/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-13T00:08:08&#43;08:00">
             13 May 2020
         </time>
     </footer>
