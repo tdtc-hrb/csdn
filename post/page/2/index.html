@@ -164,6 +164,36 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c-automake/">automake生成makefile</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>注意: am文件是需要手工创建的!
+1. ac文件 生成configure.scan文件, 并重命名为configure.ac
+$ autoscan $ mv configure.scan configure.ac 修改配置 注意: 所有新修改的值都需要方括号([])
+程序属性 AC_INIT([hex2int], [v0.1], [veic_2005@163.com]) 目录结构 如果只有本目录, 使用空值 AM_INIT_AUTOMAKE 检查编译器 C compiler: AC_PROG_CC C++ compiler:
+AC_PROG_CXX 输出Makefile.in AC_CONFIG_FILES([Makefile]) 检查system头文件 AC_CHECK_HEADERS([string.h]) 2. 生成Makefile aclocal autoconf 自定义宏(可选) 在ac file中的定义：
+AC_CONFIG_HEADERS([config.h]) 执行：
+autoheader 输出Makefile automake --add-missing 输出Makefile:
+./configure 附件 手动Makefile 小项目可以。 注意：所有的命令前必须为TAB，不能使空格！
+#https://stackoverflow.com/questions/1484817/how-do-i-make-a-simple-makefile-for-gcc-on-linux #https://stackoverflow.com/questions/14109724/makefile-missing-separator/14109796 #https://www.gnu.org/software/make/manual/html_node/Pattern-Examples.html#Pattern-Examples #https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html#Automatic-Variables TARGET = hex2int CC = gcc CFLAGS = -g -Wall all:$(TARGET) OBJECTS = $(patsubst %. <a class="read-more" href="/csdn/post/c-automake/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-08-08T02:20:39&#43;08:00">
+            8 Aug 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/pack-file-linux/">打包文件</a></h2>
     </header>
     <section class="post-excerpt">
@@ -414,37 +444,6 @@ sudo yum install centos-release-scl sudo yum install devtoolset-8 scl enable dev
         
         <time class="post-date" datetime="2022-06-11T04:58:39&#43;08:00">
             11 Jun 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/reduxjs-asyn/">重构asyn</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>0. pre 生成基本框 npm install -g create-react-app create-react-app async clone repo https://github.com/redux-saga/redux-saga.git
-1. copy directorys Copy the examples/async/src from the redux-saga to your async/src.
-2. rename main.js async/src
-Rename main.js to index.js
-3. move files async/src
-App.css &amp;&amp; logo.svg -&gt;
-async/src/containers
-App.css &amp;&amp; logo.svg
-4. modify containers/App.js Add the following two blocks of code.
-import logo from &#39;./logo.svg&#39;; import &#39;./App.css&#39;; &lt;div className=&#34;App&#34;&gt; &lt;header className=&#34;App-header&#34;&gt; &lt;img src={logo} className=&#34;App-logo&#34; alt=&#34;logo&#34; /&gt; &lt;h1 className=&#34;App-title&#34;&gt;Welcome to React&lt;/h1&gt; &lt;/header&gt; . <a class="read-more" href="/csdn/post/reduxjs-asyn/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-06-10T07:26:39&#43;08:00">
-            10 Jun 2022
         </time>
     </footer>
 </article>
