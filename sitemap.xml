@@ -17,8 +17,14 @@
     <loc>https://tdtc-hrb.github.io/csdn/post/mysql57-cenos7/</loc>
     <lastmod>2022-09-24T06:21:39+08:00</lastmod>
   </url><url>
+    <loc>https://tdtc-hrb.github.io/csdn/post/ops_openjdk_centos/</loc>
+    <lastmod>2022-09-14T08:08:08-08:00</lastmod>
+  </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/ops_nginx/</loc>
     <lastmod>2022-09-13T07:38:08+08:00</lastmod>
+  </url><url>
+    <loc>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</loc>
+    <lastmod>2022-09-11T12:38:08+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/pd-db-phy/</loc>
     <lastmod>2022-09-10T02:26:39+08:00</lastmod>
@@ -80,9 +86,6 @@
     <loc>https://tdtc-hrb.github.io/csdn/tags/yum/</loc>
     <lastmod>2022-06-12T12:58:39+08:00</lastmod>
   </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</loc>
-    <lastmod>2022-06-11T12:38:08+08:00</lastmod>
-  </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/tags/development-tools/</loc>
     <lastmod>2022-06-11T04:58:39+08:00</lastmod>
   </url><url>
@@ -130,9 +133,6 @@
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/vc-serial_communication/</loc>
     <lastmod>2022-05-15T08:08:08+08:00</lastmod>
-  </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/ops_openjdk_centos/</loc>
-    <lastmod>2022-05-14T08:08:08-08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/c2plus-com-dll/</loc>
     <lastmod>2022-05-13T08:08:08+08:00</lastmod>
@@ -376,9 +376,6 @@
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/ops_keepalived/</loc>
     <lastmod>2020-04-13T08:38:08+08:00</lastmod>
-  </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/ops_real_keepalived/</loc>
-    <lastmod>2020-04-13T06:38:08+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/ops_vi/</loc>
     <lastmod>2020-04-13T04:38:08+08:00</lastmod>

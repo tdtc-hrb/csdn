@@ -164,6 +164,57 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/pack-file-linux/">打包文件</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>取消目录所有权限
+chmod -R 777 /tmp/etc 一、ISO文件 mkisofs -r -o etc.iso /tmp/etc 二、压缩文件 1. zip zip -r etc.zip /tmp/etc 2. tar 仅打包，不压缩！
+tar -cvf /tmp/etc.tar /etc transform --transform s/OLD_NAME/NEW_NAME/ gz tar -zcvf /tmp/etc.tar.gz /etc transform:
+tar -zcvf /tmp/etc.tar.gz /etc --transform s/etc/myetc/ bz2 tar -jcvf /tmp/etc.tar.bz2 /etc transform:
+tar -jcvf /tmp/etc.tar.bz2 /etc --transform s/etc/myetc/ FAQ This does not look like a tar archive #gzip -d xxxx.tar.gz #tar -xf xxxx.tar 参考文章 18 Tar Command Examples in Linux c – Creates a new . <a class="read-more" href="/csdn/post/pack-file-linux/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-07-10T02:20:39&#43;08:00">
+            10 Jul 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/nodejs-ubuntu/">在Ubuntu下安装NodeJS</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>1.node.js v18.x/16.x
+v18.x:
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - v16.x:
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - install sudo apt-get install -y nodejs 2. yarn js curl --silent --show-error https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo &#34;deb https://dl.yarnpkg.com/debian/ stable main&#34; | sudo tee /etc/apt/sources.list.d/yarn.list sudo apt-get update sudo apt-get install yarn Ref How to Install Yarn on Ubuntu 18.04  <a class="read-more" href="/csdn/post/nodejs-ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-07-09T23:08:39&#43;08:00">
+            9 Jul 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/mysql80-install/">安装MySQL 8.0</a></h2>
     </header>
     <section class="post-excerpt">
@@ -335,28 +386,6 @@ rpm -ivh yum-metadata-parser-1.1.4-10.el7.x86_64.rpmrpm -ivh yum-3.4.3-168.el7.
 	
 	   <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_tomcat/">Tomcat安装</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>Servlet Spec JSP Spec EL Spec WebSocket Spec Authentication (JASIC) Spec Apache Tomcat Version Latest Released Version Supported Java Versions 6.0 3.1 5.0 2.1 3.0 10.1.x 10.1.0-M16 (beta) Jakarta EE 9.1 5.0 3.0 4.0 2.0 2.0 10.0.x 10.0.22 Jakarta EE 9 4.0 2.3 3.0 1.1 1.1 9.0.x 9.0.64 8 and later 3.1 2.3 3.0 1.1 1.1 8.5.x 8.5.81 7 and later installation Platform version Released Specification Java SE Support Important Changes Jakarta EE 10 2022-03-31 10 Java SE 17/Java SE 11 Removal of deprecated items in Servlet, Faces, CDI and EJB (Entity Beans and Embeddable Container). <a class="read-more" href="/csdn/post/ops_tomcat/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-06-11T12:38:08&#43;08:00">
-            11 Jun 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/redis-centos7/">在RHEL/CentOS安装Redis</a></h2>
     </header>
     <section class="post-excerpt">
@@ -416,32 +445,6 @@ import logo from &#39;./logo.svg&#39;; import &#39;./App.css&#39;; &lt;div class
         
         <time class="post-date" datetime="2022-06-10T07:26:39&#43;08:00">
             10 Jun 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/mysql57-win/">安装配置MySQL 5.7</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>一、配置和安装 ini配置详见附录
-预配置 需要vc12 redist
-设置环境变量 名称：MYSQL57_HOME 赋值：D:\progFiles\mysql-5.7 init data %MYSQL57_HOME%\bin\mysqld --initialize-insecure --console 注册/注销服务 注册 多个版本的MySQL运行：
-%MYSQL57_HOME%\bin\mysqld --install MySQL57 --defaults-file=&#34;D:\progFiles\mysql-5.7\my.ini&#34; 注销 sc delete mysql57 Enable SSL Connections for MySQL 注意： 可以忽略如下警告信息：
-CA certificate ca.pem is self signed.For more information, see Help and Support Center at http://www.mysql.com. Connection TLS Protocol Configuration mysql&gt; SHOW GLOBAL VARIABLES LIKE &#39;tls_version&#39;; To change the value of tls_version, set it at server startup. For example, to permit connections that use the TLSv1. <a class="read-more" href="/csdn/post/mysql57-win/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-06-07T12:08:39&#43;08:00">
-            7 Jun 2022
         </time>
     </footer>
 </article>

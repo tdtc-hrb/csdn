@@ -271,36 +271,6 @@ $make install setup $cp /usr/local/keepalived/sbin/keepalived /usr/sbin/ $mkdir 
 	
 	   <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_real_keepalived/">架设Real Server和Keepalived Server</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>os: CentOS7 minimal（安装时的选项） 准备工作： 修改网卡为固定IP - CentOS
-总览 Real Server CentOS7RS1 192.168.0.107
-Nginx V1.14 Tomcat V7.0.90 CentOS7RS2 192.168.0.102
-Nginx V1.14 Tomcat V8.5.32 Keepalived Server CentOS7Master 192.168.0.109
-CentOS7Bak 192.168.0.110
-一、Real Server 1. 安装前准备 Linux下安装Tomcat ops_tomcat.md
-nginx - load balancing ops_nginx.md
-2. config ARP 1) ifconfig $yum install net-tools 2) realserver /etc/init.d/realserver
-#vi /etc/init.d/realserver #!/bin/bash SNS_VIP=192.168.0.220 case &#34;$1&#34; in start) ifconfig lo:0 $SNS_VIP netmask 255.255.255.255 broadcast $SNS_VIP /sbin/route add -host $SNS_VIP dev lo:0 echo &#34;1&#34; &gt;/proc/sys/net/ipv4/conf/lo/arp_ignore echo &#34;2&#34; &gt;/proc/sys/net/ipv4/conf/lo/arp_announce echo &#34;1&#34; &gt;/proc/sys/net/ipv4/conf/all/arp_ignore echo &#34;2&#34; &gt;/proc/sys/net/ipv4/conf/all/arp_announce sysctl -p &gt;/dev/null 2&gt;&amp;1 echo &#34;RealServer Start OK&#34; ;; stop) ifconfig lo:0 down route del $SNS_VIP &gt;/dev/null 2&gt;&amp;1 echo &#34;0&#34; &gt;/proc/sys/net/ipv4/conf/lo/arp_ignore echo &#34;0&#34; &gt;/proc/sys/net/ipv4/conf/lo/arp_announce echo &#34;0&#34; &gt;/proc/sys/net/ipv4/conf/all/arp_ignore echo &#34;0&#34; &gt;/proc/sys/net/ipv4/conf/all/arp_announce echo &#34;RealServer Stoped&#34; ;; *) echo &#34;Usage: $0 {start|stop}&#34; exit 1 esac exit 0 2. <a class="read-more" href="/csdn/post/ops_real_keepalived/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-13T06:38:08&#43;08:00">
-            13 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_vi/">简单使用vi</a></h2>
     </header>
     <section class="post-excerpt">
@@ -428,6 +398,31 @@ chmod 644 myfile.iso 显示ftp目录信息 在目录下建立一个.message文�
         
         <time class="post-date" datetime="2020-04-13T00:08:08&#43;08:00">
             13 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/memcached-spy/">使用spymemcached操作memcached</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>offical site
+pom &lt;dependency&gt; &lt;groupId&gt;com.google.code.simple-spring-memcached&lt;/groupId&gt; &lt;artifactId&gt;spymemcached-provider&lt;/artifactId&gt; &lt;version&gt;4.1.3&lt;/version&gt; &lt;/dependency&gt; app config applicationContext.xml
+&lt;import resource=&#34;simplesm-context.xml&#34; /&gt; &lt;aop:aspectj-autoproxy /&gt; &lt;bean name=&#34;defaultMemcachedClient&#34; class=&#34;com.google.code.ssm.CacheFactory&#34;&gt; &lt;property name=&#34;cacheClientFactory&#34;&gt; &lt;bean name=&#34;cacheClientFactory&#34; class=&#34;com.google.code.ssm.providers.spymemcached.MemcacheClientFactoryImpl&#34; /&gt; &lt;/property&gt; &lt;property name=&#34;addressProvider&#34;&gt; &lt;bean class=&#34;com.google.code.ssm.config.DefaultAddressProvider&#34;&gt; &lt;property name=&#34;address&#34; value=&#34;127.0.0.1:11211&#34; /&gt; &lt;/bean&gt; &lt;/property&gt; &lt;property name=&#34;configuration&#34;&gt; &lt;bean class=&#34;com.google.code.ssm.providers.CacheConfiguration&#34;&gt; &lt;property name=&#34;consistentHashing&#34; value=&#34;true&#34; /&gt; &lt;/bean&gt; &lt;/property&gt; &lt;/bean&gt; code service layer
+@Override @ReadThroughSingleCache(namespace = &#34;carnum&#34;, expiration = 300) public List&lt;TrainOrder&gt; getCarList(String year, String month, @ParameterValueKeyProvider int trainNumber) { // TODO Auto-generated method stub return trainOrderDao. <a class="read-more" href="/csdn/post/memcached-spy/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-11T21:08:39&#43;08:00">
+            11 Apr 2020
         </time>
     </footer>
 </article>

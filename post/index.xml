@@ -49,6 +49,17 @@ sudo dnf install mysql-community-server disable default repo sudo dnf remove @my
     </item>
     
     <item>
+      <title>设置OpenJDK</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_openjdk_centos/</link>
+      <pubDate>Wed, 14 Sep 2022 08:08:08 -0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_openjdk_centos/</guid>
+      <description>1. install jre
+sudo yum install java -y jdk sudo yum install java-1.8.0-openjdk-devel 2. set path sudo vi /etc/profile export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.345.b01-1.el7_9.x86_64 export CLASSPATH=.:$JAVA_HOME/jre/lib/:. export PATH=$PATH:$JAVA_HOME/bin $su root $source /etc/profile About path 3.3. INSTALL OPENJDK ON RED HAT ENTERPRISE LINUX - 2.Optional: Set the JAVA_HOME environment variable
+Reference How to install Java on CentOS 7 OpenJDK Version Info - Releases </description>
+    </item>
+    
+    <item>
       <title>前端（Web）负载均衡</title>
       <link>https://tdtc-hrb.github.io/csdn/post/ops_nginx/</link>
       <pubDate>Tue, 13 Sep 2022 07:38:08 +0800</pubDate>
@@ -59,6 +70,15 @@ nginx&amp;rsquo;s load balancing 一、安装 0. prepare $yum -y install gcc gcc
 wget https://www.openssl.org/source/openssl-1.1.1q.tar.gz --no-check-certificate 2) setup $./config --prefix=/usr --shared $make Root permission Required
 sudo make install 1. installation sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm sudo yum install -y nginx 1) down Same as the installed version
 $curl --progress https://nginx.org/download/nginx-1.22.0.tar.gz | tar xz 2) setup module see param:</description>
+    </item>
+    
+    <item>
+      <title>Tomcat安装</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</link>
+      <pubDate>Sun, 11 Sep 2022 12:38:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</guid>
+      <description>Servlet Spec JSP Spec EL Spec WebSocket Spec Authentication (JASIC) Spec Apache Tomcat Version Latest Released Version Supported Java Versions 6.0 3.1 5.0 2.1 3.0 10.1.x 10.1.0 Jakarta EE 9.1 5.0 3.0 4.0 2.0 2.0 10.0.x 10.0.26 Jakarta EE 9 4.0 2.3 3.0 1.1 1.1 9.0.x 9.0.67 8 and later 3.1 2.3 3.0 1.1 1.1 8.5.x 8.5.82 7 and later 3.0 2.2 2.2 1.1 N/A 7.0.x 7.0.109 6 and later(7 and later for WebSocket) installation Platform version Released Specification Java SE Support Important Changes Jakarta EE 10 2022-03-31 10 Java SE 17/Java SE 11 Removal of deprecated items in Servlet, Faces, CDI and EJB (Entity Beans and Embeddable Container).</description>
     </item>
     
     <item>
@@ -209,15 +229,6 @@ Yum Repo rpm -aq|grep yum|xargs rpm -e --nodepsrpm -ivh http://mirrors.ustc.edu
 wget http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/yum-metadata-parser-1.1.4-10.el7.x86_64.rpmwget http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/yum-3.4.3-168.el7.centos.noarch.rpmwget http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/yum-plugin-fastestmirror-1.1.31-54.el7_8.noarch.rpm install:
 rpm -ivh yum-metadata-parser-1.1.4-10.el7.x86_64.rpmrpm -ivh yum-3.4.3-168.el7.centos.noarch.rpm yum-plugin-fastestmirror-1.1.31-54.el7_8.noarch.rpm repo file /etc/yum.repos.d/CentOS-Base.repo CentOS-Base.repo - cento7
 # CentOS-Base.repo## The mirror system uses the connecting IP address of the client and the# update status of each mirror to pick mirrors that are updated to and# geographically close to the client.</description>
-    </item>
-    
-    <item>
-      <title>Tomcat安装</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</link>
-      <pubDate>Sat, 11 Jun 2022 12:38:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</guid>
-      <description>Servlet Spec JSP Spec EL Spec WebSocket Spec Authentication (JASIC) Spec Apache Tomcat Version Latest Released Version Supported Java Versions 6.0 3.1 5.0 2.1 3.0 10.1.x 10.1.0-M16 (beta) Jakarta EE 9.1 5.0 3.0 4.0 2.0 2.0 10.0.x 10.0.22 Jakarta EE 9 4.0 2.3 3.0 1.1 1.1 9.0.x 9.0.64 8 and later 3.1 2.3 3.0 1.1 1.1 8.5.x 8.5.81 7 and later installation Platform version Released Specification Java SE Support Important Changes Jakarta EE 10 2022-03-31 10 Java SE 17/Java SE 11 Removal of deprecated items in Servlet, Faces, CDI and EJB (Entity Beans and Embeddable Container).</description>
     </item>
     
     <item>
@@ -437,17 +448,6 @@ B类（手动） 2.3-》点击“Send”按钮。
 3.3 数据保存 当点击“Save As”按钮，即保存接收框数据；默认文件格式为rtf文件。
 操作串口 主要分为：初始化串口、读/写串口。
 其中，读串口需要使用线程。</description>
-    </item>
-    
-    <item>
-      <title>设置OpenJDK</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_openjdk_centos/</link>
-      <pubDate>Sat, 14 May 2022 08:08:08 -0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_openjdk_centos/</guid>
-      <description>1. install jre
-sudo yum install java -y jdk sudo yum install java-1.8.0-openjdk-devel 2. set path sudo vi /etc/profile export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.332.b09-1.el7_9.x86_64 export CLASSPATH=.:$JAVA_HOME/jre/lib/:. export PATH=$PATH:$JAVA_HOME/bin $su root $source /etc/profile About path 3.3. INSTALL OPENJDK ON RED HAT ENTERPRISE LINUX - 2.Optional: Set the JAVA_HOME environment variable
-Reference How to install Java on CentOS 7 OpenJDK Version Info - Releases </description>
     </item>
     
     <item>
@@ -1396,23 +1396,6 @@ $vi ~/.ssh/config Host host1 HostName 192.168.0.110 Port 22 User xiaobin112 Host
 $yum install openssl-devel 3) libnl $yum install libnl libnl-devel libnfnetlink-devel 1. keepalived v1.4.5
 down and unzip $wget http://www.keepalived.org/software/keepalived-1.4.5.tar.gz $ tar zxvf keepalived-1.4.5.tar.gz installation $cd keepalived-1.4.5 $./configure --prefix=/usr/local/keepalived $make Root permission Required
 $make install setup $cp /usr/local/keepalived/sbin/keepalived /usr/sbin/ $mkdir -p /etc/keepalived $cp /usr/local/keepalived/etc/keepalived/keepalived.conf /etc/keepalived/keepalived.conf $cp /usr/local/keepalived/etc/sysconfig/keepalived /etc/sysconfig/ $cp /tmp/keepalived-1.</description>
-    </item>
-    
-    <item>
-      <title>架设Real Server和Keepalived Server</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_real_keepalived/</link>
-      <pubDate>Mon, 13 Apr 2020 06:38:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_real_keepalived/</guid>
-      <description>os: CentOS7 minimal（安装时的选项） 准备工作： 修改网卡为固定IP - CentOS
-总览 Real Server CentOS7RS1 192.168.0.107
-Nginx V1.14 Tomcat V7.0.90 CentOS7RS2 192.168.0.102
-Nginx V1.14 Tomcat V8.5.32 Keepalived Server CentOS7Master 192.168.0.109
-CentOS7Bak 192.168.0.110
-一、Real Server 1. 安装前准备 Linux下安装Tomcat ops_tomcat.md
-nginx - load balancing ops_nginx.md
-2. config ARP 1) ifconfig $yum install net-tools 2) realserver /etc/init.d/realserver
-#vi /etc/init.d/realserver #!/bin/bash SNS_VIP=192.168.0.220 case &amp;#34;$1&amp;#34; in start) ifconfig lo:0 $SNS_VIP netmask 255.255.255.255 broadcast $SNS_VIP /sbin/route add -host $SNS_VIP dev lo:0 echo &amp;#34;1&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_ignore echo &amp;#34;2&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_announce echo &amp;#34;1&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_ignore echo &amp;#34;2&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_announce sysctl -p &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 echo &amp;#34;RealServer Start OK&amp;#34; ;; stop) ifconfig lo:0 down route del $SNS_VIP &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_ignore echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_announce echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_ignore echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_announce echo &amp;#34;RealServer Stoped&amp;#34; ;; *) echo &amp;#34;Usage: $0 {start|stop}&amp;#34; exit 1 esac exit 0 2.</description>
     </item>
     
     <item>

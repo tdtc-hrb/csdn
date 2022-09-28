@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="Linux下tomcat的配置" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2022-06-11T12:38:08&#43;08:00" />
+    <meta property="article:published_time" content="2022-09-11T12:38:08&#43;08:00" />
 
     
     
@@ -92,15 +92,15 @@
     },
     "headline": "Tomcat安装",
     "name": "Tomcat安装",
-    "wordCount":  316 ,
+    "wordCount":  315 ,
     "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/ops_tomcat/",
-    "datePublished": "2022-06-11T12:38Z",
-    "dateModified": "2022-06-11T12:38Z",
+    "datePublished": "2022-09-11T12:38Z",
+    "dateModified": "2022-09-11T12:38Z",
     
     
     "description": "Linux下tomcat的配置",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2022-06-11T12:38:08&#43;08:00">
-            Jun 11, 2022
+          <time class="post-date" datetime="2022-09-11T12:38:08&#43;08:00">
+            Sep 11, 2022
           </time>
         
          
@@ -198,7 +198,7 @@
 <td>2.1</td>
 <td>3.0</td>
 <td>10.1.x</td>
-<td>10.1.0-M16 (beta)</td>
+<td>10.1.0</td>
 <td>Jakarta EE 9.1</td>
 </tr>
 <tr>
@@ -208,7 +208,7 @@
 <td>2.0</td>
 <td>2.0</td>
 <td>10.0.x</td>
-<td>10.0.22</td>
+<td>10.0.26</td>
 <td>Jakarta EE 9</td>
 </tr>
 <tr>
@@ -218,7 +218,7 @@
 <td>1.1</td>
 <td>1.1</td>
 <td>9.0.x</td>
-<td>9.0.64</td>
+<td>9.0.67</td>
 <td>8 and later</td>
 </tr>
 <tr>
@@ -228,8 +228,18 @@
 <td>1.1</td>
 <td>1.1</td>
 <td>8.5.x</td>
-<td>8.5.81</td>
+<td>8.5.82</td>
 <td>7 and later</td>
+</tr>
+<tr>
+<td>3.0</td>
+<td>2.2</td>
+<td>2.2</td>
+<td>1.1</td>
+<td>N/A</td>
+<td>7.0.x</td>
+<td><a href="https://archive.apache.org/dist/tomcat/tomcat-7/v7.0.109/bin/apache-tomcat-7.0.109.tar.gz">7.0.109</a></td>
+<td>6 and later(7 and later for WebSocket)</td>
 </tr>
 </tbody>
 </table>
@@ -328,20 +338,20 @@
 <ul>
 <li>RHEL/CentOS <br>
 参见 <a href="https://tdtc-hrb.github.io/csdn/post/ops_openjdk_centos/">设置OpenJDK - CentOS</a></li>
-<li>Ubuntu参见 <br>
-<a href="https://tdtc-hrb.github.io/csdn/post/ops_openjdk_ubuntu/">设置OpenJDK - Ubuntu</a></li>
+<li>Ubuntu <br>
+参见 <a href="https://tdtc-hrb.github.io/csdn/post/ops_openjdk_ubuntu/">设置OpenJDK - Ubuntu</a></li>
 </ul>
 <h2 id="安装tomcat">安装Tomcat</h2>
 <blockquote>
 <p>下载并 解压</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-9/v9.0.64/bin/apache-tomcat-9.0.64.tar.gz
-</span></span><span style="display:flex;"><span>$tar -zxvf apache-tomcat-9.0.64.tar.gz
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-9/v9.0.64/bin/apache-tomcat-9.0.67.tar.gz --no-check-certificate
+</span></span><span style="display:flex;"><span>$tar -zxvf apache-tomcat-9.0.67.tar.gz
 </span></span></code></pre></div><h3 id="移动文件夹">移动文件夹</h3>
 <blockquote>
 <p>拷贝并重命名为tomcat</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo cp -R apache-tomcat-9.0.64 /usr/local/tomcat
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo cp -R apache-tomcat-9.0.67 /usr/local/tomcat
 </span></span></code></pre></div><h1 id="执行tomcat">执行Tomcat</h1>
 <h2 id="allow-fw">allow fw</h2>
 <blockquote>
@@ -358,25 +368,19 @@
 <p>使用超级用户:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$su - root
 </span></span></code></pre></div><p>授权文件夹:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$chown -R tdtc /usr/local/tomcat
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo chown -R tdtc /usr/local/tomcat
 </span></span></code></pre></div><p>返回普通用户:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$exit
 </span></span></code></pre></div><h2 id="管理app">管理app</h2>
-<blockquote>
-<p>修改../conf/tomcat-users.xml <br>
-增加manager-gui角色，并授权给tomcat用户。</p>
-</blockquote>
+<p>增加manager-gui角色，并授权给tomcat用户。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vi /usr/local/tomcat/conf/tomcat-users.xml
+</span></span></code></pre></div><p>tomcat-users.xml:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&lt;role rolename<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tomcat&#34;</span>/&gt;
 </span></span><span style="display:flex;"><span>&lt;role rolename<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manager-gui&#34;</span>/&gt;
 </span></span><span style="display:flex;"><span>&lt;user username<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tomcat&#34;</span> password<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tomcat&#34;</span> roles<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tomcat,manager-gui&#34;</span>/&gt;
-</span></span></code></pre></div><p>启动tomcat</p>
+</span></span></code></pre></div><p>启动tomcat:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$/usr/local/tomcat/bin/startup.sh
-</span></span></code></pre></div><h1 id="ref">Ref</h1>
-<ul>
-<li><a href="https://blogs.oracle.com/java/post/java-se-7-end-of-extended-support-in-july-2022">Java SE 7 End of Extended Support in July 2022</a></li>
-<li><a href="https://adoptium.net/support/">JDK8 At least May 2026 for Eclipse Adoptium</a></li>
-</ul>
-
+</span></span></code></pre></div>
     </section>
 
 
@@ -427,17 +431,17 @@
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_rhel_repo/">
+      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_nginx/">
           <section class="post">
-              <h2>RHEL更换CentOS Yum</h2>
+              <h2>前端（Web）负载均衡</h2>
               
           </section>
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/redis-centos7/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/pd-db-phy/">
           <section class="post">
-              <h2>在RHEL/CentOS安装Redis</h2>
+              <h2>powerDesigner生成phy图</h2>
           </section>
       </a>
   
