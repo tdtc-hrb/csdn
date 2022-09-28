@@ -6,11 +6,11 @@
     <description>Recent content in Posts on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 28 Sep 2022 07:38:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Sep 2022 08:38:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>前端（Web）负载均衡</title>
       <link>https://tdtc-hrb.github.io/csdn/post/ops_nginx/</link>
-      <pubDate>Wed, 28 Sep 2022 07:38:08 +0800</pubDate>
+      <pubDate>Wed, 28 Sep 2022 08:38:08 +0800</pubDate>
       
       <guid>https://tdtc-hrb.github.io/csdn/post/ops_nginx/</guid>
       <description>Nginx&amp;rsquo;s load balancing
@@ -35,8 +35,8 @@ Nginx v1.22 Tomcat v8.5.82 Keepalived Server CentOS7Master 192.168.0.129
 CentOS7Bak 192.168.0.130
 一、Real Server 安装前准备:
 Linux下安装Tomcat nginx - load balancing config ARP ifconfig:
-$yum install net-tools Configure #vi /etc/init.d/realserver /etc/init.d/realserver:
-#!/bin/bash SNS_VIP=192.168.0.220 case &amp;#34;$1&amp;#34; in start) ifconfig lo:0 $SNS_VIP netmask 255.255.255.255 broadcast $SNS_VIP /sbin/route add -host $SNS_VIP dev lo:0 echo &amp;#34;1&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_ignore echo &amp;#34;2&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_announce echo &amp;#34;1&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_ignore echo &amp;#34;2&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_announce sysctl -p &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 echo &amp;#34;RealServer Start OK&amp;#34; ;; stop) ifconfig lo:0 down route del $SNS_VIP &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_ignore echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_announce echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_ignore echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_announce echo &amp;#34;RealServer Stoped&amp;#34; ;; *) echo &amp;#34;Usage: $0 {start|stop}&amp;#34; exit 1 esac exit 0 exec $chmod 755 realserver $service realserver start 二、Keepalived Server 三、运行效果 打开网址时: 刷新后: </description>
+$sudo yum install net-tools Service #vi /etc/init.d/realserver /etc/init.d/realserver:
+#!/bin/bash SNS_VIP=192.168.0.220 case &amp;#34;$1&amp;#34; in start) ifconfig lo:0 $SNS_VIP netmask 255.255.255.255 broadcast $SNS_VIP /sbin/route add -host $SNS_VIP dev lo:0 echo &amp;#34;1&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_ignore echo &amp;#34;2&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_announce echo &amp;#34;1&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_ignore echo &amp;#34;2&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_announce sysctl -p &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 echo &amp;#34;RealServer Start OK&amp;#34; ;; stop) ifconfig lo:0 down route del $SNS_VIP &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_ignore echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_announce echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_ignore echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_announce echo &amp;#34;RealServer Stoped&amp;#34; ;; *) echo &amp;#34;Usage: $0 {start|stop}&amp;#34; exit 1 esac exit 0 exec $sudo chmod 755 /etc/init.</description>
     </item>
     
     <item>

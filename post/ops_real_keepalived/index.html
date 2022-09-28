@@ -92,7 +92,7 @@
     },
     "headline": "架设Real Server和Keepalived Server",
     "name": "架设Real Server和Keepalived Server",
-    "wordCount":  132 ,
+    "wordCount":  135 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
@@ -226,8 +226,8 @@
 </ul>
 <h2 id="config-arp">config ARP</h2>
 <p>ifconfig:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum install net-tools
-</span></span></code></pre></div><h3 id="configure">Configure</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum install net-tools
+</span></span></code></pre></div><h3 id="service">Service</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#vi /etc/init.d/realserver</span>
 </span></span></code></pre></div><p>/etc/init.d/realserver:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
@@ -260,8 +260,8 @@
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">esac</span>
 </span></span><span style="display:flex;"><span>exit <span style="color:#ae81ff">0</span>
 </span></span></code></pre></div><h2 id="exec">exec</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$chmod <span style="color:#ae81ff">755</span> realserver
-</span></span><span style="display:flex;"><span>$service realserver start
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo chmod <span style="color:#ae81ff">755</span> /etc/init.d/realserver
+</span></span><span style="display:flex;"><span>$sudo service realserver start
 </span></span></code></pre></div><h1 id="二keepalived-serverhttpstdtc-hrbgithubiocsdnpostops_keepalived"><a href="https://tdtc-hrb.github.io/csdn/post/ops_keepalived/">二、Keepalived Server</a></h1>
 <h1 id="三运行效果">三、运行效果</h1>
 <p>打开网址时:
