@@ -6,7 +6,20 @@
     <description>Recent content on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 28 Sep 2022 08:38:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Sep 2022 08:38:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>安装配置Keepalived</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_keepalived/</link>
+      <pubDate>Thu, 29 Sep 2022 08:38:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_keepalived/</guid>
+      <description>OS: CentOS7 minimal（安装时的选项）
+一、安装 0. prepare tool $yum group list 1) dev tools $yum group install &amp;#34;Development Tools&amp;#34; 2) openssl-devel update see &amp;ldquo;nginx’s load balancing的安装部分的 update OpenSSL&amp;rdquo;
+$yum install openssl-devel 3) libnl $yum install libnl libnl-devel libnfnetlink-devel 1. keepalived v1.4.5
+down and unzip $wget http://www.keepalived.org/software/keepalived-1.4.5.tar.gz $ tar zxvf keepalived-1.4.5.tar.gz installation $cd keepalived-1.4.5 $./configure --prefix=/usr/local/keepalived $make Root permission Required
+$make install setup $cp /usr/local/keepalived/sbin/keepalived /usr/sbin/ $mkdir -p /etc/keepalived $cp /usr/local/keepalived/etc/keepalived/keepalived.conf /etc/keepalived/keepalived.</description>
+    </item>
+    
     <item>
       <title>前端（Web）负载均衡</title>
       <link>https://tdtc-hrb.github.io/csdn/post/ops_nginx/</link>
@@ -1402,19 +1415,6 @@ On every host, run following commands, Use xiaobin112(user) to do all following.
 Prepare Establish Directory &amp;ldquo;.ssh&amp;rdquo;
 $mkdir ~/.ssh $chmod 700 ~/.ssh Stage I 1. config 另外一种方式为：把所有机器的IP和hostname放在/etc/hosts里，在此不再赘述, 请参见《ZooKeeper multi-server install - 3.FQDN》。
 $vi ~/.ssh/config Host host1 HostName 192.168.0.110 Port 22 User xiaobin112 Host host2 HostName 192.168.0.111 Port 22 User xiaobin112 2. r+w $chmod 600 ~/.ssh/config Stage II 1. gen (Just press ENTER for all input values) ssh-keygen -t rsa -P &amp;#39;&amp;#39; 2.</description>
-    </item>
-    
-    <item>
-      <title>安装配置Keepalived</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_keepalived/</link>
-      <pubDate>Mon, 13 Apr 2020 08:38:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_keepalived/</guid>
-      <description>OS: CentOS7 minimal（安装时的选项）
-一、安装 0. prepare tool $yum group list 1) dev tools $yum group install &amp;#34;Development Tools&amp;#34; 2) openssl-devel update see &amp;ldquo;nginx’s load balancing的安装部分的update OpenSSL&amp;rdquo;
-$yum install openssl-devel 3) libnl $yum install libnl libnl-devel libnfnetlink-devel 1. keepalived v1.4.5
-down and unzip $wget http://www.keepalived.org/software/keepalived-1.4.5.tar.gz $ tar zxvf keepalived-1.4.5.tar.gz installation $cd keepalived-1.4.5 $./configure --prefix=/usr/local/keepalived $make Root permission Required
-$make install setup $cp /usr/local/keepalived/sbin/keepalived /usr/sbin/ $mkdir -p /etc/keepalived $cp /usr/local/keepalived/etc/keepalived/keepalived.conf /etc/keepalived/keepalived.conf $cp /usr/local/keepalived/etc/sysconfig/keepalived /etc/sysconfig/ $cp /tmp/keepalived-1.</description>
     </item>
     
     <item>

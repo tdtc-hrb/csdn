@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="本系列包括架设Real Server和Keepalived Server、nginx负载平衡" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2020-04-13T08:38:08&#43;08:00" />
+    <meta property="article:published_time" content="2022-09-29T08:38:08&#43;08:00" />
 
     
     
@@ -92,15 +92,15 @@
     },
     "headline": "安装配置Keepalived",
     "name": "安装配置Keepalived",
-    "wordCount":  407 ,
+    "wordCount":  420 ,
     "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/ops_keepalived/",
-    "datePublished": "2020-04-13T08:38Z",
-    "dateModified": "2020-04-13T08:38Z",
+    "datePublished": "2022-09-29T08:38Z",
+    "dateModified": "2022-09-29T08:38Z",
     
     
     "description": "本系列包括架设Real Server和Keepalived Server、nginx负载平衡",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2020-04-13T08:38:08&#43;08:00">
-            Apr 13, 2020
+          <time class="post-date" datetime="2022-09-29T08:38:08&#43;08:00">
+            Sep 29, 2022
           </time>
         
          
@@ -187,7 +187,7 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum group install <span style="color:#e6db74">&#34;Development Tools&#34;</span>
 </span></span></code></pre></div><h3 id="2-openssl-devel">2) openssl-devel</h3>
 <blockquote>
-<p>update see &ldquo;nginx’s load balancing的安装部分的<a href="https://xiaobin80.gitee.io/csdn/post/ops_nginx/">update OpenSSL</a>&rdquo;</p>
+<p>update see &ldquo;nginx’s load balancing的安装部分的 <a href="https://tdtc-hrb.github.io/csdn/post/ops_nginx/">update OpenSSL</a>&rdquo;</p>
 </blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum install openssl-devel
 </span></span></code></pre></div><h3 id="3-libnl">3) libnl</h3>
@@ -257,16 +257,48 @@
 </span></span><span style="display:flex;"><span>    192.168.0.220
 </span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
 </span></span></code></pre></div><h3 id="4-lb-algo">4) lb algo</h3>
-<blockquote>
-<p>轮叫（Round Robin）、  <br>
-加权轮叫（Weighted Round Robin）、 <br>
-最少链接（Least Connections）、  <br>
-加权最少链接（Weighted Least Connections）、 <br>
-基于局部性的最少链接（Locality-Based Least Connections）、 <br>
-带复制的基于局部性最少链接（Locality-Based Least Connections with Replication）、 <br>
-目标地址散列（Destination Hashing）、 <br>
-源地址散列（Source Hashing）</p>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>Explanation of terms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Round Robin</td>
+<td>轮叫</td>
+</tr>
+<tr>
+<td>Weighted Round Robin</td>
+<td>加权轮叫</td>
+</tr>
+<tr>
+<td>Least Connections</td>
+<td>最少链接</td>
+</tr>
+<tr>
+<td>Weighted Least Connections</td>
+<td>加权最少链接</td>
+</tr>
+<tr>
+<td>Locality-Based Least Connections</td>
+<td>基于局部性的最少链接</td>
+</tr>
+<tr>
+<td>Locality-Based Least Connections with Replication</td>
+<td>带复制的基于局部性最少链接</td>
+</tr>
+<tr>
+<td>Destination Hashing</td>
+<td>目标地址散列</td>
+</tr>
+<tr>
+<td>Source Hashing</td>
+<td>源地址散列</td>
+</tr>
+</tbody>
+</table>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lb_algo wrr
 </span></span></code></pre></div><h3 id="5-lb-kind">5) lb kind</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lb_kind DR
@@ -275,10 +307,10 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>weight <span style="color:#ae81ff">3</span>
 </span></span></code></pre></div><h4 id="tcp-check">tcp check</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>TCP_CHECK <span style="color:#f92672">{</span>  
-</span></span><span style="display:flex;"><span>connect_timeout <span style="color:#ae81ff">10</span>         
-</span></span><span style="display:flex;"><span>nb_get_retry <span style="color:#ae81ff">3</span>  
-</span></span><span style="display:flex;"><span>delay_before_retry <span style="color:#ae81ff">3</span>  
-</span></span><span style="display:flex;"><span>connect_port <span style="color:#ae81ff">80</span>  
+</span></span><span style="display:flex;"><span>  connect_timeout <span style="color:#ae81ff">10</span>  
+</span></span><span style="display:flex;"><span>  nb_get_retry <span style="color:#ae81ff">3</span>  
+</span></span><span style="display:flex;"><span>  delay_before_retry <span style="color:#ae81ff">3</span>  
+</span></span><span style="display:flex;"><span>  connect_port <span style="color:#ae81ff">80</span>  
 </span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
 </span></span></code></pre></div><h2 id="slave">Slave</h2>
 <blockquote>
@@ -445,17 +477,10 @@
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_ssh_without_password/">
-          <section class="post">
-              <h2>ssh相互免密</h2>
-              
-          </section>
-      </a>
   
-  
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_vi/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_nginx/">
           <section class="post">
-              <h2>简单使用vi</h2>
+              <h2>前端（Web）负载均衡</h2>
           </section>
       </a>
   

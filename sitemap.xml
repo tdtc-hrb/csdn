@@ -3,12 +3,15 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://tdtc-hrb.github.io/csdn/post/</loc>
-    <lastmod>2022-09-28T08:38:08+08:00</lastmod>
+    <lastmod>2022-09-29T08:38:08+08:00</lastmod>
   </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/ops_nginx/</loc>
-    <lastmod>2022-09-28T08:38:08+08:00</lastmod>
+    <loc>https://tdtc-hrb.github.io/csdn/post/ops_keepalived/</loc>
+    <lastmod>2022-09-29T08:38:08+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/</loc>
+    <lastmod>2022-09-29T08:38:08+08:00</lastmod>
+  </url><url>
+    <loc>https://tdtc-hrb.github.io/csdn/post/ops_nginx/</loc>
     <lastmod>2022-09-28T08:38:08+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/ops_real_keepalived/</loc>
@@ -376,9 +379,6 @@
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/ops_ssh_without_password/</loc>
     <lastmod>2020-04-13T11:38:08+08:00</lastmod>
-  </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/ops_keepalived/</loc>
-    <lastmod>2020-04-13T08:38:08+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/ops_vi/</loc>
     <lastmod>2020-04-13T04:38:08+08:00</lastmod>
