@@ -2,20 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/</loc>
-    <lastmod>2022-09-29T00:38:08+08:00</lastmod>
+    <loc>https://tdtc-hrb.github.io/csdn/tags/binutils/</loc>
+    <lastmod>2022-10-01T02:12:39+08:00</lastmod>
   </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/ops_keepalived/</loc>
-    <lastmod>2022-09-29T00:38:08+08:00</lastmod>
+    <loc>https://tdtc-hrb.github.io/csdn/tags/glibc/</loc>
+    <lastmod>2022-10-01T02:12:39+08:00</lastmod>
+  </url><url>
+    <loc>https://tdtc-hrb.github.io/csdn/post/</loc>
+    <lastmod>2022-10-01T02:12:39+08:00</lastmod>
+  </url><url>
+    <loc>https://tdtc-hrb.github.io/csdn/tags/sh/</loc>
+    <lastmod>2022-10-01T02:12:39+08:00</lastmod>
+  </url><url>
+    <loc>https://tdtc-hrb.github.io/csdn/tags/system/</loc>
+    <lastmod>2022-10-01T02:12:39+08:00</lastmod>
+  </url><url>
+    <loc>https://tdtc-hrb.github.io/csdn/tags/</loc>
+    <lastmod>2022-10-01T02:12:39+08:00</lastmod>
+  </url><url>
+    <loc>https://tdtc-hrb.github.io/csdn/post/version-ubuntu/</loc>
+    <lastmod>2022-10-01T02:12:39+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/</loc>
-    <lastmod>2022-09-29T00:38:08+08:00</lastmod>
+    <lastmod>2022-10-01T02:12:39+08:00</lastmod>
+  </url><url>
+    <loc>https://tdtc-hrb.github.io/csdn/post/ops_real_keepalived/</loc>
+    <lastmod>2022-09-30T00:38:08+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/ops_nginx/</loc>
     <lastmod>2022-09-28T08:38:08+08:00</lastmod>
-  </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/ops_real_keepalived/</loc>
-    <lastmod>2022-09-28T00:38:08+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/mysql-mha/</loc>
     <lastmod>2022-09-27T00:38:08+08:00</lastmod>
@@ -63,9 +78,6 @@
     <lastmod>2022-06-27T03:21:39+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/tags/rocky-linux-8/</loc>
-    <lastmod>2022-06-27T03:21:39+08:00</lastmod>
-  </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/tags/</loc>
     <lastmod>2022-06-27T03:21:39+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/ops_network_proxy/</loc>
@@ -158,6 +170,9 @@
     <loc>https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/</loc>
     <lastmod>2022-04-13T08:38:08+08:00</lastmod>
   </url><url>
+    <loc>https://tdtc-hrb.github.io/csdn/post/ops_keepalived/</loc>
+    <lastmod>2022-04-13T08:38:08+08:00</lastmod>
+  </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/ops_department_cups/</loc>
     <lastmod>2022-04-13T03:18:08+08:00</lastmod>
   </url><url>
@@ -205,24 +220,6 @@
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/ops_memcached_ubuntu/</loc>
     <lastmod>2021-02-01T09:08:08+08:00</lastmod>
-  </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/tags/binutils/</loc>
-    <lastmod>2020-10-10T02:12:39+08:00</lastmod>
-  </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/tags/glibc/</loc>
-    <lastmod>2020-10-10T02:12:39+08:00</lastmod>
-  </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/tags/sh/</loc>
-    <lastmod>2020-10-10T02:12:39+08:00</lastmod>
-  </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/tags/system/</loc>
-    <lastmod>2020-10-10T02:12:39+08:00</lastmod>
-  </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/tags/%E5%86%85%E6%A0%B8/</loc>
-    <lastmod>2020-10-10T02:12:39+08:00</lastmod>
-  </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/version-ubuntu/</loc>
-    <lastmod>2020-10-10T02:12:39+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/ops_sudo/</loc>
     <lastmod>2020-07-14T00:08:08+08:00</lastmod>

@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.104.1" />
+    <meta name="generator" content="Hugo 0.104.3" />
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -162,15 +162,12 @@
 	
 	   <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_keepalived/">安装配置Keepalived</a></h2>
+        <h2 class="post-title"><a href="/csdn/post/version-ubuntu/">查看版本-Ubuntu</a></h2>
     </header>
     <section class="post-excerpt">
         
-            <p>OS: CentOS7 minimal（安装时的选项）
-一、安装 0. prepare tool $yum group list 1) dev tools $yum group install &#34;Development Tools&#34; 2) openssl-devel update see &ldquo;nginx’s load balancing的安装部分的 update OpenSSL&rdquo;
-$yum install openssl-devel 3) libnl $yum install libnl libnl-devel libnfnetlink-devel 1. keepalived v1.4.5
-down and unzip $wget http://www.keepalived.org/software/keepalived-1.4.5.tar.gz $ tar zxvf keepalived-1.4.5.tar.gz installation $cd keepalived-1.4.5 $./configure --prefix=/usr/local/keepalived $make Root permission Required
-$make install setup $cp /usr/local/keepalived/sbin/keepalived /usr/sbin/ $mkdir -p /etc/keepalived $cp /usr/local/keepalived/etc/keepalived/keepalived.conf /etc/keepalived/keepalived. <a class="read-more" href="/csdn/post/ops_keepalived/">&raquo;</a></p>
+            <p>components version 查看内核版本:
+#uname -a 查看Glibc库版本 #apt-cache show libc6 查看binutils版本 #ld -v 查看ubuntu版本号 #cat /etc/issue 查看debian对应版本 #cat /etc/debian_version debian code name code version status bullseye 11 statble buster 10 old statble stretch 9 old old statble jessie 8 archived wheezy 7 obsolete squeeze 6.0 obsolete lenny 5.0 obsolete etch 4.0 obsolete sarge 3.1 obsolete woody 3.0 obsolete potato 2.2 obsolete slink 2.1 obsolete hamm 2.0 obsolete  <a class="read-more" href="/csdn/post/version-ubuntu/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -178,36 +175,19 @@ $make install setup $cp /usr/local/keepalived/sbin/keepalived /usr/sbin/ $mkdir 
 
         
 
+        on
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/glibc/">#Glibc</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/sh/">#sh</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/binutils/">#binutils</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/system/">#system</a>,
+            
         
-        <time class="post-date" datetime="2022-09-29T00:38:08&#43;08:00">
-            29 Sep 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_nginx/">前端（Web）负载均衡</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>Nginx&rsquo;s load balancing
-一、安装 OS: CentOS7 minimal（安装时的选项）
-0. prepare $yum -y install gcc gcc-c++ automake pcre pcre-devel zlib zlib-devel open openssl-devel 1) update OpenSSL default directory: /usr/ssl
-wget https://www.openssl.org/source/openssl-1.1.1q.tar.gz --no-check-certificate 2) setup $./config --prefix=/usr --shared $make Root permission Required
-sudo make install 1. installation First, install Nginx of centos repo; Then, replace the nginx program file. Note: The replaced program file version must be the same as the repo!
-sudo rpm -Uvh http://nginx. <a class="read-more" href="/csdn/post/ops_nginx/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-09-28T08:38:08&#43;08:00">
-            28 Sep 2022
+        <time class="post-date" datetime="2022-10-01T02:12:39&#43;08:00">
+            1 Oct 2022
         </time>
     </footer>
 </article>
@@ -237,7 +217,34 @@ $sudo yum install net-tools Service #vi /etc/init.d/realserver /etc/init.d/reals
         
 
         
-        <time class="post-date" datetime="2022-09-28T00:38:08&#43;08:00">
+        <time class="post-date" datetime="2022-09-30T00:38:08&#43;08:00">
+            30 Sep 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_nginx/">前端（Web）负载均衡</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Nginx&rsquo;s load balancing
+一、安装 OS: CentOS7 minimal（安装时的选项）
+0. prepare $yum -y install gcc gcc-c++ automake pcre pcre-devel zlib zlib-devel open openssl-devel 1) update OpenSSL default directory: /usr/ssl
+wget https://www.openssl.org/source/openssl-1.1.1q.tar.gz --no-check-certificate 2) setup $./config --prefix=/usr --shared $make Root permission Required
+sudo make install 1. installation First, install Nginx of centos repo; Then, replace the nginx program file. Note: The replaced program file version must be the same as the repo!
+sudo rpm -Uvh http://nginx. <a class="read-more" href="/csdn/post/ops_nginx/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-09-28T08:38:08&#43;08:00">
             28 Sep 2022
         </time>
     </footer>

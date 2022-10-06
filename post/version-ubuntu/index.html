@@ -29,14 +29,12 @@
     
     <meta property="og:description" content="" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2020-10-10T02:12:39&#43;08:00" />
+    <meta property="article:published_time" content="2022-10-01T02:12:39&#43;08:00" />
 
     
     <meta property="article:tag" content="Glibc" />
     
     <meta property="article:tag" content="sh" />
-    
-    <meta property="article:tag" content="内核" />
     
     <meta property="article:tag" content="binutils" />
     
@@ -47,7 +45,8 @@
     <title>查看版本-Ubuntu &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
 
     
-    <meta name="description" content="查看Glibc库版本 #apt-cache show libc6 查看内核版本 #uname -a 查看binutils版本 #ld -v 查看ubuntu版本号 #cat /etc/issue " />
+    <meta name="description" content="components version 查看内核版本:
+#uname -a 查看Glibc库版本 #apt-cache show libc6 查看binutils版本 #ld -v 查看ubuntu版本号 #cat /etc/issue 查看debian对应版本 #cat /etc/debian_version debi" />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -69,7 +68,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.104.1" />
+    <meta name="generator" content="Hugo 0.104.3" />
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/version-ubuntu/" />
 
@@ -102,17 +101,17 @@
     },
     "headline": "查看版本-Ubuntu",
     "name": "查看版本-Ubuntu",
-    "wordCount":  13 ,
+    "wordCount":  66 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/version-ubuntu/",
-    "datePublished": "2020-10-10T02:12Z",
-    "dateModified": "2020-10-10T02:12Z",
+    "datePublished": "2022-10-01T02:12Z",
+    "dateModified": "2022-10-01T02:12Z",
     
-    "keywords": "Glibc, sh, 内核, binutils, system",
+    "keywords": "Glibc, sh, binutils, system",
     "description": "",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -178,16 +177,14 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2020-10-10T02:12:39&#43;08:00">
-            Oct 10, 2020
+          <time class="post-date" datetime="2022-10-01T02:12:39&#43;08:00">
+            Oct 1, 2022
           </time>
         
          
           <span class="post-tag small"><a href="https://tdtc-hrb.github.io/csdn//tags/glibc/">#Glibc</a></span>
          
           <span class="post-tag small"><a href="https://tdtc-hrb.github.io/csdn//tags/sh/">#sh</a></span>
-         
-          <span class="post-tag small"><a href="https://tdtc-hrb.github.io/csdn//tags/%E5%86%85%E6%A0%B8/">#内核</a></span>
          
           <span class="post-tag small"><a href="https://tdtc-hrb.github.io/csdn//tags/binutils/">#binutils</a></span>
          
@@ -197,15 +194,95 @@
     </header>
 
     <section class="post-content">
-      <h1 id="查看glibc库版本">查看Glibc库版本</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#apt-cache show libc6</span>
-</span></span></code></pre></div><h1 id="查看内核版本">查看内核版本</h1>
+      <h1 id="components-version">components version</h1>
+<p>查看内核版本:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#uname -a</span>
-</span></span></code></pre></div><h1 id="查看binutils版本">查看binutils版本</h1>
+</span></span></code></pre></div><h2 id="查看glibc库版本">查看Glibc库版本</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#apt-cache show libc6</span>
+</span></span></code></pre></div><h2 id="查看binutils版本">查看binutils版本</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#ld -v</span>
 </span></span></code></pre></div><h1 id="查看ubuntu版本号">查看ubuntu版本号</h1>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#cat /etc/issue</span>
-</span></span></code></pre></div>
+</span></span></code></pre></div><h2 id="查看debian对应版本">查看debian对应版本</h2>
+<pre tabindex="0"><code>#cat /etc/debian_version
+</code></pre><h3 id="debian-code-namehttpswwwdebianorgreleases"><a href="https://www.debian.org/releases/">debian code name</a></h3>
+<table>
+<thead>
+<tr>
+<th>code</th>
+<th>version</th>
+<th>status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bullseye</td>
+<td>11</td>
+<td>statble</td>
+</tr>
+<tr>
+<td>buster</td>
+<td>10</td>
+<td>old statble</td>
+</tr>
+<tr>
+<td>stretch</td>
+<td>9</td>
+<td>old old statble</td>
+</tr>
+<tr>
+<td>jessie</td>
+<td>8</td>
+<td>archived</td>
+</tr>
+<tr>
+<td>wheezy</td>
+<td>7</td>
+<td>obsolete</td>
+</tr>
+<tr>
+<td>squeeze</td>
+<td>6.0</td>
+<td>obsolete</td>
+</tr>
+<tr>
+<td>lenny</td>
+<td>5.0</td>
+<td>obsolete</td>
+</tr>
+<tr>
+<td>etch</td>
+<td>4.0</td>
+<td>obsolete</td>
+</tr>
+<tr>
+<td>sarge</td>
+<td>3.1</td>
+<td>obsolete</td>
+</tr>
+<tr>
+<td>woody</td>
+<td>3.0</td>
+<td>obsolete</td>
+</tr>
+<tr>
+<td>potato</td>
+<td>2.2</td>
+<td>obsolete</td>
+</tr>
+<tr>
+<td>slink</td>
+<td>2.1</td>
+<td>obsolete</td>
+</tr>
+<tr>
+<td>hamm</td>
+<td>2.0</td>
+<td>obsolete</td>
+</tr>
+</tbody>
+</table>
+
     </section>
 
 
@@ -256,17 +333,10 @@
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_memcached_ubuntu/">
-          <section class="post">
-              <h2>安装memcached</h2>
-              
-          </section>
-      </a>
   
-  
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_sudo/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_real_keepalived/">
           <section class="post">
-              <h2>开启sudo</h2>
+              <h2>架设Real Server和Keepalived Server</h2>
           </section>
       </a>
   

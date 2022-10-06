@@ -6,18 +6,33 @@
     <description>Recent content on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 29 Sep 2022 00:38:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Oct 2022 02:12:39 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>安装配置Keepalived</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_keepalived/</link>
-      <pubDate>Thu, 29 Sep 2022 00:38:08 +0800</pubDate>
+      <title>查看版本-Ubuntu</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/version-ubuntu/</link>
+      <pubDate>Sat, 01 Oct 2022 02:12:39 +0800</pubDate>
       
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_keepalived/</guid>
-      <description>OS: CentOS7 minimal（安装时的选项）
-一、安装 0. prepare tool $yum group list 1) dev tools $yum group install &amp;#34;Development Tools&amp;#34; 2) openssl-devel update see &amp;ldquo;nginx’s load balancing的安装部分的 update OpenSSL&amp;rdquo;
-$yum install openssl-devel 3) libnl $yum install libnl libnl-devel libnfnetlink-devel 1. keepalived v1.4.5
-down and unzip $wget http://www.keepalived.org/software/keepalived-1.4.5.tar.gz $ tar zxvf keepalived-1.4.5.tar.gz installation $cd keepalived-1.4.5 $./configure --prefix=/usr/local/keepalived $make Root permission Required
-$make install setup $cp /usr/local/keepalived/sbin/keepalived /usr/sbin/ $mkdir -p /etc/keepalived $cp /usr/local/keepalived/etc/keepalived/keepalived.conf /etc/keepalived/keepalived.</description>
+      <guid>https://tdtc-hrb.github.io/csdn/post/version-ubuntu/</guid>
+      <description>components version 查看内核版本:
+#uname -a 查看Glibc库版本 #apt-cache show libc6 查看binutils版本 #ld -v 查看ubuntu版本号 #cat /etc/issue 查看debian对应版本 #cat /etc/debian_version debian code name code version status bullseye 11 statble buster 10 old statble stretch 9 old old statble jessie 8 archived wheezy 7 obsolete squeeze 6.0 obsolete lenny 5.0 obsolete etch 4.0 obsolete sarge 3.1 obsolete woody 3.0 obsolete potato 2.2 obsolete slink 2.1 obsolete hamm 2.0 obsolete </description>
+    </item>
+    
+    <item>
+      <title>架设Real Server和Keepalived Server</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_real_keepalived/</link>
+      <pubDate>Fri, 30 Sep 2022 00:38:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_real_keepalived/</guid>
+      <description>准备工作：
+修改网卡为固定IP 开启sudo 总览 OS: CentOS7 minimal
+Real Server CentOS7RS1 192.168.0.127
+Nginx v1.22 Tomcat v7.0.109 CentOS7RS2 192.168.0.122
+Nginx v1.22 Tomcat v8.5.82 Keepalived Server CentOS7Master 192.168.0.129
+CentOS7Bak 192.168.0.130
+一、Real Server 安装前准备:
+Linux下安装Tomcat nginx - load balancing config ARP ifconfig:
+$sudo yum install net-tools Service #vi /etc/init.d/realserver /etc/init.d/realserver:
+#!/bin/bash SNS_VIP=192.168.0.220 case &amp;#34;$1&amp;#34; in start) ifconfig lo:0 $SNS_VIP netmask 255.255.255.255 broadcast $SNS_VIP /sbin/route add -host $SNS_VIP dev lo:0 echo &amp;#34;1&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_ignore echo &amp;#34;2&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_announce echo &amp;#34;1&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_ignore echo &amp;#34;2&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_announce sysctl -p &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 echo &amp;#34;RealServer Start OK&amp;#34; ;; stop) ifconfig lo:0 down route del $SNS_VIP &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_ignore echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_announce echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_ignore echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_announce echo &amp;#34;RealServer Stoped&amp;#34; ;; *) echo &amp;#34;Usage: $0 {start|stop}&amp;#34; exit 1 esac exit 0 exec $sudo chmod 755 /etc/init.</description>
     </item>
     
     <item>
@@ -32,24 +47,6 @@ $make install setup $cp /usr/local/keepalived/sbin/keepalived /usr/sbin/ $mkdir 
 wget https://www.openssl.org/source/openssl-1.1.1q.tar.gz --no-check-certificate 2) setup $./config --prefix=/usr --shared $make Root permission Required
 sudo make install 1. installation First, install Nginx of centos repo; Then, replace the nginx program file. Note: The replaced program file version must be the same as the repo!
 sudo rpm -Uvh http://nginx.</description>
-    </item>
-    
-    <item>
-      <title>架设Real Server和Keepalived Server</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_real_keepalived/</link>
-      <pubDate>Wed, 28 Sep 2022 00:38:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_real_keepalived/</guid>
-      <description>准备工作：
-修改网卡为固定IP 开启sudo 总览 OS: CentOS7 minimal
-Real Server CentOS7RS1 192.168.0.127
-Nginx v1.22 Tomcat v7.0.109 CentOS7RS2 192.168.0.122
-Nginx v1.22 Tomcat v8.5.82 Keepalived Server CentOS7Master 192.168.0.129
-CentOS7Bak 192.168.0.130
-一、Real Server 安装前准备:
-Linux下安装Tomcat nginx - load balancing config ARP ifconfig:
-$sudo yum install net-tools Service #vi /etc/init.d/realserver /etc/init.d/realserver:
-#!/bin/bash SNS_VIP=192.168.0.220 case &amp;#34;$1&amp;#34; in start) ifconfig lo:0 $SNS_VIP netmask 255.255.255.255 broadcast $SNS_VIP /sbin/route add -host $SNS_VIP dev lo:0 echo &amp;#34;1&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_ignore echo &amp;#34;2&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_announce echo &amp;#34;1&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_ignore echo &amp;#34;2&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_announce sysctl -p &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 echo &amp;#34;RealServer Start OK&amp;#34; ;; stop) ifconfig lo:0 down route del $SNS_VIP &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_ignore echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_announce echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_ignore echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_announce echo &amp;#34;RealServer Stoped&amp;#34; ;; *) echo &amp;#34;Usage: $0 {start|stop}&amp;#34; exit 1 esac exit 0 exec $sudo chmod 755 /etc/init.</description>
     </item>
     
     <item>
@@ -565,6 +562,19 @@ Ubuntu 设置static IP cd /etc/netplan/ sudo vi 00-installer-config.yaml #This i
     </item>
     
     <item>
+      <title>安装配置Keepalived</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_keepalived/</link>
+      <pubDate>Wed, 13 Apr 2022 08:38:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_keepalived/</guid>
+      <description>OS: CentOS7 minimal(VMware)
+一、安装 0. prepare tool $yum group list 1) dev tools $yum group install &amp;#34;Development Tools&amp;#34; 2) openssl-devel update see &amp;ldquo;nginx’s load balancing的安装部分的update OpenSSL&amp;rdquo;
+$yum install openssl-devel 3) libnl $yum install libnl libnl-devel libnfnetlink-devel 1. keepalived v1.4.5
+down and unzip $wget http://www.keepalived.org/software/keepalived-1.4.5.tar.gz $ tar zxvf keepalived-1.4.5.tar.gz installation $cd keepalived-1.4.5 $./configure --prefix=/usr/local/keepalived $make Root permission Required
+$make install setup $cp /usr/local/keepalived/sbin/keepalived /usr/sbin/ $mkdir -p /etc/keepalived $cp /usr/local/keepalived/etc/keepalived/keepalived.conf /etc/keepalived/keepalived.conf $cp /usr/local/keepalived/etc/sysconfig/keepalived /etc/sysconfig/ $cp /tmp/keepalived-1.</description>
+    </item>
+    
+    <item>
       <title>共享打印机 - CUPS</title>
       <link>https://tdtc-hrb.github.io/csdn/post/ops_department_cups/</link>
       <pubDate>Wed, 13 Apr 2022 03:18:08 +0800</pubDate>
@@ -773,15 +783,6 @@ Stage I 1. 《sudo - CentOS》 2. FQDN #127.0.0.1 localhost localhost.localdomai
       <description>VMware: Ubuntu 20.04.2
 Install and update #sudo apt-get install memcached [0] #sudo apt-get install build-essential #sudo apt-get install libevent-dev* #wget http://memcached.org/files/memcached-1.6.15.tar.gz #tar -zxvf memcached-1.6.15.tar.gz #cd memcached-1.6.15 #./configure &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo make install Start allow port sudo ufw allow 11211 config sudo vi /etc/memcached.conf 修改为服务器的IP:
 # Specify which IP address to listen on. The default is to listen on all IP addresses # This parameter is one of the only security measures that memcached has, so make sure # it&amp;#39;s listening on a firewalled interface.</description>
-    </item>
-    
-    <item>
-      <title>查看版本-Ubuntu</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/version-ubuntu/</link>
-      <pubDate>Sat, 10 Oct 2020 02:12:39 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/version-ubuntu/</guid>
-      <description>查看Glibc库版本 #apt-cache show libc6 查看内核版本 #uname -a 查看binutils版本 #ld -v 查看ubuntu版本号 #cat /etc/issue </description>
     </item>
     
     <item>

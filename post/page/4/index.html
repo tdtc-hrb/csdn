@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.104.1" />
+    <meta name="generator" content="Hugo 0.104.3" />
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -392,6 +392,32 @@ Ubuntu 设置static IP cd /etc/netplan/ sudo vi 00-installer-config.yaml #This i
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_keepalived/">安装配置Keepalived</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>OS: CentOS7 minimal(VMware)
+一、安装 0. prepare tool $yum group list 1) dev tools $yum group install &#34;Development Tools&#34; 2) openssl-devel update see &ldquo;nginx’s load balancing的安装部分的update OpenSSL&rdquo;
+$yum install openssl-devel 3) libnl $yum install libnl libnl-devel libnfnetlink-devel 1. keepalived v1.4.5
+down and unzip $wget http://www.keepalived.org/software/keepalived-1.4.5.tar.gz $ tar zxvf keepalived-1.4.5.tar.gz installation $cd keepalived-1.4.5 $./configure --prefix=/usr/local/keepalived $make Root permission Required
+$make install setup $cp /usr/local/keepalived/sbin/keepalived /usr/sbin/ $mkdir -p /etc/keepalived $cp /usr/local/keepalived/etc/keepalived/keepalived.conf /etc/keepalived/keepalived.conf $cp /usr/local/keepalived/etc/sysconfig/keepalived /etc/sysconfig/ $cp /tmp/keepalived-1. <a class="read-more" href="/csdn/post/ops_keepalived/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-04-13T08:38:08&#43;08:00">
+            13 Apr 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_department_cups/">共享打印机 - CUPS</a></h2>
     </header>
     <section class="post-excerpt">
@@ -410,30 +436,6 @@ Ubuntu 设置static IP cd /etc/netplan/ sudo vi 00-installer-config.yaml #This i
         
         <time class="post-date" datetime="2022-04-13T03:18:08&#43;08:00">
             13 Apr 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/reduxjs-asyn-dispatcher/">dispatcher - Asynchronous</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>1. Program Flow 1) Synchronous 2) Asynchronous 2. redux-saga about CQRS: Event-sourcing
-1) Install npm install --save redux-saga examples
-Reference UNIDIRECTIONAL USER INTERFACE ARCHITECTURES - André Staltz Clarified CQRS  <a class="read-more" href="/csdn/post/reduxjs-asyn-dispatcher/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-04-10T17:26:39&#43;08:00">
-            10 Apr 2022
         </time>
     </footer>
 </article>
