@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="需要net-tools支持" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2022-04-13T08:38:08&#43;08:00" />
+    <meta property="article:published_time" content="2022-10-02T08:38:08&#43;08:00" />
 
     
     
@@ -92,15 +92,15 @@
     },
     "headline": "Linux修改网卡为固定IP",
     "name": "Linux修改网卡为固定IP",
-    "wordCount":  80 ,
+    "wordCount":  135 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/",
-    "datePublished": "2022-04-13T08:38Z",
-    "dateModified": "2022-04-13T08:38Z",
+    "datePublished": "2022-10-02T08:38Z",
+    "dateModified": "2022-10-02T08:38Z",
     
     
     "description": "需要net-tools支持",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2022-04-13T08:38:08&#43;08:00">
-            Apr 13, 2022
+          <time class="post-date" datetime="2022-10-02T08:38:08&#43;08:00">
+            Oct 2, 2022
           </time>
         
          
@@ -177,45 +177,58 @@
     </header>
 
     <section class="post-content">
-      <h1 id="centos">CentOS</h1>
-<h2 id="view">View</h2>
-<pre tabindex="0"><code>$ip addr
-</code></pre><blockquote>
-<p>1 is loopback <br>
-2 is the current network card</p>
+      <h1 id="almarocky">Alma/Rocky</h1>
+<blockquote>
+<p>RHEL Community Version</p>
 </blockquote>
-<h2 id="setup">Setup</h2>
-<h3 id="auto">auto</h3>
-<p>Start job network adapter.</p>
+<h2 id="view">View</h2>
+<p>net adapter list:</p>
+<pre tabindex="0"><code>$cd /etc/sysconfig/network-scripts
+$ls ifcfg-* -l
+</code></pre><h3 id="ipv4">ipv4</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ip addr
+</span></span></code></pre></div><h3 id="ipv6">ipv6</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ip -6 addr
+</span></span></code></pre></div><h2 id="setup">Setup</h2>
+<p>Start job network adapter:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ONBOOT<span style="color:#f92672">=</span>yes
 </span></span></code></pre></div><h3 id="static">static</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /etc/sysconfig/network-scripts
-</span></span><span style="display:flex;"><span>$sudo vi ifcfg-*
-</span></span></code></pre></div><blockquote>
-<p>*: current network card</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>BOOTPROTO<span style="color:#f92672">=</span>static
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cd /etc/sysconfig/network-scripts
+</span></span><span style="display:flex;"><span>$sudo vi ifcfg-enp0s3
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>BOOTPROTO<span style="color:#f92672">=</span>none
 </span></span><span style="display:flex;"><span>IPADDR<span style="color:#f92672">=</span>192.168.1.186
-</span></span><span style="display:flex;"><span>NETMASK<span style="color:#f92672">=</span>255.255.255.0
+</span></span><span style="display:flex;"><span>PREFIX<span style="color:#f92672">=</span><span style="color:#ae81ff">24</span>
 </span></span><span style="display:flex;"><span>GATEWAY<span style="color:#f92672">=</span>192.168.1.1
 </span></span><span style="display:flex;"><span>DNS1<span style="color:#f92672">=</span>211.161.191.235
 </span></span><span style="display:flex;"><span>DNS2<span style="color:#f92672">=</span>211.161.122.197
-</span></span></code></pre></div><h2 id="virtual-machine">virtual machine</h2>
+</span></span></code></pre></div><h3 id="ipv6-network">IPv6 Network</h3>
+<ul>
+<li>IPV6INIT=yes <br>
+This initializes the interface for IPv6 addressing.</li>
+<li>IPV6_AUTOCONF=yes <br>
+This enables the IPv6 auto-configuration for the interface.</li>
+<li>IPV6_DEFROUTE=yes <br>
+This indicates that the default IPv6 route has been assigned to the interface.</li>
+<li>IPV6_FAILURE_FATAL=no <br>
+indicates that the system won’t fail even when IPv6 fails.</li>
+</ul>
+<h3 id="virtual-machine">virtual machine</h3>
 <p>设置Network Adapter为Bridged</p>
-<h3 id="vmware">vmware</h3>
-<p>缺省/etc/sysconfig/network-scripts/ifcfg-eth0</p>
-<blockquote>
-<p>default: eth0</p>
-</blockquote>
-<h3 id="vbox">vbox</h3>
-<p>缺省/etc/sysconfig/network-scripts/ifcfg-enp0XX</p>
-<blockquote>
-<p>default: enp0s3</p>
-</blockquote>
+<h4 id="net-adapter">net adapter</h4>
+<ul>
+<li>
+<p>vmware <br>
+default: eth0</p>
+</li>
+<li>
+<p>vbox <br>
+default: enp0s3</p>
+</li>
+</ul>
 <h1 id="ubuntu">Ubuntu</h1>
 <h2 id="设置static-ip">设置static IP</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /etc/netplan/
-</span></span><span style="display:flex;"><span>sudo vi 00-installer-config.yaml
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cd /etc/netplan/
+</span></span><span style="display:flex;"><span>$sudo vi 00-installer-config.yaml
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#This is the network config written by &#39;subiquity&#39;</span>
 </span></span><span style="display:flex;"><span>network:
 </span></span><span style="display:flex;"><span>  ethernets:
@@ -227,7 +240,11 @@
 </span></span><span style="display:flex;"><span>      nameservers:
 </span></span><span style="display:flex;"><span>              addresses: <span style="color:#f92672">[</span>192.168.0.1, 192.168.1.1<span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>  version: <span style="color:#ae81ff">2</span>
-</span></span></code></pre></div>
+</span></span></code></pre></div><h1 id="ref">Ref</h1>
+<ul>
+<li><a href="https://www.tecmint.com/configure-ipv6-network-on-centos-rhel/">How to Configure IPv6 Network on CentOS/RHEL 8</a></li>
+</ul>
+
     </section>
 
 
@@ -278,17 +295,17 @@
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/mysql-master-slave-replication/">
+      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_real_keepalived/">
           <section class="post">
-              <h2>MySQL 主从复制</h2>
+              <h2>架设Real Server和Keepalived Server</h2>
               
           </section>
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_keepalived/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/version-ubuntu/">
           <section class="post">
-              <h2>安装配置Keepalived</h2>
+              <h2>查看版本-Ubuntu</h2>
           </section>
       </a>
   

@@ -2,13 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://tdtc-hrb.github.io/csdn/post/</loc>
+    <lastmod>2022-10-03T02:38:08+08:00</lastmod>
+  </url><url>
+    <loc>https://tdtc-hrb.github.io/csdn/post/ops_real_keepalived/</loc>
+    <lastmod>2022-10-03T02:38:08+08:00</lastmod>
+  </url><url>
+    <loc>https://tdtc-hrb.github.io/csdn/</loc>
+    <lastmod>2022-10-03T02:38:08+08:00</lastmod>
+  </url><url>
+    <loc>https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/</loc>
+    <lastmod>2022-10-02T08:38:08+08:00</lastmod>
+  </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/tags/binutils/</loc>
     <lastmod>2022-10-01T02:12:39+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/tags/glibc/</loc>
-    <lastmod>2022-10-01T02:12:39+08:00</lastmod>
-  </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/</loc>
     <lastmod>2022-10-01T02:12:39+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/tags/sh/</loc>
@@ -23,14 +32,11 @@
     <loc>https://tdtc-hrb.github.io/csdn/post/version-ubuntu/</loc>
     <lastmod>2022-10-01T02:12:39+08:00</lastmod>
   </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/</loc>
-    <lastmod>2022-10-01T02:12:39+08:00</lastmod>
-  </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/ops_real_keepalived/</loc>
-    <lastmod>2022-09-30T02:38:08+08:00</lastmod>
-  </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/ops_nginx/</loc>
-    <lastmod>2022-09-28T08:38:08+08:00</lastmod>
+    <lastmod>2022-09-29T08:38:08+08:00</lastmod>
+  </url><url>
+    <loc>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</loc>
+    <lastmod>2022-09-28T12:38:08+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/mysql-mha/</loc>
     <lastmod>2022-09-27T00:38:08+08:00</lastmod>
@@ -41,11 +47,11 @@
     <loc>https://tdtc-hrb.github.io/csdn/post/mysql57-cenos7/</loc>
     <lastmod>2022-09-24T06:21:39+08:00</lastmod>
   </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/ops_openjdk_centos/</loc>
-    <lastmod>2022-09-14T08:08:08-08:00</lastmod>
+    <loc>https://tdtc-hrb.github.io/csdn/post/ops_sudo/</loc>
+    <lastmod>2022-09-18T00:08:08+08:00</lastmod>
   </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</loc>
-    <lastmod>2022-09-11T12:38:08+08:00</lastmod>
+    <loc>https://tdtc-hrb.github.io/csdn/post/ops_openjdk_centos/</loc>
+    <lastmod>2022-09-15T08:08:08-08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/pd-db-phy/</loc>
     <lastmod>2022-09-10T02:26:39+08:00</lastmod>
@@ -167,9 +173,6 @@
     <loc>https://tdtc-hrb.github.io/csdn/post/mysql-master-slave-replication/</loc>
     <lastmod>2022-04-13T09:38:08+08:00</lastmod>
   </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/</loc>
-    <lastmod>2022-04-13T08:38:08+08:00</lastmod>
-  </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/ops_keepalived/</loc>
     <lastmod>2022-04-13T08:38:08+08:00</lastmod>
   </url><url>
@@ -187,9 +190,6 @@
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/go-data-using/</loc>
     <lastmod>2022-04-10T02:10:39+08:00</lastmod>
-  </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_centos/</loc>
-    <lastmod>2022-03-13T08:38:08-08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/java-grammar/</loc>
     <lastmod>2022-03-08T02:09:28+08:00</lastmod>
@@ -220,9 +220,6 @@
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/ops_memcached_ubuntu/</loc>
     <lastmod>2021-02-01T09:08:08+08:00</lastmod>
-  </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/ops_sudo/</loc>
-    <lastmod>2020-07-14T00:08:08+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/rose-uml/</loc>
     <lastmod>2020-05-17T10:08:08+08:00</lastmod>

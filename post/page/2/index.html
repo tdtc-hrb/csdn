@@ -164,6 +164,55 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/pd-db-phy/">powerDesigner生成phy图</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>使用版本：v16.1
+一、连接数据库 1. 新建pdm File-》New Model model types -&gt; physical data model model name: newmodel-phy dbms: mysql5.0
+2. config connect profile DataBase -&gt; Configure connections Connection profile 3. connect Database -&gt; connect Flag: &ldquo;Disconnect&rdquo; Available
+dcp文件（mysql5-crm.dcp） [ConnectionProfile]ConnectionType=JDBCDbms=MySQLDisableBind=0Driver=com.mysql.jdbc.DriverJarFiles=D:\war\mysql-connector-java-5.1.49.jarLogId=rootTrimSpaces=0URL=jdbc:mysql://106.14.141.40:3306/crm 二、生成phy图 1. Reverse Engineer File -&gt; Reverse Engineer-&gt;Database 选择数据库： 其他数据库全部反选： 例如： 最后，点击ok生成phy图。
+Tips：如果想从pdm生成CDM，Tools -&gt; Generate Conceptual Data Model <a class="read-more" href="/csdn/post/pd-db-phy/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-09-10T02:26:39&#43;08:00">
+            10 Sep 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql-imp-exp/">MySQL导入导出数据库</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>导出数据库 $mysqldump dbName &gt; dbName.sql -u user -p v5.6/5.7 $mysqldump --no-defaults dbName &gt; dbName.sql -u user -p 导入数据库 mysql&gt;CREATE DATABASE `dbName` CHARACTER SET utf8 COLLATE utf8_general_ci; mysql&gt;USE dbName; win mysql&gt;SOURCE C:/Users/xiaobin/dbName.sql; Linux mysql&gt;SOURCE /home/xiaobin/dbName.sql; upload win10
+scp D:\progFiles\carnumber.sql tdtc@192.168.0.151:/home/tdtc/ create user mysql&gt; CREATE USER &#39;DBAdmin&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;xbfirst&#39;; mysql&gt; GRANT ALL PRIVILEGES ON *.* TO &#39;DBAdmin&#39;@&#39;localhost&#39; WITH GRANT OPTION; mysql&gt; flush privileges; Reference MySQL Create Database with UTF8 Character Set Syntax  <a class="read-more" href="/csdn/post/mysql-imp-exp/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-09-10T02:18:39&#43;08:00">
+            10 Sep 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/c-console_app/">计算圆的面积和周长</a></h2>
     </header>
     <section class="post-excerpt">
@@ -370,68 +419,6 @@ xbfInfo.dllrepoInfo.dll callXBFLib 生成/读取xbf文件.
         
         <time class="post-date" datetime="2022-06-17T08:18:18&#43;08:00">
             17 Jun 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/com-ie-repoinfo/">铁路车号读取</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>二进制文件工具：EditPlus Edit -&gt; Hex Viewer replace(regexp/substr,replacement) 使用这个函数来替换多余的空格。 str.replace(/\s/g, &#34;&#34;); split(separator,howmany) 字符串转换成字符数组。 string.split(&#34;,&#34;); 一、js部分 我们把所有的方法放到一个对象（RepoInfo）中。
-var RepoInfo = { }; 1. 获取对象 RepoInfo.getObj = function(objName) { return new ActiveXObject(objName); }; 2. 获取数组 RepoInfo.getArray = function(str) { var ret = new Array(16); var string = str.replace(/\s/g, &#34;&#34;); ret = string.split(&#34;,&#34;); return ret; }; 3. 解码字串 输入字串校验 如果字串空，退出。
-输出框清空 每次赋值前，清空。
-执行COM中的方法 在获取对象非空的情况下，执行。
-RepoInfo.decode = function(string) { if (string == null) return; var obj = RepoInfo. <a class="read-more" href="/csdn/post/com-ie-repoinfo/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-06-13T16:08:08&#43;08:00">
-            13 Jun 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_rhel_repo/">RHEL更换CentOS Yum</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>v7.x Red Hat Enterprise Linux7.x
-Yum Repo rpm -aq|grep yum|xargs rpm -e --nodepsrpm -ivh http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/wget-1.14-18.el7_6.1.x86_64.rpm down:
-wget http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/yum-metadata-parser-1.1.4-10.el7.x86_64.rpmwget http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/yum-3.4.3-168.el7.centos.noarch.rpmwget http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/yum-plugin-fastestmirror-1.1.31-54.el7_8.noarch.rpm install:
-rpm -ivh yum-metadata-parser-1.1.4-10.el7.x86_64.rpmrpm -ivh yum-3.4.3-168.el7.centos.noarch.rpm yum-plugin-fastestmirror-1.1.31-54.el7_8.noarch.rpm repo file /etc/yum.repos.d/CentOS-Base.repo CentOS-Base.repo - cento7
-# CentOS-Base.repo## The mirror system uses the connecting IP address of the client and the# update status of each mirror to pick mirrors that are updated to and# geographically close to the client. <a class="read-more" href="/csdn/post/ops_rhel_repo/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        on
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/yum/">#yum</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/centos7/">#CentOS7</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/epel-release/">#epel-release</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/7.9.2009/">#7.9.2009</a>,
-            
-        
-        <time class="post-date" datetime="2022-06-12T12:58:39&#43;08:00">
-            12 Jun 2022
         </time>
     </footer>
 </article>

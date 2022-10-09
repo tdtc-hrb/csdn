@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="RHEL/CentOS7" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2022-09-14T08:08:08-08:00" />
+    <meta property="article:published_time" content="2022-09-15T08:08:08-08:00" />
 
     
     
@@ -92,15 +92,15 @@
     },
     "headline": "设置OpenJDK",
     "name": "设置OpenJDK",
-    "wordCount":  59 ,
+    "wordCount":  60 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/ops_openjdk_centos/",
-    "datePublished": "2022-09-14T08:08Z",
-    "dateModified": "2022-09-14T08:08Z",
+    "datePublished": "2022-09-15T08:08Z",
+    "dateModified": "2022-09-15T08:08Z",
     
     
     "description": "RHEL/CentOS7",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2022-09-14T08:08:08-08:00">
-            Sep 14, 2022
+          <time class="post-date" datetime="2022-09-15T08:08:08-08:00">
+            Sep 15, 2022
           </time>
         
          
@@ -181,16 +181,16 @@
 <blockquote>
 <p>jre</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install java -y
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum install java -y
 </span></span></code></pre></div><h2 id="jdk">jdk</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install java-1.8.0-openjdk-devel
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum install java-1.8.0-openjdk-devel
 </span></span></code></pre></div><h1 id="2-set-path">2. set path</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/profile
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo vi /etc/profile
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export JAVA_HOME<span style="color:#f92672">=</span>/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.345.b01-1.el7_9.x86_64
 </span></span><span style="display:flex;"><span>export CLASSPATH<span style="color:#f92672">=</span>.:$JAVA_HOME/jre/lib/:.
 </span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span>$PATH:$JAVA_HOME/bin
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$su root 
-</span></span><span style="display:flex;"><span>$source /etc/profile
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$su - root 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#source /etc/profile</span>
 </span></span></code></pre></div><h2 id="about-path">About path</h2>
 <p><a href="https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/6/html/installation_guide/install_openjdk_on_red_hat_enterprise_linux">3.3. INSTALL OPENJDK ON RED HAT ENTERPRISE LINUX</a> - 2.Optional: Set the JAVA_HOME environment variable</p>
 <h1 id="reference">Reference</h1>
@@ -249,17 +249,17 @@
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/mysql57-cenos7/">
+      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_sudo/">
           <section class="post">
-              <h2>CentOS7/8安装mysql5.7</h2>
+              <h2>开启sudo</h2>
               
           </section>
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_tomcat/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/pd-db-phy/">
           <section class="post">
-              <h2>Tomcat安装</h2>
+              <h2>powerDesigner生成phy图</h2>
           </section>
       </a>
   

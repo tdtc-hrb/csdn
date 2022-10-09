@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="Linux下tomcat的配置" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2022-09-11T12:38:08&#43;08:00" />
+    <meta property="article:published_time" content="2022-09-28T12:38:08&#43;08:00" />
 
     
     
@@ -92,15 +92,15 @@
     },
     "headline": "Tomcat安装",
     "name": "Tomcat安装",
-    "wordCount":  314 ,
+    "wordCount":  326 ,
     "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/ops_tomcat/",
-    "datePublished": "2022-09-11T12:38Z",
-    "dateModified": "2022-09-11T12:38Z",
+    "datePublished": "2022-09-28T12:38Z",
+    "dateModified": "2022-09-28T12:38Z",
     
     
     "description": "Linux下tomcat的配置",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2022-09-11T12:38:08&#43;08:00">
-            Sep 11, 2022
+          <time class="post-date" datetime="2022-09-28T12:38:08&#43;08:00">
+            Sep 28, 2022
           </time>
         
          
@@ -218,7 +218,7 @@
 <td>1.1</td>
 <td>1.1</td>
 <td>9.0.x</td>
-<td>9.0.67</td>
+<td>9.0.68</td>
 <td>8 and later</td>
 </tr>
 <tr>
@@ -336,48 +336,53 @@
 </table>
 <h2 id="安装jdk">安装JDK</h2>
 <ul>
-<li>RHEL/CentOS <br>
-参见 <a href="https://tdtc-hrb.github.io/csdn/post/ops_openjdk_centos/">设置OpenJDK - CentOS</a></li>
+<li>RHEL Community <br>
+参见 <a href="https://tdtc-hrb.github.io/cnblogs/post/ops_openjdk_rhel/">设置OpenJDK - RHEL</a></li>
 <li>Ubuntu <br>
 参见 <a href="https://tdtc-hrb.github.io/csdn/post/ops_openjdk_ubuntu/">设置OpenJDK - Ubuntu</a></li>
 </ul>
 <h2 id="安装tomcat">安装Tomcat</h2>
-<blockquote>
-<p>下载并 解压</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-9/v9.0.64/bin/apache-tomcat-9.0.67.tar.gz --no-check-certificate
-</span></span><span style="display:flex;"><span>$tar -zxvf apache-tomcat-9.0.67.tar.gz
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo dnf install wget tar
+</span></span></code></pre></div><p>下载(choose one):</p>
+<ul>
+<li>v8.5</li>
+</ul>
+<pre tabindex="0"><code>$wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.82/bin/apache-tomcat-8.5.82.tar.gz --no-check-certificate
+</code></pre><ul>
+<li>v9.0</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-9/v9.0.68/bin/apache-tomcat-9.0.68.tar.gz --no-check-certificate
+</span></span></code></pre></div><p>解压:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$tar -zxvf apache-tomcat-9.0.68.tar.gz
 </span></span></code></pre></div><h3 id="移动文件夹">移动文件夹</h3>
 <blockquote>
 <p>拷贝并重命名为tomcat</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo cp -R apache-tomcat-9.0.67 /usr/local/tomcat
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo cp -R apache-tomcat-9.0.68 /usr/local/tomcat
 </span></span></code></pre></div><h1 id="执行tomcat">执行Tomcat</h1>
 <h2 id="allow-fw">allow fw</h2>
-<blockquote>
-<p>centos/rhel:</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>8080/tcp
-</span></span><span style="display:flex;"><span>sudo firewall-cmd --reload
+<p>rhel:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>8080/tcp
+</span></span><span style="display:flex;"><span>$sudo firewall-cmd --reload
 </span></span></code></pre></div><blockquote>
 <p>centos5/6:</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo iptables -A INPUT -p tcp --dport <span style="color:#ae81ff">8080</span> -j ACCEPT
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo iptables -A INPUT -p tcp --dport <span style="color:#ae81ff">8080</span> -j ACCEPT
 </span></span></code></pre></div><h2 id="授权">授权</h2>
 <p>给tdtc(普通用户)有执行Tomcat的权利.</p>
 <p>使用超级用户:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$su - root
 </span></span></code></pre></div><p>授权文件夹:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$chown -R tdtc /usr/local/tomcat
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#chown -R tdtc /usr/local/tomcat</span>
 </span></span></code></pre></div><p>返回普通用户:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$exit
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#exit</span>
 </span></span></code></pre></div><h2 id="管理app">管理app</h2>
 <p>增加manager-gui角色，并授权给tomcat用户。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vi /usr/local/tomcat/conf/tomcat-users.xml
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$vi /usr/local/tomcat/conf/tomcat-users.xml
 </span></span></code></pre></div><p>tomcat-users.xml:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&lt;role rolename<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tomcat&#34;</span>/&gt;
-</span></span><span style="display:flex;"><span>&lt;role rolename<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manager-gui&#34;</span>/&gt;
-</span></span><span style="display:flex;"><span>&lt;user username<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tomcat&#34;</span> password<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tomcat&#34;</span> roles<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tomcat,manager-gui&#34;</span>/&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>  &lt;role rolename<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tomcat&#34;</span>/&gt;
+</span></span><span style="display:flex;"><span>  &lt;role rolename<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manager-gui&#34;</span>/&gt;
+</span></span><span style="display:flex;"><span>  &lt;user username<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tomcat&#34;</span> password<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tomcat&#34;</span> roles<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tomcat,manager-gui&#34;</span>/&gt;
 </span></span></code></pre></div><p>启动tomcat:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$/usr/local/tomcat/bin/startup.sh
 </span></span></code></pre></div>
@@ -431,17 +436,17 @@
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_openjdk_centos/">
+      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_nginx/">
           <section class="post">
-              <h2>设置OpenJDK</h2>
+              <h2>前端（Web）负载均衡</h2>
               
           </section>
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/pd-db-phy/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/mysql-mha/">
           <section class="post">
-              <h2>powerDesigner生成phy图</h2>
+              <h2>主备切换 - MySQL&#43;MHA</h2>
           </section>
       </a>
   

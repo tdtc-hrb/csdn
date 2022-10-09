@@ -6,7 +6,37 @@
     <description>Recent content in Posts on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 01 Oct 2022 02:12:39 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Oct 2022 02:38:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>架设Real Server和Keepalived Server</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_real_keepalived/</link>
+      <pubDate>Mon, 03 Oct 2022 02:38:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_real_keepalived/</guid>
+      <description>准备工作：
+修改网卡为固定IP 开启sudo 总览 OS: minimal
+Alma CentOS7.9 Real Server RHEL78RS1 192.168.0.127
+Nginx v1.22 Tomcat v8.5.82 RHEL78RS2 192.168.0.122
+Nginx v1.22 Tomcat v9.0.68 Keepalived Server RHEL78Master 192.168.0.129
+RHEL78Bak 192.168.0.130
+一、Real Server 安装前准备:
+Linux下安装Tomcat nginx - CentOS7 nginx - RHEL8 config ARP ifconfig:
+$sudo yum install net-tools Service #vi /etc/init.d/realserver /etc/init.d/realserver:
+#!/bin/bash SNS_VIP=192.168.0.220 case &amp;#34;$1&amp;#34; in start) ifconfig lo:0 $SNS_VIP netmask 255.255.255.255 broadcast $SNS_VIP /sbin/route add -host $SNS_VIP dev lo:0 echo &amp;#34;1&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_ignore echo &amp;#34;2&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_announce echo &amp;#34;1&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_ignore echo &amp;#34;2&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_announce sysctl -p &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 echo &amp;#34;RealServer Start OK&amp;#34; ;; stop) ifconfig lo:0 down route del $SNS_VIP &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_ignore echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_announce echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_ignore echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_announce echo &amp;#34;RealServer Stoped&amp;#34; ;; *) echo &amp;#34;Usage: $0 {start|stop}&amp;#34; exit 1 esac exit 0 exec $sudo chmod 755 /etc/init.</description>
+    </item>
+    
+    <item>
+      <title>Linux修改网卡为固定IP</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/</link>
+      <pubDate>Sun, 02 Oct 2022 08:38:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/</guid>
+      <description>Alma/Rocky RHEL Community Version
+View net adapter list:
+$cd /etc/sysconfig/network-scripts$ls ifcfg-* -l ipv4 $ip addr ipv6 $ip -6 addr Setup Start job network adapter:
+ONBOOT=yes static $cd /etc/sysconfig/network-scripts $sudo vi ifcfg-enp0s3 BOOTPROTO=none IPADDR=192.168.1.186 PREFIX=24 GATEWAY=192.168.1.1 DNS1=211.161.191.235 DNS2=211.161.122.197 IPv6 Network IPV6INIT=yes This initializes the interface for IPv6 addressing. IPV6_AUTOCONF=yes This enables the IPv6 auto-configuration for the interface. IPV6_DEFROUTE=yes This indicates that the default IPv6 route has been assigned to the interface.</description>
+    </item>
+    
     <item>
       <title>查看版本-Ubuntu</title>
       <link>https://tdtc-hrb.github.io/csdn/post/version-ubuntu/</link>
@@ -18,35 +48,26 @@
     </item>
     
     <item>
-      <title>架设Real Server和Keepalived Server</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_real_keepalived/</link>
-      <pubDate>Fri, 30 Sep 2022 02:38:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_real_keepalived/</guid>
-      <description>准备工作：
-修改网卡为固定IP 开启sudo 总览 OS: CentOS7 minimal
-Real Server CentOS7RS1 192.168.0.127
-Nginx v1.22 Tomcat v7.0.109 CentOS7RS2 192.168.0.122
-Nginx v1.22 Tomcat v8.5.82 Keepalived Server CentOS7Master 192.168.0.129
-CentOS7Bak 192.168.0.130
-一、Real Server 安装前准备:
-Linux下安装Tomcat nginx - load balancing config ARP ifconfig:
-$sudo yum install net-tools Service #vi /etc/init.d/realserver /etc/init.d/realserver:
-#!/bin/bash SNS_VIP=192.168.0.220 case &amp;#34;$1&amp;#34; in start) ifconfig lo:0 $SNS_VIP netmask 255.255.255.255 broadcast $SNS_VIP /sbin/route add -host $SNS_VIP dev lo:0 echo &amp;#34;1&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_ignore echo &amp;#34;2&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_announce echo &amp;#34;1&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_ignore echo &amp;#34;2&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_announce sysctl -p &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 echo &amp;#34;RealServer Start OK&amp;#34; ;; stop) ifconfig lo:0 down route del $SNS_VIP &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_ignore echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_announce echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_ignore echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_announce echo &amp;#34;RealServer Stoped&amp;#34; ;; *) echo &amp;#34;Usage: $0 {start|stop}&amp;#34; exit 1 esac exit 0 exec $sudo chmod 755 /etc/init.</description>
-    </item>
-    
-    <item>
       <title>前端（Web）负载均衡</title>
       <link>https://tdtc-hrb.github.io/csdn/post/ops_nginx/</link>
-      <pubDate>Wed, 28 Sep 2022 08:38:08 +0800</pubDate>
+      <pubDate>Thu, 29 Sep 2022 08:38:08 +0800</pubDate>
       
       <guid>https://tdtc-hrb.github.io/csdn/post/ops_nginx/</guid>
       <description>Nginx&amp;rsquo;s load balancing
 一、安装 OS: CentOS7 minimal（安装时的选项）
-0. prepare $yum -y install gcc gcc-c++ automake pcre pcre-devel zlib zlib-devel open openssl-devel 1) update OpenSSL default directory: /usr/ssl
-wget https://www.openssl.org/source/openssl-1.1.1q.tar.gz --no-check-certificate 2) setup $./config --prefix=/usr --shared $make Root permission Required
-sudo make install 1. installation First, install Nginx of centos repo; Then, replace the nginx program file. Note: The replaced program file version must be the same as the repo!
-sudo rpm -Uvh http://nginx.</description>
+0. prepare $yum -y install gcc gcc-c++ automake pcre pcre-devel zlib zlib-devel openssl openssl-devel 1) update OpenSSL default directory: /usr/ssl
+$wget https://www.openssl.org/source/openssl-1.1.1q.tar.gz --no-check-certificate 2) setup $./config --prefix=/usr --shared $make Root permission Required
+$sudo make install 1. installation First, install Nginx of centos repo; Then, replace the nginx program file. Note: The replaced program file version must be the same as the repo!
+$sudo rpm -Uvh http://nginx.</description>
+    </item>
+    
+    <item>
+      <title>Tomcat安装</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</link>
+      <pubDate>Wed, 28 Sep 2022 12:38:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</guid>
+      <description>Servlet Spec JSP Spec EL Spec WebSocket Spec Authentication (JASIC) Spec Apache Tomcat Version Latest Released Version Supported Java Versions 6.0 3.1 5.0 2.1 3.0 10.1.x 10.1.0 Jakarta EE 9.1 5.0 3.0 4.0 2.0 2.0 10.0.x 10.0.26 Jakarta EE 9 4.0 2.3 3.0 1.1 1.1 9.0.x 9.0.68 8 and later 3.1 2.3 3.0 1.1 1.1 8.5.x 8.5.82 7 and later 3.0 2.2 2.2 1.1 N/A 7.0.x 7.0.109 6 and later(7 and later for WebSocket) installation Platform version Released Specification Java SE Support Important Changes Jakarta EE 10 2022-03-31 10 Java SE 17/Java SE 11 Removal of deprecated items in Servlet, Faces, CDI and EJB (Entity Beans and Embeddable Container).</description>
     </item>
     
     <item>
@@ -91,23 +112,25 @@ sudo dnf install mysql-community-server disable default repo sudo dnf remove @my
     </item>
     
     <item>
-      <title>设置OpenJDK</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_openjdk_centos/</link>
-      <pubDate>Wed, 14 Sep 2022 08:08:08 -0800</pubDate>
+      <title>开启sudo</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_sudo/</link>
+      <pubDate>Sun, 18 Sep 2022 00:08:08 +0800</pubDate>
       
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_openjdk_centos/</guid>
-      <description>1. install jre
-sudo yum install java -y jdk sudo yum install java-1.8.0-openjdk-devel 2. set path sudo vi /etc/profile export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.345.b01-1.el7_9.x86_64 export CLASSPATH=.:$JAVA_HOME/jre/lib/:. export PATH=$PATH:$JAVA_HOME/bin $su root $source /etc/profile About path 3.3. INSTALL OPENJDK ON RED HAT ENTERPRISE LINUX - 2.Optional: Set the JAVA_HOME environment variable
-Reference How to install Java on CentOS 7 OpenJDK Version Info - Releases </description>
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_sudo/</guid>
+      <description>new user #useradd tdtc #passwd tdtc Append group CentOS7- Open wheel #vi /etc/pam.d/su auth required /lib/security/$ISA/pam_wheel.so use_uid Attachment of group members #gpasswd -a tdtc wheel CentOS7/8 CentOS8 needs to be executed locally, Unable to execute on ssh network side.
+#usermod –aG wheel tdtc test Query all users with sudo permissions.
+[tdtc@tdtc102 ~]$ sudo lid -g wheel We trust you have received the usual lecture from the local System Administrator. It usually boils down to these three things: #1) Respect the privacy of others.</description>
     </item>
     
     <item>
-      <title>Tomcat安装</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</link>
-      <pubDate>Sun, 11 Sep 2022 12:38:08 +0800</pubDate>
+      <title>设置OpenJDK</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_openjdk_centos/</link>
+      <pubDate>Thu, 15 Sep 2022 08:08:08 -0800</pubDate>
       
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</guid>
-      <description>Servlet Spec JSP Spec EL Spec WebSocket Spec Authentication (JASIC) Spec Apache Tomcat Version Latest Released Version Supported Java Versions 6.0 3.1 5.0 2.1 3.0 10.1.x 10.1.0 Jakarta EE 9.1 5.0 3.0 4.0 2.0 2.0 10.0.x 10.0.26 Jakarta EE 9 4.0 2.3 3.0 1.1 1.1 9.0.x 9.0.67 8 and later 3.1 2.3 3.0 1.1 1.1 8.5.x 8.5.82 7 and later 3.0 2.2 2.2 1.1 N/A 7.0.x 7.0.109 6 and later(7 and later for WebSocket) installation Platform version Released Specification Java SE Support Important Changes Jakarta EE 10 2022-03-31 10 Java SE 17/Java SE 11 Removal of deprecated items in Servlet, Faces, CDI and EJB (Entity Beans and Embeddable Container).</description>
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_openjdk_centos/</guid>
+      <description>1. install jre
+$sudo yum install java -y jdk $sudo yum install java-1.8.0-openjdk-devel 2. set path $sudo vi /etc/profile export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.345.b01-1.el7_9.x86_64 export CLASSPATH=.:$JAVA_HOME/jre/lib/:. export PATH=$PATH:$JAVA_HOME/bin $su - root #source /etc/profile About path 3.3. INSTALL OPENJDK ON RED HAT ENTERPRISE LINUX - 2.Optional: Set the JAVA_HOME environment variable
+Reference How to install Java on CentOS 7 OpenJDK Version Info - Releases </description>
     </item>
     
     <item>
@@ -545,23 +568,6 @@ Slave 1 [mysqld] server-id=161 Slave 2 [mysqld] server-id=162 3.</description>
     </item>
     
     <item>
-      <title>Linux修改网卡为固定IP</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/</link>
-      <pubDate>Wed, 13 Apr 2022 08:38:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/</guid>
-      <description>CentOS View $ip addr 1 is loopback 2 is the current network card
-Setup auto Start job network adapter.
-ONBOOT=yes static cd /etc/sysconfig/network-scripts $sudo vi ifcfg-* *: current network card
-BOOTPROTO=static IPADDR=192.168.1.186 NETMASK=255.255.255.0 GATEWAY=192.168.1.1 DNS1=211.161.191.235 DNS2=211.161.122.197 virtual machine 设置Network Adapter为Bridged
-vmware 缺省/etc/sysconfig/network-scripts/ifcfg-eth0
-default: eth0
-vbox 缺省/etc/sysconfig/network-scripts/ifcfg-enp0XX
-default: enp0s3
-Ubuntu 设置static IP cd /etc/netplan/ sudo vi 00-installer-config.yaml #This is the network config written by &amp;#39;subiquity&amp;#39; network: ethernets: enp0s3: dhcp4: no addresses: - 192.</description>
-    </item>
-    
-    <item>
       <title>安装配置Keepalived</title>
       <link>https://tdtc-hrb.github.io/csdn/post/ops_keepalived/</link>
       <pubDate>Wed, 13 Apr 2022 08:38:08 +0800</pubDate>
@@ -634,24 +640,6 @@ cd /var/lib/dpkg sudo mv info info.bak sudo mkdir info 文件系统只读问题 
       <description>安装 $ go get -u github.com/go-bindata/go-bindata/... generation bindata.go $ cd ~/go/src/github.com/xiaobin80/go-micro-services/ $ go-bindata data/... $ mv bindata.go ./data/ 修改包名 package main &amp;mdash;》
 package xxx 此例xxx为data。
 Reference go-bindata go-micro-services </description>
-    </item>
-    
-    <item>
-      <title>CentOS修改网卡为固定IP</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_centos/</link>
-      <pubDate>Sun, 13 Mar 2022 08:38:08 -0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_centos/</guid>
-      <description>View $ip addr 1 is loopback 2 is the current network card
-Setup auto Start job network adapter.
-ONBOOT=yes static cd /etc/sysconfig/network-scripts $sudo vi ifcfg-* *: current network card
-BOOTPROTO=static IPADDR=192.168.1.186 NETMASK=255.255.255.0 GATEWAY=192.168.1.1 DNS1=211.161.191.235 DNS2=211.161.122.197 virtual machine vmware 设置Network Adapter为Bridged
-缺省/etc/sysconfig/network-scripts/ifcfg-eth0
-default: eth0
-vbox 设置Network Adapter为Bridged
-缺省/etc/sysconfig/network-scripts/ifcfg-enp0XX
-default: enp0s3
-ssh $sudo yum install openssh </description>
     </item>
     
     <item>
@@ -783,15 +771,6 @@ Stage I 1. 《sudo - CentOS》 2. FQDN #127.0.0.1 localhost localhost.localdomai
       <description>VMware: Ubuntu 20.04.2
 Install and update #sudo apt-get install memcached [0] #sudo apt-get install build-essential #sudo apt-get install libevent-dev* #wget http://memcached.org/files/memcached-1.6.15.tar.gz #tar -zxvf memcached-1.6.15.tar.gz #cd memcached-1.6.15 #./configure &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo make install Start allow port sudo ufw allow 11211 config sudo vi /etc/memcached.conf 修改为服务器的IP:
 # Specify which IP address to listen on. The default is to listen on all IP addresses # This parameter is one of the only security measures that memcached has, so make sure # it&amp;#39;s listening on a firewalled interface.</description>
-    </item>
-    
-    <item>
-      <title>开启sudo</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_sudo/</link>
-      <pubDate>Tue, 14 Jul 2020 00:08:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_sudo/</guid>
-      <description>new user $useradd tdtc $passwd tdtc Append group CentOS7- Open wheel $vi /etc/pam.d/su auth required /lib/security/$ISA/pam_wheel.so use_uid Attachment of group members $gpasswd -a tdtc wheel CentOS7 usermod –aG wheel UserName `` # test Query all users with sudo permissions. ```bash [tdtc@tdtc102 ~]$ sudo lid -g wheel We trust you have received the usual lecture from the local System Administrator. It usually boils down to these three things: #1) Respect the privacy of others.</description>
     </item>
     
     <item>

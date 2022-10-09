@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="本系列包括架设Real Server和Keepalived Server、Keepalive安装配置" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2022-09-28T08:38:08&#43;08:00" />
+    <meta property="article:published_time" content="2022-09-29T08:38:08&#43;08:00" />
 
     
     
@@ -92,15 +92,15 @@
     },
     "headline": "前端（Web）负载均衡",
     "name": "前端（Web）负载均衡",
-    "wordCount":  410 ,
+    "wordCount":  411 ,
     "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/ops_nginx/",
-    "datePublished": "2022-09-28T08:38Z",
-    "dateModified": "2022-09-28T08:38Z",
+    "datePublished": "2022-09-29T08:38Z",
+    "dateModified": "2022-09-29T08:38Z",
     
     
     "description": "本系列包括架设Real Server和Keepalived Server、Keepalive安装配置",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2022-09-28T08:38:08&#43;08:00">
-            Sep 28, 2022
+          <time class="post-date" datetime="2022-09-29T08:38:08&#43;08:00">
+            Sep 29, 2022
           </time>
         
          
@@ -181,45 +181,45 @@
 <h1 id="一安装">一、安装</h1>
 <p>OS: CentOS7 minimal（安装时的选项）</p>
 <h2 id="0-prepare">0. prepare</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum -y install gcc gcc-c++ automake pcre pcre-devel zlib zlib-devel open openssl-devel
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum -y install gcc gcc-c++ automake pcre pcre-devel zlib zlib-devel openssl openssl-devel
 </span></span></code></pre></div><h3 id="1-update-openssl">1) update OpenSSL</h3>
 <blockquote>
 <p>default directory: /usr/ssl</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://www.openssl.org/source/openssl-1.1.1q.tar.gz --no-check-certificate
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://www.openssl.org/source/openssl-1.1.1q.tar.gz --no-check-certificate
 </span></span></code></pre></div><h3 id="2-setup">2) setup</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$./config --prefix<span style="color:#f92672">=</span>/usr --shared
 </span></span><span style="display:flex;"><span>$make
 </span></span></code></pre></div><blockquote>
 <p>Root permission Required</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo make install
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo make install
 </span></span></code></pre></div><h2 id="1-installation">1. installation</h2>
 <p>First, install Nginx of centos repo; <br>
 Then, replace the nginx program file. <br>
 Note: The replaced program file version must be the same as the repo!</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
-</span></span><span style="display:flex;"><span>sudo yum install -y nginx
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
+</span></span><span style="display:flex;"><span>$sudo yum install -y nginx
 </span></span></code></pre></div><h3 id="1-down">1) down</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$curl --progress https://nginx.org/download/nginx-1.22.0.tar.gz | tar xz
 </span></span></code></pre></div><h3 id="2-setup-module">2) setup module</h3>
 <p>see arguments:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$nginx -V
 </span></span></code></pre></div><h4 id="gd-lib">GD lib</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install gd-devel
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum install gd-devel
 </span></span></code></pre></div><p>add param(config):</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>--with-http_image_filter_module<span style="color:#f92672">=</span>dynamic
 </span></span></code></pre></div><h4 id="libxml2libxslt">libxml2/libxslt</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install libxml2-devel
-</span></span><span style="display:flex;"><span>sudo yum install libxslt-devel
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum install libxml2-devel
+</span></span><span style="display:flex;"><span>$sudo yum install libxslt-devel
 </span></span></code></pre></div><p>add param(config):</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>--with-http_xslt_module<span style="color:#f92672">=</span>dynamic
 </span></span></code></pre></div><h4 id="geoip-library">GeoIP library</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install geoip-devel
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum install geoip-devel
 </span></span></code></pre></div><p>add param(config):</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>--with-http_geoip_module<span style="color:#f92672">=</span>dynamic
 </span></span></code></pre></div><h4 id="param-list">param list</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./configure --prefix<span style="color:#f92672">=</span>/etc/nginx <span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ./configure --prefix<span style="color:#f92672">=</span>/etc/nginx <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --sbin-path<span style="color:#f92672">=</span>/usr/sbin/nginx <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --modules-path<span style="color:#f92672">=</span>/usr/lib64/nginx/modules <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --conf-path<span style="color:#f92672">=</span>/etc/nginx/nginx.conf <span style="color:#ae81ff">\
@@ -257,9 +257,9 @@ Note: The replaced program file version must be the same as the repo!</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$make
 </span></span></code></pre></div><p>Copy nginx and all .so files in the objs folder.</p>
 <h4 id="nginx">nginx</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo cp -rfp objs/nginx /usr/sbin/
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo cp -rfp objs/nginx /usr/sbin/
 </span></span></code></pre></div><h4 id="so">*.so</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo cp objs/*.so /usr/lib64/nginx/modules/
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo cp objs/*.so /usr/lib64/nginx/modules/
 </span></span></code></pre></div><h2 id="2-fw">2. fw</h2>
 <blockquote>
 <p>port 80</p>
@@ -407,17 +407,17 @@ add add below in the main context:</p>
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_real_keepalived/">
+      <a class="read-next-story" style="no-cover" href="/csdn/post/version-ubuntu/">
           <section class="post">
-              <h2>架设Real Server和Keepalived Server</h2>
+              <h2>查看版本-Ubuntu</h2>
               
           </section>
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/mysql-mha/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_tomcat/">
           <section class="post">
-              <h2>主备切换 - MySQL&#43;MHA</h2>
+              <h2>Tomcat安装</h2>
           </section>
       </a>
   

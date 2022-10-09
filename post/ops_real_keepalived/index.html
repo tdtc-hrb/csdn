@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="本系列包括nginx负载平衡、Keepalive安装配置" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2022-09-30T02:38:08&#43;08:00" />
+    <meta property="article:published_time" content="2022-10-03T02:38:08&#43;08:00" />
 
     
     
@@ -92,15 +92,15 @@
     },
     "headline": "架设Real Server和Keepalived Server",
     "name": "架设Real Server和Keepalived Server",
-    "wordCount":  203 ,
+    "wordCount":  206 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/ops_real_keepalived/",
-    "datePublished": "2022-09-30T02:38Z",
-    "dateModified": "2022-09-30T02:38Z",
+    "datePublished": "2022-10-03T02:38Z",
+    "dateModified": "2022-10-03T02:38Z",
     
     
     "description": "本系列包括nginx负载平衡、Keepalive安装配置",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2022-09-30T02:38:08&#43;08:00">
-            Sep 30, 2022
+          <time class="post-date" datetime="2022-10-03T02:38:08&#43;08:00">
+            Oct 3, 2022
           </time>
         
          
@@ -179,41 +179,45 @@
     <section class="post-content">
       <p>准备工作：</p>
 <ul>
-<li><a href="https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_centos/">修改网卡为固定IP</a></li>
+<li><a href="https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/">修改网卡为固定IP</a></li>
 <li><a href="https://tdtc-hrb.github.io/csdn/post/ops_sudo/">开启sudo</a></li>
 </ul>
 <h1 id="总览">总览</h1>
-<p>OS: <a href="http://isoredirect.centos.org/centos/7/isos/x86_64/">CentOS7</a> minimal</p>
+<p>OS:  minimal</p>
+<ul>
+<li><a href="https://mirrors.almalinux.org/isos/x86_64/8.6.html">Alma</a></li>
+<li><a href="http://isoredirect.centos.org/centos/7/isos/x86_64/">CentOS7.9</a></li>
+</ul>
 <h2 id="real-server">Real Server</h2>
 <ul>
-<li>CentOS7RS1</li>
+<li>RHEL78RS1</li>
 </ul>
 <blockquote>
 <p>192.168.0.127</p>
 </blockquote>
 <ol>
 <li>Nginx v1.22</li>
-<li>Tomcat v7.0.109</li>
+<li>Tomcat v8.5.82</li>
 </ol>
 <ul>
-<li>CentOS7RS2</li>
+<li>RHEL78RS2</li>
 </ul>
 <blockquote>
 <p>192.168.0.122</p>
 </blockquote>
 <ol>
 <li>Nginx v1.22</li>
-<li>Tomcat v8.5.82</li>
+<li>Tomcat v9.0.68</li>
 </ol>
 <h2 id="keepalived-server">Keepalived Server</h2>
 <ul>
-<li>CentOS7Master</li>
+<li>RHEL78Master</li>
 </ul>
 <blockquote>
 <p>192.168.0.129</p>
 </blockquote>
 <ul>
-<li>CentOS7Bak</li>
+<li>RHEL78Bak</li>
 </ul>
 <blockquote>
 <p>192.168.0.130</p>
@@ -222,7 +226,8 @@
 <p>安装前准备:</p>
 <ul>
 <li><a href="https://tdtc-hrb.github.io/csdn/post/ops_tomcat/">Linux下安装Tomcat</a></li>
-<li><a href="https://tdtc-hrb.github.io/csdn/post/ops_nginx/">nginx - load balancing</a></li>
+<li><a href="https://tdtc-hrb.github.io/csdn/post/ops_nginx/">nginx - CentOS7</a></li>
+<li><a href="https://tdtc-hrb.github.io/cnblogs/post/ops_nginx-v2/">nginx - RHEL8</a></li>
 </ul>
 <h2 id="config-arp">config ARP</h2>
 <p>ifconfig:</p>
@@ -292,9 +297,9 @@
 The keyword that should be used, and it applies to all relevant checkers, is retry.</p>
 <h1 id="三运行效果">三、运行效果</h1>
 <p>打开网址时:
-<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/tomcat70x.png" alt="tomcat 7.0.109"></p>
-<p>刷新后:
 <img src="https://github.com/tdtc-hrb/csdn/raw/master/images/tomcat85x.png" alt="tomcat 8.5.82"></p>
+<p>刷新后:
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/tomcat90x.png" alt="tomcat 9.0.67"></p>
 
     </section>
 
@@ -346,17 +351,10 @@ The keyword that should be used, and it applies to all relevant checkers, is ret
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/version-ubuntu/">
-          <section class="post">
-              <h2>查看版本-Ubuntu</h2>
-              
-          </section>
-      </a>
   
-  
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_nginx/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_network_adapter_linux/">
           <section class="post">
-              <h2>前端（Web）负载均衡</h2>
+              <h2>Linux修改网卡为固定IP</h2>
           </section>
       </a>
   

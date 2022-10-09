@@ -164,6 +164,68 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/com-ie-repoinfo/">铁路车号读取</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>二进制文件工具：EditPlus Edit -&gt; Hex Viewer replace(regexp/substr,replacement) 使用这个函数来替换多余的空格。 str.replace(/\s/g, &#34;&#34;); split(separator,howmany) 字符串转换成字符数组。 string.split(&#34;,&#34;); 一、js部分 我们把所有的方法放到一个对象（RepoInfo）中。
+var RepoInfo = { }; 1. 获取对象 RepoInfo.getObj = function(objName) { return new ActiveXObject(objName); }; 2. 获取数组 RepoInfo.getArray = function(str) { var ret = new Array(16); var string = str.replace(/\s/g, &#34;&#34;); ret = string.split(&#34;,&#34;); return ret; }; 3. 解码字串 输入字串校验 如果字串空，退出。
+输出框清空 每次赋值前，清空。
+执行COM中的方法 在获取对象非空的情况下，执行。
+RepoInfo.decode = function(string) { if (string == null) return; var obj = RepoInfo. <a class="read-more" href="/csdn/post/com-ie-repoinfo/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-06-13T16:08:08&#43;08:00">
+            13 Jun 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_rhel_repo/">RHEL更换CentOS Yum</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>v7.x Red Hat Enterprise Linux7.x
+Yum Repo rpm -aq|grep yum|xargs rpm -e --nodepsrpm -ivh http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/wget-1.14-18.el7_6.1.x86_64.rpm down:
+wget http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/yum-metadata-parser-1.1.4-10.el7.x86_64.rpmwget http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/yum-3.4.3-168.el7.centos.noarch.rpmwget http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/yum-plugin-fastestmirror-1.1.31-54.el7_8.noarch.rpm install:
+rpm -ivh yum-metadata-parser-1.1.4-10.el7.x86_64.rpmrpm -ivh yum-3.4.3-168.el7.centos.noarch.rpm yum-plugin-fastestmirror-1.1.31-54.el7_8.noarch.rpm repo file /etc/yum.repos.d/CentOS-Base.repo CentOS-Base.repo - cento7
+# CentOS-Base.repo## The mirror system uses the connecting IP address of the client and the# update status of each mirror to pick mirrors that are updated to and# geographically close to the client. <a class="read-more" href="/csdn/post/ops_rhel_repo/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        on
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/yum/">#yum</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/centos7/">#CentOS7</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/epel-release/">#epel-release</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/7.9.2009/">#7.9.2009</a>,
+            
+        
+        <time class="post-date" datetime="2022-06-12T12:58:39&#43;08:00">
+            12 Jun 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/redis-centos7/">在RHEL/CentOS安装Redis</a></h2>
     </header>
     <section class="post-excerpt">
@@ -414,68 +476,6 @@ code /** * Version: 0.2 * * Description: Add signal * */ #include &lt;stdio. <a 
         
         <time class="post-date" datetime="2022-05-16T08:08:08&#43;08:00">
             16 May 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/com-ie-test/">测试COM</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>IDE: Visual Studio 2019(v16.11)
-本文参考: 创建COM
-一、创建COM 增加IE支持： IObjectWithSite
-增加方法 Add STDMETHODIMP CtestSOW::Add(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x + y); return S_OK; } Multiply STDMETHODIMP CtestSOW::Mul(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x * y); return S_OK; } Divide STDMETHODIMP CtestSOW::Div(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x / y); return S_OK; } 二、测试平台 查看依赖：win8. <a class="read-more" href="/csdn/post/com-ie-test/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-05-15T18:08:08&#43;08:00">
-            15 May 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/dev_wsl_ubuntu/">使用WSL(V1.0)在Windows 10</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>Arch： x64
-OS: Windows 10 1809 LTSC
-在powerShell的管理员模式下运行命令!
-安装/卸载 ON:
-Control Panel -&gt; Uninstall a program -&gt; Turn Windows features on or off, 勾选“Windows Subsystem for Linux” 安装Ubuntu down appx:
-Ubuntu 2004
-Ubuntu 1804
-从AppxBundle提取appx.
-Add-AppxPackage .\Ubuntu_2004.xxx.appx 卸载 如果“普通”方式不工作，请使用“命令行”。
-普通 右击“Ubuntu xxx” 图标，选择“Uninstall”即可。
-命令行 v1803-v1809
-wslconfig /u 使用 更改源列表:
-sudo vi /etc/apt/sources.list http://archive.ubuntu.com -&gt; https://mirrors.aliyun.com/ubuntu/ 文件互访 首先，使用windows记事本，建立一个testTxtFile.txt； 然后，在WSL查看文件内容。
-cd /mnt/c/Users/tdtc/ vi testTxtFile.txt 最后，用WSL重命名文件名:
-mv testTxtFile.txt testFile.txt 在windows就可以看到重命名的testFile.txt。
-访问WSL服务 WSL与windows 10共有端口，所以Windows 10已使用的端口，不要再分配给WSL <a class="read-more" href="/csdn/post/dev_wsl_ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-05-15T12:08:08&#43;08:00">
-            15 May 2022
         </time>
     </footer>
 </article>

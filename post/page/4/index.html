@@ -164,6 +164,68 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/com-ie-test/">测试COM</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>IDE: Visual Studio 2019(v16.11)
+本文参考: 创建COM
+一、创建COM 增加IE支持： IObjectWithSite
+增加方法 Add STDMETHODIMP CtestSOW::Add(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x + y); return S_OK; } Multiply STDMETHODIMP CtestSOW::Mul(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x * y); return S_OK; } Divide STDMETHODIMP CtestSOW::Div(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x / y); return S_OK; } 二、测试平台 查看依赖：win8. <a class="read-more" href="/csdn/post/com-ie-test/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-05-15T18:08:08&#43;08:00">
+            15 May 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/dev_wsl_ubuntu/">使用WSL(V1.0)在Windows 10</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Arch： x64
+OS: Windows 10 1809 LTSC
+在powerShell的管理员模式下运行命令!
+安装/卸载 ON:
+Control Panel -&gt; Uninstall a program -&gt; Turn Windows features on or off, 勾选“Windows Subsystem for Linux” 安装Ubuntu down appx:
+Ubuntu 2004
+Ubuntu 1804
+从AppxBundle提取appx.
+Add-AppxPackage .\Ubuntu_2004.xxx.appx 卸载 如果“普通”方式不工作，请使用“命令行”。
+普通 右击“Ubuntu xxx” 图标，选择“Uninstall”即可。
+命令行 v1803-v1809
+wslconfig /u 使用 更改源列表:
+sudo vi /etc/apt/sources.list http://archive.ubuntu.com -&gt; https://mirrors.aliyun.com/ubuntu/ 文件互访 首先，使用windows记事本，建立一个testTxtFile.txt； 然后，在WSL查看文件内容。
+cd /mnt/c/Users/tdtc/ vi testTxtFile.txt 最后，用WSL重命名文件名:
+mv testTxtFile.txt testFile.txt 在windows就可以看到重命名的testFile.txt。
+访问WSL服务 WSL与windows 10共有端口，所以Windows 10已使用的端口，不要再分配给WSL <a class="read-more" href="/csdn/post/dev_wsl_ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-05-15T12:08:08&#43;08:00">
+            15 May 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/java-maven-qa1/">maven的QA</a></h2>
     </header>
     <section class="post-excerpt">
@@ -362,36 +424,6 @@ Slave 1 [mysqld] server-id=161 Slave 2 [mysqld] server-id=162 3. <a class="read-
 	
 	   <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_network_adapter_linux/">Linux修改网卡为固定IP</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>CentOS View $ip addr 1 is loopback 2 is the current network card
-Setup auto Start job network adapter.
-ONBOOT=yes static cd /etc/sysconfig/network-scripts $sudo vi ifcfg-* *: current network card
-BOOTPROTO=static IPADDR=192.168.1.186 NETMASK=255.255.255.0 GATEWAY=192.168.1.1 DNS1=211.161.191.235 DNS2=211.161.122.197 virtual machine 设置Network Adapter为Bridged
-vmware 缺省/etc/sysconfig/network-scripts/ifcfg-eth0
-default: eth0
-vbox 缺省/etc/sysconfig/network-scripts/ifcfg-enp0XX
-default: enp0s3
-Ubuntu 设置static IP cd /etc/netplan/ sudo vi 00-installer-config.yaml #This is the network config written by &#39;subiquity&#39; network: ethernets: enp0s3: dhcp4: no addresses: - 192. <a class="read-more" href="/csdn/post/ops_network_adapter_linux/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-04-13T08:38:08&#43;08:00">
-            13 Apr 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_keepalived/">安装配置Keepalived</a></h2>
     </header>
     <section class="post-excerpt">
@@ -410,31 +442,6 @@ $make install setup $cp /usr/local/keepalived/sbin/keepalived /usr/sbin/ $mkdir 
 
         
         <time class="post-date" datetime="2022-04-13T08:38:08&#43;08:00">
-            13 Apr 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_department_cups/">共享打印机 - CUPS</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>Tips: Ubuntu已经安装了打印机了，我们怎么共享它呢？
-安装CUPS Ubuntu
-#apt-get install cups 客户端设置 Windows
-“打印机和传真”-〉“添加打印机” （注意：根据办公环境的网络设置自行填写） 插入HP的驱动光盘:  <a class="read-more" href="/csdn/post/ops_department_cups/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-04-13T03:18:08&#43;08:00">
             13 Apr 2022
         </time>
     </footer>

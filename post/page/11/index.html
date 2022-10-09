@@ -164,29 +164,6 @@
 	
 	   <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_hadoop_cluster_hdfs/">Hadoop配置 - hdfs</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>(../etc/hadoop/hdfs-site.xml)
-1. name services &lt;property&gt; &lt;name&gt;dfs.nameservices&lt;/name&gt; &lt;value&gt;mycluster&lt;/value&gt; &lt;/property&gt; 1) name node &lt;property&gt; &lt;name&gt;dfs.ha.namenodes.mycluster&lt;/name&gt; &lt;value&gt;nn1,nn2&lt;/value&gt; &lt;/property&gt; 2) RPC(name node) &lt;property&gt; &lt;name&gt;dfs.namenode.rpc-address.mycluster.nn1&lt;/name&gt; &lt;value&gt;tdtc201:8020&lt;/value&gt; &lt;/property&gt; &lt;property&gt; &lt;name&gt;dfs.namenode.rpc-address.mycluster.nn2&lt;/name&gt; &lt;value&gt;tdtc202:8020&lt;/value&gt; &lt;/property&gt; 3) Http(name node) &lt;property&gt; &lt;name&gt;dfs.namenode.http-address.mycluster.nn1&lt;/name&gt; &lt;value&gt;tdtc201:50070&lt;/value&gt; &lt;/property&gt; &lt;property&gt; &lt;name&gt;dfs.namenode.http-address.mycluster.nn2&lt;/name&gt; &lt;value&gt;tdtc202:50070&lt;/value&gt; &lt;/property&gt; 2. JournalNode 1) quorum journal manager &lt;!-- Journal Node(QJM) --&gt; &lt;property&gt; &lt;name&gt;dfs.namenode.shared.edits.dir&lt;/name&gt; &lt;value&gt;qjournal://tdtc201:8485;tdtc202:8485;tdtc203:8485/mycluster&lt;/value&gt; &lt;/property&gt; local &lt;property&gt; &lt;name&gt;dfs.journalnode.edits.dir&lt;/name&gt; &lt;value&gt;/home/tdtc/app/hadoop/data/journaldata&lt;/value&gt; &lt;/property&gt; 3. failover 1) support class &lt;!-- the Java class that HDFS clients use to contact the Active NameNode --&gt; &lt;property&gt; &lt;name&gt;dfs. <a class="read-more" href="/csdn/post/ops_hadoop_cluster_hdfs/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-14T09:08:08&#43;08:00">
-            14 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_hadoop_cluster_base/">Hadoop配置 - base</a></h2>
     </header>
     <section class="post-excerpt">
@@ -418,6 +395,31 @@ chmod 644 myfile.iso 显示ftp目录信息 在目录下建立一个.message文�
         
         <time class="post-date" datetime="2020-04-13T00:08:08&#43;08:00">
             13 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/memcached-spy/">使用spymemcached操作memcached</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>offical site
+pom &lt;dependency&gt; &lt;groupId&gt;com.google.code.simple-spring-memcached&lt;/groupId&gt; &lt;artifactId&gt;spymemcached-provider&lt;/artifactId&gt; &lt;version&gt;4.1.3&lt;/version&gt; &lt;/dependency&gt; app config applicationContext.xml
+&lt;import resource=&#34;simplesm-context.xml&#34; /&gt; &lt;aop:aspectj-autoproxy /&gt; &lt;bean name=&#34;defaultMemcachedClient&#34; class=&#34;com.google.code.ssm.CacheFactory&#34;&gt; &lt;property name=&#34;cacheClientFactory&#34;&gt; &lt;bean name=&#34;cacheClientFactory&#34; class=&#34;com.google.code.ssm.providers.spymemcached.MemcacheClientFactoryImpl&#34; /&gt; &lt;/property&gt; &lt;property name=&#34;addressProvider&#34;&gt; &lt;bean class=&#34;com.google.code.ssm.config.DefaultAddressProvider&#34;&gt; &lt;property name=&#34;address&#34; value=&#34;127.0.0.1:11211&#34; /&gt; &lt;/bean&gt; &lt;/property&gt; &lt;property name=&#34;configuration&#34;&gt; &lt;bean class=&#34;com.google.code.ssm.providers.CacheConfiguration&#34;&gt; &lt;property name=&#34;consistentHashing&#34; value=&#34;true&#34; /&gt; &lt;/bean&gt; &lt;/property&gt; &lt;/bean&gt; code service layer
+@Override @ReadThroughSingleCache(namespace = &#34;carnum&#34;, expiration = 300) public List&lt;TrainOrder&gt; getCarList(String year, String month, @ParameterValueKeyProvider int trainNumber) { // TODO Auto-generated method stub return trainOrderDao. <a class="read-more" href="/csdn/post/memcached-spy/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-11T21:08:39&#43;08:00">
+            11 Apr 2020
         </time>
     </footer>
 </article>
