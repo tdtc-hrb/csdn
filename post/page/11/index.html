@@ -164,83 +164,6 @@
 	
 	   <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_hadoop_cluster_base/">Hadoop配置 - base</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>(../etc/hadoop)
-1. core-site.xml 1) HDFS the default path prefix used by the Hadoop FS client when none is given Optionally, you may now configure the default path for Hadoop clients to use the new HA-enabled logical URI. If you used “mycluster” as the nameservice ID earlier, this will be the value of the authority portion of all of your HDFS paths. This may be configured like so, in your core-site. <a class="read-more" href="/csdn/post/ops_hadoop_cluster_base/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-14T08:08:08&#43;08:00">
-            14 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_hadoop_abbr1/">hadoop名词解释</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>QJM and shuffle 1. QJM 1.1 背景 自从hadoop2版本开始，社区引入了NameNode高可用方案。NameNode主从节点间需要同步操作日志来达到主从节点元数据一致。最初业界均通过NFS来实现日志同步，大家之所以选择NFS，一方面因为可以很方便地实现数据共享，另外一方面因为NFS已经发展20多年，已经相对稳定成熟。
-虽然如此，NFS也有缺点不能满足HDFS的在线存储业务：网络单点及其存储节点单点。业界提供了数据共享的一些高可用解决方案，但均不能很好地满足目前HDFS的应用场景。
-方案 网络单点 存储单点 备注 Mysql HA 无 无 Drbd+heartbeat+NFS 无 无 脑裂；数据有丢失风险 Keepalive+NFS 无 有 数据有丢失风险 为了满足共享日志的高可用性，社区引入QJM。QJM由cloudera开发，实现了读写高可用性，使HDFS达到真正的高可用性成为可能。
-1.2 术语和定义 术语和定义 解释 Epoch 由主节点在启动及其切换为主的时候分配，每次操作JN节点均会检查该值,类似zookeeper中的zxid，此时主NameNode类似zookeeper中的leader，JN节点类似ZK中的Follower JournalNode QJM存储段进程，提供日志读写，存储，修复等服务 QJM Qurom Journal Manager startLogSegment 开始一个新的日志段,该日志段状态为接收写入日志的状态 finalizeLogSegment 将文件由正在写入日志的状态转化为不接收写日志的状态 recoverUnfinalizedSegments 主从切换等情况下，恢复没有转换为finalized状态的日志 journalId 日志ID，由配置指定，如qjournal://g42:8485;g35:8485;uhp9:8485/geminifs，则其中的geminifs即为journalId 2. shuffle 作者：Lijie Xu 链接：https://www.zhihu.com/question/27643595/answer/127473409 来源：知乎 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-从逻辑角度来讲，Shuffle 过程就是一个 GroupByKey 的过程，两者没有本质区别。 只是 MapReduce 为了方便 GroupBy 存在于不同 partition 中的 key/value records，就提前对 key 进行排序。Spark 认为很多应用不需要对 key 排序，就默认没有在 GroupBy 的过程中对 key 排序。 <a class="read-more" href="/csdn/post/ops_hadoop_abbr1/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        on
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/qjm/">#QJM</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/shuffle/">#shuffle</a>,
-            
-        
-        <time class="post-date" datetime="2020-04-14T03:08:08&#43;08:00">
-            14 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_firewall/">soft-list(port)</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>I. Soft List 1. zk sudo firewall-cmd --permanent --zone=public --add-port=2181/tcp sudo firewall-cmd --permanent --zone=public --add-port=2888/tcp sudo firewall-cmd --permanent --zone=public --add-port=3888/tcp 2. Hadoop sudo firewall-cmd --permanent --zone=public --add-port=10020/tcp sudo firewall-cmd --permanent --zone=public --add-port=19888/tcp sudo firewall-cmd --permanent --zone=public --add-port=8020/tcp sudo firewall-cmd --permanent --zone=public --add-port=50070/tcp sudo firewall-cmd --permanent --zone=public --add-port=8485/tcp sudo firewall-cmd --permanent --zone=public --add-port=8088/tcp sudo firewall-cmd --permanent --zone=public --add-port=8033/tcp 3. Spark sudo firewall-cmd --permanent --zone=public --add-port=6066/tcp sudo firewall-cmd --permanent --zone=public --add-port=7077/tcp sudo firewall-cmd --permanent --zone=public --add-port=8080-8088/tcp 立即生效： <a class="read-more" href="/csdn/post/ops_firewall/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-14T02:08:08&#43;08:00">
-            14 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_ssh_without_password/">ssh相互免密</a></h2>
     </header>
     <section class="post-excerpt">
@@ -420,6 +343,79 @@ pom &lt;dependency&gt; &lt;groupId&gt;com.google.code.simple-spring-memcached&lt
         
         <time class="post-date" datetime="2020-04-11T21:08:39&#43;08:00">
             11 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/java-string-redis-template/">StringRedisTemplate - redis-cli</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>1. autowired @Autowired StringRedisTemplate stringRedisTemplate; 2. get/set public void redisCliTest() { String cliVal = stringRedisTemplate.opsForValue().get(&#34;mykey2&#34;); System.out.println(&#34;redis-cli value: &#34; + cliVal); } code UserController.java
+package com.example.demo.controller; import java.util.List; import org.springframework.beans.factory.annotation.Autowired; import org.springframework.data.redis.core.StringRedisTemplate; import org.springframework.stereotype.Controller; import org.springframework.ui.Model; import org.springframework.web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.RequestMethod; import com.example.demo.model.UserDetails; import com.example.demo.service.UserDetailsService; @Controller @RequestMapping(&#34;/user&#34;) public class UserController { @Autowired private UserDetailsService userService; @Autowired StringRedisTemplate stringRedisTemplate; @RequestMapping(value = &#34;/listPage&#34;, method = RequestMethod.GET) public String findAll(Model model) { List&lt;UserDetails&gt; users = userService. <a class="read-more" href="/csdn/post/java-string-redis-template/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-10T13:26:39&#43;08:00">
+            10 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/java-tomcat-pool-hikaricp/">设置HikariCP</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>1. context.xml tomcat
+&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt; &lt;!-- Licensed to the Apache Software Foundation (ASF) under one or more contributor license agreements. See the NOTICE file distributed with this work for additional information regarding copyright ownership. The ASF licenses this file to You under the Apache License, Version 2.0 (the &#34;License&#34;); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www. <a class="read-more" href="/csdn/post/java-tomcat-pool-hikaricp/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-10T12:26:39&#43;08:00">
+            10 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/java-spring-security/">关于Spring Security 4例子的补充</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Spring Security 4 Hibernate Password Encoder Bcrypt Example
+1. 数据表 资料来源于spring-security-remember-me-example
+CREATE TABLE `persistent_logins` ( `series` varchar(64) NOT NULL, `username` varchar(64) NOT NULL, `token` varchar(64) NOT NULL, `last_used` datetime NOT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8; ALTER TABLE `persistent_logins` ADD PRIMARY KEY (`series`); COMMIT; 2. pojo User.java
+其中的缺省值：
+@Column(name = &#34;state&#34;, nullable=true) private String state = &#34;Inactive&#34;; 3. 依赖库 pom.xml
+springframework.version v4.3.14.RELEASE springsecurity.version v4.2.4.RELEASE hibernate.version v5.1.13.Final mysql.connector.version v5.1.46 validation api V2.0.1 hibernate validator v5. <a class="read-more" href="/csdn/post/java-spring-security/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-10T11:26:39&#43;08:00">
+            10 Apr 2020
         </time>
     </footer>
 </article>

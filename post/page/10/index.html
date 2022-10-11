@@ -164,31 +164,6 @@
 	
 	   <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_mail/">mail的使用</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>installation Mutt is a small but very powerful text-based mail client for Unix operating systems.
-1) install yum install mutt 2) config $vi ~/.muttrc set sendmail=&#34;/usr/local/msmtp/bin/msmtp&#34; set from = &#34;user@domain.com&#34; set realname = &#34;Realname of the user&#34; received mail:
-set pop_host=&#34;pop.163.com&#34; set pop_user=&#34;love_shidie&#34; set pop_pass=`getpassword email_id` test 1) send mail gpg -d ~/.msmtp/love_shidie-passoword.gpg $mutt -s &#34;test message&#34; -a ~/message121.txt 2) received mail $mutt Press key: G
-Reference Mutt – A Command Line Email Client to Send Mails from Terminal Mutt: how to safely store password? <a class="read-more" href="/csdn/post/ops_mail/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-15T23:08:08&#43;08:00">
-            15 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_mail_msmtp/">mail的发送</a></h2>
     </header>
     <section class="post-excerpt">
@@ -327,56 +302,6 @@ setfacl -m user:site_user:rwx /home/fdn 参考文章 《在 Linux 上给用户�
 	
 	   <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_spark_centos/">spark安装</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>Spark：v2.4
-一、基础软件 1. R-lang sudo yum -y install epel-release sudo yum install R 注意：如果Java没有安装，会附带着安装OpenJDK。
-2. Scala wget https://downloads.lightbend.com/scala/2.12.8/scala-2.12.8.tgz tar xvf scala-2.12.8.tgz sudo mv scala-2.12.8 /usr/lib sudo ln -s /usr/lib/scala-2.12.8 /usr/lib/scala 1) add path $vi ~/.bashrc PATH=$PATH:/usr/lib/scala/bin 二、Spark 1. down &amp; unzip v2.4.1
-mkdir -p ~/app/spark tar zxvf spark-2.4.1-bin-hadoop2.7.tgz -C ~/app/spark mv ~/app/spark/spark-2.4.1-bin-hadoop2.7 ~/app/spark/2.4.1 2. test ./bin/spark-shell --master local[2] input:
-for (i &lt;- 1 to 3; j &lt;- 1 to 3 if i ! <a class="read-more" href="/csdn/post/ops_spark_centos/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-15T00:08:08&#43;08:00">
-            15 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_hadoop_cluster/">Hadoop - cluster</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>Prepare server1 server2 server3 server4 NameNode y y DataNode y y y ResourceManager y y NodeManager y y y y Zookeeper y y y y JournalNode y y y ZK-FC y y JobHistor y Server Name IP Host Name server1 192.168.42.107 tdtc201 server2 192.168.42.108 tdtc202 server3 192.168.42.109 tdtc203 server4 192.168.42.110 tdtc204 1. zk zkServer.sh start 安装详见《ZooKeeper multi-server install》
-2. Open firewall Stage I: Installation 1. Unzip /home/$USER/app/hadoop/$version 路径参考Oracle11g
-mkdir -p ~/app/hadoop tar zxvf hadoop-2. <a class="read-more" href="/csdn/post/ops_hadoop_cluster/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-14T16:08:08&#43;08:00">
-            14 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_hadoop_cluster_yarn/">Hadoop配置 - yarn</a></h2>
     </header>
     <section class="post-excerpt">
@@ -416,6 +341,83 @@ mkdir -p ~/app/hadoop tar zxvf hadoop-2. <a class="read-more" href="/csdn/post/o
 
         
         <time class="post-date" datetime="2020-04-14T09:08:08&#43;08:00">
+            14 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_hadoop_cluster_base/">Hadoop配置 - base</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>(../etc/hadoop)
+1. core-site.xml 1) HDFS the default path prefix used by the Hadoop FS client when none is given Optionally, you may now configure the default path for Hadoop clients to use the new HA-enabled logical URI. If you used “mycluster” as the nameservice ID earlier, this will be the value of the authority portion of all of your HDFS paths. This may be configured like so, in your core-site. <a class="read-more" href="/csdn/post/ops_hadoop_cluster_base/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-14T08:08:08&#43;08:00">
+            14 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_hadoop_abbr1/">hadoop名词解释</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>QJM and shuffle 1. QJM 1.1 背景 自从hadoop2版本开始，社区引入了NameNode高可用方案。NameNode主从节点间需要同步操作日志来达到主从节点元数据一致。最初业界均通过NFS来实现日志同步，大家之所以选择NFS，一方面因为可以很方便地实现数据共享，另外一方面因为NFS已经发展20多年，已经相对稳定成熟。
+虽然如此，NFS也有缺点不能满足HDFS的在线存储业务：网络单点及其存储节点单点。业界提供了数据共享的一些高可用解决方案，但均不能很好地满足目前HDFS的应用场景。
+方案 网络单点 存储单点 备注 Mysql HA 无 无 Drbd+heartbeat+NFS 无 无 脑裂；数据有丢失风险 Keepalive+NFS 无 有 数据有丢失风险 为了满足共享日志的高可用性，社区引入QJM。QJM由cloudera开发，实现了读写高可用性，使HDFS达到真正的高可用性成为可能。
+1.2 术语和定义 术语和定义 解释 Epoch 由主节点在启动及其切换为主的时候分配，每次操作JN节点均会检查该值,类似zookeeper中的zxid，此时主NameNode类似zookeeper中的leader，JN节点类似ZK中的Follower JournalNode QJM存储段进程，提供日志读写，存储，修复等服务 QJM Qurom Journal Manager startLogSegment 开始一个新的日志段,该日志段状态为接收写入日志的状态 finalizeLogSegment 将文件由正在写入日志的状态转化为不接收写日志的状态 recoverUnfinalizedSegments 主从切换等情况下，恢复没有转换为finalized状态的日志 journalId 日志ID，由配置指定，如qjournal://g42:8485;g35:8485;uhp9:8485/geminifs，则其中的geminifs即为journalId 2. shuffle 作者：Lijie Xu 链接：https://www.zhihu.com/question/27643595/answer/127473409 来源：知乎 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+从逻辑角度来讲，Shuffle 过程就是一个 GroupByKey 的过程，两者没有本质区别。 只是 MapReduce 为了方便 GroupBy 存在于不同 partition 中的 key/value records，就提前对 key 进行排序。Spark 认为很多应用不需要对 key 排序，就默认没有在 GroupBy 的过程中对 key 排序。 <a class="read-more" href="/csdn/post/ops_hadoop_abbr1/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        on
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/qjm/">#QJM</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/shuffle/">#shuffle</a>,
+            
+        
+        <time class="post-date" datetime="2020-04-14T03:08:08&#43;08:00">
+            14 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_firewall/">soft-list(port)</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>I. Soft List 1. zk sudo firewall-cmd --permanent --zone=public --add-port=2181/tcp sudo firewall-cmd --permanent --zone=public --add-port=2888/tcp sudo firewall-cmd --permanent --zone=public --add-port=3888/tcp 2. Hadoop sudo firewall-cmd --permanent --zone=public --add-port=10020/tcp sudo firewall-cmd --permanent --zone=public --add-port=19888/tcp sudo firewall-cmd --permanent --zone=public --add-port=8020/tcp sudo firewall-cmd --permanent --zone=public --add-port=50070/tcp sudo firewall-cmd --permanent --zone=public --add-port=8485/tcp sudo firewall-cmd --permanent --zone=public --add-port=8088/tcp sudo firewall-cmd --permanent --zone=public --add-port=8033/tcp 3. Spark sudo firewall-cmd --permanent --zone=public --add-port=6066/tcp sudo firewall-cmd --permanent --zone=public --add-port=7077/tcp sudo firewall-cmd --permanent --zone=public --add-port=8080-8088/tcp 立即生效： <a class="read-more" href="/csdn/post/ops_firewall/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-14T02:08:08&#43;08:00">
             14 Apr 2020
         </time>
     </footer>

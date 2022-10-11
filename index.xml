@@ -6,7 +6,18 @@
     <description>Recent content on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 03 Oct 2022 02:38:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Oct 2022 00:08:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hadoop - cluster</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_hadoop_cluster/</link>
+      <pubDate>Tue, 11 Oct 2022 00:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_hadoop_cluster/</guid>
+      <description>Prepare server1 server2 server3 server4 NameNode y y DataNode y y y ResourceManager y y NodeManager y y y y Zookeeper y y y y JournalNode y y y ZK-FC y y JobHistor y Server Name IP Host Name server1 192.168.42.107 tdtc201 server2 192.168.42.108 tdtc202 server3 192.168.42.109 tdtc203 server4 192.168.42.110 tdtc204 1. zk zkServer.sh start 安装详见《ZooKeeper multi-server install》
+2. Open firewall Stage I: Installation 1. Unzip /home/$USER/app/hadoop/$version 路径参考Oracle11g
+mkdir -p ~/app/hadoop tar zxvf hadoop-2.</description>
+    </item>
+    
     <item>
       <title>架设Real Server和Keepalived Server</title>
       <link>https://tdtc-hrb.github.io/csdn/post/ops_real_keepalived/</link>
@@ -120,17 +131,6 @@ sudo dnf install mysql-community-server disable default repo sudo dnf remove @my
       <description>new user #useradd tdtc #passwd tdtc Append group CentOS7- Open wheel #vi /etc/pam.d/su auth required /lib/security/$ISA/pam_wheel.so use_uid Attachment of group members #gpasswd -a tdtc wheel CentOS7/8 CentOS8 needs to be executed locally, Unable to execute on ssh network side.
 #usermod –aG wheel tdtc test Query all users with sudo permissions.
 [tdtc@tdtc102 ~]$ sudo lid -g wheel We trust you have received the usual lecture from the local System Administrator. It usually boils down to these three things: #1) Respect the privacy of others.</description>
-    </item>
-    
-    <item>
-      <title>设置OpenJDK</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_openjdk_centos/</link>
-      <pubDate>Thu, 15 Sep 2022 08:08:08 -0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_openjdk_centos/</guid>
-      <description>1. install jre
-$sudo yum install java -y jdk $sudo yum install java-1.8.0-openjdk-devel 2. set path $sudo vi /etc/profile export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.345.b01-1.el7_9.x86_64 export CLASSPATH=.:$JAVA_HOME/jre/lib/:. export PATH=$PATH:$JAVA_HOME/bin $su - root #source /etc/profile About path 3.3. INSTALL OPENJDK ON RED HAT ENTERPRISE LINUX - 2.Optional: Set the JAVA_HOME environment variable
-Reference How to install Java on CentOS 7 OpenJDK Version Info - Releases </description>
     </item>
     
     <item>
@@ -281,16 +281,6 @@ Yum Repo rpm -aq|grep yum|xargs rpm -e --nodepsrpm -ivh http://mirrors.ustc.edu
 wget http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/yum-metadata-parser-1.1.4-10.el7.x86_64.rpmwget http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/yum-3.4.3-168.el7.centos.noarch.rpmwget http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/yum-plugin-fastestmirror-1.1.31-54.el7_8.noarch.rpm install:
 rpm -ivh yum-metadata-parser-1.1.4-10.el7.x86_64.rpmrpm -ivh yum-3.4.3-168.el7.centos.noarch.rpm yum-plugin-fastestmirror-1.1.31-54.el7_8.noarch.rpm repo file /etc/yum.repos.d/CentOS-Base.repo CentOS-Base.repo - cento7
 # CentOS-Base.repo## The mirror system uses the connecting IP address of the client and the# update status of each mirror to pick mirrors that are updated to and# geographically close to the client.</description>
-    </item>
-    
-    <item>
-      <title>在RHEL/CentOS安装Redis</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/redis-centos7/</link>
-      <pubDate>Sat, 11 Jun 2022 04:58:39 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/redis-centos7/</guid>
-      <description>0. preinstall User set $ useradd tdtc $ passwd tdtc Yum Repo 1) yum install $sudo yum groupinstall &amp;#34;Development Tools&amp;#34; $sudo yum install tcl wget v6+ Just to clarify: there is no way this issue will be fixed, Redis &amp;gt;= 6 will require a C11 compiler.
-sudo yum install centos-release-scl sudo yum install devtoolset-8 scl enable devtoolset-8 bash 2) verification $gcc -v $make -v $echo &amp;#39;puts [info patchlevel];exit 0&amp;#39; | tclsh 1.</description>
     </item>
     
     <item>
@@ -1304,30 +1294,6 @@ df -T | awk &amp;#39;{print $1,$2,$NF}&amp;#39; | grep &amp;#34;^/dev&amp;#34; g
 tune2fs -l /dev/vda1 | grep acl 1) 查看 目录的acl设置情况。
 getfacl	/home/fdn 2) 设置 设置指定目录的acl。
 setfacl -m user:site_user:rwx /home/fdn 参考文章 《在 Linux 上给用户赋予指定目录的读写权限》 《setfacl命令》 Unix / Linux change a user&amp;rsquo;s home directory - usermod give read write access to directory in linux </description>
-    </item>
-    
-    <item>
-      <title>spark安装</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_spark_centos/</link>
-      <pubDate>Wed, 15 Apr 2020 00:08:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_spark_centos/</guid>
-      <description>Spark：v2.4
-一、基础软件 1. R-lang sudo yum -y install epel-release sudo yum install R 注意：如果Java没有安装，会附带着安装OpenJDK。
-2. Scala wget https://downloads.lightbend.com/scala/2.12.8/scala-2.12.8.tgz tar xvf scala-2.12.8.tgz sudo mv scala-2.12.8 /usr/lib sudo ln -s /usr/lib/scala-2.12.8 /usr/lib/scala 1) add path $vi ~/.bashrc PATH=$PATH:/usr/lib/scala/bin 二、Spark 1. down &amp;amp; unzip v2.4.1
-mkdir -p ~/app/spark tar zxvf spark-2.4.1-bin-hadoop2.7.tgz -C ~/app/spark mv ~/app/spark/spark-2.4.1-bin-hadoop2.7 ~/app/spark/2.4.1 2. test ./bin/spark-shell --master local[2] input:
-for (i &amp;lt;- 1 to 3; j &amp;lt;- 1 to 3 if i !</description>
-    </item>
-    
-    <item>
-      <title>Hadoop - cluster</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_hadoop_cluster/</link>
-      <pubDate>Tue, 14 Apr 2020 16:08:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_hadoop_cluster/</guid>
-      <description>Prepare server1 server2 server3 server4 NameNode y y DataNode y y y ResourceManager y y NodeManager y y y y Zookeeper y y y y JournalNode y y y ZK-FC y y JobHistor y Server Name IP Host Name server1 192.168.42.107 tdtc201 server2 192.168.42.108 tdtc202 server3 192.168.42.109 tdtc203 server4 192.168.42.110 tdtc204 1. zk zkServer.sh start 安装详见《ZooKeeper multi-server install》
-2. Open firewall Stage I: Installation 1. Unzip /home/$USER/app/hadoop/$version 路径参考Oracle11g
-mkdir -p ~/app/hadoop tar zxvf hadoop-2.</description>
     </item>
     
     <item>
