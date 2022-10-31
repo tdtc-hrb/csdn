@@ -239,8 +239,10 @@ ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED BY &amp
       
       <guid>https://tdtc-hrb.github.io/csdn/post/ops_network_proxy/</guid>
       <description>OS Windows set command
-set http_proxy=http://127.0.0.1:8580 set https_proxy=http://127.0.0.1:8580 Ubuntu export http_proxy=&amp;#34;http://192.168.1.108:1080&amp;#34; export https_proxy=&amp;#34;http://192.168.1.108:1080&amp;#34; With user and password Set up the server in the tool: Check &amp;ldquo;Run xxx as Server(listens 0.0.0.)&amp;rdquo;
-export http_proxy=http://USERNAME:PASSWORD@192.168.1.108:8580/ Ref How to set up proxy using http_proxy &amp;amp; https_proxy environment variable in Linux? software git set proxy git config --global http.proxy http://127.0.0.1:8580 git config --global https.proxy https://127.0.0.1:8580 unset git config --global --unset http.proxy git config --global --unset https.</description>
+set http_proxy=http://127.0.0.1:8580 set https_proxy=http://127.0.0.1:8580 Ubuntu export http_proxy=&amp;#34;http://192.168.1.108:1080&amp;#34; export https_proxy=&amp;#34;http://192.168.1.108:1080&amp;#34; With user and password Set up the server in the tool: Check &amp;ldquo;Run xxx as Server(listens 0.0.0.0)&amp;rdquo;
+export http_proxy=http://USERNAME:PASSWORD@192.168.1.108:8580/ export https_proxy=http://USERNAME:PASSWORD@192.168.1.108:8580/ software VirtualBox Adapter 1 host only, vboxnet0
+Adapter 2 NAT
+Guest os sudo vi /etc/netplan/00-installer-config.yaml network: version: 2 renderer: networkd ethernets: enp0s3: addresses: - 192.168.56.12/24 dhcp4: no enp0s8: dhcp4: no Wine #!/bin/bash sudo dpkg --add-architecture i386 sudo curl -O https://dl.</description>
     </item>
     
     <item>
