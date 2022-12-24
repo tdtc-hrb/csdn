@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="迁移自(blog.csdn.net/xiaobin_HLJ80)"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/" />
+
+    
+        
+    
+
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="" />
+    
+
+    <title>迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+        <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+    
+    <meta name="generator" content="Hugo 0.109.0">
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/"
+    },
+    "description":  null 
+}
+  </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header no-cover">
+
+
+    <nav class="main-nav overlay clearfix">
+        
+        
+            
+              <a class="menu-button icon-feed" href='/csdn/index.xml'>&nbsp;&nbsp;Subscribe</a>
+            
+        
+    </nav>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <h1 class="page-title">迁移自(blog.csdn.net/xiaobin_HLJ80)</h1>
+            <h2 class="page-description"></h2>
+        </div>
+    </div>
+    <a class="scroll-down icon-arrow-left" href="#content"><span class="hidden">Scroll Down</span></a>
+</header>
+
+
+<main id="content" class="content" role="main">
+
+    
+        
+    
+
+    
+
+    
+    
+    
+
+    <div class="extra-pagination inner">
+        <nav class="pagination" role="navigation">
+	
+	    <a class="newer-posts" href="/csdn/page/2/">&larr; Newer Posts</a>
+	
+	<span class="page-number">Page 3 of 12</span>
+	
+	    <a class="older-posts" href="/csdn/page/4/">Older Posts &rarr;</a>
+	
+</nav>
+
+    </div>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/com-ie-repoinfo/">铁路车号读取</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>二进制文件工具：EditPlus Edit -&gt; Hex Viewer replace(regexp/substr,replacement) 使用这个函数来替换多余的空格。 str.replace(/\s/g, &#34;&#34;); split(separator,howmany) 字符串转换成字符数组。 string.split(&#34;,&#34;); 一、js部分 我们把所有的方法放到一个对象（RepoInfo）中。
+var RepoInfo = { }; 1. 获取对象 RepoInfo.getObj = function(objName) { return new ActiveXObject(objName); }; 2. 获取数组 RepoInfo.getArray = function(str) { var ret = new Array(16); var string = str.replace(/\s/g, &#34;&#34;); ret = string.split(&#34;,&#34;); return ret; }; 3. 解码字串 输入字串校验 如果字串空，退出。
+输出框清空 每次赋值前，清空。
+执行COM中的方法 在获取对象非空的情况下，执行。
+RepoInfo.decode = function(string) { if (string == null) return; var obj = RepoInfo. <a class="read-more" href="/csdn/post/com-ie-repoinfo/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-06-13T16:08:08&#43;08:00">
+            13 Jun 2022
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_rhel_repo/">RHEL更换CentOS Yum</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>v7.x Red Hat Enterprise Linux7.x
+Yum Repo rpm -aq|grep yum|xargs rpm -e --nodepsrpm -ivh http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/wget-1.14-18.el7_6.1.x86_64.rpm down:
+wget http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/yum-metadata-parser-1.1.4-10.el7.x86_64.rpmwget http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/yum-3.4.3-168.el7.centos.noarch.rpmwget http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/yum-plugin-fastestmirror-1.1.31-54.el7_8.noarch.rpm install:
+rpm -ivh yum-metadata-parser-1.1.4-10.el7.x86_64.rpmrpm -ivh yum-3.4.3-168.el7.centos.noarch.rpm yum-plugin-fastestmirror-1.1.31-54.el7_8.noarch.rpm repo file /etc/yum.repos.d/CentOS-Base.repo CentOS-Base.repo - cento7
+# CentOS-Base.repo## The mirror system uses the connecting IP address of the client and the# update status of each mirror to pick mirrors that are updated to and# geographically close to the client. <a class="read-more" href="/csdn/post/ops_rhel_repo/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        on
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/yum/">#yum</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/centos7/">#CentOS7</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/epel-release/">#epel-release</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/7.9.2009/">#7.9.2009</a>,
+            
+        
+        <time class="post-date" datetime="2022-06-12T12:58:39&#43;08:00">
+            12 Jun 2022
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/reduxjs-asyn/">重构asyn</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>0. pre 生成基本框 npm install -g create-react-app create-react-app async clone repo https://github.com/redux-saga/redux-saga.git
+1. copy directorys Copy the examples/async/src from the redux-saga to your async/src.
+2. rename main.js async/src
+Rename main.js to index.js
+3. move files async/src
+App.css &amp;&amp; logo.svg -&gt;
+async/src/containers
+App.css &amp;&amp; logo.svg
+4. modify containers/App.js Add the following two blocks of code.
+import logo from &#39;./logo.svg&#39;; import &#39;./App.css&#39;; &lt;div className=&#34;App&#34;&gt; &lt;header className=&#34;App-header&#34;&gt; &lt;img src={logo} className=&#34;App-logo&#34; alt=&#34;logo&#34; /&gt; &lt;h1 className=&#34;App-title&#34;&gt;Welcome to React&lt;/h1&gt; &lt;/header&gt; . <a class="read-more" href="/csdn/post/reduxjs-asyn/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-06-10T07:26:39&#43;08:00">
+            10 Jun 2022
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql57-win/">安装配置MySQL 5.7</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>一、配置和安装 ini配置详见附录
+预配置 需要vc12 redist
+设置环境变量 名称：MYSQL57_HOME 赋值：D:\progFiles\mysql-5.7 init data %MYSQL57_HOME%\bin\mysqld --initialize-insecure --console 注册/注销服务 注册 多个版本的MySQL运行：
+%MYSQL57_HOME%\bin\mysqld --install MySQL57 --defaults-file=&#34;D:\progFiles\mysql-5.7\my.ini&#34; 注销 sc delete mysql57 Enable SSL Connections for MySQL 注意： 可以忽略如下警告信息：
+CA certificate ca.pem is self signed.For more information, see Help and Support Center at http://www.mysql.com. Connection TLS Protocol Configuration mysql&gt; SHOW GLOBAL VARIABLES LIKE &#39;tls_version&#39;; To change the value of tls_version, set it at server startup. For example, to permit connections that use the TLSv1. <a class="read-more" href="/csdn/post/mysql57-win/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-06-07T12:08:39&#43;08:00">
+            7 Jun 2022
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/vc-update-atl/">VC升级时出现的问题</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>VC6迁移到VC2008+
+ATL Active Template Library (ATL)
+C1189 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atlcore.h(35): fatal error C1189: #error : This file requires _WIN32_WINNT to be #defined at least to 0x0403. Value 0x0501 or higher is recommended. A:
+StdAfx.h
+#define _WIN32_WINNT 0x0400 -&gt;
+#define _WIN32_WINNT 0x0501 C1083(atlimpl) c:\users\xiaobin\documents\visual studio 2013\projects\crcfcn_vc\stdafx.cpp(13): fatal error C1083: Cannot open include file: &#39;atlimpl.cpp&#39;: No such file or directory A: solution1 or solution2.
+solution1 Comment out this line stdAfx. <a class="read-more" href="/csdn/post/vc-update-atl/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-05-31T14:28:08&#43;08:00">
+            31 May 2022
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/com-wizards-vc/">创建COM</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>IDE: Visual Studio 2019(v16.11)
+使用Wizard模式创建COM
+一、ATL项目向导 使用ATL Project Wizard创建COM
+1. 建立ATL工程 File-&gt;New-&gt;Project
+选择“MFC/ATL”中“ATL Project”。
+Note: name即是要生成的DLL文件
+2. 工程设置 我们可以自定义工程情况。
+3. 工程属性 取消编译时注册Dll。
+Project -&gt; Properties
+Linker -&gt; Register Output
+No
+二、ATL简单对象向导 1. 创建ATL Simple Object 右击项目名称，选择Add-〉New Item
+2. 设置ATL Simple Object progID 附加支持 progID progID: Simple Object ID
+附加支持 本选项针对IE支持。
+Other -&gt; Support:
+三、添加IDL方法 Tab switching from &ldquo;Solution Explorer&rdquo; to &ldquo;Class View&rdquo;
+Interface(name) -&gt; add -&gt; add method
+添加方法名称以及参数 <a class="read-more" href="/csdn/post/com-wizards-vc/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-05-18T20:08:08&#43;08:00">
+            18 May 2022
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/vc-boost/">安装boost库(VC)</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>vs2008 cl 提示不可用.
+vs2012 Gen b2时出错。
+支持的VC版本(已测)
+名称 VS版本 msvc-12.0 VS2013 msvc-14.0 VS2015 msvc-14.1 VS2017 msvc-14.2 VS2019 1. 编译 在 x86 Native Tools Command Prompt for VS 2019 下运行
+About b2 vs bjam as of Boost 1.47.0, the official name of the executable was changed to b2. Gen b2 bootstrap.bat VS2013 b2 stage --toolset=msvc-12.0 --without-graph --without-graph_parallel --without-math --without-mpi --without-python --without-serialization --without-wave --stagedir=&#34;C:\boost\bin\vc120&#34; link=static runtime-link=shared runtime-link=static threading=multi debug release VS2015 b2 stage --toolset=msvc-14. <a class="read-more" href="/csdn/post/vc-boost/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-05-18T10:08:39&#43;08:00">
+            18 May 2022
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_win_faq1/">Windows的一些设置</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>禁止记事本 开始-&gt;运行-&gt;gpedit.msc-&gt;计算机配置-&gt;windows设置-&gt;安全设置-&gt;软件限制策略
+右键点软件限制策略-&gt;创建软件限制策略
+点其他规则-&gt;右键新建路径规则-&gt;在“路径”下的空白输入框中“%windir%\notepad.exe“（或者c盘是系统盘的情况下：c:\windows\notepad.exe)-&gt;在“安全级别”中选择“不允许”
+附：如果你要限制.txt的程序打开，可以在路径中输入*.txt。
+日文系统 key101 日文改英文键盘
+修改注册表主键： HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\i8042prt\Parameters
+LayerDriver JPN: KBD101.DLL OverrideKeyboardIdentifier: PCAT_101KEY OverrideKeyboardSubtype: 0x00000000(0) win7+添加日文输入 “区域和语言“ ==&gt; ”键盘和语言“
+”键盘和语言“中，点击”更改键盘“， 点”添加“，找到 ”日语（日本）“， 勾选”Microsoft IME“和”日语“，其它不要勾选.
+按键盘”Alt“+”Shift“即可调出日语输入法.
+文件或目录损坏且无法读取 无法读取的所在逻辑盘E:
+chkdsk /F E: How to Delete Old Windows Folder in Windows 10 – Access Denied? takeown /F &#34;C:\Windows.old&#34; /A /R /D Y icacls &#34;C:\Windows.old&#34; /T /grant administrators:F rmdir /s /q &#34;C:\Windows.old&#34; notepad++ 关闭历史文件 打开首选项-&gt;备份 √“记住最后打开的文件” 把对勾去掉即可。
+ssh - It is also possible that a host key has just been changed D:\program-d\putty0. <a class="read-more" href="/csdn/post/ops_win_faq1/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-05-18T08:08:08&#43;08:00">
+            18 May 2022
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c-bsd_socket-server/">使用fork的server</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>GNU Compiler Collection(GCC)
+在“Socket服务器端程序”基础上增加子进程。
+Beej’s Guide Network to Programming 关于Unix/Linux子进程：
+相当于Windows的线程
+调用fork()即可增加子进程。
+要使用fork必须调用waitpid() ！
+waitpid() waitpid函数原型：
+#include&lt;sys/types.h&gt; /* 提供类型pid_t的定义 */ #include&lt;sys/wait.h&gt; pid_t waitpid(pid_t pid, int *status, int options); pid 等于-1时，等待任何一个子进程退出，没有任何限制，此时waitpid和wait的作用一模一样。
+status 我们设置为NULL。
+options 提供了一些额外的选项来控制waitpid，WNOHANG常量表示， 即使没有子进程退出，它也会立即返回，不会像wait那样永远等下去。
+sigaction() sigaction()是waitpid()的开关
+只有给waitpid()信号时，才开启它(waitpid)！ 这时，需要sigaction()。
+sigaction函数原型：
+#include&lt;signal.h&gt; int sigaction(int signum, const struct sigaction *act, struct sigaction *oldact); signum 等于SIGCHLD时，只有子进程停止或者退出才进行调用。
+act 一个指向sigaction结构的指针。
+oldact 一般废止不用。
+我们主要设置结构sigaction的sa_handler、sa_mask和sa_flags三个成员变量即可！
+code /** * Version: 0.2 * * Description: Add signal * */ #include &lt;stdio. <a class="read-more" href="/csdn/post/c-bsd_socket-server/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-05-16T08:08:08&#43;08:00">
+            16 May 2022
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/com-ie-test/">测试COM</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>IDE: Visual Studio 2019(v16.11)
+本文参考: 创建COM
+一、创建COM 增加IE支持： IObjectWithSite
+增加方法 Add STDMETHODIMP CtestSOW::Add(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x + y); return S_OK; } Multiply STDMETHODIMP CtestSOW::Mul(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x * y); return S_OK; } Divide STDMETHODIMP CtestSOW::Div(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x / y); return S_OK; } 二、测试平台 查看依赖：win8. <a class="read-more" href="/csdn/post/com-ie-test/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-05-15T18:08:08&#43;08:00">
+            15 May 2022
+        </time>
+    </footer>
+</article>
+
+    
+
+    <nav class="pagination" role="navigation">
+	
+	    <a class="newer-posts" href="/csdn/page/2/">&larr; Newer Posts</a>
+	
+	<span class="page-number">Page 3 of 12</span>
+	
+	    <a class="older-posts" href="/csdn/page/4/">Older Posts &rarr;</a>
+	
+</nav>
+
+
+
+</main>
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>
+

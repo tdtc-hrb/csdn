@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="c#, c&#43;&#43;" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2022-06-17T08:18:18&#43;08:00" />
+    <meta property="article:published_time" content="2022-12-17T08:18:18&#43;08:00" />
 
     
     
@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.105.0">
+    <meta name="generator" content="Hugo 0.109.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/demo-tdtc/" />
 
@@ -92,15 +92,15 @@
     },
     "headline": "TDTC Demo",
     "name": "TDTC Demo",
-    "wordCount":  233 ,
-    "timeRequired": "PT2M",
+    "wordCount":  204 ,
+    "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/demo-tdtc/",
-    "datePublished": "2022-06-17T08:18Z",
-    "dateModified": "2022-06-17T08:18Z",
+    "datePublished": "2022-12-17T08:18Z",
+    "dateModified": "2022-12-17T08:18Z",
     
     
     "description": "c#, c++",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2022-06-17T08:18:18&#43;08:00">
-            Jun 17, 2022
+          <time class="post-date" datetime="2022-12-17T08:18:18&#43;08:00">
+            Dec 17, 2022
           </time>
         
          
@@ -251,12 +251,12 @@ repoInfo.dll
 <li><a href="https://pan.baidu.com/s/1J5fIUIn4IdBebITKfNGfdw">baidu-yun</a> 提取码: ckwc</li>
 </ul>
 <p>如果datagrid增加序号，增加如下代码：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>DataColumn dc <span style="color:#f92672">=</span> new DataColumn();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>DataColumn dc <span style="color:#f92672">=</span> new <span style="color:#a6e22e">DataColumn</span>();
 </span></span><span style="display:flex;"><span>dc.ColumnName <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;序号&#34;</span>;
 </span></span><span style="display:flex;"><span>dc.AutoIncrement <span style="color:#f92672">=</span> true;
 </span></span><span style="display:flex;"><span>dc.AutoIncrementSeed <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
 </span></span><span style="display:flex;"><span>dc.AutoIncrementStep <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
-</span></span><span style="display:flex;"><span>table.Columns.Add(dc);
+</span></span><span style="display:flex;"><span>table.Columns.<span style="color:#a6e22e">Add</span>(dc);
 </span></span></code></pre></div><h2 id="文档请参考-3">文档请参考</h2>
 <ul>
 <li><a href="https://blog.csdn.net/xiaobin_HLJ80/article/details/21200619">MySQL Connector/Net 的简单使用</a></li>
@@ -286,14 +286,19 @@ Use the Gmail account, published in bitbucket.org.</li>
 <td><a href="https://aka.ms/vs/17/release/vc_redist.x86.exe">vs2015/17/19/22</a></td>
 </tr>
 <tr>
-<td>vc 12.0</td>
+<td>vc 12.0 for win7+</td>
 <td><a href="https://aka.ms/highdpimfc2013x64enu">vs2013</a></td>
 <td><a href="https://aka.ms/highdpimfc2013x86enu">vs2013</a></td>
 </tr>
 <tr>
+<td>vc 12.0 for Win XP]</td>
+<td><a href="https://www.microsoft.com/en-us/download/details.aspx?id=40784">vs2013</a></td>
+<td><a href="https://www.microsoft.com/en-us/download/details.aspx?id=40784">vs2013</a></td>
+</tr>
+<tr>
 <td>vc 11.0(update 4)</td>
 <td><a href="https://download.microsoft.com/download/1/6/B/16B06F60-3B20-4FF2-B699-5E9B7962F9AE/VSU_4/vcredist_x64.exe">vs2012</a></td>
-<td><a href="https://download.microsoft.com/download/1/6/B/16B06F60-3B20-4FF2-B699-5E9B7962F9AE/VSU_4/vcredist_x86.exe">vs2013</a></td>
+<td><a href="https://download.microsoft.com/download/1/6/B/16B06F60-3B20-4FF2-B699-5E9B7962F9AE/VSU_4/vcredist_x86.exe">vs2012</a></td>
 </tr>
 <tr>
 <td>vc 10.0(sp1)</td>
@@ -309,7 +314,7 @@ Use the Gmail account, published in bitbucket.org.</li>
 </table>
 <h2 id="pure">Pure</h2>
 <blockquote>
-<p>Windows xp-</p>
+<p>Windows Vista-</p>
 </blockquote>
 <ul>
 <li>vc 9.0</li>
@@ -326,15 +331,6 @@ Only deploy the program, can not install the VS2013 development environment.</li
 <ul>
 <li>vc 14.x <br>
 vs2015/17/19/22</li>
-</ul>
-<h2 id="mfc-issue">MFC issue</h2>
-<blockquote>
-<p>Note: The MFC of vc2008 and vc2010, found security vulnerabilities.</p>
-</blockquote>
-<p>Fixed list:</p>
-<ul>
-<li><a href="https://www.microsoft.com/en-us/download/details.aspx?id=26368">Microsoft Visual C++ 2008 Service Pack 1 Redistributable Package MFC Security Update</a></li>
-<li><a href="https://www.microsoft.com/en-us/download/details.aspx?id=26999">Microsoft Visual C++ 2010 Service Pack 1 Redistributable Package MFC Security Update</a></li>
 </ul>
 
     </section>
@@ -387,17 +383,10 @@ vs2015/17/19/22</li>
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_network_proxy/">
-          <section class="post">
-              <h2>设置proxy</h2>
-              
-          </section>
-      </a>
   
-  
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/com-ie-repoinfo/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_hadoop_cluster/">
           <section class="post">
-              <h2>铁路车号读取</h2>
+              <h2>Hadoop - cluster</h2>
           </section>
       </a>
   

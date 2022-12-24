@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.105.0">
+    <meta name="generator" content="Hugo 0.109.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/c-string-i2h/" />
 
@@ -216,16 +216,16 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> input <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (argc <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>)
-</span></span><span style="display:flex;"><span>        input <span style="color:#f92672">=</span> atoll(argv[<span style="color:#ae81ff">1</span>]);
+</span></span><span style="display:flex;"><span>        input <span style="color:#f92672">=</span> <span style="color:#a6e22e">atoll</span>(argv[<span style="color:#ae81ff">1</span>]);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    int2hex(input, out);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">int2hex</span>(input, out);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    printf(<span style="color:#e6db74">&#34;%s%llu%s&#34;</span>, <span style="color:#e6db74">&#34;Integer: &#34;</span>, input, <span style="color:#e6db74">&#34; Hex: 0x&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s%llu%s&#34;</span>, <span style="color:#e6db74">&#34;Integer: &#34;</span>, input, <span style="color:#e6db74">&#34; Hex: 0x&#34;</span>);
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (k <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; k <span style="color:#f92672">&lt;</span> iDigit; k<span style="color:#f92672">++</span>) {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">char</span> ch <span style="color:#f92672">=</span> out[k];
-</span></span><span style="display:flex;"><span>        printf(<span style="color:#e6db74">&#34;%c&#34;</span>, ch);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%c&#34;</span>, ch);
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>}

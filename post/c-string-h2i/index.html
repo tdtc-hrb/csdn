@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.105.0">
+    <meta name="generator" content="Hugo 0.109.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/c-string-h2i/" />
 
@@ -299,8 +299,8 @@
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> argv[])
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(argc <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>)
-</span></span><span style="display:flex;"><span>        printf(<span style="color:#e6db74">&#34;long integer: %lu</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, htoi(argv[<span style="color:#ae81ff">1</span>]));
-</span></span><span style="display:flex;"><span>    printf(<span style="color:#e6db74">&#34;M/Byte: %ld</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, MB);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;long integer: %lu</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, <span style="color:#a6e22e">htoi</span>(argv[<span style="color:#ae81ff">1</span>]));
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;M/Byte: %ld</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, MB);
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h2 id="hex2intc">hex2int.c</h2>
@@ -348,7 +348,7 @@
 </span></span><span style="display:flex;"><span>    value <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>    iCh <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    len <span style="color:#f92672">=</span> strlen(s);
+</span></span><span style="display:flex;"><span>    len <span style="color:#f92672">=</span> <span style="color:#a6e22e">strlen</span>(s);
 </span></span><span style="display:flex;"><span>    pos <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    len <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span>;
@@ -357,7 +357,7 @@
 </span></span><span style="display:flex;"><span>                    <span style="color:#f92672">||</span> (s[i] <span style="color:#f92672">&gt;=</span> <span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#f92672">&amp;&amp;</span> s[i] <span style="color:#f92672">&lt;=</span> <span style="color:#e6db74">&#39;f&#39;</span>)
 </span></span><span style="display:flex;"><span>                    <span style="color:#f92672">||</span> (s[i] <span style="color:#f92672">&gt;=</span> <span style="color:#e6db74">&#39;A&#39;</span> <span style="color:#f92672">&amp;&amp;</span> s[i] <span style="color:#f92672">&lt;=</span> <span style="color:#e6db74">&#39;F&#39;</span>); i<span style="color:#f92672">--</span>) {
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        ch <span style="color:#f92672">=</span> toLower(s[i]); <span style="color:#75715e">/* tolower() defined in ctype.h */</span>
+</span></span><span style="display:flex;"><span>        ch <span style="color:#f92672">=</span> <span style="color:#a6e22e">toLower</span>(s[i]); <span style="color:#75715e">/* tolower() defined in ctype.h */</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">switch</span> (ch) {
 </span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;0&#39;</span><span style="color:#f92672">:</span>
@@ -414,7 +414,7 @@
 </span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>;
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        iPow <span style="color:#f92672">=</span> power(<span style="color:#ae81ff">16</span>, pos);
+</span></span><span style="display:flex;"><span>        iPow <span style="color:#f92672">=</span> <span style="color:#a6e22e">power</span>(<span style="color:#ae81ff">16</span>, pos);
 </span></span><span style="display:flex;"><span>        pos<span style="color:#f92672">++</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>        value <span style="color:#f92672">=</span> iPow <span style="color:#f92672">*</span> iCh;

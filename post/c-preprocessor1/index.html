@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.105.0">
+    <meta name="generator" content="Hugo 0.109.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/c-preprocessor1/" />
 
@@ -195,11 +195,11 @@
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">void</span>)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">float</span> fahrenheit, celsius;
-</span></span><span style="display:flex;"><span>	printf(<span style="color:#e6db74">&#34;Enter Fahrenheit temperature: &#34;</span>);
-</span></span><span style="display:flex;"><span>	scanf(<span style="color:#e6db74">&#34;%g&#34;</span>, <span style="color:#f92672">&amp;</span>fahrenheit);
-</span></span><span style="display:flex;"><span>	printf(<span style="color:#e6db74">&#34;%g</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, fahrenheit);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Enter Fahrenheit temperature: &#34;</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%g&#34;</span>, <span style="color:#f92672">&amp;</span>fahrenheit);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%g</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, fahrenheit);
 </span></span><span style="display:flex;"><span>	celsius <span style="color:#f92672">=</span> (fahrenheit <span style="color:#f92672">-</span> FREEZING_PT) <span style="color:#f92672">*</span> SCALE_FACTOR;
-</span></span><span style="display:flex;"><span>	printf(<span style="color:#e6db74">&#34;Celsius equivalent is: %g&#34;</span>, celsius);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Celsius equivalent is: %g&#34;</span>, celsius);
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><ol>
@@ -238,11 +238,11 @@
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">void</span>)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">float</span> fahrenheit, celsius;
-</span></span><span style="display:flex;"><span>	printf(<span style="color:#e6db74">&#34;Enter Fahrenheit temperature: &#34;</span>);
-</span></span><span style="display:flex;"><span>	scanf(<span style="color:#e6db74">&#34;%g&#34;</span>, <span style="color:#f92672">&amp;</span>fahrenheit);
-</span></span><span style="display:flex;"><span>	printf(<span style="color:#e6db74">&#34;%g</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, fahrenheit);
-</span></span><span style="display:flex;"><span>	celsius <span style="color:#f92672">=</span> FA2CE(fahrenheit);
-</span></span><span style="display:flex;"><span>	printf(<span style="color:#e6db74">&#34;Celsius equivalent is: %g&#34;</span>, celsius);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Enter Fahrenheit temperature: &#34;</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%g&#34;</span>, <span style="color:#f92672">&amp;</span>fahrenheit);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%g</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, fahrenheit);
+</span></span><span style="display:flex;"><span>	celsius <span style="color:#f92672">=</span> <span style="color:#a6e22e">FA2CE</span>(fahrenheit);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Celsius equivalent is: %g&#34;</span>, celsius);
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div>

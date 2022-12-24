@@ -6,7 +6,21 @@
     <description>Recent content on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 11 Oct 2022 00:08:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 Dec 2022 08:18:18 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TDTC Demo</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/demo-tdtc/</link>
+      <pubDate>Sat, 17 Dec 2022 08:18:18 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/demo-tdtc/</guid>
+      <description>系统需求 Mixed(x86 and x64): Windows 10 - Windows Vista Pure(x86): Windows XP - Windows 3.1
+ref &amp;ldquo;VC Redist&amp;rdquo;
+注册下列COM组件
+xbfInfo.dllrepoInfo.dll callXBFLib 生成/读取xbf文件.
+文档请参考 callXBFLibrary - 调用非托管DLL callXBFLibrary - 调用COM 配置文件 xbfConfig.ini
+[config] type = MySQL [MS-Access] DB = v:\fde.mdb Pwd = wwsrts12 [MSSQL] Server = ddrwaas2 DB = dddrrewq User = ttrrre Pwd = qwerty [MySQL] Server = 192.168.1.107 DB = mysql User = DBAdmin Pwd = xbfirst repoFmtGen 生成固定格式的报文。</description>
+    </item>
+    
     <item>
       <title>Hadoop - cluster</title>
       <link>https://tdtc-hrb.github.io/csdn/post/ops_hadoop_cluster/</link>
@@ -243,20 +257,6 @@ set http_proxy=http://127.0.0.1:8580 set https_proxy=http://127.0.0.1:8580 Ubunt
 export http_proxy=http://USERNAME:PASSWORD@192.168.1.108:8580/ export https_proxy=http://USERNAME:PASSWORD@192.168.1.108:8580/ software VirtualBox Adapter 1 host only, vboxnet0
 Adapter 2 NAT
 Guest os sudo vi /etc/netplan/00-installer-config.yaml network: version: 2 renderer: networkd ethernets: enp0s3: addresses: - 192.168.56.12/24 dhcp4: no enp0s8: dhcp4: no Wine #!/bin/bash sudo dpkg --add-architecture i386 sudo curl -O https://dl.</description>
-    </item>
-    
-    <item>
-      <title>TDTC Demo</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/demo-tdtc/</link>
-      <pubDate>Fri, 17 Jun 2022 08:18:18 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/demo-tdtc/</guid>
-      <description>系统需求 Mixed(x86 and x64): Windows 10 - Windows Vista Pure(x86): Windows XP - Windows 3.1
-ref &amp;ldquo;VC Redist&amp;rdquo;
-注册下列COM组件
-xbfInfo.dllrepoInfo.dll callXBFLib 生成/读取xbf文件.
-文档请参考 callXBFLibrary - 调用非托管DLL callXBFLibrary - 调用COM 配置文件 xbfConfig.ini
-[config] type = MySQL [MS-Access] DB = v:\fde.mdb Pwd = wwsrts12 [MSSQL] Server = ddrwaas2 DB = dddrrewq User = ttrrre Pwd = qwerty [MySQL] Server = 192.168.1.107 DB = mysql User = DBAdmin Pwd = xbfirst repoFmtGen 生成固定格式的报文。</description>
     </item>
     
     <item>

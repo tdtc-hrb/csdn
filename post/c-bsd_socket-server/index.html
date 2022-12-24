@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.105.0">
+    <meta name="generator" content="Hugo 0.109.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/c-bsd_socket-server/" />
 
@@ -195,7 +195,7 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;sys/types.h&gt;   /* 提供类型pid_t的定义 */</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;sys/wait.h&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>pid_t <span style="color:#a6e22e">waitpid</span>(pid_t pid, <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>status, <span style="color:#66d9ef">int</span> options);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">pid_t</span> <span style="color:#a6e22e">waitpid</span>(<span style="color:#66d9ef">pid_t</span> pid, <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>status, <span style="color:#66d9ef">int</span> options);
 </span></span></code></pre></div><ul>
 <li>
 <p>pid <br>
@@ -258,7 +258,7 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sigchild_handler</span>()
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">while</span> (waitpid(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, NULL, WNOHANG) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">waitpid</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, NULL, WNOHANG) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>);
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>argv[])
@@ -277,29 +277,29 @@
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>msg;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (argc <span style="color:#f92672">!=</span> <span style="color:#ae81ff">2</span>) {
-</span></span><span style="display:flex;"><span>		fprintf(stderr, <span style="color:#e6db74">&#34;Usage: Not found Read File&#34;</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fprintf</span>(stderr, <span style="color:#e6db74">&#34;Usage: Not found Read File&#34;</span>);
 </span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	memset(<span style="color:#f92672">&amp;</span>hints, <span style="color:#ae81ff">0</span>, <span style="color:#66d9ef">sizeof</span>(hints));
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">memset</span>(<span style="color:#f92672">&amp;</span>hints, <span style="color:#ae81ff">0</span>, <span style="color:#66d9ef">sizeof</span>(hints));
 </span></span><span style="display:flex;"><span>	hints.ai_family <span style="color:#f92672">=</span> AF_UNSPEC;
 </span></span><span style="display:flex;"><span>	hints.ai_socktype <span style="color:#f92672">=</span> SOCK_STREAM;
 </span></span><span style="display:flex;"><span>	hints.ai_flags <span style="color:#f92672">=</span> AI_PASSIVE;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	status <span style="color:#f92672">=</span> getaddrinfo(NULL, SERVPORT, <span style="color:#f92672">&amp;</span>hints, <span style="color:#f92672">&amp;</span>res);
+</span></span><span style="display:flex;"><span>	status <span style="color:#f92672">=</span> <span style="color:#a6e22e">getaddrinfo</span>(NULL, SERVPORT, <span style="color:#f92672">&amp;</span>hints, <span style="color:#f92672">&amp;</span>res);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (status <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>) {
-</span></span><span style="display:flex;"><span>		fprintf(stderr, <span style="color:#e6db74">&#34;getaddrinfo, fail!&#34;</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fprintf</span>(stderr, <span style="color:#e6db74">&#34;getaddrinfo, fail!&#34;</span>);
 </span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">2</span>;
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	sockfd <span style="color:#f92672">=</span> socket(res<span style="color:#f92672">-&gt;</span>ai_family, res<span style="color:#f92672">-&gt;</span>ai_socktype, res<span style="color:#f92672">-&gt;</span>ai_protocol);
+</span></span><span style="display:flex;"><span>	sockfd <span style="color:#f92672">=</span> <span style="color:#a6e22e">socket</span>(res<span style="color:#f92672">-&gt;</span>ai_family, res<span style="color:#f92672">-&gt;</span>ai_socktype, res<span style="color:#f92672">-&gt;</span>ai_protocol);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	bind(sockfd, res<span style="color:#f92672">-&gt;</span>ai_addr, res<span style="color:#f92672">-&gt;</span>ai_addrlen);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">bind</span>(sockfd, res<span style="color:#f92672">-&gt;</span>ai_addr, res<span style="color:#f92672">-&gt;</span>ai_addrlen);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	listen(sockfd, <span style="color:#ae81ff">5</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">listen</span>(sockfd, <span style="color:#ae81ff">5</span>);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	printf(<span style="color:#e6db74">&#34;======== Please Wait Client =========</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;======== Please Wait Client =========</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#75715e">/* struct sigaction notes from POSIX:
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> 	 *
@@ -309,14 +309,14 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> 	 *      application should not use both simultaneously.
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> 	 */</span>
 </span></span><span style="display:flex;"><span>	sa.sa_handler <span style="color:#f92672">=</span> sigchild_handler;
-</span></span><span style="display:flex;"><span>	sigemptyset(<span style="color:#f92672">&amp;</span>sa.sa_mask);	<span style="color:#75715e">/* Additional set of signals to be blocked */</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sigemptyset</span>(<span style="color:#f92672">&amp;</span>sa.sa_mask);	<span style="color:#75715e">/* Additional set of signals to be blocked */</span>
 </span></span><span style="display:flex;"><span>                              	<span style="color:#75715e">/* during execution of signal-catching function. */</span>
 </span></span><span style="display:flex;"><span>	sa.sa_flags <span style="color:#f92672">=</span> SA_RESTART;	<span style="color:#75715e">/* Special flags to affect behavior of signal */</span>
 </span></span><span style="display:flex;"><span>								<span style="color:#75715e">/* SA_RESTART 0x10000000 	// Restart syscall on signal return */</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (sigaction(SIGCHLD, <span style="color:#f92672">&amp;</span>sa, NULL) <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) {	<span style="color:#75715e">/* SIGCHLD 20	// to parent on child stop or exit */</span>
-</span></span><span style="display:flex;"><span>		fprintf(stderr, <span style="color:#e6db74">&#34;sigaction fail!&#34;</span>);
-</span></span><span style="display:flex;"><span>		exit(<span style="color:#ae81ff">3</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">sigaction</span>(SIGCHLD, <span style="color:#f92672">&amp;</span>sa, NULL) <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) {	<span style="color:#75715e">/* SIGCHLD 20	// to parent on child stop or exit */</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fprintf</span>(stderr, <span style="color:#e6db74">&#34;sigaction fail!&#34;</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">exit</span>(<span style="color:#ae81ff">3</span>);
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">while</span>(<span style="color:#ae81ff">1</span>) { <span style="color:#75715e">// loop forever!
@@ -324,30 +324,30 @@
 </span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>addr;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">int</span> len <span style="color:#f92672">=</span> <span style="color:#66d9ef">sizeof</span>(clientAddr);
-</span></span><span style="display:flex;"><span>		connFd <span style="color:#f92672">=</span> accept(sockfd, (<span style="color:#66d9ef">struct</span> sockaddr <span style="color:#f92672">*</span>)<span style="color:#f92672">&amp;</span>clientAddr, <span style="color:#f92672">&amp;</span>len);
+</span></span><span style="display:flex;"><span>		connFd <span style="color:#f92672">=</span> <span style="color:#a6e22e">accept</span>(sockfd, (<span style="color:#66d9ef">struct</span> sockaddr <span style="color:#f92672">*</span>)<span style="color:#f92672">&amp;</span>clientAddr, <span style="color:#f92672">&amp;</span>len);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>		<span style="color:#75715e">/* View Client IP */</span>
 </span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">struct</span> sockaddr_in <span style="color:#f92672">*</span>ipv4 <span style="color:#f92672">=</span> (<span style="color:#66d9ef">struct</span> sockaddr_in <span style="color:#f92672">*</span>)<span style="color:#f92672">&amp;</span>clientAddr;
 </span></span><span style="display:flex;"><span>		addr <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>(ipv4<span style="color:#f92672">-&gt;</span>sin_addr);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		inet_ntop(AF_INET, addr, ipstr, <span style="color:#66d9ef">sizeof</span>(ipstr));
-</span></span><span style="display:flex;"><span>		printf(<span style="color:#e6db74">&#34;client: %s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ipstr);
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">inet_ntop</span>(AF_INET, addr, ipstr, <span style="color:#66d9ef">sizeof</span>(ipstr));
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;client: %s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ipstr);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>fork()) {
-</span></span><span style="display:flex;"><span>			close(sockfd);	<span style="color:#75715e">/* child doesn&#39;t need the listener */</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">fork</span>()) {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">close</span>(sockfd);	<span style="color:#75715e">/* child doesn&#39;t need the listener */</span>
 </span></span><span style="display:flex;"><span>			<span style="color:#75715e">/* Copy Data */</span>
 </span></span><span style="display:flex;"><span>			msg <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;The server simply displays a message!&#34;</span>;
-</span></span><span style="display:flex;"><span>			sendSta <span style="color:#f92672">=</span> send(connFd, msg, strlen(msg), <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>			sendSta <span style="color:#f92672">=</span> <span style="color:#a6e22e">send</span>(connFd, msg, <span style="color:#a6e22e">strlen</span>(msg), <span style="color:#ae81ff">0</span>);
 </span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> (sendSta <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
-</span></span><span style="display:flex;"><span>				fprintf(stderr, <span style="color:#e6db74">&#34;send fail!&#34;</span>);
-</span></span><span style="display:flex;"><span>			close(connFd);
-</span></span><span style="display:flex;"><span>			exit(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">fprintf</span>(stderr, <span style="color:#e6db74">&#34;send fail!&#34;</span>);
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">close</span>(connFd);
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">exit</span>(<span style="color:#ae81ff">0</span>);
 </span></span><span style="display:flex;"><span>		}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		close(connFd);
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">close</span>(connFd);
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	close(sockfd);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">close</span>(sockfd);
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h2 id="测试windows客户端程序">测试Windows客户端程序</h2>

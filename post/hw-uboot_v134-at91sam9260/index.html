@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.105.0">
+    <meta name="generator" content="Hugo 0.109.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/hw-uboot_v134-at91sam9260/" />
 
@@ -285,16 +285,16 @@ README</p>
 </span></span></span></code></pre></div><h2 id="中断部分">中断部分</h2>
 <p>删除../cpu/arm926ejs/下的interrupts.c，否则会出现多重定义的问题！</p>
 <h1 id="3-宏修改">3. 宏修改</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span> CFG_<span style="color:#f92672">*</span>_<span style="color:#f92672">*</span> <span style="color:#f92672">--</span><span style="color:#960050;background-color:#1e0010">〉</span> CONFIG_<span style="color:#f92672">*</span>_<span style="color:#f92672">*</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> </span>CFG_<span style="color:#f92672">*</span>_<span style="color:#f92672">*</span> <span style="color:#f92672">--</span><span style="color:#960050;background-color:#1e0010">〉</span> CONFIG_<span style="color:#f92672">*</span>_<span style="color:#f92672">*</span>
 </span></span></code></pre></div><h2 id="1-net">1) net</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>   <span style="color:#75715e">#if(CONFIG_COMMANDS &amp; CFG_CMD_NET)
-</span></span></span></code></pre></div><p>   &ndash;〉</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>  <span style="color:#75715e">#if defined(CONFIG_CMD_NET)
-</span></span></span></code></pre></div><h2 id="2-nand">2) nand</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>  <span style="color:#75715e">#if(CONFIG_COMMANDS &amp; CFG_CMD_NAND)
-</span></span></span></code></pre></div><p>  &ndash;〉</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>  <span style="color:#75715e">#ifdefined(CONFIG _CMD_NAND)
-</span></span></span></code></pre></div><h3 id="nand命令">Nand命令</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">  </span> <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#66d9ef">if</span>(CONFIG_COMMANDS <span style="color:#f92672">&amp;</span> CFG_CMD_NET)
+</span></span></code></pre></div><p>   &ndash;〉</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">  #</span><span style="color:#66d9ef">if</span> <span style="color:#a6e22e">defined</span>(CONFIG_CMD_NET)
+</span></span></code></pre></div><h2 id="2-nand">2) nand</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> </span> <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#66d9ef">if</span>(CONFIG_COMMANDS <span style="color:#f92672">&amp;</span> CFG_CMD_NAND)
+</span></span></code></pre></div><p>  &ndash;〉</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> </span> <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">ifdefined</span>(CONFIG _CMD_NAND)
+</span></span></code></pre></div><h3 id="nand命令">Nand命令</h3>
 <p>  config_cmd_default.h：添加宏定义CONFIG_CMD_NAND；</p>
 <p>  宏定义来源：config_cmd_all.h</p>
 <h1 id="resource">resource</h1>

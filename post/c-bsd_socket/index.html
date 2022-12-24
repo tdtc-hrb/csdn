@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.105.0">
+    <meta name="generator" content="Hugo 0.109.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/c-bsd_socket/" />
 
@@ -212,50 +212,50 @@ getaddrinfo() -&gt; socket() -&gt; connect() -&gt; recv()</li>
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>addr;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (argc <span style="color:#f92672">!=</span> <span style="color:#ae81ff">3</span>) {
-</span></span><span style="display:flex;"><span>		fprintf(stderr, <span style="color:#e6db74">&#34;Usage: Not Server IP And Port!&#34;</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fprintf</span>(stderr, <span style="color:#e6db74">&#34;Usage: Not Server IP And Port!&#34;</span>);
 </span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	memset(<span style="color:#f92672">&amp;</span>hints, <span style="color:#ae81ff">0</span>, <span style="color:#66d9ef">sizeof</span>(hints));
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">memset</span>(<span style="color:#f92672">&amp;</span>hints, <span style="color:#ae81ff">0</span>, <span style="color:#66d9ef">sizeof</span>(hints));
 </span></span><span style="display:flex;"><span>	hints.ai_family <span style="color:#f92672">=</span> AF_UNSPEC;
 </span></span><span style="display:flex;"><span>	hints.ai_socktype <span style="color:#f92672">=</span> SOCK_STREAM;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	status <span style="color:#f92672">=</span> getaddrinfo(argv[<span style="color:#ae81ff">1</span>], argv[<span style="color:#ae81ff">2</span>], <span style="color:#f92672">&amp;</span>hints, <span style="color:#f92672">&amp;</span>res);
+</span></span><span style="display:flex;"><span>	status <span style="color:#f92672">=</span> <span style="color:#a6e22e">getaddrinfo</span>(argv[<span style="color:#ae81ff">1</span>], argv[<span style="color:#ae81ff">2</span>], <span style="color:#f92672">&amp;</span>hints, <span style="color:#f92672">&amp;</span>res);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (status <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>) {
-</span></span><span style="display:flex;"><span>		fprintf(stderr, <span style="color:#e6db74">&#34;Error, Server IP And Port!&#34;</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fprintf</span>(stderr, <span style="color:#e6db74">&#34;Error, Server IP And Port!&#34;</span>);
 </span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">2</span>;
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	sockfd <span style="color:#f92672">=</span> socket(res<span style="color:#f92672">-&gt;</span>ai_family, res<span style="color:#f92672">-&gt;</span>ai_socktype, res<span style="color:#f92672">-&gt;</span>ai_protocol);
+</span></span><span style="display:flex;"><span>	sockfd <span style="color:#f92672">=</span> <span style="color:#a6e22e">socket</span>(res<span style="color:#f92672">-&gt;</span>ai_family, res<span style="color:#f92672">-&gt;</span>ai_socktype, res<span style="color:#f92672">-&gt;</span>ai_protocol);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (sockfd <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
-</span></span><span style="display:flex;"><span>		fprintf(stderr, <span style="color:#e6db74">&#34;Create, socket fail!&#34;</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fprintf</span>(stderr, <span style="color:#e6db74">&#34;Create, socket fail!&#34;</span>);
 </span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">3</span>;
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	connSta <span style="color:#f92672">=</span> connect(sockfd, res<span style="color:#f92672">-&gt;</span>ai_addr, res<span style="color:#f92672">-&gt;</span>ai_addrlen);
+</span></span><span style="display:flex;"><span>	connSta <span style="color:#f92672">=</span> <span style="color:#a6e22e">connect</span>(sockfd, res<span style="color:#f92672">-&gt;</span>ai_addr, res<span style="color:#f92672">-&gt;</span>ai_addrlen);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (connSta <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>) {
-</span></span><span style="display:flex;"><span>		fprintf(stderr, <span style="color:#e6db74">&#34;Connect, Remote Host fail!&#34;</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fprintf</span>(stderr, <span style="color:#e6db74">&#34;Connect, Remote Host fail!&#34;</span>);
 </span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">4</span>;
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">else</span> {
 </span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">struct</span> sockaddr_in <span style="color:#f92672">*</span>ipv4 <span style="color:#f92672">=</span> (<span style="color:#66d9ef">struct</span> sockaddr_in <span style="color:#f92672">*</span>)res<span style="color:#f92672">-&gt;</span>ai_addr;
 </span></span><span style="display:flex;"><span>		addr <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>(ipv4<span style="color:#f92672">-&gt;</span>sin_addr);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		inet_ntop(res<span style="color:#f92672">-&gt;</span>ai_family, addr, ipstr, <span style="color:#66d9ef">sizeof</span>(ipstr));
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">inet_ntop</span>(res<span style="color:#f92672">-&gt;</span>ai_family, addr, ipstr, <span style="color:#66d9ef">sizeof</span>(ipstr));
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		printf(<span style="color:#e6db74">&#34;Linked: Host = %s, Port = %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ipstr, ntohs(ipv4<span style="color:#f92672">-&gt;</span>sin_port));
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Linked: Host = %s, Port = %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ipstr, <span style="color:#a6e22e">ntohs</span>(ipv4<span style="color:#f92672">-&gt;</span>sin_port));
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	recvSta <span style="color:#f92672">=</span> recv(sockfd, buffer, <span style="color:#66d9ef">sizeof</span>(buffer), <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>	recvSta <span style="color:#f92672">=</span> <span style="color:#a6e22e">recv</span>(sockfd, buffer, <span style="color:#66d9ef">sizeof</span>(buffer), <span style="color:#ae81ff">0</span>);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, buffer);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, buffer);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	freeaddrinfo(res);
-</span></span><span style="display:flex;"><span>	close(sockfd);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">freeaddrinfo</span>(res);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">close</span>(sockfd);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>}
@@ -286,52 +286,52 @@ getaddrinfo() -&gt; socket() -&gt; bind() -&gt; listen() -&gt; accept() -&gt; se
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>msg;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (argc <span style="color:#f92672">!=</span> <span style="color:#ae81ff">2</span>) {
-</span></span><span style="display:flex;"><span>		fprintf(stderr, <span style="color:#e6db74">&#34;Usage: Not found Read File&#34;</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fprintf</span>(stderr, <span style="color:#e6db74">&#34;Usage: Not found Read File&#34;</span>);
 </span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	memset(<span style="color:#f92672">&amp;</span>hints, <span style="color:#ae81ff">0</span>, <span style="color:#66d9ef">sizeof</span>(hints));
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">memset</span>(<span style="color:#f92672">&amp;</span>hints, <span style="color:#ae81ff">0</span>, <span style="color:#66d9ef">sizeof</span>(hints));
 </span></span><span style="display:flex;"><span>	hints.ai_family <span style="color:#f92672">=</span> AF_UNSPEC;
 </span></span><span style="display:flex;"><span>	hints.ai_socktype <span style="color:#f92672">=</span> SOCK_STREAM;
 </span></span><span style="display:flex;"><span>	hints.ai_flags <span style="color:#f92672">=</span> AI_PASSIVE;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	status <span style="color:#f92672">=</span> getaddrinfo(NULL, SERVPORT, <span style="color:#f92672">&amp;</span>hints, <span style="color:#f92672">&amp;</span>res);
+</span></span><span style="display:flex;"><span>	status <span style="color:#f92672">=</span> <span style="color:#a6e22e">getaddrinfo</span>(NULL, SERVPORT, <span style="color:#f92672">&amp;</span>hints, <span style="color:#f92672">&amp;</span>res);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (status <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>) {
-</span></span><span style="display:flex;"><span>		fprintf(stderr, <span style="color:#e6db74">&#34;getaddrinfo, fail!&#34;</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fprintf</span>(stderr, <span style="color:#e6db74">&#34;getaddrinfo, fail!&#34;</span>);
 </span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">2</span>;
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	sockfd <span style="color:#f92672">=</span> socket(res<span style="color:#f92672">-&gt;</span>ai_family, res<span style="color:#f92672">-&gt;</span>ai_socktype, res<span style="color:#f92672">-&gt;</span>ai_protocol);
+</span></span><span style="display:flex;"><span>	sockfd <span style="color:#f92672">=</span> <span style="color:#a6e22e">socket</span>(res<span style="color:#f92672">-&gt;</span>ai_family, res<span style="color:#f92672">-&gt;</span>ai_socktype, res<span style="color:#f92672">-&gt;</span>ai_protocol);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	bind(sockfd, res<span style="color:#f92672">-&gt;</span>ai_addr, res<span style="color:#f92672">-&gt;</span>ai_addrlen);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">bind</span>(sockfd, res<span style="color:#f92672">-&gt;</span>ai_addr, res<span style="color:#f92672">-&gt;</span>ai_addrlen);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	listen(sockfd, <span style="color:#ae81ff">5</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">listen</span>(sockfd, <span style="color:#ae81ff">5</span>);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	printf(<span style="color:#e6db74">&#34;======== Please Wait Client =========</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;======== Please Wait Client =========</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">while</span>(<span style="color:#ae81ff">1</span>) { <span style="color:#75715e">// loop forever!
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">char</span> ipstr[INET_ADDRSTRLEN];
 </span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>addr;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">int</span> len <span style="color:#f92672">=</span> <span style="color:#66d9ef">sizeof</span>(cliAddr);
-</span></span><span style="display:flex;"><span>		connFd <span style="color:#f92672">=</span> accept(sockfd, (<span style="color:#66d9ef">struct</span> sockaddr <span style="color:#f92672">*</span>)<span style="color:#f92672">&amp;</span>cliAddr, <span style="color:#f92672">&amp;</span>len);
+</span></span><span style="display:flex;"><span>		connFd <span style="color:#f92672">=</span> <span style="color:#a6e22e">accept</span>(sockfd, (<span style="color:#66d9ef">struct</span> sockaddr <span style="color:#f92672">*</span>)<span style="color:#f92672">&amp;</span>cliAddr, <span style="color:#f92672">&amp;</span>len);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>		<span style="color:#75715e">/* View Client IP */</span>
 </span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">struct</span> sockaddr_in <span style="color:#f92672">*</span>ipv4 <span style="color:#f92672">=</span> (<span style="color:#66d9ef">struct</span> sockaddr_in <span style="color:#f92672">*</span>)<span style="color:#f92672">&amp;</span>cliAddr;
 </span></span><span style="display:flex;"><span>		addr <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>(ipv4<span style="color:#f92672">-&gt;</span>sin_addr);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		inet_ntop(AF_INET, addr, ipstr, <span style="color:#66d9ef">sizeof</span>(ipstr));
-</span></span><span style="display:flex;"><span>		printf(<span style="color:#e6db74">&#34;client: %s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ipstr);
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">inet_ntop</span>(AF_INET, addr, ipstr, <span style="color:#66d9ef">sizeof</span>(ipstr));
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;client: %s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ipstr);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>		<span style="color:#75715e">/* Copy Data */</span>
 </span></span><span style="display:flex;"><span>		msg <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello world!&#34;</span>;
-</span></span><span style="display:flex;"><span>		sendSta <span style="color:#f92672">=</span> send(connFd, msg, strlen(msg), <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>		sendSta <span style="color:#f92672">=</span> <span style="color:#a6e22e">send</span>(connFd, msg, <span style="color:#a6e22e">strlen</span>(msg), <span style="color:#ae81ff">0</span>);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		close(connFd);
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">close</span>(connFd);
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	close(sockfd);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">close</span>(sockfd);
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div>

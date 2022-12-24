@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="迁移自(blog.csdn.net/xiaobin_HLJ80)"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/" />
+
+    
+        
+    
+
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="" />
+    
+
+    <title>迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+        <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+    
+    <meta name="generator" content="Hugo 0.109.0">
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/"
+    },
+    "description":  null 
+}
+  </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header no-cover">
+
+
+    <nav class="main-nav overlay clearfix">
+        
+        
+            
+              <a class="menu-button icon-feed" href='/csdn/index.xml'>&nbsp;&nbsp;Subscribe</a>
+            
+        
+    </nav>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <h1 class="page-title">迁移自(blog.csdn.net/xiaobin_HLJ80)</h1>
+            <h2 class="page-description"></h2>
+        </div>
+    </div>
+    <a class="scroll-down icon-arrow-left" href="#content"><span class="hidden">Scroll Down</span></a>
+</header>
+
+
+<main id="content" class="content" role="main">
+
+    
+        
+    
+
+    
+
+    
+    
+    
+
+    <div class="extra-pagination inner">
+        <nav class="pagination" role="navigation">
+	
+	    <a class="newer-posts" href="/csdn/page/6/">&larr; Newer Posts</a>
+	
+	<span class="page-number">Page 7 of 12</span>
+	
+	    <a class="older-posts" href="/csdn/page/8/">Older Posts &rarr;</a>
+	
+</nav>
+
+    </div>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_data_transmission/">Linux与Windows互传数据</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>一、光盘方式 VMware
+1. 制作ISO 打开UltralISO，把需要的文件拖拽过去即可。
+2. Linux 1) look ls -l /dev | grep cdrom 2) load sudo mount /dev/cdrom /mnt/ 3) unload sudo umount /mnt 二、scp 1. Windows-&gt;Linux Windows的scp包含在putty工具中。
+pscp f:\docker-soft\docker-compose-Linux-x86_64 tdtc@192.168.211.131:/home/tdtc/ pscp f:\docker-soft\protobuf-cpp-3.11.4.tar.gz tdtc@192.168.211.131:/home/tdtc/ pscp f:\docker-soft\go1.13.8.linux-amd64.tar.gz tdtc@192.168.211.131:/home/tdtc 2. Linux-&gt;Windows 注意：仅适用于win10.
+1）增加OpenSSH Server 安装OpenSSH 开始菜单-》设置-》应用-》管理可选功能: 开启OpenSSH 注意：关闭Windows防火墙或允许22端口。 2）传送文件 在Linux下操作。
+scp /home/tdtc/go1.13.8.linux-amd64.tar.gz xiaobin@192.168.211.112:/D:\war  <a class="read-more" href="/csdn/post/ops_data_transmission/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-15T16:08:08&#43;08:00">
+            15 May 2020
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/css-bootstrap-grid/">Grid system</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p> 在V2.3.2中，栅格系统默认是不支持移动设备的； 但V3.0版本，已经默认支持移动设备。
+v2 Bootstrap(v2) 默认的栅格系统为12列 ，形成一个940px宽的容器，默认没有启用 &ldquo;响应式布局特性&rdquo; 。 如果加入响应式布局CSS文件，栅格系统会自动根据可视窗口的宽度从724px到1170px进行动态调整。 在可视窗口低于767px宽的情况下，列将不再固定并且会在垂直方向堆叠。
+V2.3.2的示例：
+&lt;div class=&#34;row&#34;&gt; &lt;div class=&#34;span4&#34;&gt;...&lt;/div&gt; &lt;div class=&#34;span8&#34;&gt;...&lt;/div&gt; &lt;/div&gt; v3 class变化：.span* -〉.col-md-*
+Bootstrap(v3) 内置了一套响应式、移动设备优先的流式栅格系统，随着屏幕设备或视口（viewport）尺寸的增加，
+系统会自动分为最多12列。它包含了易于使用的预定义classe，还有强大的mixin用于生成更具语义的布局。
+V3.0的示例：
+&lt;div class=&#34;row&#34;&gt; &lt;div class=&#34;col-md-4&#34;&gt;...&lt;/div&gt; &lt;div class=&#34;col-md-8&#34;&gt;...&lt;/div&gt; &lt;/div&gt;  <a class="read-more" href="/csdn/post/css-bootstrap-grid/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-15T14:08:08&#43;08:00">
+            15 May 2020
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_spark_ubuntu/">安装spark</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>WSL: Ubuntu 18.04.1
+Prepare Java 8+, Python 2.7+/3.4+ and R 3.1+
+Spark runs on Java 8+, Python 2.7+/3.4+ and R 3.1+. For the Scala API, Spark 2.4.1 uses Scala 2.12. You will need to use a compatible Scala version (2.12.x). 1. java 设置OpenJDK - Ubuntu
+2. Python sudo apt-get install python 3. R language 1) add ppa sudo add-apt-repository ppa:marutter/rrutter sudo apt-get update 2) install sudo apt-get install r-base r-base-dev Installation 1. <a class="read-more" href="/csdn/post/ops_spark_ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-15T08:08:08&#43;08:00">
+            15 May 2020
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_openjdk_ubuntu/">设置OpenJDK</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p> ubuntu 20.04.2
+wsl1017@DESKTOP-14G6K9S:~$ java -version Command &#39;java&#39; not found, but can be installed with: sudo apt install default-jre sudo apt install openjdk-11-jre-headless sudo apt install openjdk-8-jre-headless installation install jre wsl1017@DESKTOP-14G6K9S:/tmp$ sudo apt-get install openjdk-8-jre-headless install jdk sudo apt-get install openjdk-8-jdk-headless set JAVA home vi /etc/profile export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 Reference How to Install OpenJDK JAVA 11/8 in Ubuntu and Debian  <a class="read-more" href="/csdn/post/ops_openjdk_ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-15T07:08:08&#43;08:00">
+            15 May 2020
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_mysql_error1067/">mysql的1067错误</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>日志文件问题 由于使用时间比较长积累了很多的日志文件（\data目录下），所以删除之！
+mysql-bin.000001 ... ... mysql-bin.000278 原来删除都留最后一个编号的日志，这次太过彻底~~都删了!
+执行net start mysql： 出现了mysql 1067错误！ 查看，主机名.err文件（lenovo-7c8f808d.err）：
+130416 9:59:23 InnoDB: Started; log sequence number 0 43655 MySQL: File &#39;.\mysql-bin.000278&#39; not found (Errcode: 2) 130416 9:59:23 [ERROR] Failed to open log (file &#39;.\mysql-bin.000278&#39;, errno 2) 130416 9:59:23 [ERROR] Could not open log file 130416 9:59:23 [ERROR] Can&#39;t init tc log 130416 9:59:23 [ERROR] Aborting 130416 9:59:23 InnoDB: Starting shutdown... 130416 9:59:24 InnoDB: Shutdown completed; log sequence number 0 43655 130416 9:59:24 [Note] MySQL: Shutdown complete 告诉我们找不到mysql-bin. <a class="read-more" href="/csdn/post/ops_mysql_error1067/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-15T06:08:08&#43;08:00">
+            15 May 2020
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_mysql_devel/">无mysql-dev导致的错误</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>应用程序要访问mysql必须安装mysql-dev，因为它是各种语言与mysql的接口。
+error info [root@localhost DBD-mysql-4.022]# make cp lib/DBD/mysql.pm blib/lib/DBD/mysql.pm cp lib/DBD/mysql/GetInfo.pm blib/lib/DBD/mysql/GetInfo.pm cp lib/DBD/mysql/INSTALL.pod blib/lib/DBD/mysql/INSTALL.pod cp lib/Bundle/DBD/mysql.pm blib/lib/Bundle/DBD/mysql.pm cc -c -I/usr/local/perl/lib/site_perl/5.16.2/i686-linux/auto/DBI -I/usr/include/mysql -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=4 -m32 -fasynchronous-unwind-tables -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -fno-strict-aliasing -fwrapv -DDBD_MYSQL_WITH_SSL -DDBD_MYSQL_INSERT_ID_IS_GOOD -g -fno-strict-aliasing -pipe -fstack-protector -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -DVERSION=\&#34;4.022\&#34; -DXS_VERSION=\&#34;4.022\&#34; -fPIC &#34;-I/usr/local/perl/lib/5.16.2/i686-linux/CORE&#34; dbdimp.c In file included from dbdimp.c:20: dbdimp.h:23:49: error: mysql.h: No such file or directory dbdimp.h:24:45: error: mysqld_error.h: No such file or directory dbdimp. <a class="read-more" href="/csdn/post/ops_mysql_devel/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-15T05:08:08&#43;08:00">
+            15 May 2020
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_department_gitlab_man/">GitLab使用</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>一、注册用户 Name：姓名 Username：用户名 密码：8位
+等待管理员解锁。
+二、增加SSH 1. 生成SSH 在“开始”菜单，选择“TortoiseGit”中的“PuttyGen” 点击“Generate”按钮，然后，鼠标在图中红色方框的区域内不停的移动，即可生成密钥。 “Public key for pasting into OpenShh authorized_keys file:”所有内容既是我们需要的。 2. 设置SSH 用户登录后，进入“ProfileSettings”-&gt;“SSH Keys”
+点击“Add SSH Key” 把上面生成的ssh复制到key中（title会自动生成），点击“Add key”  <a class="read-more" href="/csdn/post/ops_department_gitlab_man/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-15T04:08:08&#43;08:00">
+            15 May 2020
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/com-crc32-delphi/">Delphi调用COM</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>准备 1. Windows 系统引入 运行 -&gt; Regsvr32 x:/FCV.dll
+2. Delphi 引入 Project -&gt; Import Type Library -&gt;&ldquo;FCV 1.1 Type Library (Version1.1)&rdquo;
+code unitUntMain; interface uses Windows, Messages, SysUtils, Variants, Classes,Graphics, Controls, Forms, Dialogs, StdCtrls, OleServer, FCVLib_TLB;typeTfrmMain = class(TForm)lblFileVal: TLabel;lblFcvVal: TLabel;edtFilePath: TEdit;btnGenFCN: TButton;edtFCVpath: TEdit;btnCalFileValue: TButton;btnReadFCV: TButton;btnCreatFCV: TButton;UCRC321: TUCRC32;procedure btnCreatFCVClick(Sender: TObject);procedure btnGenFCNClick(Sender: TObject);procedure btnCalFileValueClick(Sender: TObject);procedure btnReadFCVClick(Sender: TObject);private{ Private declarations }myFCV: IUCRC32;public{ Public declarations }instanceFlag: Boolean;end;varfrmMain: TfrmMain; implementation{$R *. <a class="read-more" href="/csdn/post/com-crc32-delphi/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-14T12:08:08&#43;08:00">
+            14 May 2020
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c-bsd_socket/">client和server</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>GNU Compiler Collection(GCC)
+Beej’s Guide Network to Programming 一个简单的客户端和服务器端的程序！
+Client Side: flow chart getaddrinfo() -&gt; socket() -&gt; connect() -&gt; recv() #include &lt;stdio.h&gt; #include &lt;string.h&gt; #include &lt;sys/types.h&gt; #include &lt;sys/socket.h&gt; #include &lt;arpa/inet.h&gt; #include &lt;netdb.h&gt; #define SERVIP &#34;192.168.56.112&#34; #define SERVPORT &#34;2349&#34; int main(int argc, char *argv[]) { struct addrinfo hints, *res; int status; int sockfd; int connSta; int recvSta; char buffer[1024]; int len; char ipstr[INET_ADDRSTRLEN]; void *addr; if (argc != 3) { fprintf(stderr, &#34;Usage: Not Server IP And Port! <a class="read-more" href="/csdn/post/c-bsd_socket/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-14T00:08:08&#43;08:00">
+            14 May 2020
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/com-safearray-vc/">SafeArray数据</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>COM vc
+1. 定义SAFEARRAY变量 SAFEARRAY *pSArray = NULL; 2. 释放此变量 SafeArrayDestroy(pSArray); 3. 建立向量表 pSArray = SafeArrayCreateVector(VT_UI1, 0, 32); 向量变量（VT_UI1）的定义：msdn
+VT_UI1 Variable type is unsigned char. 4. 写入数据 SafeArrayPutElement(pSArray, &amp;l, &amp;inqReport[l]); getInqRepo方法： AA：屏蔽的数值
+STDMETHODIMP CRepoFmt::getInqRepo(ULONG iStation, SAFEARRAY** ret) { SAFEARRAY *pSArray = NULL; unsigned char inqReport[32]; unsigned char xorByte = AA; int iStationID = 0; if (iStation &lt; 1) iStationID = 1; else iStationID = iStation; inqReport[0] = AA; inqReport[1] = AA; inqReport[2] = AA; inqReport[3] = AA; inqReport[4] = (iStationID % AA); inqReport[5] = (iStationID / AA); inqReport[6] = AA; inqReport[7] = AA; inqReport[8] = AA; inqReport[9] = AA; inqReport[10] = AA; inqReport[11] = AA; for (int i = 1; i &lt; 18; i++) xorByte ^= inqReport[i]; inqReport[18] = xorByte; // Fill the inqReport etc. <a class="read-more" href="/csdn/post/com-safearray-vc/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-13T12:08:08&#43;08:00">
+            13 May 2020
+        </time>
+    </footer>
+</article>
+
+    
+
+    <nav class="pagination" role="navigation">
+	
+	    <a class="newer-posts" href="/csdn/page/6/">&larr; Newer Posts</a>
+	
+	<span class="page-number">Page 7 of 12</span>
+	
+	    <a class="older-posts" href="/csdn/page/8/">Older Posts &rarr;</a>
+	
+</nav>
+
+
+
+</main>
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>
+
