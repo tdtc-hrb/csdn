@@ -6,7 +6,21 @@
     <description>Recent content on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 17 Dec 2022 08:18:18 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Jan 2023 00:08:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>调用非托管DLL</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/c2plus-unmanaged-dll/</link>
+      <pubDate>Tue, 03 Jan 2023 00:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/c2plus-unmanaged-dll/</guid>
+      <description>IDE: vs2008 Express(sp1)
+callXBFLibrary 我们需要使用API函数来读取INI文件。
+建立P/Invoke应用类 在pinvoke.net中查找Win32 API在C#定义。 GetPrivateProfileString 读取Ini文件的API
+[DllImport(&amp;#34;kernel32.dll&amp;#34;, CharSet=CharSet.Unicode)] static extern uint GetPrivateProfileString( string lpAppName, string lpKeyName, string lpDefault, StringBuilder lpReturnedString, uint nSize, string lpFileName); 注意：DllImport属性来自using System.Runtime.InteropServices;
+lpAppName 小节名 lpKeyName 键名 lpDefault 缺省值 lpReturnedString 返回值 nSize 返回值长度 lpFileName 读取文件的名称 import class using System.Runtime.InteropServices; readIniFileVal 建立一个公共方法，以供程序使用。
+public string readIniFileVal(string iniFileName, string section, string key) { StringBuilder retStrBuilder = new StringBuilder(256); GetPrivateProfileString( section, key, &amp;#34;&amp;#34;, retStrBuilder, 256, iniFileName); return retStrBuilder.</description>
+    </item>
+    
     <item>
       <title>TDTC Demo</title>
       <link>https://tdtc-hrb.github.io/csdn/post/demo-tdtc/</link>
@@ -958,20 +972,6 @@ Client Side: flow chart getaddrinfo() -&amp;gt; socket() -&amp;gt; connect() -&a
 1. 定义SAFEARRAY变量 SAFEARRAY *pSArray = NULL; 2. 释放此变量 SafeArrayDestroy(pSArray); 3. 建立向量表 pSArray = SafeArrayCreateVector(VT_UI1, 0, 32); 向量变量（VT_UI1）的定义：msdn
 VT_UI1 Variable type is unsigned char. 4. 写入数据 SafeArrayPutElement(pSArray, &amp;amp;l, &amp;amp;inqReport[l]); getInqRepo方法： AA：屏蔽的数值
 STDMETHODIMP CRepoFmt::getInqRepo(ULONG iStation, SAFEARRAY** ret) { SAFEARRAY *pSArray = NULL; unsigned char inqReport[32]; unsigned char xorByte = AA; int iStationID = 0; if (iStation &amp;lt; 1) iStationID = 1; else iStationID = iStation; inqReport[0] = AA; inqReport[1] = AA; inqReport[2] = AA; inqReport[3] = AA; inqReport[4] = (iStationID % AA); inqReport[5] = (iStationID / AA); inqReport[6] = AA; inqReport[7] = AA; inqReport[8] = AA; inqReport[9] = AA; inqReport[10] = AA; inqReport[11] = AA; for (int i = 1; i &amp;lt; 18; i++) xorByte ^= inqReport[i]; inqReport[18] = xorByte; // Fill the inqReport etc.</description>
-    </item>
-    
-    <item>
-      <title>调用非托管DLL</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/c2plus-unmanaged-dll/</link>
-      <pubDate>Wed, 13 May 2020 00:08:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/c2plus-unmanaged-dll/</guid>
-      <description>IDE: vs2008 Express(sp1)
-callXBFLibrary 我们需要使用API函数来读取INI文件。
-建立P/Invoke应用类 在pinvoke.net中查找Win32 API在C#定义。 GetPrivateProfileString 读取Ini文件的API
-[DllImport(&amp;#34;kernel32.dll&amp;#34;, CharSet=CharSet.Unicode)] static extern uint GetPrivateProfileString( string lpAppName, string lpKeyName, string lpDefault, StringBuilder lpReturnedString, uint nSize, string lpFileName); 注意：DllImport属性来自using System.Runtime.InteropServices;
-lpAppName 小节名 lpKeyName 键名 lpDefault 缺省值 lpReturnedString 返回值 nSize 返回值长度 lpFileName 读取文件的名称 import class using System.Runtime.InteropServices; readIniFileVal 建立一个公共方法，以供程序使用。
-public string readIniFileVal(string iniFileName, string section, string key) { StringBuilder retStrBuilder = new StringBuilder(256); GetPrivateProfileString( section, key, &amp;#34;&amp;#34;, retStrBuilder, 256, iniFileName); return retStrBuilder.</description>
     </item>
     
     <item>

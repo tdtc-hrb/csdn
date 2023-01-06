@@ -197,6 +197,34 @@
     
         <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/hw-can-uart-key/">CAN数据转发</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>完结篇 《CAN转COM或CAN-1》介绍了CAN，本篇其余部分。
+开发板：英蓓特MCB2300（LPC2368）
+开发工具：MDK3.8a
+开发主机：Windows XP SP3 中文专业版
+UART 因为我们使用UART主要是进行发送的，所以关闭接收可以更加快速的进行发送处理。
+控制接收缓存寄存（Receiver Buffer Register）即可达到此目的。
+禁止RBR void preUARTInitRBR( unsigned char i ) { switch (i) { case 0: U0IER = IER_THRE | IER_RLS;	/* Disable RBR */ break; case 1: U1IER = IER_THRE | IER_RLS;	/* Disable RBR */ break; } } 允许RBR void postUARTInitRBR( unsigned char i ) { switch (i) { case 0: U0IER = IER_THRE | IER_RLS | IER_RBR;	/* Re-enable RBR */ break; case 1: U1IER = IER_THRE | IER_RLS | IER_RBR;	/* Re-enable RBR */ break; } } 完成后的UART NXP的官方例程UART加入RBR后的code <a class="read-more" href="/csdn/post/hw-can-uart-key/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-15T23:08:08&#43;08:00">
+            15 May 2020
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_data_transmission/">Linux与Windows互传数据</a></h2>
     </header>
     <section class="post-excerpt">
@@ -415,31 +443,6 @@ Client Side: flow chart getaddrinfo() -&gt; socket() -&gt; connect() -&gt; recv(
         
         <time class="post-date" datetime="2020-05-14T00:08:08&#43;08:00">
             14 May 2020
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/com-safearray-vc/">SafeArray数据</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>COM vc
-1. 定义SAFEARRAY变量 SAFEARRAY *pSArray = NULL; 2. 释放此变量 SafeArrayDestroy(pSArray); 3. 建立向量表 pSArray = SafeArrayCreateVector(VT_UI1, 0, 32); 向量变量（VT_UI1）的定义：msdn
-VT_UI1 Variable type is unsigned char. 4. 写入数据 SafeArrayPutElement(pSArray, &amp;l, &amp;inqReport[l]); getInqRepo方法： AA：屏蔽的数值
-STDMETHODIMP CRepoFmt::getInqRepo(ULONG iStation, SAFEARRAY** ret) { SAFEARRAY *pSArray = NULL; unsigned char inqReport[32]; unsigned char xorByte = AA; int iStationID = 0; if (iStation &lt; 1) iStationID = 1; else iStationID = iStation; inqReport[0] = AA; inqReport[1] = AA; inqReport[2] = AA; inqReport[3] = AA; inqReport[4] = (iStationID % AA); inqReport[5] = (iStationID / AA); inqReport[6] = AA; inqReport[7] = AA; inqReport[8] = AA; inqReport[9] = AA; inqReport[10] = AA; inqReport[11] = AA; for (int i = 1; i &lt; 18; i++) xorByte ^= inqReport[i]; inqReport[18] = xorByte; // Fill the inqReport etc. <a class="read-more" href="/csdn/post/com-safearray-vc/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-13T12:08:08&#43;08:00">
-            13 May 2020
         </time>
     </footer>
 </article>
