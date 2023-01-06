@@ -197,6 +197,37 @@
     
         <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql-mha/">主备切换 - MySQL&#43;MHA</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>在进行安装配置前，请确认已经完成了 MySQL 主从复制
+MHA (V0.58)
+Manager Node baidu yun - backup
+Mha manager Mha node 安装前准备 ssh相互免密
+一、安装 Name IP Memo mha1 192.168.0.151 Monitor host 使用pscp上传文件请参考 MySQL 主从复制 - 5. test data
+1. MHA Node 所有MySQL服务器（mysql1、mysql11、mysql12）和MHA 管理机（MHA）都要安装。
+sudo yum localinstall mha4mysql-node-0.58-0.el7.centos.noarch.rpm 2. MHA Manager CentOS源有perl-Config-Tiny。
+sudo yum install perl-Config-Tiny 安装epel， 可以找到perl-Log-Dispatch、perl-Parallel-ForkManager。
+sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm sudo yum install perl-Log-Dispatch perl-Parallel-ForkManager -y 安装manager
+sudo yum localinstall mha4mysql-manager-0.58-0.el7.centos.noarch.rpm 3. MySQL主从配置 （补充部分） <a class="read-more" href="/csdn/post/mysql-mha/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-09-27T00:38:08&#43;08:00">
+            27 Sep 2022
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_gnupg/">GNU PG的使用</a></h2>
     </header>
     <section class="post-excerpt">
@@ -416,31 +447,6 @@ curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - install sudo a
         
         <time class="post-date" datetime="2022-07-09T23:08:39&#43;08:00">
             9 Jul 2022
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/mysql80-install/">安装MySQL 8.0</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>MySQL 5 &amp; 8 remote server bind-address=0.0.0.0 utf8 [MY-013242] [Server] --character-set-server: &#39;utf8&#39; is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous. mysql5 character-set-server=utf8 mysql8 character-set-server=utf8mb4 validate password 注意： mysql8.0.4， 我们将无法直接使用phpMyAdmin来登录！
-使用phpMyAdmin需要设置MySQL5.7兼容模式：
-authentication_policy=mysql_native_password,, mysql5 mysql_native_password mysql8 caching_sha2_password Ubuntu install mysql8:
-sudo apt install mysql-server sudo systemctl start mysql.service config mysql secure sudo mysql ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH mysql_native_password by &#39;xbfirst80&#39;; sudo mysql_secure_installation add user password rule: <a class="read-more" href="/csdn/post/mysql80-install/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-07-07T06:08:39&#43;08:00">
-            7 Jul 2022
         </time>
     </footer>
 </article>
