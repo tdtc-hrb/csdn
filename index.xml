@@ -6,7 +6,19 @@
     <description>Recent content on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 03 Jan 2023 00:08:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 Jan 2023 18:08:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>测试COM</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/com-ie-test/</link>
+      <pubDate>Wed, 04 Jan 2023 18:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/com-ie-test/</guid>
+      <description>IDE: Visual Studio 2019(v16.11)
+本文参考: 创建COM
+一、创建COM 增加IE支持： IObjectWithSite
+增加方法 Add STDMETHODIMP CtestSOW::Add(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x + y); return S_OK; } Multiply STDMETHODIMP CtestSOW::Mul(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x * y); return S_OK; } Divide STDMETHODIMP CtestSOW::Div(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x / y); return S_OK; } 二、测试平台 查看依赖：win8.</description>
+    </item>
+    
     <item>
       <title>调用非托管DLL</title>
       <link>https://tdtc-hrb.github.io/csdn/post/c2plus-unmanaged-dll/</link>
@@ -428,18 +440,6 @@ act 一个指向sigaction结构的指针。
 oldact 一般废止不用。
 我们主要设置结构sigaction的sa_handler、sa_mask和sa_flags三个成员变量即可！
 code /** * Version: 0.2 * * Description: Add signal * */ #include &amp;lt;stdio.</description>
-    </item>
-    
-    <item>
-      <title>测试COM</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/com-ie-test/</link>
-      <pubDate>Sun, 15 May 2022 18:08:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/com-ie-test/</guid>
-      <description>IDE: Visual Studio 2019(v16.11)
-本文参考: 创建COM
-一、创建COM 增加IE支持： IObjectWithSite
-增加方法 Add STDMETHODIMP CtestSOW::Add(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x + y); return S_OK; } Multiply STDMETHODIMP CtestSOW::Mul(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x * y); return S_OK; } Divide STDMETHODIMP CtestSOW::Div(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x / y); return S_OK; } 二、测试平台 查看依赖：win8.</description>
     </item>
     
     <item>

@@ -197,14 +197,28 @@
     
         <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/com-ie-test/">测试COM</a></h2>
+        <h2 class="post-title"><a href="/csdn/post/c-bsd_socket-server/">使用fork的server</a></h2>
     </header>
     <section class="post-excerpt">
         
-            <p>IDE: Visual Studio 2019(v16.11)
-本文参考: 创建COM
-一、创建COM 增加IE支持： IObjectWithSite
-增加方法 Add STDMETHODIMP CtestSOW::Add(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x + y); return S_OK; } Multiply STDMETHODIMP CtestSOW::Mul(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x * y); return S_OK; } Divide STDMETHODIMP CtestSOW::Div(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x / y); return S_OK; } 二、测试平台 查看依赖：win8. <a class="read-more" href="/csdn/post/com-ie-test/">&raquo;</a></p>
+            <p>GNU Compiler Collection(GCC)
+在“Socket服务器端程序”基础上增加子进程。
+Beej’s Guide Network to Programming 关于Unix/Linux子进程：
+相当于Windows的线程
+调用fork()即可增加子进程。
+要使用fork必须调用waitpid() ！
+waitpid() waitpid函数原型：
+#include&lt;sys/types.h&gt; /* 提供类型pid_t的定义 */ #include&lt;sys/wait.h&gt; pid_t waitpid(pid_t pid, int *status, int options); pid 等于-1时，等待任何一个子进程退出，没有任何限制，此时waitpid和wait的作用一模一样。
+status 我们设置为NULL。
+options 提供了一些额外的选项来控制waitpid，WNOHANG常量表示， 即使没有子进程退出，它也会立即返回，不会像wait那样永远等下去。
+sigaction() sigaction()是waitpid()的开关
+只有给waitpid()信号时，才开启它(waitpid)！ 这时，需要sigaction()。
+sigaction函数原型：
+#include&lt;signal.h&gt; int sigaction(int signum, const struct sigaction *act, struct sigaction *oldact); signum 等于SIGCHLD时，只有子进程停止或者退出才进行调用。
+act 一个指向sigaction结构的指针。
+oldact 一般废止不用。
+我们主要设置结构sigaction的sa_handler、sa_mask和sa_flags三个成员变量即可！
+code /** * Version: 0.2 * * Description: Add signal * */ #include &lt;stdio. <a class="read-more" href="/csdn/post/c-bsd_socket-server/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -213,8 +227,8 @@
         
 
         
-        <time class="post-date" datetime="2022-05-15T18:08:08&#43;08:00">
-            15 May 2022
+        <time class="post-date" datetime="2022-05-16T08:08:08&#43;08:00">
+            16 May 2022
         </time>
     </footer>
 </article>

@@ -199,6 +199,31 @@
     
         <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/com-ie-test/">测试COM</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>IDE: Visual Studio 2019(v16.11)
+本文参考: 创建COM
+一、创建COM 增加IE支持： IObjectWithSite
+增加方法 Add STDMETHODIMP CtestSOW::Add(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x + y); return S_OK; } Multiply STDMETHODIMP CtestSOW::Mul(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x * y); return S_OK; } Divide STDMETHODIMP CtestSOW::Div(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x / y); return S_OK; } 二、测试平台 查看依赖：win8. <a class="read-more" href="/csdn/post/com-ie-test/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-01-04T18:08:08&#43;08:00">
+            4 Jan 2023
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/c2plus-unmanaged-dll/">调用非托管DLL</a></h2>
     </header>
     <section class="post-excerpt">
@@ -439,30 +464,6 @@ sudo yum localinstall mha4mysql-manager-0.58-0.el7.centos.noarch.rpm 3. MySQL主
         
         <time class="post-date" datetime="2022-09-27T00:38:08&#43;08:00">
             27 Sep 2022
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_gnupg/">GNU PG的使用</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>The GNU Privacy Guard
-1. install $yum install gnupg $yum install rng-tools 2. gen key $gpg --gen-key Decompose 20180804215500757.png step: Press Key: enter Press Key: enter Press Key: enter Press Key: y Real name: xiaobin Email address: veic_2005@163 Comment: enter(press key) Press Key: O 输入完，按“Tab”切换到“OK”,按回车。 再输入一次， 2.1 gen random Generate random numbers and done. Open a new terminal:
-rngd -f -r /dev/urandom The old terminal shows the result： 3. gen revoke $gpg gen-revoke 7209DBAD Press Key: y 4. <a class="read-more" href="/csdn/post/ops_gnupg/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-09-25T00:08:08&#43;08:00">
-            25 Sep 2022
         </time>
     </footer>
 </article>

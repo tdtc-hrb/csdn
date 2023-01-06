@@ -164,6 +164,39 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql80-cenos8/">CentOS8安装mysql8.0</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Installing and Setting up the Percona Server for MySQL 8.0 Repository yum install -y https://repo.percona.com/yum/percona-release-latest.noarch.rpm disable mysql module repo:
+percona-release setup ps80 Installing and Setting up the Percona Server for MySQL 8.0 Binaries yum -y install percona-server-server Launch:
+systemctl start mysqldsystemctl status mysqld change password sudo grep &#34;temporary password&#34; /var/log/mysqld.log mysql -uroot -p Change default password：
+ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;qaz1!Xsw2@&#39;; Weak password mysql&gt; set global validate_password.policy=0; set password ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;xbfirst80&#39;; Ref Installing Percona Server for MySQL on Rocky Linux 8 How to Change MySQL Password Policy Level  <a class="read-more" href="/csdn/post/mysql80-cenos8/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        on
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/rocky-linux-8/">#Rocky Linux 8</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/alma-linux-8/">#Alma Linux 8</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/percona8/">#Percona8</a>,
+            
+        
+        <time class="post-date" datetime="2022-06-27T03:21:39&#43;08:00">
+            27 Jun 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_network_proxy/">设置proxy</a></h2>
     </header>
     <section class="post-excerpt">
@@ -428,45 +461,6 @@ ssh - It is also possible that a host key has just been changed D:\program-d\put
         
         <time class="post-date" datetime="2022-05-18T08:08:08&#43;08:00">
             18 May 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/c-bsd_socket-server/">使用fork的server</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>GNU Compiler Collection(GCC)
-在“Socket服务器端程序”基础上增加子进程。
-Beej’s Guide Network to Programming 关于Unix/Linux子进程：
-相当于Windows的线程
-调用fork()即可增加子进程。
-要使用fork必须调用waitpid() ！
-waitpid() waitpid函数原型：
-#include&lt;sys/types.h&gt; /* 提供类型pid_t的定义 */ #include&lt;sys/wait.h&gt; pid_t waitpid(pid_t pid, int *status, int options); pid 等于-1时，等待任何一个子进程退出，没有任何限制，此时waitpid和wait的作用一模一样。
-status 我们设置为NULL。
-options 提供了一些额外的选项来控制waitpid，WNOHANG常量表示， 即使没有子进程退出，它也会立即返回，不会像wait那样永远等下去。
-sigaction() sigaction()是waitpid()的开关
-只有给waitpid()信号时，才开启它(waitpid)！ 这时，需要sigaction()。
-sigaction函数原型：
-#include&lt;signal.h&gt; int sigaction(int signum, const struct sigaction *act, struct sigaction *oldact); signum 等于SIGCHLD时，只有子进程停止或者退出才进行调用。
-act 一个指向sigaction结构的指针。
-oldact 一般废止不用。
-我们主要设置结构sigaction的sa_handler、sa_mask和sa_flags三个成员变量即可！
-code /** * Version: 0.2 * * Description: Add signal * */ #include &lt;stdio. <a class="read-more" href="/csdn/post/c-bsd_socket-server/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-05-16T08:08:08&#43;08:00">
-            16 May 2022
         </time>
     </footer>
 </article>
