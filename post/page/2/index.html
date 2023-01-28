@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.109.0">
+    <meta name="generator" content="Hugo 0.110.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,6 +160,55 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_nginx/">前端（Web）负载均衡</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Nginx&rsquo;s load balancing
+一、安装 OS: CentOS7 minimal（安装时的选项）
+0. prepare $yum -y install gcc gcc-c++ automake pcre pcre-devel zlib zlib-devel openssl openssl-devel 1) update OpenSSL default directory: /usr/ssl
+$wget https://www.openssl.org/source/openssl-1.1.1q.tar.gz --no-check-certificate 2) setup $./config --prefix=/usr --shared $make Root permission Required
+$sudo make install 1. installation First, install Nginx of centos repo; Then, replace the nginx program file. Note: The replaced program file version must be the same as the repo!
+$sudo rpm -Uvh http://nginx. <a class="read-more" href="/csdn/post/ops_nginx/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-09-29T08:38:08&#43;08:00">
+            29 Sep 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_tomcat/">Tomcat安装</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Servlet Spec JSP Spec EL Spec WebSocket Spec Authentication (JASIC) Spec Apache Tomcat Version Latest Released Version Supported Java Versions 6.0 3.1 5.0 2.1 3.0 10.1.x 10.1.0 Jakarta EE 9.1 5.0 3.0 4.0 2.0 2.0 10.0.x 10.0.26 Jakarta EE 9 4.0 2.3 3.0 1.1 1.1 9.0.x 9.0.68 8 and later 3.1 2.3 3.0 1.1 1.1 8.5.x 8.5.82 7 and later 3.0 2.2 2.2 1.1 N/A 7.0.x 7.0.109 6 and later(7 and later for WebSocket) installation Platform version Released Specification Java SE Support Important Changes Jakarta EE 10 2022-03-31 10 Java SE 17/Java SE 11 Removal of deprecated items in Servlet, Faces, CDI and EJB (Entity Beans and Embeddable Container). <a class="read-more" href="/csdn/post/ops_tomcat/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-09-28T12:38:08&#43;08:00">
+            28 Sep 2022
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -363,57 +412,6 @@ autoheader 输出Makefile automake --add-missing 输出Makefile:
         
         <time class="post-date" datetime="2022-08-08T02:20:39&#43;08:00">
             8 Aug 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/pack-file-linux/">打包文件</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>取消目录所有权限
-chmod -R 777 /tmp/etc 一、ISO文件 mkisofs -r -o etc.iso /tmp/etc 二、压缩文件 1. zip zip -r etc.zip /tmp/etc 2. tar 仅打包，不压缩！
-tar -cvf /tmp/etc.tar /etc transform --transform s/OLD_NAME/NEW_NAME/ gz tar -zcvf /tmp/etc.tar.gz /etc transform:
-tar -zcvf /tmp/etc.tar.gz /etc --transform s/etc/myetc/ bz2 tar -jcvf /tmp/etc.tar.bz2 /etc transform:
-tar -jcvf /tmp/etc.tar.bz2 /etc --transform s/etc/myetc/ FAQ This does not look like a tar archive #gzip -d xxxx.tar.gz #tar -xf xxxx.tar 参考文章 18 Tar Command Examples in Linux c – Creates a new . <a class="read-more" href="/csdn/post/pack-file-linux/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-07-10T02:20:39&#43;08:00">
-            10 Jul 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/nodejs-ubuntu/">在Ubuntu下安装NodeJS</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>1.node.js v18.x/16.x
-v18.x:
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - v16.x:
-curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - install sudo apt-get install -y nodejs 2. yarn js curl --silent --show-error https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo &#34;deb https://dl.yarnpkg.com/debian/ stable main&#34; | sudo tee /etc/apt/sources.list.d/yarn.list sudo apt-get update sudo apt-get install yarn Ref How to Install Yarn on Ubuntu 18.04  <a class="read-more" href="/csdn/post/nodejs-ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-07-09T23:08:39&#43;08:00">
-            9 Jul 2022
         </time>
     </footer>
 </article>

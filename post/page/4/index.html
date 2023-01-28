@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.109.0">
+    <meta name="generator" content="Hugo 0.110.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,6 +160,39 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_win_faq1/">Windows的一些设置</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>禁止记事本 开始-&gt;运行-&gt;gpedit.msc-&gt;计算机配置-&gt;windows设置-&gt;安全设置-&gt;软件限制策略
+右键点软件限制策略-&gt;创建软件限制策略
+点其他规则-&gt;右键新建路径规则-&gt;在“路径”下的空白输入框中“%windir%\notepad.exe“（或者c盘是系统盘的情况下：c:\windows\notepad.exe)-&gt;在“安全级别”中选择“不允许”
+附：如果你要限制.txt的程序打开，可以在路径中输入*.txt。
+日文系统 key101 日文改英文键盘
+修改注册表主键： HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\i8042prt\Parameters
+LayerDriver JPN: KBD101.DLL OverrideKeyboardIdentifier: PCAT_101KEY OverrideKeyboardSubtype: 0x00000000(0) win7+添加日文输入 “区域和语言“ ==&gt; ”键盘和语言“
+”键盘和语言“中，点击”更改键盘“， 点”添加“，找到 ”日语（日本）“， 勾选”Microsoft IME“和”日语“，其它不要勾选.
+按键盘”Alt“+”Shift“即可调出日语输入法.
+文件或目录损坏且无法读取 无法读取的所在逻辑盘E:
+chkdsk /F E: How to Delete Old Windows Folder in Windows 10 – Access Denied? takeown /F &#34;C:\Windows.old&#34; /A /R /D Y icacls &#34;C:\Windows.old&#34; /T /grant administrators:F rmdir /s /q &#34;C:\Windows.old&#34; notepad++ 关闭历史文件 打开首选项-&gt;备份 √“记住最后打开的文件” 把对勾去掉即可。
+ssh - It is also possible that a host key has just been changed D:\program-d\putty0. <a class="read-more" href="/csdn/post/ops_win_faq1/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-05-18T08:08:08&#43;08:00">
+            18 May 2022
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -430,32 +463,6 @@ Slave 1 [mysqld] server-id=161 Slave 2 [mysqld] server-id=162 3. <a class="read-
 
         
         <time class="post-date" datetime="2022-04-13T09:38:08&#43;08:00">
-            13 Apr 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_keepalived/">安装配置Keepalived</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>OS: CentOS7 minimal(VMware)
-一、安装 0. prepare tool $yum group list 1) dev tools $yum group install &#34;Development Tools&#34; 2) openssl-devel update see &ldquo;nginx’s load balancing的安装部分的update OpenSSL&rdquo;
-$yum install openssl-devel 3) libnl $yum install libnl libnl-devel libnfnetlink-devel 1. keepalived v1.4.5
-down and unzip $wget http://www.keepalived.org/software/keepalived-1.4.5.tar.gz $ tar zxvf keepalived-1.4.5.tar.gz installation $cd keepalived-1.4.5 $./configure --prefix=/usr/local/keepalived $make Root permission Required
-$make install setup $cp /usr/local/keepalived/sbin/keepalived /usr/sbin/ $mkdir -p /etc/keepalived $cp /usr/local/keepalived/etc/keepalived/keepalived.conf /etc/keepalived/keepalived.conf $cp /usr/local/keepalived/etc/sysconfig/keepalived /etc/sysconfig/ $cp /tmp/keepalived-1. <a class="read-more" href="/csdn/post/ops_keepalived/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-04-13T08:38:08&#43;08:00">
             13 Apr 2022
         </time>
     </footer>

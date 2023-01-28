@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.109.0">
+    <meta name="generator" content="Hugo 0.110.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,6 +160,34 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/apt-oper-ubuntu/">apt的安装问题</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>apt适合手动输入(有交互); apt-get适合脚本(无交互).
+Manage 卸载 apt-get autoremove vsftpd --purge 安装指定版本 apt-get install &lt;package name&gt;=&lt;version&gt; 列出版本 apt-cache madison &lt;&lt;package name&gt;&gt; DebIan sudo using root:
+su - root install:
+apt install sudo chmod 640 /etc/sudoers 在配置文件/etc/sudoers加入：
+tdtc ALL=(ALL:ALL) ALL 把文件权限改为只读:
+chmod 440 /etc/sudoers apt source sudo vi /etc/apt/sources.list 注释掉&quot;deb cdrom:xxx&quot;
+##deb cdrom:xxx Ref Debian中安装使用sudo命令 Debian取消从光盘安装软件的方式  <a class="read-more" href="/csdn/post/apt-oper-ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2021-07-08T02:20:39&#43;08:00">
+            8 Jul 2021
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -382,32 +410,6 @@ CTM1050.7z 提取码: pcah <a class="read-more" href="/csdn/post/hw-schematic_di
 
         
         <time class="post-date" datetime="2020-05-16T00:28:08&#43;08:00">
-            16 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/uml-ommunication_diagram-can/">时序图与状态图</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>tool: Rational Rose
-功能简介： 当主程序收到CAN口的数据后；根据按键的不同来选择是使用CAN口发送，还是使用UART口发送。
-时序图
-协作图
-down can2uart.mdl 提取码: bb8h <a class="read-more" href="/csdn/post/uml-ommunication_diagram-can/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-16T00:08:08&#43;08:00">
             16 May 2020
         </time>
     </footer>
