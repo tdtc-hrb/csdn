@@ -6,7 +6,32 @@
     <description>Recent content on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 18 Jan 2023 14:08:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Feb 2023 22:08:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>创建COM</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/</link>
+      <pubDate>Thu, 02 Feb 2023 22:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/</guid>
+      <description>IDE: Visual Studio 2019(v16.11)
+使用Wizard模式创建COM
+一、ATL项目向导 使用ATL Project Wizard创建COM
+1. 建立ATL工程 File-&amp;gt;New-&amp;gt;Project
+name: testATL 选择“MFC/ATL”中“ATL Project”。
+Note: name即是要生成的DLL文件
+2. 工程设置 我们可以自定义工程情况。
+Default 3. 工程属性 取消编译时注册Dll。
+Project -&amp;gt; Properties
+Linker -&amp;gt; Register Output
+No
+二、ATL简单对象向导 1. 创建ATL Simple Object 右击项目名称，选择Add-〉New Item
+vs2013: Add -&amp;gt; Class
+2. 设置ATL Simple Object base Short name: testSOW progID 附加支持 progID progID: Simple Object ID
+testATL.testSOW 附加支持 本选项针对IE支持。
+Other -&amp;gt; Support:
+vs2013: Options -&amp;gt; Support</description>
+    </item>
+    
     <item>
       <title>使用物理网卡</title>
       <link>https://tdtc-hrb.github.io/csdn/post/ops_vmware_netadapter/</link>
@@ -23,32 +48,6 @@ VM &amp;lt;-&amp;gt; Host VM1 &amp;lt;-&amp;gt; VM2 VM -&amp;gt; Internet VM &am
 启动NFS，工作正常。
 输出信息如下：
 This is the boot programm!鶷his is the boot programm! Load UBOOT, please wait...... Load UBOOT from 0x10010000 to 0x23f00000 Over U-Boot 1.</description>
-    </item>
-    
-    <item>
-      <title>创建COM</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/</link>
-      <pubDate>Tue, 10 Jan 2023 22:08:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/</guid>
-      <description>IDE: Visual Studio 2019(v16.11)
-使用Wizard模式创建COM
-一、ATL项目向导 使用ATL Project Wizard创建COM
-1. 建立ATL工程 File-&amp;gt;New-&amp;gt;Project
-选择“MFC/ATL”中“ATL Project”。
-Note: name即是要生成的DLL文件
-2. 工程设置 我们可以自定义工程情况。
-3. 工程属性 取消编译时注册Dll。
-Project -&amp;gt; Properties
-Linker -&amp;gt; Register Output
-No
-二、ATL简单对象向导 1. 创建ATL Simple Object 右击项目名称，选择Add-〉New Item
-2. 设置ATL Simple Object progID 附加支持 progID progID: Simple Object ID
-附加支持 本选项针对IE支持。
-Other -&amp;gt; Support:
-三、添加IDL方法 Tab switching from &amp;ldquo;Solution Explorer&amp;rdquo; to &amp;ldquo;Class View&amp;rdquo;
-Interface(name) -&amp;gt; add -&amp;gt; add method
-添加方法名称以及参数</description>
     </item>
     
     <item>

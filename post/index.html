@@ -162,6 +162,44 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/com-wizards-vc/">创建COM</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>IDE: Visual Studio 2019(v16.11)
+使用Wizard模式创建COM
+一、ATL项目向导 使用ATL Project Wizard创建COM
+1. 建立ATL工程 File-&gt;New-&gt;Project
+name: testATL 选择“MFC/ATL”中“ATL Project”。
+Note: name即是要生成的DLL文件
+2. 工程设置 我们可以自定义工程情况。
+Default 3. 工程属性 取消编译时注册Dll。
+Project -&gt; Properties
+Linker -&gt; Register Output
+No
+二、ATL简单对象向导 1. 创建ATL Simple Object 右击项目名称，选择Add-〉New Item
+vs2013: Add -&gt; Class
+2. 设置ATL Simple Object base Short name: testSOW progID 附加支持 progID progID: Simple Object ID
+testATL.testSOW 附加支持 本选项针对IE支持。
+Other -&gt; Support:
+vs2013: Options -&gt; Support <a class="read-more" href="/csdn/post/com-wizards-vc/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-02-02T22:08:08&#43;08:00">
+            2 Feb 2023
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_vmware_netadapter/">使用物理网卡</a></h2>
     </header>
     <section class="post-excerpt">
@@ -186,45 +224,6 @@ This is the boot programm!鶷his is the boot programm! Load UBOOT, please wait..
         
         <time class="post-date" datetime="2023-01-18T14:08:08&#43;08:00">
             18 Jan 2023
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/com-wizards-vc/">创建COM</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>IDE: Visual Studio 2019(v16.11)
-使用Wizard模式创建COM
-一、ATL项目向导 使用ATL Project Wizard创建COM
-1. 建立ATL工程 File-&gt;New-&gt;Project
-选择“MFC/ATL”中“ATL Project”。
-Note: name即是要生成的DLL文件
-2. 工程设置 我们可以自定义工程情况。
-3. 工程属性 取消编译时注册Dll。
-Project -&gt; Properties
-Linker -&gt; Register Output
-No
-二、ATL简单对象向导 1. 创建ATL Simple Object 右击项目名称，选择Add-〉New Item
-2. 设置ATL Simple Object progID 附加支持 progID progID: Simple Object ID
-附加支持 本选项针对IE支持。
-Other -&gt; Support:
-三、添加IDL方法 Tab switching from &ldquo;Solution Explorer&rdquo; to &ldquo;Class View&rdquo;
-Interface(name) -&gt; add -&gt; add method
-添加方法名称以及参数 <a class="read-more" href="/csdn/post/com-wizards-vc/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-01-10T22:08:08&#43;08:00">
-            10 Jan 2023
         </time>
     </footer>
 </article>
