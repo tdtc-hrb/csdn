@@ -6,30 +6,23 @@
     <description>Recent content on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 02 Feb 2023 22:08:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Feb 2023 23:08:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>创建COM</title>
       <link>https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/</link>
-      <pubDate>Thu, 02 Feb 2023 22:08:08 +0800</pubDate>
+      <pubDate>Thu, 02 Feb 2023 23:08:08 +0800</pubDate>
       
       <guid>https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/</guid>
-      <description>IDE: Visual Studio 2019(v16.11)
-使用Wizard模式创建COM
-一、ATL项目向导 使用ATL Project Wizard创建COM
-1. 建立ATL工程 File-&amp;gt;New-&amp;gt;Project
+      <description>Use Visual Studio&amp;rsquo;s wizard to create COM
+Visual studio 2010 Visual Studio 2013 Visual Studio 2015/2017/2019/2022 step by step:
+建立ATL工程 建立ATL Simple Object 添加IDL方法 测试添加的method 建立ATL工程 File-&amp;gt;New-&amp;gt;Project
 name: testATL 选择“MFC/ATL”中“ATL Project”。
 Note: name即是要生成的DLL文件
-2. 工程设置 我们可以自定义工程情况。
-Default 3. 工程属性 取消编译时注册Dll。
-Project -&amp;gt; Properties
-Linker -&amp;gt; Register Output
-No
-二、ATL简单对象向导 1. 创建ATL Simple Object 右击项目名称，选择Add-〉New Item
+设置 Default 取消编译时注册Dll Project -&amp;gt; PropertiesLinker -&amp;gt; Register OutputNo ATL Simple Object 右击项目名称，选择Add-〉New Item
 vs2013: Add -&amp;gt; Class
-2. 设置ATL Simple Object base Short name: testSOW progID 附加支持 progID progID: Simple Object ID
+设置 base Short name: testSOW progID 附加支持 progID progID: Simple Object ID
 testATL.testSOW 附加支持 本选项针对IE支持。
-Other -&amp;gt; Support:
-vs2013: Options -&amp;gt; Support</description>
+Other -&amp;gt; Support:</description>
     </item>
     
     <item>
