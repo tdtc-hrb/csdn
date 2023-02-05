@@ -6,7 +6,19 @@
     <description>Recent content in Posts on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 02 Feb 2023 23:08:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Feb 2023 10:08:39 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>安装boost库(VC)</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/vc-boost/</link>
+      <pubDate>Fri, 03 Feb 2023 10:08:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/vc-boost/</guid>
+      <description>support of msvc
+1.55.0 support of msvc-12.0 1.71.0 support of msvc-14.2 MSVC++ versions
+名称 VS版本 msvc-12.0 VS2013 msvc-14.2 VS2019 1. 编译 在 x86 Native Tools Command Prompt for VS 2019 下运行
+About b2 vs bjam as of Boost 1.47.0, the official name of the executable was changed to b2. Gen b2 cd C:\boost_1_81_0 bootstrap.bat VS2013 b2 stage --toolset=msvc-12.0 --without-graph --without-graph_parallel --without-math --without-mpi --without-python --without-serialization --without-wave --stagedir=&amp;#34;C:\boost\bin\vc120&amp;#34; link=static runtime-link=shared runtime-link=static threading=multi debug release VS2019 b2 stage --toolset=msvc-14.</description>
+    </item>
+    
     <item>
       <title>创建COM</title>
       <link>https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/</link>
@@ -50,19 +62,6 @@ VM &amp;lt;-&amp;gt; Host VM1 &amp;lt;-&amp;gt; VM2 VM -&amp;gt; Internet VM &am
 启动NFS，工作正常。
 输出信息如下：
 This is the boot programm!鶷his is the boot programm! Load UBOOT, please wait...... Load UBOOT from 0x10010000 to 0x23f00000 Over U-Boot 1.</description>
-    </item>
-    
-    <item>
-      <title>安装boost库(VC)</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/vc-boost/</link>
-      <pubDate>Thu, 05 Jan 2023 10:08:39 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/vc-boost/</guid>
-      <description>vs2008 cl 提示不可用.
-vs2012 Gen b2时出错。
-支持的VC版本(已测)
-名称 VS版本 msvc-12.0 VS2013 msvc-14.0 VS2015 msvc-14.1 VS2017 msvc-14.2 VS2019 1. 编译 在 x86 Native Tools Command Prompt for VS 2019 下运行
-About b2 vs bjam as of Boost 1.47.0, the official name of the executable was changed to b2. Gen b2 bootstrap.bat VS2013 b2 stage --toolset=msvc-12.0 --without-graph --without-graph_parallel --without-math --without-mpi --without-python --without-serialization --without-wave --stagedir=&amp;#34;C:\boost\bin\vc120&amp;#34; link=static runtime-link=shared runtime-link=static threading=multi debug release VS2019 b2 stage --toolset=msvc-14.</description>
     </item>
     
     <item>

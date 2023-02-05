@@ -13,7 +13,7 @@
 
 
 <meta name="twitter:title" content="安装boost库(VC)"/>
-<meta name="twitter:description" content="https://boostorg.jfrog.io/artifactory/main/release/"/>
+<meta name="twitter:description" content="vc12.0, vc14.2"/>
 <meta name="twitter:site" content="@"/>
 
 
@@ -27,9 +27,9 @@
     
 
     
-    <meta property="og:description" content="https://boostorg.jfrog.io/artifactory/main/release/" />
+    <meta property="og:description" content="vc12.0, vc14.2" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2023-01-05T10:08:39&#43;08:00" />
+    <meta property="article:published_time" content="2023-02-03T10:08:39&#43;08:00" />
 
     
     
@@ -37,7 +37,7 @@
     <title>安装boost库(VC) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
 
     
-    <meta name="description" content="https://boostorg.jfrog.io/artifactory/main/release/" />
+    <meta name="description" content="vc12.0, vc14.2" />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -92,18 +92,18 @@
     },
     "headline": "安装boost库(VC)",
     "name": "安装boost库(VC)",
-    "wordCount":  178 ,
+    "wordCount":  187 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/vc-boost/",
-    "datePublished": "2023-01-05T10:08Z",
-    "dateModified": "2023-01-05T10:08Z",
+    "datePublished": "2023-02-03T10:08Z",
+    "dateModified": "2023-02-03T10:08Z",
     
     
-    "description": "https://boostorg.jfrog.io/artifactory/main/release/",
+    "description": "vc12.0, vc14.2",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://tdtc-hrb.github.io/csdn/post/vc-boost/"
@@ -164,12 +164,12 @@
 
     <header class="post-header">
         <h1 class="post-title">安装boost库(VC)</h1>
-        <small>https://boostorg.jfrog.io/artifactory/main/release/</small>
+        <small>vc12.0, vc14.2</small>
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2023-01-05T10:08:39&#43;08:00">
-            Jan 5, 2023
+          <time class="post-date" datetime="2023-02-03T10:08:39&#43;08:00">
+            Feb 3, 2023
           </time>
         
          
@@ -177,13 +177,16 @@
     </header>
 
     <section class="post-content">
-      <blockquote>
-<p>vs2008 cl 提示不可用.</p>
-<blockquote>
-<p>vs2012 Gen b2时出错。</p>
-</blockquote>
-</blockquote>
-<p>支持的VC版本(已测)</p>
+      <p><a href="https://sourceforge.net/projects/boost/files/boost-binaries/">support of msvc</a></p>
+<ul>
+<li>1.55.0</li>
+</ul>
+<pre tabindex="0"><code>support of msvc-12.0
+</code></pre><ul>
+<li><a href="https://boostorg.jfrog.io/artifactory/main/release/">1.71.0</a></li>
+</ul>
+<pre tabindex="0"><code>support of msvc-14.2
+</code></pre><p><a href="https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B#Internal_version_numbering">MSVC++ versions</a></p>
 <table>
 <thead>
 <tr>
@@ -195,14 +198,6 @@
 <tr>
 <td>msvc-12.0</td>
 <td>VS2013</td>
-</tr>
-<tr>
-<td>msvc-14.0</td>
-<td>VS2015</td>
-</tr>
-<tr>
-<td>msvc-14.1</td>
-<td>VS2017</td>
 </tr>
 <tr>
 <td>msvc-14.2</td>
@@ -217,7 +212,8 @@
 <h2 id="about-b2-vs-bjamhttpswwwboostorgbuilddochtmlbbv2faqnameshtml"><a href="https://www.boost.org/build/doc/html/bbv2/faq/names.html">About b2 vs bjam</a></h2>
 <pre tabindex="0"><code>as of Boost 1.47.0, the official name of the executable was changed to b2.
 </code></pre><h2 id="gen-b2">Gen b2</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>bootstrap.bat
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span><span style="color:#66d9ef">cd</span> C:\boost_1_81_0
+</span></span><span style="display:flex;"><span>bootstrap.bat
 </span></span></code></pre></div><p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/boost-cmd1.png" alt="windows cmd1"></p>
 <ul>
 <li>VS2013</li>
@@ -229,7 +225,7 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>b2 stage --toolset<span style="color:#f92672">=</span>msvc-14.2 --without-graph --without-graph_parallel --without-math --without-mpi --without-python --without-serialization --without-wave --stagedir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;C:\boost\bin\vc142&#34;</span> link<span style="color:#f92672">=</span>static runtime-link<span style="color:#f92672">=</span>shared runtime-link<span style="color:#f92672">=</span>static threading<span style="color:#f92672">=</span>multi debug release
 </span></span></code></pre></div><h1 id="2-使用">2. 使用</h1>
 <h2 id="1-头文件">1) 头文件</h2>
-<p>拷贝C:\boost_1_79_0\boost文件夹到C:\boost</p>
+<p>Copy the C:\boost_1_81_0\boost folder to C:\boost</p>
 <h2 id="2-ide设置">2) IDE设置</h2>
 <h3 id="头文件引用">头文件引用</h3>
 <blockquote>
@@ -264,7 +260,7 @@ Spectre mitigation: 禁止</p>
 <ul>
 <li>
 <p>header <br>
-<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/boost-header1.png" alt="VS2019 header1"> <br>
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/boost-header1.png" alt="VS2019 header1">
 <img src="https://github.com/tdtc-hrb/csdn/raw/master/images/boost-header2.png" alt="VS2019 header2"></p>
 </li>
 <li>
@@ -283,22 +279,22 @@ Spectre mitigation: 禁止</p>
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">wait</span>(<span style="color:#66d9ef">int</span> seconds)
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	boost<span style="color:#f92672">::</span>this_thread<span style="color:#f92672">::</span>sleep_for(boost<span style="color:#f92672">::</span>chrono<span style="color:#f92672">::</span>seconds{ seconds });
+</span></span><span style="display:flex;"><span>    boost<span style="color:#f92672">::</span>this_thread<span style="color:#f92672">::</span>sleep_for(boost<span style="color:#f92672">::</span>chrono<span style="color:#f92672">::</span>seconds{ seconds });
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">thread</span>()
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5</span>; <span style="color:#f92672">++</span>i)
-</span></span><span style="display:flex;"><span>	{
-</span></span><span style="display:flex;"><span>		wait(<span style="color:#ae81ff">1</span>);
-</span></span><span style="display:flex;"><span>		std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> i <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
-</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5</span>; <span style="color:#f92672">++</span>i)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        wait(<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>        std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> i <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+</span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	boost<span style="color:#f92672">::</span><span style="color:#66d9ef">thread</span> t{ <span style="color:#66d9ef">thread</span> };
-</span></span><span style="display:flex;"><span>	t.join();
+</span></span><span style="display:flex;"><span>    boost<span style="color:#f92672">::</span><span style="color:#66d9ef">thread</span> t{ <span style="color:#66d9ef">thread</span> };
+</span></span><span style="display:flex;"><span>    t.join();
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h1 id="reference">Reference</h1>
 <ul>
@@ -356,17 +352,10 @@ Spectre mitigation: 禁止</p>
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_vmware_netadapter/">
-          <section class="post">
-              <h2>使用物理网卡</h2>
-              
-          </section>
-      </a>
   
-  
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/com-ie-test/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/com-wizards-vc/">
           <section class="post">
-              <h2>测试COM</h2>
+              <h2>创建COM</h2>
           </section>
       </a>
   
