@@ -47,6 +47,30 @@ Other -&amp;gt; Support:</description>
     </item>
     
     <item>
+      <title>Windows串口</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/vc-serial_communication/</link>
+      <pubDate>Wed, 25 Jan 2023 08:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/vc-serial_communication/</guid>
+      <description>串口读写工具
+PC has no serial device
+PC has serial device
+CSerialPort author: Remon Spekreijse MFC Vs2013(VC12)/Vs2019(VC14.2) 程序介绍 界面分三块： 端口配置、发送区域、接收区域
+v2.0 使用boost thread + SQLite3 library 实现串口数据存储到SQLite数据库. 1. 端口配置 1.1 在“Port Number”选择端口号； 1.2 在“Config”配置端口的属性，比如波特率、奇偶校验、数据位、停止位等等。 Setting Serial Communication Number
+2. 发送区域 2.1 Loop Send 当我们钩选此复选框时，必须选择“发送频率”，然后才能执行循环发送数据。
+### 2.2 发送频率 选择其一：500、1000、2000毫秒。
+Setting time
+如果要更改读取自定义的时间频率：
+请将SerialCommView.cpp-Ln292，更为：
+((CComboBox *)GetDlgItem(IDC_COMBO1Timer))-&amp;gt;GetWindowTextA(strTemp);)
+2.3 发送内容框 在“发送信息框”输入内容就可发送数据了！
+2.4 操作流程 A类（自动化） 2.2-》2.3-》2.1
+B类（手动） 2.3-》点击“Send”按钮。
+3. 接收区域 3.1 制式切换 当钩选了“Hex View”复选框，接收到的数据就以16进制显示。
+3.2 清除数据 当点击“Clear”按钮，即清空接收框数据。</description>
+    </item>
+    
+    <item>
       <title>使用物理网卡</title>
       <link>https://tdtc-hrb.github.io/csdn/post/ops_vmware_netadapter/</link>
       <pubDate>Wed, 18 Jan 2023 14:08:08 +0800</pubDate>
@@ -62,33 +86,6 @@ VM &amp;lt;-&amp;gt; Host VM1 &amp;lt;-&amp;gt; VM2 VM -&amp;gt; Internet VM &am
 启动NFS，工作正常。
 输出信息如下：
 This is the boot programm!鶷his is the boot programm! Load UBOOT, please wait...... Load UBOOT from 0x10010000 to 0x23f00000 Over U-Boot 1.</description>
-    </item>
-    
-    <item>
-      <title>Windows串口</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/vc-serial_communication/</link>
-      <pubDate>Sun, 15 Jan 2023 08:08:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/vc-serial_communication/</guid>
-      <description>串口读写工具
-PC has no serial device
-PC has serial device
-CSerialPort author: Remon Spekreijse MFC Vs2013(VC12)/Vs2019(VC14.2) 程序介绍 界面分三块：
-1. 端口配置 1.1 在“Port Number”选择端口号； 1.2 在“Config”配置端口的属性，比如波特率、奇偶校验、数据位、停止位等等。 Setting Serial Communication Number
-2. 发送区域 2.1 Loop Send 当我们钩选此复选框时，必须选择“发送频率”，然后才能执行循环发送数据。
-### 2.2 发送频率 选择其一：500、1000、2000毫秒。
-Setting time
-如果要更改读取自定义的时间频率：
-请将SerialCommView.cpp-Ln292，更为：
-((CComboBox *)GetDlgItem(IDC_COMBO1Timer))-&amp;gt;GetWindowTextA(strTemp);)
-2.3 发送内容框 在“发送信息框”输入内容就可发送数据了！
-2.4 操作流程 A类（自动化） 2.2-》2.3-》2.1
-B类（手动） 2.3-》点击“Send”按钮。
-3. 接收区域 3.1 制式切换 当钩选了“Hex View”复选框，接收到的数据就以16进制显示。
-3.2 清除数据 当点击“Clear”按钮，即清空接收框数据。
-3.3 数据保存 当点击“Save As”按钮，即保存接收框数据；默认文件格式为rtf文件。
-操作串口 主要分为：初始化串口、读/写串口。
-其中，读串口需要使用线程。</description>
     </item>
     
     <item>
