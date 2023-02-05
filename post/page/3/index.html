@@ -164,6 +164,36 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c-automake/">automake生成makefile</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>注意: am文件是需要手工创建的!
+1. ac文件 生成configure.scan文件, 并重命名为configure.ac
+$ autoscan $ mv configure.scan configure.ac 修改配置 注意: 所有新修改的值都需要方括号([])
+程序属性 AC_INIT([hex2int], [v0.1], [veic_2005@163.com]) 目录结构 如果只有本目录, 使用空值 AM_INIT_AUTOMAKE 检查编译器 C compiler: AC_PROG_CC C++ compiler:
+AC_PROG_CXX 输出Makefile.in AC_CONFIG_FILES([Makefile]) 检查system头文件 AC_CHECK_HEADERS([string.h]) 2. 生成Makefile aclocal autoconf 自定义宏(可选) 在ac file中的定义：
+AC_CONFIG_HEADERS([config.h]) 执行：
+autoheader 输出Makefile automake --add-missing 输出Makefile:
+./configure 附件 手动Makefile 小项目可以。 注意：所有的命令前必须为TAB，不能使空格！
+#https://stackoverflow.com/questions/1484817/how-do-i-make-a-simple-makefile-for-gcc-on-linux #https://stackoverflow.com/questions/14109724/makefile-missing-separator/14109796 #https://www.gnu.org/software/make/manual/html_node/Pattern-Examples.html#Pattern-Examples #https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html#Automatic-Variables TARGET = hex2int CC = gcc CFLAGS = -g -Wall all:$(TARGET) OBJECTS = $(patsubst %. <a class="read-more" href="/csdn/post/c-automake/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-08-08T02:20:39&#43;08:00">
+            8 Aug 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/pack-file-linux/">打包文件</a></h2>
     </header>
     <section class="post-excerpt">
@@ -411,34 +441,6 @@ CA certificate ca.pem is self signed.For more information, see Help and Support 
         
         <time class="post-date" datetime="2022-06-07T12:08:39&#43;08:00">
             7 Jun 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/vc-update-atl/">VC升级时出现的问题</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>VC6迁移到VC2008+
-ATL Active Template Library (ATL)
-C1189 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atlcore.h(35): fatal error C1189: #error : This file requires _WIN32_WINNT to be #defined at least to 0x0403. Value 0x0501 or higher is recommended. A:
-StdAfx.h
-#define _WIN32_WINNT 0x0400 -&gt;
-#define _WIN32_WINNT 0x0501 C1083(atlimpl) c:\users\xiaobin\documents\visual studio 2013\projects\crcfcn_vc\stdafx.cpp(13): fatal error C1083: Cannot open include file: &#39;atlimpl.cpp&#39;: No such file or directory A: solution1 or solution2.
-solution1 Comment out this line stdAfx. <a class="read-more" href="/csdn/post/vc-update-atl/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-05-31T14:28:08&#43;08:00">
-            31 May 2022
         </time>
     </footer>
 </article>
