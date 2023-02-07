@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="远程仓库回滚, 删除github发布, 修改commit信息" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2022-01-02T01:38:08&#43;08:00" />
+    <meta property="article:published_time" content="2022-02-02T01:38:08&#43;08:00" />
 
     
     
@@ -92,15 +92,15 @@
     },
     "headline": "git操作 部分1",
     "name": "git操作 部分1",
-    "wordCount":  88 ,
+    "wordCount":  134 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/ops_git_oper1/",
-    "datePublished": "2022-01-02T01:38Z",
-    "dateModified": "2022-01-02T01:38Z",
+    "datePublished": "2022-02-02T01:38Z",
+    "dateModified": "2022-02-02T01:38Z",
     
     
     "description": "远程仓库回滚, 删除github发布, 修改commit信息",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2022-01-02T01:38:08&#43;08:00">
-            Jan 2, 2022
+          <time class="post-date" datetime="2022-02-02T01:38:08&#43;08:00">
+            Feb 2, 2022
           </time>
         
          
@@ -219,14 +219,21 @@ cmd是windows风格的命令行，可以使用windows命令；</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git merge origin/dev
 </span></span></code></pre></div><h1 id="五设置user">五、设置user</h1>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git init
-</span></span></code></pre></div><p>``bash
-git config user.name &ldquo;xiaobin80&rdquo;
-git config user.email &ldquo;<a href="mailto:veic_2005@163.com">veic_2005@163.com</a>&rdquo;</p>
-<pre tabindex="0"><code>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config user.name <span style="color:#e6db74">&#34;xiaobin80&#34;</span>
+</span></span><span style="display:flex;"><span>git config user.email <span style="color:#e6db74">&#34;veic_2005@163.com&#34;</span>
+</span></span></code></pre></div><h1 id="issues">Issues</h1>
+<p>Git-2.39.1-64-bit + TortoiseGit-2.14.0.0-64bit</p>
+<h2 id="safe-directory">safe directory</h2>
+<p>Starting in Git v2.35.3, safe directory checks can be disabled, which will end all the &ldquo;unsafe repository&rdquo; errors</p>
+<p>It will add the following setting to your global .gitconfig(C:\Users&lt;username&gt;) file:</p>
+<pre tabindex="0"><code>[safe]
+	directory = *
+</code></pre><h1 id="reference">Reference</h1>
+<ul>
+<li><a href="https://stackoverflow.com/questions/16862933/how-to-resolve-gits-not-something-we-can-merge-error/16862934#16862934">How to resolve git&rsquo;s “not something we can merge” error</a>
+-<a href="https://stackoverflow.com/a/71904131">I cannot add the parent directory to <em>safe.directory</em> in Git</a></li>
+</ul>
 
-# Reference
-- [How to resolve git&#39;s “not something we can merge” error](https://stackoverflow.com/questions/16862933/how-to-resolve-gits-not-something-we-can-merge-error/16862934#16862934)
-</code></pre>
     </section>
 
 
@@ -285,9 +292,9 @@ git config user.email &ldquo;<a href="mailto:veic_2005@163.com">veic_2005@163.co
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_dc_redis_ubuntu/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/com-safearray-vc/">
           <section class="post">
-              <h2>安装redis-server</h2>
+              <h2>SafeArray数据</h2>
           </section>
       </a>
   
