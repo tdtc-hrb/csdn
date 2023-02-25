@@ -255,6 +255,34 @@ Other -&gt; Support: <a class="read-more" href="/csdn/post/com-wizards-vc/">&raq
     
         <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/vc-update-atl/">VC升级时出现的问题</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>VC6迁移到VC2008+
+ATL Active Template Library (ATL)
+C1189 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atlcore.h(35): fatal error C1189: #error : This file requires _WIN32_WINNT to be #defined at least to 0x0403. Value 0x0501 or higher is recommended. A:
+StdAfx.h
+#define _WIN32_WINNT 0x0400 -&gt;
+#define _WIN32_WINNT 0x0501 C1083(atlimpl) c:\users\xiaobin\documents\visual studio 2013\projects\crcfcn_vc\stdafx.cpp(13): fatal error C1083: Cannot open include file: &#39;atlimpl.cpp&#39;: No such file or directory A: solution 1 or 2.
+solution 1 Comment out this line stdAfx. <a class="read-more" href="/csdn/post/vc-update-atl/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-01-31T08:28:08&#43;08:00">
+            31 Jan 2023
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_tomcat/">Tomcat安装</a></h2>
     </header>
     <section class="post-excerpt">
@@ -441,37 +469,6 @@ mkdir -p ~/app/hadoop tar zxvf hadoop-2. <a class="read-more" href="/csdn/post/o
         
         <time class="post-date" datetime="2022-10-11T00:08:08&#43;08:00">
             11 Oct 2022
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_real_keepalived/">架设Real Server和Keepalived Server</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>准备工作：
-修改网卡为固定IP 开启sudo 总览 OS: minimal
-Alma CentOS7.9 Real Server RHEL78RS1 192.168.0.127
-Nginx v1.22 Tomcat v8.5.82 RHEL78RS2 192.168.0.122
-Nginx v1.22 Tomcat v9.0.68 Keepalived Server RHEL78Master 192.168.0.129
-RHEL78Bak 192.168.0.130
-一、Real Server 安装前准备:
-Linux下安装Tomcat nginx - CentOS7 nginx - RHEL8 config ARP ifconfig:
-$sudo yum install net-tools Service #vi /etc/init.d/realserver /etc/init.d/realserver:
-#!/bin/bash SNS_VIP=192.168.0.220 case &#34;$1&#34; in start) ifconfig lo:0 $SNS_VIP netmask 255.255.255.255 broadcast $SNS_VIP /sbin/route add -host $SNS_VIP dev lo:0 echo &#34;1&#34; &gt;/proc/sys/net/ipv4/conf/lo/arp_ignore echo &#34;2&#34; &gt;/proc/sys/net/ipv4/conf/lo/arp_announce echo &#34;1&#34; &gt;/proc/sys/net/ipv4/conf/all/arp_ignore echo &#34;2&#34; &gt;/proc/sys/net/ipv4/conf/all/arp_announce sysctl -p &gt;/dev/null 2&gt;&amp;1 echo &#34;RealServer Start OK&#34; ;; stop) ifconfig lo:0 down route del $SNS_VIP &gt;/dev/null 2&gt;&amp;1 echo &#34;0&#34; &gt;/proc/sys/net/ipv4/conf/lo/arp_ignore echo &#34;0&#34; &gt;/proc/sys/net/ipv4/conf/lo/arp_announce echo &#34;0&#34; &gt;/proc/sys/net/ipv4/conf/all/arp_ignore echo &#34;0&#34; &gt;/proc/sys/net/ipv4/conf/all/arp_announce echo &#34;RealServer Stoped&#34; ;; *) echo &#34;Usage: $0 {start|stop}&#34; exit 1 esac exit 0 exec $sudo chmod 755 /etc/init. <a class="read-more" href="/csdn/post/ops_real_keepalived/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-10-03T02:38:08&#43;08:00">
-            3 Oct 2022
         </time>
     </footer>
 </article>

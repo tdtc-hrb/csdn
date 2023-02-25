@@ -164,17 +164,15 @@
 	
 	   <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/vc-update-atl/">VC升级时出现的问题</a></h2>
+        <h2 class="post-title"><a href="/csdn/post/mysql57-win/">安装配置MySQL 5.7</a></h2>
     </header>
     <section class="post-excerpt">
         
-            <p>VC6迁移到VC2008+
-ATL Active Template Library (ATL)
-C1189 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atlcore.h(35): fatal error C1189: #error : This file requires _WIN32_WINNT to be #defined at least to 0x0403. Value 0x0501 or higher is recommended. A:
-StdAfx.h
-#define _WIN32_WINNT 0x0400 -&gt;
-#define _WIN32_WINNT 0x0501 C1083(atlimpl) c:\users\xiaobin\documents\visual studio 2013\projects\crcfcn_vc\stdafx.cpp(13): fatal error C1083: Cannot open include file: &#39;atlimpl.cpp&#39;: No such file or directory A: solution1 or solution2.
-solution1 Comment out this line stdAfx. <a class="read-more" href="/csdn/post/vc-update-atl/">&raquo;</a></p>
+            <p>一、配置和安装 ini配置详见附录
+预配置 需要vc12 redist
+设置环境变量 名称：MYSQL57_HOME 赋值：D:\progFiles\mysql-5.7 init data %MYSQL57_HOME%\bin\mysqld --initialize-insecure --console 注册/注销服务 注册 多个版本的MySQL运行：
+%MYSQL57_HOME%\bin\mysqld --install MySQL57 --defaults-file=&#34;D:\progFiles\mysql-5.7\my.ini&#34; 注销 sc delete mysql57 Enable SSL Connections for MySQL 注意： 可以忽略如下警告信息：
+CA certificate ca.pem is self signed.For more information, see Help and Support Center at http://www.mysql.com. Connection TLS Protocol Configuration mysql&gt; SHOW GLOBAL VARIABLES LIKE &#39;tls_version&#39;; To change the value of tls_version, set it at server startup. For example, to permit connections that use the TLSv1. <a class="read-more" href="/csdn/post/mysql57-win/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -183,8 +181,8 @@ solution1 Comment out this line stdAfx. <a class="read-more" href="/csdn/post/vc
         
 
         
-        <time class="post-date" datetime="2022-05-31T14:28:08&#43;08:00">
-            31 May 2022
+        <time class="post-date" datetime="2022-06-07T12:08:39&#43;08:00">
+            7 Jun 2022
         </time>
     </footer>
 </article>

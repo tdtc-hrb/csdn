@@ -38,6 +38,21 @@ Other -&amp;gt; Support:</description>
     </item>
     
     <item>
+      <title>VC升级时出现的问题</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/vc-update-atl/</link>
+      <pubDate>Tue, 31 Jan 2023 08:28:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/vc-update-atl/</guid>
+      <description>VC6迁移到VC2008+
+ATL Active Template Library (ATL)
+C1189 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atlcore.h(35): fatal error C1189: #error : This file requires _WIN32_WINNT to be #defined at least to 0x0403. Value 0x0501 or higher is recommended. A:
+StdAfx.h
+#define _WIN32_WINNT 0x0400 -&amp;gt;
+#define _WIN32_WINNT 0x0501 C1083(atlimpl) c:\users\xiaobin\documents\visual studio 2013\projects\crcfcn_vc\stdafx.cpp(13): fatal error C1083: Cannot open include file: &amp;#39;atlimpl.cpp&amp;#39;: No such file or directory A: solution 1 or 2.
+solution 1 Comment out this line stdAfx.</description>
+    </item>
+    
+    <item>
       <title>Tomcat安装</title>
       <link>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</link>
       <pubDate>Sat, 28 Jan 2023 12:38:08 +0800</pubDate>
@@ -412,21 +427,6 @@ import logo from &amp;#39;./logo.svg&amp;#39;; import &amp;#39;./App.css&amp;#39
 设置环境变量 名称：MYSQL57_HOME 赋值：D:\progFiles\mysql-5.7 init data %MYSQL57_HOME%\bin\mysqld --initialize-insecure --console 注册/注销服务 注册 多个版本的MySQL运行：
 %MYSQL57_HOME%\bin\mysqld --install MySQL57 --defaults-file=&amp;#34;D:\progFiles\mysql-5.7\my.ini&amp;#34; 注销 sc delete mysql57 Enable SSL Connections for MySQL 注意： 可以忽略如下警告信息：
 CA certificate ca.pem is self signed.For more information, see Help and Support Center at http://www.mysql.com. Connection TLS Protocol Configuration mysql&amp;gt; SHOW GLOBAL VARIABLES LIKE &amp;#39;tls_version&amp;#39;; To change the value of tls_version, set it at server startup. For example, to permit connections that use the TLSv1.</description>
-    </item>
-    
-    <item>
-      <title>VC升级时出现的问题</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/vc-update-atl/</link>
-      <pubDate>Tue, 31 May 2022 14:28:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/vc-update-atl/</guid>
-      <description>VC6迁移到VC2008+
-ATL Active Template Library (ATL)
-C1189 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atlcore.h(35): fatal error C1189: #error : This file requires _WIN32_WINNT to be #defined at least to 0x0403. Value 0x0501 or higher is recommended. A:
-StdAfx.h
-#define _WIN32_WINNT 0x0400 -&amp;gt;
-#define _WIN32_WINNT 0x0501 C1083(atlimpl) c:\users\xiaobin\documents\visual studio 2013\projects\crcfcn_vc\stdafx.cpp(13): fatal error C1083: Cannot open include file: &amp;#39;atlimpl.cpp&amp;#39;: No such file or directory A: solution1 or solution2.
-solution1 Comment out this line stdAfx.</description>
     </item>
     
     <item>
