@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.110.0">
+    <meta name="generator" content="Hugo 0.111.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -195,6 +195,29 @@
 </nav>
 
     </div>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c2plus-com-dll/">c#调用COM</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>IDE vs2008 Express(sp1) reference COM 注册COM @echo cd /d %~dp0 Regsvr32 xbfInfo.dll Add Reference COM选项卡 添加完成时
+添加事件 import class using System.IO; using xbfInfoLib; 写xbf文件 读Ini文件配置 Boolean flagMSSQL = false; Boolean flagSecu = false; string sectionName = ini.readIniFileVal(&#34;config&#34;, &#34;type&#34;); string strSrv = ini.readIniFileVal(sectionName, &#34;Server&#34;); if (!Equals(strSrv, &#34;&#34;)) flagMSSQL = true; if (flagMSSQL) { strConn = &#34;Provider=SQLOLEDB.1;&#34; + &#34;Password=&#34; + ini.readIniFileVal(sectionName, &#34;Pwd&#34;) + &#34;;&#34; + &#34;Persist Security Info=True;&#34; + &#34;User ID=&#34; + ini. <a class="read-more" href="/csdn/post/c2plus-com-dll/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-02-13T08:08:08&#43;08:00">
+            13 Feb 2023
+        </time>
+    </footer>
+</article>
 
     
         <article class="post post">
@@ -445,30 +468,6 @@ xbfInfo.dllrepoInfo.dll callXBFLib 生成/读取xbf文件.
         
         <time class="post-date" datetime="2022-12-17T08:18:18&#43;08:00">
             17 Dec 2022
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_hadoop_cluster/">Hadoop - cluster</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>Prepare server1 server2 server3 server4 NameNode y y DataNode y y y ResourceManager y y NodeManager y y y y Zookeeper y y y y JournalNode y y y ZK-FC y y JobHistor y Server Name IP Host Name server1 192.168.42.107 tdtc201 server2 192.168.42.108 tdtc202 server3 192.168.42.109 tdtc203 server4 192.168.42.110 tdtc204 1. zk zkServer.sh start 安装详见《ZooKeeper multi-server install》
-2. Open firewall Stage I: Installation 1. Unzip /home/$USER/app/hadoop/$version 路径参考Oracle11g
-mkdir -p ~/app/hadoop tar zxvf hadoop-2. <a class="read-more" href="/csdn/post/ops_hadoop_cluster/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-10-11T00:08:08&#43;08:00">
-            11 Oct 2022
         </time>
     </footer>
 </article>

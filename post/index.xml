@@ -6,7 +6,17 @@
     <description>Recent content in Posts on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 03 Feb 2023 10:08:39 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Feb 2023 08:08:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>c#调用COM</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/c2plus-com-dll/</link>
+      <pubDate>Mon, 13 Feb 2023 08:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/c2plus-com-dll/</guid>
+      <description>IDE vs2008 Express(sp1) reference COM 注册COM @echo cd /d %~dp0 Regsvr32 xbfInfo.dll Add Reference COM选项卡 添加完成时
+添加事件 import class using System.IO; using xbfInfoLib; 写xbf文件 读Ini文件配置 Boolean flagMSSQL = false; Boolean flagSecu = false; string sectionName = ini.readIniFileVal(&amp;#34;config&amp;#34;, &amp;#34;type&amp;#34;); string strSrv = ini.readIniFileVal(sectionName, &amp;#34;Server&amp;#34;); if (!Equals(strSrv, &amp;#34;&amp;#34;)) flagMSSQL = true; if (flagMSSQL) { strConn = &amp;#34;Provider=SQLOLEDB.1;&amp;#34; + &amp;#34;Password=&amp;#34; + ini.readIniFileVal(sectionName, &amp;#34;Pwd&amp;#34;) + &amp;#34;;&amp;#34; + &amp;#34;Persist Security Info=True;&amp;#34; + &amp;#34;User ID=&amp;#34; + ini.</description>
+    </item>
+    
     <item>
       <title>安装boost库(VC)</title>
       <link>https://tdtc-hrb.github.io/csdn/post/vc-boost/</link>
@@ -512,17 +522,6 @@ $java -jar cliDemo-0.0.1-SNAPSHOT.jar no main manifest attribute, in cliDemo-0.0
 for win:
 java -cp cliDemo-0.0.1-SNAPSHOT.jar;C:\Users\xiaobin\.m2\repository\commons-cli\commons-cli\1.4\commons-cli-1.4.jar my.csdn9.ConsoleLauncher --help Reference how-to-run-jar-files-depend-on-jar-files 3. CoreException: Could not calculate build plan: Plugin org.apache.maven.plugins:maven-compiler-plugin Q:
 CoreException: Could not calculate build plan: Plugin org.apache.maven.plugins:maven-compiler-plugin:3.1 or one of its dependencies could not be resolved: Failure to find org.</description>
-    </item>
-    
-    <item>
-      <title>调用COM</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/c2plus-com-dll/</link>
-      <pubDate>Fri, 13 May 2022 08:08:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/c2plus-com-dll/</guid>
-      <description>IDE: vs2008 Express(sp1)
-callXBFLibrary reference COM 注册COM @echo cd /d %~dp0 Regsvr32 xbfInfo.dll Add Reference COM选项卡 添加完成时
-添加事件 import class using System.IO; using xbfInfoLib; 写xbf文件 读Ini文件配置 Boolean flagMSSQL = false; Boolean flagSecu = false; string sectionName = ini.readIniFileVal(&amp;#34;config&amp;#34;, &amp;#34;type&amp;#34;); string strSrv = ini.readIniFileVal(sectionName, &amp;#34;Server&amp;#34;); if (!Equals(strSrv, &amp;#34;&amp;#34;)) flagMSSQL = true; if (flagMSSQL) { strConn = &amp;#34;Provider=SQLOLEDB.1;&amp;#34; + &amp;#34;Password=&amp;#34; + ini.readIniFileVal(sectionName, &amp;#34;Pwd&amp;#34;) + &amp;#34;;&amp;#34; + &amp;#34;Persist Security Info=True;&amp;#34; + &amp;#34;User ID=&amp;#34; + ini.</description>
     </item>
     
     <item>
