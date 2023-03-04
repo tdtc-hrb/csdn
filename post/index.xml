@@ -6,7 +6,16 @@
     <description>Recent content in Posts on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 13 Feb 2023 08:08:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Feb 2023 12:38:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tomcat安装</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</link>
+      <pubDate>Tue, 28 Feb 2023 12:38:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</guid>
+      <description>Servlet Spec JSP Spec EL Spec WebSocket Spec Authentication (JASIC) Spec Apache Tomcat Version Latest Released Version Supported Java Versions 4.0 2.3 3.0 1.1 1.1 9.0.x 9.0.73 8 and later 3.1 2.3 3.0 1.1 1.1 8.5.x 8.5.86 7 and later 3.0 2.2 2.2 1.1 N/A 7.0.x 7.0.109 6 and later(7 and later for WebSocket) 2.5 2.1 2.1 N/A N/A 6.0.x (archived) 6.0.53 5 and later installation Platform version Released Specification Java SE Support Important Changes Jakarta EE 10 2022-03-31 10 Java SE 17/Java SE 11 Removal of deprecated items in Servlet, Faces, CDI and EJB (Entity Beans and Embeddable Container).</description>
+    </item>
+    
     <item>
       <title>c#调用COM</title>
       <link>https://tdtc-hrb.github.io/csdn/post/c2plus-com-dll/</link>
@@ -60,15 +69,6 @@ StdAfx.h
 #define _WIN32_WINNT 0x0400 -&amp;gt;
 #define _WIN32_WINNT 0x0501 C1083(atlimpl) c:\users\xiaobin\documents\visual studio 2013\projects\crcfcn_vc\stdafx.cpp(13): fatal error C1083: Cannot open include file: &amp;#39;atlimpl.cpp&amp;#39;: No such file or directory A: solution 1 or 2.
 solution 1 Comment out this line stdAfx.</description>
-    </item>
-    
-    <item>
-      <title>Tomcat安装</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</link>
-      <pubDate>Sat, 28 Jan 2023 12:38:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</guid>
-      <description>Servlet Spec JSP Spec EL Spec WebSocket Spec Authentication (JASIC) Spec Apache Tomcat Version Latest Released Version Supported Java Versions 4.0 2.3 3.0 1.1 1.1 9.0.x 9.0.71 8 and later 3.1 2.3 3.0 1.1 1.1 8.5.x 8.5.85 7 and later 3.0 2.2 2.2 1.1 N/A 7.0.x 7.0.109 6 and later(7 and later for WebSocket) 2.5 2.1 2.1 N/A N/A 6.0.x (archived) 6.0.53 5 and later installation Platform version Released Specification Java SE Support Important Changes Jakarta EE 10 2022-03-31 10 Java SE 17/Java SE 11 Removal of deprecated items in Servlet, Faces, CDI and EJB (Entity Beans and Embeddable Container).</description>
     </item>
     
     <item>
