@@ -164,6 +164,31 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/com-ie-test/">测试COM</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>IDE: Visual Studio 2019(v16.11)
+本文参考: 创建COM
+一、创建COM 增加IE支持： IObjectWithSite
+增加方法 Add STDMETHODIMP CtestSOW::Add(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x + y); return S_OK; } Multiply STDMETHODIMP CtestSOW::Mul(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x * y); return S_OK; } Divide STDMETHODIMP CtestSOW::Div(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x / y); return S_OK; } 二、测试平台 查看依赖：win8. <a class="read-more" href="/csdn/post/com-ie-test/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-01-04T18:08:08&#43;08:00">
+            4 Jan 2023
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/c2plus-unmanaged-dll/">调用非托管DLL</a></h2>
     </header>
     <section class="post-excerpt">
@@ -406,31 +431,6 @@ rngd -f -r /dev/urandom The old terminal shows the result： 3. gen revoke $gpg 
         
         <time class="post-date" datetime="2022-09-25T00:08:08&#43;08:00">
             25 Sep 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/mysql57-cenos7/">CentOS7/8安装mysql5.7</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>本安装大部分同&ldquo;安装 MariaDB 10.3数据库&rdquo;
-Installation 1. add repo sudo yum install http://repo.mysql.com/mysql57-community-release-el7.rpm 2. install import GPG:
-sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022 CentOS7 sudo yum install mysql-community-server CentOS8 Install after doing the following(disable default repo, config-manager, close gpgcheck):
-sudo dnf install mysql-community-server disable default repo sudo dnf remove @mysql sudo dnf module reset mysql sudo dnf module disable mysql config-manager sudo dnf config-manager --disable mysql80-community sudo dnf config-manager --enable mysql57-community close gpgcheck sudo vi /etc/yum. <a class="read-more" href="/csdn/post/mysql57-cenos7/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-09-24T06:21:39&#43;08:00">
-            24 Sep 2022
         </time>
     </footer>
 </article>

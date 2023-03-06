@@ -6,7 +6,22 @@
     <description>Recent content in Posts on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 28 Feb 2023 12:38:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Mar 2023 21:30:08 -0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用BSD socket</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/vc-bsd_socket/</link>
+      <pubDate>Sun, 05 Mar 2023 21:30:08 -0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/vc-bsd_socket/</guid>
+      <description>BSD Socket是标准的套接字规范，那么怎么在windows使用他们呢？
+Init &amp;amp; clean 首先要引用&amp;lt;winsock2.h&amp;gt;和ws2_32.lib； 使用struct addrinfo需引用&amp;lt;ws2tcpip.h&amp;gt;。
+程序头: WSAStartup(), 程序尾: WSACleanup();
+code 以下程序在VC9/VC14.1下编译通过
+客户端程序 prj1Clt 无getaddrinfo版
+注意：InetPton函数只能在Windows Version &amp;gt;=6上实现！
+// prj1Clt.cpp : This file contains the &amp;#39;main&amp;#39; function. Program execution begins and ends there. // /** * Networking program is Win version with BSD Socket * Client side * * Author: xiaobin * Date: 2013-12-12 * Modfity: 2020-5-28 */ #include &amp;lt;iostream&amp;gt; #if _MSC_VER &amp;gt; 1800 #include &amp;lt;tchar.h&amp;gt; #endif #ifdef _WIN32 #include &amp;lt;winsock2.</description>
+    </item>
+    
     <item>
       <title>Tomcat安装</title>
       <link>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</link>
@@ -523,21 +538,6 @@ $java -jar cliDemo-0.0.1-SNAPSHOT.jar no main manifest attribute, in cliDemo-0.0
 for win:
 java -cp cliDemo-0.0.1-SNAPSHOT.jar;C:\Users\xiaobin\.m2\repository\commons-cli\commons-cli\1.4\commons-cli-1.4.jar my.csdn9.ConsoleLauncher --help Reference how-to-run-jar-files-depend-on-jar-files 3. CoreException: Could not calculate build plan: Plugin org.apache.maven.plugins:maven-compiler-plugin Q:
 CoreException: Could not calculate build plan: Plugin org.apache.maven.plugins:maven-compiler-plugin:3.1 or one of its dependencies could not be resolved: Failure to find org.</description>
-    </item>
-    
-    <item>
-      <title>使用BSD socket</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/vc-bsd_socket/</link>
-      <pubDate>Thu, 12 May 2022 08:08:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/vc-bsd_socket/</guid>
-      <description>BSD Socket是标准的套接字规范，那么怎么在windows使用他们呢？
-Init &amp;amp; clean 首先要引用&amp;lt;winsock2.h&amp;gt;和ws2_32.lib； 使用struct addrinfo需引用&amp;lt;ws2tcpip.h&amp;gt;。
-程序头: WSAStartup(), 程序尾: WSACleanup();
-code 以下程序在VC9/VC14.1下编译通过
-客户端程序 prj1Clt 无getaddrinfo版
-注意：InetPton函数只能在Windows Version &amp;gt;=6上实现！
-// prj1Clt.cpp : This file contains the &amp;#39;main&amp;#39; function. Program execution begins and ends there. // /** * Networking program is Win version with BSD Socket * Client side * * Author: xiaobin * Date: 2013-12-12 * Modfity: 2020-5-28 */ #include &amp;lt;iostream&amp;gt; #if _MSC_VER &amp;gt; 1800 #include &amp;lt;tchar.h&amp;gt; #endif #ifdef _WIN32 #include &amp;lt;winsock2.</description>
     </item>
     
     <item>
