@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.111.0">
+    <meta name="generator" content="Hugo 0.111.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -197,6 +197,56 @@
     
         <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_sudo/">开启sudo</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>new user #useradd tdtc #passwd tdtc Append group CentOS7- Open wheel #vi /etc/pam.d/su auth required /lib/security/$ISA/pam_wheel.so use_uid Attachment of group members #gpasswd -a tdtc wheel CentOS7/8 CentOS8 needs to be executed locally, Unable to execute on ssh network side.
+#usermod –aG wheel tdtc test Query all users with sudo permissions.
+[tdtc@tdtc102 ~]$ sudo lid -g wheel We trust you have received the usual lecture from the local System Administrator. It usually boils down to these three things: #1) Respect the privacy of others. <a class="read-more" href="/csdn/post/ops_sudo/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-09-18T00:08:08&#43;08:00">
+            18 Sep 2022
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/pd-db-phy/">powerDesigner生成phy图</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>使用版本：v16.1
+一、连接数据库 1. 新建pdm File-》New Model model types -&gt; physical data model model name: newmodel-phy dbms: mysql5.0
+2. config connect profile DataBase -&gt; Configure connections Connection profile 3. connect Database -&gt; connect Flag: &ldquo;Disconnect&rdquo; Available
+dcp文件（mysql5-crm.dcp） [ConnectionProfile]ConnectionType=JDBCDbms=MySQLDisableBind=0Driver=com.mysql.jdbc.DriverJarFiles=D:\war\mysql-connector-java-5.1.49.jarLogId=rootTrimSpaces=0URL=jdbc:mysql://106.14.141.40:3306/crm 二、生成phy图 1. Reverse Engineer File -&gt; Reverse Engineer-&gt;Database 选择数据库： 其他数据库全部反选： 例如： 最后，点击ok生成phy图。
+Tips：如果想从pdm生成CDM，Tools -&gt; Generate Conceptual Data Model <a class="read-more" href="/csdn/post/pd-db-phy/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-09-10T02:26:39&#43;08:00">
+            10 Sep 2022
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/mysql-imp-exp/">MySQL导入导出数据库</a></h2>
     </header>
     <section class="post-excerpt">
@@ -266,32 +316,6 @@ autoheader 输出Makefile automake --add-missing 输出Makefile:
         
         <time class="post-date" datetime="2022-08-08T02:20:39&#43;08:00">
             8 Aug 2022
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/pack-file-linux/">打包文件</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>取消目录所有权限
-chmod -R 777 /tmp/etc 一、ISO文件 mkisofs -r -o etc.iso /tmp/etc 二、压缩文件 1. zip zip -r etc.zip /tmp/etc 2. tar 仅打包，不压缩！
-tar -cvf /tmp/etc.tar /etc transform --transform s/OLD_NAME/NEW_NAME/ gz tar -zcvf /tmp/etc.tar.gz /etc transform:
-tar -zcvf /tmp/etc.tar.gz /etc --transform s/etc/myetc/ bz2 tar -jcvf /tmp/etc.tar.bz2 /etc transform:
-tar -jcvf /tmp/etc.tar.bz2 /etc --transform s/etc/myetc/ FAQ This does not look like a tar archive #gzip -d xxxx.tar.gz #tar -xf xxxx.tar 参考文章 18 Tar Command Examples in Linux c – Creates a new . <a class="read-more" href="/csdn/post/pack-file-linux/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-07-10T02:20:39&#43;08:00">
-            10 Jul 2022
         </time>
     </footer>
 </article>
@@ -375,32 +399,6 @@ ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;qaz1!Xsw2@&#39;
         
         <time class="post-date" datetime="2022-06-27T03:21:39&#43;08:00">
             27 Jun 2022
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_network_proxy/">设置proxy</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>OS Windows set command
-set http_proxy=http://127.0.0.1:8580 set https_proxy=http://127.0.0.1:8580 Ubuntu export http_proxy=&#34;http://192.168.1.108:1080&#34; export https_proxy=&#34;http://192.168.1.108:1080&#34; With user and password Set up the server in the tool: Check &ldquo;Run xxx as Server(listens 0.0.0.0)&rdquo;
-export http_proxy=http://USERNAME:PASSWORD@192.168.1.108:8580/ export https_proxy=http://USERNAME:PASSWORD@192.168.1.108:8580/ software VirtualBox Adapter 1 host only, vboxnet0
-Adapter 2 NAT
-Guest os sudo vi /etc/netplan/00-installer-config.yaml network: version: 2 renderer: networkd ethernets: enp0s3: addresses: - 192.168.56.12/24 dhcp4: no enp0s8: dhcp4: no Wine #!/bin/bash sudo dpkg --add-architecture i386 sudo curl -O https://dl. <a class="read-more" href="/csdn/post/ops_network_proxy/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-06-17T14:08:08&#43;08:00">
-            17 Jun 2022
         </time>
     </footer>
 </article>

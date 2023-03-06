@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.111.0">
+    <meta name="generator" content="Hugo 0.111.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -221,6 +221,33 @@
     
         <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_network_proxy/">设置proxy</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>OS Windows set command
+set http_proxy=http://127.0.0.1:8580 set https_proxy=http://127.0.0.1:8580 Ubuntu export http_proxy=&#34;http://192.168.1.108:1080&#34; export https_proxy=&#34;http://192.168.1.108:1080&#34; With user and password Set up the server in the tool: Check &ldquo;Run xxx as Server(listens 0.0.0.0)&rdquo;
+export http_proxy=http://USERNAME:PASSWORD@192.168.1.108:8580/ export https_proxy=http://USERNAME:PASSWORD@192.168.1.108:8580/ FreeBSD v12.4
+setenv HTTP_PROXY http://web-proxy.xxxxxx.com:8080 setenv HTTPS_PROXY https://web-proxy.xxxxxx.com:8080 software VirtualBox Adapter 1 host only, vboxnet0
+Adapter 2 NAT
+Guest os sudo vi /etc/netplan/00-installer-config.yaml network: version: 2 renderer: networkd ethernets: enp0s3: addresses: - 192.168.56.12/24 dhcp4: no enp0s8: dhcp4: no Wine #! <a class="read-more" href="/csdn/post/ops_network_proxy/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-02-17T14:08:08&#43;08:00">
+            17 Feb 2023
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/c2plus-com-dll/">c#调用COM</a></h2>
     </header>
     <section class="post-excerpt">
@@ -237,6 +264,32 @@
         
         <time class="post-date" datetime="2023-02-13T08:08:08&#43;08:00">
             13 Feb 2023
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/pack-file-linux/">打包文件</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>取消目录所有权限
+chmod -R 777 /tmp/etc 一、ISO文件 mkisofs -r -o etc.iso /tmp/etc 二、压缩文件 1. zip zip -r etc.zip /tmp/etc 2. tar 仅打包，不压缩！
+tar -cvf /tmp/etc.tar /etc transform --transform s/OLD_NAME/NEW_NAME/ gz tar -zcvf /tmp/etc.tar.gz /etc transform:
+tar -zcvf /tmp/etc.tar.gz /etc --transform s/etc/myetc/ bz2 tar -jcvf /tmp/etc.tar.bz2 /etc transform:
+tar -jcvf /tmp/etc.tar.bz2 /etc --transform s/etc/myetc/ FAQ This does not look like a tar archive #gzip -d xxxx.tar.gz #tar -xf xxxx.tar gzip: stdin: not in gzip format $ tar xvf xxxx. <a class="read-more" href="/csdn/post/pack-file-linux/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-02-10T02:20:39&#43;08:00">
+            10 Feb 2023
         </time>
     </footer>
 </article>
@@ -414,60 +467,6 @@ This is the boot programm!鶷his is the boot programm! Load UBOOT, please wait..
         
         <time class="post-date" datetime="2023-01-04T18:08:08&#43;08:00">
             4 Jan 2023
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/c2plus-unmanaged-dll/">调用非托管DLL</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>IDE: vs2008 Express(sp1)
-callXBFLibrary 我们需要使用API函数来读取INI文件。
-建立P/Invoke应用类 在pinvoke.net中查找Win32 API在C#定义。 GetPrivateProfileString 读取Ini文件的API
-[DllImport(&#34;kernel32.dll&#34;, CharSet=CharSet.Unicode)] static extern uint GetPrivateProfileString( string lpAppName, string lpKeyName, string lpDefault, StringBuilder lpReturnedString, uint nSize, string lpFileName); 注意：DllImport属性来自using System.Runtime.InteropServices;
-lpAppName 小节名 lpKeyName 键名 lpDefault 缺省值 lpReturnedString 返回值 nSize 返回值长度 lpFileName 读取文件的名称 import class using System.Runtime.InteropServices; readIniFileVal 建立一个公共方法，以供程序使用。
-public string readIniFileVal(string iniFileName, string section, string key) { StringBuilder retStrBuilder = new StringBuilder(256); GetPrivateProfileString( section, key, &#34;&#34;, retStrBuilder, 256, iniFileName); return retStrBuilder. <a class="read-more" href="/csdn/post/c2plus-unmanaged-dll/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-01-03T00:08:08&#43;08:00">
-            3 Jan 2023
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/demo-tdtc/">TDTC Demo</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>系统需求 Mixed(x86 and x64): Windows 10 - Windows Vista Pure(x86): Windows XP - Windows 3.1
-ref &ldquo;VC Redist&rdquo;
-注册下列COM组件
-xbfInfo.dllrepoInfo.dll callXBFLib 生成/读取xbf文件.
-文档请参考 callXBFLibrary - 调用非托管DLL callXBFLibrary - 调用COM 配置文件 xbfConfig.ini
-[config] type = MySQL [MS-Access] DB = v:\fde.mdb Pwd = wwsrts12 [MSSQL] Server = ddrwaas2 DB = dddrrewq User = ttrrre Pwd = qwerty [MySQL] Server = 192.168.1.107 DB = mysql User = DBAdmin Pwd = xbfirst repoFmtGen 生成固定格式的报文。 <a class="read-more" href="/csdn/post/demo-tdtc/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-12-17T08:18:18&#43;08:00">
-            17 Dec 2022
         </time>
     </footer>
 </article>

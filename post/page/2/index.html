@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.111.0">
+    <meta name="generator" content="Hugo 0.111.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,6 +160,60 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c2plus-unmanaged-dll/">调用非托管DLL</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>IDE: vs2008 Express(sp1)
+callXBFLibrary 我们需要使用API函数来读取INI文件。
+建立P/Invoke应用类 在pinvoke.net中查找Win32 API在C#定义。 GetPrivateProfileString 读取Ini文件的API
+[DllImport(&#34;kernel32.dll&#34;, CharSet=CharSet.Unicode)] static extern uint GetPrivateProfileString( string lpAppName, string lpKeyName, string lpDefault, StringBuilder lpReturnedString, uint nSize, string lpFileName); 注意：DllImport属性来自using System.Runtime.InteropServices;
+lpAppName 小节名 lpKeyName 键名 lpDefault 缺省值 lpReturnedString 返回值 nSize 返回值长度 lpFileName 读取文件的名称 import class using System.Runtime.InteropServices; readIniFileVal 建立一个公共方法，以供程序使用。
+public string readIniFileVal(string iniFileName, string section, string key) { StringBuilder retStrBuilder = new StringBuilder(256); GetPrivateProfileString( section, key, &#34;&#34;, retStrBuilder, 256, iniFileName); return retStrBuilder. <a class="read-more" href="/csdn/post/c2plus-unmanaged-dll/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-01-03T00:08:08&#43;08:00">
+            3 Jan 2023
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/demo-tdtc/">TDTC Demo</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>系统需求 Mixed(x86 and x64): Windows 10 - Windows Vista Pure(x86): Windows XP - Windows 3.1
+ref &ldquo;VC Redist&rdquo;
+注册下列COM组件
+xbfInfo.dllrepoInfo.dll callXBFLib 生成/读取xbf文件.
+文档请参考 callXBFLibrary - 调用非托管DLL callXBFLibrary - 调用COM 配置文件 xbfConfig.ini
+[config] type = MySQL [MS-Access] DB = v:\fde.mdb Pwd = wwsrts12 [MSSQL] Server = ddrwaas2 DB = dddrrewq User = ttrrre Pwd = qwerty [MySQL] Server = 192.168.1.107 DB = mysql User = DBAdmin Pwd = xbfirst repoFmtGen 生成固定格式的报文。 <a class="read-more" href="/csdn/post/demo-tdtc/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-12-17T08:18:18&#43;08:00">
+            17 Dec 2022
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -377,56 +431,6 @@ sudo dnf install mysql-community-server disable default repo sudo dnf remove @my
         
         <time class="post-date" datetime="2022-09-24T06:21:39&#43;08:00">
             24 Sep 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_sudo/">开启sudo</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>new user #useradd tdtc #passwd tdtc Append group CentOS7- Open wheel #vi /etc/pam.d/su auth required /lib/security/$ISA/pam_wheel.so use_uid Attachment of group members #gpasswd -a tdtc wheel CentOS7/8 CentOS8 needs to be executed locally, Unable to execute on ssh network side.
-#usermod –aG wheel tdtc test Query all users with sudo permissions.
-[tdtc@tdtc102 ~]$ sudo lid -g wheel We trust you have received the usual lecture from the local System Administrator. It usually boils down to these three things: #1) Respect the privacy of others. <a class="read-more" href="/csdn/post/ops_sudo/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-09-18T00:08:08&#43;08:00">
-            18 Sep 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/pd-db-phy/">powerDesigner生成phy图</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>使用版本：v16.1
-一、连接数据库 1. 新建pdm File-》New Model model types -&gt; physical data model model name: newmodel-phy dbms: mysql5.0
-2. config connect profile DataBase -&gt; Configure connections Connection profile 3. connect Database -&gt; connect Flag: &ldquo;Disconnect&rdquo; Available
-dcp文件（mysql5-crm.dcp） [ConnectionProfile]ConnectionType=JDBCDbms=MySQLDisableBind=0Driver=com.mysql.jdbc.DriverJarFiles=D:\war\mysql-connector-java-5.1.49.jarLogId=rootTrimSpaces=0URL=jdbc:mysql://106.14.141.40:3306/crm 二、生成phy图 1. Reverse Engineer File -&gt; Reverse Engineer-&gt;Database 选择数据库： 其他数据库全部反选： 例如： 最后，点击ok生成phy图。
-Tips：如果想从pdm生成CDM，Tools -&gt; Generate Conceptual Data Model <a class="read-more" href="/csdn/post/pd-db-phy/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-09-10T02:26:39&#43;08:00">
-            10 Sep 2022
         </time>
     </footer>
 </article>

@@ -17,6 +17,20 @@
     </item>
     
     <item>
+      <title>设置proxy</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_network_proxy/</link>
+      <pubDate>Fri, 17 Feb 2023 14:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_network_proxy/</guid>
+      <description>OS Windows set command
+set http_proxy=http://127.0.0.1:8580 set https_proxy=http://127.0.0.1:8580 Ubuntu export http_proxy=&amp;#34;http://192.168.1.108:1080&amp;#34; export https_proxy=&amp;#34;http://192.168.1.108:1080&amp;#34; With user and password Set up the server in the tool: Check &amp;ldquo;Run xxx as Server(listens 0.0.0.0)&amp;rdquo;
+export http_proxy=http://USERNAME:PASSWORD@192.168.1.108:8580/ export https_proxy=http://USERNAME:PASSWORD@192.168.1.108:8580/ FreeBSD v12.4
+setenv HTTP_PROXY http://web-proxy.xxxxxx.com:8080 setenv HTTPS_PROXY https://web-proxy.xxxxxx.com:8080 software VirtualBox Adapter 1 host only, vboxnet0
+Adapter 2 NAT
+Guest os sudo vi /etc/netplan/00-installer-config.yaml network: version: 2 renderer: networkd ethernets: enp0s3: addresses: - 192.168.56.12/24 dhcp4: no enp0s8: dhcp4: no Wine #!</description>
+    </item>
+    
+    <item>
       <title>c#调用COM</title>
       <link>https://tdtc-hrb.github.io/csdn/post/c2plus-com-dll/</link>
       <pubDate>Mon, 13 Feb 2023 08:08:08 +0800</pubDate>
@@ -24,6 +38,19 @@
       <guid>https://tdtc-hrb.github.io/csdn/post/c2plus-com-dll/</guid>
       <description>IDE vs2008 Express(sp1) reference COM 注册COM @echo cd /d %~dp0 Regsvr32 xbfInfo.dll Add Reference COM选项卡 添加完成时
 添加事件 import class using System.IO; using xbfInfoLib; 写xbf文件 读Ini文件配置 Boolean flagMSSQL = false; Boolean flagSecu = false; string sectionName = ini.readIniFileVal(&amp;#34;config&amp;#34;, &amp;#34;type&amp;#34;); string strSrv = ini.readIniFileVal(sectionName, &amp;#34;Server&amp;#34;); if (!Equals(strSrv, &amp;#34;&amp;#34;)) flagMSSQL = true; if (flagMSSQL) { strConn = &amp;#34;Provider=SQLOLEDB.1;&amp;#34; + &amp;#34;Password=&amp;#34; + ini.readIniFileVal(sectionName, &amp;#34;Pwd&amp;#34;) + &amp;#34;;&amp;#34; + &amp;#34;Persist Security Info=True;&amp;#34; + &amp;#34;User ID=&amp;#34; + ini.</description>
+    </item>
+    
+    <item>
+      <title>打包文件</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/pack-file-linux/</link>
+      <pubDate>Fri, 10 Feb 2023 02:20:39 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/pack-file-linux/</guid>
+      <description>取消目录所有权限
+chmod -R 777 /tmp/etc 一、ISO文件 mkisofs -r -o etc.iso /tmp/etc 二、压缩文件 1. zip zip -r etc.zip /tmp/etc 2. tar 仅打包，不压缩！
+tar -cvf /tmp/etc.tar /etc transform --transform s/OLD_NAME/NEW_NAME/ gz tar -zcvf /tmp/etc.tar.gz /etc transform:
+tar -zcvf /tmp/etc.tar.gz /etc --transform s/etc/myetc/ bz2 tar -jcvf /tmp/etc.tar.bz2 /etc transform:
+tar -jcvf /tmp/etc.tar.bz2 /etc --transform s/etc/myetc/ FAQ This does not look like a tar archive #gzip -d xxxx.tar.gz #tar -xf xxxx.tar gzip: stdin: not in gzip format $ tar xvf xxxx.</description>
     </item>
     
     <item>
@@ -321,19 +348,6 @@ autoheader 输出Makefile automake --add-missing 输出Makefile:
     </item>
     
     <item>
-      <title>打包文件</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/pack-file-linux/</link>
-      <pubDate>Sun, 10 Jul 2022 02:20:39 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/pack-file-linux/</guid>
-      <description>取消目录所有权限
-chmod -R 777 /tmp/etc 一、ISO文件 mkisofs -r -o etc.iso /tmp/etc 二、压缩文件 1. zip zip -r etc.zip /tmp/etc 2. tar 仅打包，不压缩！
-tar -cvf /tmp/etc.tar /etc transform --transform s/OLD_NAME/NEW_NAME/ gz tar -zcvf /tmp/etc.tar.gz /etc transform:
-tar -zcvf /tmp/etc.tar.gz /etc --transform s/etc/myetc/ bz2 tar -jcvf /tmp/etc.tar.bz2 /etc transform:
-tar -jcvf /tmp/etc.tar.bz2 /etc --transform s/etc/myetc/ FAQ This does not look like a tar archive #gzip -d xxxx.tar.gz #tar -xf xxxx.tar 参考文章 18 Tar Command Examples in Linux c – Creates a new .</description>
-    </item>
-    
-    <item>
       <title>在Ubuntu下安装NodeJS</title>
       <link>https://tdtc-hrb.github.io/csdn/post/nodejs-ubuntu/</link>
       <pubDate>Sat, 09 Jul 2022 23:08:39 +0800</pubDate>
@@ -367,19 +381,6 @@ sudo apt install mysql-server sudo systemctl start mysql.service config mysql se
 percona-release setup ps80 Installing and Setting up the Percona Server for MySQL 8.0 Binaries yum -y install percona-server-server Launch:
 systemctl start mysqldsystemctl status mysqld change password sudo grep &amp;#34;temporary password&amp;#34; /var/log/mysqld.log mysql -uroot -p Change default password：
 ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED BY &amp;#39;qaz1!Xsw2@&amp;#39;; Weak password mysql&amp;gt; set global validate_password.policy=0; set password ALTER USER &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED BY &amp;#39;xbfirst80&amp;#39;; Ref Installing Percona Server for MySQL on Rocky Linux 8 How to Change MySQL Password Policy Level </description>
-    </item>
-    
-    <item>
-      <title>设置proxy</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_network_proxy/</link>
-      <pubDate>Fri, 17 Jun 2022 14:08:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_network_proxy/</guid>
-      <description>OS Windows set command
-set http_proxy=http://127.0.0.1:8580 set https_proxy=http://127.0.0.1:8580 Ubuntu export http_proxy=&amp;#34;http://192.168.1.108:1080&amp;#34; export https_proxy=&amp;#34;http://192.168.1.108:1080&amp;#34; With user and password Set up the server in the tool: Check &amp;ldquo;Run xxx as Server(listens 0.0.0.0)&amp;rdquo;
-export http_proxy=http://USERNAME:PASSWORD@192.168.1.108:8580/ export https_proxy=http://USERNAME:PASSWORD@192.168.1.108:8580/ software VirtualBox Adapter 1 host only, vboxnet0
-Adapter 2 NAT
-Guest os sudo vi /etc/netplan/00-installer-config.yaml network: version: 2 renderer: networkd ethernets: enp0s3: addresses: - 192.168.56.12/24 dhcp4: no enp0s8: dhcp4: no Wine #!/bin/bash sudo dpkg --add-architecture i386 sudo curl -O https://dl.</description>
     </item>
     
     <item>
