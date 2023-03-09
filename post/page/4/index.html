@@ -164,6 +164,39 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql80-cenos8/">CentOS8安装mysql8.0</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Installing and Setting up the Percona Server for MySQL 8.0 Repository yum install -y https://repo.percona.com/yum/percona-release-latest.noarch.rpm disable mysql module repo:
+percona-release setup ps80 Installing and Setting up the Percona Server for MySQL 8.0 Binaries yum -y install percona-server-server Launch:
+systemctl start mysqldsystemctl status mysqld change password sudo grep &#34;temporary password&#34; /var/log/mysqld.log mysql -uroot -p Change default password：
+ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;qaz1!Xsw2@&#39;; Weak password mysql&gt; set global validate_password.policy=0; set password ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;xbfirst80&#39;; Ref Installing Percona Server for MySQL on Rocky Linux 8 How to Change MySQL Password Policy Level  <a class="read-more" href="/csdn/post/mysql80-cenos8/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        on
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/rocky-linux-8/">#Rocky Linux 8</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/alma-linux-8/">#Alma Linux 8</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/percona8/">#Percona8</a>,
+            
+        
+        <time class="post-date" datetime="2022-06-27T03:21:39&#43;08:00">
+            27 Jun 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/com-ie-repoinfo/">铁路车号读取</a></h2>
     </header>
     <section class="post-excerpt">
@@ -435,33 +468,6 @@ CoreException: Could not calculate build plan: Plugin org.apache.maven.plugins:m
         
         <time class="post-date" datetime="2022-05-10T10:26:39&#43;08:00">
             10 May 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/c-string-i2h/">十进制转十六进制</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>工作原理：
-规则是从低位到高位 被除数，除以16, 直到商小于16。 将余数加上余商，就是16进制数。
-被除数 等于转换数 等于商 如果商大于16，就是被除数。 手算 10进制：1566
-(1) 1566 ÷ 16 = 97 余数为14 (2) 97 ÷ 16 = 6 余数为1
-16进制：第1个余数(14) + 第2个余数(1) + 余商(6) = 0x61E
-code /* * Int2hex.c * * Created on: 2010-07-20 * Author: xiaobin */ #include &lt;stdio.h&gt; #include &lt;stdlib.h&gt; void int2hex(unsigned long long input, char output[]); int main(int argc, char* argv[]) { int iDigit = 12 - 2; // 2205071409 // date: 2022. <a class="read-more" href="/csdn/post/c-string-i2h/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-05-07T00:08:08&#43;08:00">
-            7 May 2022
         </time>
     </footer>
 </article>

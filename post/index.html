@@ -293,6 +293,29 @@ Guest os sudo vi /etc/netplan/00-installer-config.yaml network: version: 2 rende
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c-bsd_socket/">unix网络的client和server</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>使用GNU Compiler Collection(GCC)编译的 一个简单的客户端和服务器端的程序！
+Client Side flow chart getaddrinfo() -&gt; socket() -&gt; connect() -&gt; recv() src #include &lt;stdio.h&gt; #include &lt;string.h&gt; #include &lt;sys/types.h&gt; #include &lt;sys/socket.h&gt; #include &lt;arpa/inet.h&gt; #include &lt;netdb.h&gt; #define SERVIP &#34;192.168.56.112&#34; #define SERVPORT &#34;2349&#34; int main(int argc, char *argv[]) { struct addrinfo hints, *res; int status; int sockfd; int connSta; int recvSta; char buffer[1024]; int len; char ipstr[INET_ADDRSTRLEN]; void *addr; if (argc != 3) { fprintf(stderr, &#34;Usage: Not Server IP And Port! <a class="read-more" href="/csdn/post/c-bsd_socket/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-02-14T00:08:08&#43;08:00">
+            14 Feb 2023
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/c2plus-com-dll/">c#调用COM</a></h2>
     </header>
     <section class="post-excerpt">
@@ -391,43 +414,6 @@ Other -&gt; Support: <a class="read-more" href="/csdn/post/com-wizards-vc/">&raq
         
         <time class="post-date" datetime="2023-02-02T23:08:08&#43;08:00">
             2 Feb 2023
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/vc-serial_communication/">Windows串口</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>串口读写工具
-PC has no serial device
-PC has serial device
-CSerialPort author: Remon Spekreijse MFC Vs2013(VC12)/Vs2019(VC14.2) 程序介绍 界面分三块： 端口配置、发送区域、接收区域
-v2.0 使用boost thread + SQLite3 library 实现串口数据存储到SQLite数据库. 1. 端口配置 1.1 在“Port Number”选择端口号； 1.2 在“Config”配置端口的属性，比如波特率、奇偶校验、数据位、停止位等等。 Setting Serial Communication Number
-2. 发送区域 2.1 Loop Send 当我们钩选此复选框时，必须选择“发送频率”，然后才能执行循环发送数据。
-### 2.2 发送频率 选择其一：500、1000、2000毫秒。
-Setting time
-如果要更改读取自定义的时间频率：
-请将SerialCommView.cpp-Ln292，更为：
-((CComboBox *)GetDlgItem(IDC_COMBO1Timer))-&gt;GetWindowTextA(strTemp);)
-2.3 发送内容框 在“发送信息框”输入内容就可发送数据了！
-2.4 操作流程 A类（自动化） 2.2-》2.3-》2.1
-B类（手动） 2.3-》点击“Send”按钮。
-3. 接收区域 3.1 制式切换 当钩选了“Hex View”复选框，接收到的数据就以16进制显示。
-3.2 清除数据 当点击“Clear”按钮，即清空接收框数据。 <a class="read-more" href="/csdn/post/vc-serial_communication/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-01-25T08:08:08&#43;08:00">
-            25 Jan 2023
         </time>
     </footer>
 </article>

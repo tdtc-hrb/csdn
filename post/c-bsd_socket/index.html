@@ -12,13 +12,13 @@
 
 
 
-<meta name="twitter:title" content="client和server"/>
-<meta name="twitter:description" content="unix网络"/>
+<meta name="twitter:title" content="unix网络的client和server"/>
+<meta name="twitter:description" content="addrinfo"/>
 <meta name="twitter:site" content="@"/>
 
 
 
-  	<meta property="og:title" content="client和server &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:title" content="unix网络的client和server &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
   	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
   	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/c-bsd_socket/" />
 
@@ -27,17 +27,17 @@
     
 
     
-    <meta property="og:description" content="unix网络" />
+    <meta property="og:description" content="addrinfo" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2020-05-14T00:08:08&#43;08:00" />
+    <meta property="article:published_time" content="2023-02-14T00:08:08&#43;08:00" />
 
     
     
 
-    <title>client和server &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+    <title>unix网络的client和server &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
 
     
-    <meta name="description" content="unix网络" />
+    <meta name="description" content="addrinfo" />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -90,20 +90,20 @@
             
         ]
     },
-    "headline": "client和server",
-    "name": "client和server",
-    "wordCount":  355 ,
+    "headline": "unix网络的client和server",
+    "name": "unix网络的client和server",
+    "wordCount":  360 ,
     "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/c-bsd_socket/",
-    "datePublished": "2020-05-14T00:08Z",
-    "dateModified": "2020-05-14T00:08Z",
+    "datePublished": "2023-02-14T00:08Z",
+    "dateModified": "2023-02-14T00:08Z",
     
     
-    "description": "unix网络",
+    "description": "addrinfo",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://tdtc-hrb.github.io/csdn/post/c-bsd_socket/"
@@ -163,13 +163,13 @@
   <article class="post post">
 
     <header class="post-header">
-        <h1 class="post-title">client和server</h1>
-        <small>unix网络</small>
+        <h1 class="post-title">unix网络的client和server</h1>
+        <small>addrinfo</small>
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2020-05-14T00:08:08&#43;08:00">
-            May 14, 2020
+          <time class="post-date" datetime="2023-02-14T00:08:08&#43;08:00">
+            Feb 14, 2023
           </time>
         
          
@@ -177,15 +177,15 @@
     </header>
 
     <section class="post-content">
-      <blockquote>
-<p>GNU Compiler Collection(GCC)</p>
-</blockquote>
-<h1 id="beejs-guide-network-to-programminghttpsblogcsdnnetxiaobin_hlj80category_6092337html"><a href="https://blog.csdn.net/xiaobin_hlj80/category_6092337.html">Beej’s Guide Network to Programming</a></h1>
-<p>一个简单的客户端和服务器端的程序！</p>
-<h1 id="client-side">Client Side:</h1>
+      <p>使用GNU Compiler Collection(GCC)编译的
+一个简单的客户端和服务器端的程序！</p>
+<h1 id="client-side">Client Side</h1>
 <ul>
-<li>flow chart <br>
-getaddrinfo() -&gt; socket() -&gt; connect() -&gt; recv()</li>
+<li>flow chart</li>
+</ul>
+<pre tabindex="0"><code>  getaddrinfo() -&gt; socket() -&gt; connect() -&gt; recv()
+</code></pre><ul>
+<li>src</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
@@ -259,10 +259,13 @@ getaddrinfo() -&gt; socket() -&gt; connect() -&gt; recv()</li>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h1 id="server-side">Server Side:</h1>
+</span></span></code></pre></div><h1 id="server-side">Server Side</h1>
 <ul>
-<li>flow chart <br>
-getaddrinfo() -&gt; socket() -&gt; bind() -&gt; listen() -&gt; accept() -&gt; send()</li>
+<li>flow chart</li>
+</ul>
+<pre tabindex="0"><code>getaddrinfo() -&gt; socket() -&gt; bind() -&gt; listen() -&gt; accept() -&gt; send()
+</code></pre><ul>
+<li>src</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
@@ -334,7 +337,11 @@ getaddrinfo() -&gt; socket() -&gt; bind() -&gt; listen() -&gt; accept() -&gt; se
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">close</span>(sockfd);
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
+</span></span></code></pre></div><h1 id="ref">Ref</h1>
+<ul>
+<li><a href="https://beej.us/guide/bgnet/html/split/client-server-background.html">Beej’s Guide Network to Programming- chapter 6</a></li>
+</ul>
+
     </section>
 
 
@@ -349,7 +356,7 @@ getaddrinfo() -&gt; socket() -&gt; bind() -&gt; listen() -&gt; accept() -&gt; se
     
 <section class="share">
   <h4>Share this post</h4>
-  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=client%e5%92%8cserver&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fc-bsd_socket%2f"
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=unix%e7%bd%91%e7%bb%9c%e7%9a%84client%e5%92%8cserver&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fc-bsd_socket%2f"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="hidden">Twitter</span>
   </a>
@@ -357,7 +364,7 @@ getaddrinfo() -&gt; socket() -&gt; bind() -&gt; listen() -&gt; accept() -&gt; se
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="hidden">Facebook</span>
   </a>
-  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fc-bsd_socket%2f&amp;description=client%e5%92%8cserver"
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fc-bsd_socket%2f&amp;description=unix%e7%bd%91%e7%bb%9c%e7%9a%84client%e5%92%8cserver"
       onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
       <span class="hidden">Pinterest</span>
   </a>
@@ -385,17 +392,17 @@ getaddrinfo() -&gt; socket() -&gt; bind() -&gt; listen() -&gt; accept() -&gt; se
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/com-crc32-delphi/">
+      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_data_transmission/">
           <section class="post">
-              <h2>Delphi调用COM</h2>
+              <h2>Linux与Windows互传数据</h2>
               
           </section>
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/uml-activity_diagram-sjz/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/c2plus-com-dll/">
           <section class="post">
-              <h2>活动图（Activity Diagram）</h2>
+              <h2>c#调用COM</h2>
           </section>
       </a>
   

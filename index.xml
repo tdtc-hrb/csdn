@@ -74,6 +74,16 @@ Guest os sudo vi /etc/netplan/00-installer-config.yaml network: version: 2 rende
     </item>
     
     <item>
+      <title>unix网络的client和server</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/c-bsd_socket/</link>
+      <pubDate>Tue, 14 Feb 2023 00:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/c-bsd_socket/</guid>
+      <description>使用GNU Compiler Collection(GCC)编译的 一个简单的客户端和服务器端的程序！
+Client Side flow chart getaddrinfo() -&amp;gt; socket() -&amp;gt; connect() -&amp;gt; recv() src #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;string.h&amp;gt; #include &amp;lt;sys/types.h&amp;gt; #include &amp;lt;sys/socket.h&amp;gt; #include &amp;lt;arpa/inet.h&amp;gt; #include &amp;lt;netdb.h&amp;gt; #define SERVIP &amp;#34;192.168.56.112&amp;#34; #define SERVPORT &amp;#34;2349&amp;#34; int main(int argc, char *argv[]) { struct addrinfo hints, *res; int status; int sockfd; int connSta; int recvSta; char buffer[1024]; int len; char ipstr[INET_ADDRSTRLEN]; void *addr; if (argc != 3) { fprintf(stderr, &amp;#34;Usage: Not Server IP And Port!</description>
+    </item>
+    
+    <item>
       <title>c#调用COM</title>
       <link>https://tdtc-hrb.github.io/csdn/post/c2plus-com-dll/</link>
       <pubDate>Mon, 13 Feb 2023 08:08:08 +0800</pubDate>
@@ -966,17 +976,6 @@ error info [root@localhost DBD-mysql-4.022]# make cp lib/DBD/mysql.pm blib/lib/D
       <description>准备 1. Windows 系统引入 运行 -&amp;gt; Regsvr32 x:/FCV.dll
 2. Delphi 引入 Project -&amp;gt; Import Type Library -&amp;gt;&amp;ldquo;FCV 1.1 Type Library (Version1.1)&amp;rdquo;
 code unitUntMain; interface uses Windows, Messages, SysUtils, Variants, Classes,Graphics, Controls, Forms, Dialogs, StdCtrls, OleServer, FCVLib_TLB;typeTfrmMain = class(TForm)lblFileVal: TLabel;lblFcvVal: TLabel;edtFilePath: TEdit;btnGenFCN: TButton;edtFCVpath: TEdit;btnCalFileValue: TButton;btnReadFCV: TButton;btnCreatFCV: TButton;UCRC321: TUCRC32;procedure btnCreatFCVClick(Sender: TObject);procedure btnGenFCNClick(Sender: TObject);procedure btnCalFileValueClick(Sender: TObject);procedure btnReadFCVClick(Sender: TObject);private{ Private declarations }myFCV: IUCRC32;public{ Public declarations }instanceFlag: Boolean;end;varfrmMain: TfrmMain; implementation{$R *.</description>
-    </item>
-    
-    <item>
-      <title>client和server</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/c-bsd_socket/</link>
-      <pubDate>Thu, 14 May 2020 00:08:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/c-bsd_socket/</guid>
-      <description>GNU Compiler Collection(GCC)
-Beej’s Guide Network to Programming 一个简单的客户端和服务器端的程序！
-Client Side: flow chart getaddrinfo() -&amp;gt; socket() -&amp;gt; connect() -&amp;gt; recv() #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;string.h&amp;gt; #include &amp;lt;sys/types.h&amp;gt; #include &amp;lt;sys/socket.h&amp;gt; #include &amp;lt;arpa/inet.h&amp;gt; #include &amp;lt;netdb.h&amp;gt; #define SERVIP &amp;#34;192.168.56.112&amp;#34; #define SERVPORT &amp;#34;2349&amp;#34; int main(int argc, char *argv[]) { struct addrinfo hints, *res; int status; int sockfd; int connSta; int recvSta; char buffer[1024]; int len; char ipstr[INET_ADDRSTRLEN]; void *addr; if (argc != 3) { fprintf(stderr, &amp;#34;Usage: Not Server IP And Port!</description>
     </item>
     
     <item>

@@ -197,6 +197,43 @@
     
         <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/vc-serial_communication/">Windows串口</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>串口读写工具
+PC has no serial device
+PC has serial device
+CSerialPort author: Remon Spekreijse MFC Vs2013(VC12)/Vs2019(VC14.2) 程序介绍 界面分三块： 端口配置、发送区域、接收区域
+v2.0 使用boost thread + SQLite3 library 实现串口数据存储到SQLite数据库. 1. 端口配置 1.1 在“Port Number”选择端口号； 1.2 在“Config”配置端口的属性，比如波特率、奇偶校验、数据位、停止位等等。 Setting Serial Communication Number
+2. 发送区域 2.1 Loop Send 当我们钩选此复选框时，必须选择“发送频率”，然后才能执行循环发送数据。
+### 2.2 发送频率 选择其一：500、1000、2000毫秒。
+Setting time
+如果要更改读取自定义的时间频率：
+请将SerialCommView.cpp-Ln292，更为：
+((CComboBox *)GetDlgItem(IDC_COMBO1Timer))-&gt;GetWindowTextA(strTemp);)
+2.3 发送内容框 在“发送信息框”输入内容就可发送数据了！
+2.4 操作流程 A类（自动化） 2.2-》2.3-》2.1
+B类（手动） 2.3-》点击“Send”按钮。
+3. 接收区域 3.1 制式切换 当钩选了“Hex View”复选框，接收到的数据就以16进制显示。
+3.2 清除数据 当点击“Clear”按钮，即清空接收框数据。 <a class="read-more" href="/csdn/post/vc-serial_communication/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-01-25T08:08:08&#43;08:00">
+            25 Jan 2023
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_vmware_netadapter/">使用物理网卡</a></h2>
     </header>
     <section class="post-excerpt">
@@ -440,37 +477,6 @@ $sudo rpm -Uvh http://nginx. <a class="read-more" href="/csdn/post/ops_nginx/">&
         
         <time class="post-date" datetime="2022-09-29T08:38:08&#43;08:00">
             29 Sep 2022
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/mysql-mha/">主备切换 - MySQL&#43;MHA</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>在进行安装配置前，请确认已经完成了 MySQL 主从复制
-MHA (V0.58)
-Manager Node baidu yun - backup
-Mha manager Mha node 安装前准备 ssh相互免密
-一、安装 Name IP Memo mha1 192.168.0.151 Monitor host 使用pscp上传文件请参考 MySQL 主从复制 - 5. test data
-1. MHA Node 所有MySQL服务器（mysql1、mysql11、mysql12）和MHA 管理机（MHA）都要安装。
-sudo yum localinstall mha4mysql-node-0.58-0.el7.centos.noarch.rpm 2. MHA Manager CentOS源有perl-Config-Tiny。
-sudo yum install perl-Config-Tiny 安装epel， 可以找到perl-Log-Dispatch、perl-Parallel-ForkManager。
-sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm sudo yum install perl-Log-Dispatch perl-Parallel-ForkManager -y 安装manager
-sudo yum localinstall mha4mysql-manager-0.58-0.el7.centos.noarch.rpm 3. MySQL主从配置 （补充部分） <a class="read-more" href="/csdn/post/mysql-mha/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-09-27T00:38:08&#43;08:00">
-            27 Sep 2022
         </time>
     </footer>
 </article>

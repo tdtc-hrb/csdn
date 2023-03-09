@@ -164,6 +164,34 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_git_oper1/">git操作 部分1</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>一、远程仓库回滚 1. 硬性 git reset --hard HEAD~1 &ldquo;~1&quot;表示向前回滚1个提交。 &ldquo;~2&quot;表示向前回滚2个提交，以此类推。 2. 强制推送 git push -f --set-upstream origin master 二、删除github发布 git tag -d [tag] git push origin :[tag] 例如：
+git tag -d v0.3.1 git push origin :v0.3.1 三、修改commit信息 可以修改最后一次提交的信息.
+进入git-cmd或git-bash：
+git commit --amend About：
+git-bash和git-cmd的区别
+bash是linux风格的命令行，可以使用windows和linux的命令； cmd是windows风格的命令行，可以使用windows命令；
+此外，还有一个最大的不同点，git-cmd是天生就带了系统的PATH环境变量， 这一点会导致如果你运行某些脚本的时候，如果依赖某些安装的程序， 如python、node这些，git-bash就会提示不存在对应的命令， 而git-cmd可以正确运行。 四、合并分支 1. checkout git checkout dev git checkout master 2. merge git merge origin/dev 五、设置user git init git config user.name &#34;xiaobin80&#34; git config user. <a class="read-more" href="/csdn/post/ops_git_oper1/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-02-02T01:38:08&#43;08:00">
+            2 Feb 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/com-safearray-vc/">SafeArray数据</a></h2>
     </header>
     <section class="post-excerpt">
@@ -388,29 +416,6 @@ lic 序号有两种方式：本机和导入Lic
         
         <time class="post-date" datetime="2020-05-17T10:08:08&#43;08:00">
             17 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/hw-uboot_v134-at91sam9260/">U-boot V1.3.4</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>关于移植在U-boot文档中这样介绍： README
-If the system board that you have is not listed, then you will need to port U-Boot to your hardware platform. To do this, follow these steps: 1. Add a new configuration option for your board to the toplevel &#34;Makefile&#34; and to the &#34;MAKEALL&#34; script, using the existing entries as examples. Note that here and at many other places boards and other names are listed in alphabetical sort order. <a class="read-more" href="/csdn/post/hw-uboot_v134-at91sam9260/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-16T01:58:08&#43;08:00">
-            16 May 2020
         </time>
     </footer>
 </article>
