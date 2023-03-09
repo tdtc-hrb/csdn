@@ -164,6 +164,32 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/com-ie-repoinfo/">铁路车号读取</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>二进制文件工具：EditPlus Edit -&gt; Hex Viewer replace(regexp/substr,replacement) 使用这个函数来替换多余的空格。 str.replace(/\s/g, &#34;&#34;); split(separator,howmany) 字符串转换成字符数组。 string.split(&#34;,&#34;); 一、js部分 我们把所有的方法放到一个对象（RepoInfo）中。
+var RepoInfo = { }; 1. 获取对象 RepoInfo.getObj = function(objName) { return new ActiveXObject(objName); }; 2. 获取数组 RepoInfo.getArray = function(str) { var ret = new Array(16); var string = str.replace(/\s/g, &#34;&#34;); ret = string.split(&#34;,&#34;); return ret; }; 3. 解码字串 输入字串校验 如果字串空，退出。
+输出框清空 每次赋值前，清空。
+执行COM中的方法 在获取对象非空的情况下，执行。
+RepoInfo.decode = function(string) { if (string == null) return; var obj = RepoInfo. <a class="read-more" href="/csdn/post/com-ie-repoinfo/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-06-13T16:08:08&#43;08:00">
+            13 Jun 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_rhel_repo/">RHEL更换CentOS Yum</a></h2>
     </header>
     <section class="post-excerpt">
@@ -436,35 +462,6 @@ code /* * Int2hex.c * * Created on: 2010-07-20 * Author: xiaobin */ #include &lt
         
         <time class="post-date" datetime="2022-05-07T00:08:08&#43;08:00">
             7 May 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/mysql-master-slave-replication/">MySQL 主从复制</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>在进行配置前，请确认已经安装 mysql5.7 - CentOS
-1. 网络配置 Replication Group 1:
-Name IP Memo mysql1 192.168.0.160 Master mysql11 192.168.0.161 Slave mysql12 192.168.0.162 Slave Replication Group 2(Maria DB):
-Name IP Memo mysql2 192.168.0.170 Master mysql21 192.168.0.171 Slave mysql22 192.168.0.172 Slave 2. Configure MySQL cluster 1) Master Server Setting the Replication Master Configuration
-/etc/my.cnf
-[mysqld] log-bin=mysql160-bin server-id=160 2) Slave Server Setting the Replication Slave Configuration
-/etc/my.cnf
-Slave 1 [mysqld] server-id=161 Slave 2 [mysqld] server-id=162 3. <a class="read-more" href="/csdn/post/mysql-master-slave-replication/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-04-13T09:38:08&#43;08:00">
-            13 Apr 2022
         </time>
     </footer>
 </article>

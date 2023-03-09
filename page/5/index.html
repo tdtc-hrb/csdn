@@ -197,6 +197,35 @@
     
         <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql-master-slave-replication/">MySQL 主从复制</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>在进行配置前，请确认已经安装 mysql5.7 - CentOS
+1. 网络配置 Replication Group 1:
+Name IP Memo mysql1 192.168.0.160 Master mysql11 192.168.0.161 Slave mysql12 192.168.0.162 Slave Replication Group 2(Maria DB):
+Name IP Memo mysql2 192.168.0.170 Master mysql21 192.168.0.171 Slave mysql22 192.168.0.172 Slave 2. Configure MySQL cluster 1) Master Server Setting the Replication Master Configuration
+/etc/my.cnf
+[mysqld] log-bin=mysql160-bin server-id=160 2) Slave Server Setting the Replication Slave Configuration
+/etc/my.cnf
+Slave 1 [mysqld] server-id=161 Slave 2 [mysqld] server-id=162 3. <a class="read-more" href="/csdn/post/mysql-master-slave-replication/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-04-13T09:38:08&#43;08:00">
+            13 Apr 2022
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_keepalived/">安装配置Keepalived</a></h2>
     </header>
     <section class="post-excerpt">
@@ -424,31 +453,6 @@ bash是linux风格的命令行，可以使用windows和linux的命令； cmd是w
         
         <time class="post-date" datetime="2022-02-02T01:38:08&#43;08:00">
             2 Feb 2022
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/com-safearray-vc/">SafeArray数据</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>COM vc
-1. 定义SAFEARRAY变量 SAFEARRAY *pSArray = NULL; 2. 释放此变量 SafeArrayDestroy(pSArray); 3. 建立向量表 pSArray = SafeArrayCreateVector(VT_UI1, 0, 32); 向量变量（VT_UI1）的定义：msdn
-VT_UI1 Variable type is unsigned char. 4. 写入数据 SafeArrayPutElement(pSArray, &amp;l, &amp;inqReport[l]); getInqRepo方法： AA：屏蔽的数值
-STDMETHODIMP CRepoFmt::getInqRepo(ULONG iStation, SAFEARRAY** ret) { SAFEARRAY *pSArray = NULL; unsigned char inqReport[32]; unsigned char xorByte = AA; int iStationID = 0; if (iStation &lt; 1) iStationID = 1; else iStationID = iStation; inqReport[0] = AA; inqReport[1] = AA; inqReport[2] = AA; inqReport[3] = AA; inqReport[4] = (iStationID % AA); inqReport[5] = (iStationID / AA); inqReport[6] = AA; inqReport[7] = AA; inqReport[8] = AA; inqReport[9] = AA; inqReport[10] = AA; inqReport[11] = AA; for (int i = 1; i &lt; 18; i++) xorByte ^= inqReport[i]; inqReport[18] = xorByte; // Fill the inqReport etc. <a class="read-more" href="/csdn/post/com-safearray-vc/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-01-13T12:08:08&#43;08:00">
-            13 Jan 2022
         </time>
     </footer>
 </article>
