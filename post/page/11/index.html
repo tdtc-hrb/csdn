@@ -164,6 +164,28 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_firewall/">soft-list(port)</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>I. Soft List 1. zk sudo firewall-cmd --permanent --zone=public --add-port=2181/tcp sudo firewall-cmd --permanent --zone=public --add-port=2888/tcp sudo firewall-cmd --permanent --zone=public --add-port=3888/tcp 2. Hadoop sudo firewall-cmd --permanent --zone=public --add-port=10020/tcp sudo firewall-cmd --permanent --zone=public --add-port=19888/tcp sudo firewall-cmd --permanent --zone=public --add-port=8020/tcp sudo firewall-cmd --permanent --zone=public --add-port=50070/tcp sudo firewall-cmd --permanent --zone=public --add-port=8485/tcp sudo firewall-cmd --permanent --zone=public --add-port=8088/tcp sudo firewall-cmd --permanent --zone=public --add-port=8033/tcp 3. Spark sudo firewall-cmd --permanent --zone=public --add-port=6066/tcp sudo firewall-cmd --permanent --zone=public --add-port=7077/tcp sudo firewall-cmd --permanent --zone=public --add-port=8080-8088/tcp 立即生效： <a class="read-more" href="/csdn/post/ops_firewall/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-14T02:08:08&#43;08:00">
+            14 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_ssh_without_password/">ssh相互免密</a></h2>
     </header>
     <section class="post-excerpt">
@@ -183,39 +205,6 @@ $vi ~/.ssh/config Host host1 HostName 192.168.0.110 Port 22 User xiaobin112 Host
 
         
         <time class="post-date" datetime="2020-04-13T11:38:08&#43;08:00">
-            13 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_vi/">简单使用vi</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p> 此时是浏览状态（命令行模式）！
-$ vi myfile 浏览状态 移动光标 使用方向键来进行位置的移动。
-编辑状态 要进行文字编辑工作, 按“i”即进入
-i 删除文字 使用“Backspce”键，删除光标前面的文字。 使用“Delete”键，删除光标后面的文字。
-完成编辑 编辑完成后，要退出编辑状态, 按“ESC”，即完成退出。
-菜单状态 按“:”进入菜单状态（底行模式）
-设置行号 输入“set nu”
-:set nu 查找文字 如果，要查找特定的文字，输入“/要搜索的文字”
-:/word 继续查找，按“n”（相当于Windows系统的F3功能键）
-保存文件 输入“wq”完成保存并退出。
-:wq 强退 如果我们只想退出并且不保存文件 输入“q!”
-:q!  <a class="read-more" href="/csdn/post/ops_vi/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-13T04:38:08&#43;08:00">
             13 Apr 2020
         </time>
     </footer>

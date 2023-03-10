@@ -164,6 +164,33 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_nginx/">前端（Web）负载均衡</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Nginx&rsquo;s load balancing
+一、安装 OS: CentOS7 minimal（安装时的选项）
+0. prepare $yum -y install gcc gcc-c++ automake pcre pcre-devel zlib zlib-devel openssl openssl-devel 1) update OpenSSL default directory: /usr/ssl
+$wget https://www.openssl.org/source/openssl-1.1.1q.tar.gz --no-check-certificate 2) setup $./config --prefix=/usr --shared $make Root permission Required
+$sudo make install 1. installation First, install Nginx of centos repo; Then, replace the nginx program file. Note: The replaced program file version must be the same as the repo!
+$sudo rpm -Uvh http://nginx. <a class="read-more" href="/csdn/post/ops_nginx/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-09-29T08:38:08&#43;08:00">
+            29 Sep 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/mysql-mha/">主备切换 - MySQL&#43;MHA</a></h2>
     </header>
     <section class="post-excerpt">
@@ -388,31 +415,6 @@ curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - install sudo a
         
         <time class="post-date" datetime="2022-07-09T23:08:39&#43;08:00">
             9 Jul 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/mysql80-install/">安装MySQL 8.0</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>MySQL 5 &amp; 8 remote server bind-address=0.0.0.0 utf8 [MY-013242] [Server] --character-set-server: &#39;utf8&#39; is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous. mysql5 character-set-server=utf8 mysql8 character-set-server=utf8mb4 validate password 注意： mysql8.0.4， 我们将无法直接使用phpMyAdmin来登录！
-使用phpMyAdmin需要设置MySQL5.7兼容模式：
-authentication_policy=mysql_native_password,, mysql5 mysql_native_password mysql8 caching_sha2_password Ubuntu install mysql8:
-sudo apt install mysql-server sudo systemctl start mysql.service config mysql secure sudo mysql ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH mysql_native_password by &#39;xbfirst80&#39;; sudo mysql_secure_installation add user password rule: <a class="read-more" href="/csdn/post/mysql80-install/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-07-07T06:08:39&#43;08:00">
-            7 Jul 2022
         </time>
     </footer>
 </article>

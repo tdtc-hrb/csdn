@@ -164,6 +164,37 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/com-wizards-vc/">创建COM</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Use Visual Studio&rsquo;s wizard to create COM
+Visual studio 2010 Visual Studio 2013 Visual Studio 2015/2017/2019/2022 step by step:
+建立ATL工程 建立ATL Simple Object 添加IDL方法 测试添加的method 建立ATL工程 File-&gt;New-&gt;Project
+name: testATL 选择“MFC/ATL”中“ATL Project”。
+Note: name即是要生成的DLL文件
+设置 Default 取消编译时注册Dll Project -&gt; PropertiesLinker -&gt; Register OutputNo ATL Simple Object 右击项目名称，选择Add-〉New Item
+vs2013: Add -&gt; Class
+设置 base Short name: testSOW progID 附加支持 progID progID: Simple Object ID
+testATL.testSOW 附加支持 本选项针对IE支持。
+Other -&gt; Support: <a class="read-more" href="/csdn/post/com-wizards-vc/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-02-02T23:08:08&#43;08:00">
+            2 Feb 2023
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/vc-serial_communication/">Windows串口</a></h2>
     </header>
     <section class="post-excerpt">
@@ -417,33 +448,6 @@ ONBOOT=yes static $cd /etc/sysconfig/network-scripts $sudo vi ifcfg-enp0s3 BOOTP
         
         <time class="post-date" datetime="2022-10-01T02:12:39&#43;08:00">
             1 Oct 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_nginx/">前端（Web）负载均衡</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>Nginx&rsquo;s load balancing
-一、安装 OS: CentOS7 minimal（安装时的选项）
-0. prepare $yum -y install gcc gcc-c++ automake pcre pcre-devel zlib zlib-devel openssl openssl-devel 1) update OpenSSL default directory: /usr/ssl
-$wget https://www.openssl.org/source/openssl-1.1.1q.tar.gz --no-check-certificate 2) setup $./config --prefix=/usr --shared $make Root permission Required
-$sudo make install 1. installation First, install Nginx of centos repo; Then, replace the nginx program file. Note: The replaced program file version must be the same as the repo!
-$sudo rpm -Uvh http://nginx. <a class="read-more" href="/csdn/post/ops_nginx/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-09-29T08:38:08&#43;08:00">
-            29 Sep 2022
         </time>
     </footer>
 </article>

@@ -6,7 +6,20 @@
     <description>Recent content on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 06 Mar 2023 03:18:08 -0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Mar 2023 09:28:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>简单使用vi</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_vi/</link>
+      <pubDate>Fri, 10 Mar 2023 09:28:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_vi/</guid>
+      <description>The default editor that comes with the UNIX operating system is called vi (visual editor).
+The UNIX vi editor is a full screen editor and has two modes of operation:
+Command mode commands which cause action to be taken on the file, and Insert mode in which entered text is inserted into the file. Insert mode 正常使用 $ vi myfile 恢复使用 $ vi -r myfile 恢复系统崩溃时正在编辑的文件名
+要进行文字编辑工作, 按“i”即进入
+i 移动光标 使用方向键来进行位置的移动。</description>
+    </item>
+    
     <item>
       <title>VC升级时出现的问题</title>
       <link>https://tdtc-hrb.github.io/csdn/post/vc-update-atl/</link>
@@ -1349,26 +1362,6 @@ On every host, run following commands, Use xiaobin112(user) to do all following.
 Prepare Establish Directory &amp;ldquo;.ssh&amp;rdquo;
 $mkdir ~/.ssh $chmod 700 ~/.ssh Stage I 1. config 另外一种方式为：把所有机器的IP和hostname放在/etc/hosts里，在此不再赘述, 请参见《ZooKeeper multi-server install - 3.FQDN》。
 $vi ~/.ssh/config Host host1 HostName 192.168.0.110 Port 22 User xiaobin112 Host host2 HostName 192.168.0.111 Port 22 User xiaobin112 2. r+w $chmod 600 ~/.ssh/config Stage II 1. gen (Just press ENTER for all input values) ssh-keygen -t rsa -P &amp;#39;&amp;#39; 2.</description>
-    </item>
-    
-    <item>
-      <title>简单使用vi</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_vi/</link>
-      <pubDate>Mon, 13 Apr 2020 04:38:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_vi/</guid>
-      <description> 此时是浏览状态（命令行模式）！
-$ vi myfile 浏览状态 移动光标 使用方向键来进行位置的移动。
-编辑状态 要进行文字编辑工作, 按“i”即进入
-i 删除文字 使用“Backspce”键，删除光标前面的文字。 使用“Delete”键，删除光标后面的文字。
-完成编辑 编辑完成后，要退出编辑状态, 按“ESC”，即完成退出。
-菜单状态 按“:”进入菜单状态（底行模式）
-设置行号 输入“set nu”
-:set nu 查找文字 如果，要查找特定的文字，输入“/要搜索的文字”
-:/word 继续查找，按“n”（相当于Windows系统的F3功能键）
-保存文件 输入“wq”完成保存并退出。
-:wq 强退 如果我们只想退出并且不保存文件 输入“q!”
-:q! </description>
     </item>
     
     <item>
