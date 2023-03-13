@@ -6,7 +6,21 @@
     <description>Recent content in Posts on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 10 Mar 2023 09:28:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Mar 2023 14:08:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Grid system</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/css-bootstrap-grid/</link>
+      <pubDate>Fri, 10 Mar 2023 14:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/css-bootstrap-grid/</guid>
+      <description>在V2.3.2中，栅格系统默认是不支持移动设备的； 但V3.0版本，已经默认支持移动设备。
+在V4.6.x, 更加细化了移动设备支持。
+v2 Bootstrap(v2) 默认的栅格系统为12列 ， 形成一个940px宽的容器，默认没有启用 &amp;ldquo;响应式布局特性&amp;rdquo; 。 如果加入响应式布局CSS文件，栅格系统会自动根据可视窗口的宽度从724px到1170px进行动态调整。 在可视窗口低于767px宽的情况下，列将不再固定并且会在垂直方向堆叠。
+example &amp;lt;div class=&amp;#34;row&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;span4&amp;#34;&amp;gt;...&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;span8&amp;#34;&amp;gt;...&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; v3 class变化：.span* -〉.col-md-*
+Bootstrap(v3) 内置了一套响应式、移动设备优先的流式栅格系统， 随着屏幕设备或视口（viewport）尺寸的增加，系统会自动分为最多12列。 它包含了易于使用的预定义classe， 还有强大的mixin用于生成更具语义的布局。
+Grid options Name Size Extra small devices Phones &amp;lt;768px Small devices Tablets ≥768px Medium devices Desktops ≥992px Large devices Desktops ≥1200px example &amp;lt;div class=&amp;#34;row&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;col-md-4&amp;#34;&amp;gt;...&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;col-md-8&amp;#34;&amp;gt;...&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; v4 Bootstrap(v4) 调整了小屏幕的适配。 Switch from Less to Sass for the source CSS files</description>
+    </item>
+    
     <item>
       <title>简单使用vi</title>
       <link>https://tdtc-hrb.github.io/csdn/post/ops_vi/</link>
@@ -906,22 +920,6 @@ down can2uart.mdl 提取码: bb8h</description>
 UART 因为我们使用UART主要是进行发送的，所以关闭接收可以更加快速的进行发送处理。
 控制接收缓存寄存（Receiver Buffer Register）即可达到此目的。
 禁止RBR void preUARTInitRBR( unsigned char i ) { switch (i) { case 0: U0IER = IER_THRE | IER_RLS;	/* Disable RBR */ break; case 1: U1IER = IER_THRE | IER_RLS;	/* Disable RBR */ break; } } 允许RBR void postUARTInitRBR( unsigned char i ) { switch (i) { case 0: U0IER = IER_THRE | IER_RLS | IER_RBR;	/* Re-enable RBR */ break; case 1: U1IER = IER_THRE | IER_RLS | IER_RBR;	/* Re-enable RBR */ break; } } 完成后的UART NXP的官方例程UART加入RBR后的code</description>
-    </item>
-    
-    <item>
-      <title>Grid system</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/css-bootstrap-grid/</link>
-      <pubDate>Fri, 15 May 2020 14:08:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/css-bootstrap-grid/</guid>
-      <description> 在V2.3.2中，栅格系统默认是不支持移动设备的； 但V3.0版本，已经默认支持移动设备。
-v2 Bootstrap(v2) 默认的栅格系统为12列 ，形成一个940px宽的容器，默认没有启用 &amp;ldquo;响应式布局特性&amp;rdquo; 。 如果加入响应式布局CSS文件，栅格系统会自动根据可视窗口的宽度从724px到1170px进行动态调整。 在可视窗口低于767px宽的情况下，列将不再固定并且会在垂直方向堆叠。
-V2.3.2的示例：
-&amp;lt;div class=&amp;#34;row&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;span4&amp;#34;&amp;gt;...&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;span8&amp;#34;&amp;gt;...&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; v3 class变化：.span* -〉.col-md-*
-Bootstrap(v3) 内置了一套响应式、移动设备优先的流式栅格系统，随着屏幕设备或视口（viewport）尺寸的增加，
-系统会自动分为最多12列。它包含了易于使用的预定义classe，还有强大的mixin用于生成更具语义的布局。
-V3.0的示例：
-&amp;lt;div class=&amp;#34;row&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;col-md-4&amp;#34;&amp;gt;...&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;col-md-8&amp;#34;&amp;gt;...&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; </description>
     </item>
     
     <item>
