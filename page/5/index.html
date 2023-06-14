@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.111.3">
+    <meta name="generator" content="Hugo 0.113.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -193,43 +193,6 @@
 </nav>
 
     </div>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/dev_wsl_ubuntu/">使用WSL(V1.0)在Windows 10</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>Arch： x64
-OS: Windows 10 1809 LTSC
-在powerShell的管理员模式下运行命令!
-安装/卸载 ON:
-Control Panel -&gt; Uninstall a program -&gt; Turn Windows features on or off, 勾选“Windows Subsystem for Linux” 安装Ubuntu down appx:
-Ubuntu 2004
-Ubuntu 1804
-从AppxBundle提取appx.
-Add-AppxPackage .\Ubuntu_2004.xxx.appx 卸载 如果“普通”方式不工作，请使用“命令行”。
-普通 右击“Ubuntu xxx” 图标，选择“Uninstall”即可。
-命令行 v1803-v1809
-wslconfig /u 使用 更改源列表:
-sudo vi /etc/apt/sources.list http://archive.ubuntu.com -&gt; https://mirrors.aliyun.com/ubuntu/ 文件互访 首先，使用windows记事本，建立一个testTxtFile.txt； 然后，在WSL查看文件内容。
-cd /mnt/c/Users/tdtc/ vi testTxtFile.txt 最后，用WSL重命名文件名:
-mv testTxtFile.txt testFile.txt 在windows就可以看到重命名的testFile.txt。
-访问WSL服务 WSL与windows 10共有端口，所以Windows 10已使用的端口，不要再分配给WSL <a class="read-more" href="/csdn/post/dev_wsl_ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-05-15T12:08:08&#43;08:00">
-            15 May 2022
-        </time>
-    </footer>
-</article>
 
     
         <article class="post post">
@@ -452,6 +415,30 @@ ol li 就表示当前元素（ol）下的所有li元素。
         
             <p>Install sudo dpkg -i debName.deb issues info问题 E: Sub-process /usr/bin/dpkg returned an error code (1) 解决办法：
 cd /var/lib/dpkg sudo mv info info.bak sudo mkdir info 文件系统只读问题 W: Problem unlinking the file /var/cache/apt/pkgcache.bin - RemoveCaches (30: Read-only file system) sudo fsck -Af sudo reboot  <a class="read-more" href="/csdn/post/dpkg-issues/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-04-10T02:10:39&#43;08:00">
+            10 Apr 2022
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/go-data-using/">使用go-bindata</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>安装 $ go get -u github.com/go-bindata/go-bindata/... generation bindata.go $ cd ~/go/src/github.com/xiaobin80/go-micro-services/ $ go-bindata data/... $ mv bindata.go ./data/ 修改包名 package main &mdash;》
+package xxx 此例xxx为data。
+Reference go-bindata go-micro-services  <a class="read-more" href="/csdn/post/go-data-using/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">

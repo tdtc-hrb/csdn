@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.111.3">
+    <meta name="generator" content="Hugo 0.113.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,31 +160,6 @@
 </nav>
 
 	</div>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_mail/">mail的使用</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>installation Mutt is a small but very powerful text-based mail client for Unix operating systems.
-1) install yum install mutt 2) config $vi ~/.muttrc set sendmail=&#34;/usr/local/msmtp/bin/msmtp&#34; set from = &#34;user@domain.com&#34; set realname = &#34;Realname of the user&#34; received mail:
-set pop_host=&#34;pop.163.com&#34; set pop_user=&#34;love_shidie&#34; set pop_pass=`getpassword email_id` test 1) send mail gpg -d ~/.msmtp/love_shidie-passoword.gpg $mutt -s &#34;test message&#34; -a ~/message121.txt 2) received mail $mutt Press key: G
-Reference Mutt – A Command Line Email Client to Send Mails from Terminal Mutt: how to safely store password? <a class="read-more" href="/csdn/post/ops_mail/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-15T23:08:08&#43;08:00">
-            15 Apr 2020
-        </time>
-    </footer>
-</article>
 
 	
 	   <article class="post post">
@@ -421,6 +396,28 @@ setfacl -m user:site_user:rwx /home/fdn 参考文章 《在 Linux 上给用户�
             
         
         <time class="post-date" datetime="2020-04-14T03:08:08&#43;08:00">
+            14 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_firewall/">soft-list(port)</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>I. Soft List 1. zk sudo firewall-cmd --permanent --zone=public --add-port=2181/tcp sudo firewall-cmd --permanent --zone=public --add-port=2888/tcp sudo firewall-cmd --permanent --zone=public --add-port=3888/tcp 2. Hadoop sudo firewall-cmd --permanent --zone=public --add-port=10020/tcp sudo firewall-cmd --permanent --zone=public --add-port=19888/tcp sudo firewall-cmd --permanent --zone=public --add-port=8020/tcp sudo firewall-cmd --permanent --zone=public --add-port=50070/tcp sudo firewall-cmd --permanent --zone=public --add-port=8485/tcp sudo firewall-cmd --permanent --zone=public --add-port=8088/tcp sudo firewall-cmd --permanent --zone=public --add-port=8033/tcp 3. Spark sudo firewall-cmd --permanent --zone=public --add-port=6066/tcp sudo firewall-cmd --permanent --zone=public --add-port=7077/tcp sudo firewall-cmd --permanent --zone=public --add-port=8080-8088/tcp 立即生效： <a class="read-more" href="/csdn/post/ops_firewall/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-14T02:08:08&#43;08:00">
             14 Apr 2020
         </time>
     </footer>

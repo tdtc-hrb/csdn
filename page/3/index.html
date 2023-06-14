@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.111.3">
+    <meta name="generator" content="Hugo 0.113.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -193,31 +193,6 @@
 </nav>
 
     </div>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_network_adapter_linux/">Linux修改网卡为固定IP</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>Alma/Rocky RHEL Community Version
-View net adapter list:
-$cd /etc/sysconfig/network-scripts$ls ifcfg-* -l ipv4 $ip addr ipv6 $ip -6 addr Setup Start job network adapter:
-ONBOOT=yes static $cd /etc/sysconfig/network-scripts $sudo vi ifcfg-enp0s3 BOOTPROTO=none IPADDR=192.168.1.186 PREFIX=24 GATEWAY=192.168.1.1 DNS1=211.161.191.235 DNS2=211.161.122.197 IPv6 Network IPV6INIT=yes This initializes the interface for IPv6 addressing. IPV6_AUTOCONF=yes This enables the IPv6 auto-configuration for the interface. IPV6_DEFROUTE=yes This indicates that the default IPv6 route has been assigned to the interface. <a class="read-more" href="/csdn/post/ops_network_adapter_linux/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-10-02T08:38:08&#43;08:00">
-            2 Oct 2022
-        </time>
-    </footer>
-</article>
 
     
         <article class="post post">
@@ -451,6 +426,36 @@ Template Project type Executable: Hello World C++ Project Toolchains cygwin GCC 
         
         <time class="post-date" datetime="2022-09-01T08:08:08&#43;08:00">
             1 Sep 2022
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c-automake/">automake生成makefile</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>注意: am文件是需要手工创建的!
+1. ac文件 生成configure.scan文件, 并重命名为configure.ac
+$ autoscan $ mv configure.scan configure.ac 修改配置 注意: 所有新修改的值都需要方括号([])
+程序属性 AC_INIT([hex2int], [v0.1], [veic_2005@163.com]) 目录结构 如果只有本目录, 使用空值 AM_INIT_AUTOMAKE 检查编译器 C compiler: AC_PROG_CC C++ compiler:
+AC_PROG_CXX 输出Makefile.in AC_CONFIG_FILES([Makefile]) 检查system头文件 AC_CHECK_HEADERS([string.h]) 2. 生成Makefile aclocal autoconf 自定义宏(可选) 在ac file中的定义：
+AC_CONFIG_HEADERS([config.h]) 执行：
+autoheader 输出Makefile automake --add-missing 输出Makefile:
+./configure 附件 手动Makefile 小项目可以。 注意：所有的命令前必须为TAB，不能使空格！
+#https://stackoverflow.com/questions/1484817/how-do-i-make-a-simple-makefile-for-gcc-on-linux #https://stackoverflow.com/questions/14109724/makefile-missing-separator/14109796 #https://www.gnu.org/software/make/manual/html_node/Pattern-Examples.html#Pattern-Examples #https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html#Automatic-Variables TARGET = hex2int CC = gcc CFLAGS = -g -Wall all:$(TARGET) OBJECTS = $(patsubst %. <a class="read-more" href="/csdn/post/c-automake/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-08-08T02:20:39&#43;08:00">
+            8 Aug 2022
         </time>
     </footer>
 </article>

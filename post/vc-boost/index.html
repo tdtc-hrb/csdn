@@ -13,7 +13,7 @@
 
 
 <meta name="twitter:title" content="安装boost库(VC)"/>
-<meta name="twitter:description" content="vc12.0, vc14.2"/>
+<meta name="twitter:description" content="vc14.1/14.2/14.3 "/>
 <meta name="twitter:site" content="@"/>
 
 
@@ -27,9 +27,9 @@
     
 
     
-    <meta property="og:description" content="vc12.0, vc14.2" />
+    <meta property="og:description" content="vc14.1/14.2/14.3 " />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2023-02-03T10:08:39&#43;08:00" />
+    <meta property="article:published_time" content="2023-06-13T10:08:39&#43;08:00" />
 
     
     
@@ -37,7 +37,7 @@
     <title>安装boost库(VC) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
 
     
-    <meta name="description" content="vc12.0, vc14.2" />
+    <meta name="description" content="vc14.1/14.2/14.3 " />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.111.3">
+    <meta name="generator" content="Hugo 0.113.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/vc-boost/" />
 
@@ -92,18 +92,18 @@
     },
     "headline": "安装boost库(VC)",
     "name": "安装boost库(VC)",
-    "wordCount":  187 ,
-    "timeRequired": "PT1M",
+    "wordCount":  215 ,
+    "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/vc-boost/",
-    "datePublished": "2023-02-03T10:08Z",
-    "dateModified": "2023-02-03T10:08Z",
+    "datePublished": "2023-06-13T10:08Z",
+    "dateModified": "2023-06-13T10:08Z",
     
     
-    "description": "vc12.0, vc14.2",
+    "description": "vc14.1/14.2/14.3 ",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://tdtc-hrb.github.io/csdn/post/vc-boost/"
@@ -164,12 +164,12 @@
 
     <header class="post-header">
         <h1 class="post-title">安装boost库(VC)</h1>
-        <small>vc12.0, vc14.2</small>
+        <small>vc14.1/14.2/14.3 </small>
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2023-02-03T10:08:39&#43;08:00">
-            Feb 3, 2023
+          <time class="post-date" datetime="2023-06-13T10:08:39&#43;08:00">
+            Jun 13, 2023
           </time>
         
          
@@ -177,15 +177,26 @@
     </header>
 
     <section class="post-content">
-      <p><a href="https://sourceforge.net/projects/boost/files/boost-binaries/">support of msvc</a></p>
-<ul>
+      <ul>
+<li><a href="https://sourceforge.net/projects/boost/files/boost-binaries/">1.53.0</a></li>
+</ul>
+<pre tabindex="0"><code>support of msvc-11.0
+</code></pre><ul>
 <li>1.55.0</li>
 </ul>
 <pre tabindex="0"><code>support of msvc-12.0
 </code></pre><ul>
-<li><a href="https://boostorg.jfrog.io/artifactory/main/release/">1.71.0</a></li>
+<li><a href="https://boostorg.jfrog.io/artifactory/main/release/">1.64.0</a></li>
+</ul>
+<pre tabindex="0"><code>support of msvc-14.1
+</code></pre><ul>
+<li>1.71.0</li>
 </ul>
 <pre tabindex="0"><code>support of msvc-14.2
+</code></pre><ul>
+<li>1.78.0</li>
+</ul>
+<pre tabindex="0"><code>support of msvc-14.3
 </code></pre><p><a href="https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B#Internal_version_numbering">MSVC++ versions</a></p>
 <table>
 <thead>
@@ -196,37 +207,63 @@
 </thead>
 <tbody>
 <tr>
-<td>msvc-12.0</td>
-<td>VS2013</td>
+<td>msvc-14.1</td>
+<td>VS2017</td>
 </tr>
 <tr>
 <td>msvc-14.2</td>
 <td>VS2019</td>
 </tr>
+<tr>
+<td>msvc-14.3</td>
+<td>VS2022</td>
+</tr>
 </tbody>
 </table>
 <h1 id="1-编译">1. 编译</h1>
 <blockquote>
-<p>在 x86 Native Tools Command Prompt for VS 2019 下运行</p>
+<p>在 x86 Native Tools Command Prompt for VS 2022 下运行</p>
 </blockquote>
 <h2 id="about-b2-vs-bjamhttpswwwboostorgbuilddochtmlbbv2faqnameshtml"><a href="https://www.boost.org/build/doc/html/bbv2/faq/names.html">About b2 vs bjam</a></h2>
 <pre tabindex="0"><code>as of Boost 1.47.0, the official name of the executable was changed to b2.
-</code></pre><h2 id="gen-b2">Gen b2</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span><span style="color:#66d9ef">cd</span> C:\boost_1_81_0
+</code></pre><h2 id="gen-b2-and-build">Gen b2 and build</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span><span style="color:#66d9ef">cd</span> C:\boost_1_82_0
 </span></span><span style="display:flex;"><span>bootstrap.bat
-</span></span></code></pre></div><p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/boost-cmd1.png" alt="windows cmd1"></p>
+</span></span></code></pre></div><!-- vs2019: https://github.com/tdtc-hrb/csdn/raw/master/images/boost-cmd1.png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/boost-cmd1(vs2022).png" alt="windows cmd1"></p>
+<h3 id="build">build</h3>
 <ul>
-<li>VS2013</li>
+<li>VS2022</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>b2 stage --toolset<span style="color:#f92672">=</span>msvc-12.0 --without-graph --without-graph_parallel --without-math --without-mpi --without-python --without-serialization --without-wave --stagedir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;C:\boost\bin\vc120&#34;</span> link<span style="color:#f92672">=</span>static runtime-link<span style="color:#f92672">=</span>shared runtime-link<span style="color:#f92672">=</span>static threading<span style="color:#f92672">=</span>multi debug release
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>b2 stage --toolset<span style="color:#f92672">=</span>msvc-14.3 --without-graph --without-graph_parallel --without-math --without-mpi --without-python --without-serialization --without-wave --stagedir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;C:\boost\bin\vc143&#34;</span> link<span style="color:#f92672">=</span>static runtime-link<span style="color:#f92672">=</span>shared runtime-link<span style="color:#f92672">=</span>static threading<span style="color:#f92672">=</span>multi debug release
 </span></span></code></pre></div><ul>
 <li>VS2019</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>b2 stage --toolset<span style="color:#f92672">=</span>msvc-14.2 --without-graph --without-graph_parallel --without-math --without-mpi --without-python --without-serialization --without-wave --stagedir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;C:\boost\bin\vc142&#34;</span> link<span style="color:#f92672">=</span>static runtime-link<span style="color:#f92672">=</span>shared runtime-link<span style="color:#f92672">=</span>static threading<span style="color:#f92672">=</span>multi debug release
+</span></span></code></pre></div><ul>
+<li>VS2017</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>b2 stage --toolset<span style="color:#f92672">=</span>msvc-14.1 --without-graph --without-graph_parallel --without-math --without-mpi --without-python --without-serialization --without-wave --stagedir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;C:\boost\bin\vc141&#34;</span> link<span style="color:#f92672">=</span>static runtime-link<span style="color:#f92672">=</span>shared runtime-link<span style="color:#f92672">=</span>static threading<span style="color:#f92672">=</span>multi debug release
 </span></span></code></pre></div><h1 id="2-使用">2. 使用</h1>
-<h2 id="1-头文件">1) 头文件</h2>
-<p>Copy the C:\boost_1_81_0\boost folder to C:\boost</p>
-<h2 id="2-ide设置">2) IDE设置</h2>
+<p>Copy the &lsquo;C:\boost_1_82_0\boost&rsquo; folder to &lsquo;C:&rsquo; disk</p>
+<h2 id="ide设置">IDE设置</h2>
+<ul>
+<li>header</li>
+</ul>
+<!-- vs2019: https://github.com/tdtc-hrb/csdn/raw/master/images/boost-header1.png -->
+<!-- vs2019: https://github.com/tdtc-hrb/csdn/raw/master/images/boost-header2.png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/boost-header1(vs2022).png" alt="VS2022 directories">
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/boost-header2(v182).png" alt="VS2022 header2"></p>
+<ul>
+<li>Linker</li>
+</ul>
+<!-- vs2019: https://github.com/tdtc-hrb/csdn/raw/master/images/boost-linker1.png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/boost-linker1(vs2022).png" alt="VS2022 linker1"></p>
+<ul>
+<li>C/C++</li>
+</ul>
+<!-- vs2019: https://github.com/tdtc-hrb/csdn/raw/master/images/gen1-vc142.png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/gen1-vc143.png" alt="VS2022 c++"></p>
 <h3 id="头文件引用">头文件引用</h3>
 <blockquote>
 <p>Project-&gt;Properties-&gt;Configuration Properties-&gt;VC++ Directories-&gt;General <br>
@@ -234,7 +271,7 @@ Additional Include Directories: 增加 1）中根目录。</p>
 </blockquote>
 <blockquote>
 <blockquote>
-<p>请参考VC19-header</p>
+<p>请参考vs22-header</p>
 </blockquote>
 </blockquote>
 <h3 id="库链接">库链接</h3>
@@ -244,35 +281,16 @@ Additional Library Directories: 增加生成库目录</p>
 </blockquote>
 <h3 id="代码生成">代码生成</h3>
 <blockquote>
-<p>vs2019
+<p>vs2022
 Project-&gt;Properties-&gt;Configuration Properties-&gt;c/c++-&gt;Code Generation <br>
 Spectre mitigation: 禁止</p>
 </blockquote>
 <blockquote>
 <blockquote>
-<p>请参考VC19-C/C++</p>
+<p>请参考vs22-C/C++</p>
 </blockquote>
 </blockquote>
-<h2 id="参考圖片">参考圖片</h2>
-<blockquote>
-<p>VS2019</p>
-</blockquote>
-<ul>
-<li>
-<p>header <br>
-<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/boost-header1.png" alt="VS2019 header1">
-<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/boost-header2.png" alt="VS2019 header2"></p>
-</li>
-<li>
-<p>Linker  <br>
-<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/boost-linker1.png" alt="VS2019 linker1"></p>
-</li>
-<li>
-<p>C/C++
-<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/gen1-vc142.png" alt="VS2019 linker2"></p>
-</li>
-</ul>
-<h1 id="example">Example</h1>
+<h2 id="example">Example</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;boost/thread.hpp&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;boost/chrono.hpp&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
@@ -352,17 +370,10 @@ Spectre mitigation: 禁止</p>
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/small-site/">
-          <section class="post">
-              <h2>微信小程序简介</h2>
-              
-          </section>
-      </a>
   
-  
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/com-wizards-vc/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/css-bootstrap-grid/">
           <section class="post">
-              <h2>创建COM</h2>
+              <h2>Grid system</h2>
           </section>
       </a>
   
