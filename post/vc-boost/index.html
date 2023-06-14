@@ -92,8 +92,8 @@
     },
     "headline": "安装boost库(VC)",
     "name": "安装boost库(VC)",
-    "wordCount":  215 ,
-    "timeRequired": "PT2M",
+    "wordCount":  205 ,
+    "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
@@ -246,50 +246,33 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>b2 stage --toolset<span style="color:#f92672">=</span>msvc-14.1 --without-graph --without-graph_parallel --without-math --without-mpi --without-python --without-serialization --without-wave --stagedir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;C:\boost\bin\vc141&#34;</span> link<span style="color:#f92672">=</span>static runtime-link<span style="color:#f92672">=</span>shared runtime-link<span style="color:#f92672">=</span>static threading<span style="color:#f92672">=</span>multi debug release
 </span></span></code></pre></div><h1 id="2-使用">2. 使用</h1>
 <p>Copy the &lsquo;C:\boost_1_82_0\boost&rsquo; folder to &lsquo;C:&rsquo; disk</p>
-<h2 id="ide设置">IDE设置</h2>
+<h2 id="project-properties">Project Properties</h2>
+<blockquote>
+<p>Project-&gt;Properties-&gt;Configuration Properties</p>
+</blockquote>
 <ul>
-<li>header</li>
+<li>头文件 <br>
+VC++ Directories-&gt;General <br>
+Additional Include Directories:</li>
 </ul>
 <!-- vs2019: https://github.com/tdtc-hrb/csdn/raw/master/images/boost-header1.png -->
 <!-- vs2019: https://github.com/tdtc-hrb/csdn/raw/master/images/boost-header2.png -->
 <p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/boost-header1(vs2022).png" alt="VS2022 directories">
 <img src="https://github.com/tdtc-hrb/csdn/raw/master/images/boost-header2(v182).png" alt="VS2022 header2"></p>
 <ul>
-<li>Linker</li>
+<li>库链接 <br>
+Linker-&gt;General <br>
+Additional Library Directories:</li>
 </ul>
 <!-- vs2019: https://github.com/tdtc-hrb/csdn/raw/master/images/boost-linker1.png -->
 <p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/boost-linker1(vs2022).png" alt="VS2022 linker1"></p>
 <ul>
-<li>C/C++</li>
+<li>代码生成 <br>
+c/c++-&gt;Code Generation <br>
+Spectre mitigation:</li>
 </ul>
 <!-- vs2019: https://github.com/tdtc-hrb/csdn/raw/master/images/gen1-vc142.png -->
 <p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/gen1-vc143.png" alt="VS2022 c++"></p>
-<h3 id="头文件引用">头文件引用</h3>
-<blockquote>
-<p>Project-&gt;Properties-&gt;Configuration Properties-&gt;VC++ Directories-&gt;General <br>
-Additional Include Directories: 增加 1）中根目录。</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>请参考vs22-header</p>
-</blockquote>
-</blockquote>
-<h3 id="库链接">库链接</h3>
-<blockquote>
-<p>Project-&gt;Properties-&gt;Configuration Properties-&gt;Linker-&gt;General <br>
-Additional Library Directories: 增加生成库目录</p>
-</blockquote>
-<h3 id="代码生成">代码生成</h3>
-<blockquote>
-<p>vs2022
-Project-&gt;Properties-&gt;Configuration Properties-&gt;c/c++-&gt;Code Generation <br>
-Spectre mitigation: 禁止</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>请参考vs22-C/C++</p>
-</blockquote>
-</blockquote>
 <h2 id="example">Example</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;boost/thread.hpp&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;boost/chrono.hpp&gt;</span><span style="color:#75715e">
