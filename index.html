@@ -199,6 +199,34 @@
     
         <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/vc-update-atl/">VC升级时出现的问题</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>VC6迁移到VC2008+
+ATL Active Template Library (ATL)
+C1189 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atlcore.h(35): fatal error C1189: #error : This file requires _WIN32_WINNT to be #defined at least to 0x0403. Value 0x0501 or higher is recommended. A:
+StdAfx.h
+#define _WIN32_WINNT 0x0400 -&gt;
+#define _WIN32_WINNT 0x0501 C1083(atlimpl) c:\users\xiaobin\documents\visual studio 2013\projects\crcfcn_vc\stdafx.cpp(13): fatal error C1083: Cannot open include file: &#39;atlimpl.cpp&#39;: No such file or directory A: solution 1 or 2.
+solution 1 Comment out this line stdAfx. <a class="read-more" href="/csdn/post/vc-update-atl/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-06-18T08:18:08&#43;08:00">
+            18 Jun 2023
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/vc-boost/">安装boost库(VC)</a></h2>
     </header>
     <section class="post-excerpt">
@@ -269,34 +297,6 @@ i 移动光标 使用方向键来进行位置的移动。 <a class="read-more" h
         
         <time class="post-date" datetime="2023-03-10T09:28:08&#43;08:00">
             10 Mar 2023
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/vc-update-atl/">VC升级时出现的问题</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>VC6迁移到VC2008+
-ATL Active Template Library (ATL)
-C1189 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atlcore.h(35): fatal error C1189: #error : This file requires _WIN32_WINNT to be #defined at least to 0x0403. Value 0x0501 or higher is recommended. A:
-StdAfx.h
-#define _WIN32_WINNT 0x0400 -&gt;
-#define _WIN32_WINNT 0x0501 C1083(atlimpl) c:\users\xiaobin\documents\visual studio 2013\projects\crcfcn_vc\stdafx.cpp(13): fatal error C1083: Cannot open include file: &#39;atlimpl.cpp&#39;: No such file or directory A: solution 1 or 2.
-solution 1 Comment out this line stdAfx. <a class="read-more" href="/csdn/post/vc-update-atl/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-03-06T03:18:08-08:00">
-            6 Mar 2023
         </time>
     </footer>
 </article>
