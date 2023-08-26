@@ -60,7 +60,7 @@ pom &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.google.code.simple-spr
       
       
     
-    <meta name="generator" content="Hugo 0.114.0">
+    <meta name="generator" content="Hugo 0.117.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/memcached-spy/" />
 
@@ -212,7 +212,7 @@ pom &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.google.code.simple-spr
 <p>service layer</p>
 </blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@ReadThroughSingleCache</span><span style="color:#f92672">(</span>namespace <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;carnum&#34;</span><span style="color:#f92672">,</span> expiration <span style="color:#f92672">=</span> <span style="color:#ae81ff">300</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@ReadThroughSingleCache</span><span style="color:#f92672">(</span>namespace <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;carnum&#34;</span><span style="color:#f92672">,</span> expiration <span style="color:#f92672">=</span> 300<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>TrainOrder<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getCarList</span><span style="color:#f92672">(</span>String year<span style="color:#f92672">,</span> String month<span style="color:#f92672">,</span> <span style="color:#a6e22e">@ParameterValueKeyProvider</span> <span style="color:#66d9ef">int</span> trainNumber<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 </span></span><span style="display:flex;"><span>	<span style="color:#75715e">// TODO Auto-generated method stub
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">return</span> trainOrderDao<span style="color:#f92672">.</span><span style="color:#a6e22e">getCarnumberList</span><span style="color:#f92672">(</span>year<span style="color:#f92672">,</span> month<span style="color:#f92672">,</span> trainNumber<span style="color:#f92672">);</span>

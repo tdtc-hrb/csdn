@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.114.0">
+    <meta name="generator" content="Hugo 0.117.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,6 +160,36 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c-automake/">automake生成makefile</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>注意: am文件是需要手工创建的!
+1. ac文件 生成configure.scan文件, 并重命名为configure.ac
+$ autoscan $ mv configure.scan configure.ac 修改配置 注意: 所有新修改的值都需要方括号([])
+程序属性 AC_INIT([hex2int], [v0.1], [veic_2005@163.com]) 目录结构 如果只有本目录, 使用空值 AM_INIT_AUTOMAKE 检查编译器 C compiler: AC_PROG_CC C++ compiler:
+AC_PROG_CXX 输出Makefile.in AC_CONFIG_FILES([Makefile]) 检查system头文件 AC_CHECK_HEADERS([string.h]) 2. 生成Makefile aclocal autoconf 自定义宏(可选) 在ac file中的定义：
+AC_CONFIG_HEADERS([config.h]) 执行：
+autoheader 输出Makefile automake --add-missing 输出Makefile:
+./configure 附件 手动Makefile 小项目可以。 注意：所有的命令前必须为TAB，不能使空格！
+#https://stackoverflow.com/questions/1484817/how-do-i-make-a-simple-makefile-for-gcc-on-linux #https://stackoverflow.com/questions/14109724/makefile-missing-separator/14109796 #https://www.gnu.org/software/make/manual/html_node/Pattern-Examples.html#Pattern-Examples #https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html#Automatic-Variables TARGET = hex2int CC = gcc CFLAGS = -g -Wall all:$(TARGET) OBJECTS = $(patsubst %. <a class="read-more" href="/csdn/post/c-automake/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-08-08T02:20:39&#43;08:00">
+            8 Aug 2022
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -431,43 +461,6 @@ code /** * Version: 0.2 * * Description: Add signal * */ #include &lt;stdio. <a 
         
         <time class="post-date" datetime="2022-05-16T08:08:08&#43;08:00">
             16 May 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/dev_wsl_ubuntu/">使用WSL(V1.0)在Windows 10</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>Arch： x64
-OS: Windows 10 1809 LTSC
-在powerShell的管理员模式下运行命令!
-安装/卸载 ON:
-Control Panel -&gt; Uninstall a program -&gt; Turn Windows features on or off, 勾选“Windows Subsystem for Linux” 安装Ubuntu down appx:
-Ubuntu 2004
-Ubuntu 1804
-从AppxBundle提取appx.
-Add-AppxPackage .\Ubuntu_2004.xxx.appx 卸载 如果“普通”方式不工作，请使用“命令行”。
-普通 右击“Ubuntu xxx” 图标，选择“Uninstall”即可。
-命令行 v1803-v1809
-wslconfig /u 使用 更改源列表:
-sudo vi /etc/apt/sources.list http://archive.ubuntu.com -&gt; https://mirrors.aliyun.com/ubuntu/ 文件互访 首先，使用windows记事本，建立一个testTxtFile.txt； 然后，在WSL查看文件内容。
-cd /mnt/c/Users/tdtc/ vi testTxtFile.txt 最后，用WSL重命名文件名:
-mv testTxtFile.txt testFile.txt 在windows就可以看到重命名的testFile.txt。
-访问WSL服务 WSL与windows 10共有端口，所以Windows 10已使用的端口，不要再分配给WSL <a class="read-more" href="/csdn/post/dev_wsl_ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-05-15T12:08:08&#43;08:00">
-            15 May 2022
         </time>
     </footer>
 </article>
