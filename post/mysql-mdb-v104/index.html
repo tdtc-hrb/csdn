@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="OS: CentOS 7" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2023-08-02T01:08:39&#43;08:00" />
+    <meta property="article:published_time" content="2023-08-06T01:08:39&#43;08:00" />
 
     
     
@@ -92,15 +92,15 @@
     },
     "headline": "安装 MariaDB 10.3/10.4(MySQL 5.7)数据库",
     "name": "安装 MariaDB 10.3/10.4(MySQL 5.7)数据库",
-    "wordCount":  482 ,
+    "wordCount":  534 ,
     "timeRequired": "PT3M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/mysql-mdb-v104/",
-    "datePublished": "2023-08-02T01:08Z",
-    "dateModified": "2023-08-02T01:08Z",
+    "datePublished": "2023-08-06T01:08Z",
+    "dateModified": "2023-08-06T01:08Z",
     
     
     "description": "OS: CentOS 7",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2023-08-02T01:08:39&#43;08:00">
-            Aug 2, 2023
+          <time class="post-date" datetime="2023-08-06T01:08:39&#43;08:00">
+            Aug 6, 2023
           </time>
         
          
@@ -217,12 +217,20 @@ CentOS v7.9(2009)</li>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum -y remove mariadb*
 </span></span></code></pre></div><h1 id="2-install">2. install</h1>
 <h2 id="step-1-add-mariadb-yum-repositorieshttpsdownloadsmariadborgmariadbrepositories">Step 1: <a href="https://downloads.mariadb.org/mariadb/repositories">Add MariaDB Yum Repositories</a></h2>
-<p><a href="https://downloads.mariadb.org/mariadb/repositories/#mirror=tuna&amp;distro=CentOS&amp;distro_release=centos7-amd64--centos7&amp;version=10.3">/etc/yum.repos.d/mariadb.repo</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>mariadb<span style="color:#f92672">]</span>
+<p>/etc/yum.repos.d/mariadb.repo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># MariaDB 10.4 CentOS repository list - created 2023-08-26 09:24 UTC</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># https://mariadb.org/download/</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>mariadb<span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>name <span style="color:#f92672">=</span> MariaDB
-</span></span><span style="display:flex;"><span>baseurl <span style="color:#f92672">=</span> http://yum.mariadb.org/10.4/centos7-amd64
-</span></span><span style="display:flex;"><span>gpgkey<span style="color:#f92672">=</span>https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
-</span></span><span style="display:flex;"><span>gpgcheck<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># rpm.mariadb.org is a dynamic mirror if your preferred mirror goes offline. See https://mariadb.org/mirrorbits/ for details.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># baseurl = https://rpm.mariadb.org/10.4/centos/$releasever/$basearch</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># baseurl = https://mirrors.neusoft.edu.cn/mariadb/yum/10.4/centos/$releasever/$basearch ## neusoft</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## aliyun</span>
+</span></span><span style="display:flex;"><span>baseurl <span style="color:#f92672">=</span> https://mirrors.aliyun.com/mariadb/yum/10.4/centos/$releasever/$basearch
+</span></span><span style="display:flex;"><span>module_hotfixes <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># gpgkey = https://rpm.mariadb.org/RPM-GPG-KEY-MariaDB</span>
+</span></span><span style="display:flex;"><span>gpgkey <span style="color:#f92672">=</span> https://mirrors.aliyun.com/mariadb/yum/RPM-GPG-KEY-MariaDB
+</span></span><span style="display:flex;"><span>gpgcheck <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
 </span></span></code></pre></div><h2 id="step-2-install-mariadb-server">Step 2: Install MariaDB Server</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install MariaDB-server MariaDB-client
 </span></span></code></pre></div><ul>
