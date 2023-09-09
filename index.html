@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.117.0">
+    <meta name="generator" content="Hugo 0.118.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -195,6 +195,37 @@
 </nav>
 
     </div>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/com-wizards-vc/">创建COM(Component Object Model)</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Use Visual Studio&rsquo;s wizard to create COM
+Visual Studio 2013 Visual Studio 2015 Visual Studio 2017/2019/2022 step by step:
+建立ATL工程 建立ATL Simple Object 添加IDL方法 测试添加的method 建立ATL工程 File-&gt;New-&gt;Project
+name: testATL Note: name即是要生成的DLL文件 选择&quot;MFC/ATL&quot;中&quot;ATL Project&quot;:
+Default
+取消编译时注册Dll Project -&gt; PropertiesLinker -&gt; Register OutputNo Add ATL Simple Object (vs2017/vs2019)右击项目名称，选择Add -&gt;New Item
+vs2013/vs2015: Add -&gt; Class
+ATL Simple Object:
+设置 Short name: testSOW
+Simple Object ID ProgID: testATL.testSOW IE支持 vs2013/vs2015 Options -&gt; Support vs2017/vs2019 Other Options 添加IDL方法 Tab switching from &ldquo;Solution Explorer&rdquo; to &ldquo;Class View&rdquo; Select the interface, Right-click -&gt; add -&gt; add method <a class="read-more" href="/csdn/post/com-wizards-vc/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-09-02T23:08:08&#43;08:00">
+            2 Sep 2023
+        </time>
+    </footer>
+</article>
 
     
         <article class="post post">
@@ -424,29 +455,6 @@ Guest os sudo vi /etc/netplan/00-installer-config.yaml network: version: 2 rende
         
         <time class="post-date" datetime="2023-02-15T16:08:08&#43;08:00">
             15 Feb 2023
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/c-bsd_socket/">unix网络的client和server</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>使用GNU Compiler Collection(GCC)编译的 一个简单的客户端和服务器端的程序！
-Client Side flow chart getaddrinfo() -&gt; socket() -&gt; connect() -&gt; recv() src #include &lt;stdio.h&gt; #include &lt;string.h&gt; #include &lt;sys/types.h&gt; #include &lt;sys/socket.h&gt; #include &lt;arpa/inet.h&gt; #include &lt;netdb.h&gt; #define SERVIP &#34;192.168.56.112&#34; #define SERVPORT &#34;2349&#34; int main(int argc, char *argv[]) { struct addrinfo hints, *res; int status; int sockfd; int connSta; int recvSta; char buffer[1024]; int len; char ipstr[INET_ADDRSTRLEN]; void *addr; if (argc != 3) { fprintf(stderr, &#34;Usage: Not Server IP And Port! <a class="read-more" href="/csdn/post/c-bsd_socket/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-02-14T00:08:08&#43;08:00">
-            14 Feb 2023
         </time>
     </footer>
 </article>

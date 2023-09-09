@@ -6,7 +6,25 @@
     <description>Recent content on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 06 Aug 2023 01:08:39 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Sep 2023 23:08:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>创建COM(Component Object Model)</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/</link>
+      <pubDate>Sat, 02 Sep 2023 23:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/</guid>
+      <description>Use Visual Studio&amp;rsquo;s wizard to create COM
+Visual Studio 2013 Visual Studio 2015 Visual Studio 2017/2019/2022 step by step:
+建立ATL工程 建立ATL Simple Object 添加IDL方法 测试添加的method 建立ATL工程 File-&amp;gt;New-&amp;gt;Project
+name: testATL Note: name即是要生成的DLL文件 选择&amp;quot;MFC/ATL&amp;quot;中&amp;quot;ATL Project&amp;quot;:
+Default
+取消编译时注册Dll Project -&amp;gt; PropertiesLinker -&amp;gt; Register OutputNo Add ATL Simple Object (vs2017/vs2019)右击项目名称，选择Add -&amp;gt;New Item
+vs2013/vs2015: Add -&amp;gt; Class
+ATL Simple Object:
+设置 Short name: testSOW
+Simple Object ID ProgID: testATL.testSOW IE支持 vs2013/vs2015 Options -&amp;gt; Support vs2017/vs2019 Other Options 添加IDL方法 Tab switching from &amp;ldquo;Solution Explorer&amp;rdquo; to &amp;ldquo;Class View&amp;rdquo; Select the interface, Right-click -&amp;gt; add -&amp;gt; add method</description>
+    </item>
+    
     <item>
       <title>安装 MariaDB 10.3/10.4(MySQL 5.7)数据库</title>
       <link>https://tdtc-hrb.github.io/csdn/post/mysql-mdb-v104/</link>
@@ -153,24 +171,6 @@ chmod -R 777 /tmp/etc 一、ISO文件 mkisofs -r -o etc.iso /tmp/etc 二、压�
 tar -cvf /tmp/etc.tar /etc transform --transform s/OLD_NAME/NEW_NAME/ gz tar -zcvf /tmp/etc.tar.gz /etc transform:
 tar -zcvf /tmp/etc.tar.gz /etc --transform s/etc/myetc/ bz2 tar -jcvf /tmp/etc.tar.bz2 /etc transform:
 tar -jcvf /tmp/etc.tar.bz2 /etc --transform s/etc/myetc/ FAQ This does not look like a tar archive #gzip -d xxxx.tar.gz #tar -xf xxxx.tar gzip: stdin: not in gzip format $ tar xvf xxxx.</description>
-    </item>
-    
-    <item>
-      <title>创建COM</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/</link>
-      <pubDate>Thu, 02 Feb 2023 23:08:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/</guid>
-      <description>Use Visual Studio&amp;rsquo;s wizard to create COM
-Visual studio 2010 Visual Studio 2013 Visual Studio 2015/2017/2019/2022 step by step:
-建立ATL工程 建立ATL Simple Object 添加IDL方法 测试添加的method 建立ATL工程 File-&amp;gt;New-&amp;gt;Project
-name: testATL 选择“MFC/ATL”中“ATL Project”。
-Note: name即是要生成的DLL文件
-设置 Default 取消编译时注册Dll Project -&amp;gt; PropertiesLinker -&amp;gt; Register OutputNo ATL Simple Object 右击项目名称，选择Add-〉New Item
-vs2013: Add -&amp;gt; Class
-设置 base Short name: testSOW progID 附加支持 progID progID: Simple Object ID
-testATL.testSOW 附加支持 本选项针对IE支持。
-Other -&amp;gt; Support:</description>
     </item>
     
     <item>
