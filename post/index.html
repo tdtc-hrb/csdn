@@ -162,6 +162,31 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/com-ie-test/">测试COM</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>IDE: Visual Studio 2019(v16.11)
+本文参考: 创建COM
+一、创建COM 增加IE支持： IObjectWithSite
+增加方法 Add STDMETHODIMP CtestSOW::Add(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x + y); return S_OK; } Subtract STDMETHODIMP CtestSOW::Sub(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x - y); return S_OK; } Multiply STDMETHODIMP CtestSOW::Mul(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x * y); return S_OK; } Divide STDMETHODIMP CtestSOW::Div(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x / y); return S_OK; } 二、测试平台 查看依赖：win8. <a class="read-more" href="/csdn/post/com-ie-test/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-09-04T18:08:08&#43;08:00">
+            4 Sep 2023
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/com-wizards-vc/">创建COM(Component Object Model)</a></h2>
     </header>
     <section class="post-excerpt">
@@ -389,33 +414,6 @@ code 以下程序在VC9/VC14.1下编译通过
         
         <time class="post-date" datetime="2023-03-05T21:30:08-08:00">
             5 Mar 2023
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_network_proxy/">设置proxy</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>OS Windows set command
-set http_proxy=http://127.0.0.1:8580 set https_proxy=http://127.0.0.1:8580 Ubuntu export http_proxy=&#34;http://192.168.1.108:1080&#34; export https_proxy=&#34;http://192.168.1.108:1080&#34; With user and password Set up the server in the tool: Check &ldquo;Run xxx as Server(listens 0.0.0.0)&rdquo;
-export http_proxy=http://USERNAME:PASSWORD@192.168.1.108:8580/ export https_proxy=http://USERNAME:PASSWORD@192.168.1.108:8580/ FreeBSD v12.4
-setenv HTTP_PROXY http://web-proxy.xxxxxx.com:8080 setenv HTTPS_PROXY https://web-proxy.xxxxxx.com:8080 software VirtualBox Adapter 1 host only, vboxnet0
-Adapter 2 NAT
-Guest os sudo vi /etc/netplan/00-installer-config.yaml network: version: 2 renderer: networkd ethernets: enp0s3: addresses: - 192.168.56.12/24 dhcp4: no enp0s8: dhcp4: no Wine #! <a class="read-more" href="/csdn/post/ops_network_proxy/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-02-17T14:08:08&#43;08:00">
-            17 Feb 2023
         </time>
     </footer>
 </article>

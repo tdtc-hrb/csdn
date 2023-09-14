@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="使用IE" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2023-01-04T18:08:08&#43;08:00" />
+    <meta property="article:published_time" content="2023-09-04T18:08:08&#43;08:00" />
 
     
     
@@ -92,15 +92,15 @@
     },
     "headline": "测试COM",
     "name": "测试COM",
-    "wordCount":  258 ,
+    "wordCount":  309 ,
     "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/com-ie-test/",
-    "datePublished": "2023-01-04T18:08Z",
-    "dateModified": "2023-01-04T18:08Z",
+    "datePublished": "2023-09-04T18:08Z",
+    "dateModified": "2023-09-04T18:08Z",
     
     
     "description": "使用IE",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2023-01-04T18:08:08&#43;08:00">
-            Jan 4, 2023
+          <time class="post-date" datetime="2023-09-04T18:08:08&#43;08:00">
+            Sep 4, 2023
           </time>
         
          
@@ -193,6 +193,14 @@
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>	<span style="color:#75715e">// TODO: Add your implementation code here
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span>ret <span style="color:#f92672">=</span> (x <span style="color:#f92672">+</span> y);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> S_OK;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="subtract">Subtract</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>STDMETHODIMP CtestSOW<span style="color:#f92672">::</span>Sub(LONG x, LONG y, LONG<span style="color:#f92672">*</span> ret)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// TODO: Add your implementation code here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span>ret <span style="color:#f92672">=</span> (x <span style="color:#f92672">-</span> y);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> S_OK;
 </span></span><span style="display:flex;"><span>}
@@ -258,38 +266,47 @@
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btnAdd&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Add&#34;</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ATLFun.add(document.getElementById(&#39;edtA&#39;).value, document.getElementById(&#39;edtB&#39;).value)&#34;</span> /&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btnMul&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Mul&#34;</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ATLFun.mul(document.getElementById(&#39;edtA&#39;).value, document.getElementById(&#39;edtB&#39;).value)&#34;</span> /&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btnDiv&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Div&#34;</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ATLFun.div(document.getElementById(&#39;edtA&#39;).value, document.getElementById(&#39;edtB&#39;).value)&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btnSub&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Sub&#34;</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ATLFun.sub(document.getElementById(&#39;edtA&#39;).value, document.getElementById(&#39;edtB&#39;).value)&#34;</span> /&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ATLFun</span> <span style="color:#f92672">=</span> {
-</span></span><span style="display:flex;"><span>		};
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ATLFun</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>        };
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ATLFun</span>.<span style="color:#a6e22e">getObj</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">objName</span>) {
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ActiveXObject</span>(<span style="color:#a6e22e">objName</span>);
-</span></span><span style="display:flex;"><span>	};
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ATLFun</span>.<span style="color:#a6e22e">getObj</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">objName</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ActiveXObject</span>(<span style="color:#a6e22e">objName</span>);
+</span></span><span style="display:flex;"><span>    };
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ATLFun</span>.<span style="color:#a6e22e">add</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>) {
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ATLFun</span>.<span style="color:#a6e22e">getObj</span>(<span style="color:#e6db74">&#34;testATL.testSOW&#34;</span>);
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">edtC</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;edtC&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ATLFun</span>.<span style="color:#a6e22e">add</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ATLFun</span>.<span style="color:#a6e22e">getObj</span>(<span style="color:#e6db74">&#34;testATL.testSOW&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">edtC</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;edtC&#34;</span>);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">obj</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>)
-</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">edtC</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">Add</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>);
-</span></span><span style="display:flex;"><span>	};
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">obj</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">edtC</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">Add</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>);
+</span></span><span style="display:flex;"><span>    };
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ATLFun</span>.<span style="color:#a6e22e">mul</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>) {
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ATLFun</span>.<span style="color:#a6e22e">getObj</span>(<span style="color:#e6db74">&#34;testATL.testSOW&#34;</span>);
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">edtC</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;edtC&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ATLFun</span>.<span style="color:#a6e22e">mul</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ATLFun</span>.<span style="color:#a6e22e">getObj</span>(<span style="color:#e6db74">&#34;testATL.testSOW&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">edtC</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;edtC&#34;</span>);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">obj</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>)
-</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">edtC</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">Mul</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>);
-</span></span><span style="display:flex;"><span>	};
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">obj</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">edtC</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">Mul</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>);
+</span></span><span style="display:flex;"><span>    };
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ATLFun</span>.<span style="color:#a6e22e">div</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>) {
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ATLFun</span>.<span style="color:#a6e22e">getObj</span>(<span style="color:#e6db74">&#34;testATL.testSOW&#34;</span>);
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">edtC</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;edtC&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ATLFun</span>.<span style="color:#a6e22e">div</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ATLFun</span>.<span style="color:#a6e22e">getObj</span>(<span style="color:#e6db74">&#34;testATL.testSOW&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">edtC</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;edtC&#34;</span>);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">obj</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>)
-</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">edtC</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">Div</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>);
-</span></span><span style="display:flex;"><span>	};
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">obj</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">edtC</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">Div</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>);
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ATLFun</span>.<span style="color:#a6e22e">sub</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ATLFun</span>.<span style="color:#a6e22e">getObj</span>(<span style="color:#e6db74">&#34;testATL.testSOW&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">edtC</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;edtC&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">obj</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">edtC</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">Sub</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>);
+</span></span><span style="display:flex;"><span>    };
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
 </span></span></code></pre></div><h3 id="allow-activex">allow ActiveX</h3>
@@ -301,8 +318,8 @@
 <img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-allow-ie2.png" alt="ie11 allow interaction"></p>
 <h1 id="附工程文件">附：（工程文件）</h1>
 <!-- testATL.7z(vc10): https://pan.baidu.com/s/1VFaDUD1AYmGHIeyg7wplhA  提取码: xysa -->
-<p><a href="https://pan.baidu.com/s/1lPI_sVBYQqh2-xfa_xVHHg?pwd=n2vk">testATL(vc142).zip</a>
-提取码: n2vk</p>
+<!-- testATL(vc142).zip: https://pan.baidu.com/s/1lPI_sVBYQqh2-xfa_xVHHg?pwd=n2vk -->
+<p><a href="https://pan.baidu.com/s/1A_EzLReBf8rByeV-85OLHg?pwd=muhs">testATL(vc140).zip</a></p>
 <h1 id="参考文章">参考文章</h1>
 <ul>
 <li><a href="https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2010/6958xykx(v=vs.100)?redirectedfrom=MSDN">ActiveXObject Object</a></li>
@@ -358,17 +375,10 @@
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_vmware_netadapter/">
-          <section class="post">
-              <h2>使用物理网卡</h2>
-              
-          </section>
-      </a>
   
-  
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/c2plus-unmanaged-dll/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/com-wizards-vc/">
           <section class="post">
-              <h2>调用非托管DLL</h2>
+              <h2>创建COM(Component Object Model)</h2>
           </section>
       </a>
   
