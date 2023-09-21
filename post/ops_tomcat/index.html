@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="Linux下tomcat的配置" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2023-08-28T12:38:08&#43;08:00" />
+    <meta property="article:published_time" content="2023-08-29T12:38:08&#43;08:00" />
 
     
     
@@ -92,15 +92,15 @@
     },
     "headline": "Tomcat安装",
     "name": "Tomcat安装",
-    "wordCount":  287 ,
+    "wordCount":  282 ,
     "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/ops_tomcat/",
-    "datePublished": "2023-08-28T12:38Z",
-    "dateModified": "2023-08-28T12:38Z",
+    "datePublished": "2023-08-29T12:38Z",
+    "dateModified": "2023-08-29T12:38Z",
     
     
     "description": "Linux下tomcat的配置",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2023-08-28T12:38:08&#43;08:00">
-            Aug 28, 2023
+          <time class="post-date" datetime="2023-08-29T12:38:08&#43;08:00">
+            Aug 29, 2023
           </time>
         
          
@@ -192,14 +192,14 @@
 </thead>
 <tbody>
 <tr>
-<td>4.0</td>
-<td>2.3</td>
+<td>6.0</td>
+<td>3.1</td>
+<td>5.0</td>
+<td>2.1</td>
 <td>3.0</td>
-<td>1.1</td>
-<td>1.1</td>
-<td>9.0.x</td>
-<td>9.0.80</td>
-<td>8 and later</td>
+<td>10.1.x</td>
+<td>10.1.13</td>
+<td>11 and later</td>
 </tr>
 <tr>
 <td>3.1</td>
@@ -212,24 +212,24 @@
 <td>7 and later</td>
 </tr>
 <tr>
-<td>3.0</td>
-<td>2.2</td>
-<td>2.2</td>
-<td>1.1</td>
-<td>N/A</td>
-<td>7.0.x</td>
-<td><a href="https://archive.apache.org/dist/tomcat/tomcat-7/v7.0.109/bin/apache-tomcat-7.0.109.tar.gz">7.0.109</a></td>
-<td>6 and later(7 and later for WebSocket)</td>
-</tr>
-<tr>
 <td>2.5</td>
 <td>2.1</td>
 <td>2.1</td>
 <td>N/A</td>
 <td>N/A</td>
-<td>6.0.x (archived)</td>
+<td>6.0.x</td>
 <td><a href="https://archive.apache.org/dist/tomcat/tomcat-6/v6.0.53/bin/apache-tomcat-6.0.53.zip">6.0.53</a></td>
 <td>5 and later</td>
+</tr>
+<tr>
+<td>2.4</td>
+<td>2.0</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>5.5.x</td>
+<td><a href="https://archive.apache.org/dist/tomcat/tomcat-5/v5.5.36/bin/apache-tomcat-5.5.36.zip">5.5.36</a></td>
+<td>1.4 and later</td>
 </tr>
 </tbody>
 </table>
@@ -318,16 +318,16 @@
 </ul>
 <pre tabindex="0"><code>$wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.93/bin/apache-tomcat-8.5.93.tar.gz --no-check-certificate
 </code></pre><ul>
-<li>v9.0</li>
+<li>v10.1</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-9/v9.0.80/bin/apache-tomcat-9.0.80.tar.gz --no-check-certificate
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-10/v10.1.13/bin/apache-tomcat-10.1.13.tar.gz --no-check-certificate
 </span></span></code></pre></div><p>解压:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$tar -zxvf apache-tomcat-9.0.80.tar.gz
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$tar -zxvf apache-tomcat-8.5.93tar.gz
 </span></span></code></pre></div><h3 id="移动文件夹">移动文件夹</h3>
 <blockquote>
 <p>拷贝并重命名为tomcat</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo cp -R apache-tomcat-9.0.80 /usr/local/tomcat
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo cp -R apache-tomcat-8.5.93 /usr/local/tomcat
 </span></span></code></pre></div><h1 id="执行tomcat">执行Tomcat</h1>
 <h2 id="allow-fw">allow fw</h2>
 <p>rhel:</p>
