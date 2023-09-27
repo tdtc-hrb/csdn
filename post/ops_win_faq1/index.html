@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="键盘修改、ssh等等" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2022-05-18T08:08:08&#43;08:00" />
+    <meta property="article:published_time" content="2023-05-18T08:08:08&#43;08:00" />
 
     
     
@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.118.2">
+    <meta name="generator" content="Hugo 0.119.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_win_faq1/" />
 
@@ -92,15 +92,15 @@
     },
     "headline": "Windows的一些设置",
     "name": "Windows的一些设置",
-    "wordCount":  228 ,
+    "wordCount":  251 ,
     "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/ops_win_faq1/",
-    "datePublished": "2022-05-18T08:08Z",
-    "dateModified": "2022-05-18T08:08Z",
+    "datePublished": "2023-05-18T08:08Z",
+    "dateModified": "2023-05-18T08:08Z",
     
     
     "description": "键盘修改、ssh等等",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2022-05-18T08:08:08&#43;08:00">
-            May 18, 2022
+          <time class="post-date" datetime="2023-05-18T08:08:08&#43;08:00">
+            May 18, 2023
           </time>
         
          
@@ -186,7 +186,8 @@
 <p>右键点软件限制策略-&gt;创建软件限制策略</p>
 </li>
 <li>
-<p>点其他规则-&gt;右键新建路径规则-&gt;在“路径”下的空白输入框中“%windir%\notepad.exe“（或者c盘是系统盘的情况下：c:\windows\notepad.exe)-&gt;在“安全级别”中选择“不允许”</p>
+<p>点其他规则-&gt;右键新建路径规则-&gt;
+在“路径”下的空白输入框中“%windir%\notepad.exe“（或者c盘是系统盘的情况下：c:\windows\notepad.exe)-&gt;在“安全级别”中选择“不允许”</p>
 </li>
 </ol>
 <blockquote>
@@ -224,10 +225,24 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\i8042prt\Parameters</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>takeown /F <span style="color:#e6db74">&#34;C:\Windows.old&#34;</span> /A /R /D Y
 </span></span><span style="display:flex;"><span>icacls <span style="color:#e6db74">&#34;C:\Windows.old&#34;</span> /T /grant administrators:F
 </span></span><span style="display:flex;"><span>rmdir /s /q <span style="color:#e6db74">&#34;C:\Windows.old&#34;</span>
-</span></span></code></pre></div><h1 id="notepadhttpsnotepad-plus-plusorg-关闭历史文件"><a href="https://notepad-plus-plus.org/">notepad++</a> 关闭历史文件</h1>
+</span></span></code></pre></div><h1 id="notepadhttpsnotepad-plus-plusorg"><a href="https://notepad-plus-plus.org/">notepad++</a></h1>
+<h2 id="关闭历史文件">关闭历史文件</h2>
 <p>打开首选项-&gt;备份
 <sub>√</sub>“记住最后打开的文件” <br>
 把对勾去掉即可。</p>
+<h2 id="行宽">行宽</h2>
+<ul>
+<li>number <br>
+Settings &gt; Preferences &gt; Margins/Border/Edge &gt; Veritcal Edge Settings</li>
+</ul>
+<pre tabindex="0"><code>120
+</code></pre><ul>
+<li>exec</li>
+</ul>
+<blockquote>
+<p>select all
+Edit &gt; Line Operations &gt; Split Lines</p>
+</blockquote>
 <h1 id="ssh---it-is-also-possible-that-a-host-key-has-just-been-changed">ssh - It is also possible that a host key has just been changed</h1>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>D:<span style="color:#ae81ff">\p</span>rogram-d<span style="color:#ae81ff">\p</span>utty0.7&gt;scp f:<span style="color:#ae81ff">\d</span>ocker-soft<span style="color:#ae81ff">\g</span>o1.12.4.linux-amd64.tar.gz xiaobin@192.168.42.243:/home/xiaobin/
 </span></span><span style="display:flex;"><span>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -320,17 +335,17 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\i8042prt\Parameters</p>
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/mysql57-win/">
+      <a class="read-next-story" style="no-cover" href="/csdn/post/vc-update-atl/">
           <section class="post">
-              <h2>安装配置MySQL 5.7</h2>
+              <h2>VC升级时出现的问题</h2>
               
           </section>
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/c-bsd_socket-server/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/css-bootstrap-grid/">
           <section class="post">
-              <h2>使用fork的server</h2>
+              <h2>Grid system</h2>
           </section>
       </a>
   

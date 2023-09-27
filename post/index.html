@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.118.2">
+    <meta name="generator" content="Hugo 0.119.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -340,6 +340,39 @@ solution 1 Comment out this line stdAfx. <a class="read-more" href="/csdn/post/v
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_win_faq1/">Windows的一些设置</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>禁止记事本 开始-&gt;运行-&gt;gpedit.msc-&gt;计算机配置-&gt;windows设置-&gt;安全设置-&gt;软件限制策略
+右键点软件限制策略-&gt;创建软件限制策略
+点其他规则-&gt;右键新建路径规则-&gt; 在“路径”下的空白输入框中“%windir%\notepad.exe“（或者c盘是系统盘的情况下：c:\windows\notepad.exe)-&gt;在“安全级别”中选择“不允许”
+附：如果你要限制.txt的程序打开，可以在路径中输入*.txt。
+日文系统 key101 日文改英文键盘
+修改注册表主键： HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\i8042prt\Parameters
+LayerDriver JPN: KBD101.DLL OverrideKeyboardIdentifier: PCAT_101KEY OverrideKeyboardSubtype: 0x00000000(0) win7+添加日文输入 “区域和语言“ ==&gt; ”键盘和语言“
+”键盘和语言“中，点击”更改键盘“， 点”添加“，找到 ”日语（日本）“， 勾选”Microsoft IME“和”日语“，其它不要勾选.
+按键盘”Alt“+”Shift“即可调出日语输入法.
+文件或目录损坏且无法读取 无法读取的所在逻辑盘E:
+chkdsk /F E: How to Delete Old Windows Folder in Windows 10 – Access Denied? takeown /F &#34;C:\Windows.old&#34; /A /R /D Y icacls &#34;C:\Windows.old&#34; /T /grant administrators:F rmdir /s /q &#34;C:\Windows.old&#34; notepad++ 关闭历史文件 打开首选项-&gt;备份 √“记住最后打开的文件” 把对勾去掉即可。
+行宽 number Settings &gt; Preferences &gt; Margins/Border/Edge &gt; Veritcal Edge Settings 120 exec select all Edit &gt; Line Operations &gt; Split Lines <a class="read-more" href="/csdn/post/ops_win_faq1/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-05-18T08:08:08&#43;08:00">
+            18 May 2023
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/css-bootstrap-grid/">Grid system</a></h2>
     </header>
     <section class="post-excerpt">
@@ -386,34 +419,6 @@ i 移动光标 使用方向键来进行位置的移动。 <a class="read-more" h
         
         <time class="post-date" datetime="2023-03-10T09:28:08&#43;08:00">
             10 Mar 2023
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/vc-bsd_socket/">使用BSD socket</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>BSD Socket是标准的套接字规范，那么怎么在windows使用他们呢？
-Init &amp; clean 首先要引用&lt;winsock2.h&gt;和ws2_32.lib； 使用struct addrinfo需引用&lt;ws2tcpip.h&gt;。
-程序头: WSAStartup(), 程序尾: WSACleanup();
-code 以下程序在VC9/VC14.1下编译通过
-客户端程序 prj1Clt 无getaddrinfo版
-注意：InetPton函数只能在Windows Version &gt;=6上实现！
-// prj1Clt.cpp : This file contains the &#39;main&#39; function. Program execution begins and ends there. // /** * Networking program is Win version with BSD Socket * Client side * * Author: xiaobin * Date: 2013-12-12 * Modfity: 2020-5-28 */ #include &lt;iostream&gt; #if _MSC_VER &gt; 1800 #include &lt;tchar.h&gt; #endif #ifdef _WIN32 #include &lt;winsock2. <a class="read-more" href="/csdn/post/vc-bsd_socket/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-03-05T21:30:08-08:00">
-            5 Mar 2023
         </time>
     </footer>
 </article>
