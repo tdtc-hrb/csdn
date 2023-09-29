@@ -12,13 +12,13 @@
 
 
 
-<meta name="twitter:title" content="创建COM(Component Object Model)"/>
+<meta name="twitter:title" content="VC 创建 Component Object Model"/>
 <meta name="twitter:description" content="Active Template Library (ATL)"/>
 <meta name="twitter:site" content="@"/>
 
 
 
-  	<meta property="og:title" content="创建COM(Component Object Model) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:title" content="VC 创建 Component Object Model &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
   	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
   	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/" />
 
@@ -29,12 +29,12 @@
     
     <meta property="og:description" content="Active Template Library (ATL)" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2023-09-02T23:08:08&#43;08:00" />
+    <meta property="article:published_time" content="2023-09-22T23:08:08&#43;08:00" />
 
     
     
 
-    <title>创建COM(Component Object Model) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+    <title>VC 创建 Component Object Model &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
 
     
     <meta name="description" content="Active Template Library (ATL)" />
@@ -90,17 +90,17 @@
             
         ]
     },
-    "headline": "创建COM(Component Object Model)",
-    "name": "创建COM(Component Object Model)",
-    "wordCount":  326 ,
+    "headline": "VC 创建 Component Object Model",
+    "name": "VC 创建 Component Object Model",
+    "wordCount":  362 ,
     "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/",
-    "datePublished": "2023-09-02T23:08Z",
-    "dateModified": "2023-09-02T23:08Z",
+    "datePublished": "2023-09-22T23:08Z",
+    "dateModified": "2023-09-22T23:08Z",
     
     
     "description": "Active Template Library (ATL)",
@@ -163,13 +163,13 @@
   <article class="post post">
 
     <header class="post-header">
-        <h1 class="post-title">创建COM(Component Object Model)</h1>
+        <h1 class="post-title">VC 创建 Component Object Model</h1>
         <small>Active Template Library (ATL)</small>
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2023-09-02T23:08:08&#43;08:00">
-            Sep 2, 2023
+          <time class="post-date" datetime="2023-09-22T23:08:08&#43;08:00">
+            Sep 22, 2023
           </time>
         
          
@@ -257,8 +257,16 @@ Select the interface, Right-click -&gt; add -&gt; add method</p>
 <!-- vs2013: https://github.com/tdtc-hrb/csdn/raw/master/images/atl-interface2.1(vs2013).png -->
 <!-- vs2013: https://github.com/tdtc-hrb/csdn/raw/master/images/atl-interface2.2(vs2013).png -->
 <p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-interface2.png" alt="atl interface - property"></p>
-<h1 id="test">test</h1>
-<p>使用<a href="https://download.microsoft.com/download/e/8/e/e8eeb394-7f42-4963-a2d8-29559b738298/vs2008expresswithsp1enux1504728.iso">VB2008</a>进行测试.</p>
+<h3 id="midl-attribute">MIDL attribute</h3>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/windows/win32/midl/in">in</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/win32/midl/retval">retval</a>
+testATL.idl(part):</li>
+</ul>
+<pre tabindex="0"><code>	[id(1), helpstring(&#34;add method&#34;)] HRESULT Add([in] LONG x, [in] LONG y, [out, retval] LONG * ret);
+	[id(2), helpstring(&#34;sub method&#34;)] HRESULT Sub([in] LONG x, [in] LONG y, [out, retval] LONG * ret);
+</code></pre><h1 id="test">test</h1>
+<p>使用<a href="https://download.microsoft.com/download/e/8/e/e8eeb394-7f42-4963-a2d8-29559b738298/vs2008expresswithsp1enux1504728.iso">VB2008</a> 进行测试.</p>
 <h2 id="os">Os</h2>
 <p>支持的OS:</p>
 <ul>
@@ -334,7 +342,7 @@ If you don&rsquo;t have one and you know what dll implements the object, you can
     
 <section class="share">
   <h4>Share this post</h4>
-  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=%e5%88%9b%e5%bb%baCOM%28Component%20Object%20Model%29&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fcom-wizards-vc%2f"
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=VC%20%e5%88%9b%e5%bb%ba%20Component%20Object%20Model&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fcom-wizards-vc%2f"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="hidden">Twitter</span>
   </a>
@@ -342,7 +350,7 @@ If you don&rsquo;t have one and you know what dll implements the object, you can
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="hidden">Facebook</span>
   </a>
-  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fcom-wizards-vc%2f&amp;description=%e5%88%9b%e5%bb%baCOM%28Component%20Object%20Model%29"
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fcom-wizards-vc%2f&amp;description=VC%20%e5%88%9b%e5%bb%ba%20Component%20Object%20Model"
       onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
       <span class="hidden">Pinterest</span>
   </a>
@@ -370,17 +378,10 @@ If you don&rsquo;t have one and you know what dll implements the object, you can
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/com-ie-test/">
+  
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/com-ie-test/">
           <section class="post">
               <h2>测试COM</h2>
-              
-          </section>
-      </a>
-  
-  
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_tomcat/">
-          <section class="post">
-              <h2>Tomcat安装</h2>
           </section>
       </a>
   

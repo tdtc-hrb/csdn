@@ -6,23 +6,11 @@
     <description>Recent content in Posts on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 04 Sep 2023 18:08:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Sep 2023 23:08:08 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>测试COM</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/com-ie-test/</link>
-      <pubDate>Mon, 04 Sep 2023 18:08:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/com-ie-test/</guid>
-      <description>IDE: Visual Studio 2019(v16.11)
-本文参考: 创建COM
-一、创建COM 增加IE支持： IObjectWithSite
-增加方法 Add STDMETHODIMP CtestSOW::Add(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x + y); return S_OK; } Subtract STDMETHODIMP CtestSOW::Sub(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x - y); return S_OK; } Multiply STDMETHODIMP CtestSOW::Mul(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x * y); return S_OK; } Divide STDMETHODIMP CtestSOW::Div(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x / y); return S_OK; } Modulo STDMETHODIMP CtestSOW::Mod(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x % y); return S_OK; } 二、测试平台 查看依赖：win8.</description>
-    </item>
-    
-    <item>
-      <title>创建COM(Component Object Model)</title>
+      <title>VC 创建 Component Object Model</title>
       <link>https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/</link>
-      <pubDate>Sat, 02 Sep 2023 23:08:08 +0800</pubDate>
+      <pubDate>Fri, 22 Sep 2023 23:08:08 +0800</pubDate>
       
       <guid>https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/</guid>
       <description>Use Visual Studio&amp;rsquo;s wizard to create COM
@@ -35,6 +23,18 @@ vs2013/vs2015: Add -&amp;gt; Class
 ATL Simple Object:
 设置 Short name: testSOW
 Simple Object ID ProgID: testATL.testSOW IE支持 vs2013/vs2015 Options -&amp;gt; Support vs2017/vs2019 Other Options 添加IDL方法 Tab switching from &amp;ldquo;Solution Explorer&amp;rdquo; to &amp;ldquo;Class View&amp;rdquo; Select the interface, Right-click -&amp;gt; add -&amp;gt; add method</description>
+    </item>
+    
+    <item>
+      <title>测试COM</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/com-ie-test/</link>
+      <pubDate>Mon, 04 Sep 2023 18:08:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/com-ie-test/</guid>
+      <description>IDE: Visual Studio 2019(v16.11)
+本文参考: 创建COM
+一、创建COM 增加IE支持： IObjectWithSite
+增加方法 Add STDMETHODIMP CtestSOW::Add(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x + y); return S_OK; } Subtract STDMETHODIMP CtestSOW::Sub(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x - y); return S_OK; } Multiply STDMETHODIMP CtestSOW::Mul(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x * y); return S_OK; } Divide STDMETHODIMP CtestSOW::Div(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x / y); return S_OK; } Modulo STDMETHODIMP CtestSOW::Mod(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x % y); return S_OK; } 二、测试平台 查看依赖：win8.</description>
     </item>
     
     <item>
