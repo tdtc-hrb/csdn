@@ -6,15 +6,18 @@
     <description>Recent content on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 19 Oct 2023 23:08:39 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 22 Oct 2023 23:08:39 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在Ubuntu下安装NodeJS</title>
       <link>https://tdtc-hrb.github.io/csdn/post/nodejs-ubuntu/</link>
-      <pubDate>Thu, 19 Oct 2023 23:08:39 +0800</pubDate>
+      <pubDate>Sun, 22 Oct 2023 23:08:39 +0800</pubDate>
       
       <guid>https://tdtc-hrb.github.io/csdn/post/nodejs-ubuntu/</guid>
       <description>1.node.js v20.x/v18.x/16.x
-v20.x curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - v18.x curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - v16.x curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - install sudo apt-get install -y nodejs 2. yarn js curl --silent --show-error https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo &amp;#34;deb https://dl.yarnpkg.com/debian/ stable main&amp;#34; | sudo tee /etc/apt/sources.list.d/yarn.list sudo apt-get update sudo apt-get install yarn Ref How to Install Yarn on Ubuntu 18.</description>
+v20.x curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - v18.x curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - v16.x curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - install sudo apt-get install -y nodejs update first remove:
+sudo apt remove nodejs and then, remove libnode72:
+sudo dpkg --remove --force-remove-reinstreq libnode72:amd64 last install:
+sudo apt-get install -y nodejs 2. yarn js curl --silent --show-error https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo &amp;#34;deb https://dl.</description>
     </item>
     
     <item>
