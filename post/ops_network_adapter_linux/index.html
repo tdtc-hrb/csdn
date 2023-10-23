@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="需要net-tools支持" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2022-10-02T08:38:08&#43;08:00" />
+    <meta property="article:published_time" content="2023-10-02T08:38:08&#43;08:00" />
 
     
     
@@ -92,15 +92,15 @@
     },
     "headline": "Linux修改网卡为固定IP",
     "name": "Linux修改网卡为固定IP",
-    "wordCount":  135 ,
+    "wordCount":  178 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/",
-    "datePublished": "2022-10-02T08:38Z",
-    "dateModified": "2022-10-02T08:38Z",
+    "datePublished": "2023-10-02T08:38Z",
+    "dateModified": "2023-10-02T08:38Z",
     
     
     "description": "需要net-tools支持",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2022-10-02T08:38:08&#43;08:00">
-            Oct 2, 2022
+          <time class="post-date" datetime="2023-10-02T08:38:08&#43;08:00">
+            Oct 2, 2023
           </time>
         
          
@@ -229,7 +229,13 @@ default: enp0s3</p>
 <h2 id="设置static-ip">设置static IP</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cd /etc/netplan/
 </span></span><span style="display:flex;"><span>$sudo vi 00-installer-config.yaml
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#This is the network config written by &#39;subiquity&#39;</span>
+</span></span></code></pre></div><ul>
+<li>Normal</li>
+</ul>
+<blockquote>
+<p>路由器下</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#This is the network config written by &#39;subiquity&#39;</span>
 </span></span><span style="display:flex;"><span>network:
 </span></span><span style="display:flex;"><span>  ethernets:
 </span></span><span style="display:flex;"><span>    enp0s3:
@@ -240,7 +246,32 @@ default: enp0s3</p>
 </span></span><span style="display:flex;"><span>      nameservers:
 </span></span><span style="display:flex;"><span>              addresses: <span style="color:#f92672">[</span>192.168.0.1, 192.168.1.1<span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>  version: <span style="color:#ae81ff">2</span>
-</span></span></code></pre></div><h1 id="ref">Ref</h1>
+</span></span></code></pre></div><h3 id="nameserver">nameserver</h3>
+<blockquote>
+<p>在热点下</p>
+</blockquote>
+<ul>
+<li>nameserver 1 <br>
+设置Host的IP</li>
+<li>nameserver 2 <br>
+设置Host的DNS</li>
+</ul>
+<p>for example:</p>
+<pre tabindex="0"><code># This is the network config written by &#39;subiquity&#39;
+network:
+  ethernets:
+    ens32:
+      #dhcp4: true
+      dhcp4: no
+      addresses:
+        - 192.168.69.119/24
+      gateway4: 192.168.69.113
+      nameservers:
+        addresses: [192.168.69.113, 192.168.69.218]
+  version: 2
+</code></pre><p>宿主机的IP: 192.168.69.113</p>
+<p>宿主机的DNS: 192.168.69.218</p>
+<h1 id="ref">Ref</h1>
 <ul>
 <li><a href="https://www.tecmint.com/configure-ipv6-network-on-centos-rhel/">How to Configure IPv6 Network on CentOS/RHEL 8</a></li>
 </ul>
@@ -295,17 +326,17 @@ default: enp0s3</p>
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_real_keepalived/">
+      <a class="read-next-story" style="no-cover" href="/csdn/post/nodejs-ubuntu/">
           <section class="post">
-              <h2>架设Real Server和Keepalived Server</h2>
+              <h2>在Ubuntu下安装NodeJS</h2>
               
           </section>
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/version-ubuntu/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/com-ie-test/">
           <section class="post">
-              <h2>查看版本-Ubuntu</h2>
+              <h2>使用IE测试COM</h2>
           </section>
       </a>
   

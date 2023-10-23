@@ -225,6 +225,31 @@ sudo apt-get install -y nodejs 2. yarn js curl --silent --show-error https://dl.
     
         <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_network_adapter_linux/">Linux修改网卡为固定IP</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Alma/Rocky RHEL Community Version
+View net adapter list:
+$cd /etc/sysconfig/network-scripts$ls ifcfg-* -l ipv4 $ip addr ipv6 $ip -6 addr Setup Start job network adapter:
+ONBOOT=yes static $cd /etc/sysconfig/network-scripts $sudo vi ifcfg-enp0s3 BOOTPROTO=none IPADDR=192.168.1.186 PREFIX=24 GATEWAY=192.168.1.1 DNS1=211.161.191.235 DNS2=211.161.122.197 IPv6 Network IPV6INIT=yes This initializes the interface for IPv6 addressing. IPV6_AUTOCONF=yes This enables the IPv6 auto-configuration for the interface. IPV6_DEFROUTE=yes This indicates that the default IPv6 route has been assigned to the interface. <a class="read-more" href="/csdn/post/ops_network_adapter_linux/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-10-02T08:38:08&#43;08:00">
+            2 Oct 2023
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/com-ie-test/">使用IE测试COM</a></h2>
     </header>
     <section class="post-excerpt">
@@ -429,34 +454,6 @@ java 7 package my.csdn2; import java.util.concurrent.ExecutorService; import jav
         
         <time class="post-date" datetime="2023-08-06T01:08:39&#43;08:00">
             6 Aug 2023
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/vc-update-atl/">VC升级时出现的问题</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>VC6迁移到VC2008+
-ATL Active Template Library (ATL)
-C1189 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atlcore.h(35): fatal error C1189: #error : This file requires _WIN32_WINNT to be #defined at least to 0x0403. Value 0x0501 or higher is recommended. A:
-StdAfx.h
-#define _WIN32_WINNT 0x0400 -&gt;
-#define _WIN32_WINNT 0x0501 C1083(atlimpl) c:\users\xiaobin\documents\visual studio 2013\projects\crcfcn_vc\stdafx.cpp(13): fatal error C1083: Cannot open include file: &#39;atlimpl.cpp&#39;: No such file or directory A: solution 1 or 2.
-solution 1 Comment out this line stdAfx. <a class="read-more" href="/csdn/post/vc-update-atl/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-06-20T08:18:08&#43;08:00">
-            20 Jun 2023
         </time>
     </footer>
 </article>

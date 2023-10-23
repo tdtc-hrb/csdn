@@ -21,6 +21,18 @@ sudo apt-get install -y nodejs 2. yarn js curl --silent --show-error https://dl.
     </item>
     
     <item>
+      <title>Linux修改网卡为固定IP</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/</link>
+      <pubDate>Mon, 02 Oct 2023 08:38:08 +0800</pubDate>
+      
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/</guid>
+      <description>Alma/Rocky RHEL Community Version
+View net adapter list:
+$cd /etc/sysconfig/network-scripts$ls ifcfg-* -l ipv4 $ip addr ipv6 $ip -6 addr Setup Start job network adapter:
+ONBOOT=yes static $cd /etc/sysconfig/network-scripts $sudo vi ifcfg-enp0s3 BOOTPROTO=none IPADDR=192.168.1.186 PREFIX=24 GATEWAY=192.168.1.1 DNS1=211.161.191.235 DNS2=211.161.122.197 IPv6 Network IPV6INIT=yes This initializes the interface for IPv6 addressing. IPV6_AUTOCONF=yes This enables the IPv6 auto-configuration for the interface. IPV6_DEFROUTE=yes This indicates that the default IPv6 route has been assigned to the interface.</description>
+    </item>
+    
+    <item>
       <title>使用IE测试COM</title>
       <link>https://tdtc-hrb.github.io/csdn/post/com-ie-test/</link>
       <pubDate>Tue, 26 Sep 2023 18:08:08 +0800</pubDate>
@@ -341,18 +353,6 @@ RHEL78Bak 192.168.0.130
 Linux下安装Tomcat nginx - CentOS7 nginx - RHEL8 config ARP ifconfig:
 $sudo yum install net-tools Service #vi /etc/init.d/realserver /etc/init.d/realserver:
 #!/bin/bash SNS_VIP=192.168.0.220 case &amp;#34;$1&amp;#34; in start) ifconfig lo:0 $SNS_VIP netmask 255.255.255.255 broadcast $SNS_VIP /sbin/route add -host $SNS_VIP dev lo:0 echo &amp;#34;1&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_ignore echo &amp;#34;2&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_announce echo &amp;#34;1&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_ignore echo &amp;#34;2&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_announce sysctl -p &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 echo &amp;#34;RealServer Start OK&amp;#34; ;; stop) ifconfig lo:0 down route del $SNS_VIP &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_ignore echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_announce echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_ignore echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_announce echo &amp;#34;RealServer Stoped&amp;#34; ;; *) echo &amp;#34;Usage: $0 {start|stop}&amp;#34; exit 1 esac exit 0 exec $sudo chmod 755 /etc/init.</description>
-    </item>
-    
-    <item>
-      <title>Linux修改网卡为固定IP</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/</link>
-      <pubDate>Sun, 02 Oct 2022 08:38:08 +0800</pubDate>
-      
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/</guid>
-      <description>Alma/Rocky RHEL Community Version
-View net adapter list:
-$cd /etc/sysconfig/network-scripts$ls ifcfg-* -l ipv4 $ip addr ipv6 $ip -6 addr Setup Start job network adapter:
-ONBOOT=yes static $cd /etc/sysconfig/network-scripts $sudo vi ifcfg-enp0s3 BOOTPROTO=none IPADDR=192.168.1.186 PREFIX=24 GATEWAY=192.168.1.1 DNS1=211.161.191.235 DNS2=211.161.122.197 IPv6 Network IPV6INIT=yes This initializes the interface for IPv6 addressing. IPV6_AUTOCONF=yes This enables the IPv6 auto-configuration for the interface. IPV6_DEFROUTE=yes This indicates that the default IPv6 route has been assigned to the interface.</description>
     </item>
     
     <item>

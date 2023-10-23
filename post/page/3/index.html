@@ -164,6 +164,37 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_vmware_netadapter/">使用物理网卡</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>VMware Host OS Win10(x64) -Guest OS Ubuntu 14.04(x64)
+目的：Ubuntu独立使用1块网卡与局域网中的设备或主机通讯。
+问题：宿主机器有两个网卡
+（1）无线网卡（2）有线网卡
+VMware Network overview
+VM &lt;-&gt; Host VM1 &lt;-&gt; VM2 VM -&gt; Internet VM &lt;- Internet HostOnly Yes Yes No No Internal No Yes No No Bridged Yes Yes Yes Yes NAT No No Yes Port forward 编辑-&gt;虚拟网络编辑器 默认设置
+我们更改桥接模式中“桥接到”，即可。（由自动更改为下图） 网络适配器 NFS AT91SAM9260 in terminal
+启动NFS，工作正常。
+输出信息如下：
+This is the boot programm!鶷his is the boot programm! Load UBOOT, please wait...... Load UBOOT from 0x10010000 to 0x23f00000 Over U-Boot 1. <a class="read-more" href="/csdn/post/ops_vmware_netadapter/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-01-18T14:08:08&#43;08:00">
+            18 Jan 2023
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/c2plus-unmanaged-dll/">调用非托管DLL</a></h2>
     </header>
     <section class="post-excerpt">
@@ -266,31 +297,6 @@ $sudo yum install net-tools Service #vi /etc/init.d/realserver /etc/init.d/reals
         
         <time class="post-date" datetime="2022-10-03T02:38:08&#43;08:00">
             3 Oct 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_network_adapter_linux/">Linux修改网卡为固定IP</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>Alma/Rocky RHEL Community Version
-View net adapter list:
-$cd /etc/sysconfig/network-scripts$ls ifcfg-* -l ipv4 $ip addr ipv6 $ip -6 addr Setup Start job network adapter:
-ONBOOT=yes static $cd /etc/sysconfig/network-scripts $sudo vi ifcfg-enp0s3 BOOTPROTO=none IPADDR=192.168.1.186 PREFIX=24 GATEWAY=192.168.1.1 DNS1=211.161.191.235 DNS2=211.161.122.197 IPv6 Network IPV6INIT=yes This initializes the interface for IPv6 addressing. IPV6_AUTOCONF=yes This enables the IPv6 auto-configuration for the interface. IPV6_DEFROUTE=yes This indicates that the default IPv6 route has been assigned to the interface. <a class="read-more" href="/csdn/post/ops_network_adapter_linux/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-10-02T08:38:08&#43;08:00">
-            2 Oct 2022
         </time>
     </footer>
 </article>
