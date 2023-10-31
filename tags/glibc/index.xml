@@ -6,16 +6,15 @@
     <description>Recent content in Glibc on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 01 Oct 2022 02:12:39 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/tags/glibc/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Oct 2022 02:12:39 +0800</lastBuildDate>
+    <atom:link href="https://tdtc-hrb.github.io/csdn/tags/glibc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>查看版本-Ubuntu</title>
       <link>https://tdtc-hrb.github.io/csdn/post/version-ubuntu/</link>
       <pubDate>Sat, 01 Oct 2022 02:12:39 +0800</pubDate>
-      
       <guid>https://tdtc-hrb.github.io/csdn/post/version-ubuntu/</guid>
       <description>components version 查看内核版本:
 #uname -a 查看Glibc库版本 #apt-cache show libc6 查看binutils版本 #ld -v 查看ubuntu版本号 #cat /etc/issue 查看debian对应版本 #cat /etc/debian_version debian code name code version status bullseye 11 statble buster 10 old statble stretch 9 old old statble jessie 8 archived wheezy 7 obsolete squeeze 6.0 obsolete lenny 5.0 obsolete etch 4.0 obsolete sarge 3.1 obsolete woody 3.0 obsolete potato 2.2 obsolete slink 2.1 obsolete hamm 2.0 obsolete </description>
     </item>
-    
   </channel>
 </rss>

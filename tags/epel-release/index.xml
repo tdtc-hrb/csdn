@@ -6,12 +6,12 @@
     <description>Recent content in epel-release on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 12 Jun 2022 12:58:39 +0800</lastBuildDate><atom:link href="https://tdtc-hrb.github.io/csdn/tags/epel-release/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Jun 2022 12:58:39 +0800</lastBuildDate>
+    <atom:link href="https://tdtc-hrb.github.io/csdn/tags/epel-release/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>RHEL更换CentOS Yum</title>
       <link>https://tdtc-hrb.github.io/csdn/post/ops_rhel_repo/</link>
       <pubDate>Sun, 12 Jun 2022 12:58:39 +0800</pubDate>
-      
       <guid>https://tdtc-hrb.github.io/csdn/post/ops_rhel_repo/</guid>
       <description>v7.x Red Hat Enterprise Linux7.x
 Yum Repo rpm -aq|grep yum|xargs rpm -e --nodepsrpm -ivh http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/wget-1.14-18.el7_6.1.x86_64.rpm down:
@@ -19,6 +19,5 @@ wget http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/yum-metadata-
 rpm -ivh yum-metadata-parser-1.1.4-10.el7.x86_64.rpmrpm -ivh yum-3.4.3-168.el7.centos.noarch.rpm yum-plugin-fastestmirror-1.1.31-54.el7_8.noarch.rpm repo file /etc/yum.repos.d/CentOS-Base.repo CentOS-Base.repo - cento7
 # CentOS-Base.repo## The mirror system uses the connecting IP address of the client and the# update status of each mirror to pick mirrors that are updated to and# geographically close to the client.</description>
     </item>
-    
   </channel>
 </rss>

@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.119.0">
+    <meta name="generator" content="Hugo 0.120.1">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/java-struts-spring-jpa/" />
 
@@ -362,18 +362,18 @@
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/bean&gt;</span>
 </span></span></code></pre></div><h2 id="10-add-processing-code">10. Add processing code</h2>
 <p>update HomeAction.java</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">userList</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>  List<span style="color:#f92672">&lt;</span>UserDetails<span style="color:#f92672">&gt;</span> users <span style="color:#f92672">=</span> userService<span style="color:#f92672">.</span><span style="color:#a6e22e">getUsers</span><span style="color:#f92672">();</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">userList</span>() {
+</span></span><span style="display:flex;"><span>  List<span style="color:#f92672">&lt;</span>UserDetails<span style="color:#f92672">&gt;</span> users <span style="color:#f92672">=</span> userService.<span style="color:#a6e22e">getUsers</span>();
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span>UserDetails user <span style="color:#f92672">:</span> users<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>user<span style="color:#f92672">.</span><span style="color:#a6e22e">getEmail</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> user<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">());</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span>(UserDetails user : users) {
+</span></span><span style="display:flex;"><span>    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(user.<span style="color:#a6e22e">getEmail</span>() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> user.<span style="color:#a6e22e">getName</span>());
+</span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  ActionContext ctx <span style="color:#f92672">=</span> ActionContext<span style="color:#f92672">.</span><span style="color:#a6e22e">getContext</span><span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>      ctx<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;users&#34;</span><span style="color:#f92672">,</span> users<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>  ActionContext ctx <span style="color:#f92672">=</span> ActionContext.<span style="color:#a6e22e">getContext</span>();
+</span></span><span style="display:flex;"><span>      ctx.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;users&#34;</span>, users);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> SUCCESS<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> SUCCESS;
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h2 id="11-userlistjsp">11. userList.jsp</h2>
 <blockquote>
 <p>base on JSTL</p>

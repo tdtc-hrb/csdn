@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.119.0">
+    <meta name="generator" content="Hugo 0.120.1">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/java-springboot-jpa/" />
 
@@ -337,240 +337,240 @@
 <blockquote>
 <p>UserDetails.java</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.demo.model<span style="color:#f92672">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.demo.model;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.Serializable<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.Serializable;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javax.persistence.Column<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javax.persistence.Entity<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javax.persistence.GeneratedValue<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javax.persistence.GenerationType<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javax.persistence.Id<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javax.persistence.Table<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javax.persistence.Column;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javax.persistence.Entity;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javax.persistence.GeneratedValue;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javax.persistence.GenerationType;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javax.persistence.Id;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javax.persistence.Table;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Entity</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Table</span><span style="color:#f92672">(</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;user_details&#34;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserDetails</span> <span style="color:#66d9ef">implements</span> Serializable <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Table</span>(name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;user_details&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserDetails</span> <span style="color:#66d9ef">implements</span> Serializable {
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">long</span> serialVersionUID <span style="color:#f92672">=</span> <span style="color:#ae81ff">1593950786773788099L</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">long</span> serialVersionUID <span style="color:#f92672">=</span> 1593950786773788099L;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Id</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@GeneratedValue</span><span style="color:#f92672">(</span>strategy<span style="color:#f92672">=</span>GenerationType<span style="color:#f92672">.</span><span style="color:#a6e22e">AUTO</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Column</span><span style="color:#f92672">(</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> userId<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@GeneratedValue</span>(strategy<span style="color:#f92672">=</span>GenerationType.<span style="color:#a6e22e">AUTO</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Column</span>(name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;id&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> userId;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Column</span><span style="color:#f92672">(</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;username&#34;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> String userName<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Column</span>(name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;username&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> String userName;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Column</span><span style="color:#f92672">(</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> String name<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Column</span>(name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;name&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> String name;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Column</span><span style="color:#f92672">(</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;password&#34;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> String passwrod<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Column</span>(name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;password&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> String passwrod;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Column</span><span style="color:#f92672">(</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;email&#34;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> String email<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Column</span>(name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;email&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> String email;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Column</span><span style="color:#f92672">(</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;address&#34;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> String address<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Column</span>(name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;address&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> String address;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getUserId</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> userId<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getUserId</span>() {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> userId;
+</span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setUserId</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> userId<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">userId</span> <span style="color:#f92672">=</span> userId<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setUserId</span>(<span style="color:#66d9ef">int</span> userId) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">userId</span> <span style="color:#f92672">=</span> userId;
+</span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getUserName</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> userName<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getUserName</span>() {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> userName;
+</span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setUserName</span><span style="color:#f92672">(</span>String userName<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">userName</span> <span style="color:#f92672">=</span> userName<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setUserName</span>(String userName) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">userName</span> <span style="color:#f92672">=</span> userName;
+</span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getName</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> name<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getName</span>() {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> name;
+</span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setName</span><span style="color:#f92672">(</span>String name<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setName</span>(String name) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getPasswrod</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> passwrod<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getPasswrod</span>() {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> passwrod;
+</span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setPasswrod</span><span style="color:#f92672">(</span>String passwrod<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">passwrod</span> <span style="color:#f92672">=</span> passwrod<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setPasswrod</span>(String passwrod) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">passwrod</span> <span style="color:#f92672">=</span> passwrod;
+</span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getEmail</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> email<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getEmail</span>() {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> email;
+</span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setEmail</span><span style="color:#f92672">(</span>String email<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">email</span> <span style="color:#f92672">=</span> email<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setEmail</span>(String email) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">email</span> <span style="color:#f92672">=</span> email;
+</span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getAddress</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> address<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getAddress</span>() {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> address;
+</span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setAddress</span><span style="color:#f92672">(</span>String address<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">address</span> <span style="color:#f92672">=</span> address<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setAddress</span>(String address) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">address</span> <span style="color:#f92672">=</span> address;
+</span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h2 id="3-dao">3) DAO</h2>
 <h3 id="interface">Interface</h3>
 <blockquote>
 <p>UserDetailsDao.java</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.demo.dao<span style="color:#f92672">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.demo.dao;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.example.demo.model.UserDetails<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.example.demo.model.UserDetails;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">UserDetailsDao</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>	List<span style="color:#f92672">&lt;</span>UserDetails<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getUserDetails</span><span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>	UserDetails <span style="color:#a6e22e">findUserById</span><span style="color:#f92672">(</span>String userId<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">UserDetailsDao</span> {
+</span></span><span style="display:flex;"><span>	List<span style="color:#f92672">&lt;</span>UserDetails<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getUserDetails</span>();
+</span></span><span style="display:flex;"><span>	UserDetails <span style="color:#a6e22e">findUserById</span>(String userId);
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h3 id="implements">Implements</h3>
 <blockquote>
 <p>UserDetailsImpl.java</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.demo.dao<span style="color:#f92672">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.demo.dao;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javax.persistence.EntityManager<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javax.persistence.PersistenceContext<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javax.persistence.EntityManager;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javax.persistence.PersistenceContext;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.slf4j.Logger<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.slf4j.LoggerFactory<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.stereotype.Repository<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.slf4j.Logger;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.slf4j.LoggerFactory;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.stereotype.Repository;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.example.demo.model.UserDetails<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.example.demo.model.UserDetails;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Repository</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserDetailsImpl</span> <span style="color:#66d9ef">implements</span> UserDetailsDao <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserDetailsImpl</span> <span style="color:#66d9ef">implements</span> UserDetailsDao {
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> Logger logger <span style="color:#f92672">=</span> LoggerFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">getLogger</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getClass</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> Logger logger <span style="color:#f92672">=</span> LoggerFactory.<span style="color:#a6e22e">getLogger</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getClass</span>());
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@PersistenceContext</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> EntityManager entityManager<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> EntityManager entityManager;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@SuppressWarnings</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;unchecked&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@SuppressWarnings</span>(<span style="color:#e6db74">&#34;unchecked&#34;</span>)
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>UserDetails<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getUserDetails</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// TODO Auto-generated method stub
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		String jpql <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;SELECT user FROM UserDetails as user ORDER BY user.userId DESC&#34;</span><span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>		List<span style="color:#f92672">&lt;</span>UserDetails<span style="color:#f92672">&gt;</span> result <span style="color:#f92672">=</span> entityManager<span style="color:#f92672">.</span><span style="color:#a6e22e">createQuery</span><span style="color:#f92672">(</span>jpql<span style="color:#f92672">).</span><span style="color:#a6e22e">getResultList</span><span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>UserDetails userDetails <span style="color:#f92672">:</span> result<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>			logger<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span>userDetails<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">());</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#f92672">(</span>List<span style="color:#f92672">&lt;</span>UserDetails<span style="color:#f92672">&gt;)</span>result<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>UserDetails<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getUserDetails</span>() {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// TODO Auto-generated method stub</span>
+</span></span><span style="display:flex;"><span>		String jpql <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;SELECT user FROM UserDetails as user ORDER BY user.userId DESC&#34;</span>;
+</span></span><span style="display:flex;"><span>		List<span style="color:#f92672">&lt;</span>UserDetails<span style="color:#f92672">&gt;</span> result <span style="color:#f92672">=</span> entityManager.<span style="color:#a6e22e">createQuery</span>(jpql).<span style="color:#a6e22e">getResultList</span>();
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> (UserDetails userDetails : result) {
+</span></span><span style="display:flex;"><span>			logger.<span style="color:#a6e22e">info</span>(userDetails.<span style="color:#a6e22e">getName</span>());
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> (List<span style="color:#f92672">&lt;</span>UserDetails<span style="color:#f92672">&gt;</span>)result;
+</span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> UserDetails <span style="color:#a6e22e">findUserById</span><span style="color:#f92672">(</span>String userId<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// TODO Auto-generated method stub
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">return</span> entityManager<span style="color:#f92672">.</span><span style="color:#a6e22e">find</span><span style="color:#f92672">(</span>UserDetails<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">,</span> userId<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> UserDetails <span style="color:#a6e22e">findUserById</span>(String userId) {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// TODO Auto-generated method stub</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> entityManager.<span style="color:#a6e22e">find</span>(UserDetails.<span style="color:#a6e22e">class</span>, userId);
+</span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h2 id="4-service">4) Service</h2>
 <h3 id="interface-1">Interface</h3>
 <blockquote>
 <p>UserDetailsService.java</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.demo.service<span style="color:#f92672">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.demo.service;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.example.demo.model.UserDetails<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.example.demo.model.UserDetails;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">UserDetailsService</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>	List<span style="color:#f92672">&lt;</span>UserDetails<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getUsers</span><span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">UserDetailsService</span> {
+</span></span><span style="display:flex;"><span>	List<span style="color:#f92672">&lt;</span>UserDetails<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getUsers</span>();
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h3 id="implements-1">Implements</h3>
 <blockquote>
 <p>UserDetailsServiceImpl.java</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.demo.service<span style="color:#f92672">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.demo.service;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.beans.factory.annotation.Autowired<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.stereotype.Service<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.beans.factory.annotation.Autowired;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.stereotype.Service;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.example.demo.dao.UserDetailsDao<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.example.demo.model.UserDetails<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.example.demo.dao.UserDetailsDao;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.example.demo.model.UserDetails;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Service</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserDetailsServiceImpl</span> <span style="color:#66d9ef">implements</span> UserDetailsService <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserDetailsServiceImpl</span> <span style="color:#66d9ef">implements</span> UserDetailsService {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Autowired</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> UserDetailsDao userDao<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> UserDetailsDao userDao;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>UserDetails<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getUsers</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// TODO Auto-generated method stub
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">return</span> userDao<span style="color:#f92672">.</span><span style="color:#a6e22e">getUserDetails</span><span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>UserDetails<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getUsers</span>() {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// TODO Auto-generated method stub</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> userDao.<span style="color:#a6e22e">getUserDetails</span>();
+</span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h2 id="5-controller">5) Controller</h2>
 <blockquote>
 <p>UserController.java</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.demo.controller<span style="color:#f92672">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.demo.controller;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.beans.factory.annotation.Autowired<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.http.HttpStatus<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.http.MediaType<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.http.ResponseEntity<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.stereotype.Controller<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.ui.Model<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.web.bind.annotation.CrossOrigin<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.web.bind.annotation.GetMapping<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.web.bind.annotation.RequestMapping<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.web.bind.annotation.RequestMethod<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.beans.factory.annotation.Autowired;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.http.HttpStatus;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.http.MediaType;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.http.ResponseEntity;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.stereotype.Controller;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.ui.Model;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.web.bind.annotation.CrossOrigin;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.web.bind.annotation.GetMapping;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.web.bind.annotation.RequestMapping;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.web.bind.annotation.RequestMethod;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.example.demo.model.UserDetails<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.example.demo.service.UserDetailsService<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.example.demo.model.UserDetails;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.example.demo.service.UserDetailsService;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Controller</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/user&#34;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserController</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@RequestMapping</span>(<span style="color:#e6db74">&#34;/user&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserController</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Autowired</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> UserDetailsService userService<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> UserDetailsService userService;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@CrossOrigin</span><span style="color:#f92672">(</span>origins <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;http://localhost:3000&#34;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@GetMapping</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/list&#34;</span><span style="color:#f92672">,</span> produces <span style="color:#f92672">=</span> MediaType<span style="color:#f92672">.</span><span style="color:#a6e22e">APPLICATION_JSON_UTF8_VALUE</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> ResponseEntity<span style="color:#f92672">&lt;</span>List<span style="color:#f92672">&lt;</span>UserDetails<span style="color:#f92672">&gt;&gt;</span> <span style="color:#a6e22e">getAllUser</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		List<span style="color:#f92672">&lt;</span>UserDetails<span style="color:#f92672">&gt;</span> user <span style="color:#f92672">=</span> userService<span style="color:#f92672">.</span><span style="color:#a6e22e">getUsers</span><span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> ResponseEntity<span style="color:#f92672">&lt;</span>List<span style="color:#f92672">&lt;</span>UserDetails<span style="color:#f92672">&gt;&gt;(</span>user<span style="color:#f92672">,</span> HttpStatus<span style="color:#f92672">.</span><span style="color:#a6e22e">OK</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@CrossOrigin</span>(origins <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;http://localhost:3000&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@GetMapping</span>(value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/list&#34;</span>, produces <span style="color:#f92672">=</span> MediaType.<span style="color:#a6e22e">APPLICATION_JSON_UTF8_VALUE</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> ResponseEntity<span style="color:#f92672">&lt;</span>List<span style="color:#f92672">&lt;</span>UserDetails<span style="color:#f92672">&gt;&gt;</span> <span style="color:#a6e22e">getAllUser</span>() {
+</span></span><span style="display:flex;"><span>		List<span style="color:#f92672">&lt;</span>UserDetails<span style="color:#f92672">&gt;</span> user <span style="color:#f92672">=</span> userService.<span style="color:#a6e22e">getUsers</span>();
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> ResponseEntity<span style="color:#f92672">&lt;</span>List<span style="color:#f92672">&lt;</span>UserDetails<span style="color:#f92672">&gt;&gt;</span>(user, HttpStatus.<span style="color:#a6e22e">OK</span>);
+</span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/listPage&#34;</span><span style="color:#f92672">,</span> method <span style="color:#f92672">=</span> RequestMethod<span style="color:#f92672">.</span><span style="color:#a6e22e">GET</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">findAll</span><span style="color:#f92672">(</span>Model model<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>		List<span style="color:#f92672">&lt;</span>UserDetails<span style="color:#f92672">&gt;</span> users <span style="color:#f92672">=</span> userService<span style="color:#f92672">.</span><span style="color:#a6e22e">getUsers</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@RequestMapping</span>(value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/listPage&#34;</span>, method <span style="color:#f92672">=</span> RequestMethod.<span style="color:#a6e22e">GET</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">findAll</span>(Model model) {
+</span></span><span style="display:flex;"><span>		List<span style="color:#f92672">&lt;</span>UserDetails<span style="color:#f92672">&gt;</span> users <span style="color:#f92672">=</span> userService.<span style="color:#a6e22e">getUsers</span>();
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		model<span style="color:#f92672">.</span><span style="color:#a6e22e">addAttribute</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;users&#34;</span><span style="color:#f92672">,</span> users<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>		model.<span style="color:#a6e22e">addAttribute</span>(<span style="color:#e6db74">&#34;users&#34;</span>, users);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span><span style="color:#f92672">(</span>UserDetails user <span style="color:#f92672">:</span> users<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>user<span style="color:#f92672">.</span><span style="color:#a6e22e">getEmail</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> user<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">());</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;userList&#34;</span><span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span>(UserDetails user : users) {
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(user.<span style="color:#a6e22e">getEmail</span>() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> user.<span style="color:#a6e22e">getName</span>());
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;userList&#34;</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div>
     </section>
 
