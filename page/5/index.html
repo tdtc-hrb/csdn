@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.120.1">
+    <meta name="generator" content="Hugo 0.121.1">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -193,6 +193,32 @@
 </nav>
 
     </div>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql57-win/">安装配置MySQL 5.7</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>一、配置和安装 ini配置详见附录
+预配置 需要vc12 redist
+设置环境变量 名称：MYSQL57_HOME 赋值：D:\progFiles\mysql-5.7 init data %MYSQL57_HOME%\bin\mysqld --initialize-insecure --console 注册/注销服务 注册 多个版本的MySQL运行：
+%MYSQL57_HOME%\bin\mysqld --install MySQL57 --defaults-file=&#34;D:\progFiles\mysql-5.7\my.ini&#34; 注销 sc delete mysql57 Enable SSL Connections for MySQL 注意： 可以忽略如下警告信息：
+CA certificate ca.pem is self signed.For more information, see Help and Support Center at http://www.mysql.com. Connection TLS Protocol Configuration mysql&gt; SHOW GLOBAL VARIABLES LIKE &#39;tls_version&#39;; To change the value of tls_version, set it at server startup. For example, to permit connections that use the TLSv1. <a class="read-more" href="/csdn/post/mysql57-win/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-06-07T12:08:39&#43;08:00">
+            7 Jun 2022
+        </time>
+    </footer>
+</article>
 
     
         <article class="post post">
@@ -446,37 +472,6 @@ Reference UNIDIRECTIONAL USER INTERFACE ARCHITECTURES - André Staltz Clarified 
 
         
         <time class="post-date" datetime="2022-04-10T17:26:39&#43;08:00">
-            10 Apr 2022
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/css-selector-basic/">CSS选择器</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>浏览器建议：
-Google Chrome v49.0.2623.112+ IE11 Selector type CSS 说明 Tag name p {} 对整个网页中标签有效 ID #some-id {} 对网页中指定id有效 Class .some-class {} 对网页中相同类名有效 元素 document的元素就是最基本的选择器。
-html {color:black;} h1 {color:blue;} h2 {color:silver;} 下级元素 子元素 当前元素的下一级元素。
-&gt; 后代元素 空格替代 “&gt;” 例如:
-ol li 就表示当前元素（ol）下的所有li元素。
-属性选择器 属性
-1）设置多个属性 “^” 开头匹配
-“$” 结尾匹配
-&quot;*&quot; 包含匹配
-3. 奇偶选择器 :nth-child 其常用值有：odd和even <a class="read-more" href="/csdn/post/css-selector-basic/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-04-10T16:26:39&#43;08:00">
             10 Apr 2022
         </time>
     </footer>
