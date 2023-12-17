@@ -6,8 +6,15 @@
     <description>Recent content in Posts on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 08 Dec 2023 12:08:08 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 15 Dec 2023 08:08:08 +0800</lastBuildDate>
     <atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows串口</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/vc-serial_communication/</link>
+      <pubDate>Fri, 15 Dec 2023 08:08:08 +0800</pubDate>
+      <guid>https://tdtc-hrb.github.io/csdn/post/vc-serial_communication/</guid>
+      <description>串口读写工具&#xA;PC has no serial device&#xA;PC has serial device&#xA;CSerialPort author: Remon Spekreijse MFC Vs2013(VC12)/Vs2019(VC14.2) 程序介绍 界面分三块： 端口配置、发送区域、接收区域&#xA;v2.0 使用boost thread + SQLite3 library 实现串口数据存储到SQLite数据库. 1. 端口配置 1.1 在“Port Number”选择端口号； 1.2 在“Config”配置端口的属性，比如波特率、奇偶校验、数据位、停止位等等。 Setting Serial Communication Number&#xA;2. 发送区域 2.1 Loop Send 当我们钩选此复选框时，必须选择“发送频率”，然后才能执行循环发送数据。&#xA;### 2.2 发送频率 选择其一：500、1000、2000毫秒。&#xA;Setting time&#xA;如果要更改读取自定义的时间频率：&#xA;请将SerialCommView.cpp-Ln292，更为：&#xA;((CComboBox *)GetDlgItem(IDC_COMBO1Timer))-&amp;gt;GetWindowTextA(strTemp);)&#xA;2.3 发送内容框 在“发送信息框”输入内容就可发送数据了！&#xA;2.4 操作流程 A类（自动化） 2.2-》2.3-》2.1&#xA;B类（手动） 2.3-》点击“Send”按钮。&#xA;3. 接收区域 3.1 制式切换 当钩选了“Hex View”复选框，接收到的数据就以16进制显示。&#xA;3.2 清除数据 当点击“Clear”按钮，即清空接收框数据。</description>
+    </item>
     <item>
       <title>模板方法模式</title>
       <link>https://tdtc-hrb.github.io/csdn/post/dp-template-java/</link>
@@ -147,13 +154,6 @@
       <pubDate>Fri, 10 Feb 2023 02:20:39 +0800</pubDate>
       <guid>https://tdtc-hrb.github.io/csdn/post/pack-file-linux/</guid>
       <description>取消目录所有权限&#xA;chmod -R 777 /tmp/etc 一、ISO文件 mkisofs -r -o etc.iso /tmp/etc 二、压缩文件 1. zip zip -r etc.zip /tmp/etc 2. tar 仅打包，不压缩！&#xA;tar -cvf /tmp/etc.tar /etc transform --transform s/OLD_NAME/NEW_NAME/ gz tar -zcvf /tmp/etc.tar.gz /etc transform:&#xA;tar -zcvf /tmp/etc.tar.gz /etc --transform s/etc/myetc/ bz2 tar -jcvf /tmp/etc.tar.bz2 /etc transform:&#xA;tar -jcvf /tmp/etc.tar.bz2 /etc --transform s/etc/myetc/ FAQ This does not look like a tar archive #gzip -d xxxx.tar.gz #tar -xf xxxx.tar gzip: stdin: not in gzip format $ tar xvf xxxx.</description>
-    </item>
-    <item>
-      <title>Windows串口</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/vc-serial_communication/</link>
-      <pubDate>Wed, 25 Jan 2023 08:08:08 +0800</pubDate>
-      <guid>https://tdtc-hrb.github.io/csdn/post/vc-serial_communication/</guid>
-      <description>串口读写工具&#xA;PC has no serial device&#xA;PC has serial device&#xA;CSerialPort author: Remon Spekreijse MFC Vs2013(VC12)/Vs2019(VC14.2) 程序介绍 界面分三块： 端口配置、发送区域、接收区域&#xA;v2.0 使用boost thread + SQLite3 library 实现串口数据存储到SQLite数据库. 1. 端口配置 1.1 在“Port Number”选择端口号； 1.2 在“Config”配置端口的属性，比如波特率、奇偶校验、数据位、停止位等等。 Setting Serial Communication Number&#xA;2. 发送区域 2.1 Loop Send 当我们钩选此复选框时，必须选择“发送频率”，然后才能执行循环发送数据。&#xA;### 2.2 发送频率 选择其一：500、1000、2000毫秒。&#xA;Setting time&#xA;如果要更改读取自定义的时间频率：&#xA;请将SerialCommView.cpp-Ln292，更为：&#xA;((CComboBox *)GetDlgItem(IDC_COMBO1Timer))-&amp;gt;GetWindowTextA(strTemp);)&#xA;2.3 发送内容框 在“发送信息框”输入内容就可发送数据了！&#xA;2.4 操作流程 A类（自动化） 2.2-》2.3-》2.1&#xA;B类（手动） 2.3-》点击“Send”按钮。&#xA;3. 接收区域 3.1 制式切换 当钩选了“Hex View”复选框，接收到的数据就以16进制显示。&#xA;3.2 清除数据 当点击“Clear”按钮，即清空接收框数据。</description>
     </item>
     <item>
       <title>使用物理网卡</title>

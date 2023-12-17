@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="Visual C&#43;&#43;" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2023-01-25T08:08:08&#43;08:00" />
+    <meta property="article:published_time" content="2023-12-15T08:08:08&#43;08:00" />
 
     
     
@@ -92,15 +92,15 @@
     },
     "headline": "Windows串口",
     "name": "Windows串口",
-    "wordCount":  89 ,
-    "timeRequired": "PT1M",
+    "wordCount":  245 ,
+    "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/vc-serial_communication/",
-    "datePublished": "2023-01-25T08:08Z",
-    "dateModified": "2023-01-25T08:08Z",
+    "datePublished": "2023-12-15T08:08Z",
+    "dateModified": "2023-12-15T08:08Z",
     
     
     "description": "Visual C++",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2023-01-25T08:08:08&#43;08:00">
-            Jan 25, 2023
+          <time class="post-date" datetime="2023-12-15T08:08:08&#43;08:00">
+            Dec 15, 2023
           </time>
         
          
@@ -253,6 +253,56 @@ Setting time</p>
 <ul>
 <li><a href="https://github.com/xiaobin80/SerialComm.git">SerialComm</a>
 <img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20150119160142237.png" alt="project file"></li>
+<li>IDE <br>
+<a href="http://download.microsoft.com/download/e/0/4/e04de840-8f6b-4fe5-ac3d-d3ad8e4c2443/En_vs_2005_Pro_90_Trial.img">Vs2005</a> +
+<a href="https://catalog.s.download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/vs80sp1-kb926601-x86-enu_d4b5c73253a7a4f5b4b389f41b94fea4a7247b57.exe">VS80sp1-KB926604</a></li>
+</ul>
+<p>Visual Studio series is backward compatible:</p>
+<pre tabindex="0"><code>Visual Studio 2008 / Visual Studio 2010 / Visual Studio 2012 / Visual Studio 2013 / Visual Studio 2015, 
+Visual Studio 2017 / Visual Studio 2019 / Visual Studio 2022 can all(皆可) open Visual Studio 2005 projects.
+</code></pre><h2 id="update">update</h2>
+<ul>
+<li>GetVersionEx</li>
+</ul>
+<h3 id="getversionex">GetVersionEx</h3>
+<pre tabindex="0"><code>warning C4996: &#39;GetVersionExA&#39;: was declared deprecated
+</code></pre><p>ConsoleApplication:</p>
+<pre tabindex="0"><code>#pragma comment(lib, &#34;netapi32.lib&#34;)
+
+#include &lt;iostream&gt;
+#include &lt;windows.h&gt;
+#include &lt;lm.h&gt;
+
+using namespace std;
+
+bool GetWindowsVersion(unsigned long &amp;major, unsigned long &amp;minor)
+{
+	unsigned char * pinfoRawData;
+	if (NERR_Success == NetWkstaGetInfo(NULL, 100, &amp;pinfoRawData))
+	{
+		WKSTA_INFO_100 * pworkstationInfo = (WKSTA_INFO_100 *)pinfoRawData;
+		major = pworkstationInfo-&gt;wki100_ver_major;
+		minor = pworkstationInfo-&gt;wki100_ver_minor;
+		::NetApiBufferFree(pinfoRawData);
+		return true;
+	}
+	return false;
+}
+
+int main()
+{
+	unsigned long major = 0;
+	unsigned long minor = 0;
+	if (GetWindowsVersion(major, minor))
+	{
+		std::cout &lt;&lt; &#34;Major: &#34; &lt;&lt; major &lt;&lt; &#34;\nMinor: &#34; &lt;&lt; minor &lt;&lt; endl;
+	}
+}
+</code></pre><h2 id="ref">Ref</h2>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/windows/win32/api/lmwksta/nf-lmwksta-netwkstagetinfo">NetWkstaGetInfo function (lmwksta.h)</a></li>
+<li><a href="https://www.codeproject.com/articles/678606/part1-overcoming-windows-8-1s-deprecation-of-getve">Part1: Overcoming Windows 8.1&rsquo;s deprecation of GetVersionEx and GetVersion APIs</a></li>
+<li><a href="https://www.catalog.update.microsoft.com/Search.aspx?q=visual%20studio%202005">vs05 sp1 find</a></li>
 </ul>
 
     </section>
@@ -305,17 +355,10 @@ Setting time</p>
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/pack-file-linux/">
-          <section class="post">
-              <h2>打包文件</h2>
-              
-          </section>
-      </a>
   
-  
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_vmware_netadapter/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/dp-template-java/">
           <section class="post">
-              <h2>使用物理网卡</h2>
+              <h2>模板方法模式</h2>
           </section>
       </a>
   
