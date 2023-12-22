@@ -162,6 +162,32 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/dp-cor-java/">Chain of Command 模式</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>我们知道Chain of Responsibility模式，其实就是Template method + Next。
+在进行多个调用时，按顺序执行；需要调用2个方法。
+此模式，只适合抽象方法！
+在进行设计模式的程序实现中xiaobin使用已编写的SSL程序做演示。
+Chain of Command import com.cartionsoft.xbf.ContentXbf;import com.cartionsoft.xbf.LibXbf;import com.cartionsoft.xbf.ReadXbf;import com.cartionsoft.xbf.XiaobinFile;public class Demo {public static void init() throws Exception {int stationID = 0;String keyPWD;String libPath = &#34;xbfLibR.dll&#34;;String xbfPath = &#34;C://send//dySSL.xbf&#34;;ContentXbf contentXbf = new ContentXbf(xbfPath);// All checks are linked. Client can build various chains using the same// components.XiaobinFile xiaobinFile = XiaobinFile.link(new LibXbf(libPath),new ReadXbf());// Server gets a chain from client code. <a class="read-more" href="/csdn/post/dp-cor-java/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-12-22T12:08:08&#43;08:00">
+            22 Dec 2023
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/vc-serial_communication/">Windows串口</a></h2>
     </header>
     <section class="post-excerpt">
@@ -382,17 +408,19 @@ About b2 vs bjam as of Boost 1.47.0, the official name of the executable was cha
     </header>
     <section class="post-excerpt">
         
-            <p>disabled Windows feature 禁止Windows Update disabled services:
-BITS Windows Update DoSvc Win10 Delivery Optimization startup -&gt; settings: Update &amp; security
+            <p>disabled Windows feature windows 10 2004+
+禁止Windows Update disabled services:
+BITS Windows Update Delivery Optimization startup -&gt; settings: Update &amp; security
 Allow downloads from other PCs : off Limit Advanced options set minimum
-Download settings background 5%(win 1809) foreground 5%(win 1809) upload settings bandwidth 5%(win 1809) Monthly upload 5GB(win1809) Group Policy 开始-&gt;运行-&gt;gpedit.msc-&gt;计算机配置-&gt;windows设置-&gt;Windows Update
+Download settings background 5% foreground 5% Group Policy 开始-&gt;运行-&gt;gpedit.msc-&gt;计算机配置-&gt;windows设置-&gt;Windows Update
 Configure Automatic Updates disabled 禁止记事本 开始-&gt;运行-&gt;gpedit.msc-&gt;计算机配置-&gt;windows设置-&gt;安全设置-&gt;软件限制策略
 右键点软件限制策略-&gt;创建软件限制策略
 点其他规则-&gt;右键新建路径规则-&gt; 在“路径”下的空白输入框中“%windir%\notepad.exe“（或者c盘是系统盘的情况下：c:\windows\notepad.exe)-&gt;在“安全级别”中选择“不允许”
 附：如果你要限制.txt的程序打开，可以在路径中输入*.txt。
 日文系统 key101 日文改英文键盘
 修改注册表主键： HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\i8042prt\Parameters
-LayerDriver JPN: KBD101.DLL OverrideKeyboardIdentifier: PCAT_101KEY OverrideKeyboardSubtype: 0x00000000(0) win7+添加日文输入 “区域和语言“ ==&gt; ”键盘和语言“ <a class="read-more" href="/csdn/post/ops_win_faq1/">&raquo;</a></p>
+LayerDriver JPN: KBD101.DLL OverrideKeyboardIdentifier: PCAT_101KEY OverrideKeyboardSubtype: 0x00000000(0) win7+添加日文输入 “区域和语言“ ==&gt; ”键盘和语言“
+”键盘和语言“中，点击”更改键盘“， 点”添加“，找到 ”日语（日本）“， 勾选”Microsoft IME“和”日语“，其它不要勾选. <a class="read-more" href="/csdn/post/ops_win_faq1/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -403,36 +431,6 @@ LayerDriver JPN: KBD101.DLL OverrideKeyboardIdentifier: PCAT_101KEY OverrideKeyb
         
         <time class="post-date" datetime="2023-08-18T08:08:08&#43;08:00">
             18 Aug 2023
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/c-automake/">生成makefile</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>automake manual make automake 注意: am文件是需要手工创建的!
-ac文件 生成configure.scan文件, 并重命名为configure.ac
-$ autoscan $ mv configure.scan configure.ac 修改配置 注意: 所有新修改的值都需要方括号([])
-程序属性 AC_INIT([hex2int], [v0.1], [veic_2005@163.com]) 目录结构 如果只有本目录, 使用空值 AM_INIT_AUTOMAKE 检查编译器 C compiler: AC_PROG_CC C++ compiler:
-AC_PROG_CXX 输出Makefile.in AC_CONFIG_FILES([Makefile]) 检查system头文件 AC_CHECK_HEADERS([string.h]) 生成Makefile aclocal autoconf 自定义宏(可选) 在ac file中的定义：
-AC_CONFIG_HEADERS([config.h]) 执行：
-autoheader 输出Makefile automake --add-missing 输出Makefile:
-./configure Example 源代码参见十六进制转十进制
-main.c 只保留主程序入口 hex2int.c 保留整个程序的结构 hex2int.h 函数名声明 Makefile.am AUTOMAKE_OPTIONS=foreign bin_PROGRAMS=hex2int hex2int_SOURCES=main.c hex2int.c include_HEADERS=hex2int.h configure.ac # -*- Autoconf -*- # Process this file with autoconf to produce a configure script. <a class="read-more" href="/csdn/post/c-automake/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-08-08T02:20:39&#43;08:00">
-            8 Aug 2023
         </time>
     </footer>
 </article>

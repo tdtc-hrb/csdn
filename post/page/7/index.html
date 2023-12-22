@@ -164,6 +164,29 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_zookeeper/">多服务器ZooKeeper安装</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>JDK install see 设置OpenJDK
+Stage I 1. 《sudo - CentOS》 2. FQDN #127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomain4 #::1 localhost localhost.localdomain localhost6 localhost6.localdomain6 192.168.0.137 tdtc101 192.168.0.138 tdtc102 192.168.0.139 tdtc103 3. 《ssh相互免密》 Stage II 1. unzip $wget https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/zookeeper-3.6.3/apache-zookeeper-3.6.3-bin.tar.gz --no-check-certificate $mkdir -p ~/app/zookeeper $tar xzvf apache-zookeeper-3.6.3-bin.tar.gz -C ~/app/zookeeper $mv ~/app/zookeeper/apache-zookeeper-3.6.3-bin ~/app/zookeeper/3.6.3 2. zk home $sudo vi /etc/bashrc export ZK_HOME=/home/tdtc/app/zookeeper/3.6.3 export PATH=$PATH:$ZK_HOME/bin Stage III 1. zoo.cfg Add the following configuration, and the other options default. <a class="read-more" href="/csdn/post/ops_zookeeper/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2021-04-14T01:08:08&#43;08:00">
+            14 Apr 2021
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_memcached_ubuntu/">安装memcached</a></h2>
     </header>
     <section class="post-excerpt">
@@ -381,31 +404,6 @@ wsl1017@DESKTOP-14G6K9S:~$ java -version Command &#39;java&#39; not found, but c
 
         
         <time class="post-date" datetime="2020-05-15T07:08:08&#43;08:00">
-            15 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_mysql_error1067/">mysql的1067错误</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>日志文件问题 由于使用时间比较长积累了很多的日志文件（\data目录下），所以删除之！
-mysql-bin.000001 ... ... mysql-bin.000278 原来删除都留最后一个编号的日志，这次太过彻底~~都删了!
-执行net start mysql： 出现了mysql 1067错误！ 查看，主机名.err文件（lenovo-7c8f808d.err）：
-130416 9:59:23 InnoDB: Started; log sequence number 0 43655 MySQL: File &#39;.\mysql-bin.000278&#39; not found (Errcode: 2) 130416 9:59:23 [ERROR] Failed to open log (file &#39;.\mysql-bin.000278&#39;, errno 2) 130416 9:59:23 [ERROR] Could not open log file 130416 9:59:23 [ERROR] Can&#39;t init tc log 130416 9:59:23 [ERROR] Aborting 130416 9:59:23 InnoDB: Starting shutdown... 130416 9:59:24 InnoDB: Shutdown completed; log sequence number 0 43655 130416 9:59:24 [Note] MySQL: Shutdown complete 告诉我们找不到mysql-bin. <a class="read-more" href="/csdn/post/ops_mysql_error1067/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-15T06:08:08&#43;08:00">
             15 May 2020
         </time>
     </footer>

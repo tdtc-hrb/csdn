@@ -6,8 +6,15 @@
     <description>Recent content on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 15 Dec 2023 08:08:08 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 22 Dec 2023 12:08:08 +0800</lastBuildDate>
     <atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chain of Command 模式</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/dp-cor-java/</link>
+      <pubDate>Fri, 22 Dec 2023 12:08:08 +0800</pubDate>
+      <guid>https://tdtc-hrb.github.io/csdn/post/dp-cor-java/</guid>
+      <description>我们知道Chain of Responsibility模式，其实就是Template method + Next。&#xA;在进行多个调用时，按顺序执行；需要调用2个方法。&#xA;此模式，只适合抽象方法！&#xA;在进行设计模式的程序实现中xiaobin使用已编写的SSL程序做演示。&#xA;Chain of Command import com.cartionsoft.xbf.ContentXbf;&#xD;import com.cartionsoft.xbf.LibXbf;&#xD;import com.cartionsoft.xbf.ReadXbf;&#xD;import com.cartionsoft.xbf.XiaobinFile;&#xD;public class Demo {&#xD;public static void init() throws Exception {&#xD;int stationID = 0;&#xD;String keyPWD;&#xD;String libPath = &amp;#34;xbfLibR.dll&amp;#34;;&#xD;String xbfPath = &amp;#34;C://send//dySSL.xbf&amp;#34;;&#xD;ContentXbf contentXbf = new ContentXbf(xbfPath);&#xD;// All checks are linked. Client can build various chains using the same&#xD;// components.&#xD;XiaobinFile xiaobinFile = XiaobinFile.link(&#xD;new LibXbf(libPath),&#xD;new ReadXbf()&#xD;);&#xD;// Server gets a chain from client code.</description>
+    </item>
     <item>
       <title>Windows串口</title>
       <link>https://tdtc-hrb.github.io/csdn/post/vc-serial_communication/</link>
@@ -69,7 +76,7 @@
       <link>https://tdtc-hrb.github.io/csdn/post/ops_win_faq1/</link>
       <pubDate>Fri, 18 Aug 2023 08:08:08 +0800</pubDate>
       <guid>https://tdtc-hrb.github.io/csdn/post/ops_win_faq1/</guid>
-      <description>disabled Windows feature 禁止Windows Update disabled services:&#xA;BITS Windows Update DoSvc Win10 Delivery Optimization startup -&amp;gt; settings: Update &amp;amp; security&#xA;Allow downloads from other PCs : off Limit Advanced options set minimum&#xA;Download settings background 5%(win 1809) foreground 5%(win 1809) upload settings bandwidth 5%(win 1809) Monthly upload 5GB(win1809) Group Policy 开始-&amp;gt;运行-&amp;gt;gpedit.msc-&amp;gt;计算机配置-&amp;gt;windows设置-&amp;gt;Windows Update&#xA;Configure Automatic Updates disabled 禁止记事本 开始-&amp;gt;运行-&amp;gt;gpedit.msc-&amp;gt;计算机配置-&amp;gt;windows设置-&amp;gt;安全设置-&amp;gt;软件限制策略&#xA;右键点软件限制策略-&amp;gt;创建软件限制策略&#xA;点其他规则-&amp;gt;右键新建路径规则-&amp;gt; 在“路径”下的空白输入框中“%windir%\notepad.exe“（或者c盘是系统盘的情况下：c:\windows\notepad.exe)-&amp;gt;在“安全级别”中选择“不允许”&#xA;附：如果你要限制.txt的程序打开，可以在路径中输入*.txt。&#xA;日文系统 key101 日文改英文键盘&#xA;修改注册表主键： HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\i8042prt\Parameters&#xA;LayerDriver JPN: KBD101.DLL OverrideKeyboardIdentifier: PCAT_101KEY OverrideKeyboardSubtype: 0x00000000(0) win7+添加日文输入 “区域和语言“ ==&amp;gt; ”键盘和语言“</description>
+      <description>disabled Windows feature windows 10 2004+&#xA;禁止Windows Update disabled services:&#xA;BITS Windows Update Delivery Optimization startup -&amp;gt; settings: Update &amp;amp; security&#xA;Allow downloads from other PCs : off Limit Advanced options set minimum&#xA;Download settings background 5% foreground 5% Group Policy 开始-&amp;gt;运行-&amp;gt;gpedit.msc-&amp;gt;计算机配置-&amp;gt;windows设置-&amp;gt;Windows Update&#xA;Configure Automatic Updates disabled 禁止记事本 开始-&amp;gt;运行-&amp;gt;gpedit.msc-&amp;gt;计算机配置-&amp;gt;windows设置-&amp;gt;安全设置-&amp;gt;软件限制策略&#xA;右键点软件限制策略-&amp;gt;创建软件限制策略&#xA;点其他规则-&amp;gt;右键新建路径规则-&amp;gt; 在“路径”下的空白输入框中“%windir%\notepad.exe“（或者c盘是系统盘的情况下：c:\windows\notepad.exe)-&amp;gt;在“安全级别”中选择“不允许”&#xA;附：如果你要限制.txt的程序打开，可以在路径中输入*.txt。&#xA;日文系统 key101 日文改英文键盘&#xA;修改注册表主键： HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\i8042prt\Parameters&#xA;LayerDriver JPN: KBD101.DLL OverrideKeyboardIdentifier: PCAT_101KEY OverrideKeyboardSubtype: 0x00000000(0) win7+添加日文输入 “区域和语言“ ==&amp;gt; ”键盘和语言“&#xA;”键盘和语言“中，点击”更改键盘“， 点”添加“，找到 ”日语（日本）“， 勾选”Microsoft IME“和”日语“，其它不要勾选.</description>
     </item>
     <item>
       <title>生成makefile</title>

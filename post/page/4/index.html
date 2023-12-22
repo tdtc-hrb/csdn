@@ -164,6 +164,30 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_gnupg/">GNU PG的使用</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>The GNU Privacy Guard
+1. install $yum install gnupg $yum install rng-tools 2. gen key $gpg --gen-key Decompose 20180804215500757.png step: Press Key: enter Press Key: enter Press Key: enter Press Key: y Real name: xiaobin Email address: veic_2005@163 Comment: enter(press key) Press Key: O 输入完，按“Tab”切换到“OK”,按回车。 再输入一次， 2.1 gen random Generate random numbers and done. Open a new terminal:
+rngd -f -r /dev/urandom The old terminal shows the result： 3. gen revoke $gpg gen-revoke 7209DBAD Press Key: y 4. <a class="read-more" href="/csdn/post/ops_gnupg/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-09-25T00:08:08&#43;08:00">
+            25 Sep 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/mysql57-cenos7/">CentOS7/8安装mysql5.7</a></h2>
     </header>
     <section class="post-excerpt">
@@ -398,37 +422,6 @@ rpm -ivh yum-metadata-parser-1.1.4-10.el7.x86_64.rpmrpm -ivh yum-3.4.3-168.el7.
         
         <time class="post-date" datetime="2022-06-12T12:58:39&#43;08:00">
             12 Jun 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/reduxjs-asyn/">重构asyn</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>0. pre 生成基本框 npm install -g create-react-app create-react-app async clone repo https://github.com/redux-saga/redux-saga.git
-1. copy directorys Copy the examples/async/src from the redux-saga to your async/src.
-2. rename main.js async/src
-Rename main.js to index.js
-3. move files async/src
-App.css &amp;&amp; logo.svg -&gt;
-async/src/containers
-App.css &amp;&amp; logo.svg
-4. modify containers/App.js Add the following two blocks of code.
-import logo from &#39;./logo.svg&#39;; import &#39;./App.css&#39;; &lt;div className=&#34;App&#34;&gt; &lt;header className=&#34;App-header&#34;&gt; &lt;img src={logo} className=&#34;App-logo&#34; alt=&#34;logo&#34; /&gt; &lt;h1 className=&#34;App-title&#34;&gt;Welcome to React&lt;/h1&gt; &lt;/header&gt; . <a class="read-more" href="/csdn/post/reduxjs-asyn/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-06-10T07:26:39&#43;08:00">
-            10 Jun 2022
         </time>
     </footer>
 </article>
