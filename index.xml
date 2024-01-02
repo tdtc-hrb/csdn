@@ -23,6 +23,13 @@
       <description>串口读写工具&#xA;PC has no serial device&#xA;PC has serial device&#xA;CSerialPort author: Remon Spekreijse MFC Vs2013(VC12)/Vs2019(VC14.2) 程序介绍 界面分三块： 端口配置、发送区域、接收区域&#xA;v2.0 使用boost thread + SQLite3 library 实现串口数据存储到SQLite数据库. 1. 端口配置 1.1 在“Port Number”选择端口号； 1.2 在“Config”配置端口的属性，比如波特率、奇偶校验、数据位、停止位等等。 Setting Serial Communication Number&#xA;2. 发送区域 2.1 Loop Send 当我们钩选此复选框时，必须选择“发送频率”，然后才能执行循环发送数据。&#xA;### 2.2 发送频率 选择其一：500、1000、2000毫秒。&#xA;Setting time&#xA;如果要更改读取自定义的时间频率：&#xA;请将SerialCommView.cpp-Ln292，更为：&#xA;((CComboBox *)GetDlgItem(IDC_COMBO1Timer))-&amp;gt;GetWindowTextA(strTemp);)&#xA;2.3 发送内容框 在“发送信息框”输入内容就可发送数据了！&#xA;2.4 操作流程 A类（自动化） 2.2-》2.3-》2.1&#xA;B类（手动） 2.3-》点击“Send”按钮。&#xA;3. 接收区域 3.1 制式切换 当钩选了“Hex View”复选框，接收到的数据就以16进制显示。&#xA;3.2 清除数据 当点击“Clear”按钮，即清空接收框数据。</description>
     </item>
     <item>
+      <title>设置OpenJDK</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_openjdk_ubuntu/</link>
+      <pubDate>Fri, 15 Dec 2023 07:08:08 +0800</pubDate>
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_openjdk_ubuntu/</guid>
+      <description>ubuntu 20.04.2&#xA;wsl1017@DESKTOP-14G6K9S:~$ java -version Command &amp;#39;java&amp;#39; not found, but can be installed with: sudo apt install default-jre sudo apt install openjdk-11-jre-headless sudo apt install openjdk-8-jre-headless installation install jre wsl1017@DESKTOP-14G6K9S:/tmp$ sudo apt-get install openjdk-8-jre-headless install jdk sudo apt-get install openjdk-8-jdk-headless set JAVA home sudo vi /etc/profile export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 ubuntu version The very short answer is that OpenJDK 8 as of 2017-08-08 is not officially available for Ubuntu 14.04.&#xA;Upgrade to a newer version of Ubuntu.</description>
+    </item>
+    <item>
       <title>模板方法模式</title>
       <link>https://tdtc-hrb.github.io/csdn/post/dp-template-java/</link>
       <pubDate>Fri, 08 Dec 2023 12:08:08 +0800</pubDate>
@@ -490,13 +497,6 @@
       <pubDate>Fri, 15 May 2020 08:08:08 +0800</pubDate>
       <guid>https://tdtc-hrb.github.io/csdn/post/ops_spark_ubuntu/</guid>
       <description>WSL: Ubuntu 18.04.1&#xA;Prepare Java 8+, Python 2.7+/3.4+ and R 3.1+&#xA;Spark runs on Java 8+, Python 2.7+/3.4+ and R 3.1+. For the Scala API, Spark 2.4.1 uses Scala 2.12. You will need to use a compatible Scala version (2.12.x). 1. java 设置OpenJDK - Ubuntu&#xA;2. Python sudo apt-get install python 3. R language 1) add ppa sudo add-apt-repository ppa:marutter/rrutter sudo apt-get update 2) install sudo apt-get install r-base r-base-dev Installation 1.</description>
-    </item>
-    <item>
-      <title>设置OpenJDK</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_openjdk_ubuntu/</link>
-      <pubDate>Fri, 15 May 2020 07:08:08 +0800</pubDate>
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_openjdk_ubuntu/</guid>
-      <description> ubuntu 20.04.2&#xA;wsl1017@DESKTOP-14G6K9S:~$ java -version Command &amp;#39;java&amp;#39; not found, but can be installed with: sudo apt install default-jre sudo apt install openjdk-11-jre-headless sudo apt install openjdk-8-jre-headless installation install jre wsl1017@DESKTOP-14G6K9S:/tmp$ sudo apt-get install openjdk-8-jre-headless install jdk sudo apt-get install openjdk-8-jdk-headless set JAVA home vi /etc/profile export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 Reference How to Install OpenJDK JAVA 11/8 in Ubuntu and Debian </description>
     </item>
     <item>
       <title>mysql的1067错误</title>

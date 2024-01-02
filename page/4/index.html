@@ -197,6 +197,37 @@
     
         <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql-mha/">主备切换 - MySQL&#43;MHA</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>在进行安装配置前，请确认已经完成了 MySQL 主从复制
+MHA (V0.58)
+Manager Node baidu yun - backup
+Mha manager Mha node 安装前准备 ssh相互免密
+一、安装 Name IP Memo mha1 192.168.0.151 Monitor host 使用pscp上传文件请参考 MySQL 主从复制 - 5. test data
+1. MHA Node 所有MySQL服务器（mysql1、mysql11、mysql12）和MHA 管理机（MHA）都要安装。
+sudo yum localinstall mha4mysql-node-0.58-0.el7.centos.noarch.rpm 2. MHA Manager CentOS源有perl-Config-Tiny。
+sudo yum install perl-Config-Tiny 安装epel， 可以找到perl-Log-Dispatch、perl-Parallel-ForkManager。
+sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm sudo yum install perl-Log-Dispatch perl-Parallel-ForkManager -y 安装manager
+sudo yum localinstall mha4mysql-manager-0.58-0.el7.centos.noarch.rpm 3. MySQL主从配置 （补充部分） <a class="read-more" href="/csdn/post/mysql-mha/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-09-27T00:38:08&#43;08:00">
+            27 Sep 2022
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_gnupg/">GNU PG的使用</a></h2>
     </header>
     <section class="post-excerpt">
@@ -419,42 +450,6 @@ RepoInfo.decode = function(string) { if (string == null) return; var obj = RepoI
         
         <time class="post-date" datetime="2022-06-13T16:08:08&#43;08:00">
             13 Jun 2022
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_rhel_repo/">RHEL更换CentOS Yum</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>v7.x Red Hat Enterprise Linux7.x
-Yum Repo rpm -aq|grep yum|xargs rpm -e --nodepsrpm -ivh http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/wget-1.14-18.el7_6.1.x86_64.rpm down:
-wget http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/yum-metadata-parser-1.1.4-10.el7.x86_64.rpmwget http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/yum-3.4.3-168.el7.centos.noarch.rpmwget http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/yum-plugin-fastestmirror-1.1.31-54.el7_8.noarch.rpm install:
-rpm -ivh yum-metadata-parser-1.1.4-10.el7.x86_64.rpmrpm -ivh yum-3.4.3-168.el7.centos.noarch.rpm yum-plugin-fastestmirror-1.1.31-54.el7_8.noarch.rpm repo file /etc/yum.repos.d/CentOS-Base.repo CentOS-Base.repo - cento7
-# CentOS-Base.repo## The mirror system uses the connecting IP address of the client and the# update status of each mirror to pick mirrors that are updated to and# geographically close to the client. <a class="read-more" href="/csdn/post/ops_rhel_repo/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        on
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/yum/">#yum</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/centos7/">#CentOS7</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/epel-release/">#epel-release</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/7.9.2009/">#7.9.2009</a>,
-            
-        
-        <time class="post-date" datetime="2022-06-12T12:58:39&#43;08:00">
-            12 Jun 2022
         </time>
     </footer>
 </article>

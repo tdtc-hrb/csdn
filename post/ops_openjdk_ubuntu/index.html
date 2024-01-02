@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="ubuntu" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2020-05-15T07:08:08&#43;08:00" />
+    <meta property="article:published_time" content="2023-12-15T07:08:08&#43;08:00" />
 
     
     
@@ -92,15 +92,15 @@
     },
     "headline": "设置OpenJDK",
     "name": "设置OpenJDK",
-    "wordCount":  58 ,
+    "wordCount":  106 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/ops_openjdk_ubuntu/",
-    "datePublished": "2020-05-15T07:08Z",
-    "dateModified": "2020-05-15T07:08Z",
+    "datePublished": "2023-12-15T07:08Z",
+    "dateModified": "2023-12-15T07:08Z",
     
     
     "description": "ubuntu",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2020-05-15T07:08:08&#43;08:00">
-            May 15, 2020
+          <time class="post-date" datetime="2023-12-15T07:08:08&#43;08:00">
+            Dec 15, 2023
           </time>
         
          
@@ -199,9 +199,20 @@
 </span></span></code></pre></div><ol start="3">
 <li>set JAVA home</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vi /etc/profile
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/profile
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export JAVA_HOME<span style="color:#f92672">=</span>/usr/lib/jvm/java-8-openjdk-amd64
-</span></span></code></pre></div><h1 id="reference">Reference</h1>
+</span></span></code></pre></div><h2 id="ubuntu-versionhttpsaskubuntucoma944260"><a href="https://askubuntu.com/a/944260">ubuntu version</a></h2>
+<p>The very short answer is that OpenJDK 8 as of 2017-08-08 is not officially available for Ubuntu 14.04.</p>
+<p>Upgrade to a newer version of Ubuntu. OpenJDK 8 is available from 14.10 and onwards.</p>
+<ul>
+<li>Ubuntu 14.04 <br>
+OpenJDK 7</li>
+<li>Ubuntu 16.04 <br>
+OpenJDK 9</li>
+<li>Ubuntu 18.04 <br>
+OpenJDK 11</li>
+</ul>
+<h1 id="reference">Reference</h1>
 <ul>
 <li><a href="https://tecadmin.net/install-openjdk-java-ubuntu/">How to Install OpenJDK JAVA 11/8 in Ubuntu and Debian</a></li>
 </ul>
@@ -256,17 +267,17 @@
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_spark_ubuntu/">
+      <a class="read-next-story" style="no-cover" href="/csdn/post/vc-serial_communication/">
           <section class="post">
-              <h2>安装spark</h2>
+              <h2>Windows串口</h2>
               
           </section>
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_mysql_error1067/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/dp-template-java/">
           <section class="post">
-              <h2>mysql的1067错误</h2>
+              <h2>模板方法模式</h2>
           </section>
       </a>
   

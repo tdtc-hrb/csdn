@@ -197,6 +197,29 @@
     
         <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c-bsd_socket/">unix网络的client和server</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>使用GNU Compiler Collection(GCC)编译的 一个简单的客户端和服务器端的程序！
+Client Side flow chart getaddrinfo() -&gt; socket() -&gt; connect() -&gt; recv() src #include &lt;stdio.h&gt; #include &lt;string.h&gt; #include &lt;sys/types.h&gt; #include &lt;sys/socket.h&gt; #include &lt;arpa/inet.h&gt; #include &lt;netdb.h&gt; #define SERVIP &#34;192.168.56.112&#34; #define SERVPORT &#34;2349&#34; int main(int argc, char *argv[]) { struct addrinfo hints, *res; int status; int sockfd; int connSta; int recvSta; char buffer[1024]; int len; char ipstr[INET_ADDRSTRLEN]; void *addr; if (argc != 3) { fprintf(stderr, &#34;Usage: Not Server IP And Port! <a class="read-more" href="/csdn/post/c-bsd_socket/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-02-14T00:08:08&#43;08:00">
+            14 Feb 2023
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/c2plus-com-dll/">c#调用COM</a></h2>
     </header>
     <section class="post-excerpt">
@@ -439,37 +462,6 @@ $sudo rpm -Uvh http://nginx. <a class="read-more" href="/csdn/post/ops_nginx/">&
         
         <time class="post-date" datetime="2022-09-29T08:38:08&#43;08:00">
             29 Sep 2022
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/mysql-mha/">主备切换 - MySQL&#43;MHA</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>在进行安装配置前，请确认已经完成了 MySQL 主从复制
-MHA (V0.58)
-Manager Node baidu yun - backup
-Mha manager Mha node 安装前准备 ssh相互免密
-一、安装 Name IP Memo mha1 192.168.0.151 Monitor host 使用pscp上传文件请参考 MySQL 主从复制 - 5. test data
-1. MHA Node 所有MySQL服务器（mysql1、mysql11、mysql12）和MHA 管理机（MHA）都要安装。
-sudo yum localinstall mha4mysql-node-0.58-0.el7.centos.noarch.rpm 2. MHA Manager CentOS源有perl-Config-Tiny。
-sudo yum install perl-Config-Tiny 安装epel， 可以找到perl-Log-Dispatch、perl-Parallel-ForkManager。
-sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm sudo yum install perl-Log-Dispatch perl-Parallel-ForkManager -y 安装manager
-sudo yum localinstall mha4mysql-manager-0.58-0.el7.centos.noarch.rpm 3. MySQL主从配置 （补充部分） <a class="read-more" href="/csdn/post/mysql-mha/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-09-27T00:38:08&#43;08:00">
-            27 Sep 2022
         </time>
     </footer>
 </article>

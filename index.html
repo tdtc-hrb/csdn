@@ -262,6 +262,30 @@ B类（手动） 2.3-》点击“Send”按钮。
     
         <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_openjdk_ubuntu/">设置OpenJDK</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>ubuntu 20.04.2
+wsl1017@DESKTOP-14G6K9S:~$ java -version Command &#39;java&#39; not found, but can be installed with: sudo apt install default-jre sudo apt install openjdk-11-jre-headless sudo apt install openjdk-8-jre-headless installation install jre wsl1017@DESKTOP-14G6K9S:/tmp$ sudo apt-get install openjdk-8-jre-headless install jdk sudo apt-get install openjdk-8-jdk-headless set JAVA home sudo vi /etc/profile export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 ubuntu version The very short answer is that OpenJDK 8 as of 2017-08-08 is not officially available for Ubuntu 14.04.
+Upgrade to a newer version of Ubuntu. <a class="read-more" href="/csdn/post/ops_openjdk_ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-12-15T07:08:08&#43;08:00">
+            15 Dec 2023
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/dp-template-java/">模板方法模式</a></h2>
     </header>
     <section class="post-excerpt">
@@ -434,40 +458,6 @@ About b2 vs bjam as of Boost 1.47.0, the official name of the executable was cha
         
         <time class="post-date" datetime="2023-08-19T10:08:39&#43;08:00">
             19 Aug 2023
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_win_faq1/">Windows的一些设置</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>disabled Windows feature Delivery Optimization windows 10 2004+ startup -&gt; settings: Update &amp; security:
-Allow downloads from other PCs : off Limit Advanced options set minimum
-Download settings background 5% foreground 5% 禁止记事本 开始-&gt;运行-&gt;gpedit.msc-&gt;计算机配置-&gt;windows设置-&gt;安全设置-&gt;软件限制策略
-右键点软件限制策略-&gt;创建软件限制策略
-点其他规则-&gt;右键新建路径规则-&gt; 在“路径”下的空白输入框中“%windir%\notepad.exe“（或者c盘是系统盘的情况下：c:\windows\notepad.exe)-&gt;在“安全级别”中选择“不允许”
-附：如果你要限制.txt的程序打开，可以在路径中输入*.txt。
-日文系统 key101 日文改英文键盘
-修改注册表主键： HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\i8042prt\Parameters
-LayerDriver JPN: KBD101.DLL OverrideKeyboardIdentifier: PCAT_101KEY OverrideKeyboardSubtype: 0x00000000(0) win7+添加日文输入 “区域和语言“ ==&gt; ”键盘和语言“
-”键盘和语言“中，点击”更改键盘“， 点”添加“，找到 ”日语（日本）“， 勾选”Microsoft IME“和”日语“，其它不要勾选.
-按键盘”Alt“+”Shift“即可调出日语输入法.
-文件或目录 文件或目录损坏且无法读取 无法读取的所在逻辑盘E:
-chkdsk /F E: How to Delete Old Windows Folder in Windows 10 – Access Denied? <a class="read-more" href="/csdn/post/ops_win_faq1/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-08-18T08:08:08&#43;08:00">
-            18 Aug 2023
         </time>
     </footer>
 </article>
