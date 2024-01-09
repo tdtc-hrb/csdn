@@ -164,31 +164,6 @@
 	
 	   <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_mysql_error1067/">mysql的1067错误</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>日志文件问题 由于使用时间比较长积累了很多的日志文件（\data目录下），所以删除之！
-mysql-bin.000001 ... ... mysql-bin.000278 原来删除都留最后一个编号的日志，这次太过彻底~~都删了!
-执行net start mysql： 出现了mysql 1067错误！ 查看，主机名.err文件（lenovo-7c8f808d.err）：
-130416 9:59:23 InnoDB: Started; log sequence number 0 43655 MySQL: File &#39;.\mysql-bin.000278&#39; not found (Errcode: 2) 130416 9:59:23 [ERROR] Failed to open log (file &#39;.\mysql-bin.000278&#39;, errno 2) 130416 9:59:23 [ERROR] Could not open log file 130416 9:59:23 [ERROR] Can&#39;t init tc log 130416 9:59:23 [ERROR] Aborting 130416 9:59:23 InnoDB: Starting shutdown... 130416 9:59:24 InnoDB: Shutdown completed; log sequence number 0 43655 130416 9:59:24 [Note] MySQL: Shutdown complete 告诉我们找不到mysql-bin. <a class="read-more" href="/csdn/post/ops_mysql_error1067/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-15T06:08:08&#43;08:00">
-            15 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_mysql_devel/">无mysql-dev导致的错误</a></h2>
     </header>
     <section class="post-excerpt">
@@ -389,6 +364,34 @@ code unitUntMain; interface uses Windows, Messages, SysUtils, Variants, Classes
             <p>有一表格需要进行格式化处理，其要求如下：
 档案编号重复 少部分在xls文件中，大部分与数据库冲突。 日期格式错误 正确格式：xxxx-xx-xx 所有汉字的空格问题 非法性别 除了男女之外 code 程序如下：
 #! /usr/bin/perl################################################################################ Author: **斌# Date: 2012-02-22# Version: V0.1############################################################################################################################################################### Modified by: xiaobin (XB)# Modified date: 2012-03-31# Version: V0.3############################################################################################################################################################### Modified by: xiaobin (XB)# Modified date: 2012-04-01# Version: V0.4############################################################################################################################################################### Modified by: # Modified date: # Version: ############################################################################################################################################################### 版权说明： ## 本程序版权归李贵斌所有，解释权属于所有者。 ## 作为一个整体使用时，请附带以上说明。 ## ## 本程序完全免费使用。 ################################################################################################################################################################ 使用说明 ################################################################################# ## 命令行：perl processData. <a class="read-more" href="/csdn/post/ops_perl_excel/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-08T16:08:08&#43;08:00">
+            8 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_perl_mysql/">数据库的查询</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Perl操作数据库与其他的语言操作数据库没有什么区别。
+首先，要连接数据库。
+然后，执行SQL语句。
+最后，关闭连接。
+code 循环中为使用游标读取每行数据。
+test.pl
+#! /usr/bin/perl # test DBI and DBD::mysql use DBI; $dsn = &#34;DBI:mysql:database=carnumber;host=localhost;port=3306&#34;; my $dbh = DBI-&gt;connect($dsn, &#34;root&#34;, &#34;qazxsw&#34;, {&#39;RaiseError&#39; =&gt; 1}); my $strSQL = &#34;select train_number, seriary_number, car_number,&#34;. &#34; car_marque, past_time from trainOrder where train_number &lt; 100&#34;; my $sth = $dbh-&gt;prepare($strSQL); $sth-&gt;execute(); print &#34;TN\tSN\tNumber\tMarque\tPastTime\n&#34;; while (my $ref = $sth-&gt;fetchrow_hashref()) { print &#34;$ref-&gt;{&#39;train_number&#39;}\t&#34;. &#34;$ref-&gt;{&#39;seriary_number&#39;}\t&#34;. &#34;$ref-&gt;{&#39;car_number&#39;}\t&#34;. &#34;$ref-&gt;{&#39;car_marque&#39;}\t&#34;. &#34;$ref-&gt;{&#39;past_time&#39;}\n&#34;; } $sth-&gt;finish(); $dbh-&gt;disconnect();  <a class="read-more" href="/csdn/post/ops_perl_mysql/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">

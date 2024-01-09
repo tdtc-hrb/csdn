@@ -289,13 +289,6 @@
       <description>二进制文件工具：EditPlus Edit -&amp;gt; Hex Viewer replace(regexp/substr,replacement) 使用这个函数来替换多余的空格。 str.replace(/\s/g, &amp;#34;&amp;#34;); split(separator,howmany) 字符串转换成字符数组。 string.split(&amp;#34;,&amp;#34;); 一、js部分 我们把所有的方法放到一个对象（RepoInfo）中。&#xA;var RepoInfo = { }; 1. 获取对象 RepoInfo.getObj = function(objName) { return new ActiveXObject(objName); }; 2. 获取数组 RepoInfo.getArray = function(str) { var ret = new Array(16); var string = str.replace(/\s/g, &amp;#34;&amp;#34;); ret = string.split(&amp;#34;,&amp;#34;); return ret; }; 3. 解码字串 输入字串校验 如果字串空，退出。&#xA;输出框清空 每次赋值前，清空。&#xA;执行COM中的方法 在获取对象非空的情况下，执行。&#xA;RepoInfo.decode = function(string) { if (string == null) return; var obj = RepoInfo.</description>
     </item>
     <item>
-      <title>RHEL更换CentOS Yum</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_rhel_repo/</link>
-      <pubDate>Sun, 12 Jun 2022 12:58:39 +0800</pubDate>
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_rhel_repo/</guid>
-      <description>v7.x Red Hat Enterprise Linux7.x&#xA;Yum Repo rpm -aq|grep yum|xargs rpm -e --nodeps&#xD;rpm -ivh http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/wget-1.14-18.el7_6.1.x86_64.rpm down:&#xA;wget http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/yum-metadata-parser-1.1.4-10.el7.x86_64.rpm&#xD;wget http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/yum-3.4.3-168.el7.centos.noarch.rpm&#xD;wget http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/yum-plugin-fastestmirror-1.1.31-54.el7_8.noarch.rpm install:&#xA;rpm -ivh yum-metadata-parser-1.1.4-10.el7.x86_64.rpm&#xD;rpm -ivh yum-3.4.3-168.el7.centos.noarch.rpm yum-plugin-fastestmirror-1.1.31-54.el7_8.noarch.rpm repo file /etc/yum.repos.d/CentOS-Base.repo CentOS-Base.repo - cento7&#xA;# CentOS-Base.repo&#xD;#&#xD;# The mirror system uses the connecting IP address of the client and the&#xD;# update status of each mirror to pick mirrors that are updated to and&#xD;# geographically close to the client.</description>
-    </item>
-    <item>
       <title>重构asyn</title>
       <link>https://tdtc-hrb.github.io/csdn/post/reduxjs-asyn/</link>
       <pubDate>Fri, 10 Jun 2022 07:26:39 +0800</pubDate>

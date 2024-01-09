@@ -164,31 +164,6 @@
 	
 	   <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_department_cups/">共享打印机 - CUPS</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>Tips: Ubuntu已经安装了打印机了，我们怎么共享它呢？
-安装CUPS Ubuntu
-#apt-get install cups 客户端设置 Windows
-“打印机和传真”-〉“添加打印机” （注意：根据办公环境的网络设置自行填写） 插入HP的驱动光盘:  <a class="read-more" href="/csdn/post/ops_department_cups/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-04-13T03:18:08&#43;08:00">
-            13 Apr 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/reduxjs-asyn-dispatcher/">dispatcher - Asynchronous</a></h2>
     </header>
     <section class="post-excerpt">
@@ -417,6 +392,34 @@ sudo grub-install /dev/sda sudo update-grub  <a class="read-more" href="/csdn/po
         
         <time class="post-date" datetime="2021-06-15T00:19:08&#43;08:00">
             15 Jun 2021
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c-string-h2i/">十六进制转十进制</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>工作原理：
+16进制数 * 16n 之和就是10进制数。
+手算 16进制: 0x61E
+0位： E * 160 = 14 1位： 1 * 161 = 16 2位： 6 * 162 = 1536
+10进制： 14+16+1536 = 1566
+code 程序的需要两部分组成：
+权值计算 16的几次方，power(16, x) unsigned long power(int a, int b) { int i; unsigned long result = 1; for(i = 0; i &lt; b; i++) result = result * a; return result; }; 单16进制值转10进制值 例如：如果是F，则表示15 switch (ch) { case &#39;0&#39;: iCh = 0; break; case &#39;1&#39;: iCh = 1; break; case &#39;2&#39;: iCh = 2; break; case &#39;3&#39;: iCh = 3; break; case &#39;4&#39;: iCh = 4; break; case &#39;5&#39;: iCh = 5; break; case &#39;6&#39;: iCh = 6; break; case &#39;7&#39;: iCh = 7; break; case &#39;8&#39;: iCh = 8; break; case &#39;9&#39;: iCh = 9; break; case &#39;a&#39;: iCh = 10; break; case &#39;b&#39;: iCh = 11; break; case &#39;c&#39;: iCh = 12; break; case &#39;d&#39;: iCh = 13; break; case &#39;e&#39;: iCh = 14; break; case &#39;f&#39;: iCh = 15; break; default: iCh = -1; break; } 为了满足，把所有输入转换为小写字母，可以使用系统函数tolower()或者我们自己写的函数toLower() <a class="read-more" href="/csdn/post/c-string-h2i/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2021-05-01T05:08:08&#43;08:00">
+            1 May 2021
         </time>
     </footer>
 </article>
