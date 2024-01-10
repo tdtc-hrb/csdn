@@ -212,6 +212,13 @@
       <description>components version 查看内核版本:&#xA;#uname -a 查看Glibc库版本 #apt-cache show libc6 查看binutils版本 #ld -v 查看ubuntu版本号 #cat /etc/issue 查看debian对应版本 #cat /etc/debian_version debian code name code version status bullseye 11 statble buster 10 old statble stretch 9 old old statble jessie 8 archived wheezy 7 obsolete squeeze 6.0 obsolete lenny 5.0 obsolete etch 4.0 obsolete sarge 3.1 obsolete woody 3.0 obsolete potato 2.2 obsolete slink 2.1 obsolete hamm 2.0 obsolete </description>
     </item>
     <item>
+      <title>安装配置Keepalived</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_keepalived-v2/</link>
+      <pubDate>Fri, 30 Sep 2022 09:38:08 +0800</pubDate>
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_keepalived-v2/</guid>
+      <description>OS: CentOS7 minimal(VBox)&#xA;Virtual Box Network configure:&#xA;Attached to Bridged Adapter Advanced promiscuous mode: Allow All 一、安装 prepare tool:&#xA;#yum install gcc make autoconf automake openssl-devel libnl3-devel \ iptables-devel ipset-devel net-snmp-devel libnfnetlink-devel file-devel \ glib2-devel pcre2-revel libnftnl-devel libmnl-devel systemd-devel kmod-devel LVS manager:&#xA;yum install ipvsadm installation MASTER Node 1 BACKUP Node 2 down and unzip $git clone https://github.com/acassen/keepalived.git for me:&#xA;$git clone https://gitee.com/xiaobin80/keepalived installation $cd keepalived $./autogen.sh configure:&#xA;$./configure --prefix=/usr make:</description>
+    </item>
+    <item>
       <title>前端（Web）负载均衡</title>
       <link>https://tdtc-hrb.github.io/csdn/post/ops_nginx/</link>
       <pubDate>Thu, 29 Sep 2022 08:38:08 +0800</pubDate>
@@ -245,6 +252,13 @@
       <pubDate>Sun, 18 Sep 2022 00:08:08 +0800</pubDate>
       <guid>https://tdtc-hrb.github.io/csdn/post/ops_sudo/</guid>
       <description>new user #useradd tdtc #passwd tdtc Append group CentOS7- Open wheel #vi /etc/pam.d/su auth required /lib/security/$ISA/pam_wheel.so use_uid Attachment of group members #gpasswd -a tdtc wheel CentOS7/8 CentOS8 needs to be executed locally, Unable to execute on ssh network side.&#xA;#usermod –aG wheel tdtc test Query all users with sudo permissions.&#xA;[tdtc@tdtc102 ~]$ sudo lid -g wheel We trust you have received the usual lecture from the local System Administrator. It usually boils down to these three things: #1) Respect the privacy of others.</description>
+    </item>
+    <item>
+      <title>设置OpenJDK</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_openjdk_centos/</link>
+      <pubDate>Thu, 15 Sep 2022 08:08:08 -0800</pubDate>
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_openjdk_centos/</guid>
+      <description>1. install jre&#xA;$sudo yum install java -y jdk $sudo yum install java-1.8.0-openjdk-devel 2. set path $sudo vi /etc/profile export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.345.b01-1.el7_9.x86_64 export CLASSPATH=.:$JAVA_HOME/jre/lib/:. export PATH=$PATH:$JAVA_HOME/bin $su - root #source /etc/profile About path 3.3. INSTALL OPENJDK ON RED HAT ENTERPRISE LINUX - 2.Optional: Set the JAVA_HOME environment variable&#xA;Reference How to install Java on CentOS 7 OpenJDK Version Info - Releases </description>
     </item>
     <item>
       <title>powerDesigner生成phy图</title>
@@ -287,6 +301,13 @@
       <pubDate>Mon, 13 Jun 2022 16:08:08 +0800</pubDate>
       <guid>https://tdtc-hrb.github.io/csdn/post/com-ie-repoinfo/</guid>
       <description>二进制文件工具：EditPlus Edit -&amp;gt; Hex Viewer replace(regexp/substr,replacement) 使用这个函数来替换多余的空格。 str.replace(/\s/g, &amp;#34;&amp;#34;); split(separator,howmany) 字符串转换成字符数组。 string.split(&amp;#34;,&amp;#34;); 一、js部分 我们把所有的方法放到一个对象（RepoInfo）中。&#xA;var RepoInfo = { }; 1. 获取对象 RepoInfo.getObj = function(objName) { return new ActiveXObject(objName); }; 2. 获取数组 RepoInfo.getArray = function(str) { var ret = new Array(16); var string = str.replace(/\s/g, &amp;#34;&amp;#34;); ret = string.split(&amp;#34;,&amp;#34;); return ret; }; 3. 解码字串 输入字串校验 如果字串空，退出。&#xA;输出框清空 每次赋值前，清空。&#xA;执行COM中的方法 在获取对象非空的情况下，执行。&#xA;RepoInfo.decode = function(string) { if (string == null) return; var obj = RepoInfo.</description>
+    </item>
+    <item>
+      <title>在RHEL/CentOS安装Redis</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/redis-centos7/</link>
+      <pubDate>Sat, 11 Jun 2022 04:58:39 +0800</pubDate>
+      <guid>https://tdtc-hrb.github.io/csdn/post/redis-centos7/</guid>
+      <description>0. preinstall User set $ useradd tdtc $ passwd tdtc Yum Repo 1) yum install $sudo yum groupinstall &amp;#34;Development Tools&amp;#34; $sudo yum install tcl wget v6+ Just to clarify: there is no way this issue will be fixed, Redis &amp;gt;= 6 will require a C11 compiler.&#xA;sudo yum install centos-release-scl sudo yum install devtoolset-8 scl enable devtoolset-8 bash 2) verification $gcc -v $make -v $echo &amp;#39;puts [info patchlevel];exit 0&amp;#39; | tclsh 1.</description>
     </item>
     <item>
       <title>重构asyn</title>
@@ -373,6 +394,13 @@
       <description>浏览器建议：&#xA;Google Chrome v49.0.2623.112+ IE11 Selector type CSS 说明 Tag name p {} 对整个网页中标签有效 ID #some-id {} 对网页中指定id有效 Class .some-class {} 对网页中相同类名有效 元素 document的元素就是最基本的选择器。&#xA;html {color:black;} h1 {color:blue;} h2 {color:silver;} 下级元素 子元素 当前元素的下一级元素。&#xA;&amp;gt; 后代元素 空格替代 “&amp;gt;” 例如:&#xA;ol li 就表示当前元素（ol）下的所有li元素。&#xA;属性选择器 属性&#xA;1）设置多个属性 “^” 开头匹配&#xA;“$” 结尾匹配&#xA;&amp;quot;*&amp;quot; 包含匹配&#xA;3. 奇偶选择器 :nth-child 其常用值有：odd和even</description>
     </item>
     <item>
+      <title>最小实现redux - 分解redux</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/js-redux-mini/</link>
+      <pubDate>Sun, 10 Apr 2022 08:26:39 +0800</pubDate>
+      <guid>https://tdtc-hrb.github.io/csdn/post/js-redux-mini/</guid>
+      <description>project: https://gitee.com/xiaobin80/starter&#xA;application app.js&#xA;include createStore import { createStore } from &amp;#39;redux&amp;#39; Establish reducer const reducerName = (state, action) =&amp;gt; { state; } invoke createStore() const store = createStore(reducerName); html public/index.html&#xA;&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;The Complete Redux Book - Example Application&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;app&amp;#34;&amp;gt; Redux is running: &amp;lt;span id=&amp;#34;counter&amp;#34;&amp;gt;&amp;lt;/span&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34; src=&amp;#34;../app.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; </description>
+    </item>
+    <item>
       <title>dpkg的info问题和file system只读问题</title>
       <link>https://tdtc-hrb.github.io/csdn/post/dpkg-issues/</link>
       <pubDate>Sun, 10 Apr 2022 02:10:39 +0800</pubDate>
@@ -399,6 +427,41 @@
       <pubDate>Thu, 13 Jan 2022 12:08:08 +0800</pubDate>
       <guid>https://tdtc-hrb.github.io/csdn/post/com-safearray-vc/</guid>
       <description>COM vc&#xA;1. 定义SAFEARRAY变量 SAFEARRAY *pSArray = NULL; 2. 释放此变量 SafeArrayDestroy(pSArray); 3. 建立向量表 pSArray = SafeArrayCreateVector(VT_UI1, 0, 32); 向量变量（VT_UI1）的定义：msdn&#xA;VT_UI1 Variable type is unsigned char. 4. 写入数据 SafeArrayPutElement(pSArray, &amp;amp;l, &amp;amp;inqReport[l]); getInqRepo方法： AA：屏蔽的数值&#xA;STDMETHODIMP CRepoFmt::getInqRepo(ULONG iStation, SAFEARRAY** ret) { SAFEARRAY *pSArray = NULL; unsigned char inqReport[32]; unsigned char xorByte = AA; int iStationID = 0; if (iStation &amp;lt; 1) iStationID = 1; else iStationID = iStation; inqReport[0] = AA; inqReport[1] = AA; inqReport[2] = AA; inqReport[3] = AA; inqReport[4] = (iStationID % AA); inqReport[5] = (iStationID / AA); inqReport[6] = AA; inqReport[7] = AA; inqReport[8] = AA; inqReport[9] = AA; inqReport[10] = AA; inqReport[11] = AA; for (int i = 1; i &amp;lt; 18; i++) xorByte ^= inqReport[i]; inqReport[18] = xorByte; // Fill the inqReport etc.</description>
+    </item>
+    <item>
+      <title>千位分隔符</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/js-thousand-separator/</link>
+      <pubDate>Thu, 18 Nov 2021 02:18:39 +0800</pubDate>
+      <guid>https://tdtc-hrb.github.io/csdn/post/js-thousand-separator/</guid>
+      <description>1. 字符串替换 /** * 字符串替换函数 - js * expStr: 查找的字符串 * string: 整个字符串 * repStr: 替换的字符串 */ function replacStr(expStr, string, repStr) { let result = &amp;#34;&amp;#34;; let regex; if (parseInt(expStr) &amp;gt; 0) // 数字 regex = new RegExp(expStr, &amp;#34;g&amp;#34;); else&#x9;// 非数字 regex = new RegExp(&amp;#34;\\&amp;#34; + expStr, &amp;#34;g&amp;#34;); result = string.replace(regex, repStr); return result; } 2. 千分符 例如，货币7867321.55，怎样使用js来分割他呢？&#xA;0. 分离小数和整数 let index = strCny.indexOf(&amp;#34;.&amp;#34;); if ( index != 0) { strNum = strCny.</description>
+    </item>
+    <item>
+      <title> 使用ts/js打印tree</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/js-print-tree/</link>
+      <pubDate>Mon, 15 Nov 2021 14:15:39 +0800</pubDate>
+      <guid>https://tdtc-hrb.github.io/csdn/post/js-print-tree/</guid>
+      <description>一棵&amp;quot;树&amp;quot;就是由空格、星号和回车组成的。 我们用a，代表空格。&#xA;注意：空格在HTML编码为：“ ”。&#xA;aaaa* aaa*** aa***** a******* ********* aaaa* aaaa* aaaa* aaaa* aaaa* 首先“树头”部分由3部分组成：空格部分、左树头、右树头。 空格就是递减的过程：&#xA;for (let i = treeRadius; i &amp;gt; k; i--) { document.write(&amp;#34; &amp;#34;); } 左树头，包括中线&#xA;for (let i = 0; i &amp;lt; k + 1; i++) { document.write(&amp;#34;*&amp;#34;); } 右树头，递增过程：&#xA;for (let j = 0; j &amp;lt; k; j++) { document.write(&amp;#34;b&amp;#34;); } 然后，“树干”部分由2部分组成：空格部分和中线部分&#xA;空格就是按照指定的半径数“占位”：&#xA;for (let j = 0; j &amp;lt; treeRadius; j++) { document.write(&amp;#34; &amp;#34;); } 中线就是每次循环时打印一个*</description>
+    </item>
+    <item>
+      <title>webpack的使用</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/js-webpack/</link>
+      <pubDate>Mon, 08 Nov 2021 15:26:39 +0800</pubDate>
+      <guid>https://tdtc-hrb.github.io/csdn/post/js-webpack/</guid>
+      <description>安装webpack npm install -g webpack-dev-server npm install --save webpack-cli pack info package.json&#xA;{ &amp;#34;name&amp;#34;: &amp;#34;redux-book-started&amp;#34;, &amp;#34;version&amp;#34;: &amp;#34;1.0.0&amp;#34;, &amp;#34;description&amp;#34;: &amp;#34;Sample Redux Application&amp;#34;, &amp;#34;main&amp;#34;: &amp;#34;app.js&amp;#34;, &amp;#34;scripts&amp;#34;: { &amp;#34;start&amp;#34;: &amp;#34;webpack-dev-server --hot --progress --port 8181&amp;#34; }, &amp;#34;author&amp;#34;: &amp;#34;Boris Dinkevich &amp;amp; Ilya Gelman&amp;#34;, &amp;#34;license&amp;#34;: &amp;#34;MIT&amp;#34;, &amp;#34;dependencies&amp;#34;: { &amp;#34;jquery&amp;#34;: &amp;#34;3.6.0&amp;#34;, &amp;#34;redux&amp;#34;: &amp;#34;4.1.2&amp;#34; }, &amp;#34;devDependencies&amp;#34;: { &amp;#34;webpack&amp;#34;: &amp;#34;5.64.1&amp;#34;, &amp;#34;webpack-cli&amp;#34;: &amp;#34;^4.9.1&amp;#34;, &amp;#34;webpack-dev-server&amp;#34;: &amp;#34;4.5.0&amp;#34; } } config info webpack.config.js&#xA;module.exports = { mode: &amp;#39;development&amp;#39;, entry: &amp;#39;./app.js&amp;#39;, output: { filename: &amp;#39;.</description>
+    </item>
+    <item>
+      <title>动态生成table</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/js-json-table/</link>
+      <pubDate>Sat, 02 Oct 2021 14:26:39 +0800</pubDate>
+      <guid>https://tdtc-hrb.github.io/csdn/post/js-json-table/</guid>
+      <description>一、JSON数据源 JSON&#xA;JSON是一种取代XML的数据结构,和xml相比,它更小巧但描述能力却不差,由于它的小巧所以网络传输数据将减少更多流量从而加快速度,&#xD;那么,JSON到底是什么?&#xD;JSON就是一串字符串 只不过元素会使用特定的符号标注。&#xD;{} 双括号表示对象&#xD;[] 中括号表示数组&#xD;&amp;#34;&amp;#34; 双引号内是属性或值&#xD;: 冒号表示后者是前者的值(这个值可以是字符串、数字、也可以是另一个数组或对象)&#xD;所以 {&amp;#34;name&amp;#34;: &amp;#34;Michael&amp;#34;} 可以理解为是一个包含name为Michael的对象&#xD;而[{&amp;#34;name&amp;#34;: &amp;#34;Michael&amp;#34;},{&amp;#34;name&amp;#34;: &amp;#34;Jerry&amp;#34;}]就表示包含两个对象的数组&#xD;当然了,你也可以使用{&amp;#34;name&amp;#34;:[&amp;#34;Michael&amp;#34;,&amp;#34;Jerry&amp;#34;]}来简化上面一部,这是一个拥有一个name数组的对象 详细介绍请参见W3SCHOOL JSON规范&#xA;1. students var students = [ {&amp;#34;cName&amp;#34;: &amp;#34;class 1&amp;#34;, &amp;#34;ID&amp;#34;: &amp;#34;1001&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;李X&amp;#34;, &amp;#34;course&amp;#34;: [&amp;#34;英语&amp;#34;, &amp;#34;高数&amp;#34;], &amp;#34;elective&amp;#34;: [&amp;#34;政治经济学&amp;#34;, &amp;#34;哲学&amp;#34;]}, {&amp;#34;cName&amp;#34;: &amp;#34;class 1&amp;#34;, &amp;#34;ID&amp;#34;: &amp;#34;1002&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;张X威&amp;#34;, &amp;#34;course&amp;#34;: [&amp;#34;英语&amp;#34;, &amp;#34;高数&amp;#34;], &amp;#34;elective&amp;#34;: [&amp;#34;政治经济学&amp;#34;, &amp;#34;哲学&amp;#34;]}, {&amp;#34;cName&amp;#34;: &amp;#34;class 1&amp;#34;, &amp;#34;ID&amp;#34;: &amp;#34;1003&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;于X洋&amp;#34;, &amp;#34;course&amp;#34;: [&amp;#34;英语&amp;#34;, &amp;#34;高数&amp;#34;], &amp;#34;elective&amp;#34;: [&amp;#34;政治经济学&amp;#34;, &amp;#34;哲学&amp;#34;]}, {&amp;#34;cName&amp;#34;: &amp;#34;class 1&amp;#34;, &amp;#34;ID&amp;#34;: &amp;#34;1004&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;张X扬&amp;#34;, &amp;#34;course&amp;#34;: [&amp;#34;英语&amp;#34;, &amp;#34;高数&amp;#34;], &amp;#34;elective&amp;#34;: [&amp;#34;政治经济学&amp;#34;, &amp;#34;哲学&amp;#34;]}, {&amp;#34;cName&amp;#34;: &amp;#34;class 1&amp;#34;, &amp;#34;ID&amp;#34;: &amp;#34;1005&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;周X&amp;#34;, &amp;#34;course&amp;#34;: [&amp;#34;英语&amp;#34;, &amp;#34;高数&amp;#34;], &amp;#34;elective&amp;#34;: [&amp;#34;政治经济学&amp;#34;, &amp;#34;哲学&amp;#34;]}, {&amp;#34;cName&amp;#34;: &amp;#34;class 1&amp;#34;, &amp;#34;ID&amp;#34;: &amp;#34;1006&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;王X&amp;#34;, &amp;#34;course&amp;#34;: [&amp;#34;英语&amp;#34;, &amp;#34;高数&amp;#34;], &amp;#34;elective&amp;#34;: [&amp;#34;政治经济学&amp;#34;, &amp;#34;哲学&amp;#34;]}, {&amp;#34;cName&amp;#34;: &amp;#34;class 1&amp;#34;, &amp;#34;ID&amp;#34;: &amp;#34;1007&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;李X朋&amp;#34;, &amp;#34;course&amp;#34;: [&amp;#34;英语&amp;#34;, &amp;#34;高数&amp;#34;], &amp;#34;elective&amp;#34;: [&amp;#34;政治经济学&amp;#34;, &amp;#34;哲学&amp;#34;]}, {&amp;#34;cName&amp;#34;: &amp;#34;class 1&amp;#34;, &amp;#34;ID&amp;#34;: &amp;#34;1008&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;邬X春&amp;#34;, &amp;#34;course&amp;#34;: [&amp;#34;英语&amp;#34;, &amp;#34;高数&amp;#34;], &amp;#34;elective&amp;#34;: [&amp;#34;政治经济学&amp;#34;, &amp;#34;哲学&amp;#34;]}, {&amp;#34;cName&amp;#34;: &amp;#34;class 5&amp;#34;, &amp;#34;ID&amp;#34;: &amp;#34;1009&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;李X&amp;#34;, &amp;#34;course&amp;#34;: [&amp;#34;英语&amp;#34;, &amp;#34;高数&amp;#34;], &amp;#34;elective&amp;#34;: [&amp;#34;政治经济学&amp;#34;, &amp;#34;哲学&amp;#34;]}, {&amp;#34;cName&amp;#34;: &amp;#34;class 5&amp;#34;, &amp;#34;ID&amp;#34;: &amp;#34;1010&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;孙X丽&amp;#34;, &amp;#34;course&amp;#34;: [&amp;#34;英语&amp;#34;, &amp;#34;高数&amp;#34;], &amp;#34;elective&amp;#34;: [&amp;#34;政治经济学&amp;#34;, &amp;#34;哲学&amp;#34;]} ]; 二、函数设计 所谓的动态就是使用删表和写表的操作。</description>
+    </item>
+    <item>
+      <title> 使用Ts/Js计算天数</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/js-calday/</link>
+      <pubDate>Fri, 01 Oct 2021 02:16:39 +0800</pubDate>
+      <guid>https://tdtc-hrb.github.io/csdn/post/js-calday/</guid>
+      <description>在JS练习题中，有这么一道：&#xA;请计算某天是这一年的第几天。&#xA;首先，我们要看此年是否闰年&#xA;var IsLeapYear = function (year) { var flag = false; if ( ((year % 4 == 0) &amp;amp;&amp;amp; (year % 100 != 0)) || (year % 400 == 0) ) flag = true; return flag; }; 其次，累加每月天数。&#xA;for (var i = 0; i &amp;lt; month - 1; i++) { iDay += months[i]; } 其中months为数组&#xA;var months = new Array(31, day2, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31); day2如果是闰年赋值29，否则28。</description>
     </item>
     <item>
       <title>安装redis-server</title>
@@ -681,6 +744,13 @@
       <description> ali云服务器&#xA;1. User Add and Set password 1) add user useradd&#x9;site_user 2) set passwd passwd -x 180 site_user 3) set home_dir usermod -d /home/fdn site_user 2. assigning permissions 如果多个目录需要设置，则多次重复&amp;quot;(2)设置&amp;quot;即可。&#xA;文件系统是否支持acl&#xA;df -T | awk &amp;#39;{print $1,$2,$NF}&amp;#39; | grep &amp;#34;^/dev&amp;#34; grep -i acl /boot/config* 分区是否支持acl&#xA;注意：在ali服务器上是vda1。&#xA;tune2fs -l /dev/vda1 | grep acl 1) 查看 目录的acl设置情况。&#xA;getfacl&#x9;/home/fdn 2) 设置 设置指定目录的acl。&#xA;setfacl -m user:site_user:rwx /home/fdn 参考文章 《在 Linux 上给用户赋予指定目录的读写权限》 《setfacl命令》 Unix / Linux change a user&amp;rsquo;s home directory - usermod give read write access to directory in linux </description>
     </item>
     <item>
+      <title>spark安装</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_spark_centos/</link>
+      <pubDate>Wed, 15 Apr 2020 00:08:08 +0800</pubDate>
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_spark_centos/</guid>
+      <description>Spark：v2.4&#xA;一、基础软件 1. R-lang sudo yum -y install epel-release sudo yum install R 注意：如果Java没有安装，会附带着安装OpenJDK。&#xA;2. Scala wget https://downloads.lightbend.com/scala/2.12.8/scala-2.12.8.tgz tar xvf scala-2.12.8.tgz sudo mv scala-2.12.8 /usr/lib sudo ln -s /usr/lib/scala-2.12.8 /usr/lib/scala 1) add path $vi ~/.bashrc PATH=$PATH:/usr/lib/scala/bin 二、Spark 1. down &amp;amp; unzip v2.4.1&#xA;mkdir -p ~/app/spark tar zxvf spark-2.4.1-bin-hadoop2.7.tgz -C ~/app/spark mv ~/app/spark/spark-2.4.1-bin-hadoop2.7 ~/app/spark/2.4.1 2. test ./bin/spark-shell --master local[2] input:&#xA;for (i &amp;lt;- 1 to 3; j &amp;lt;- 1 to 3 if i !</description>
+    </item>
+    <item>
       <title>Hadoop配置 - yarn</title>
       <link>https://tdtc-hrb.github.io/csdn/post/ops_hadoop_cluster_yarn/</link>
       <pubDate>Tue, 14 Apr 2020 10:08:08 +0800</pubDate>
@@ -786,11 +856,39 @@
       <description>PART I: Struts2 Refence: 《how to create a struts2 web application》&#xA;1. pom.xml 1) Struts2 struts2-spring-plugin&#xA;&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.apache.struts&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;struts2-spring-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;${struts2.version}&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; 2) jsp servlet &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;javax.servlet&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;javax.servlet-api&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.1.0&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; jstl &amp;lt;!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;javax.servlet.jsp.jstl&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jstl&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.2&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; 2. web.xml filter &amp;lt;filter&amp;gt; &amp;lt;filter-name&amp;gt;struts2&amp;lt;/filter-name&amp;gt; &amp;lt;filter-class&amp;gt;org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter&amp;lt;/filter-class&amp;gt; &amp;lt;/filter&amp;gt; 3. struts.xml &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;!DOCTYPE struts PUBLIC &amp;#34;-//Apache Software Foundation//DTD Struts Configuration 2.5//EN&amp;#34; &amp;#34;http://struts.apache.org/dtds/struts-2.5.dtd&amp;#34;&amp;gt; &amp;lt;struts&amp;gt; &amp;lt;constant name=&amp;#34;struts.devMode&amp;#34; value=&amp;#34;true&amp;#34; /&amp;gt; &amp;lt;package name=&amp;#34;basicstruts2&amp;#34; extends=&amp;#34;struts-default&amp;#34;&amp;gt; &amp;lt;action name=&amp;#34;index&amp;#34;&amp;gt; &amp;lt;result&amp;gt;/index.</description>
     </item>
     <item>
+      <title>update redux</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/js-redux-update/</link>
+      <pubDate>Fri, 10 Apr 2020 09:26:39 +0800</pubDate>
+      <guid>https://tdtc-hrb.github.io/csdn/post/js-redux-update/</guid>
+      <description>1. initial state db.json&#xA;const initialState = { &amp;#34;recipes&amp;#34;: [ { &amp;#34;name&amp;#34;: &amp;#34;Omelette&amp;#34; }, { &amp;#34;name&amp;#34;: &amp;#34;Waffle&amp;#34; } ], &amp;#34;ingredients&amp;#34;: [ { &amp;#34;name&amp;#34;: &amp;#34;Eggs&amp;#34;, &amp;#34;quantity&amp;#34;: 2, &amp;#34;measure&amp;#34;: &amp;#34;large&amp;#34;, &amp;#34;recipe&amp;#34;: &amp;#34;Omelette&amp;#34; }, { &amp;#34;name&amp;#34;: &amp;#34;Eggs&amp;#34;, &amp;#34;quantity&amp;#34;: 1, &amp;#34;measure&amp;#34;: &amp;#34;large&amp;#34;, &amp;#34;recipe&amp;#34;: &amp;#34;Waffle&amp;#34; }, { &amp;#34;name&amp;#34;: &amp;#34;Milk&amp;#34;, &amp;#34;quantity&amp;#34;: 1, &amp;#34;measure&amp;#34;: &amp;#34;cups&amp;#34;, &amp;#34;recipe&amp;#34;: &amp;#34;Waffle&amp;#34; }, { &amp;#34;name&amp;#34;: &amp;#34;Sugar&amp;#34;, &amp;#34;quantity&amp;#34;: 2, &amp;#34;measure&amp;#34;: &amp;#34;tbsp&amp;#34;, &amp;#34;recipe&amp;#34;: &amp;#34;Waffle&amp;#34; } ] } 2. reducer const reducer = (state, action) =&amp;gt; { switch (action.</description>
+    </item>
+    <item>
+      <title>ES6 展开运算符</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/js-es6-spreed-operator/</link>
+      <pubDate>Fri, 10 Apr 2020 08:26:39 +0800</pubDate>
+      <guid>https://tdtc-hrb.github.io/csdn/post/js-es6-spreed-operator/</guid>
+      <description>Multiple return values const configStore = () =&amp;gt; { const sagaMiddleware = createSagaMiddleware() return { ...createStore(rootReducer, applyMiddleware(sagaMiddleware)), runSaga: sagaMiddleware.run, } } Reference Spread syntax </description>
+    </item>
+    <item>
+      <title>rootredux</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/js-redux-root/</link>
+      <pubDate>Fri, 10 Apr 2020 08:26:39 +0800</pubDate>
+      <guid>https://tdtc-hrb.github.io/csdn/post/js-redux-root/</guid>
+      <description>1. split const reducer = (state, action) =&amp;gt; { switch (action.type) { case &amp;#39;ADD_RECIPE&amp;#39;: return Object.assign( {}, state, { recipes: state.recipes.concat({name : action.name}) }); case &amp;#39;ADD_INGREDIENT&amp;#39;: const myIngredients = { name : action.name, quantity: action.quantity, measure: action.measure, recipe: action.recipe }; return Object.assign( {}, state, { ingredients: state.ingredients.concat(myIngredients) }); } return state; } recipeReducer export const recipeReducer = (stat, action) =&amp;gt; { switch (action.type) { case &amp;#39;ADD_RECIPE&amp;#39;: return Object.assign( {}, state, { ingredients: state.</description>
+    </item>
+    <item>
       <title> 使用脚本安装gitlab</title>
       <link>https://tdtc-hrb.github.io/csdn/post/gitlab-install-shell/</link>
       <pubDate>Fri, 10 Apr 2020 02:15:39 +0800</pubDate>
       <guid>https://tdtc-hrb.github.io/csdn/post/gitlab-install-shell/</guid>
       <description>一、安装 1. depend $sudo apt-get update $sudo apt-get install ca-certificates curl openssh-server postfix vim 2. down script $curl -LO https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh 3. exec script $sudo bash ~/script.deb.sh 4. install If it is &amp;ldquo;qiang&amp;rdquo;, please see 《代理set - ubuntu》&#xA;$sudo apt-get install gitlab-ce 5. config 1) ufw $sudo ufw allow http $sudo ufw allow https $sudo ufw allow OpenSSH 2) gitlab.rb $sudo vim /etc/gitlab/gitlab.rb # If your GitLab server does not have a domain name, you will need to use an IP # address instead of a domain and keep the protocol as `http`.</description>
+    </item>
+    <item>
+      <title>JS的lambda表达式</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/js-lambda/</link>
+      <pubDate>Fri, 10 Apr 2020 02:14:39 +0800</pubDate>
+      <guid>https://tdtc-hrb.github.io/csdn/post/js-lambda/</guid>
+      <description>Before rewriting function selectedReddit(state = &amp;#39;user/8&amp;#39;, action){ switch (action.type) { case SELECT_REDDIT: return action.reddit default: return state } } After rewriting const selectedReddit = (state = &amp;#39;user/8&amp;#39;, action) =&amp;gt; { switch (action.type) { case SELECT_REDDIT: return action.reddit default: return state } } 参考 《Arrow functions》</description>
     </item>
   </channel>
 </rss>

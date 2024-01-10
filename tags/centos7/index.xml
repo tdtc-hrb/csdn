@@ -6,14 +6,14 @@
     <description>Recent content in CentOS7 on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 12 Jun 2022 12:58:39 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 11 Jun 2022 04:58:39 +0800</lastBuildDate>
     <atom:link href="https://tdtc-hrb.github.io/csdn/tags/centos7/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>RHEL更换CentOS Yum</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_rhel_repo/</link>
-      <pubDate>Sun, 12 Jun 2022 12:58:39 +0800</pubDate>
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_rhel_repo/</guid>
-      <description>v7.x Red Hat Enterprise Linux7.x&#xA;Yum Repo rpm -aq|grep yum|xargs rpm -e --nodeps&#xD;rpm -ivh http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/wget-1.14-18.el7_6.1.x86_64.rpm down:&#xA;wget http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/yum-metadata-parser-1.1.4-10.el7.x86_64.rpm&#xD;wget http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/yum-3.4.3-168.el7.centos.noarch.rpm&#xD;wget http://mirrors.ustc.edu.cn/centos/7.9.2009/os/x86_64/Packages/yum-plugin-fastestmirror-1.1.31-54.el7_8.noarch.rpm install:&#xA;rpm -ivh yum-metadata-parser-1.1.4-10.el7.x86_64.rpm&#xD;rpm -ivh yum-3.4.3-168.el7.centos.noarch.rpm yum-plugin-fastestmirror-1.1.31-54.el7_8.noarch.rpm repo file /etc/yum.repos.d/CentOS-Base.repo CentOS-Base.repo - cento7&#xA;# CentOS-Base.repo&#xD;#&#xD;# The mirror system uses the connecting IP address of the client and the&#xD;# update status of each mirror to pick mirrors that are updated to and&#xD;# geographically close to the client.</description>
+      <title>在RHEL/CentOS安装Redis</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/redis-centos7/</link>
+      <pubDate>Sat, 11 Jun 2022 04:58:39 +0800</pubDate>
+      <guid>https://tdtc-hrb.github.io/csdn/post/redis-centos7/</guid>
+      <description>0. preinstall User set $ useradd tdtc $ passwd tdtc Yum Repo 1) yum install $sudo yum groupinstall &amp;#34;Development Tools&amp;#34; $sudo yum install tcl wget v6+ Just to clarify: there is no way this issue will be fixed, Redis &amp;gt;= 6 will require a C11 compiler.&#xA;sudo yum install centos-release-scl sudo yum install devtoolset-8 scl enable devtoolset-8 bash 2) verification $gcc -v $make -v $echo &amp;#39;puts [info patchlevel];exit 0&amp;#39; | tclsh 1.</description>
     </item>
   </channel>
 </rss>

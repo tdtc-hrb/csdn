@@ -186,13 +186,93 @@
 	
 	    <a class="newer-posts" href="/csdn/page/5/">&larr; Newer Posts</a>
 	
-	<span class="page-number">Page 6 of 12</span>
+	<span class="page-number">Page 6 of 13</span>
 	
 	    <a class="older-posts" href="/csdn/page/7/">Older Posts &rarr;</a>
 	
 </nav>
 
     </div>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql-master-slave-replication/">MySQL 主从复制</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>在进行配置前，请确认已经安装 mysql5.7 - CentOS
+1. 网络配置 Replication Group 1:
+Name IP Memo mysql1 192.168.0.160 Master mysql11 192.168.0.161 Slave mysql12 192.168.0.162 Slave Replication Group 2(Maria DB):
+Name IP Memo mysql2 192.168.0.170 Master mysql21 192.168.0.171 Slave mysql22 192.168.0.172 Slave 2. Configure MySQL cluster 1) Master Server Setting the Replication Master Configuration
+/etc/my.cnf
+[mysqld] log-bin=mysql160-bin server-id=160 2) Slave Server Setting the Replication Slave Configuration
+/etc/my.cnf
+Slave 1 [mysqld] server-id=161 Slave 2 [mysqld] server-id=162 3. <a class="read-more" href="/csdn/post/mysql-master-slave-replication/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-04-13T09:38:08&#43;08:00">
+            13 Apr 2022
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_keepalived/">安装配置Keepalived</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>OS: CentOS7 minimal(VMware)
+一、安装 0. prepare tool $yum group list 1) dev tools $yum group install &#34;Development Tools&#34; 2) openssl-devel update see &ldquo;nginx’s load balancing的安装部分的update OpenSSL&rdquo;
+$yum install openssl-devel 3) libnl $yum install libnl libnl-devel libnfnetlink-devel 1. keepalived v1.4.5
+down and unzip $wget http://www.keepalived.org/software/keepalived-1.4.5.tar.gz $ tar zxvf keepalived-1.4.5.tar.gz installation $cd keepalived-1.4.5 $./configure --prefix=/usr/local/keepalived $make Root permission Required
+$make install setup $cp /usr/local/keepalived/sbin/keepalived /usr/sbin/ $mkdir -p /etc/keepalived $cp /usr/local/keepalived/etc/keepalived/keepalived.conf /etc/keepalived/keepalived.conf $cp /usr/local/keepalived/etc/sysconfig/keepalived /etc/sysconfig/ $cp /tmp/keepalived-1. <a class="read-more" href="/csdn/post/ops_keepalived/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-04-13T08:38:08&#43;08:00">
+            13 Apr 2022
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_department_cups/">共享打印机 - CUPS</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Tips: Ubuntu已经安装了打印机了，我们怎么共享它呢？
+安装CUPS Ubuntu
+#apt-get install cups 客户端设置 Windows
+“打印机和传真”-〉“添加打印机” （注意：根据办公环境的网络设置自行填写） 插入HP的驱动光盘:  <a class="read-more" href="/csdn/post/ops_department_cups/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-04-13T03:18:08&#43;08:00">
+            13 Apr 2022
+        </time>
+    </footer>
+</article>
 
     
         <article class="post post">
@@ -244,6 +324,31 @@ ol li 就表示当前元素（ol）下的所有li元素。
 
         
         <time class="post-date" datetime="2022-04-10T16:26:39&#43;08:00">
+            10 Apr 2022
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/js-redux-mini/">最小实现redux - 分解redux</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>project: https://gitee.com/xiaobin80/starter
+application app.js
+include createStore import { createStore } from &#39;redux&#39; Establish reducer const reducerName = (state, action) =&gt; { state; } invoke createStore() const store = createStore(reducerName); html public/index.html
+&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;title&gt;The Complete Redux Book - Example Application&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&#34;app&#34;&gt; Redux is running: &lt;span id=&#34;counter&#34;&gt;&lt;/span&gt; &lt;/div&gt; &lt;script type=&#34;text/javascript&#34; src=&#34;../app.js&#34;&gt;&lt;/script&gt; &lt;/body&gt; &lt;/html&gt;  <a class="read-more" href="/csdn/post/js-redux-mini/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-04-10T08:26:39&#43;08:00">
             10 Apr 2022
         </time>
     </footer>
@@ -350,120 +455,12 @@ STDMETHODIMP CRepoFmt::getInqRepo(ULONG iStation, SAFEARRAY** ret) { SAFEARRAY *
 </article>
 
     
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_dc_redis_ubuntu/">安装redis-server</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>本文适用范围：
-WSL1(Ubuntu) 开发环境 Ubuntu 生产环境 1. 安装 推荐使用PPA模式安装redis-server
-1.1 增加PPA sudo apt-add-repository ppa:chris-lea/redis-server sudo apt-get update install sudo apt-get install redis-server 1.2 配置 警告清除 Memory WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add &#39;vm.overcommit_memory = 1&#39; to /etc/sysctl.conf and then reboot or run the command &#39;sysctl vm.overcommit_memory=1&#39; for this to take effect. A: add vm.overcommit_memory=1 edit sysctl.conf:
-sudo vi /etc/sysctl. <a class="read-more" href="/csdn/post/ops_dc_redis_ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2021-09-08T08:08:08&#43;08:00">
-            8 Sep 2021
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/apt-oper-ubuntu/">apt的安装问题</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>apt适合手动输入(有交互); apt-get适合脚本(无交互).
-Manage 卸载 apt-get autoremove vsftpd --purge 安装指定版本 apt-get install &lt;package name&gt;=&lt;version&gt; 列出版本 apt-cache madison &lt;&lt;package name&gt;&gt; DebIan sudo using root:
-su - root install:
-apt install sudo chmod 640 /etc/sudoers 在配置文件/etc/sudoers加入：
-tdtc ALL=(ALL:ALL) ALL 把文件权限改为只读:
-chmod 440 /etc/sudoers apt source sudo vi /etc/apt/sources.list 注释掉&quot;deb cdrom:xxx&quot;
-##deb cdrom:xxx Ref Debian中安装使用sudo命令 Debian取消从光盘安装软件的方式  <a class="read-more" href="/csdn/post/apt-oper-ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2021-07-08T02:20:39&#43;08:00">
-            8 Jul 2021
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_grub_ubuntu/">grub救援模式</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p> 出现“grub rescue&gt;”提示符；也称grub救援模式。
-1. 设置引导 (hd?,?)：安装的引导分区 在我的机器是(hd0, msdos3)
-grub rescue&gt;ls grub rescue&gt;ls (hd?,?)/boot/grub grub rescue&gt;set root(hd?,?) grub rescue&gt;set prefix=(hd?,?)/boot/grub insmod one:
-insmod /boot/grub/normal.mod /boot/grub/normal two:
-insmod normal normal 2. 更新grub 在终端上执行：
-sudo grub-install /dev/sda sudo update-grub  <a class="read-more" href="/csdn/post/ops_grub_ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2021-06-15T00:19:08&#43;08:00">
-            15 Jun 2021
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/c-string-h2i/">十六进制转十进制</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>工作原理：
-16进制数 * 16n 之和就是10进制数。
-手算 16进制: 0x61E
-0位： E * 160 = 14 1位： 1 * 161 = 16 2位： 6 * 162 = 1536
-10进制： 14+16+1536 = 1566
-code 程序的需要两部分组成：
-权值计算 16的几次方，power(16, x) unsigned long power(int a, int b) { int i; unsigned long result = 1; for(i = 0; i &lt; b; i++) result = result * a; return result; }; 单16进制值转10进制值 例如：如果是F，则表示15 switch (ch) { case &#39;0&#39;: iCh = 0; break; case &#39;1&#39;: iCh = 1; break; case &#39;2&#39;: iCh = 2; break; case &#39;3&#39;: iCh = 3; break; case &#39;4&#39;: iCh = 4; break; case &#39;5&#39;: iCh = 5; break; case &#39;6&#39;: iCh = 6; break; case &#39;7&#39;: iCh = 7; break; case &#39;8&#39;: iCh = 8; break; case &#39;9&#39;: iCh = 9; break; case &#39;a&#39;: iCh = 10; break; case &#39;b&#39;: iCh = 11; break; case &#39;c&#39;: iCh = 12; break; case &#39;d&#39;: iCh = 13; break; case &#39;e&#39;: iCh = 14; break; case &#39;f&#39;: iCh = 15; break; default: iCh = -1; break; } 为了满足，把所有输入转换为小写字母，可以使用系统函数tolower()或者我们自己写的函数toLower() <a class="read-more" href="/csdn/post/c-string-h2i/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2021-05-01T05:08:08&#43;08:00">
-            1 May 2021
-        </time>
-    </footer>
-</article>
-
-    
 
     <nav class="pagination" role="navigation">
 	
 	    <a class="newer-posts" href="/csdn/page/5/">&larr; Newer Posts</a>
 	
-	<span class="page-number">Page 6 of 12</span>
+	<span class="page-number">Page 6 of 13</span>
 	
 	    <a class="older-posts" href="/csdn/page/7/">Older Posts &rarr;</a>
 	

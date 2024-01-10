@@ -153,13 +153,258 @@
 	
 	    <a class="newer-posts" href="/csdn/post/page/9/">&larr; Newer Posts</a>
 	
-	<span class="page-number">Page 10 of 12</span>
+	<span class="page-number">Page 10 of 13</span>
 	
 	    <a class="older-posts" href="/csdn/post/page/11/">Older Posts &rarr;</a>
 	
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/dp-factory-java/">工厂模式</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>09年5月CSDN一网友提出如下问题：
+设计一个用于管理银行客户的类BankCustomer： 仅描述客户的几个重要方面： 帐号、身份证号、姓名、联系方式、密码、账户余额。 所有的成员变量均用private访问控制，因此每一个成员变量就要有相应的存取器 （getter和setter，即获取和设置其值的相应的成员方法。需要setter还是getter，还是两者都要，视情况而定）
+成员方法：开户（开户时必须要有身份证号），系统自动生成帐号，帐号使用系统时间（格式：&quot;yyyyMMddHHmmss&quot;14位），初始密码为“666666”。注意开户和构造方法之间的关系。存钱、取钱、显示账户信息、修改密码（密码最短要六位）怎样在main中使用这个类，自行安排，要表现出你设计的类的各个方面，并在main中用英语加以注释类图如下：（使用Enterprise Architect绘制） &mdash;&mdash;&mdash;&mdash;factory部分&mdash;&mdash;&mdash;&mdash;-
+Customer： 抽象类（factory祖先类）
+BankCustomer：继承类（factory类）
+〉〉〉〉〉〉〉〉〉〉扩展部分
+ContactWay：联系方式（factory引用类）
+IM ：实时消息（ContactWay引用类）
+&mdash;&mdash;&mdash;&mdash;product部分&mdash;&mdash;&mdash;&mdash;- Bank： 接口（product接口）
+Account： 实现类（concrete product类） <a class="read-more" href="/csdn/post/dp-factory-java/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-08T10:08:08&#43;08:00">
+            8 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/jlink-fixed2/">clone问题</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>在J-Link驱动自动升级后，会出现下面情况。
+The connected emulator is a j-link clone. 修改固件 使用UltraEdit打开J-link_V8.bin
+修改FF00h行 由原来的
+76 B4 32 01 FF FF FF FF FF FF FF FF FF FF FF FF 变更为：
+FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 修改FF30h和FF40h行 由原来的
+(1) FF30h
+68 42 50 2C 4A 46 6C 61 73 68 2C 47 44 42 46 75 (2) FF40h
+6C 6C 00 FF 80 20 20 20 7B E2 B7 DD C4 07 C2 0A 变更为： 红色即为修改的数值。 <a class="read-more" href="/csdn/post/jlink-fixed2/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-05T10:08:08&#43;08:00">
+            5 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/jlink-fixed1/">修复山寨版的J-Link</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Fixed J-Link Erase Power On Jump &ldquo;ERASE&rdquo;(JP3) Wait for 5s Break &ldquo;ERASE&rdquo;(JP3) Power Off TST Jump &ldquo;TST&rdquo;(JP1) Power On Wait for 10s Power Off Break &ldquo;TST&rdquo;(JP1) 重新上电后，电脑会弹出发现新硬件：“atm6124.Sys ATMEL AT91xxxxx Test Board”。
+Then PC will find the &ldquo;ATMEL AT91xxxxx Test Board&rdquo;, and Led on(&ldquo;ERR&rdquo;)
+SAM-PROG 注意：必须在x86（32位）下运行！
+Down at91 isp V1.12
+Exec SAM-PROG v2.4
+Setup first, click &ldquo;Browse&rdquo; choose &ldquo;J-link_V8.bin&rdquo;
+Second, Select &ldquo;Set Security Bit&rdquo;
+Note: J-link_V8.bin is example file, It must be modified to use. <a class="read-more" href="/csdn/post/jlink-fixed1/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-05T08:08:08&#43;08:00">
+            5 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_haproxy/">安装配置haproxy</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>系统设置 新增用户 $useradd haproxy $passwd haproxy sysctl /etc/sysctl.conf
+net.ipv4.tcp_tw_reuse = 1 net.ipv4.ip_local_port_range = 1024 65023 net.ipv4.tcp_max_syn_backlog = 10240 net.ipv4.tcp_max_tw_buckets = 400000 net.ipv4.tcp_max_orphans = 60000 net.ipv4.tcp_synack_retries = 3 net.core.somaxconn = 10000 firewall 1) L7 $firewall-cmd --permanent --zone=public --add-service=http $firewall-cmd --permanent --zone=public --add-port=6080/tcp 2) L4 mysql
+$firewall-cmd --permanent --zone=public --add-port=13306/tcp 生效
+$firewall-cmd --reload rsyslog的安装 install $yum install rsyslog config 1) rsyslog /etc/rsyslog.d/haproxy.conf
+$ModLoad imudp $UDPServerRun 514 $template Haproxy,”%msg%\n” local2.=info -/var/log/haproxy.log;Haproxy local2.notice -/var/log/haproxy-status.log;Haproxy ### keep logs in localhost ## local2. <a class="read-more" href="/csdn/post/ops_haproxy/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-04T18:08:08&#43;08:00">
+            4 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c-string-search/">查找字符串</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>我们经常要用到查找某个字符串的功能，使用C++或者其他高级语言实现起来很简单；但是使用C语言实现就不那么easy了。
+切割字符串 strtok函数
+char *strtok_s( char *strToken, const char *strDelimit, char **context ); strToken 要切割的字符串 strDelimit 分隔符 context 为空的字符串地址 匹配字符串 strstr函数
+char *strstr( const char *str, const char *strSearch ); // C only str 被搜索的字符串 strSearch 要搜索的字符串 函数getStrVal_s char *getStrVal_s(char *str, char key[]) { char* strDelimit = &#34;;&#34;; char *strSeq = &#34;&#34;; char *context = NULL; char *token = strtok_s((char*)str, strDelimit, &amp;context); while (token != NULL) { char* temp = strstr(token, key); if (temp ! <a class="read-more" href="/csdn/post/c-string-search/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-04T16:08:08&#43;08:00">
+            4 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c-string-inverted/">倒序排列字符串</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>指针 首先，我们要给出一个长度够用的字符串指针（dest）。 然后，递减这个指针到0。在递减的过程中，dest累加而我们预设的字符串累减。这种方式是指针标准操作方式。 我使用了预设字符串指针地址+这个字符串长度变量这种方式（因为递减长度也是在递减）。
+数组 介绍省略。 代码如下：
+#include &lt;string.h&gt; #include &lt;stdlib.h&gt; #include &lt;stdio.h&gt; int main(int argc, char* argv[]) { char *src = &#34;hello,world&#34;; int len = strlen(src); char *dest = NULL; dest = (char *)malloc(len + 1); // dest = (char *)malloc(len + 1); // standard: 要为&#39;\0&#39;分配一个空间 char *d = dest; // char *s = &amp;src[len - 1]; // standard: 指向最后一个字符 /* One way */ while (len-- != 0) { *d++ = *(src + len); // one way //*d++ = *s--; // standard: } *d = 0; // standard: 尾部要加0 /* Two way */ /* int i = 0; while (len-- ! <a class="read-more" href="/csdn/post/c-string-inverted/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-04T14:08:08&#43;08:00">
+            4 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c-preprocessor1/">c预处理器</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>我们在编写C程序时常常与预处理器打交道。
+比如下列华氏转摄氏程序
+/* * celsius.c * * Created on: 2012-11-14 * Author: xiaobin */ #include &lt;stdio.h&gt; #define FREEZING_PT (16.0 *	\ 2) #define SCALE_FACTOR (5.0 / 9.0) int main(void) { float fahrenheit, celsius; printf(&#34;Enter Fahrenheit temperature: &#34;); scanf(&#34;%g&#34;, &amp;fahrenheit); printf(&#34;%g\n&#34;, fahrenheit); celsius = (fahrenheit - FREEZING_PT) * SCALE_FACTOR; printf(&#34;Celsius equivalent is: %g&#34;, celsius); return 0; } 预处理器换行 指令总是在第一个换行符处结束，除非明确地指明要继续。 如果想在下一行继续指令，我们必须在当前行的末尾使用\字符。
+#define FREEZING_PT 16.0 *	\ 2 替换列表的小括号 尽量使用小括号把替换列表括起来，这样便于阅读
+带参数的预处理
+上述程序可以使用一个带参数的预处理来替代程序中的处理语句
+#define FA2CE(f) ((f - FREEZING_PT) * SCALE_FACTOR) 附：带参预处理器程序 /* * celsius. <a class="read-more" href="/csdn/post/c-preprocessor1/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-04T12:08:08&#43;08:00">
+            4 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mdk-ak100-driver/">AK100驱动过时问题</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>IDE：MDKV4.0 - V4.74 AK100驱动：V6.0 现象：&quot;..\TKScope\UL2ARM_TKSCP_DRV_ARM_for_AGDI.dll - Driver is outdated !&quot; 解决办法：
+删除工程目录中的“TKScope.cfg”
+重新设置调试器 &ldquo;Target Options&rdquo; -&gt; &ldquo;Debug&rdquo; 选择TKScope 硬件选择（调试器与MCU） 选择调试器 选择MCU对应的调试器
+其他设置（主要设置、附加设置、TAP设置、程序烧写、初始化宏、硬件自检）请参考“用户手册”。 <a class="read-more" href="/csdn/post/mdk-ak100-driver/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-04T10:08:08&#43;08:00">
+            4 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/embeded_ip_nfs/">设置固定IP</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p> 开发板访问NFS 服务器IP地址是固定的。
+一、U16及以下 （Ubuntu16.04-） 使用root权限更改interfaces文件。
+#gedit /etc/network/interfaces 完整例子：
+/etc/network/interfaces
+auto lo iface lo inet loopback auto eth0 iface eth0 inet static address 192.168.0.111 netmask 255.255.255.0 gateway 192.168.0.1 二、U18及以上 （Ubuntu18.04+）
+#vi /etc/netplan/50-cloud-init.yaml network: ethernets: ens32: #dhcp4: true addresses: - 192.168.0.124/24 gateway4: 192.168.0.1 nameservers: addresses: [192.168.0.1, 219.146.3.226, 219.146.3.230, 219.146.3.238] optional: true version: 2 ens32：你的网卡，根据实际情况设置 dhcp4，gateway4：IPv4协议下的。
+apply #netplan apply Reference network interface configuration 网络配置 - ubuntu Ubuntu 18.04修改IP地址 - zhengchaooo  <a class="read-more" href="/csdn/post/embeded_ip_nfs/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-16T00:08:08&#43;08:00">
+            16 Apr 2020
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -187,252 +432,12 @@ Reference Mutt – A Command Line Email Client to Send Mails from Terminal Mutt:
 </article>
 
 	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_mail_msmtp/">mail的发送</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>使用msmtp实现 installation down $wget https://marlam.de/msmtp/releases/msmtp-1.6.8.tar.xz install $xz -d msmtp-1.6.8.tar.xz$tar xvf msmtp-1.6.8.tar$cd msmtp-1.6.8$./configure --prefix=/user/local/msmtp$make Then install using root
-$make install configuration 需要在user的根目录建立一个新文件：.msmtprc
-$cd ~ $vi .msmtprc $chmod 600 .msmtprc .msmtprc
-defaults logfile ~/.msmtp/msmtp.log # The SMTP server of the provider. account love_shidie host smtp.163.com from love_shidie@163.com auth login user love_shidie@163.com passwordeval gpg --no-tty -q -d ~/.msmtp/love_shidie-password.gpg # Set a default account account default: love_shidie r+w $chmod 600 . <a class="read-more" href="/csdn/post/ops_mail_msmtp/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-15T21:08:08&#43;08:00">
-            15 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_spark_cluster/">spark cluster</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>OS: CentOS7
-Prepare 已经安装了《ZooKeeper multi-server install》 已经安装了《hadoop - cluster》 Stage I: Installation spark安装 - CentOS Firewall设置请参见《firewall-soft list(port)》 设置OpenJDK请参见《设置OpenJDK - CentOS》 set up 详见Reference[4]
-Stage II: Run 1. ZK zkServer.sh start 2. Hadoop 1) HDFS see 《hadoop - cluster - 3.1 HDFS》
-2) YARN see 《hadoop - cluster - 3.2 YARN》
-3. Spark （server3，4）
-$SPARK_HOME/sbin/start-all.sh 1) other site $SPARK_HOME/sbin/start-master.sh Web: http://192.168.42.109:8082/
-http://192.168.42.110:8082/
-or http://192.168.42.109:8081/
-http://192.168.42.110:8081/
-Stage III: Stop $SPARK_HOME/sbin/stop-all.sh Reference Running Spark on YARN hadoop - cluster 《Spark学习之路 （二）Spark2. <a class="read-more" href="/csdn/post/ops_spark_cluster/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-15T02:08:08&#43;08:00">
-            15 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_spark_config/">spark配置</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>1. spark env spark-env.sh
-1) hadoop path export HADOOP_HOME=/home/tdtc/app/hadoop/2.7.7 export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop 2) spark worker 使用的内存和cpu core数
-export SPARK_WORKER_MEMORY=128m export SPARK_WORKER_CORES=1 3) recovery(zookeeper) export SPARK_DAEMON_JAVA_OPTS=&#34;-Dspark.deploy.recoveryMode=ZOOKEEPER -Dspark.deploy.zookeeper.url=tdtc201:2181,tdtc202:2181,tdtc203:2181,tdtc204:2181 -Dspark.deploy.zookeeper.dir=/spark2&#34; recoveryMode spark.deploy.recoveryMode=ZOOKEEPER url spark.deploy.zookeeper.url=tdtc201:2181,tdtc202:2181,tdtc203:2181,tdtc204:2181 directory 储存在zk中的位置
-spark.deploy.zookeeper.dir=/spark2 2. slaves 注意：有几个YARN，就设置几个slaves！！！
-../conf/slaves
-tdtc203 tdtc204 Reference how-to-set-up-spark-with-zookeeper-for-ha  <a class="read-more" href="/csdn/post/ops_spark_config/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-15T01:08:08&#43;08:00">
-            15 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_selinux/">SELinux的开启/关闭</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p> (root权限)
-SELinux(Security-Enhanced Linux) 是美国国家安全局（NSA）对于强制访问控制的实现，是 Linux历史上最杰出的新安全子系统。
-1. 临时 临时的意思就是宽容模式(0)强制模式(1)与的切换 默认是：强制模式
-强制模式 $setenforce 1 宽容模式 临时关闭 $setenforce 0 2. 永久 /etc/selinux/config
-开启 SELINUX=enforcing 关闭 SELINUX=disabled 3. 查看SELinux的工作模式 getenforce  <a class="read-more" href="/csdn/post/ops_selinux/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-15T00:20:08&#43;08:00">
-            15 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_useradd_centos/">增加用户</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p> ali云服务器
-1. User Add and Set password 1) add user useradd	site_user 2) set passwd passwd -x 180 site_user 3) set home_dir usermod -d /home/fdn site_user 2. assigning permissions 如果多个目录需要设置，则多次重复&quot;(2)设置&quot;即可。
-文件系统是否支持acl
-df -T | awk &#39;{print $1,$2,$NF}&#39; | grep &#34;^/dev&#34; grep -i acl /boot/config* 分区是否支持acl
-注意：在ali服务器上是vda1。
-tune2fs -l /dev/vda1 | grep acl 1) 查看 目录的acl设置情况。
-getfacl	/home/fdn 2) 设置 设置指定目录的acl。
-setfacl -m user:site_user:rwx /home/fdn 参考文章 《在 Linux 上给用户赋予指定目录的读写权限》 《setfacl命令》 Unix / Linux change a user&rsquo;s home directory - usermod give read write access to directory in linux  <a class="read-more" href="/csdn/post/ops_useradd_centos/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-15T00:18:08&#43;08:00">
-            15 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_hadoop_cluster_yarn/">Hadoop配置 - yarn</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>(../etc/hadoop/yarn-site.xml)
-1. ResourceManager HA &lt;property&gt; &lt;name&gt;yarn.resourcemanager.ha.enabled&lt;/name&gt; &lt;value&gt;true&lt;/value&gt; &lt;/property&gt; &lt;property&gt; &lt;name&gt;yarn.resourcemanager.cluster-id&lt;/name&gt; &lt;value&gt;cluster1&lt;/value&gt; &lt;/property&gt; &lt;property&gt; &lt;name&gt;yarn.resourcemanager.ha.rm-ids&lt;/name&gt; &lt;value&gt;rm1,rm2&lt;/value&gt; &lt;/property&gt; &lt;property&gt; &lt;name&gt;yarn.resourcemanager.hostname.rm1&lt;/name&gt; &lt;value&gt;tdtc203&lt;/value&gt; &lt;/property&gt; &lt;property&gt; &lt;name&gt;yarn.resourcemanager.hostname.rm2&lt;/name&gt; &lt;value&gt;tdtc204&lt;/value&gt; &lt;/property&gt; &lt;property&gt; &lt;name&gt;yarn.resourcemanager.webapp.address.rm1&lt;/name&gt; &lt;value&gt;tdtc203:8088&lt;/value&gt; &lt;/property&gt; &lt;property&gt; &lt;name&gt;yarn.resourcemanager.webapp.address.rm2&lt;/name&gt; &lt;value&gt;tdtc204:8088&lt;/value&gt; &lt;/property&gt; &lt;property&gt; &lt;name&gt;yarn.resourcemanager.zk-address&lt;/name&gt; &lt;value&gt;tdtc201:2181,tdtc202:2181,tdtc203:2181&lt;/value&gt; &lt;/property&gt; 2. Resource Manager Restart see Reference[3]
-&lt;property&gt; &lt;name&gt;yarn.resourcemanager.recovery.enabled&lt;/name&gt; &lt;value&gt;true&lt;/value&gt; &lt;/property&gt; 1) zookeeper &lt;property&gt; &lt;name&gt;yarn.resourcemanager.store.class&lt;/name&gt; &lt;value&gt;org.apache.hadoop.yarn.server.resourcemanager.recovery.ZKRMStateStore&lt;/value&gt; &lt;/property&gt; 3. Aux Service（Auxiliary Service） 1) base &lt;property&gt; &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt; &lt;value&gt;mapreduce_shuffle&lt;/value&gt; &lt;/property&gt; 2) spark &lt;property&gt; &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt; &lt;value&gt;spark_shuffle,mapreduce_shuffle&lt;/value&gt; &lt;/property&gt; 4. log aggregation yarn-default. <a class="read-more" href="/csdn/post/ops_hadoop_cluster_yarn/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-14T10:08:08&#43;08:00">
-            14 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_hadoop_cluster_hdfs/">Hadoop配置 - hdfs</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>(../etc/hadoop/hdfs-site.xml)
-1. name services &lt;property&gt; &lt;name&gt;dfs.nameservices&lt;/name&gt; &lt;value&gt;mycluster&lt;/value&gt; &lt;/property&gt; 1) name node &lt;property&gt; &lt;name&gt;dfs.ha.namenodes.mycluster&lt;/name&gt; &lt;value&gt;nn1,nn2&lt;/value&gt; &lt;/property&gt; 2) RPC(name node) &lt;property&gt; &lt;name&gt;dfs.namenode.rpc-address.mycluster.nn1&lt;/name&gt; &lt;value&gt;tdtc201:8020&lt;/value&gt; &lt;/property&gt; &lt;property&gt; &lt;name&gt;dfs.namenode.rpc-address.mycluster.nn2&lt;/name&gt; &lt;value&gt;tdtc202:8020&lt;/value&gt; &lt;/property&gt; 3) Http(name node) &lt;property&gt; &lt;name&gt;dfs.namenode.http-address.mycluster.nn1&lt;/name&gt; &lt;value&gt;tdtc201:50070&lt;/value&gt; &lt;/property&gt; &lt;property&gt; &lt;name&gt;dfs.namenode.http-address.mycluster.nn2&lt;/name&gt; &lt;value&gt;tdtc202:50070&lt;/value&gt; &lt;/property&gt; 2. JournalNode 1) quorum journal manager &lt;!-- Journal Node(QJM) --&gt; &lt;property&gt; &lt;name&gt;dfs.namenode.shared.edits.dir&lt;/name&gt; &lt;value&gt;qjournal://tdtc201:8485;tdtc202:8485;tdtc203:8485/mycluster&lt;/value&gt; &lt;/property&gt; local &lt;property&gt; &lt;name&gt;dfs.journalnode.edits.dir&lt;/name&gt; &lt;value&gt;/home/tdtc/app/hadoop/data/journaldata&lt;/value&gt; &lt;/property&gt; 3. failover 1) support class &lt;!-- the Java class that HDFS clients use to contact the Active NameNode --&gt; &lt;property&gt; &lt;name&gt;dfs. <a class="read-more" href="/csdn/post/ops_hadoop_cluster_hdfs/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-14T09:08:08&#43;08:00">
-            14 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_hadoop_cluster_base/">Hadoop配置 - base</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>(../etc/hadoop)
-1. core-site.xml 1) HDFS the default path prefix used by the Hadoop FS client when none is given Optionally, you may now configure the default path for Hadoop clients to use the new HA-enabled logical URI. If you used “mycluster” as the nameservice ID earlier, this will be the value of the authority portion of all of your HDFS paths. This may be configured like so, in your core-site. <a class="read-more" href="/csdn/post/ops_hadoop_cluster_base/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-14T08:08:08&#43;08:00">
-            14 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_hadoop_abbr1/">hadoop名词解释</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>QJM and shuffle 1. QJM 1.1 背景 自从hadoop2版本开始，社区引入了NameNode高可用方案。NameNode主从节点间需要同步操作日志来达到主从节点元数据一致。最初业界均通过NFS来实现日志同步，大家之所以选择NFS，一方面因为可以很方便地实现数据共享，另外一方面因为NFS已经发展20多年，已经相对稳定成熟。
-虽然如此，NFS也有缺点不能满足HDFS的在线存储业务：网络单点及其存储节点单点。业界提供了数据共享的一些高可用解决方案，但均不能很好地满足目前HDFS的应用场景。
-方案 网络单点 存储单点 备注 Mysql HA 无 无 Drbd+heartbeat+NFS 无 无 脑裂；数据有丢失风险 Keepalive+NFS 无 有 数据有丢失风险 为了满足共享日志的高可用性，社区引入QJM。QJM由cloudera开发，实现了读写高可用性，使HDFS达到真正的高可用性成为可能。
-1.2 术语和定义 术语和定义 解释 Epoch 由主节点在启动及其切换为主的时候分配，每次操作JN节点均会检查该值,类似zookeeper中的zxid，此时主NameNode类似zookeeper中的leader，JN节点类似ZK中的Follower JournalNode QJM存储段进程，提供日志读写，存储，修复等服务 QJM Qurom Journal Manager startLogSegment 开始一个新的日志段,该日志段状态为接收写入日志的状态 finalizeLogSegment 将文件由正在写入日志的状态转化为不接收写日志的状态 recoverUnfinalizedSegments 主从切换等情况下，恢复没有转换为finalized状态的日志 journalId 日志ID，由配置指定，如qjournal://g42:8485;g35:8485;uhp9:8485/geminifs，则其中的geminifs即为journalId 2. shuffle 作者：Lijie Xu 链接：https://www.zhihu.com/question/27643595/answer/127473409 来源：知乎 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-从逻辑角度来讲，Shuffle 过程就是一个 GroupByKey 的过程，两者没有本质区别。 只是 MapReduce 为了方便 GroupBy 存在于不同 partition 中的 key/value records，就提前对 key 进行排序。Spark 认为很多应用不需要对 key 排序，就默认没有在 GroupBy 的过程中对 key 排序。 <a class="read-more" href="/csdn/post/ops_hadoop_abbr1/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        on
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/qjm/">#QJM</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/shuffle/">#shuffle</a>,
-            
-        
-        <time class="post-date" datetime="2020-04-14T03:08:08&#43;08:00">
-            14 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
 
 	<nav class="pagination" role="navigation">
 	
 	    <a class="newer-posts" href="/csdn/post/page/9/">&larr; Newer Posts</a>
 	
-	<span class="page-number">Page 10 of 12</span>
+	<span class="page-number">Page 10 of 13</span>
 	
 	    <a class="older-posts" href="/csdn/post/page/11/">Older Posts &rarr;</a>
 	

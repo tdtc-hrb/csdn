@@ -186,7 +186,7 @@
 	
 	    <a class="newer-posts" href="/csdn/page/2/">&larr; Newer Posts</a>
 	
-	<span class="page-number">Page 3 of 12</span>
+	<span class="page-number">Page 3 of 13</span>
 	
 	    <a class="older-posts" href="/csdn/page/4/">Older Posts &rarr;</a>
 	
@@ -442,16 +442,17 @@ $sudo yum install net-tools Service #vi /etc/init.d/realserver /etc/init.d/reals
     
         <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_nginx/">前端（Web）负载均衡</a></h2>
+        <h2 class="post-title"><a href="/csdn/post/ops_keepalived-v2/">安装配置Keepalived</a></h2>
     </header>
     <section class="post-excerpt">
         
-            <p>Nginx&rsquo;s load balancing
-一、安装 OS: CentOS7 minimal（安装时的选项）
-0. prepare $yum -y install gcc gcc-c++ automake pcre pcre-devel zlib zlib-devel openssl openssl-devel 1) update OpenSSL default directory: /usr/ssl
-$wget https://www.openssl.org/source/openssl-1.1.1q.tar.gz --no-check-certificate 2) setup $./config --prefix=/usr --shared $make Root permission Required
-$sudo make install 1. installation First, install Nginx of centos repo; Then, replace the nginx program file. Note: The replaced program file version must be the same as the repo!
-$sudo rpm -Uvh http://nginx. <a class="read-more" href="/csdn/post/ops_nginx/">&raquo;</a></p>
+            <p>OS: CentOS7 minimal(VBox)
+Virtual Box Network configure:
+Attached to Bridged Adapter Advanced promiscuous mode: Allow All 一、安装 prepare tool:
+#yum install gcc make autoconf automake openssl-devel libnl3-devel \ iptables-devel ipset-devel net-snmp-devel libnfnetlink-devel file-devel \ glib2-devel pcre2-revel libnftnl-devel libmnl-devel systemd-devel kmod-devel LVS manager:
+yum install ipvsadm installation MASTER Node 1 BACKUP Node 2 down and unzip $git clone https://github.com/acassen/keepalived.git for me:
+$git clone https://gitee.com/xiaobin80/keepalived installation $cd keepalived $./autogen.sh configure:
+$./configure --prefix=/usr make: <a class="read-more" href="/csdn/post/ops_keepalived-v2/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -460,8 +461,8 @@ $sudo rpm -Uvh http://nginx. <a class="read-more" href="/csdn/post/ops_nginx/">&
         
 
         
-        <time class="post-date" datetime="2022-09-29T08:38:08&#43;08:00">
-            29 Sep 2022
+        <time class="post-date" datetime="2022-09-30T09:38:08&#43;08:00">
+            30 Sep 2022
         </time>
     </footer>
 </article>
@@ -472,7 +473,7 @@ $sudo rpm -Uvh http://nginx. <a class="read-more" href="/csdn/post/ops_nginx/">&
 	
 	    <a class="newer-posts" href="/csdn/page/2/">&larr; Newer Posts</a>
 	
-	<span class="page-number">Page 3 of 12</span>
+	<span class="page-number">Page 3 of 13</span>
 	
 	    <a class="older-posts" href="/csdn/page/4/">Older Posts &rarr;</a>
 	

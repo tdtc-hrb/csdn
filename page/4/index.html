@@ -186,13 +186,40 @@
 	
 	    <a class="newer-posts" href="/csdn/page/3/">&larr; Newer Posts</a>
 	
-	<span class="page-number">Page 4 of 12</span>
+	<span class="page-number">Page 4 of 13</span>
 	
 	    <a class="older-posts" href="/csdn/page/5/">Older Posts &rarr;</a>
 	
 </nav>
 
     </div>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_nginx/">前端（Web）负载均衡</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Nginx&rsquo;s load balancing
+一、安装 OS: CentOS7 minimal（安装时的选项）
+0. prepare $yum -y install gcc gcc-c++ automake pcre pcre-devel zlib zlib-devel openssl openssl-devel 1) update OpenSSL default directory: /usr/ssl
+$wget https://www.openssl.org/source/openssl-1.1.1q.tar.gz --no-check-certificate 2) setup $./config --prefix=/usr --shared $make Root permission Required
+$sudo make install 1. installation First, install Nginx of centos repo; Then, replace the nginx program file. Note: The replaced program file version must be the same as the repo!
+$sudo rpm -Uvh http://nginx. <a class="read-more" href="/csdn/post/ops_nginx/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-09-29T08:38:08&#43;08:00">
+            29 Sep 2022
+        </time>
+    </footer>
+</article>
 
     
         <article class="post post">
@@ -301,6 +328,30 @@ sudo dnf install mysql-community-server disable default repo sudo dnf remove @my
     
         <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_openjdk_centos/">设置OpenJDK</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>1. install jre
+$sudo yum install java -y jdk $sudo yum install java-1.8.0-openjdk-devel 2. set path $sudo vi /etc/profile export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.345.b01-1.el7_9.x86_64 export CLASSPATH=.:$JAVA_HOME/jre/lib/:. export PATH=$PATH:$JAVA_HOME/bin $su - root #source /etc/profile About path 3.3. INSTALL OPENJDK ON RED HAT ENTERPRISE LINUX - 2.Optional: Set the JAVA_HOME environment variable
+Reference How to install Java on CentOS 7 OpenJDK Version Info - Releases  <a class="read-more" href="/csdn/post/ops_openjdk_centos/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-09-15T08:08:08-08:00">
+            15 Sep 2022
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/pd-db-phy/">powerDesigner生成phy图</a></h2>
     </header>
     <section class="post-excerpt">
@@ -396,71 +447,12 @@ sudo apt install mysql-server sudo systemctl start mysql.service config mysql se
 </article>
 
     
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/mysql80-cenos8/">CentOS8安装mysql8.0</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>Installing and Setting up the Percona Server for MySQL 8.0 Repository yum install -y https://repo.percona.com/yum/percona-release-latest.noarch.rpm disable mysql module repo:
-percona-release setup ps80 Installing and Setting up the Percona Server for MySQL 8.0 Binaries yum -y install percona-server-server Launch:
-systemctl start mysqldsystemctl status mysqld change password sudo grep &#34;temporary password&#34; /var/log/mysqld.log mysql -uroot -p Change default password：
-ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;qaz1!Xsw2@&#39;; Weak password mysql&gt; set global validate_password.policy=0; set password ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;xbfirst80&#39;; Ref Installing Percona Server for MySQL on Rocky Linux 8 How to Change MySQL Password Policy Level  <a class="read-more" href="/csdn/post/mysql80-cenos8/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        on
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/rocky-linux-8/">#Rocky Linux 8</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/alma-linux-8/">#Alma Linux 8</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/percona8/">#Percona8</a>,
-            
-        
-        <time class="post-date" datetime="2022-06-27T03:21:39&#43;08:00">
-            27 Jun 2022
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/com-ie-repoinfo/">铁路车号读取</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>二进制文件工具：EditPlus Edit -&gt; Hex Viewer replace(regexp/substr,replacement) 使用这个函数来替换多余的空格。 str.replace(/\s/g, &#34;&#34;); split(separator,howmany) 字符串转换成字符数组。 string.split(&#34;,&#34;); 一、js部分 我们把所有的方法放到一个对象（RepoInfo）中。
-var RepoInfo = { }; 1. 获取对象 RepoInfo.getObj = function(objName) { return new ActiveXObject(objName); }; 2. 获取数组 RepoInfo.getArray = function(str) { var ret = new Array(16); var string = str.replace(/\s/g, &#34;&#34;); ret = string.split(&#34;,&#34;); return ret; }; 3. 解码字串 输入字串校验 如果字串空，退出。
-输出框清空 每次赋值前，清空。
-执行COM中的方法 在获取对象非空的情况下，执行。
-RepoInfo.decode = function(string) { if (string == null) return; var obj = RepoInfo. <a class="read-more" href="/csdn/post/com-ie-repoinfo/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-06-13T16:08:08&#43;08:00">
-            13 Jun 2022
-        </time>
-    </footer>
-</article>
-
-    
 
     <nav class="pagination" role="navigation">
 	
 	    <a class="newer-posts" href="/csdn/page/3/">&larr; Newer Posts</a>
 	
-	<span class="page-number">Page 4 of 12</span>
+	<span class="page-number">Page 4 of 13</span>
 	
 	    <a class="older-posts" href="/csdn/page/5/">Older Posts &rarr;</a>
 	

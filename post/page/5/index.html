@@ -153,13 +153,107 @@
 	
 	    <a class="newer-posts" href="/csdn/post/page/4/">&larr; Newer Posts</a>
 	
-	<span class="page-number">Page 5 of 12</span>
+	<span class="page-number">Page 5 of 13</span>
 	
 	    <a class="older-posts" href="/csdn/post/page/6/">Older Posts &rarr;</a>
 	
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql80-cenos8/">CentOS8安装mysql8.0</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Installing and Setting up the Percona Server for MySQL 8.0 Repository yum install -y https://repo.percona.com/yum/percona-release-latest.noarch.rpm disable mysql module repo:
+percona-release setup ps80 Installing and Setting up the Percona Server for MySQL 8.0 Binaries yum -y install percona-server-server Launch:
+systemctl start mysqldsystemctl status mysqld change password sudo grep &#34;temporary password&#34; /var/log/mysqld.log mysql -uroot -p Change default password：
+ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;qaz1!Xsw2@&#39;; Weak password mysql&gt; set global validate_password.policy=0; set password ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;xbfirst80&#39;; Ref Installing Percona Server for MySQL on Rocky Linux 8 How to Change MySQL Password Policy Level  <a class="read-more" href="/csdn/post/mysql80-cenos8/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        on
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/rocky-linux-8/">#Rocky Linux 8</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/alma-linux-8/">#Alma Linux 8</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/percona8/">#Percona8</a>,
+            
+        
+        <time class="post-date" datetime="2022-06-27T03:21:39&#43;08:00">
+            27 Jun 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/com-ie-repoinfo/">铁路车号读取</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>二进制文件工具：EditPlus Edit -&gt; Hex Viewer replace(regexp/substr,replacement) 使用这个函数来替换多余的空格。 str.replace(/\s/g, &#34;&#34;); split(separator,howmany) 字符串转换成字符数组。 string.split(&#34;,&#34;); 一、js部分 我们把所有的方法放到一个对象（RepoInfo）中。
+var RepoInfo = { }; 1. 获取对象 RepoInfo.getObj = function(objName) { return new ActiveXObject(objName); }; 2. 获取数组 RepoInfo.getArray = function(str) { var ret = new Array(16); var string = str.replace(/\s/g, &#34;&#34;); ret = string.split(&#34;,&#34;); return ret; }; 3. 解码字串 输入字串校验 如果字串空，退出。
+输出框清空 每次赋值前，清空。
+执行COM中的方法 在获取对象非空的情况下，执行。
+RepoInfo.decode = function(string) { if (string == null) return; var obj = RepoInfo. <a class="read-more" href="/csdn/post/com-ie-repoinfo/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-06-13T16:08:08&#43;08:00">
+            13 Jun 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/redis-centos7/">在RHEL/CentOS安装Redis</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>0. preinstall User set $ useradd tdtc $ passwd tdtc Yum Repo 1) yum install $sudo yum groupinstall &#34;Development Tools&#34; $sudo yum install tcl wget v6+ Just to clarify: there is no way this issue will be fixed, Redis &gt;= 6 will require a C11 compiler.
+sudo yum install centos-release-scl sudo yum install devtoolset-8 scl enable devtoolset-8 bash 2) verification $gcc -v $make -v $echo &#39;puts [info patchlevel];exit 0&#39; | tclsh 1. <a class="read-more" href="/csdn/post/redis-centos7/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        on
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/redis/">#Redis</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/centos7/">#CentOS7</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/development-tools/">#Development Tools</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/wget/">#wget</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/rhel/">#RHEL</a>,
+            
+        
+        <time class="post-date" datetime="2022-06-11T04:58:39&#43;08:00">
+            11 Jun 2022
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -372,92 +466,12 @@ code /* * Int2hex.c * * Created on: 2010-07-20 * Author: xiaobin */ #include &lt
 </article>
 
 	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/mysql-master-slave-replication/">MySQL 主从复制</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>在进行配置前，请确认已经安装 mysql5.7 - CentOS
-1. 网络配置 Replication Group 1:
-Name IP Memo mysql1 192.168.0.160 Master mysql11 192.168.0.161 Slave mysql12 192.168.0.162 Slave Replication Group 2(Maria DB):
-Name IP Memo mysql2 192.168.0.170 Master mysql21 192.168.0.171 Slave mysql22 192.168.0.172 Slave 2. Configure MySQL cluster 1) Master Server Setting the Replication Master Configuration
-/etc/my.cnf
-[mysqld] log-bin=mysql160-bin server-id=160 2) Slave Server Setting the Replication Slave Configuration
-/etc/my.cnf
-Slave 1 [mysqld] server-id=161 Slave 2 [mysqld] server-id=162 3. <a class="read-more" href="/csdn/post/mysql-master-slave-replication/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-04-13T09:38:08&#43;08:00">
-            13 Apr 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_keepalived/">安装配置Keepalived</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>OS: CentOS7 minimal(VMware)
-一、安装 0. prepare tool $yum group list 1) dev tools $yum group install &#34;Development Tools&#34; 2) openssl-devel update see &ldquo;nginx’s load balancing的安装部分的update OpenSSL&rdquo;
-$yum install openssl-devel 3) libnl $yum install libnl libnl-devel libnfnetlink-devel 1. keepalived v1.4.5
-down and unzip $wget http://www.keepalived.org/software/keepalived-1.4.5.tar.gz $ tar zxvf keepalived-1.4.5.tar.gz installation $cd keepalived-1.4.5 $./configure --prefix=/usr/local/keepalived $make Root permission Required
-$make install setup $cp /usr/local/keepalived/sbin/keepalived /usr/sbin/ $mkdir -p /etc/keepalived $cp /usr/local/keepalived/etc/keepalived/keepalived.conf /etc/keepalived/keepalived.conf $cp /usr/local/keepalived/etc/sysconfig/keepalived /etc/sysconfig/ $cp /tmp/keepalived-1. <a class="read-more" href="/csdn/post/ops_keepalived/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-04-13T08:38:08&#43;08:00">
-            13 Apr 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_department_cups/">共享打印机 - CUPS</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>Tips: Ubuntu已经安装了打印机了，我们怎么共享它呢？
-安装CUPS Ubuntu
-#apt-get install cups 客户端设置 Windows
-“打印机和传真”-〉“添加打印机” （注意：根据办公环境的网络设置自行填写） 插入HP的驱动光盘:  <a class="read-more" href="/csdn/post/ops_department_cups/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-04-13T03:18:08&#43;08:00">
-            13 Apr 2022
-        </time>
-    </footer>
-</article>
-
-	
 
 	<nav class="pagination" role="navigation">
 	
 	    <a class="newer-posts" href="/csdn/post/page/4/">&larr; Newer Posts</a>
 	
-	<span class="page-number">Page 5 of 12</span>
+	<span class="page-number">Page 5 of 13</span>
 	
 	    <a class="older-posts" href="/csdn/post/page/6/">Older Posts &rarr;</a>
 	

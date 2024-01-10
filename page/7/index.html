@@ -186,13 +186,248 @@
 	
 	    <a class="newer-posts" href="/csdn/page/6/">&larr; Newer Posts</a>
 	
-	<span class="page-number">Page 7 of 12</span>
+	<span class="page-number">Page 7 of 13</span>
 	
 	    <a class="older-posts" href="/csdn/page/8/">Older Posts &rarr;</a>
 	
 </nav>
 
     </div>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/js-thousand-separator/">千位分隔符</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>1. 字符串替换 /** * 字符串替换函数 - js * expStr: 查找的字符串 * string: 整个字符串 * repStr: 替换的字符串 */ function replacStr(expStr, string, repStr) { let result = &#34;&#34;; let regex; if (parseInt(expStr) &gt; 0) // 数字 regex = new RegExp(expStr, &#34;g&#34;); else	// 非数字 regex = new RegExp(&#34;\\&#34; + expStr, &#34;g&#34;); result = string.replace(regex, repStr); return result; } 2. 千分符 例如，货币7867321.55，怎样使用js来分割他呢？
+0. 分离小数和整数 let index = strCny.indexOf(&#34;.&#34;); if ( index != 0) { strNum = strCny. <a class="read-more" href="/csdn/post/js-thousand-separator/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2021-11-18T02:18:39&#43;08:00">
+            18 Nov 2021
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/js-print-tree/"> 使用ts/js打印tree</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>一棵&quot;树&quot;就是由空格、星号和回车组成的。 我们用a，代表空格。
+注意：空格在HTML编码为：“ ”。
+aaaa* aaa*** aa***** a******* ********* aaaa* aaaa* aaaa* aaaa* aaaa* 首先“树头”部分由3部分组成：空格部分、左树头、右树头。 空格就是递减的过程：
+for (let i = treeRadius; i &gt; k; i--) { document.write(&#34; &#34;); } 左树头，包括中线
+for (let i = 0; i &lt; k + 1; i++) { document.write(&#34;*&#34;); } 右树头，递增过程：
+for (let j = 0; j &lt; k; j++) { document.write(&#34;b&#34;); } 然后，“树干”部分由2部分组成：空格部分和中线部分
+空格就是按照指定的半径数“占位”：
+for (let j = 0; j &lt; treeRadius; j++) { document.write(&#34; &#34;); } 中线就是每次循环时打印一个* <a class="read-more" href="/csdn/post/js-print-tree/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2021-11-15T14:15:39&#43;08:00">
+            15 Nov 2021
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/js-webpack/">webpack的使用</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>安装webpack npm install -g webpack-dev-server npm install --save webpack-cli pack info package.json
+{ &#34;name&#34;: &#34;redux-book-started&#34;, &#34;version&#34;: &#34;1.0.0&#34;, &#34;description&#34;: &#34;Sample Redux Application&#34;, &#34;main&#34;: &#34;app.js&#34;, &#34;scripts&#34;: { &#34;start&#34;: &#34;webpack-dev-server --hot --progress --port 8181&#34; }, &#34;author&#34;: &#34;Boris Dinkevich &amp; Ilya Gelman&#34;, &#34;license&#34;: &#34;MIT&#34;, &#34;dependencies&#34;: { &#34;jquery&#34;: &#34;3.6.0&#34;, &#34;redux&#34;: &#34;4.1.2&#34; }, &#34;devDependencies&#34;: { &#34;webpack&#34;: &#34;5.64.1&#34;, &#34;webpack-cli&#34;: &#34;^4.9.1&#34;, &#34;webpack-dev-server&#34;: &#34;4.5.0&#34; } } config info webpack.config.js
+module.exports = { mode: &#39;development&#39;, entry: &#39;./app.js&#39;, output: { filename: &#39;. <a class="read-more" href="/csdn/post/js-webpack/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2021-11-08T15:26:39&#43;08:00">
+            8 Nov 2021
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/js-json-table/">动态生成table</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>一、JSON数据源 JSON
+JSON是一种取代XML的数据结构,和xml相比,它更小巧但描述能力却不差,由于它的小巧所以网络传输数据将减少更多流量从而加快速度,那么,JSON到底是什么?JSON就是一串字符串 只不过元素会使用特定的符号标注。{} 双括号表示对象[] 中括号表示数组&#34;&#34; 双引号内是属性或值: 冒号表示后者是前者的值(这个值可以是字符串、数字、也可以是另一个数组或对象)所以 {&#34;name&#34;: &#34;Michael&#34;} 可以理解为是一个包含name为Michael的对象而[{&#34;name&#34;: &#34;Michael&#34;},{&#34;name&#34;: &#34;Jerry&#34;}]就表示包含两个对象的数组当然了,你也可以使用{&#34;name&#34;:[&#34;Michael&#34;,&#34;Jerry&#34;]}来简化上面一部,这是一个拥有一个name数组的对象 详细介绍请参见W3SCHOOL JSON规范
+1. students var students = [ {&#34;cName&#34;: &#34;class 1&#34;, &#34;ID&#34;: &#34;1001&#34;, &#34;name&#34;: &#34;李X&#34;, &#34;course&#34;: [&#34;英语&#34;, &#34;高数&#34;], &#34;elective&#34;: [&#34;政治经济学&#34;, &#34;哲学&#34;]}, {&#34;cName&#34;: &#34;class 1&#34;, &#34;ID&#34;: &#34;1002&#34;, &#34;name&#34;: &#34;张X威&#34;, &#34;course&#34;: [&#34;英语&#34;, &#34;高数&#34;], &#34;elective&#34;: [&#34;政治经济学&#34;, &#34;哲学&#34;]}, {&#34;cName&#34;: &#34;class 1&#34;, &#34;ID&#34;: &#34;1003&#34;, &#34;name&#34;: &#34;于X洋&#34;, &#34;course&#34;: [&#34;英语&#34;, &#34;高数&#34;], &#34;elective&#34;: [&#34;政治经济学&#34;, &#34;哲学&#34;]}, {&#34;cName&#34;: &#34;class 1&#34;, &#34;ID&#34;: &#34;1004&#34;, &#34;name&#34;: &#34;张X扬&#34;, &#34;course&#34;: [&#34;英语&#34;, &#34;高数&#34;], &#34;elective&#34;: [&#34;政治经济学&#34;, &#34;哲学&#34;]}, {&#34;cName&#34;: &#34;class 1&#34;, &#34;ID&#34;: &#34;1005&#34;, &#34;name&#34;: &#34;周X&#34;, &#34;course&#34;: [&#34;英语&#34;, &#34;高数&#34;], &#34;elective&#34;: [&#34;政治经济学&#34;, &#34;哲学&#34;]}, {&#34;cName&#34;: &#34;class 1&#34;, &#34;ID&#34;: &#34;1006&#34;, &#34;name&#34;: &#34;王X&#34;, &#34;course&#34;: [&#34;英语&#34;, &#34;高数&#34;], &#34;elective&#34;: [&#34;政治经济学&#34;, &#34;哲学&#34;]}, {&#34;cName&#34;: &#34;class 1&#34;, &#34;ID&#34;: &#34;1007&#34;, &#34;name&#34;: &#34;李X朋&#34;, &#34;course&#34;: [&#34;英语&#34;, &#34;高数&#34;], &#34;elective&#34;: [&#34;政治经济学&#34;, &#34;哲学&#34;]}, {&#34;cName&#34;: &#34;class 1&#34;, &#34;ID&#34;: &#34;1008&#34;, &#34;name&#34;: &#34;邬X春&#34;, &#34;course&#34;: [&#34;英语&#34;, &#34;高数&#34;], &#34;elective&#34;: [&#34;政治经济学&#34;, &#34;哲学&#34;]}, {&#34;cName&#34;: &#34;class 5&#34;, &#34;ID&#34;: &#34;1009&#34;, &#34;name&#34;: &#34;李X&#34;, &#34;course&#34;: [&#34;英语&#34;, &#34;高数&#34;], &#34;elective&#34;: [&#34;政治经济学&#34;, &#34;哲学&#34;]}, {&#34;cName&#34;: &#34;class 5&#34;, &#34;ID&#34;: &#34;1010&#34;, &#34;name&#34;: &#34;孙X丽&#34;, &#34;course&#34;: [&#34;英语&#34;, &#34;高数&#34;], &#34;elective&#34;: [&#34;政治经济学&#34;, &#34;哲学&#34;]} ]; 二、函数设计 所谓的动态就是使用删表和写表的操作。 <a class="read-more" href="/csdn/post/js-json-table/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2021-10-02T14:26:39&#43;08:00">
+            2 Oct 2021
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/js-calday/"> 使用Ts/Js计算天数</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>在JS练习题中，有这么一道：
+请计算某天是这一年的第几天。
+首先，我们要看此年是否闰年
+var IsLeapYear = function (year) { var flag = false; if ( ((year % 4 == 0) &amp;&amp; (year % 100 != 0)) || (year % 400 == 0) ) flag = true; return flag; }; 其次，累加每月天数。
+for (var i = 0; i &lt; month - 1; i++) { iDay += months[i]; } 其中months为数组
+var months = new Array(31, day2, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31); day2如果是闰年赋值29，否则28。 <a class="read-more" href="/csdn/post/js-calday/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2021-10-01T02:16:39&#43;08:00">
+            1 Oct 2021
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_dc_redis_ubuntu/">安装redis-server</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>本文适用范围：
+WSL1(Ubuntu) 开发环境 Ubuntu 生产环境 1. 安装 推荐使用PPA模式安装redis-server
+1.1 增加PPA sudo apt-add-repository ppa:chris-lea/redis-server sudo apt-get update install sudo apt-get install redis-server 1.2 配置 警告清除 Memory WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add &#39;vm.overcommit_memory = 1&#39; to /etc/sysctl.conf and then reboot or run the command &#39;sysctl vm.overcommit_memory=1&#39; for this to take effect. A: add vm.overcommit_memory=1 edit sysctl.conf:
+sudo vi /etc/sysctl. <a class="read-more" href="/csdn/post/ops_dc_redis_ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2021-09-08T08:08:08&#43;08:00">
+            8 Sep 2021
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/apt-oper-ubuntu/">apt的安装问题</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>apt适合手动输入(有交互); apt-get适合脚本(无交互).
+Manage 卸载 apt-get autoremove vsftpd --purge 安装指定版本 apt-get install &lt;package name&gt;=&lt;version&gt; 列出版本 apt-cache madison &lt;&lt;package name&gt;&gt; DebIan sudo using root:
+su - root install:
+apt install sudo chmod 640 /etc/sudoers 在配置文件/etc/sudoers加入：
+tdtc ALL=(ALL:ALL) ALL 把文件权限改为只读:
+chmod 440 /etc/sudoers apt source sudo vi /etc/apt/sources.list 注释掉&quot;deb cdrom:xxx&quot;
+##deb cdrom:xxx Ref Debian中安装使用sudo命令 Debian取消从光盘安装软件的方式  <a class="read-more" href="/csdn/post/apt-oper-ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2021-07-08T02:20:39&#43;08:00">
+            8 Jul 2021
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_grub_ubuntu/">grub救援模式</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p> 出现“grub rescue&gt;”提示符；也称grub救援模式。
+1. 设置引导 (hd?,?)：安装的引导分区 在我的机器是(hd0, msdos3)
+grub rescue&gt;ls grub rescue&gt;ls (hd?,?)/boot/grub grub rescue&gt;set root(hd?,?) grub rescue&gt;set prefix=(hd?,?)/boot/grub insmod one:
+insmod /boot/grub/normal.mod /boot/grub/normal two:
+insmod normal normal 2. 更新grub 在终端上执行：
+sudo grub-install /dev/sda sudo update-grub  <a class="read-more" href="/csdn/post/ops_grub_ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2021-06-15T00:19:08&#43;08:00">
+            15 Jun 2021
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c-string-h2i/">十六进制转十进制</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>工作原理：
+16进制数 * 16n 之和就是10进制数。
+手算 16进制: 0x61E
+0位： E * 160 = 14 1位： 1 * 161 = 16 2位： 6 * 162 = 1536
+10进制： 14+16+1536 = 1566
+code 程序的需要两部分组成：
+权值计算 16的几次方，power(16, x) unsigned long power(int a, int b) { int i; unsigned long result = 1; for(i = 0; i &lt; b; i++) result = result * a; return result; }; 单16进制值转10进制值 例如：如果是F，则表示15 switch (ch) { case &#39;0&#39;: iCh = 0; break; case &#39;1&#39;: iCh = 1; break; case &#39;2&#39;: iCh = 2; break; case &#39;3&#39;: iCh = 3; break; case &#39;4&#39;: iCh = 4; break; case &#39;5&#39;: iCh = 5; break; case &#39;6&#39;: iCh = 6; break; case &#39;7&#39;: iCh = 7; break; case &#39;8&#39;: iCh = 8; break; case &#39;9&#39;: iCh = 9; break; case &#39;a&#39;: iCh = 10; break; case &#39;b&#39;: iCh = 11; break; case &#39;c&#39;: iCh = 12; break; case &#39;d&#39;: iCh = 13; break; case &#39;e&#39;: iCh = 14; break; case &#39;f&#39;: iCh = 15; break; default: iCh = -1; break; } 为了满足，把所有输入转换为小写字母，可以使用系统函数tolower()或者我们自己写的函数toLower() <a class="read-more" href="/csdn/post/c-string-h2i/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2021-05-01T05:08:08&#43;08:00">
+            1 May 2021
+        </time>
+    </footer>
+</article>
 
     
         <article class="post post">
@@ -218,239 +453,12 @@ Stage I 1. 《sudo - CentOS》 2. FQDN #127.0.0.1 localhost localhost.localdomai
 </article>
 
     
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_memcached_ubuntu/">安装memcached</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>VMware: Ubuntu 20.04.2
-Install and update #sudo apt-get install memcached [0] #sudo apt-get install build-essential #sudo apt-get install libevent-dev* #wget http://memcached.org/files/memcached-1.6.15.tar.gz #tar -zxvf memcached-1.6.15.tar.gz #cd memcached-1.6.15 #./configure &amp;&amp; make &amp;&amp; sudo make install Start allow port sudo ufw allow 11211 config sudo vi /etc/memcached.conf 修改为服务器的IP:
-# Specify which IP address to listen on. The default is to listen on all IP addresses # This parameter is one of the only security measures that memcached has, so make sure # it&#39;s listening on a firewalled interface. <a class="read-more" href="/csdn/post/ops_memcached_ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2021-02-01T09:08:08&#43;08:00">
-            1 Feb 2021
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/rose-uml/">UML工具Rose</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>安装Rose2007 下载并安装
-ed2k://|file|%5BIBM%E8%BD%AF%E4%BB%B6%E7%B3%BB%E5%88%97%5D.IBM.Rational.Rose.Enterprise.v7.0-TFTISO.bin|621038544|71d09610bb53d2d905d278675b333c75|h=utnlhfjwnzjdp2wecfeujoptd7pqlrps|/ 默认安装即可。
-lic 序号有两种方式：本机和导入Lic
-本机 本地机器作为lic服务器
-1. 修改授权文件。 打开license.dat文件， 大约在文件的中间位置有：SERVER Microsoft ANY DAEMON rational “C:\Program Files\Rational\common\rational.exe” 将其修改为：SERVER 计算机名　ANY DAEMON rational “自己安装的目录\rational.exe”后，保存2. 拷贝授权检查程序。 将license.dat、 lmgrd.exe 、rational.exe三个文件拷贝到：安装目录\rational\common\3. 将授权程序放到控制面板。 将flexlm.cpl拷贝到system32目录下。如win2000系统中为C:\WINNT\system32目录。4. 设置授权程序。 打开FLEXlm License Manager（控制面板中）， 在Setup页中lmgrd.exe右侧目录填写：C:\Program Files\Rational\Common\lmgrd.exe（若为默认安装目录） License File右侧目录写为：C:\Program Files\Rational\Common\license.dat5. 查看状态。 回到Control页，点击Start，若出现”Server Started”，则表示已经成功， 可以点击Status,若状态为：计算机名：license server UP(MASTER)则成功（否则，Start-&gt;Status来回点~~）。6. 修改Server Name。 打开Rational License Key Administrator， 点击工具栏中的&quot;Start WIzard&quot;, 点击下一步， 选择&quot;Point to a Rational License Server to get my licenses&quot; , 点击下一步， 在Server Name中的名字改为自己的计算机名即可。导入License IBM Rational License Key Administrator Import a Rational License File Browse . <a class="read-more" href="/csdn/post/rose-uml/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-17T10:08:08&#43;08:00">
-            17 May 2020
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/hw-uboot_v134-at91sam9260/">U-boot V1.3.4</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>关于移植在U-boot文档中这样介绍： README
-If the system board that you have is not listed, then you will need to port U-Boot to your hardware platform. To do this, follow these steps: 1. Add a new configuration option for your board to the toplevel &#34;Makefile&#34; and to the &#34;MAKEALL&#34; script, using the existing entries as examples. Note that here and at many other places boards and other names are listed in alphabetical sort order. <a class="read-more" href="/csdn/post/hw-uboot_v134-at91sam9260/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-16T01:58:08&#43;08:00">
-            16 May 2020
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/css-bootstrap-breadcrumbs/">面包屑（breadcrumbs）</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>在很多网站上都有一个导航记录栏 - 面包屑；
-官方文档 举例
-&lt;ol class=&#34;breadcrumb&#34;&gt; &lt;li&gt;&lt;a href=&#34;#&#34;&gt;Home&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&#34;#&#34;&gt;Library&lt;/a&gt;&lt;/li&gt; &lt;li class=&#34;active&#34;&gt;Data&lt;/li&gt; &lt;/ol&gt; php example CodeIgniter v2.2.x/3.x
-建立一个php文件 breadcrumb.php
-&lt;ol class=&#34;breadcrumb&#34;&gt; &lt;?php echo get_breadcrumb($breadData, $menu_prefix); ?&gt; &lt;li class=&#34;active&#34;&gt; &lt;?php echo empty($breadData) ? $this-&gt;Glossary_M-&gt;get_word(&#39;home&#39;, $this-&gt;data[&#39;lang_id&#39;]) : $body; ?&gt; &lt;/li&gt; &lt;/ol&gt; 在helper中建立如下方法：
-function get_breadcrumb($array, $prefix = NULL) { $str = &#39;&#39;; if (count($array)) { foreach ($array as $item) { if ($item[&#39;homeFlag&#39;]) { // &#39;&lt;li&gt;&lt;a href=&#34;http://&#39; $str .= &#39;&lt;li&gt;&lt;a href=&#34;&#39; . $item[&#39;linkAddr&#39;] . <a class="read-more" href="/csdn/post/css-bootstrap-breadcrumbs/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-16T00:58:08&#43;08:00">
-            16 May 2020
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/hw-schematic_diagram-ctm1050/">CTM1050(CAN)原理图</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>Portel DXP 2004
-CTM1050.7z 提取码: pcah <a class="read-more" href="/csdn/post/hw-schematic_diagram-ctm1050/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-16T00:28:08&#43;08:00">
-            16 May 2020
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/uml-ommunication_diagram-can/">时序图与状态图</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>tool: Rational Rose
-功能简介： 当主程序收到CAN口的数据后；根据按键的不同来选择是使用CAN口发送，还是使用UART口发送。
-时序图
-协作图
-down can2uart.mdl 提取码: bb8h <a class="read-more" href="/csdn/post/uml-ommunication_diagram-can/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-16T00:08:08&#43;08:00">
-            16 May 2020
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/hw-can-uart-key/">CAN数据转发</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>完结篇 《CAN转COM或CAN-1》介绍了CAN，本篇其余部分。
-开发板：英蓓特MCB2300（LPC2368）
-开发工具：MDK3.8a
-开发主机：Windows XP SP3 中文专业版
-UART 因为我们使用UART主要是进行发送的，所以关闭接收可以更加快速的进行发送处理。
-控制接收缓存寄存（Receiver Buffer Register）即可达到此目的。
-禁止RBR void preUARTInitRBR( unsigned char i ) { switch (i) { case 0: U0IER = IER_THRE | IER_RLS;	/* Disable RBR */ break; case 1: U1IER = IER_THRE | IER_RLS;	/* Disable RBR */ break; } } 允许RBR void postUARTInitRBR( unsigned char i ) { switch (i) { case 0: U0IER = IER_THRE | IER_RLS | IER_RBR;	/* Re-enable RBR */ break; case 1: U1IER = IER_THRE | IER_RLS | IER_RBR;	/* Re-enable RBR */ break; } } 完成后的UART NXP的官方例程UART加入RBR后的code <a class="read-more" href="/csdn/post/hw-can-uart-key/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-15T23:08:08&#43;08:00">
-            15 May 2020
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_spark_ubuntu/">安装spark</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>WSL: Ubuntu 18.04.1
-Prepare Java 8+, Python 2.7+/3.4+ and R 3.1+
-Spark runs on Java 8+, Python 2.7+/3.4+ and R 3.1+. For the Scala API, Spark 2.4.1 uses Scala 2.12. You will need to use a compatible Scala version (2.12.x). 1. java 设置OpenJDK - Ubuntu
-2. Python sudo apt-get install python 3. R language 1) add ppa sudo add-apt-repository ppa:marutter/rrutter sudo apt-get update 2) install sudo apt-get install r-base r-base-dev Installation 1. <a class="read-more" href="/csdn/post/ops_spark_ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-15T08:08:08&#43;08:00">
-            15 May 2020
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_mysql_error1067/">mysql的1067错误</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>日志文件问题 由于使用时间比较长积累了很多的日志文件（\data目录下），所以删除之！
-mysql-bin.000001 ... ... mysql-bin.000278 原来删除都留最后一个编号的日志，这次太过彻底~~都删了!
-执行net start mysql： 出现了mysql 1067错误！ 查看，主机名.err文件（lenovo-7c8f808d.err）：
-130416 9:59:23 InnoDB: Started; log sequence number 0 43655 MySQL: File &#39;.\mysql-bin.000278&#39; not found (Errcode: 2) 130416 9:59:23 [ERROR] Failed to open log (file &#39;.\mysql-bin.000278&#39;, errno 2) 130416 9:59:23 [ERROR] Could not open log file 130416 9:59:23 [ERROR] Can&#39;t init tc log 130416 9:59:23 [ERROR] Aborting 130416 9:59:23 InnoDB: Starting shutdown... 130416 9:59:24 InnoDB: Shutdown completed; log sequence number 0 43655 130416 9:59:24 [Note] MySQL: Shutdown complete 告诉我们找不到mysql-bin. <a class="read-more" href="/csdn/post/ops_mysql_error1067/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-15T06:08:08&#43;08:00">
-            15 May 2020
-        </time>
-    </footer>
-</article>
-
-    
 
     <nav class="pagination" role="navigation">
 	
 	    <a class="newer-posts" href="/csdn/page/6/">&larr; Newer Posts</a>
 	
-	<span class="page-number">Page 7 of 12</span>
+	<span class="page-number">Page 7 of 13</span>
 	
 	    <a class="older-posts" href="/csdn/page/8/">Older Posts &rarr;</a>
 	

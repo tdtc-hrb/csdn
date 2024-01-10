@@ -153,13 +153,240 @@
 	
 	    <a class="newer-posts" href="/csdn/post/page/7/">&larr; Newer Posts</a>
 	
-	<span class="page-number">Page 8 of 12</span>
+	<span class="page-number">Page 8 of 13</span>
 	
 	    <a class="older-posts" href="/csdn/post/page/9/">Older Posts &rarr;</a>
 	
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_memcached_ubuntu/">安装memcached</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>VMware: Ubuntu 20.04.2
+Install and update #sudo apt-get install memcached [0] #sudo apt-get install build-essential #sudo apt-get install libevent-dev* #wget http://memcached.org/files/memcached-1.6.15.tar.gz #tar -zxvf memcached-1.6.15.tar.gz #cd memcached-1.6.15 #./configure &amp;&amp; make &amp;&amp; sudo make install Start allow port sudo ufw allow 11211 config sudo vi /etc/memcached.conf 修改为服务器的IP:
+# Specify which IP address to listen on. The default is to listen on all IP addresses # This parameter is one of the only security measures that memcached has, so make sure # it&#39;s listening on a firewalled interface. <a class="read-more" href="/csdn/post/ops_memcached_ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2021-02-01T09:08:08&#43;08:00">
+            1 Feb 2021
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/rose-uml/">UML工具Rose</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>安装Rose2007 下载并安装
+ed2k://|file|%5BIBM%E8%BD%AF%E4%BB%B6%E7%B3%BB%E5%88%97%5D.IBM.Rational.Rose.Enterprise.v7.0-TFTISO.bin|621038544|71d09610bb53d2d905d278675b333c75|h=utnlhfjwnzjdp2wecfeujoptd7pqlrps|/ 默认安装即可。
+lic 序号有两种方式：本机和导入Lic
+本机 本地机器作为lic服务器
+1. 修改授权文件。 打开license.dat文件， 大约在文件的中间位置有：SERVER Microsoft ANY DAEMON rational “C:\Program Files\Rational\common\rational.exe” 将其修改为：SERVER 计算机名　ANY DAEMON rational “自己安装的目录\rational.exe”后，保存2. 拷贝授权检查程序。 将license.dat、 lmgrd.exe 、rational.exe三个文件拷贝到：安装目录\rational\common\3. 将授权程序放到控制面板。 将flexlm.cpl拷贝到system32目录下。如win2000系统中为C:\WINNT\system32目录。4. 设置授权程序。 打开FLEXlm License Manager（控制面板中）， 在Setup页中lmgrd.exe右侧目录填写：C:\Program Files\Rational\Common\lmgrd.exe（若为默认安装目录） License File右侧目录写为：C:\Program Files\Rational\Common\license.dat5. 查看状态。 回到Control页，点击Start，若出现”Server Started”，则表示已经成功， 可以点击Status,若状态为：计算机名：license server UP(MASTER)则成功（否则，Start-&gt;Status来回点~~）。6. 修改Server Name。 打开Rational License Key Administrator， 点击工具栏中的&quot;Start WIzard&quot;, 点击下一步， 选择&quot;Point to a Rational License Server to get my licenses&quot; , 点击下一步， 在Server Name中的名字改为自己的计算机名即可。导入License IBM Rational License Key Administrator Import a Rational License File Browse . <a class="read-more" href="/csdn/post/rose-uml/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-17T10:08:08&#43;08:00">
+            17 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/hw-uboot_v134-at91sam9260/">U-boot V1.3.4</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>关于移植在U-boot文档中这样介绍： README
+If the system board that you have is not listed, then you will need to port U-Boot to your hardware platform. To do this, follow these steps: 1. Add a new configuration option for your board to the toplevel &#34;Makefile&#34; and to the &#34;MAKEALL&#34; script, using the existing entries as examples. Note that here and at many other places boards and other names are listed in alphabetical sort order. <a class="read-more" href="/csdn/post/hw-uboot_v134-at91sam9260/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-16T01:58:08&#43;08:00">
+            16 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/css-bootstrap-breadcrumbs/">面包屑（breadcrumbs）</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>在很多网站上都有一个导航记录栏 - 面包屑；
+官方文档 举例
+&lt;ol class=&#34;breadcrumb&#34;&gt; &lt;li&gt;&lt;a href=&#34;#&#34;&gt;Home&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&#34;#&#34;&gt;Library&lt;/a&gt;&lt;/li&gt; &lt;li class=&#34;active&#34;&gt;Data&lt;/li&gt; &lt;/ol&gt; php example CodeIgniter v2.2.x/3.x
+建立一个php文件 breadcrumb.php
+&lt;ol class=&#34;breadcrumb&#34;&gt; &lt;?php echo get_breadcrumb($breadData, $menu_prefix); ?&gt; &lt;li class=&#34;active&#34;&gt; &lt;?php echo empty($breadData) ? $this-&gt;Glossary_M-&gt;get_word(&#39;home&#39;, $this-&gt;data[&#39;lang_id&#39;]) : $body; ?&gt; &lt;/li&gt; &lt;/ol&gt; 在helper中建立如下方法：
+function get_breadcrumb($array, $prefix = NULL) { $str = &#39;&#39;; if (count($array)) { foreach ($array as $item) { if ($item[&#39;homeFlag&#39;]) { // &#39;&lt;li&gt;&lt;a href=&#34;http://&#39; $str .= &#39;&lt;li&gt;&lt;a href=&#34;&#39; . $item[&#39;linkAddr&#39;] . <a class="read-more" href="/csdn/post/css-bootstrap-breadcrumbs/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-16T00:58:08&#43;08:00">
+            16 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/hw-schematic_diagram-ctm1050/">CTM1050(CAN)原理图</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Portel DXP 2004
+CTM1050.7z 提取码: pcah <a class="read-more" href="/csdn/post/hw-schematic_diagram-ctm1050/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-16T00:28:08&#43;08:00">
+            16 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/uml-ommunication_diagram-can/">时序图与状态图</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>tool: Rational Rose
+功能简介： 当主程序收到CAN口的数据后；根据按键的不同来选择是使用CAN口发送，还是使用UART口发送。
+时序图
+协作图
+down can2uart.mdl 提取码: bb8h <a class="read-more" href="/csdn/post/uml-ommunication_diagram-can/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-16T00:08:08&#43;08:00">
+            16 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/hw-can-uart-key/">CAN数据转发</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>完结篇 《CAN转COM或CAN-1》介绍了CAN，本篇其余部分。
+开发板：英蓓特MCB2300（LPC2368）
+开发工具：MDK3.8a
+开发主机：Windows XP SP3 中文专业版
+UART 因为我们使用UART主要是进行发送的，所以关闭接收可以更加快速的进行发送处理。
+控制接收缓存寄存（Receiver Buffer Register）即可达到此目的。
+禁止RBR void preUARTInitRBR( unsigned char i ) { switch (i) { case 0: U0IER = IER_THRE | IER_RLS;	/* Disable RBR */ break; case 1: U1IER = IER_THRE | IER_RLS;	/* Disable RBR */ break; } } 允许RBR void postUARTInitRBR( unsigned char i ) { switch (i) { case 0: U0IER = IER_THRE | IER_RLS | IER_RBR;	/* Re-enable RBR */ break; case 1: U1IER = IER_THRE | IER_RLS | IER_RBR;	/* Re-enable RBR */ break; } } 完成后的UART NXP的官方例程UART加入RBR后的code <a class="read-more" href="/csdn/post/hw-can-uart-key/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-15T23:08:08&#43;08:00">
+            15 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_spark_ubuntu/">安装spark</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>WSL: Ubuntu 18.04.1
+Prepare Java 8+, Python 2.7+/3.4+ and R 3.1+
+Spark runs on Java 8+, Python 2.7+/3.4+ and R 3.1+. For the Scala API, Spark 2.4.1 uses Scala 2.12. You will need to use a compatible Scala version (2.12.x). 1. java 设置OpenJDK - Ubuntu
+2. Python sudo apt-get install python 3. R language 1) add ppa sudo add-apt-repository ppa:marutter/rrutter sudo apt-get update 2) install sudo apt-get install r-base r-base-dev Installation 1. <a class="read-more" href="/csdn/post/ops_spark_ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-15T08:08:08&#43;08:00">
+            15 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_mysql_error1067/">mysql的1067错误</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>日志文件问题 由于使用时间比较长积累了很多的日志文件（\data目录下），所以删除之！
+mysql-bin.000001 ... ... mysql-bin.000278 原来删除都留最后一个编号的日志，这次太过彻底~~都删了!
+执行net start mysql： 出现了mysql 1067错误！ 查看，主机名.err文件（lenovo-7c8f808d.err）：
+130416 9:59:23 InnoDB: Started; log sequence number 0 43655 MySQL: File &#39;.\mysql-bin.000278&#39; not found (Errcode: 2) 130416 9:59:23 [ERROR] Failed to open log (file &#39;.\mysql-bin.000278&#39;, errno 2) 130416 9:59:23 [ERROR] Could not open log file 130416 9:59:23 [ERROR] Can&#39;t init tc log 130416 9:59:23 [ERROR] Aborting 130416 9:59:23 InnoDB: Starting shutdown... 130416 9:59:24 InnoDB: Shutdown completed; log sequence number 0 43655 130416 9:59:24 [Note] MySQL: Shutdown complete 告诉我们找不到mysql-bin. <a class="read-more" href="/csdn/post/ops_mysql_error1067/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-15T06:08:08&#43;08:00">
+            15 May 2020
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -185,234 +412,12 @@ error info [root@localhost DBD-mysql-4.022]# make cp lib/DBD/mysql.pm blib/lib/D
 </article>
 
 	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_department_gitlab_man/">GitLab使用</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>一、注册用户 Name：姓名 Username：用户名 密码：8位
-等待管理员解锁。
-二、增加SSH 1. 生成SSH 在“开始”菜单，选择“TortoiseGit”中的“PuttyGen” 点击“Generate”按钮，然后，鼠标在图中红色方框的区域内不停的移动，即可生成密钥。 “Public key for pasting into OpenShh authorized_keys file:”所有内容既是我们需要的。 2. 设置SSH 用户登录后，进入“ProfileSettings”-&gt;“SSH Keys”
-点击“Add SSH Key” 把上面生成的ssh复制到key中（title会自动生成），点击“Add key”  <a class="read-more" href="/csdn/post/ops_department_gitlab_man/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-15T04:08:08&#43;08:00">
-            15 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/com-crc32-delphi/">Delphi调用COM</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>准备 1. Windows 系统引入 运行 -&gt; Regsvr32 x:/FCV.dll
-2. Delphi 引入 Project -&gt; Import Type Library -&gt;&ldquo;FCV 1.1 Type Library (Version1.1)&rdquo;
-code unitUntMain; interface uses Windows, Messages, SysUtils, Variants, Classes,Graphics, Controls, Forms, Dialogs, StdCtrls, OleServer, FCVLib_TLB;typeTfrmMain = class(TForm)lblFileVal: TLabel;lblFcvVal: TLabel;edtFilePath: TEdit;btnGenFCN: TButton;edtFCVpath: TEdit;btnCalFileValue: TButton;btnReadFCV: TButton;btnCreatFCV: TButton;UCRC321: TUCRC32;procedure btnCreatFCVClick(Sender: TObject);procedure btnGenFCNClick(Sender: TObject);procedure btnCalFileValueClick(Sender: TObject);procedure btnReadFCVClick(Sender: TObject);private{ Private declarations }myFCV: IUCRC32;public{ Public declarations }instanceFlag: Boolean;end;varfrmMain: TfrmMain; implementation{$R *. <a class="read-more" href="/csdn/post/com-crc32-delphi/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-14T12:08:08&#43;08:00">
-            14 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/uml-activity_diagram-sjz/">活动图（Activity Diagram）</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>根据登录用户的情况来进行各模块的操作。
-操作员 (1) 列车顺序表
-(2) 货车装卸报告（数据处理）
-(3) 货车装卸报告（查看）
-管理员 (1) 密码管理
-(2) 查看日志
-(3) 车种设置
-(4) 延时费设置
-(5) 打印通知单（延时费）
-其Activity Diagram如下： Rational Rose文件：flowChart1.mdl 提取码: 62ua 工程repo <a class="read-more" href="/csdn/post/uml-activity_diagram-sjz/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-11T08:08:08&#43;08:00">
-            11 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/hw-schematic_diagram-pnp8550/">PNP8550(3.3V 直流蜂鸣器)</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>文件下载: sch20110901.7z 提取码: 6qwv <a class="read-more" href="/csdn/post/hw-schematic_diagram-pnp8550/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-10T12:08:08&#43;08:00">
-            10 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/hw-schematic_diagram-pic16f877a/">PIC16F877A最小功能板</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>一、顶层 主要由端口转换、MCU、复位、键盘、晶振和显示等5部分电路组成。 二、模块层 1. 端口转换电路 2. MCU 3. 复位电路 4. 键盘电路 5. LED电路 备份文件: sch20110411.7z 提取码: 3h95
-参考文章 基于PIC16F877A型单片机的通用单片机控制板（作者：石伟屹）  <a class="read-more" href="/csdn/post/hw-schematic_diagram-pic16f877a/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-10T10:08:08&#43;08:00">
-            10 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/hw-schematic_diagram-nrf905/">nRF905 原理图</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>备份文件：sch20110521.7z 提取码: pcea <a class="read-more" href="/csdn/post/hw-schematic_diagram-nrf905/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-10T08:08:08&#43;08:00">
-            10 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/hw-schematic_diagram-max2323e/">MAX2323E原理图</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>MAX2323E(3.3V)+ LPC1752。
-文件备份：sch20110723.7z 提取码: ny2j <a class="read-more" href="/csdn/post/hw-schematic_diagram-max2323e/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-10T00:08:08&#43;08:00">
-            10 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_perl_excel/">对Excel进行处理</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>有一表格需要进行格式化处理，其要求如下：
-档案编号重复 少部分在xls文件中，大部分与数据库冲突。 日期格式错误 正确格式：xxxx-xx-xx 所有汉字的空格问题 非法性别 除了男女之外 code 程序如下：
-#! /usr/bin/perl################################################################################ Author: **斌# Date: 2012-02-22# Version: V0.1############################################################################################################################################################### Modified by: xiaobin (XB)# Modified date: 2012-03-31# Version: V0.3############################################################################################################################################################### Modified by: xiaobin (XB)# Modified date: 2012-04-01# Version: V0.4############################################################################################################################################################### Modified by: # Modified date: # Version: ############################################################################################################################################################### 版权说明： ## 本程序版权归李贵斌所有，解释权属于所有者。 ## 作为一个整体使用时，请附带以上说明。 ## ## 本程序完全免费使用。 ################################################################################################################################################################ 使用说明 ################################################################################# ## 命令行：perl processData. <a class="read-more" href="/csdn/post/ops_perl_excel/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-08T16:08:08&#43;08:00">
-            8 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_perl_mysql/">数据库的查询</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>Perl操作数据库与其他的语言操作数据库没有什么区别。
-首先，要连接数据库。
-然后，执行SQL语句。
-最后，关闭连接。
-code 循环中为使用游标读取每行数据。
-test.pl
-#! /usr/bin/perl # test DBI and DBD::mysql use DBI; $dsn = &#34;DBI:mysql:database=carnumber;host=localhost;port=3306&#34;; my $dbh = DBI-&gt;connect($dsn, &#34;root&#34;, &#34;qazxsw&#34;, {&#39;RaiseError&#39; =&gt; 1}); my $strSQL = &#34;select train_number, seriary_number, car_number,&#34;. &#34; car_marque, past_time from trainOrder where train_number &lt; 100&#34;; my $sth = $dbh-&gt;prepare($strSQL); $sth-&gt;execute(); print &#34;TN\tSN\tNumber\tMarque\tPastTime\n&#34;; while (my $ref = $sth-&gt;fetchrow_hashref()) { print &#34;$ref-&gt;{&#39;train_number&#39;}\t&#34;. &#34;$ref-&gt;{&#39;seriary_number&#39;}\t&#34;. &#34;$ref-&gt;{&#39;car_number&#39;}\t&#34;. &#34;$ref-&gt;{&#39;car_marque&#39;}\t&#34;. &#34;$ref-&gt;{&#39;past_time&#39;}\n&#34;; } $sth-&gt;finish(); $dbh-&gt;disconnect();  <a class="read-more" href="/csdn/post/ops_perl_mysql/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-08T16:08:08&#43;08:00">
-            8 May 2020
-        </time>
-    </footer>
-</article>
-
-	
 
 	<nav class="pagination" role="navigation">
 	
 	    <a class="newer-posts" href="/csdn/post/page/7/">&larr; Newer Posts</a>
 	
-	<span class="page-number">Page 8 of 12</span>
+	<span class="page-number">Page 8 of 13</span>
 	
 	    <a class="older-posts" href="/csdn/post/page/9/">Older Posts &rarr;</a>
 	
