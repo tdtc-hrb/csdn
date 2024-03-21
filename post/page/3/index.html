@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="zh-CN">
 <head>
 
     <meta charset="utf-8" />
@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.121.2">
+    <meta name="generator" content="Hugo 0.124.1">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,6 +160,59 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_network_proxy/">设置proxy</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>OS Windows set command
+set http_proxy=http://127.0.0.1:8580 set https_proxy=http://127.0.0.1:8580 Ubuntu export http_proxy=&#34;http://192.168.1.108:1080&#34; export https_proxy=&#34;http://192.168.1.108:1080&#34; With user and password Set up the server in the tool: Check &ldquo;Run xxx as Server(listens 0.0.0.0)&rdquo;
+export http_proxy=http://USERNAME:PASSWORD@192.168.1.108:8580/ export https_proxy=http://USERNAME:PASSWORD@192.168.1.108:8580/ FreeBSD v12.4
+setenv HTTP_PROXY http://web-proxy.xxxxxx.com:8080 setenv HTTPS_PROXY https://web-proxy.xxxxxx.com:8080 software VirtualBox Adapter 1 host only, vboxnet0
+Adapter 2 NAT
+Guest os sudo vi /etc/netplan/00-installer-config.yaml network: version: 2 renderer: networkd ethernets: enp0s3: addresses: - 192.168.56.12/24 dhcp4: no enp0s8: dhcp4: no Wine #! <a class="read-more" href="/csdn/post/ops_network_proxy/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-02-17T14:08:08&#43;08:00">
+            17 Feb 2023
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_data_transmission/">Linux与Windows互传数据</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>一、光盘 制作ISO: 打开UltralISO，把需要的文件拖拽过去即可。
+2. Linux 1) look ls -l /dev | grep cdrom 2) load sudo mount /dev/cdrom /mnt/ 3) unload sudo umount /mnt 二、scp 如果Windows没有SSH服务器，只能进行发送.
+发送 Linux scp /home/tdtc/go1.19.7.linux-amd64.tar.gz xiaobin@192.168.211.112:/D:\war Windows Windows的scp包含在putty工具中。 pscp f:\docker-soft\docker-compose-Linux-x86_64 tdtc@192.168.211.131:/home/tdtc/ pscp f:\docker-soft\protobuf-cpp-3.21.12.tar.gz tdtc@192.168.211.131:/home/tdtc/ pscp f:\docker-soft\go1.19.7.linux-amd64.tar.gz tdtc@192.168.211.131:/home/tdtc 接收 注意：仅适用于win10.
+安装OpenSSH 开始菜单-》设置-》应用-》管理可选功能
+开启OpenSSH 注意：关闭Windows防火墙或允许22端口。 <a class="read-more" href="/csdn/post/ops_data_transmission/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-02-15T16:08:08&#43;08:00">
+            15 Feb 2023
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -369,67 +422,6 @@ $sudo yum install net-tools Service #vi /etc/init.d/realserver /etc/init.d/reals
         
         <time class="post-date" datetime="2022-10-03T02:38:08&#43;08:00">
             3 Oct 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/version-ubuntu/">查看版本-Ubuntu</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>components version 查看内核版本:
-#uname -a 查看Glibc库版本 #apt-cache show libc6 查看binutils版本 #ld -v 查看ubuntu版本号 #cat /etc/issue 查看debian对应版本 #cat /etc/debian_version debian code name code version status bullseye 11 statble buster 10 old statble stretch 9 old old statble jessie 8 archived wheezy 7 obsolete squeeze 6.0 obsolete lenny 5.0 obsolete etch 4.0 obsolete sarge 3.1 obsolete woody 3.0 obsolete potato 2.2 obsolete slink 2.1 obsolete hamm 2.0 obsolete  <a class="read-more" href="/csdn/post/version-ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        on
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/glibc/">#Glibc</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/sh/">#sh</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/binutils/">#binutils</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/system/">#system</a>,
-            
-        
-        <time class="post-date" datetime="2022-10-01T02:12:39&#43;08:00">
-            1 Oct 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_keepalived-v2/">安装配置Keepalived</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>OS: CentOS7 minimal(VBox)
-Virtual Box Network configure:
-Attached to Bridged Adapter Advanced promiscuous mode: Allow All 一、安装 prepare tool:
-#yum install gcc make autoconf automake openssl-devel libnl3-devel \ iptables-devel ipset-devel net-snmp-devel libnfnetlink-devel file-devel \ glib2-devel pcre2-revel libnftnl-devel libmnl-devel systemd-devel kmod-devel LVS manager:
-yum install ipvsadm installation MASTER Node 1 BACKUP Node 2 down and unzip $git clone https://github.com/acassen/keepalived.git for me:
-$git clone https://gitee.com/xiaobin80/keepalived installation $cd keepalived $./autogen.sh configure:
-$./configure --prefix=/usr make: <a class="read-more" href="/csdn/post/ops_keepalived-v2/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-09-30T09:38:08&#43;08:00">
-            30 Sep 2022
         </time>
     </footer>
 </article>

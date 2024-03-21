@@ -5,9 +5,23 @@
     <link>https://tdtc-hrb.github.io/csdn/</link>
     <description>Recent content on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Fri, 22 Dec 2023 12:08:08 +0800</lastBuildDate>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 21 Mar 2024 02:20:39 +0800</lastBuildDate>
     <atom:link href="https://tdtc-hrb.github.io/csdn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>apt的安装问题</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/apt-oper-ubuntu/</link>
+      <pubDate>Thu, 21 Mar 2024 02:20:39 +0800</pubDate>
+      <guid>https://tdtc-hrb.github.io/csdn/post/apt-oper-ubuntu/</guid>
+      <description>apt适合手动输入(有交互); apt-get适合脚本(无交互).&#xA;Manage 卸载 apt-get autoremove vsftpd --purge 安装指定版本 apt-get install &amp;lt;package name&amp;gt;=&amp;lt;version&amp;gt; 列出版本 apt-cache madison &amp;lt;&amp;lt;package name&amp;gt;&amp;gt; DebIan sudo sudo.d(directory):&#xA;Note also, that becasuse sudoers contents can vary widely, no attempt is made to add this directive to existing sudoers files on upgrade. Feel free to add the above directive to the end of your /etc/sudoers file to enabe this functionality for existing installations if you wish! Sudo versions older than the one in Debian 11(bullseye) require the directive will only support the old syntax #includedir, and the current sudo will happily accept both @includedir and #includedir install using root:</description>
+    </item>
+    <item>
+      <title>开启sudo</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_sudo/</link>
+      <pubDate>Wed, 20 Mar 2024 00:08:08 +0800</pubDate>
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_sudo/</guid>
+      <description>new user #useradd tdtc #passwd tdtc Append group Modify su file CentOS 6 v6 and below versions Open wheel #vi /etc/pam.d/su auth required /lib/security/$ISA/pam_wheel.so use_uid Attachment of group members #gpasswd -a tdtc wheel Command CentOS 7/8 Debian v12.x CentOS 7/8 CentOS8 needs to be executed locally, Unable to execute on ssh network side.&#xA;#usermod –aG wheel tdtc Debian adduser tdtc sudo test Query all users with sudo permissions.&#xA;[tdtc@tdtc102 ~]$ sudo lid -g wheel We trust you have received the usual lecture from the local System Administrator.</description>
+    </item>
     <item>
       <title>Chain of Command 模式</title>
       <link>https://tdtc-hrb.github.io/csdn/post/dp-cor-java/</link>
@@ -247,13 +261,6 @@
       <description>本安装大部分同&amp;ldquo;安装 MariaDB 10.3数据库&amp;rdquo;&#xA;Installation 1. add repo sudo yum install http://repo.mysql.com/mysql57-community-release-el7.rpm 2. install import GPG:&#xA;sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022 CentOS7 sudo yum install mysql-community-server CentOS8 Install after doing the following(disable default repo, config-manager, close gpgcheck):&#xA;sudo dnf install mysql-community-server disable default repo sudo dnf remove @mysql sudo dnf module reset mysql sudo dnf module disable mysql config-manager sudo dnf config-manager --disable mysql80-community sudo dnf config-manager --enable mysql57-community close gpgcheck sudo vi /etc/yum.</description>
     </item>
     <item>
-      <title>开启sudo</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_sudo/</link>
-      <pubDate>Sun, 18 Sep 2022 00:08:08 +0800</pubDate>
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_sudo/</guid>
-      <description>new user #useradd tdtc #passwd tdtc Append group CentOS7- Open wheel #vi /etc/pam.d/su auth required /lib/security/$ISA/pam_wheel.so use_uid Attachment of group members #gpasswd -a tdtc wheel CentOS7/8 CentOS8 needs to be executed locally, Unable to execute on ssh network side.&#xA;#usermod –aG wheel tdtc test Query all users with sudo permissions.&#xA;[tdtc@tdtc102 ~]$ sudo lid -g wheel We trust you have received the usual lecture from the local System Administrator. It usually boils down to these three things: #1) Respect the privacy of others.</description>
-    </item>
-    <item>
       <title>设置OpenJDK</title>
       <link>https://tdtc-hrb.github.io/csdn/post/ops_openjdk_centos/</link>
       <pubDate>Thu, 15 Sep 2022 08:08:08 -0800</pubDate>
@@ -469,13 +476,6 @@
       <pubDate>Wed, 08 Sep 2021 08:08:08 +0800</pubDate>
       <guid>https://tdtc-hrb.github.io/csdn/post/ops_dc_redis_ubuntu/</guid>
       <description>本文适用范围：&#xA;WSL1(Ubuntu) 开发环境 Ubuntu 生产环境 1. 安装 推荐使用PPA模式安装redis-server&#xA;1.1 增加PPA sudo apt-add-repository ppa:chris-lea/redis-server sudo apt-get update install sudo apt-get install redis-server 1.2 配置 警告清除 Memory WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add &amp;#39;vm.overcommit_memory = 1&amp;#39; to /etc/sysctl.conf and then reboot or run the command &amp;#39;sysctl vm.overcommit_memory=1&amp;#39; for this to take effect. A: add vm.overcommit_memory=1 edit sysctl.conf:&#xA;sudo vi /etc/sysctl.</description>
-    </item>
-    <item>
-      <title>apt的安装问题</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/apt-oper-ubuntu/</link>
-      <pubDate>Thu, 08 Jul 2021 02:20:39 +0800</pubDate>
-      <guid>https://tdtc-hrb.github.io/csdn/post/apt-oper-ubuntu/</guid>
-      <description>apt适合手动输入(有交互); apt-get适合脚本(无交互).&#xA;Manage 卸载 apt-get autoremove vsftpd --purge 安装指定版本 apt-get install &amp;lt;package name&amp;gt;=&amp;lt;version&amp;gt; 列出版本 apt-cache madison &amp;lt;&amp;lt;package name&amp;gt;&amp;gt; DebIan sudo using root:&#xA;su - root install:&#xA;apt install sudo chmod 640 /etc/sudoers 在配置文件/etc/sudoers加入：&#xA;tdtc ALL=(ALL:ALL) ALL 把文件权限改为只读:&#xA;chmod 440 /etc/sudoers apt source sudo vi /etc/apt/sources.list 注释掉&amp;quot;deb cdrom:xxx&amp;quot;&#xA;##deb cdrom:xxx Ref Debian中安装使用sudo命令 Debian取消从光盘安装软件的方式 </description>
     </item>
     <item>
       <title>grub救援模式</title>

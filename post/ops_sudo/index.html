@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="zh-CN">
 <head>
 
     <meta charset="utf-8" />
@@ -13,7 +13,7 @@
 
 
 <meta name="twitter:title" content="开启sudo"/>
-<meta name="twitter:description" content="RHEL Community Version"/>
+<meta name="twitter:description" content="RHEL and Debian"/>
 <meta name="twitter:site" content="@"/>
 
 
@@ -27,9 +27,9 @@
     
 
     
-    <meta property="og:description" content="RHEL Community Version" />
+    <meta property="og:description" content="RHEL and Debian" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2022-09-18T00:08:08&#43;08:00" />
+    <meta property="article:published_time" content="2024-03-20T00:08:08&#43;08:00" />
 
     
     
@@ -37,7 +37,7 @@
     <title>开启sudo &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
 
     
-    <meta name="description" content="RHEL Community Version" />
+    <meta name="description" content="RHEL and Debian" />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.121.2">
+    <meta name="generator" content="Hugo 0.124.1">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_sudo/" />
 
@@ -92,18 +92,18 @@
     },
     "headline": "开启sudo",
     "name": "开启sudo",
-    "wordCount":  106 ,
+    "wordCount":  128 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/ops_sudo/",
-    "datePublished": "2022-09-18T00:08Z",
-    "dateModified": "2022-09-18T00:08Z",
+    "datePublished": "2024-03-20T00:08Z",
+    "dateModified": "2024-03-20T00:08Z",
     
     
-    "description": "RHEL Community Version",
+    "description": "RHEL and Debian",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://tdtc-hrb.github.io/csdn/post/ops_sudo/"
@@ -164,12 +164,12 @@
 
     <header class="post-header">
         <h1 class="post-title">开启sudo</h1>
-        <small>RHEL Community Version</small>
+        <small>RHEL and Debian</small>
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2022-09-18T00:08:08&#43;08:00">
-            Sep 18, 2022
+          <time class="post-date" datetime="2024-03-20T00:08:08&#43;08:00">
+            Mar 20, 2024
           </time>
         
          
@@ -181,19 +181,31 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#useradd tdtc</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#passwd tdtc</span>
 </span></span></code></pre></div><h1 id="append-group">Append group</h1>
-<h2 id="centos7-">CentOS7-</h2>
+<h2 id="modify-su-file">Modify su file</h2>
+<ul>
+<li>CentOS 6
+v6 and below versions</li>
+</ul>
 <h3 id="open-wheel">Open wheel</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#vi /etc/pam.d/su</span>
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>auth required /lib/security/$ISA/pam_wheel.so use_uid
 </span></span></code></pre></div><h3 id="attachment-of-group-members">Attachment of group members</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#gpasswd -a tdtc wheel</span>
-</span></span></code></pre></div><h2 id="centos78">CentOS7/8</h2>
+</span></span></code></pre></div><h2 id="command">Command</h2>
+<ul>
+<li>CentOS 7/8</li>
+<li>Debian <br>
+v12.x</li>
+</ul>
+<h3 id="centos-78">CentOS 7/8</h3>
 <blockquote>
 <p>CentOS8 needs to be executed locally,
 Unable to execute on ssh network side.</p>
 </blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#usermod –aG wheel tdtc</span>
-</span></span></code></pre></div><h1 id="test">test</h1>
+</span></span></code></pre></div><h3 id="debian">Debian</h3>
+<pre tabindex="0"><code>adduser tdtc sudo
+</code></pre><h1 id="test">test</h1>
 <p>Query all users with sudo permissions.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>tdtc@tdtc102 ~<span style="color:#f92672">]</span>$ sudo lid -g wheel
 </span></span><span style="display:flex;"><span>
@@ -210,6 +222,7 @@ Unable to execute on ssh network side.</p>
 </span></span></code></pre></div><h1 id="参考">参考</h1>
 <ul>
 <li><a href="https://blog.csdn.net/weixin_37959457/article/details/80759374">usermod -g和gpasswd -a的区别</a></li>
+<li><a href="https://documentation.arcserve.com/Arcserve-UDP/Available/V6.5/ENU/Bookshelf_Files/HTML/Agent%20Online%20Help%20Linux/Content/AgentforLinuxUserGuide/udpl_config_sudo_debian.htm">Configure sudo in Debian</a></li>
 </ul>
 
     </section>
@@ -262,17 +275,17 @@ Unable to execute on ssh network side.</p>
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/mysql57-cenos7/">
+      <a class="read-next-story" style="no-cover" href="/csdn/post/apt-oper-ubuntu/">
           <section class="post">
-              <h2>CentOS7/8安装mysql5.7</h2>
+              <h2>apt的安装问题</h2>
               
           </section>
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_openjdk_centos/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/dp-cor-java/">
           <section class="post">
-              <h2>设置OpenJDK</h2>
+              <h2>Chain of Command 模式</h2>
           </section>
       </a>
   

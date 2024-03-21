@@ -2,13 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/dp-cor-java/</loc>
-    <lastmod>2023-12-22T12:08:08+08:00</lastmod>
+    <loc>https://tdtc-hrb.github.io/csdn/post/apt-oper-ubuntu/</loc>
+    <lastmod>2024-03-21T02:20:39+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/</loc>
-    <lastmod>2023-12-22T12:08:08+08:00</lastmod>
+    <lastmod>2024-03-21T02:20:39+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/</loc>
+    <lastmod>2024-03-21T02:20:39+08:00</lastmod>
+  </url><url>
+    <loc>https://tdtc-hrb.github.io/csdn/post/ops_sudo/</loc>
+    <lastmod>2024-03-20T00:08:08+08:00</lastmod>
+  </url><url>
+    <loc>https://tdtc-hrb.github.io/csdn/post/dp-cor-java/</loc>
     <lastmod>2023-12-22T12:08:08+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/vc-serial_communication/</loc>
@@ -124,9 +130,6 @@
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/mysql57-cenos7/</loc>
     <lastmod>2022-09-24T06:21:39+08:00</lastmod>
-  </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/ops_sudo/</loc>
-    <lastmod>2022-09-18T00:08:08+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/ops_openjdk_centos/</loc>
     <lastmod>2022-09-15T08:08:08-08:00</lastmod>
@@ -244,9 +247,6 @@
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/ops_dc_redis_ubuntu/</loc>
     <lastmod>2021-09-08T08:08:08+08:00</lastmod>
-  </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/apt-oper-ubuntu/</loc>
-    <lastmod>2021-07-08T02:20:39+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/ops_grub_ubuntu/</loc>
     <lastmod>2021-06-15T00:19:08+08:00</lastmod>

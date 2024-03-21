@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="zh-CN">
 <head>
 
     <meta charset="utf-8" />
@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.121.2">
+    <meta name="generator" content="Hugo 0.124.1">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -193,6 +193,53 @@
 </nav>
 
     </div>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_tomcat/">Tomcat安装</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Servlet Spec JSP Spec EL Spec WebSocket Spec Authentication (JASIC) Spec Apache Tomcat Version Latest Released Version Supported Java Versions 6.0 3.1 5.0 2.1 3.0 10.1.x 10.1.13 11 and later 3.1 2.3 3.0 1.1 1.1 8.5.x 8.5.93 7 and later 2.5 2.1 2.1 N/A N/A 6.0.x 6.0.53 5 and later 2.4 2.0 N/A N/A N/A 5.5.x 5.5.36 1.4 and later installation Platform version Released Specification Java SE Support Important Changes Jakarta EE 10 2022-03-31 10 Java SE 17/Java SE 11 Removal of deprecated items in Servlet, Faces, CDI and EJB (Entity Beans and Embeddable Container). <a class="read-more" href="/csdn/post/ops_tomcat/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-08-29T12:38:08&#43;08:00">
+            29 Aug 2023
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/vc-boost/">安装boost库(VC)</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>1.59.0 support of msvc-14.0 1.64.0 support of msvc-14.1 1.71.0 support of msvc-14.2 1.78.0 support of msvc-14.3 MSVC++ versions
+名称 VS版本 msvc-14.0 VS2015 msvc-14.1 VS2017 msvc-14.2 VS2019 msvc-14.3 VS2022 1. 编译(x86) x86 Native Tools Command Prompt for VS xxxx
+down source zip package, and unzip. for example: v1.83
+About b2 vs bjam as of Boost 1.47.0, the official name of the executable was changed to b2. Gen b2 and build cd C:\boost_1_83_0 bootstrap. <a class="read-more" href="/csdn/post/vc-boost/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-08-19T10:08:39&#43;08:00">
+            19 Aug 2023
+        </time>
+    </footer>
+</article>
 
     
         <article class="post post">
@@ -410,59 +457,6 @@ code 以下程序在VC9/VC14.1下编译通过
         
         <time class="post-date" datetime="2023-03-05T21:30:08-08:00">
             5 Mar 2023
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_network_proxy/">设置proxy</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>OS Windows set command
-set http_proxy=http://127.0.0.1:8580 set https_proxy=http://127.0.0.1:8580 Ubuntu export http_proxy=&#34;http://192.168.1.108:1080&#34; export https_proxy=&#34;http://192.168.1.108:1080&#34; With user and password Set up the server in the tool: Check &ldquo;Run xxx as Server(listens 0.0.0.0)&rdquo;
-export http_proxy=http://USERNAME:PASSWORD@192.168.1.108:8580/ export https_proxy=http://USERNAME:PASSWORD@192.168.1.108:8580/ FreeBSD v12.4
-setenv HTTP_PROXY http://web-proxy.xxxxxx.com:8080 setenv HTTPS_PROXY https://web-proxy.xxxxxx.com:8080 software VirtualBox Adapter 1 host only, vboxnet0
-Adapter 2 NAT
-Guest os sudo vi /etc/netplan/00-installer-config.yaml network: version: 2 renderer: networkd ethernets: enp0s3: addresses: - 192.168.56.12/24 dhcp4: no enp0s8: dhcp4: no Wine #! <a class="read-more" href="/csdn/post/ops_network_proxy/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-02-17T14:08:08&#43;08:00">
-            17 Feb 2023
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_data_transmission/">Linux与Windows互传数据</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>一、光盘 制作ISO: 打开UltralISO，把需要的文件拖拽过去即可。
-2. Linux 1) look ls -l /dev | grep cdrom 2) load sudo mount /dev/cdrom /mnt/ 3) unload sudo umount /mnt 二、scp 如果Windows没有SSH服务器，只能进行发送.
-发送 Linux scp /home/tdtc/go1.19.7.linux-amd64.tar.gz xiaobin@192.168.211.112:/D:\war Windows Windows的scp包含在putty工具中。 pscp f:\docker-soft\docker-compose-Linux-x86_64 tdtc@192.168.211.131:/home/tdtc/ pscp f:\docker-soft\protobuf-cpp-3.21.12.tar.gz tdtc@192.168.211.131:/home/tdtc/ pscp f:\docker-soft\go1.19.7.linux-amd64.tar.gz tdtc@192.168.211.131:/home/tdtc 接收 注意：仅适用于win10.
-安装OpenSSH 开始菜单-》设置-》应用-》管理可选功能
-开启OpenSSH 注意：关闭Windows防火墙或允许22端口。 <a class="read-more" href="/csdn/post/ops_data_transmission/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-02-15T16:08:08&#43;08:00">
-            15 Feb 2023
         </time>
     </footer>
 </article>

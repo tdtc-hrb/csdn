@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="zh-CN">
 <head>
 
     <meta charset="utf-8" />
@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="apt安装中使用到卸载、安装指定版本、以及查看deb版本" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2021-07-08T02:20:39&#43;08:00" />
+    <meta property="article:published_time" content="2024-03-21T02:20:39&#43;08:00" />
 
     
     
@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.121.2">
+    <meta name="generator" content="Hugo 0.124.1">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/apt-oper-ubuntu/" />
 
@@ -92,15 +92,15 @@
     },
     "headline": "apt的安装问题",
     "name": "apt的安装问题",
-    "wordCount":  52 ,
+    "wordCount":  146 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/apt-oper-ubuntu/",
-    "datePublished": "2021-07-08T02:20Z",
-    "dateModified": "2021-07-08T02:20Z",
+    "datePublished": "2024-03-21T02:20Z",
+    "dateModified": "2024-03-21T02:20Z",
     
     
     "description": "apt安装中使用到卸载、安装指定版本、以及查看deb版本",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2021-07-08T02:20:39&#43;08:00">
-            Jul 8, 2021
+          <time class="post-date" datetime="2024-03-21T02:20:39&#43;08:00">
+            Mar 21, 2024
           </time>
         
          
@@ -187,23 +187,35 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-cache madison &lt;&lt;package name&gt;&gt;
 </span></span></code></pre></div><h1 id="debian">DebIan</h1>
 <h2 id="sudo">sudo</h2>
+<p>sudo.d(directory):</p>
+<pre tabindex="0"><code>Note also, that becasuse sudoers contents can vary widely, no attempt is made to add this 
+directive to existing sudoers files on upgrade. Feel free to add the above directive to the 
+end of your /etc/sudoers file to enabe this functionality for existing installations if you 
+wish! Sudo versions older than the one in Debian 11(bullseye) require the directive will only 
+support the old syntax #includedir, and the current sudo will happily accept both @includedir 
+and #includedir
+</code></pre><h3 id="install">install</h3>
 <p>using root:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>su - root
 </span></span></code></pre></div><p>install:</p>
 <pre tabindex="0"><code class="language-sudo" data-lang="sudo">apt install sudo
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod <span style="color:#ae81ff">640</span> /etc/sudoers
+</code></pre><h3 id="manual">manual</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod <span style="color:#ae81ff">640</span> /etc/sudoers
 </span></span></code></pre></div><p>在配置文件/etc/sudoers加入：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tdtc ALL<span style="color:#f92672">=(</span>ALL:ALL<span style="color:#f92672">)</span> ALL
 </span></span></code></pre></div><p>把文件权限改为只读:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod <span style="color:#ae81ff">440</span> /etc/sudoers
-</span></span></code></pre></div><h2 id="apt-source">apt source</h2>
+</span></span></code></pre></div><h2 id="cd-rom-in-source">CD-ROM in source</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/apt/sources.list
 </span></span></code></pre></div><p>注释掉&quot;deb cdrom:xxx&quot;</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">##deb cdrom:xxx</span>
-</span></span></code></pre></div><h1 id="ref">Ref</h1>
+</span></span></code></pre></div><h3 id="command">Command</h3>
+<pre tabindex="0"><code>sudo sed -i &#39;/cdrom/d&#39; /etc/apt/sources.list
+</code></pre><h1 id="ref">Ref</h1>
 <ul>
 <li><a href="https://blog.csdn.net/putong11/article/details/9568685">Debian中安装使用sudo命令</a></li>
 <li><a href="https://www.cnblogs.com/yaos/p/6941144.html">Debian取消从光盘安装软件的方式</a></li>
+<li><a href="https://askubuntu.com/questions/386265/media-change-please-insert-the-disc-labeled-when-trying-to-install-ruby-on-ra">media change: please insert the disc labeled</a></li>
 </ul>
 
     </section>
@@ -256,17 +268,10 @@
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_dc_redis_ubuntu/">
-          <section class="post">
-              <h2>安装redis-server</h2>
-              
-          </section>
-      </a>
   
-  
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_grub_ubuntu/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_sudo/">
           <section class="post">
-              <h2>grub救援模式</h2>
+              <h2>开启sudo</h2>
           </section>
       </a>
   
