@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.124.1">
+    <meta name="generator" content="Hugo 0.125.1">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,6 +160,95 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c-bsd_socket-server/">使用fork的server</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>GNU Compiler Collection(GCC)
+在“Socket服务器端程序”基础上增加子进程。
+Beej’s Guide Network to Programming 关于Unix/Linux子进程：
+相当于Windows的线程
+调用fork()即可增加子进程。
+要使用fork必须调用waitpid() ！
+waitpid() waitpid函数原型：
+#include&lt;sys/types.h&gt; /* 提供类型pid_t的定义 */ #include&lt;sys/wait.h&gt; pid_t waitpid(pid_t pid, int *status, int options); pid 等于-1时，等待任何一个子进程退出，没有任何限制，此时waitpid和wait的作用一模一样。
+status 我们设置为NULL。
+options 提供了一些额外的选项来控制waitpid，WNOHANG常量表示， 即使没有子进程退出，它也会立即返回，不会像wait那样永远等下去。
+sigaction() sigaction()是waitpid()的开关
+只有给waitpid()信号时，才开启它(waitpid)！ 这时，需要sigaction()。
+sigaction函数原型：
+#include&lt;signal.h&gt; int sigaction(int signum, const struct sigaction *act, struct sigaction *oldact); signum 等于SIGCHLD时，只有子进程停止或者退出才进行调用。
+act 一个指向sigaction结构的指针。
+oldact 一般废止不用。
+我们主要设置结构sigaction的sa_handler、sa_mask和sa_flags三个成员变量即可！
+code /** * Version: 0.2 * * Description: Add signal * */ #include &lt;stdio. <a class="read-more" href="/csdn/post/c-bsd_socket-server/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-05-16T08:08:08&#43;08:00">
+            16 May 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/java-maven-qa1/">maven的QA</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>1. org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER Q:
+Classpath entry org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER will not be exported or published. Runtime ClassNotFoundExceptions may result. A:
+$mvn eclipse:clean reference what-is-org-eclipse-m2e-maven2-classpath-container-and-how-do-i-make-it-work-in 2. no main manifest attribute java jar Q:
+$java -jar cliDemo-0.0.1-SNAPSHOT.jar no main manifest attribute, in cliDemo-0.0.1-SNAPSHOT.jar A:
+for win:
+java -cp cliDemo-0.0.1-SNAPSHOT.jar;C:\Users\xiaobin\.m2\repository\commons-cli\commons-cli\1.4\commons-cli-1.4.jar my.csdn9.ConsoleLauncher --help Reference how-to-run-jar-files-depend-on-jar-files 3. CoreException: Could not calculate build plan: Plugin org.apache.maven.plugins:maven-compiler-plugin Q:
+CoreException: Could not calculate build plan: Plugin org.apache.maven.plugins:maven-compiler-plugin:3.1 or one of its dependencies could not be resolved: Failure to find org. <a class="read-more" href="/csdn/post/java-maven-qa1/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-05-15T10:08:08&#43;08:00">
+            15 May 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/java-springboot-jpa/">thymeleaf &#43; Spring Boot &#43; JPA</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>1. 自动构建 1) boot向导 2) pom依赖 &lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt; &lt;project xmlns=&#34;http://maven.apache.org/POM/4.0.0&#34; xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xsi:schemaLocation=&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;&gt; &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt; &lt;groupId&gt;com.example&lt;/groupId&gt; &lt;artifactId&gt;demo&lt;/artifactId&gt; &lt;version&gt;0.0.2-SNAPSHOT&lt;/version&gt; &lt;packaging&gt;jar&lt;/packaging&gt; &lt;name&gt;demo-jpa&lt;/name&gt; &lt;description&gt;Demo project for Spring Boot&lt;/description&gt; &lt;parent&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt; &lt;version&gt;2.0.2.RELEASE&lt;/version&gt; &lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt; &lt;/parent&gt; &lt;properties&gt; &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt; &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt; &lt;java.version&gt;1.8&lt;/java.version&gt; &lt;/properties&gt; &lt;dependencies&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt; &lt;scope&gt;runtime&lt;/scope&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;mysql&lt;/groupId&gt; &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt; &lt;scope&gt;runtime&lt;/scope&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt; &lt;scope&gt;test&lt;/scope&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt; &lt;/dependency&gt; &lt;/dependencies&gt; &lt;build&gt; &lt;plugins&gt; &lt;plugin&gt; &lt;groupId&gt;org. <a class="read-more" href="/csdn/post/java-springboot-jpa/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-05-10T10:26:39&#43;08:00">
+            10 May 2022
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -344,81 +433,6 @@ include createStore import { createStore } from &#39;redux&#39; Establish reduce
         
         <time class="post-date" datetime="2022-04-10T08:26:39&#43;08:00">
             10 Apr 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/dpkg-issues/">dpkg的info问题和file system只读问题</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>Install sudo dpkg -i debName.deb issues info问题 E: Sub-process /usr/bin/dpkg returned an error code (1) 解决办法：
-cd /var/lib/dpkg sudo mv info info.bak sudo mkdir info 文件系统只读问题 W: Problem unlinking the file /var/cache/apt/pkgcache.bin - RemoveCaches (30: Read-only file system) sudo fsck -Af sudo reboot  <a class="read-more" href="/csdn/post/dpkg-issues/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-04-10T02:10:39&#43;08:00">
-            10 Apr 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/go-data-using/">使用go-bindata</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>安装 $ go get -u github.com/go-bindata/go-bindata/... generation bindata.go $ cd ~/go/src/github.com/xiaobin80/go-micro-services/ $ go-bindata data/... $ mv bindata.go ./data/ 修改包名 package main &mdash;》
-package xxx 此例xxx为data。
-Reference go-bindata go-micro-services  <a class="read-more" href="/csdn/post/go-data-using/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-04-10T02:10:39&#43;08:00">
-            10 Apr 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_git_oper1/">git操作 部分1</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>一、远程仓库回滚 1. 硬性 git reset --hard HEAD~1 &ldquo;~1&quot;表示向前回滚1个提交。 &ldquo;~2&quot;表示向前回滚2个提交，以此类推。 2. 强制推送 git push -f --set-upstream origin master 二、删除github发布 git tag -d [tag] git push origin :[tag] 例如：
-git tag -d v0.3.1 git push origin :v0.3.1 三、修改commit信息 可以修改最后一次提交的信息.
-进入git-cmd或git-bash：
-git commit --amend About：
-git-bash和git-cmd的区别
-bash是linux风格的命令行，可以使用windows和linux的命令； cmd是windows风格的命令行，可以使用windows命令；
-此外，还有一个最大的不同点，git-cmd是天生就带了系统的PATH环境变量， 这一点会导致如果你运行某些脚本的时候，如果依赖某些安装的程序， 如python、node这些，git-bash就会提示不存在对应的命令， 而git-cmd可以正确运行。 四、合并分支 1. checkout git checkout dev git checkout master 2. merge git merge origin/dev 五、设置user git init git config user.name &#34;xiaobin80&#34; git config user. <a class="read-more" href="/csdn/post/ops_git_oper1/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-02-02T01:38:08&#43;08:00">
-            2 Feb 2022
         </time>
     </footer>
 </article>

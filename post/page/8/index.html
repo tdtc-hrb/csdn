@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.124.1">
+    <meta name="generator" content="Hugo 0.125.1">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -164,11 +164,35 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_zookeeper/">多服务器ZooKeeper安装</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>JDK install see 设置OpenJDK
+Stage I 1. 《sudo - CentOS》 2. FQDN #127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomain4 #::1 localhost localhost.localdomain localhost6 localhost6.localdomain6 192.168.0.137 tdtc101 192.168.0.138 tdtc102 192.168.0.139 tdtc103 3. 《ssh相互免密》 Stage II 1. unzip $wget https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/zookeeper-3.6.3/apache-zookeeper-3.6.3-bin.tar.gz --no-check-certificate $mkdir -p ~/app/zookeeper $tar xzvf apache-zookeeper-3.6.3-bin.tar.gz -C ~/app/zookeeper $mv ~/app/zookeeper/apache-zookeeper-3.6.3-bin ~/app/zookeeper/3.6.3 2. zk home $sudo vi /etc/bashrc export ZK_HOME=/home/tdtc/app/zookeeper/3.6.3 export PATH=$PATH:$ZK_HOME/bin Stage III 1. zoo.cfg Add the following configuration, and the other options default. <a class="read-more" href="/csdn/post/ops_zookeeper/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2021-04-14T01:08:08&#43;08:00">
+            14 Apr 2021
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_memcached_ubuntu/">安装memcached</a></h2>
     </header>
     <section class="post-excerpt">
         
-            <p>VMware: Ubuntu 20.04.2
+            <p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).
+VMware: Ubuntu 20.04.2
 Install and update #sudo apt-get install memcached [0] #sudo apt-get install build-essential #sudo apt-get install libevent-dev* #wget http://memcached.org/files/memcached-1.6.15.tar.gz #tar -zxvf memcached-1.6.15.tar.gz #cd memcached-1.6.15 #./configure &amp;&amp; make &amp;&amp; sudo make install Start allow port sudo ufw allow 11211 config sudo vi /etc/memcached.conf 修改为服务器的IP:
 # Specify which IP address to listen on. The default is to listen on all IP addresses # This parameter is one of the only security measures that memcached has, so make sure # it&#39;s listening on a firewalled interface. <a class="read-more" href="/csdn/post/ops_memcached_ubuntu/">&raquo;</a></p>
         
@@ -333,31 +357,6 @@ UART 因为我们使用UART主要是进行发送的，所以关闭接收可以�
 
         
         <time class="post-date" datetime="2020-05-15T23:08:08&#43;08:00">
-            15 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_spark_ubuntu/">安装spark</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>WSL: Ubuntu 18.04.1
-Prepare Java 8+, Python 2.7+/3.4+ and R 3.1+
-Spark runs on Java 8+, Python 2.7+/3.4+ and R 3.1+. For the Scala API, Spark 2.4.1 uses Scala 2.12. You will need to use a compatible Scala version (2.12.x). 1. java 设置OpenJDK - Ubuntu
-2. Python sudo apt-get install python 3. R language 1) add ppa sudo add-apt-repository ppa:marutter/rrutter sudo apt-get update 2) install sudo apt-get install r-base r-base-dev Installation 1. <a class="read-more" href="/csdn/post/ops_spark_ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-15T08:08:08&#43;08:00">
             15 May 2020
         </time>
     </footer>

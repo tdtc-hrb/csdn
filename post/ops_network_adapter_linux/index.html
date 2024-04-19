@@ -13,7 +13,7 @@
 
 
 <meta name="twitter:title" content="Linux修改网卡为固定IP"/>
-<meta name="twitter:description" content="需要net-tools支持"/>
+<meta name="twitter:description" content="需要net-tools/netplan"/>
 <meta name="twitter:site" content="@"/>
 
 
@@ -27,9 +27,9 @@
     
 
     
-    <meta property="og:description" content="需要net-tools支持" />
+    <meta property="og:description" content="需要net-tools/netplan" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2023-10-02T08:38:08&#43;08:00" />
+    <meta property="article:published_time" content="2024-03-12T08:38:08&#43;08:00" />
 
     
     
@@ -37,7 +37,7 @@
     <title>Linux修改网卡为固定IP &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
 
     
-    <meta name="description" content="需要net-tools支持" />
+    <meta name="description" content="需要net-tools/netplan" />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.124.1">
+    <meta name="generator" content="Hugo 0.125.1">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/" />
 
@@ -92,18 +92,18 @@
     },
     "headline": "Linux修改网卡为固定IP",
     "name": "Linux修改网卡为固定IP",
-    "wordCount":  178 ,
+    "wordCount":  207 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/",
-    "datePublished": "2023-10-02T08:38Z",
-    "dateModified": "2023-10-02T08:38Z",
+    "datePublished": "2024-03-12T08:38Z",
+    "dateModified": "2024-03-12T08:38Z",
     
     
-    "description": "需要net-tools支持",
+    "description": "需要net-tools/netplan",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/"
@@ -164,12 +164,12 @@
 
     <header class="post-header">
         <h1 class="post-title">Linux修改网卡为固定IP</h1>
-        <small>需要net-tools支持</small>
+        <small>需要net-tools/netplan</small>
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2023-10-02T08:38:08&#43;08:00">
-            Oct 2, 2023
+          <time class="post-date" datetime="2024-03-12T08:38:08&#43;08:00">
+            Mar 12, 2024
           </time>
         
          
@@ -177,10 +177,17 @@
     </header>
 
     <section class="post-content">
-      <h1 id="almarocky">Alma/Rocky</h1>
-<blockquote>
-<p>RHEL Community Version</p>
-</blockquote>
+      <ul>
+<li>RHEL</li>
+<li>Diban <br>
+Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</li>
+</ul>
+<h1 id="rhel-like">RHEL-like</h1>
+<ul>
+<li>Alma/Rocky</li>
+<li>CentOS <br>
+Less than RHEL version 8</li>
+</ul>
 <h2 id="view">View</h2>
 <p>net adapter list:</p>
 <pre tabindex="0"><code>$cd /etc/sysconfig/network-scripts
@@ -225,8 +232,10 @@ default: eth0</p>
 default: enp0s3</p>
 </li>
 </ul>
-<h1 id="ubuntu">Ubuntu</h1>
-<h2 id="设置static-ip">设置static IP</h2>
+<h1 id="debian-like">Debian-like</h1>
+<p>Debian:</p>
+<pre tabindex="0"><code>sudo apt install netplan.io
+</code></pre><h2 id="ubuntu">Ubuntu</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cd /etc/netplan/
 </span></span><span style="display:flex;"><span>$sudo vi 00-installer-config.yaml
 </span></span></code></pre></div><ul>
@@ -274,6 +283,7 @@ network:
 <h1 id="ref">Ref</h1>
 <ul>
 <li><a href="https://www.tecmint.com/configure-ipv6-network-on-centos-rhel/">How to Configure IPv6 Network on CentOS/RHEL 8</a></li>
+<li><a href="https://techviewleo.com/manage-ubuntu-debian-networking-using-netplan/">How To Manage Ubuntu / Debian Networking using Netplan</a></li>
 </ul>
 
     </section>
@@ -326,17 +336,17 @@ network:
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/nodejs-ubuntu/">
+      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_openjdk_ubuntu/">
           <section class="post">
-              <h2>在Ubuntu下安装NodeJS</h2>
+              <h2>设置OpenJDK</h2>
               
           </section>
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/com-wizards-vc/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_dc_redis_ubuntu/">
           <section class="post">
-              <h2>VC 创建 Component Object Model</h2>
+              <h2>安装redis-server</h2>
           </section>
       </a>
   

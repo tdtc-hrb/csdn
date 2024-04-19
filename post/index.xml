@@ -4,23 +4,79 @@
     <title>Posts on 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
     <link>https://tdtc-hrb.github.io/csdn/post/</link>
     <description>Recent content in Posts on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo 0.125.1</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 21 Mar 2024 02:20:39 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 09 Apr 2024 12:38:08 +0800</lastBuildDate>
     <atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tomcat安装</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</link>
+      <pubDate>Tue, 09 Apr 2024 12:38:08 +0800</pubDate>
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</guid>
+      <description>Servlet Spec JSP Spec EL Spec WebSocket Spec Authentication (JASIC) Spec Apache Tomcat Version Latest Released Version Supported Java Versions 6.0 3.1 5.0 2.1 3.0 10.1.x 10.1.20 11 and later 3.1 2.3 3.0 1.1 1.1 8.5.x 8.5.100 7 and later 2.5 2.1 2.1 N/A N/A 6.0.x 6.0.53 5 and later 2.4 2.0 N/A N/A N/A 5.5.x 5.5.36 1.4 and later installation Platform version Released Specification Java SE Support Important Changes Jakarta EE 10 2022-03-31 10 Java SE 17/Java SE 11 Removal of deprecated items in Servlet, Faces, CDI and EJB (Entity Beans and Embeddable Container).</description>
+    </item>
     <item>
       <title>apt的安装问题</title>
       <link>https://tdtc-hrb.github.io/csdn/post/apt-oper-ubuntu/</link>
       <pubDate>Thu, 21 Mar 2024 02:20:39 +0800</pubDate>
       <guid>https://tdtc-hrb.github.io/csdn/post/apt-oper-ubuntu/</guid>
-      <description>apt适合手动输入(有交互); apt-get适合脚本(无交互).&#xA;Manage 卸载 apt-get autoremove vsftpd --purge 安装指定版本 apt-get install &amp;lt;package name&amp;gt;=&amp;lt;version&amp;gt; 列出版本 apt-cache madison &amp;lt;&amp;lt;package name&amp;gt;&amp;gt; DebIan sudo sudo.d(directory):&#xA;Note also, that becasuse sudoers contents can vary widely, no attempt is made to add this directive to existing sudoers files on upgrade. Feel free to add the above directive to the end of your /etc/sudoers file to enabe this functionality for existing installations if you wish! Sudo versions older than the one in Debian 11(bullseye) require the directive will only support the old syntax #includedir, and the current sudo will happily accept both @includedir and #includedir install using root:</description>
+      <description>apt适合手动输入(有交互); apt-get适合脚本(无交互).&#xA;Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).&#xA;Manage 卸载 apt-get autoremove vsftpd --purge 安装指定版本 apt-get install &amp;lt;package name&amp;gt;=&amp;lt;version&amp;gt; 列出版本 apt-cache madison &amp;lt;&amp;lt;package name&amp;gt;&amp;gt; DebIan sudo sudo.d(directory):&#xA;Note also, that becasuse sudoers contents can vary widely, no attempt is made to add this directive to existing sudoers files on upgrade. Feel free to add the above directive to the end of your /etc/sudoers file to enabe this functionality for existing installations if you wish!</description>
     </item>
     <item>
       <title>开启sudo</title>
       <link>https://tdtc-hrb.github.io/csdn/post/ops_sudo/</link>
       <pubDate>Wed, 20 Mar 2024 00:08:08 +0800</pubDate>
       <guid>https://tdtc-hrb.github.io/csdn/post/ops_sudo/</guid>
-      <description>new user #useradd tdtc #passwd tdtc Append group Modify su file CentOS 6 v6 and below versions Open wheel #vi /etc/pam.d/su auth required /lib/security/$ISA/pam_wheel.so use_uid Attachment of group members #gpasswd -a tdtc wheel Command CentOS 7/8 Debian v12.x CentOS 7/8 CentOS8 needs to be executed locally, Unable to execute on ssh network side.&#xA;#usermod –aG wheel tdtc Debian adduser tdtc sudo test Query all users with sudo permissions.&#xA;[tdtc@tdtc102 ~]$ sudo lid -g wheel We trust you have received the usual lecture from the local System Administrator.</description>
+      <description>new user #useradd tdtc #passwd tdtc Append group Modify su file CentOS 6 v6 and below versions Open wheel #vi /etc/pam.d/su auth required /lib/security/$ISA/pam_wheel.so use_uid Attachment of group members #gpasswd -a tdtc wheel Command CentOS 7/8 Debian Migrate to Debian before Ubuntu 20.04 ends support (April, 2025). CentOS 7/8 CentOS8 needs to be executed locally, Unable to execute on ssh network side.&#xA;#usermod –aG wheel tdtc Debian adduser tdtc sudo test Query all users with sudo permissions.</description>
+    </item>
+    <item>
+      <title>使用WSL(V1.0)在Windows 10</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/dev_wsl_ubuntu/</link>
+      <pubDate>Fri, 15 Mar 2024 12:08:08 +0800</pubDate>
+      <guid>https://tdtc-hrb.github.io/csdn/post/dev_wsl_ubuntu/</guid>
+      <description>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).&#xA;Arch： x64&#xA;OS: Windows 10 1809 LTSC&#xA;在powerShell的管理员模式下运行命令!&#xA;安装/卸载 ON:&#xA;Control Panel -&amp;gt; Uninstall a program -&amp;gt; Turn Windows features on or off, 勾选“Windows Subsystem for Linux” 安装Ubuntu down appx:&#xA;Ubuntu 2004&#xA;Ubuntu 1804&#xA;从AppxBundle提取appx.&#xA;Add-AppxPackage .\Ubuntu_2004.xxx.appx 卸载 如果“普通”方式不工作，请使用“命令行”。&#xA;普通 右击“Ubuntu xxx” 图标，选择“Uninstall”即可。&#xA;命令行 v1803-v1809&#xA;wslconfig /u 使用 更改源列表:&#xA;sudo vi /etc/apt/sources.list http://archive.ubuntu.com -&amp;gt; https://mirrors.aliyun.com/ubuntu/ 文件互访 首先，使用windows记事本，建立一个testTxtFile.txt； 然后，在WSL查看文件内容。&#xA;cd /mnt/c/Users/tdtc/ vi testTxtFile.</description>
+    </item>
+    <item>
+      <title>安装spark</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_spark_ubuntu/</link>
+      <pubDate>Fri, 15 Mar 2024 08:08:08 +0800</pubDate>
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_spark_ubuntu/</guid>
+      <description>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).&#xA;WSL: Ubuntu 18.04.1&#xA;Prepare Java 8+, Python 2.7+/3.4+ and R 3.1+&#xA;Spark runs on Java 8+, Python 2.7+/3.4+ and R 3.1+. For the Scala API, Spark 2.4.1 uses Scala 2.12. You will need to use a compatible Scala version (2.12.x). 1. java 设置OpenJDK - Ubuntu&#xA;2. Python sudo apt-get install python 3. R language 1) add ppa sudo add-apt-repository ppa:marutter/rrutter sudo apt-get update 2) install sudo apt-get install r-base r-base-dev Installation 1.</description>
+    </item>
+    <item>
+      <title>设置OpenJDK</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_openjdk_ubuntu/</link>
+      <pubDate>Fri, 15 Mar 2024 07:08:08 +0800</pubDate>
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_openjdk_ubuntu/</guid>
+      <description>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).&#xA;ubuntu 20.04.2&#xA;wsl1017@DESKTOP-14G6K9S:~$ java -version Command &amp;#39;java&amp;#39; not found, but can be installed with: sudo apt install default-jre sudo apt install openjdk-11-jre-headless sudo apt install openjdk-8-jre-headless installation install jre wsl1017@DESKTOP-14G6K9S:/tmp$ sudo apt-get install openjdk-8-jre-headless install jdk sudo apt-get install openjdk-8-jdk-headless set JAVA home sudo vi /etc/profile export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 ubuntu version The very short answer is that OpenJDK 8 as of 2017-08-08 is not officially available for Ubuntu 14.</description>
+    </item>
+    <item>
+      <title>Linux修改网卡为固定IP</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/</link>
+      <pubDate>Tue, 12 Mar 2024 08:38:08 +0800</pubDate>
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/</guid>
+      <description>RHEL Diban Migrate to Debian before Ubuntu 20.04 ends support (April, 2025). RHEL-like Alma/Rocky CentOS Less than RHEL version 8 View net adapter list:&#xA;$cd /etc/sysconfig/network-scripts&#xD;$ls ifcfg-* -l ipv4 $ip addr ipv6 $ip -6 addr Setup Start job network adapter:&#xA;ONBOOT=yes static $cd /etc/sysconfig/network-scripts $sudo vi ifcfg-enp0s3 BOOTPROTO=none IPADDR=192.168.1.186 PREFIX=24 GATEWAY=192.168.1.1 DNS1=211.161.191.235 DNS2=211.161.122.197 IPv6 Network IPV6INIT=yes This initializes the interface for IPv6 addressing. IPV6_AUTOCONF=yes This enables the IPv6 auto-configuration for the interface.</description>
+    </item>
+    <item>
+      <title>安装redis-server</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_dc_redis_ubuntu/</link>
+      <pubDate>Sun, 10 Mar 2024 08:08:08 +0800</pubDate>
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_dc_redis_ubuntu/</guid>
+      <description>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).&#xA;1. 安装 Prerequisites:&#xA;sudo apt install lsb-release curl gpg Add the repository to the apt index:&#xA;curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg&#xD;echo &amp;#34;deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main&amp;#34; | sudo tee /etc/apt/sources.list.d/redis.list install sudo apt-get update sudo apt-get install redis-server Launch local(WSL) redis-server remote(Virtual Box or VM ware etc.) sudo redis-server /etc/redis/redis.conf View port install netstat:</description>
+    </item>
+    <item>
+      <title>在Ubuntu下安装NodeJS</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/nodejs-ubuntu/</link>
+      <pubDate>Sat, 02 Mar 2024 23:08:39 +0800</pubDate>
+      <guid>https://tdtc-hrb.github.io/csdn/post/nodejs-ubuntu/</guid>
+      <description>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).&#xA;1.node.js v20.x/v18.x/16.x&#xA;v20.x curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - v18.x curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - v16.x curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - install sudo apt-get install -y nodejs update first remove:&#xA;sudo apt remove nodejs and then, remove libnode72:&#xA;sudo dpkg --remove --force-remove-reinstreq libnode72:amd64 last install:&#xA;sudo apt-get install -y nodejs 2. yarn js curl --silent --show-error https://dl.</description>
+    </item>
+    <item>
+      <title>查看版本-Ubuntu</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/version-ubuntu/</link>
+      <pubDate>Fri, 01 Mar 2024 02:12:39 +0800</pubDate>
+      <guid>https://tdtc-hrb.github.io/csdn/post/version-ubuntu/</guid>
+      <description>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).&#xA;components version 查看内核版本:&#xA;#uname -a 查看Glibc库版本 #apt-cache show libc6 查看binutils版本 #ld -v 查看ubuntu版本号 #cat /etc/issue 查看debian对应版本 #cat /etc/debian_version debian code name code version status bullseye 11 statble buster 10 old statble stretch 9 old old statble jessie 8 archived wheezy 7 obsolete squeeze 6.0 obsolete lenny 5.0 obsolete etch 4.0 obsolete sarge 3.1 obsolete woody 3.0 obsolete potato 2.2 obsolete slink 2.</description>
     </item>
     <item>
       <title>Chain of Command 模式</title>
@@ -37,13 +93,6 @@
       <description>串口读写工具&#xA;PC has no serial device&#xA;PC has serial device&#xA;CSerialPort author: Remon Spekreijse MFC Vs2013(VC12)/Vs2019(VC14.2) 程序介绍 界面分三块： 端口配置、发送区域、接收区域&#xA;v2.0 使用boost thread + SQLite3 library 实现串口数据存储到SQLite数据库. 1. 端口配置 1.1 在“Port Number”选择端口号； 1.2 在“Config”配置端口的属性，比如波特率、奇偶校验、数据位、停止位等等。 Setting Serial Communication Number&#xA;2. 发送区域 2.1 Loop Send 当我们钩选此复选框时，必须选择“发送频率”，然后才能执行循环发送数据。&#xA;### 2.2 发送频率 选择其一：500、1000、2000毫秒。&#xA;Setting time&#xA;如果要更改读取自定义的时间频率：&#xA;请将SerialCommView.cpp-Ln292，更为：&#xA;((CComboBox *)GetDlgItem(IDC_COMBO1Timer))-&amp;gt;GetWindowTextA(strTemp);)&#xA;2.3 发送内容框 在“发送信息框”输入内容就可发送数据了！&#xA;2.4 操作流程 A类（自动化） 2.2-》2.3-》2.1&#xA;B类（手动） 2.3-》点击“Send”按钮。&#xA;3. 接收区域 3.1 制式切换 当钩选了“Hex View”复选框，接收到的数据就以16进制显示。&#xA;3.2 清除数据 当点击“Clear”按钮，即清空接收框数据。</description>
     </item>
     <item>
-      <title>设置OpenJDK</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_openjdk_ubuntu/</link>
-      <pubDate>Fri, 15 Dec 2023 07:08:08 +0800</pubDate>
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_openjdk_ubuntu/</guid>
-      <description>ubuntu 20.04.2&#xA;wsl1017@DESKTOP-14G6K9S:~$ java -version Command &amp;#39;java&amp;#39; not found, but can be installed with: sudo apt install default-jre sudo apt install openjdk-11-jre-headless sudo apt install openjdk-8-jre-headless installation install jre wsl1017@DESKTOP-14G6K9S:/tmp$ sudo apt-get install openjdk-8-jre-headless install jdk sudo apt-get install openjdk-8-jdk-headless set JAVA home sudo vi /etc/profile export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 ubuntu version The very short answer is that OpenJDK 8 as of 2017-08-08 is not officially available for Ubuntu 14.04.&#xA;Upgrade to a newer version of Ubuntu.</description>
-    </item>
-    <item>
       <title>模板方法模式</title>
       <link>https://tdtc-hrb.github.io/csdn/post/dp-template-java/</link>
       <pubDate>Fri, 08 Dec 2023 12:08:08 +0800</pubDate>
@@ -58,32 +107,11 @@
       <description>IDE Visual Studio 2017(v15.9)/Visual Studio 2019(v16.11) 本文参考: 创建COM&#xA;一、创建COM 增加IE支持： IObjectWithSite&#xA;增加方法 Add STDMETHODIMP CtestSOW::Add(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x + y); return S_OK; } Subtract STDMETHODIMP CtestSOW::Sub(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x - y); return S_OK; } Multiply STDMETHODIMP CtestSOW::Mul(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x * y); return S_OK; } Divide STDMETHODIMP CtestSOW::Div(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x / y); return S_OK; } Modulo STDMETHODIMP CtestSOW::Mod(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x % y); return S_OK; } Logarithm STDMETHODIMP CtestSOW::Lg(LONG x, LONG y, DOUBLE* ret)&#xD;{&#xD;// https://en.</description>
     </item>
     <item>
-      <title>在Ubuntu下安装NodeJS</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/nodejs-ubuntu/</link>
-      <pubDate>Sun, 22 Oct 2023 23:08:39 +0800</pubDate>
-      <guid>https://tdtc-hrb.github.io/csdn/post/nodejs-ubuntu/</guid>
-      <description>1.node.js v20.x/v18.x/16.x&#xA;v20.x curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - v18.x curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - v16.x curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - install sudo apt-get install -y nodejs update first remove:&#xA;sudo apt remove nodejs and then, remove libnode72:&#xA;sudo dpkg --remove --force-remove-reinstreq libnode72:amd64 last install:&#xA;sudo apt-get install -y nodejs 2. yarn js curl --silent --show-error https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo &amp;#34;deb https://dl.</description>
-    </item>
-    <item>
-      <title>Linux修改网卡为固定IP</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/</link>
-      <pubDate>Mon, 02 Oct 2023 08:38:08 +0800</pubDate>
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/</guid>
-      <description>Alma/Rocky RHEL Community Version&#xA;View net adapter list:&#xA;$cd /etc/sysconfig/network-scripts&#xD;$ls ifcfg-* -l ipv4 $ip addr ipv6 $ip -6 addr Setup Start job network adapter:&#xA;ONBOOT=yes static $cd /etc/sysconfig/network-scripts $sudo vi ifcfg-enp0s3 BOOTPROTO=none IPADDR=192.168.1.186 PREFIX=24 GATEWAY=192.168.1.1 DNS1=211.161.191.235 DNS2=211.161.122.197 IPv6 Network IPV6INIT=yes This initializes the interface for IPv6 addressing. IPV6_AUTOCONF=yes This enables the IPv6 auto-configuration for the interface. IPV6_DEFROUTE=yes This indicates that the default IPv6 route has been assigned to the interface.</description>
-    </item>
-    <item>
       <title>VC 创建 Component Object Model</title>
       <link>https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/</link>
       <pubDate>Fri, 22 Sep 2023 23:08:08 +0800</pubDate>
       <guid>https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/</guid>
       <description>Use Visual Studio&amp;rsquo;s wizard to create COM&#xA;Visual Studio 2013 Visual Studio 2015 Visual Studio 2017/2019/2022 step by step:&#xA;建立ATL工程 建立ATL Simple Object 添加IDL方法 测试添加的method 建立ATL工程 File-&amp;gt;New-&amp;gt;Project&#xA;name: testATL Note: name即是要生成的DLL文件 选择&amp;quot;MFC/ATL&amp;quot;中&amp;quot;ATL Project&amp;quot;:&#xA;Default&#xA;取消编译时注册Dll Project -&amp;gt; Properties&#xD;Linker -&amp;gt; Register Output&#xD;No Add ATL Simple Object (vs2017/vs2019)右击项目名称，选择Add -&amp;gt;New Item&#xA;vs2013/vs2015: Add -&amp;gt; Class&#xA;ATL Simple Object:&#xA;设置 Short name: testSOW&#xA;Simple Object ID ProgID: testATL.testSOW IE支持 vs2013/vs2015 Options -&amp;gt; Support vs2017/vs2019 Other Options 添加IDL方法 Tab switching from &amp;ldquo;Solution Explorer&amp;rdquo; to &amp;ldquo;Class View&amp;rdquo; Select the interface, Right-click -&amp;gt; add -&amp;gt; add method</description>
-    </item>
-    <item>
-      <title>Tomcat安装</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</link>
-      <pubDate>Tue, 29 Aug 2023 12:38:08 +0800</pubDate>
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</guid>
-      <description>Servlet Spec JSP Spec EL Spec WebSocket Spec Authentication (JASIC) Spec Apache Tomcat Version Latest Released Version Supported Java Versions 6.0 3.1 5.0 2.1 3.0 10.1.x 10.1.13 11 and later 3.1 2.3 3.0 1.1 1.1 8.5.x 8.5.93 7 and later 2.5 2.1 2.1 N/A N/A 6.0.x 6.0.53 5 and later 2.4 2.0 N/A N/A N/A 5.5.x 5.5.36 1.4 and later installation Platform version Released Specification Java SE Support Important Changes Jakarta EE 10 2022-03-31 10 Java SE 17/Java SE 11 Removal of deprecated items in Servlet, Faces, CDI and EJB (Entity Beans and Embeddable Container).</description>
     </item>
     <item>
       <title>安装boost库(VC)</title>
@@ -126,6 +154,13 @@
       <pubDate>Tue, 20 Jun 2023 08:18:08 +0800</pubDate>
       <guid>https://tdtc-hrb.github.io/csdn/post/vc-update-atl/</guid>
       <description>VC6迁移到VC2008+&#xA;ATL Active Template Library (ATL)&#xA;C1189 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atlcore.h(35): fatal error C1189: #error : This file requires _WIN32_WINNT to be #defined at least to 0x0403. Value 0x0501 or higher is recommended. A:&#xA;StdAfx.h&#xA;#define _WIN32_WINNT 0x0400 -&amp;gt;&#xA;#define _WIN32_WINNT 0x0501 C1083(atlimpl) c:\users\xiaobin\documents\visual studio 2013\projects\crcfcn_vc\stdafx.cpp(13): fatal error C1083: Cannot open include file: &amp;#39;atlimpl.cpp&amp;#39;: No such file or directory A: solution 1 or 2.&#xA;solution 1 Comment out this line stdAfx.</description>
+    </item>
+    <item>
+      <title>grub救援模式</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/ops_grub_ubuntu/</link>
+      <pubDate>Wed, 15 Mar 2023 00:19:08 +0800</pubDate>
+      <guid>https://tdtc-hrb.github.io/csdn/post/ops_grub_ubuntu/</guid>
+      <description>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).&#xA;出现“grub rescue&amp;gt;”提示符；也称grub救援模式。&#xA;1. 设置引导 (hd?,?)：安装的引导分区 在我的机器是(hd0, msdos3)&#xA;grub rescue&amp;gt;ls grub rescue&amp;gt;ls (hd?,?)/boot/grub grub rescue&amp;gt;set root(hd?,?) grub rescue&amp;gt;set prefix=(hd?,?)/boot/grub insmod one:&#xA;insmod /boot/grub/normal.mod /boot/grub/normal two:&#xA;insmod normal normal 2. 更新grub 在终端上执行：&#xA;sudo grub-install /dev/sda sudo update-grub </description>
     </item>
     <item>
       <title>Grid system</title>
@@ -217,13 +252,6 @@
       <pubDate>Mon, 03 Oct 2022 02:38:08 +0800</pubDate>
       <guid>https://tdtc-hrb.github.io/csdn/post/ops_real_keepalived/</guid>
       <description>准备工作：&#xA;修改网卡为固定IP 开启sudo 总览 OS: minimal&#xA;Alma CentOS7.9 Real Server RHEL78RS1 192.168.0.127&#xA;Nginx v1.22 Tomcat v8.5.82 RHEL78RS2 192.168.0.122&#xA;Nginx v1.22 Tomcat v9.0.68 Keepalived Server RHEL78Master 192.168.0.129&#xA;RHEL78Bak 192.168.0.130&#xA;一、Real Server 安装前准备:&#xA;Linux下安装Tomcat nginx - CentOS7 nginx - RHEL8 config ARP ifconfig:&#xA;$sudo yum install net-tools Service #vi /etc/init.d/realserver /etc/init.d/realserver:&#xA;#!/bin/bash SNS_VIP=192.168.0.220 case &amp;#34;$1&amp;#34; in start) ifconfig lo:0 $SNS_VIP netmask 255.255.255.255 broadcast $SNS_VIP /sbin/route add -host $SNS_VIP dev lo:0 echo &amp;#34;1&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_ignore echo &amp;#34;2&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_announce echo &amp;#34;1&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_ignore echo &amp;#34;2&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_announce sysctl -p &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 echo &amp;#34;RealServer Start OK&amp;#34; ;; stop) ifconfig lo:0 down route del $SNS_VIP &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_ignore echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/lo/arp_announce echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_ignore echo &amp;#34;0&amp;#34; &amp;gt;/proc/sys/net/ipv4/conf/all/arp_announce echo &amp;#34;RealServer Stoped&amp;#34; ;; *) echo &amp;#34;Usage: $0 {start|stop}&amp;#34; exit 1 esac exit 0 exec $sudo chmod 755 /etc/init.</description>
-    </item>
-    <item>
-      <title>查看版本-Ubuntu</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/version-ubuntu/</link>
-      <pubDate>Sat, 01 Oct 2022 02:12:39 +0800</pubDate>
-      <guid>https://tdtc-hrb.github.io/csdn/post/version-ubuntu/</guid>
-      <description>components version 查看内核版本:&#xA;#uname -a 查看Glibc库版本 #apt-cache show libc6 查看binutils版本 #ld -v 查看ubuntu版本号 #cat /etc/issue 查看debian对应版本 #cat /etc/debian_version debian code name code version status bullseye 11 statble buster 10 old statble stretch 9 old old statble jessie 8 archived wheezy 7 obsolete squeeze 6.0 obsolete lenny 5.0 obsolete etch 4.0 obsolete sarge 3.1 obsolete woody 3.0 obsolete potato 2.2 obsolete slink 2.1 obsolete hamm 2.0 obsolete </description>
     </item>
     <item>
       <title>安装配置Keepalived</title>
@@ -336,13 +364,6 @@
       <pubDate>Mon, 16 May 2022 08:08:08 +0800</pubDate>
       <guid>https://tdtc-hrb.github.io/csdn/post/c-bsd_socket-server/</guid>
       <description>GNU Compiler Collection(GCC)&#xA;在“Socket服务器端程序”基础上增加子进程。&#xA;Beej’s Guide Network to Programming 关于Unix/Linux子进程：&#xA;相当于Windows的线程&#xA;调用fork()即可增加子进程。&#xA;要使用fork必须调用waitpid() ！&#xA;waitpid() waitpid函数原型：&#xA;#include&amp;lt;sys/types.h&amp;gt; /* 提供类型pid_t的定义 */ #include&amp;lt;sys/wait.h&amp;gt; pid_t waitpid(pid_t pid, int *status, int options); pid 等于-1时，等待任何一个子进程退出，没有任何限制，此时waitpid和wait的作用一模一样。&#xA;status 我们设置为NULL。&#xA;options 提供了一些额外的选项来控制waitpid，WNOHANG常量表示， 即使没有子进程退出，它也会立即返回，不会像wait那样永远等下去。&#xA;sigaction() sigaction()是waitpid()的开关&#xA;只有给waitpid()信号时，才开启它(waitpid)！ 这时，需要sigaction()。&#xA;sigaction函数原型：&#xA;#include&amp;lt;signal.h&amp;gt; int sigaction(int signum, const struct sigaction *act, struct sigaction *oldact); signum 等于SIGCHLD时，只有子进程停止或者退出才进行调用。&#xA;act 一个指向sigaction结构的指针。&#xA;oldact 一般废止不用。&#xA;我们主要设置结构sigaction的sa_handler、sa_mask和sa_flags三个成员变量即可！&#xA;code /** * Version: 0.2 * * Description: Add signal * */ #include &amp;lt;stdio.</description>
-    </item>
-    <item>
-      <title>使用WSL(V1.0)在Windows 10</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/dev_wsl_ubuntu/</link>
-      <pubDate>Sun, 15 May 2022 12:08:08 +0800</pubDate>
-      <guid>https://tdtc-hrb.github.io/csdn/post/dev_wsl_ubuntu/</guid>
-      <description>Arch： x64&#xA;OS: Windows 10 1809 LTSC&#xA;在powerShell的管理员模式下运行命令!&#xA;安装/卸载 ON:&#xA;Control Panel -&amp;gt; Uninstall a program -&amp;gt; Turn Windows features on or off, 勾选“Windows Subsystem for Linux” 安装Ubuntu down appx:&#xA;Ubuntu 2004&#xA;Ubuntu 1804&#xA;从AppxBundle提取appx.&#xA;Add-AppxPackage .\Ubuntu_2004.xxx.appx 卸载 如果“普通”方式不工作，请使用“命令行”。&#xA;普通 右击“Ubuntu xxx” 图标，选择“Uninstall”即可。&#xA;命令行 v1803-v1809&#xA;wslconfig /u 使用 更改源列表:&#xA;sudo vi /etc/apt/sources.list http://archive.ubuntu.com -&amp;gt; https://mirrors.aliyun.com/ubuntu/ 文件互访 首先，使用windows记事本，建立一个testTxtFile.txt； 然后，在WSL查看文件内容。&#xA;cd /mnt/c/Users/tdtc/ vi testTxtFile.txt 最后，用WSL重命名文件名:&#xA;mv testTxtFile.txt testFile.txt 在windows就可以看到重命名的testFile.txt。&#xA;访问WSL服务 WSL与windows 10共有端口，所以Windows 10已使用的端口，不要再分配给WSL</description>
     </item>
     <item>
       <title>maven的QA</title>
@@ -471,20 +492,6 @@
       <description>在JS练习题中，有这么一道：&#xA;请计算某天是这一年的第几天。&#xA;首先，我们要看此年是否闰年&#xA;var IsLeapYear = function (year) { var flag = false; if ( ((year % 4 == 0) &amp;amp;&amp;amp; (year % 100 != 0)) || (year % 400 == 0) ) flag = true; return flag; }; 其次，累加每月天数。&#xA;for (var i = 0; i &amp;lt; month - 1; i++) { iDay += months[i]; } 其中months为数组&#xA;var months = new Array(31, day2, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31); day2如果是闰年赋值29，否则28。</description>
     </item>
     <item>
-      <title>安装redis-server</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_dc_redis_ubuntu/</link>
-      <pubDate>Wed, 08 Sep 2021 08:08:08 +0800</pubDate>
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_dc_redis_ubuntu/</guid>
-      <description>本文适用范围：&#xA;WSL1(Ubuntu) 开发环境 Ubuntu 生产环境 1. 安装 推荐使用PPA模式安装redis-server&#xA;1.1 增加PPA sudo apt-add-repository ppa:chris-lea/redis-server sudo apt-get update install sudo apt-get install redis-server 1.2 配置 警告清除 Memory WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add &amp;#39;vm.overcommit_memory = 1&amp;#39; to /etc/sysctl.conf and then reboot or run the command &amp;#39;sysctl vm.overcommit_memory=1&amp;#39; for this to take effect. A: add vm.overcommit_memory=1 edit sysctl.conf:&#xA;sudo vi /etc/sysctl.</description>
-    </item>
-    <item>
-      <title>grub救援模式</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_grub_ubuntu/</link>
-      <pubDate>Tue, 15 Jun 2021 00:19:08 +0800</pubDate>
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_grub_ubuntu/</guid>
-      <description> 出现“grub rescue&amp;gt;”提示符；也称grub救援模式。&#xA;1. 设置引导 (hd?,?)：安装的引导分区 在我的机器是(hd0, msdos3)&#xA;grub rescue&amp;gt;ls grub rescue&amp;gt;ls (hd?,?)/boot/grub grub rescue&amp;gt;set root(hd?,?) grub rescue&amp;gt;set prefix=(hd?,?)/boot/grub insmod one:&#xA;insmod /boot/grub/normal.mod /boot/grub/normal two:&#xA;insmod normal normal 2. 更新grub 在终端上执行：&#xA;sudo grub-install /dev/sda sudo update-grub </description>
-    </item>
-    <item>
       <title>十六进制转十进制</title>
       <link>https://tdtc-hrb.github.io/csdn/post/c-string-h2i/</link>
       <pubDate>Sat, 01 May 2021 05:08:08 +0800</pubDate>
@@ -503,7 +510,7 @@
       <link>https://tdtc-hrb.github.io/csdn/post/ops_memcached_ubuntu/</link>
       <pubDate>Mon, 01 Feb 2021 09:08:08 +0800</pubDate>
       <guid>https://tdtc-hrb.github.io/csdn/post/ops_memcached_ubuntu/</guid>
-      <description>VMware: Ubuntu 20.04.2&#xA;Install and update #sudo apt-get install memcached [0] #sudo apt-get install build-essential #sudo apt-get install libevent-dev* #wget http://memcached.org/files/memcached-1.6.15.tar.gz #tar -zxvf memcached-1.6.15.tar.gz #cd memcached-1.6.15 #./configure &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo make install Start allow port sudo ufw allow 11211 config sudo vi /etc/memcached.conf 修改为服务器的IP:&#xA;# Specify which IP address to listen on. The default is to listen on all IP addresses # This parameter is one of the only security measures that memcached has, so make sure # it&amp;#39;s listening on a firewalled interface.</description>
+      <description>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).&#xA;VMware: Ubuntu 20.04.2&#xA;Install and update #sudo apt-get install memcached [0] #sudo apt-get install build-essential #sudo apt-get install libevent-dev* #wget http://memcached.org/files/memcached-1.6.15.tar.gz #tar -zxvf memcached-1.6.15.tar.gz #cd memcached-1.6.15 #./configure &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo make install Start allow port sudo ufw allow 11211 config sudo vi /etc/memcached.conf 修改为服务器的IP:&#xA;# Specify which IP address to listen on. The default is to listen on all IP addresses # This parameter is one of the only security measures that memcached has, so make sure # it&amp;#39;s listening on a firewalled interface.</description>
     </item>
     <item>
       <title>UML工具Rose</title>
@@ -546,13 +553,6 @@
       <pubDate>Fri, 15 May 2020 23:08:08 +0800</pubDate>
       <guid>https://tdtc-hrb.github.io/csdn/post/hw-can-uart-key/</guid>
       <description>完结篇 《CAN转COM或CAN-1》介绍了CAN，本篇其余部分。&#xA;开发板：英蓓特MCB2300（LPC2368）&#xA;开发工具：MDK3.8a&#xA;开发主机：Windows XP SP3 中文专业版&#xA;UART 因为我们使用UART主要是进行发送的，所以关闭接收可以更加快速的进行发送处理。&#xA;控制接收缓存寄存（Receiver Buffer Register）即可达到此目的。&#xA;禁止RBR void preUARTInitRBR( unsigned char i ) { switch (i) { case 0: U0IER = IER_THRE | IER_RLS;&#x9;/* Disable RBR */ break; case 1: U1IER = IER_THRE | IER_RLS;&#x9;/* Disable RBR */ break; } } 允许RBR void postUARTInitRBR( unsigned char i ) { switch (i) { case 0: U0IER = IER_THRE | IER_RLS | IER_RBR;&#x9;/* Re-enable RBR */ break; case 1: U1IER = IER_THRE | IER_RLS | IER_RBR;&#x9;/* Re-enable RBR */ break; } } 完成后的UART NXP的官方例程UART加入RBR后的code</description>
-    </item>
-    <item>
-      <title>安装spark</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/ops_spark_ubuntu/</link>
-      <pubDate>Fri, 15 May 2020 08:08:08 +0800</pubDate>
-      <guid>https://tdtc-hrb.github.io/csdn/post/ops_spark_ubuntu/</guid>
-      <description>WSL: Ubuntu 18.04.1&#xA;Prepare Java 8+, Python 2.7+/3.4+ and R 3.1+&#xA;Spark runs on Java 8+, Python 2.7+/3.4+ and R 3.1+. For the Scala API, Spark 2.4.1 uses Scala 2.12. You will need to use a compatible Scala version (2.12.x). 1. java 设置OpenJDK - Ubuntu&#xA;2. Python sudo apt-get install python 3. R language 1) add ppa sudo add-apt-repository ppa:marutter/rrutter sudo apt-get update 2) install sudo apt-get install r-base r-base-dev Installation 1.</description>
     </item>
     <item>
       <title>mysql的1067错误</title>

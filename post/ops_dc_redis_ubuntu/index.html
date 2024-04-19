@@ -13,7 +13,7 @@
 
 
 <meta name="twitter:title" content="安装redis-server"/>
-<meta name="twitter:description" content="ubuntu"/>
+<meta name="twitter:description" content="Debian-like"/>
 <meta name="twitter:site" content="@"/>
 
 
@@ -27,9 +27,9 @@
     
 
     
-    <meta property="og:description" content="ubuntu" />
+    <meta property="og:description" content="Debian-like" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2021-09-08T08:08:08&#43;08:00" />
+    <meta property="article:published_time" content="2024-03-10T08:08:08&#43;08:00" />
 
     
     
@@ -37,7 +37,7 @@
     <title>安装redis-server &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
 
     
-    <meta name="description" content="ubuntu" />
+    <meta name="description" content="Debian-like" />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.124.1">
+    <meta name="generator" content="Hugo 0.125.1">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_dc_redis_ubuntu/" />
 
@@ -92,18 +92,18 @@
     },
     "headline": "安装redis-server",
     "name": "安装redis-server",
-    "wordCount":  615 ,
+    "wordCount":  508 ,
     "timeRequired": "PT3M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/ops_dc_redis_ubuntu/",
-    "datePublished": "2021-09-08T08:08Z",
-    "dateModified": "2021-09-08T08:08Z",
+    "datePublished": "2024-03-10T08:08Z",
+    "dateModified": "2024-03-10T08:08Z",
     
     
-    "description": "ubuntu",
+    "description": "Debian-like",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://tdtc-hrb.github.io/csdn/post/ops_dc_redis_ubuntu/"
@@ -164,12 +164,12 @@
 
     <header class="post-header">
         <h1 class="post-title">安装redis-server</h1>
-        <small>ubuntu</small>
+        <small>Debian-like</small>
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2021-09-08T08:08:08&#43;08:00">
-            Sep 8, 2021
+          <time class="post-date" datetime="2024-03-10T08:08:08&#43;08:00">
+            Mar 10, 2024
           </time>
         
          
@@ -177,23 +177,76 @@
     </header>
 
     <section class="post-content">
-      <p>本文适用范围：</p>
-<ul>
-<li>WSL1(Ubuntu) <br>
-开发环境</li>
-<li>Ubuntu <br>
-生产环境</li>
-</ul>
+      <p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
 <h1 id="1-安装">1. 安装</h1>
-<p>推荐使用<a href="https://launchpad.net/~chris-lea/+archive/ubuntu/redis-server">PPA模式</a>安装redis-server</p>
-<h2 id="11-增加ppa">1.1 增加PPA</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-add-repository ppa:chris-lea/redis-server
-</span></span><span style="display:flex;"><span>sudo apt-get update
-</span></span></code></pre></div><h2 id="install">install</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install redis-server
-</span></span></code></pre></div><h2 id="12-配置">1.2 配置</h2>
-<h3 id="警告清除">警告清除</h3>
-<h4 id="memory">Memory</h4>
+<p>Prerequisites:</p>
+<pre tabindex="0"><code>sudo apt install lsb-release curl gpg
+</code></pre><p>Add the repository to the apt index:</p>
+<pre tabindex="0"><code>curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
+
+echo &#34;deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main&#34; | sudo tee /etc/apt/sources.list.d/redis.list
+</code></pre><ul>
+<li>install</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install redis-server
+</span></span></code></pre></div><h2 id="launch">Launch</h2>
+<ul>
+<li>local(WSL)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>redis-server
+</span></span></code></pre></div><ul>
+<li>remote(Virtual Box or VM ware etc.)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo redis-server /etc/redis/redis.conf
+</span></span></code></pre></div><h3 id="view-port">View port</h3>
+<p>install netstat:</p>
+<pre tabindex="0"><code>sudo apt install net-tools
+</code></pre><p>port:</p>
+<pre tabindex="0"><code>netstat -tunlp
+</code></pre><h3 id="test">Test</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wsl-1130@DESKTOP-14G6K9S:~$ redis-cli
+</span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; SET mykey2 <span style="color:#e6db74">&#34;This is mykey2&#34;</span>
+</span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; SET mykey3 <span style="color:#e6db74">&#34;This is mykey3&#34;</span>
+</span></span></code></pre></div><h3 id="有数据">有数据</h3>
+<blockquote>
+<p><a href="https://stackoverflow.com/questions/5252099/redis-command-to-get-all-available-keys">redis-command-to-get-all-available-keys</a></p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wsl-1130@DESKTOP-14G6K9S:~$ redis-cli
+</span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; KEYS *
+</span></span><span style="display:flex;"><span>1<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;mykey3&#34;</span>
+</span></span><span style="display:flex;"><span>2<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;mykey2&#34;</span>
+</span></span><span style="display:flex;"><span>127.0.0.1:6379&gt;
+</span></span></code></pre></div><h1 id="2-配置">2. 配置</h1>
+<blockquote>
+<p>/etc/redis/redis.conf</p>
+</blockquote>
+<pre tabindex="0"><code>DENIED Redis is running in protected mode because protected mode is enabled, 
+no bind address was specified, no authentication password is requested to clients. 
+In this mode connections are only accepted from the loopback interface. 
+If you want to connect from external computers to Redis you may adopt one of the following solutions: 
+1) Just disable protected mode sending the command &#39;CONFIG SET protected-mode no&#39; 
+ from the loopback interface by connecting to Redis from the same host the server is running, 
+however MAKE SURE Redis is not publicly accessible from internet if you do so. 
+Use CONFIG REWRITE to make this change permanent. 
+2) Alternatively you can just disable the protected mode by editing the Redis configuration file, 
+and setting the protected mode option to &#39;no&#39;, and then restarting the server. 
+3) If you started the server manually just for testing, restart it with the &#39;--protected-mode no&#39; option. 
+4) Setup a bind address or an authentication password. 
+NOTE: You only need to do one of the above things in order for the server to start accepting connections from the outside.
+</code></pre><h2 id="21-配置-standalone">2.1 配置 standalone</h2>
+<ul>
+<li>本地绑定（关）</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># bind 127.0.0.1 </span>
+</span></span></code></pre></div><ul>
+<li>保护模式（关）</li>
+</ul>
+<pre tabindex="0"><code>protected-mode no 
+</code></pre><h2 id="22-警告清除">2.2 警告清除</h2>
+<p>新版本(v7.2.4)已禁止THP:</p>
+<pre tabindex="0"><code>disable-thp yes
+</code></pre><h3 id="memory">Memory</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. 
 </span></span><span style="display:flex;"><span>To fix this issue add <span style="color:#e6db74">&#39;vm.overcommit_memory = 1&#39;</span> to /etc/sysctl.conf and <span style="color:#66d9ef">then</span> reboot or run the command <span style="color:#e6db74">&#39;sysctl vm.overcommit_memory=1&#39;</span> <span style="color:#66d9ef">for</span> this to take effect.
 </span></span></code></pre></div><p>A: add vm.overcommit_memory=1
@@ -201,63 +254,14 @@ edit sysctl.conf:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/sysctl.conf
 </span></span></code></pre></div><p>Take effect:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo sysctl -p
-</span></span></code></pre></div><h4 id="network">Network</h4>
+</span></span></code></pre></div><h3 id="network">Network</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>WARNING: The TCP backlog setting of <span style="color:#ae81ff">511</span> cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
 </span></span></code></pre></div><p>A: add net.core.somaxconn=1024
 edit sysctl.conf:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/sysctl.conf
 </span></span></code></pre></div><p>Take effect:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo sysctl -p
-</span></span></code></pre></div><p>Note: There is no solution in <a href="https://github.com/redis/redis/issues/6123">WSL1</a>.</p>
-<blockquote>
-<p>yossigo commented on Feb 15</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>If so, please note that there<span style="color:#e6db74">&#39;s a big difference between WSL1 which only provides a user-space environment 
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">and WSL2 which is a fully virtualized environment running a Linux kernel. 
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Since WSL1 is not a real Linux environment most of the kernel-related tunings simply don&#39;</span>t work.
-</span></span></code></pre></div><h4 id="thp">THP</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> WARNING you have Transparent Huge Pages <span style="color:#f92672">(</span>THP<span style="color:#f92672">)</span> support enabled in your kernel. 
-</span></span><span style="display:flex;"><span> This will create latency and memory usage issues with Redis. 
-</span></span><span style="display:flex;"><span> To fix this issue run the command <span style="color:#e6db74">&#39;echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled&#39;</span> as root, 
-</span></span><span style="display:flex;"><span> and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
-</span></span></code></pre></div><p>A: add service &ldquo;disable-thp.service&rdquo;
-edit /etc/systemd/system/disable-thp.service:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>Unit<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>Description<span style="color:#f92672">=</span>Disable Transparent Huge Pages <span style="color:#f92672">(</span>THP<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>DefaultDependencies<span style="color:#f92672">=</span>no
-</span></span><span style="display:flex;"><span>After<span style="color:#f92672">=</span>sysinit.target local-fs.target
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>Service<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>Type<span style="color:#f92672">=</span>oneshot
-</span></span><span style="display:flex;"><span>ExecStart<span style="color:#f92672">=</span>/bin/sh -c <span style="color:#e6db74">&#39;echo never | tee /sys/kernel/mm/transparent_hugepage/enabled &gt; /dev/null&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>Install<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>WantedBy<span style="color:#f92672">=</span>basic.target
-</span></span></code></pre></div><p>Take effect:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl daemon-reload
-</span></span><span style="display:flex;"><span>sudo systemctl start disable-thp
-</span></span><span style="display:flex;"><span>sudo systemctl enable disable-thp
-</span></span><span style="display:flex;"><span>sudo reboot
-</span></span></code></pre></div><h3 id="开发机">开发机</h3>
-<blockquote>
-<p>PS: 当使用WSL时，可以不配置！</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>DENIED Redis is running in protected mode because protected mode is enabled, 
-</span></span><span style="display:flex;"><span>no bind address was specified, no authentication password is requested to clients. 
-</span></span><span style="display:flex;"><span>In this mode connections are only accepted from the loopback interface. 
-</span></span><span style="display:flex;"><span>If you want to connect from external computers to Redis you may adopt one of the following solutions: 
-</span></span><span style="display:flex;"><span>1<span style="color:#f92672">)</span> Just disable protected mode sending the command <span style="color:#e6db74">&#39;CONFIG SET protected-mode no&#39;</span> 
-</span></span><span style="display:flex;"><span> from the loopback interface by connecting to Redis from the same host the server is running, 
-</span></span><span style="display:flex;"><span>however MAKE SURE Redis is not publicly accessible from internet <span style="color:#66d9ef">if</span> you <span style="color:#66d9ef">do</span> so. 
-</span></span><span style="display:flex;"><span>Use CONFIG REWRITE to make this change permanent. 
-</span></span><span style="display:flex;"><span>2<span style="color:#f92672">)</span> Alternatively you can just disable the protected mode by editing the Redis configuration file, 
-</span></span><span style="display:flex;"><span>and setting the protected mode option to <span style="color:#e6db74">&#39;no&#39;</span>, and <span style="color:#66d9ef">then</span> restarting the server. 
-</span></span><span style="display:flex;"><span>3<span style="color:#f92672">)</span> If you started the server manually just <span style="color:#66d9ef">for</span> testing, restart it with the <span style="color:#e6db74">&#39;--protected-mode no&#39;</span> option. 
-</span></span><span style="display:flex;"><span>4<span style="color:#f92672">)</span> Setup a bind address or an authentication password. 
-</span></span><span style="display:flex;"><span>NOTE: You only need to <span style="color:#66d9ef">do</span> one of the above things in order <span style="color:#66d9ef">for</span> the server to start accepting connections from the outside.
-</span></span></code></pre></div><h4 id="本地绑定关">本地绑定（关）</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># bind 127.0.0.1 </span>
-</span></span></code></pre></div><h4 id="保护模式关">保护模式（关）</h4>
-<pre tabindex="0"><code>protected-mode no 
-</code></pre><h3 id="cluster">cluster</h3>
+</span></span></code></pre></div><h2 id="23-配置cluster">2.3 配置cluster</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Configure redis to use sockets</span>
 </span></span><span style="display:flex;"><span>sudo cp /etc/redis/redis.conf /etc/redis/redis.conf.orig
 </span></span><span style="display:flex;"><span>
@@ -280,26 +284,9 @@ edit /etc/systemd/system/disable-thp.service:</p>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Add git to the redis group</span>
 </span></span><span style="display:flex;"><span>sudo usermod -aG redis git
-</span></span></code></pre></div><h1 id="2-运行">2. 运行</h1>
-<h2 id="localwsl">local(WSL)</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>redis-server
-</span></span></code></pre></div><h2 id="remotevirtual-box-or-vm-ware-etc">remote(Virtual Box or VM ware etc.)</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo redis-server /etc/redis/redis.conf
-</span></span></code></pre></div><h2 id="21-test">2.1 Test</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wsl-1130@DESKTOP-14G6K9S:~$ redis-cli
-</span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; SET mykey2 <span style="color:#e6db74">&#34;This is mykey2&#34;</span>
-</span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; SET mykey3 <span style="color:#e6db74">&#34;This is mykey3&#34;</span>
-</span></span></code></pre></div><h3 id="有数据">有数据</h3>
-<blockquote>
-<p><a href="https://stackoverflow.com/questions/5252099/redis-command-to-get-all-available-keys">redis-command-to-get-all-available-keys</a></p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wsl-1130@DESKTOP-14G6K9S:~$ redis-cli
-</span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; KEYS *
-</span></span><span style="display:flex;"><span>1<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;mykey3&#34;</span>
-</span></span><span style="display:flex;"><span>2<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;mykey2&#34;</span>
-</span></span><span style="display:flex;"><span>127.0.0.1:6379&gt;
 </span></span></code></pre></div><h1 id="ref">Ref</h1>
 <ul>
+<li><a href="https://redis.io/docs/install/install-redis/install-redis-on-linux/">Install on Ubuntu/Debian</a></li>
 <li><a href="https://techexpert.tips/ubuntu/ubuntu-disable-transparent-huge-pages/">Ubuntu - Disable Transparent Huge Pages</a></li>
 </ul>
 
@@ -353,17 +340,17 @@ edit /etc/systemd/system/disable-thp.service:</p>
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/js-calday/">
+      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_network_adapter_linux/">
           <section class="post">
-              <h2> 使用Ts/Js计算天数</h2>
+              <h2>Linux修改网卡为固定IP</h2>
               
           </section>
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_grub_ubuntu/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/nodejs-ubuntu/">
           <section class="post">
-              <h2>grub救援模式</h2>
+              <h2>在Ubuntu下安装NodeJS</h2>
           </section>
       </a>
   

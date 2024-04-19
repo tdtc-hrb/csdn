@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.124.1">
+    <meta name="generator" content="Hugo 0.125.1">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -197,11 +197,15 @@
     
         <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_tomcat/">Tomcat安装</a></h2>
+        <h2 class="post-title"><a href="/csdn/post/dp-cor-java/">Chain of Command 模式</a></h2>
     </header>
     <section class="post-excerpt">
         
-            <p>Servlet Spec JSP Spec EL Spec WebSocket Spec Authentication (JASIC) Spec Apache Tomcat Version Latest Released Version Supported Java Versions 6.0 3.1 5.0 2.1 3.0 10.1.x 10.1.13 11 and later 3.1 2.3 3.0 1.1 1.1 8.5.x 8.5.93 7 and later 2.5 2.1 2.1 N/A N/A 6.0.x 6.0.53 5 and later 2.4 2.0 N/A N/A N/A 5.5.x 5.5.36 1.4 and later installation Platform version Released Specification Java SE Support Important Changes Jakarta EE 10 2022-03-31 10 Java SE 17/Java SE 11 Removal of deprecated items in Servlet, Faces, CDI and EJB (Entity Beans and Embeddable Container). <a class="read-more" href="/csdn/post/ops_tomcat/">&raquo;</a></p>
+            <p>我们知道Chain of Responsibility模式，其实就是Template method + Next。
+在进行多个调用时，按顺序执行；需要调用2个方法。
+此模式，只适合抽象方法！
+在进行设计模式的程序实现中xiaobin使用已编写的SSL程序做演示。
+Chain of Command import com.cartionsoft.xbf.ContentXbf;import com.cartionsoft.xbf.LibXbf;import com.cartionsoft.xbf.ReadXbf;import com.cartionsoft.xbf.XiaobinFile;public class Demo {public static void init() throws Exception {int stationID = 0;String keyPWD;String libPath = &#34;xbfLibR.dll&#34;;String xbfPath = &#34;C://send//dySSL.xbf&#34;;ContentXbf contentXbf = new ContentXbf(xbfPath);// All checks are linked. Client can build various chains using the same// components.XiaobinFile xiaobinFile = XiaobinFile.link(new LibXbf(libPath),new ReadXbf());// Server gets a chain from client code. <a class="read-more" href="/csdn/post/dp-cor-java/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -210,8 +214,126 @@
         
 
         
-        <time class="post-date" datetime="2023-08-29T12:38:08&#43;08:00">
-            29 Aug 2023
+        <time class="post-date" datetime="2023-12-22T12:08:08&#43;08:00">
+            22 Dec 2023
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/vc-serial_communication/">Windows串口</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>串口读写工具
+PC has no serial device
+PC has serial device
+CSerialPort author: Remon Spekreijse MFC Vs2013(VC12)/Vs2019(VC14.2) 程序介绍 界面分三块： 端口配置、发送区域、接收区域
+v2.0 使用boost thread + SQLite3 library 实现串口数据存储到SQLite数据库. 1. 端口配置 1.1 在“Port Number”选择端口号； 1.2 在“Config”配置端口的属性，比如波特率、奇偶校验、数据位、停止位等等。 Setting Serial Communication Number
+2. 发送区域 2.1 Loop Send 当我们钩选此复选框时，必须选择“发送频率”，然后才能执行循环发送数据。
+### 2.2 发送频率 选择其一：500、1000、2000毫秒。
+Setting time
+如果要更改读取自定义的时间频率：
+请将SerialCommView.cpp-Ln292，更为：
+((CComboBox *)GetDlgItem(IDC_COMBO1Timer))-&gt;GetWindowTextA(strTemp);)
+2.3 发送内容框 在“发送信息框”输入内容就可发送数据了！
+2.4 操作流程 A类（自动化） 2.2-》2.3-》2.1
+B类（手动） 2.3-》点击“Send”按钮。
+3. 接收区域 3.1 制式切换 当钩选了“Hex View”复选框，接收到的数据就以16进制显示。
+3.2 清除数据 当点击“Clear”按钮，即清空接收框数据。 <a class="read-more" href="/csdn/post/vc-serial_communication/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-12-15T08:08:08&#43;08:00">
+            15 Dec 2023
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/dp-template-java/">模板方法模式</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>我们知道模板方法模式，其实就是等待被实现的方法。
+在进行多个可选择调用时，可以根据不同的方式；只调用一个方法即可解决不同的实现。
+此模式，只适合抽象方法！
+在进行设计模式的程序实现中xiaobin使用已编写的SSL程序做演示。
+Template Method import java.io.*;import java.util.*;import javax.net.ssl.*;public abstract class Transmission {protected String host;protected int port;protected String keyPath;protected String keyPwd;private SSLSocket socket;protected abstract SSLSocket createSocket() throws Exception;/*** &lt;p&gt; Receive byte array data &lt;/p&gt;* @return data*/public byte[] receiveData() throws Exception {// TODO Auto-generated method stubsocket = createSocket();InputStream in = new BufferedInputStream(socket.getInputStream());int b;List&lt;Byte&gt; listBuffer = new ArrayList&lt;Byte&gt;();while((b = in. <a class="read-more" href="/csdn/post/dp-template-java/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-12-08T12:08:08&#43;08:00">
+            8 Dec 2023
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/com-ie-test/">使用IE测试COM</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>IDE Visual Studio 2017(v15.9)/Visual Studio 2019(v16.11) 本文参考: 创建COM
+一、创建COM 增加IE支持： IObjectWithSite
+增加方法 Add STDMETHODIMP CtestSOW::Add(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x + y); return S_OK; } Subtract STDMETHODIMP CtestSOW::Sub(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x - y); return S_OK; } Multiply STDMETHODIMP CtestSOW::Mul(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x * y); return S_OK; } Divide STDMETHODIMP CtestSOW::Div(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x / y); return S_OK; } Modulo STDMETHODIMP CtestSOW::Mod(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x % y); return S_OK; } Logarithm STDMETHODIMP CtestSOW::Lg(LONG x, LONG y, DOUBLE* ret){// https://en. <a class="read-more" href="/csdn/post/com-ie-test/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-10-26T18:08:08&#43;08:00">
+            26 Oct 2023
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/com-wizards-vc/">VC 创建 Component Object Model</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Use Visual Studio&rsquo;s wizard to create COM
+Visual Studio 2013 Visual Studio 2015 Visual Studio 2017/2019/2022 step by step:
+建立ATL工程 建立ATL Simple Object 添加IDL方法 测试添加的method 建立ATL工程 File-&gt;New-&gt;Project
+name: testATL Note: name即是要生成的DLL文件 选择&quot;MFC/ATL&quot;中&quot;ATL Project&quot;:
+Default
+取消编译时注册Dll Project -&gt; PropertiesLinker -&gt; Register OutputNo Add ATL Simple Object (vs2017/vs2019)右击项目名称，选择Add -&gt;New Item
+vs2013/vs2015: Add -&gt; Class
+ATL Simple Object:
+设置 Short name: testSOW
+Simple Object ID ProgID: testATL.testSOW IE支持 vs2013/vs2015 Options -&gt; Support vs2017/vs2019 Other Options 添加IDL方法 Tab switching from &ldquo;Solution Explorer&rdquo; to &ldquo;Class View&rdquo; Select the interface, Right-click -&gt; add -&gt; add method <a class="read-more" href="/csdn/post/com-wizards-vc/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-09-22T23:08:08&#43;08:00">
+            22 Sep 2023
         </time>
     </footer>
 </article>
@@ -348,115 +470,6 @@ java 7 package my.csdn2; import java.util.concurrent.ExecutorService; import jav
         
         <time class="post-date" datetime="2023-08-06T01:08:39&#43;08:00">
             6 Aug 2023
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/vc-update-atl/">VC升级时出现的问题</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>VC6迁移到VC2008+
-ATL Active Template Library (ATL)
-C1189 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atlcore.h(35): fatal error C1189: #error : This file requires _WIN32_WINNT to be #defined at least to 0x0403. Value 0x0501 or higher is recommended. A:
-StdAfx.h
-#define _WIN32_WINNT 0x0400 -&gt;
-#define _WIN32_WINNT 0x0501 C1083(atlimpl) c:\users\xiaobin\documents\visual studio 2013\projects\crcfcn_vc\stdafx.cpp(13): fatal error C1083: Cannot open include file: &#39;atlimpl.cpp&#39;: No such file or directory A: solution 1 or 2.
-solution 1 Comment out this line stdAfx. <a class="read-more" href="/csdn/post/vc-update-atl/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-06-20T08:18:08&#43;08:00">
-            20 Jun 2023
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/css-bootstrap-grid/">Grid system</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>在V2.3.2中，栅格系统默认是不支持移动设备的； 但V3.0版本，已经默认支持移动设备。
-在V4.6.x, 更加细化了移动设备支持。
-v2 Bootstrap(v2) 默认的栅格系统为12列 ， 形成一个940px宽的容器，默认没有启用 &ldquo;响应式布局特性&rdquo; 。 如果加入响应式布局CSS文件，栅格系统会自动根据可视窗口的宽度从724px到1170px进行动态调整。 在可视窗口低于767px宽的情况下，列将不再固定并且会在垂直方向堆叠。
-example &lt;div class=&#34;row&#34;&gt; &lt;div class=&#34;span4&#34;&gt;...&lt;/div&gt; &lt;div class=&#34;span8&#34;&gt;...&lt;/div&gt; &lt;/div&gt; v3 class变化：.span* -〉.col-md-*
-Bootstrap(v3) 内置了一套响应式、移动设备优先的流式栅格系统， 随着屏幕设备或视口（viewport）尺寸的增加，系统会自动分为最多12列。 它包含了易于使用的预定义classe， 还有强大的mixin用于生成更具语义的布局。
-Grid options Name Size Extra small devices Phones &lt;768px Small devices Tablets ≥768px Medium devices Desktops ≥992px Large devices Desktops ≥1200px example &lt;div class=&#34;row&#34;&gt; &lt;div class=&#34;col-md-4&#34;&gt;...&lt;/div&gt; &lt;div class=&#34;col-md-8&#34;&gt;...&lt;/div&gt; &lt;/div&gt; v4 Bootstrap(v4) 调整了小屏幕的适配。 Switch from Less to Sass for the source CSS files <a class="read-more" href="/csdn/post/css-bootstrap-grid/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-03-10T14:08:08&#43;08:00">
-            10 Mar 2023
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_vi/">简单使用vi</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>The default editor that comes with the UNIX operating system is called vi (visual editor).
-The UNIX vi editor is a full screen editor and has two modes of operation:
-Command mode commands which cause action to be taken on the file, and Insert mode in which entered text is inserted into the file. Insert mode 正常使用 $ vi myfile 恢复使用 $ vi -r myfile 恢复系统崩溃时正在编辑的文件名
-要进行文字编辑工作, 按“i”即进入
-i 移动光标 使用方向键来进行位置的移动。 <a class="read-more" href="/csdn/post/ops_vi/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-03-10T09:28:08&#43;08:00">
-            10 Mar 2023
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/vc-bsd_socket/">使用BSD socket</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>BSD Socket是标准的套接字规范，那么怎么在windows使用他们呢？
-Init &amp; clean 首先要引用&lt;winsock2.h&gt;和ws2_32.lib； 使用struct addrinfo需引用&lt;ws2tcpip.h&gt;。
-程序头: WSAStartup(), 程序尾: WSACleanup();
-code 以下程序在VC9/VC14.1下编译通过
-客户端程序 prj1Clt 无getaddrinfo版
-注意：InetPton函数只能在Windows Version &gt;=6上实现！
-// prj1Clt.cpp : This file contains the &#39;main&#39; function. Program execution begins and ends there. // /** * Networking program is Win version with BSD Socket * Client side * * Author: xiaobin * Date: 2013-12-12 * Modfity: 2020-5-28 */ #include &lt;iostream&gt; #if _MSC_VER &gt; 1800 #include &lt;tchar.h&gt; #endif #ifdef _WIN32 #include &lt;winsock2. <a class="read-more" href="/csdn/post/vc-bsd_socket/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-03-05T21:30:08-08:00">
-            5 Mar 2023
         </time>
     </footer>
 </article>

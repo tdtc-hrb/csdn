@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.124.1">
+    <meta name="generator" content="Hugo 0.125.1">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,6 +160,102 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_openjdk_centos/">设置OpenJDK</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>1. install jre
+$sudo yum install java -y jdk $sudo yum install java-1.8.0-openjdk-devel 2. set path $sudo vi /etc/profile export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.345.b01-1.el7_9.x86_64 export CLASSPATH=.:$JAVA_HOME/jre/lib/:. export PATH=$PATH:$JAVA_HOME/bin $su - root #source /etc/profile About path 3.3. INSTALL OPENJDK ON RED HAT ENTERPRISE LINUX - 2.Optional: Set the JAVA_HOME environment variable
+Reference How to install Java on CentOS 7 OpenJDK Version Info - Releases  <a class="read-more" href="/csdn/post/ops_openjdk_centos/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-09-15T08:08:08-08:00">
+            15 Sep 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/pd-db-phy/">powerDesigner生成phy图</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>使用版本：v16.1
+一、连接数据库 1. 新建pdm File-》New Model model types -&gt; physical data model model name: newmodel-phy dbms: mysql5.0
+2. config connect profile DataBase -&gt; Configure connections Connection profile 3. connect Database -&gt; connect Flag: &ldquo;Disconnect&rdquo; Available
+dcp文件（mysql5-crm.dcp） [ConnectionProfile]ConnectionType=JDBCDbms=MySQLDisableBind=0Driver=com.mysql.jdbc.DriverJarFiles=D:\war\mysql-connector-java-5.1.49.jarLogId=rootTrimSpaces=0URL=jdbc:mysql://106.14.141.40:3306/crm 二、生成phy图 1. Reverse Engineer File -&gt; Reverse Engineer-&gt;Database 选择数据库： 其他数据库全部反选： 例如： 最后，点击ok生成phy图。
+Tips：如果想从pdm生成CDM，Tools -&gt; Generate Conceptual Data Model <a class="read-more" href="/csdn/post/pd-db-phy/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-09-10T02:26:39&#43;08:00">
+            10 Sep 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql-imp-exp/">MySQL导入导出数据库</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>导出数据库 $mysqldump dbName &gt; dbName.sql -u user -p v5.6/5.7 $mysqldump --no-defaults dbName &gt; dbName.sql -u user -p 导入数据库 mysql&gt;CREATE DATABASE `dbName` CHARACTER SET utf8 COLLATE utf8_general_ci; mysql&gt;USE dbName; win mysql&gt;SOURCE C:/Users/xiaobin/dbName.sql; Linux mysql&gt;SOURCE /home/xiaobin/dbName.sql; upload win10
+scp D:\progFiles\carnumber.sql tdtc@192.168.0.151:/home/tdtc/ create user mysql&gt; CREATE USER &#39;DBAdmin&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;xbfirst&#39;; mysql&gt; GRANT ALL PRIVILEGES ON *.* TO &#39;DBAdmin&#39;@&#39;localhost&#39; WITH GRANT OPTION; mysql&gt; flush privileges; Reference MySQL Create Database with UTF8 Character Set Syntax  <a class="read-more" href="/csdn/post/mysql-imp-exp/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-09-10T02:18:39&#43;08:00">
+            10 Sep 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c-console_app/">计算圆的面积和周长</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>IDE Eclipse IDE for C/C++ Developers 主程序 Create Project File -&gt; New -&gt; C/C++ Project &ldquo;C++ Managed Build&rdquo;
+Template Project type Executable: Hello World C++ Project Toolchains cygwin GCC / mingw GCC ansi版 int main(int argc, char* argv[]) { double dRadius = 3; if (argc &gt; 1) { dRadius = atof(argv[1]); } /// todo return 0; } unicode版 int main(int argc, wchar_t* argv[]) { double dRadius = 3; if (argc &gt; 1) { dRadius = _wtof(argv[1]); } /// todo return 0; } C2065: &lsquo;cout&rsquo; : undeclared identifier 强制使用命名空间 <a class="read-more" href="/csdn/post/c-console_app/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-09-01T08:08:08&#43;08:00">
+            1 Sep 2022
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -333,132 +429,6 @@ CA certificate ca.pem is self signed.For more information, see Help and Support 
         
         <time class="post-date" datetime="2022-06-07T12:08:39&#43;08:00">
             7 Jun 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/c-bsd_socket-server/">使用fork的server</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>GNU Compiler Collection(GCC)
-在“Socket服务器端程序”基础上增加子进程。
-Beej’s Guide Network to Programming 关于Unix/Linux子进程：
-相当于Windows的线程
-调用fork()即可增加子进程。
-要使用fork必须调用waitpid() ！
-waitpid() waitpid函数原型：
-#include&lt;sys/types.h&gt; /* 提供类型pid_t的定义 */ #include&lt;sys/wait.h&gt; pid_t waitpid(pid_t pid, int *status, int options); pid 等于-1时，等待任何一个子进程退出，没有任何限制，此时waitpid和wait的作用一模一样。
-status 我们设置为NULL。
-options 提供了一些额外的选项来控制waitpid，WNOHANG常量表示， 即使没有子进程退出，它也会立即返回，不会像wait那样永远等下去。
-sigaction() sigaction()是waitpid()的开关
-只有给waitpid()信号时，才开启它(waitpid)！ 这时，需要sigaction()。
-sigaction函数原型：
-#include&lt;signal.h&gt; int sigaction(int signum, const struct sigaction *act, struct sigaction *oldact); signum 等于SIGCHLD时，只有子进程停止或者退出才进行调用。
-act 一个指向sigaction结构的指针。
-oldact 一般废止不用。
-我们主要设置结构sigaction的sa_handler、sa_mask和sa_flags三个成员变量即可！
-code /** * Version: 0.2 * * Description: Add signal * */ #include &lt;stdio. <a class="read-more" href="/csdn/post/c-bsd_socket-server/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-05-16T08:08:08&#43;08:00">
-            16 May 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/dev_wsl_ubuntu/">使用WSL(V1.0)在Windows 10</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>Arch： x64
-OS: Windows 10 1809 LTSC
-在powerShell的管理员模式下运行命令!
-安装/卸载 ON:
-Control Panel -&gt; Uninstall a program -&gt; Turn Windows features on or off, 勾选“Windows Subsystem for Linux” 安装Ubuntu down appx:
-Ubuntu 2004
-Ubuntu 1804
-从AppxBundle提取appx.
-Add-AppxPackage .\Ubuntu_2004.xxx.appx 卸载 如果“普通”方式不工作，请使用“命令行”。
-普通 右击“Ubuntu xxx” 图标，选择“Uninstall”即可。
-命令行 v1803-v1809
-wslconfig /u 使用 更改源列表:
-sudo vi /etc/apt/sources.list http://archive.ubuntu.com -&gt; https://mirrors.aliyun.com/ubuntu/ 文件互访 首先，使用windows记事本，建立一个testTxtFile.txt； 然后，在WSL查看文件内容。
-cd /mnt/c/Users/tdtc/ vi testTxtFile.txt 最后，用WSL重命名文件名:
-mv testTxtFile.txt testFile.txt 在windows就可以看到重命名的testFile.txt。
-访问WSL服务 WSL与windows 10共有端口，所以Windows 10已使用的端口，不要再分配给WSL <a class="read-more" href="/csdn/post/dev_wsl_ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-05-15T12:08:08&#43;08:00">
-            15 May 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/java-maven-qa1/">maven的QA</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>1. org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER Q:
-Classpath entry org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER will not be exported or published. Runtime ClassNotFoundExceptions may result. A:
-$mvn eclipse:clean reference what-is-org-eclipse-m2e-maven2-classpath-container-and-how-do-i-make-it-work-in 2. no main manifest attribute java jar Q:
-$java -jar cliDemo-0.0.1-SNAPSHOT.jar no main manifest attribute, in cliDemo-0.0.1-SNAPSHOT.jar A:
-for win:
-java -cp cliDemo-0.0.1-SNAPSHOT.jar;C:\Users\xiaobin\.m2\repository\commons-cli\commons-cli\1.4\commons-cli-1.4.jar my.csdn9.ConsoleLauncher --help Reference how-to-run-jar-files-depend-on-jar-files 3. CoreException: Could not calculate build plan: Plugin org.apache.maven.plugins:maven-compiler-plugin Q:
-CoreException: Could not calculate build plan: Plugin org.apache.maven.plugins:maven-compiler-plugin:3.1 or one of its dependencies could not be resolved: Failure to find org. <a class="read-more" href="/csdn/post/java-maven-qa1/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-05-15T10:08:08&#43;08:00">
-            15 May 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/java-springboot-jpa/">thymeleaf &#43; Spring Boot &#43; JPA</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>1. 自动构建 1) boot向导 2) pom依赖 &lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt; &lt;project xmlns=&#34;http://maven.apache.org/POM/4.0.0&#34; xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xsi:schemaLocation=&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;&gt; &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt; &lt;groupId&gt;com.example&lt;/groupId&gt; &lt;artifactId&gt;demo&lt;/artifactId&gt; &lt;version&gt;0.0.2-SNAPSHOT&lt;/version&gt; &lt;packaging&gt;jar&lt;/packaging&gt; &lt;name&gt;demo-jpa&lt;/name&gt; &lt;description&gt;Demo project for Spring Boot&lt;/description&gt; &lt;parent&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt; &lt;version&gt;2.0.2.RELEASE&lt;/version&gt; &lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt; &lt;/parent&gt; &lt;properties&gt; &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt; &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt; &lt;java.version&gt;1.8&lt;/java.version&gt; &lt;/properties&gt; &lt;dependencies&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt; &lt;scope&gt;runtime&lt;/scope&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;mysql&lt;/groupId&gt; &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt; &lt;scope&gt;runtime&lt;/scope&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt; &lt;scope&gt;test&lt;/scope&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt; &lt;/dependency&gt; &lt;/dependencies&gt; &lt;build&gt; &lt;plugins&gt; &lt;plugin&gt; &lt;groupId&gt;org. <a class="read-more" href="/csdn/post/java-springboot-jpa/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-05-10T10:26:39&#43;08:00">
-            10 May 2022
         </time>
     </footer>
 </article>

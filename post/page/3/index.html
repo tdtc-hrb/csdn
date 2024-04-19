@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.124.1">
+    <meta name="generator" content="Hugo 0.125.1">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,6 +160,143 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/vc-update-atl/">VC升级时出现的问题</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>VC6迁移到VC2008+
+ATL Active Template Library (ATL)
+C1189 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\atlcore.h(35): fatal error C1189: #error : This file requires _WIN32_WINNT to be #defined at least to 0x0403. Value 0x0501 or higher is recommended. A:
+StdAfx.h
+#define _WIN32_WINNT 0x0400 -&gt;
+#define _WIN32_WINNT 0x0501 C1083(atlimpl) c:\users\xiaobin\documents\visual studio 2013\projects\crcfcn_vc\stdafx.cpp(13): fatal error C1083: Cannot open include file: &#39;atlimpl.cpp&#39;: No such file or directory A: solution 1 or 2.
+solution 1 Comment out this line stdAfx. <a class="read-more" href="/csdn/post/vc-update-atl/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-06-20T08:18:08&#43;08:00">
+            20 Jun 2023
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_grub_ubuntu/">grub救援模式</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).
+出现“grub rescue&gt;”提示符；也称grub救援模式。
+1. 设置引导 (hd?,?)：安装的引导分区 在我的机器是(hd0, msdos3)
+grub rescue&gt;ls grub rescue&gt;ls (hd?,?)/boot/grub grub rescue&gt;set root(hd?,?) grub rescue&gt;set prefix=(hd?,?)/boot/grub insmod one:
+insmod /boot/grub/normal.mod /boot/grub/normal two:
+insmod normal normal 2. 更新grub 在终端上执行：
+sudo grub-install /dev/sda sudo update-grub  <a class="read-more" href="/csdn/post/ops_grub_ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-03-15T00:19:08&#43;08:00">
+            15 Mar 2023
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/css-bootstrap-grid/">Grid system</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>在V2.3.2中，栅格系统默认是不支持移动设备的； 但V3.0版本，已经默认支持移动设备。
+在V4.6.x, 更加细化了移动设备支持。
+v2 Bootstrap(v2) 默认的栅格系统为12列 ， 形成一个940px宽的容器，默认没有启用 &ldquo;响应式布局特性&rdquo; 。 如果加入响应式布局CSS文件，栅格系统会自动根据可视窗口的宽度从724px到1170px进行动态调整。 在可视窗口低于767px宽的情况下，列将不再固定并且会在垂直方向堆叠。
+example &lt;div class=&#34;row&#34;&gt; &lt;div class=&#34;span4&#34;&gt;...&lt;/div&gt; &lt;div class=&#34;span8&#34;&gt;...&lt;/div&gt; &lt;/div&gt; v3 class变化：.span* -〉.col-md-*
+Bootstrap(v3) 内置了一套响应式、移动设备优先的流式栅格系统， 随着屏幕设备或视口（viewport）尺寸的增加，系统会自动分为最多12列。 它包含了易于使用的预定义classe， 还有强大的mixin用于生成更具语义的布局。
+Grid options Name Size Extra small devices Phones &lt;768px Small devices Tablets ≥768px Medium devices Desktops ≥992px Large devices Desktops ≥1200px example &lt;div class=&#34;row&#34;&gt; &lt;div class=&#34;col-md-4&#34;&gt;...&lt;/div&gt; &lt;div class=&#34;col-md-8&#34;&gt;...&lt;/div&gt; &lt;/div&gt; v4 Bootstrap(v4) 调整了小屏幕的适配。 Switch from Less to Sass for the source CSS files <a class="read-more" href="/csdn/post/css-bootstrap-grid/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-03-10T14:08:08&#43;08:00">
+            10 Mar 2023
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_vi/">简单使用vi</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>The default editor that comes with the UNIX operating system is called vi (visual editor).
+The UNIX vi editor is a full screen editor and has two modes of operation:
+Command mode commands which cause action to be taken on the file, and Insert mode in which entered text is inserted into the file. Insert mode 正常使用 $ vi myfile 恢复使用 $ vi -r myfile 恢复系统崩溃时正在编辑的文件名
+要进行文字编辑工作, 按“i”即进入
+i 移动光标 使用方向键来进行位置的移动。 <a class="read-more" href="/csdn/post/ops_vi/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-03-10T09:28:08&#43;08:00">
+            10 Mar 2023
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/vc-bsd_socket/">使用BSD socket</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>BSD Socket是标准的套接字规范，那么怎么在windows使用他们呢？
+Init &amp; clean 首先要引用&lt;winsock2.h&gt;和ws2_32.lib； 使用struct addrinfo需引用&lt;ws2tcpip.h&gt;。
+程序头: WSAStartup(), 程序尾: WSACleanup();
+code 以下程序在VC9/VC14.1下编译通过
+客户端程序 prj1Clt 无getaddrinfo版
+注意：InetPton函数只能在Windows Version &gt;=6上实现！
+// prj1Clt.cpp : This file contains the &#39;main&#39; function. Program execution begins and ends there. // /** * Networking program is Win version with BSD Socket * Client side * * Author: xiaobin * Date: 2013-12-12 * Modfity: 2020-5-28 */ #include &lt;iostream&gt; #if _MSC_VER &gt; 1800 #include &lt;tchar.h&gt; #endif #ifdef _WIN32 #include &lt;winsock2. <a class="read-more" href="/csdn/post/vc-bsd_socket/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-03-05T21:30:08-08:00">
+            5 Mar 2023
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -282,146 +419,6 @@ tar -jcvf /tmp/etc.tar.bz2 /etc --transform s/etc/myetc/ FAQ This does not look 
         
         <time class="post-date" datetime="2023-02-10T02:20:39&#43;08:00">
             10 Feb 2023
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_vmware_netadapter/">使用物理网卡</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>VMware Host OS Win10(x64) -Guest OS Ubuntu 14.04(x64)
-目的：Ubuntu独立使用1块网卡与局域网中的设备或主机通讯。
-问题：宿主机器有两个网卡
-（1）无线网卡（2）有线网卡
-VMware Network overview
-VM &lt;-&gt; Host VM1 &lt;-&gt; VM2 VM -&gt; Internet VM &lt;- Internet HostOnly Yes Yes No No Internal No Yes No No Bridged Yes Yes Yes Yes NAT No No Yes Port forward 编辑-&gt;虚拟网络编辑器 默认设置
-我们更改桥接模式中“桥接到”，即可。（由自动更改为下图） 网络适配器 NFS AT91SAM9260 in terminal
-启动NFS，工作正常。
-输出信息如下：
-This is the boot programm!鶷his is the boot programm! Load UBOOT, please wait...... Load UBOOT from 0x10010000 to 0x23f00000 Over U-Boot 1. <a class="read-more" href="/csdn/post/ops_vmware_netadapter/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-01-18T14:08:08&#43;08:00">
-            18 Jan 2023
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/c2plus-unmanaged-dll/">调用非托管DLL</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>IDE: vs2008 Express(sp1)
-callXBFLibrary 我们需要使用API函数来读取INI文件。
-建立P/Invoke应用类 在pinvoke.net中查找Win32 API在C#定义。 GetPrivateProfileString 读取Ini文件的API
-[DllImport(&#34;kernel32.dll&#34;, CharSet=CharSet.Unicode)] static extern uint GetPrivateProfileString( string lpAppName, string lpKeyName, string lpDefault, StringBuilder lpReturnedString, uint nSize, string lpFileName); 注意：DllImport属性来自using System.Runtime.InteropServices;
-lpAppName 小节名 lpKeyName 键名 lpDefault 缺省值 lpReturnedString 返回值 nSize 返回值长度 lpFileName 读取文件的名称 import class using System.Runtime.InteropServices; readIniFileVal 建立一个公共方法，以供程序使用。
-public string readIniFileVal(string iniFileName, string section, string key) { StringBuilder retStrBuilder = new StringBuilder(256); GetPrivateProfileString( section, key, &#34;&#34;, retStrBuilder, 256, iniFileName); return retStrBuilder. <a class="read-more" href="/csdn/post/c2plus-unmanaged-dll/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-01-03T00:08:08&#43;08:00">
-            3 Jan 2023
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/demo-tdtc/">TDTC Demo</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>系统需求 Mixed(x86 and x64): Windows 10 - Windows Vista Pure(x86): Windows XP - Windows 3.1
-ref &ldquo;VC Redist&rdquo;
-注册下列COM组件
-xbfInfo.dllrepoInfo.dll callXBFLib 生成/读取xbf文件.
-文档请参考 callXBFLibrary - 调用非托管DLL callXBFLibrary - 调用COM 配置文件 xbfConfig.ini
-[config] type = MySQL [MS-Access] DB = v:\fde.mdb Pwd = wwsrts12 [MSSQL] Server = ddrwaas2 DB = dddrrewq User = ttrrre Pwd = qwerty [MySQL] Server = 192.168.1.107 DB = mysql User = DBAdmin Pwd = xbfirst repoFmtGen 生成固定格式的报文。 <a class="read-more" href="/csdn/post/demo-tdtc/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-12-17T08:18:18&#43;08:00">
-            17 Dec 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_hadoop_cluster/">Hadoop - cluster</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>Prepare server1 server2 server3 server4 NameNode y y DataNode y y y ResourceManager y y NodeManager y y y y Zookeeper y y y y JournalNode y y y ZK-FC y y JobHistor y Server Name IP Host Name server1 192.168.42.107 tdtc201 server2 192.168.42.108 tdtc202 server3 192.168.42.109 tdtc203 server4 192.168.42.110 tdtc204 1. zk zkServer.sh start 安装详见《ZooKeeper multi-server install》
-2. Open firewall Stage I: Installation 1. Unzip /home/$USER/app/hadoop/$version 路径参考Oracle11g
-mkdir -p ~/app/hadoop tar zxvf hadoop-2. <a class="read-more" href="/csdn/post/ops_hadoop_cluster/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-10-11T00:08:08&#43;08:00">
-            11 Oct 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_real_keepalived/">架设Real Server和Keepalived Server</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>准备工作：
-修改网卡为固定IP 开启sudo 总览 OS: minimal
-Alma CentOS7.9 Real Server RHEL78RS1 192.168.0.127
-Nginx v1.22 Tomcat v8.5.82 RHEL78RS2 192.168.0.122
-Nginx v1.22 Tomcat v9.0.68 Keepalived Server RHEL78Master 192.168.0.129
-RHEL78Bak 192.168.0.130
-一、Real Server 安装前准备:
-Linux下安装Tomcat nginx - CentOS7 nginx - RHEL8 config ARP ifconfig:
-$sudo yum install net-tools Service #vi /etc/init.d/realserver /etc/init.d/realserver:
-#!/bin/bash SNS_VIP=192.168.0.220 case &#34;$1&#34; in start) ifconfig lo:0 $SNS_VIP netmask 255.255.255.255 broadcast $SNS_VIP /sbin/route add -host $SNS_VIP dev lo:0 echo &#34;1&#34; &gt;/proc/sys/net/ipv4/conf/lo/arp_ignore echo &#34;2&#34; &gt;/proc/sys/net/ipv4/conf/lo/arp_announce echo &#34;1&#34; &gt;/proc/sys/net/ipv4/conf/all/arp_ignore echo &#34;2&#34; &gt;/proc/sys/net/ipv4/conf/all/arp_announce sysctl -p &gt;/dev/null 2&gt;&amp;1 echo &#34;RealServer Start OK&#34; ;; stop) ifconfig lo:0 down route del $SNS_VIP &gt;/dev/null 2&gt;&amp;1 echo &#34;0&#34; &gt;/proc/sys/net/ipv4/conf/lo/arp_ignore echo &#34;0&#34; &gt;/proc/sys/net/ipv4/conf/lo/arp_announce echo &#34;0&#34; &gt;/proc/sys/net/ipv4/conf/all/arp_ignore echo &#34;0&#34; &gt;/proc/sys/net/ipv4/conf/all/arp_announce echo &#34;RealServer Stoped&#34; ;; *) echo &#34;Usage: $0 {start|stop}&#34; exit 1 esac exit 0 exec $sudo chmod 755 /etc/init. <a class="read-more" href="/csdn/post/ops_real_keepalived/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-10-03T02:38:08&#43;08:00">
-            3 Oct 2022
         </time>
     </footer>
 </article>

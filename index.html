@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.124.1">
+    <meta name="generator" content="Hugo 0.125.1">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -199,13 +199,36 @@
     
         <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_tomcat/">Tomcat安装</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Servlet Spec JSP Spec EL Spec WebSocket Spec Authentication (JASIC) Spec Apache Tomcat Version Latest Released Version Supported Java Versions 6.0 3.1 5.0 2.1 3.0 10.1.x 10.1.20 11 and later 3.1 2.3 3.0 1.1 1.1 8.5.x 8.5.100 7 and later 2.5 2.1 2.1 N/A N/A 6.0.x 6.0.53 5 and later 2.4 2.0 N/A N/A N/A 5.5.x 5.5.36 1.4 and later installation Platform version Released Specification Java SE Support Important Changes Jakarta EE 10 2022-03-31 10 Java SE 17/Java SE 11 Removal of deprecated items in Servlet, Faces, CDI and EJB (Entity Beans and Embeddable Container). <a class="read-more" href="/csdn/post/ops_tomcat/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-04-09T12:38:08&#43;08:00">
+            9 Apr 2024
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/apt-oper-ubuntu/">apt的安装问题</a></h2>
     </header>
     <section class="post-excerpt">
         
             <p>apt适合手动输入(有交互); apt-get适合脚本(无交互).
+Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).
 Manage 卸载 apt-get autoremove vsftpd --purge 安装指定版本 apt-get install &lt;package name&gt;=&lt;version&gt; 列出版本 apt-cache madison &lt;&lt;package name&gt;&gt; DebIan sudo sudo.d(directory):
-Note also, that becasuse sudoers contents can vary widely, no attempt is made to add this directive to existing sudoers files on upgrade. Feel free to add the above directive to the end of your /etc/sudoers file to enabe this functionality for existing installations if you wish! Sudo versions older than the one in Debian 11(bullseye) require the directive will only support the old syntax #includedir, and the current sudo will happily accept both @includedir and #includedir install using root: <a class="read-more" href="/csdn/post/apt-oper-ubuntu/">&raquo;</a></p>
+Note also, that becasuse sudoers contents can vary widely, no attempt is made to add this directive to existing sudoers files on upgrade. Feel free to add the above directive to the end of your /etc/sudoers file to enabe this functionality for existing installations if you wish! <a class="read-more" href="/csdn/post/apt-oper-ubuntu/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -227,9 +250,8 @@ Note also, that becasuse sudoers contents can vary widely, no attempt is made to
     </header>
     <section class="post-excerpt">
         
-            <p>new user #useradd tdtc #passwd tdtc Append group Modify su file CentOS 6 v6 and below versions Open wheel #vi /etc/pam.d/su auth required /lib/security/$ISA/pam_wheel.so use_uid Attachment of group members #gpasswd -a tdtc wheel Command CentOS 7/8 Debian v12.x CentOS 7/8 CentOS8 needs to be executed locally, Unable to execute on ssh network side.
-#usermod –aG wheel tdtc Debian adduser tdtc sudo test Query all users with sudo permissions.
-[tdtc@tdtc102 ~]$ sudo lid -g wheel We trust you have received the usual lecture from the local System Administrator. <a class="read-more" href="/csdn/post/ops_sudo/">&raquo;</a></p>
+            <p>new user #useradd tdtc #passwd tdtc Append group Modify su file CentOS 6 v6 and below versions Open wheel #vi /etc/pam.d/su auth required /lib/security/$ISA/pam_wheel.so use_uid Attachment of group members #gpasswd -a tdtc wheel Command CentOS 7/8 Debian Migrate to Debian before Ubuntu 20.04 ends support (April, 2025). CentOS 7/8 CentOS8 needs to be executed locally, Unable to execute on ssh network side.
+#usermod –aG wheel tdtc Debian adduser tdtc sudo test Query all users with sudo permissions. <a class="read-more" href="/csdn/post/ops_sudo/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -247,15 +269,25 @@ Note also, that becasuse sudoers contents can vary widely, no attempt is made to
     
         <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/dp-cor-java/">Chain of Command 模式</a></h2>
+        <h2 class="post-title"><a href="/csdn/post/dev_wsl_ubuntu/">使用WSL(V1.0)在Windows 10</a></h2>
     </header>
     <section class="post-excerpt">
         
-            <p>我们知道Chain of Responsibility模式，其实就是Template method + Next。
-在进行多个调用时，按顺序执行；需要调用2个方法。
-此模式，只适合抽象方法！
-在进行设计模式的程序实现中xiaobin使用已编写的SSL程序做演示。
-Chain of Command import com.cartionsoft.xbf.ContentXbf;import com.cartionsoft.xbf.LibXbf;import com.cartionsoft.xbf.ReadXbf;import com.cartionsoft.xbf.XiaobinFile;public class Demo {public static void init() throws Exception {int stationID = 0;String keyPWD;String libPath = &#34;xbfLibR.dll&#34;;String xbfPath = &#34;C://send//dySSL.xbf&#34;;ContentXbf contentXbf = new ContentXbf(xbfPath);// All checks are linked. Client can build various chains using the same// components.XiaobinFile xiaobinFile = XiaobinFile.link(new LibXbf(libPath),new ReadXbf());// Server gets a chain from client code. <a class="read-more" href="/csdn/post/dp-cor-java/">&raquo;</a></p>
+            <p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).
+Arch： x64
+OS: Windows 10 1809 LTSC
+在powerShell的管理员模式下运行命令!
+安装/卸载 ON:
+Control Panel -&gt; Uninstall a program -&gt; Turn Windows features on or off, 勾选“Windows Subsystem for Linux” 安装Ubuntu down appx:
+Ubuntu 2004
+Ubuntu 1804
+从AppxBundle提取appx.
+Add-AppxPackage .\Ubuntu_2004.xxx.appx 卸载 如果“普通”方式不工作，请使用“命令行”。
+普通 右击“Ubuntu xxx” 图标，选择“Uninstall”即可。
+命令行 v1803-v1809
+wslconfig /u 使用 更改源列表:
+sudo vi /etc/apt/sources.list http://archive.ubuntu.com -&gt; https://mirrors.aliyun.com/ubuntu/ 文件互访 首先，使用windows记事本，建立一个testTxtFile.txt； 然后，在WSL查看文件内容。
+cd /mnt/c/Users/tdtc/ vi testTxtFile. <a class="read-more" href="/csdn/post/dev_wsl_ubuntu/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -264,8 +296,8 @@ Chain of Command import com.cartionsoft.xbf.ContentXbf;import com.cartionsoft.x
         
 
         
-        <time class="post-date" datetime="2023-12-22T12:08:08&#43;08:00">
-            22 Dec 2023
+        <time class="post-date" datetime="2024-03-15T12:08:08&#43;08:00">
+            15 Mar 2024
         </time>
     </footer>
 </article>
@@ -273,26 +305,15 @@ Chain of Command import com.cartionsoft.xbf.ContentXbf;import com.cartionsoft.x
     
         <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/vc-serial_communication/">Windows串口</a></h2>
+        <h2 class="post-title"><a href="/csdn/post/ops_spark_ubuntu/">安装spark</a></h2>
     </header>
     <section class="post-excerpt">
         
-            <p>串口读写工具
-PC has no serial device
-PC has serial device
-CSerialPort author: Remon Spekreijse MFC Vs2013(VC12)/Vs2019(VC14.2) 程序介绍 界面分三块： 端口配置、发送区域、接收区域
-v2.0 使用boost thread + SQLite3 library 实现串口数据存储到SQLite数据库. 1. 端口配置 1.1 在“Port Number”选择端口号； 1.2 在“Config”配置端口的属性，比如波特率、奇偶校验、数据位、停止位等等。 Setting Serial Communication Number
-2. 发送区域 2.1 Loop Send 当我们钩选此复选框时，必须选择“发送频率”，然后才能执行循环发送数据。
-### 2.2 发送频率 选择其一：500、1000、2000毫秒。
-Setting time
-如果要更改读取自定义的时间频率：
-请将SerialCommView.cpp-Ln292，更为：
-((CComboBox *)GetDlgItem(IDC_COMBO1Timer))-&gt;GetWindowTextA(strTemp);)
-2.3 发送内容框 在“发送信息框”输入内容就可发送数据了！
-2.4 操作流程 A类（自动化） 2.2-》2.3-》2.1
-B类（手动） 2.3-》点击“Send”按钮。
-3. 接收区域 3.1 制式切换 当钩选了“Hex View”复选框，接收到的数据就以16进制显示。
-3.2 清除数据 当点击“Clear”按钮，即清空接收框数据。 <a class="read-more" href="/csdn/post/vc-serial_communication/">&raquo;</a></p>
+            <p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).
+WSL: Ubuntu 18.04.1
+Prepare Java 8+, Python 2.7+/3.4+ and R 3.1+
+Spark runs on Java 8+, Python 2.7+/3.4+ and R 3.1+. For the Scala API, Spark 2.4.1 uses Scala 2.12. You will need to use a compatible Scala version (2.12.x). 1. java 设置OpenJDK - Ubuntu
+2. Python sudo apt-get install python 3. R language 1) add ppa sudo add-apt-repository ppa:marutter/rrutter sudo apt-get update 2) install sudo apt-get install r-base r-base-dev Installation 1. <a class="read-more" href="/csdn/post/ops_spark_ubuntu/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -301,8 +322,8 @@ B类（手动） 2.3-》点击“Send”按钮。
         
 
         
-        <time class="post-date" datetime="2023-12-15T08:08:08&#43;08:00">
-            15 Dec 2023
+        <time class="post-date" datetime="2024-03-15T08:08:08&#43;08:00">
+            15 Mar 2024
         </time>
     </footer>
 </article>
@@ -314,9 +335,9 @@ B类（手动） 2.3-》点击“Send”按钮。
     </header>
     <section class="post-excerpt">
         
-            <p>ubuntu 20.04.2
-wsl1017@DESKTOP-14G6K9S:~$ java -version Command &#39;java&#39; not found, but can be installed with: sudo apt install default-jre sudo apt install openjdk-11-jre-headless sudo apt install openjdk-8-jre-headless installation install jre wsl1017@DESKTOP-14G6K9S:/tmp$ sudo apt-get install openjdk-8-jre-headless install jdk sudo apt-get install openjdk-8-jdk-headless set JAVA home sudo vi /etc/profile export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 ubuntu version The very short answer is that OpenJDK 8 as of 2017-08-08 is not officially available for Ubuntu 14.04.
-Upgrade to a newer version of Ubuntu. <a class="read-more" href="/csdn/post/ops_openjdk_ubuntu/">&raquo;</a></p>
+            <p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).
+ubuntu 20.04.2
+wsl1017@DESKTOP-14G6K9S:~$ java -version Command &#39;java&#39; not found, but can be installed with: sudo apt install default-jre sudo apt install openjdk-11-jre-headless sudo apt install openjdk-8-jre-headless installation install jre wsl1017@DESKTOP-14G6K9S:/tmp$ sudo apt-get install openjdk-8-jre-headless install jdk sudo apt-get install openjdk-8-jdk-headless set JAVA home sudo vi /etc/profile export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 ubuntu version The very short answer is that OpenJDK 8 as of 2017-08-08 is not officially available for Ubuntu 14. <a class="read-more" href="/csdn/post/ops_openjdk_ubuntu/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -325,84 +346,8 @@ Upgrade to a newer version of Ubuntu. <a class="read-more" href="/csdn/post/ops_
         
 
         
-        <time class="post-date" datetime="2023-12-15T07:08:08&#43;08:00">
-            15 Dec 2023
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/dp-template-java/">模板方法模式</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>我们知道模板方法模式，其实就是等待被实现的方法。
-在进行多个可选择调用时，可以根据不同的方式；只调用一个方法即可解决不同的实现。
-此模式，只适合抽象方法！
-在进行设计模式的程序实现中xiaobin使用已编写的SSL程序做演示。
-Template Method import java.io.*;import java.util.*;import javax.net.ssl.*;public abstract class Transmission {protected String host;protected int port;protected String keyPath;protected String keyPwd;private SSLSocket socket;protected abstract SSLSocket createSocket() throws Exception;/*** &lt;p&gt; Receive byte array data &lt;/p&gt;* @return data*/public byte[] receiveData() throws Exception {// TODO Auto-generated method stubsocket = createSocket();InputStream in = new BufferedInputStream(socket.getInputStream());int b;List&lt;Byte&gt; listBuffer = new ArrayList&lt;Byte&gt;();while((b = in. <a class="read-more" href="/csdn/post/dp-template-java/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-12-08T12:08:08&#43;08:00">
-            8 Dec 2023
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/com-ie-test/">使用IE测试COM</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>IDE Visual Studio 2017(v15.9)/Visual Studio 2019(v16.11) 本文参考: 创建COM
-一、创建COM 增加IE支持： IObjectWithSite
-增加方法 Add STDMETHODIMP CtestSOW::Add(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x + y); return S_OK; } Subtract STDMETHODIMP CtestSOW::Sub(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x - y); return S_OK; } Multiply STDMETHODIMP CtestSOW::Mul(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x * y); return S_OK; } Divide STDMETHODIMP CtestSOW::Div(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x / y); return S_OK; } Modulo STDMETHODIMP CtestSOW::Mod(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x % y); return S_OK; } Logarithm STDMETHODIMP CtestSOW::Lg(LONG x, LONG y, DOUBLE* ret){// https://en. <a class="read-more" href="/csdn/post/com-ie-test/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-10-26T18:08:08&#43;08:00">
-            26 Oct 2023
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/nodejs-ubuntu/">在Ubuntu下安装NodeJS</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>1.node.js v20.x/v18.x/16.x
-v20.x curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - v18.x curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - v16.x curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - install sudo apt-get install -y nodejs update first remove:
-sudo apt remove nodejs and then, remove libnode72:
-sudo dpkg --remove --force-remove-reinstreq libnode72:amd64 last install:
-sudo apt-get install -y nodejs 2. yarn js curl --silent --show-error https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo &#34;deb https://dl. <a class="read-more" href="/csdn/post/nodejs-ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-10-22T23:08:39&#43;08:00">
-            22 Oct 2023
+        <time class="post-date" datetime="2024-03-15T07:08:08&#43;08:00">
+            15 Mar 2024
         </time>
     </footer>
 </article>
@@ -414,10 +359,9 @@ sudo apt-get install -y nodejs 2. yarn js curl --silent --show-error https://dl.
     </header>
     <section class="post-excerpt">
         
-            <p>Alma/Rocky RHEL Community Version
-View net adapter list:
+            <p>RHEL Diban Migrate to Debian before Ubuntu 20.04 ends support (April, 2025). RHEL-like Alma/Rocky CentOS Less than RHEL version 8 View net adapter list:
 $cd /etc/sysconfig/network-scripts$ls ifcfg-* -l ipv4 $ip addr ipv6 $ip -6 addr Setup Start job network adapter:
-ONBOOT=yes static $cd /etc/sysconfig/network-scripts $sudo vi ifcfg-enp0s3 BOOTPROTO=none IPADDR=192.168.1.186 PREFIX=24 GATEWAY=192.168.1.1 DNS1=211.161.191.235 DNS2=211.161.122.197 IPv6 Network IPV6INIT=yes This initializes the interface for IPv6 addressing. IPV6_AUTOCONF=yes This enables the IPv6 auto-configuration for the interface. IPV6_DEFROUTE=yes This indicates that the default IPv6 route has been assigned to the interface. <a class="read-more" href="/csdn/post/ops_network_adapter_linux/">&raquo;</a></p>
+ONBOOT=yes static $cd /etc/sysconfig/network-scripts $sudo vi ifcfg-enp0s3 BOOTPROTO=none IPADDR=192.168.1.186 PREFIX=24 GATEWAY=192.168.1.1 DNS1=211.161.191.235 DNS2=211.161.122.197 IPv6 Network IPV6INIT=yes This initializes the interface for IPv6 addressing. IPV6_AUTOCONF=yes This enables the IPv6 auto-configuration for the interface. <a class="read-more" href="/csdn/post/ops_network_adapter_linux/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -426,8 +370,8 @@ ONBOOT=yes static $cd /etc/sysconfig/network-scripts $sudo vi ifcfg-enp0s3 BOOTP
         
 
         
-        <time class="post-date" datetime="2023-10-02T08:38:08&#43;08:00">
-            2 Oct 2023
+        <time class="post-date" datetime="2024-03-12T08:38:08&#43;08:00">
+            12 Mar 2024
         </time>
     </footer>
 </article>
@@ -435,20 +379,14 @@ ONBOOT=yes static $cd /etc/sysconfig/network-scripts $sudo vi ifcfg-enp0s3 BOOTP
     
         <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/com-wizards-vc/">VC 创建 Component Object Model</a></h2>
+        <h2 class="post-title"><a href="/csdn/post/ops_dc_redis_ubuntu/">安装redis-server</a></h2>
     </header>
     <section class="post-excerpt">
         
-            <p>Use Visual Studio&rsquo;s wizard to create COM
-Visual Studio 2013 Visual Studio 2015 Visual Studio 2017/2019/2022 step by step:
-建立ATL工程 建立ATL Simple Object 添加IDL方法 测试添加的method 建立ATL工程 File-&gt;New-&gt;Project
-name: testATL Note: name即是要生成的DLL文件 选择&quot;MFC/ATL&quot;中&quot;ATL Project&quot;:
-Default
-取消编译时注册Dll Project -&gt; PropertiesLinker -&gt; Register OutputNo Add ATL Simple Object (vs2017/vs2019)右击项目名称，选择Add -&gt;New Item
-vs2013/vs2015: Add -&gt; Class
-ATL Simple Object:
-设置 Short name: testSOW
-Simple Object ID ProgID: testATL.testSOW IE支持 vs2013/vs2015 Options -&gt; Support vs2017/vs2019 Other Options 添加IDL方法 Tab switching from &ldquo;Solution Explorer&rdquo; to &ldquo;Class View&rdquo; Select the interface, Right-click -&gt; add -&gt; add method <a class="read-more" href="/csdn/post/com-wizards-vc/">&raquo;</a></p>
+            <p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).
+1. 安装 Prerequisites:
+sudo apt install lsb-release curl gpg Add the repository to the apt index:
+curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpgecho &#34;deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main&#34; | sudo tee /etc/apt/sources.list.d/redis.list install sudo apt-get update sudo apt-get install redis-server Launch local(WSL) redis-server remote(Virtual Box or VM ware etc.) sudo redis-server /etc/redis/redis.conf View port install netstat: <a class="read-more" href="/csdn/post/ops_dc_redis_ubuntu/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -457,8 +395,69 @@ Simple Object ID ProgID: testATL.testSOW IE支持 vs2013/vs2015 Options -&gt; Su
         
 
         
-        <time class="post-date" datetime="2023-09-22T23:08:08&#43;08:00">
-            22 Sep 2023
+        <time class="post-date" datetime="2024-03-10T08:08:08&#43;08:00">
+            10 Mar 2024
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/nodejs-ubuntu/">在Ubuntu下安装NodeJS</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).
+1.node.js v20.x/v18.x/16.x
+v20.x curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - v18.x curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - v16.x curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - install sudo apt-get install -y nodejs update first remove:
+sudo apt remove nodejs and then, remove libnode72:
+sudo dpkg --remove --force-remove-reinstreq libnode72:amd64 last install:
+sudo apt-get install -y nodejs 2. yarn js curl --silent --show-error https://dl. <a class="read-more" href="/csdn/post/nodejs-ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-03-02T23:08:39&#43;08:00">
+            2 Mar 2024
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/version-ubuntu/">查看版本-Ubuntu</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).
+components version 查看内核版本:
+#uname -a 查看Glibc库版本 #apt-cache show libc6 查看binutils版本 #ld -v 查看ubuntu版本号 #cat /etc/issue 查看debian对应版本 #cat /etc/debian_version debian code name code version status bullseye 11 statble buster 10 old statble stretch 9 old old statble jessie 8 archived wheezy 7 obsolete squeeze 6.0 obsolete lenny 5.0 obsolete etch 4.0 obsolete sarge 3.1 obsolete woody 3.0 obsolete potato 2.2 obsolete slink 2. <a class="read-more" href="/csdn/post/version-ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        on
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/glibc/">#Glibc</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/sh/">#sh</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/binutils/">#binutils</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/system/">#system</a>,
+            
+        
+        <time class="post-date" datetime="2024-03-01T02:12:39&#43;08:00">
+            1 Mar 2024
         </time>
     </footer>
 </article>
