@@ -4,10 +4,24 @@
     <title>Posts on 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
     <link>https://tdtc-hrb.github.io/csdn/post/</link>
     <description>Recent content in Posts on 迁移自(blog.csdn.net/xiaobin_HLJ80)</description>
-    <generator>Hugo 0.125.1</generator>
+    <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 09 Apr 2024 12:38:08 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 07 May 2024 12:08:39 +0800</lastBuildDate>
     <atom:link href="https://tdtc-hrb.github.io/csdn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>安装配置MySQL 5.7</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/mysql57-win/</link>
+      <pubDate>Tue, 07 May 2024 12:08:39 +0800</pubDate>
+      <guid>https://tdtc-hrb.github.io/csdn/post/mysql57-win/</guid>
+      <description>一、配置和安装 ini配置详见附录&#xA;预配置 需要vc12 redist&#xA;设置环境变量 名称：MYSQL57_HOME 赋值：D:\progFiles\mysql-5.7 init data %MYSQL57_HOME%\bin\mysqld --initialize-insecure --console 注册/注销服务 注册 多个版本的MySQL运行：&#xA;%MYSQL57_HOME%\bin\mysqld --install MySQL57 --defaults-file=&amp;#34;D:\progFiles\mysql-5.7\my.ini&amp;#34; 注销 sc delete mysql57 warnning info 2024-05-13T16:33:17.643640Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).&#xD;2024-05-13T16:33:17.644951Z 0 [ERROR] Cannot open Windows EventLog; check privileges, or start server with --log_syslog=0&#xD;2024-05-13T16:33:17.823377Z 0 [Warning] InnoDB: New log files created, LSN=45790&#xD;2024-05-13T16:33:17.859294Z 0 [Warning] InnoDB: Creating foreign key constraint system tables.</description>
+    </item>
+    <item>
+      <title>安装MySQL 8.4</title>
+      <link>https://tdtc-hrb.github.io/csdn/post/mysql84-install/</link>
+      <pubDate>Tue, 30 Apr 2024 06:08:39 +0800</pubDate>
+      <guid>https://tdtc-hrb.github.io/csdn/post/mysql84-install/</guid>
+      <description>Dirctory Data:&#xA;%MYSQL84_HOME%\bin\mysqld --initialize --console Uploads: manually create the folder &amp;ldquo;Uploads&amp;rdquo;.&#xA;What Is New in MySQL 8.4 since MySQL 8.0 MySQL native password authentication changes Beginning with MySQL 8.4.0, the deprecated mysql_native_password authentication plugin is no longer enabled by default. To enable it, start the server with &amp;ndash;mysql-native-password=ON (added in MySQL 8.4.0), or by including mysql_native_password=ON in the [mysqld] section of your MySQL configuration file (added in MySQL 8.4.0).&#xA;Replication Metadata Repositories sync-relay-log-info&amp;#39; is deprecated and will be removed in a future release.</description>
+    </item>
     <item>
       <title>Tomcat安装</title>
       <link>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</link>
@@ -350,13 +364,6 @@
       <pubDate>Fri, 10 Jun 2022 07:26:39 +0800</pubDate>
       <guid>https://tdtc-hrb.github.io/csdn/post/reduxjs-asyn/</guid>
       <description>0. pre 生成基本框 npm install -g create-react-app create-react-app async clone repo https://github.com/redux-saga/redux-saga.git&#xA;1. copy directorys Copy the examples/async/src from the redux-saga to your async/src.&#xA;2. rename main.js async/src&#xA;Rename main.js to index.js&#xA;3. move files async/src&#xA;App.css &amp;amp;&amp;amp; logo.svg -&amp;gt;&#xA;async/src/containers&#xA;App.css &amp;amp;&amp;amp; logo.svg&#xA;4. modify containers/App.js Add the following two blocks of code.&#xA;import logo from &amp;#39;./logo.svg&amp;#39;; import &amp;#39;./App.css&amp;#39;; &amp;lt;div className=&amp;#34;App&amp;#34;&amp;gt; &amp;lt;header className=&amp;#34;App-header&amp;#34;&amp;gt; &amp;lt;img src={logo} className=&amp;#34;App-logo&amp;#34; alt=&amp;#34;logo&amp;#34; /&amp;gt; &amp;lt;h1 className=&amp;#34;App-title&amp;#34;&amp;gt;Welcome to React&amp;lt;/h1&amp;gt; &amp;lt;/header&amp;gt; .</description>
-    </item>
-    <item>
-      <title>安装配置MySQL 5.7</title>
-      <link>https://tdtc-hrb.github.io/csdn/post/mysql57-win/</link>
-      <pubDate>Tue, 07 Jun 2022 12:08:39 +0800</pubDate>
-      <guid>https://tdtc-hrb.github.io/csdn/post/mysql57-win/</guid>
-      <description>一、配置和安装 ini配置详见附录&#xA;预配置 需要vc12 redist&#xA;设置环境变量 名称：MYSQL57_HOME 赋值：D:\progFiles\mysql-5.7 init data %MYSQL57_HOME%\bin\mysqld --initialize-insecure --console 注册/注销服务 注册 多个版本的MySQL运行：&#xA;%MYSQL57_HOME%\bin\mysqld --install MySQL57 --defaults-file=&amp;#34;D:\progFiles\mysql-5.7\my.ini&amp;#34; 注销 sc delete mysql57 Enable SSL Connections for MySQL 注意： 可以忽略如下警告信息：&#xA;CA certificate ca.pem is self signed.For more information, see Help and Support Center at http://www.mysql.com. Connection TLS Protocol Configuration mysql&amp;gt; SHOW GLOBAL VARIABLES LIKE &amp;#39;tls_version&amp;#39;; To change the value of tls_version, set it at server startup. For example, to permit connections that use the TLSv1.</description>
     </item>
     <item>
       <title>使用fork的server</title>

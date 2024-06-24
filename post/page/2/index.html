@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.125.1">
+    <meta name="generator" content="Hugo 0.127.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,6 +160,67 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/nodejs-ubuntu/">在Ubuntu下安装NodeJS</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).
+1.node.js v20.x/v18.x/16.x
+v20.x curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - v18.x curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - v16.x curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - install sudo apt-get install -y nodejs update first remove:
+sudo apt remove nodejs and then, remove libnode72:
+sudo dpkg --remove --force-remove-reinstreq libnode72:amd64 last install:
+sudo apt-get install -y nodejs 2. yarn js curl --silent --show-error https://dl. <a class="read-more" href="/csdn/post/nodejs-ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-03-02T23:08:39&#43;08:00">
+            2 Mar 2024
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/version-ubuntu/">查看版本-Ubuntu</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).
+components version 查看内核版本:
+#uname -a 查看Glibc库版本 #apt-cache show libc6 查看binutils版本 #ld -v 查看ubuntu版本号 #cat /etc/issue 查看debian对应版本 #cat /etc/debian_version debian code name code version status bullseye 11 statble buster 10 old statble stretch 9 old old statble jessie 8 archived wheezy 7 obsolete squeeze 6.0 obsolete lenny 5.0 obsolete etch 4.0 obsolete sarge 3.1 obsolete woody 3.0 obsolete potato 2.2 obsolete slink 2. <a class="read-more" href="/csdn/post/version-ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        on
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/glibc/">#Glibc</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/sh/">#sh</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/binutils/">#binutils</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/system/">#system</a>,
+            
+        
+        <time class="post-date" datetime="2024-03-01T02:12:39&#43;08:00">
+            1 Mar 2024
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -390,53 +451,6 @@ main.c 只保留主程序入口 hex2int.c 保留整个程序的结构 hex2int.h 
         
         <time class="post-date" datetime="2023-08-08T02:20:39&#43;08:00">
             8 Aug 2023
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/java-grammar/">java的grammar</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>JDK8 At least May 2026 for Eclipse Adoptium JDK17 At least Oct 2027 for Eclipse Adoptium JDK21 Java Project Loom All together now: Spring Boot 3.2, GraalVM native images, Java 21, and virtual threads with Project Loom, lambda 我们使用实现Runnable的不同来做对比。
-java 7 package my.csdn2; import java.util.concurrent.ExecutorService; import java.util.concurrent.Executors; public class RunnableThread implements Runnable { public int mul(int x, int y) { int result = 0; result = x * y; return result; } public void run() { // TODO Auto-generated method stub for (int i = 0; i &lt; 5; i++) { for (int j = 0; j &lt; 5; j++) { System. <a class="read-more" href="/csdn/post/java-grammar/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-08-08T02:09:28&#43;08:00">
-            8 Aug 2023
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/mysql-mdb-v104/">安装 MariaDB 10.3/10.4(MySQL 5.7)数据库</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>OS CentOS v7.9(2009) MariaDB MariaDB MySQL v10.2/3/4 v5.7 v10.0/1 v5.6 v5.5 v5.5 1. 准备安装 卸载旧版本Maria
-1) 查询 [tdtc@localhost ~]$ sudo rpm -qa | grep mariadb [sudo] password for tdtc: mariadb-libs-5.5.68-1.el7.x86_64 2) uninstall sudo yum -y remove mariadb* 2. install Step 1: Add MariaDB Yum Repositories /etc/yum.repos.d/mariadb.repo:
-# MariaDB 10.4 CentOS repository list - created 2023-08-26 09:24 UTC # https://mariadb.org/download/ [mariadb] name = MariaDB # rpm.mariadb.org is a dynamic mirror if your preferred mirror goes offline. <a class="read-more" href="/csdn/post/mysql-mdb-v104/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-08-06T01:08:39&#43;08:00">
-            6 Aug 2023
         </time>
     </footer>
 </article>

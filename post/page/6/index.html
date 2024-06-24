@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.125.1">
+    <meta name="generator" content="Hugo 0.127.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,6 +160,37 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/reduxjs-asyn/">重构asyn</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>0. pre 生成基本框 npm install -g create-react-app create-react-app async clone repo https://github.com/redux-saga/redux-saga.git
+1. copy directorys Copy the examples/async/src from the redux-saga to your async/src.
+2. rename main.js async/src
+Rename main.js to index.js
+3. move files async/src
+App.css &amp;&amp; logo.svg -&gt;
+async/src/containers
+App.css &amp;&amp; logo.svg
+4. modify containers/App.js Add the following two blocks of code.
+import logo from &#39;./logo.svg&#39;; import &#39;./App.css&#39;; &lt;div className=&#34;App&#34;&gt; &lt;header className=&#34;App-header&#34;&gt; &lt;img src={logo} className=&#34;App-logo&#34; alt=&#34;logo&#34; /&gt; &lt;h1 className=&#34;App-title&#34;&gt;Welcome to React&lt;/h1&gt; &lt;/header&gt; . <a class="read-more" href="/csdn/post/reduxjs-asyn/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-06-10T07:26:39&#43;08:00">
+            10 Jun 2022
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -407,31 +438,6 @@ ol li 就表示当前元素（ol）下的所有li元素。
 
         
         <time class="post-date" datetime="2022-04-10T16:26:39&#43;08:00">
-            10 Apr 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/js-redux-mini/">最小实现redux - 分解redux</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>project: https://gitee.com/xiaobin80/starter
-application app.js
-include createStore import { createStore } from &#39;redux&#39; Establish reducer const reducerName = (state, action) =&gt; { state; } invoke createStore() const store = createStore(reducerName); html public/index.html
-&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;title&gt;The Complete Redux Book - Example Application&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&#34;app&#34;&gt; Redux is running: &lt;span id=&#34;counter&#34;&gt;&lt;/span&gt; &lt;/div&gt; &lt;script type=&#34;text/javascript&#34; src=&#34;../app.js&#34;&gt;&lt;/script&gt; &lt;/body&gt; &lt;/html&gt;  <a class="read-more" href="/csdn/post/js-redux-mini/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-04-10T08:26:39&#43;08:00">
             10 Apr 2022
         </time>
     </footer>

@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.125.1">
+    <meta name="generator" content="Hugo 0.127.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/apt-oper-ubuntu/" />
 
@@ -92,7 +92,7 @@
     },
     "headline": "apt的安装问题",
     "name": "apt的安装问题",
-    "wordCount":  157 ,
+    "wordCount":  169 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
@@ -210,7 +210,13 @@ and #includedir
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/apt/sources.list
 </span></span></code></pre></div><p>注释掉&quot;deb cdrom:xxx&quot;</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">##deb cdrom:xxx</span>
-</span></span></code></pre></div><h3 id="command">Command</h3>
+</span></span></code></pre></div><ul>
+<li>no sources file</li>
+</ul>
+<pre tabindex="0"><code>$ sudo cp /usr/share/doc/apt/examples/sources.list /etc/apt/sources.list
+
+$ sudo apt update
+</code></pre><h3 id="command">Command</h3>
 <pre tabindex="0"><code>sudo sed -i &#39;/cdrom/d&#39; /etc/apt/sources.list
 </code></pre><h1 id="ref">Ref</h1>
 <ul>

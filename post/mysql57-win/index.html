@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="Windows绿色安装" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2022-06-07T12:08:39&#43;08:00" />
+    <meta property="article:published_time" content="2024-05-07T12:08:39&#43;08:00" />
 
     
     
@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.125.1">
+    <meta name="generator" content="Hugo 0.127.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/mysql57-win/" />
 
@@ -92,15 +92,15 @@
     },
     "headline": "安装配置MySQL 5.7",
     "name": "安装配置MySQL 5.7",
-    "wordCount":  201 ,
-    "timeRequired": "PT1M",
+    "wordCount":  344 ,
+    "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/mysql57-win/",
-    "datePublished": "2022-06-07T12:08Z",
-    "dateModified": "2022-06-07T12:08Z",
+    "datePublished": "2024-05-07T12:08Z",
+    "dateModified": "2024-05-07T12:08Z",
     
     
     "description": "Windows绿色安装",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2022-06-07T12:08:39&#43;08:00">
-            Jun 7, 2022
+          <time class="post-date" datetime="2024-05-07T12:08:39&#43;08:00">
+            May 7, 2024
           </time>
         
          
@@ -192,9 +192,19 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>%MYSQL57_HOME%<span style="color:#ae81ff">\b</span>in<span style="color:#ae81ff">\m</span>ysqld --install MySQL57 --defaults-file<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;D:\progFiles\mysql-5.7\my.ini&#34;</span>
 </span></span></code></pre></div><h3 id="注销">注销</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sc delete mysql57
-</span></span></code></pre></div><h2 id="enable-ssl-connections-for-mysql">Enable SSL Connections for MySQL</h2>
-<p>注意： 可以忽略如下警告信息：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>CA certificate ca.pem is self signed.For more information, see Help and Support Center at http://www.mysql.com.
+</span></span></code></pre></div><h2 id="warnning-info">warnning info</h2>
+<pre tabindex="0"><code>2024-05-13T16:33:17.643640Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+2024-05-13T16:33:17.644951Z 0 [ERROR] Cannot open Windows EventLog; check privileges, or start server with --log_syslog=0
+2024-05-13T16:33:17.823377Z 0 [Warning] InnoDB: New log files created, LSN=45790
+2024-05-13T16:33:17.859294Z 0 [Warning] InnoDB: Creating foreign key constraint system tables.
+2024-05-13T16:33:17.936952Z 0 [Warning] No existing UUID has been found, so we assume that this is the first time that this server has been started. Generating a new UUID: 80e0a1b1-1146-11ef-a356-00be430eb090.
+2024-05-13T16:33:17.940739Z 0 [Warning] Gtid table is not ready to be used. Table &#39;mysql.gtid_executed&#39; cannot be opened.
+2024-05-13T16:33:18.666030Z 0 [Warning] A deprecated TLS version TLSv1 is enabled. Please use TLSv1.2 or higher.
+2024-05-13T16:33:18.666152Z 0 [Warning] A deprecated TLS version TLSv1.1 is enabled. Please use TLSv1.2 or higher.
+2024-05-13T16:33:18.668880Z 0 [Warning] CA certificate ca.pem is self signed.
+2024-05-13T16:33:18.835389Z 1 [Warning] root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.
+</code></pre><p>注意： 可以忽略如下警告信息：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>CA certificate ca.pem is self signed.
 </span></span></code></pre></div><h3 id="connection-tls-protocol-configurationhttpsdevmysqlcomdocrefman57enencrypted-connection-protocols-ciphershtmlencrypted-connection-protocol-configuration"><a href="https://dev.mysql.com/doc/refman/5.7/en/encrypted-connection-protocols-ciphers.html#encrypted-connection-protocol-configuration">Connection TLS Protocol Configuration</a></h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">SHOW</span> <span style="color:#66d9ef">GLOBAL</span> VARIABLES <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;tls_version&#39;</span>;
 </span></span></code></pre></div><p>To change the value of tls_version, set it at server startup.
@@ -298,17 +308,10 @@ ssl_key=server-key.pem
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/reduxjs-asyn/">
-          <section class="post">
-              <h2>重构asyn</h2>
-              
-          </section>
-      </a>
   
-  
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/c-bsd_socket-server/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/mysql84-install/">
           <section class="post">
-              <h2>使用fork的server</h2>
+              <h2>安装MySQL 8.4</h2>
           </section>
       </a>
   
