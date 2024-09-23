@@ -12,13 +12,13 @@
 
 
 
-<meta name="twitter:title" content="Windows串口"/>
-<meta name="twitter:description" content="Visual C&#43;&#43;"/>
+<meta name="twitter:title" content="串口读写工具 - Windows"/>
+<meta name="twitter:description" content="MFC"/>
 <meta name="twitter:site" content="@"/>
 
 
 
-  	<meta property="og:title" content="Windows串口 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:title" content="串口读写工具 - Windows &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
   	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
   	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/vc-serial_communication/" />
 
@@ -27,17 +27,17 @@
     
 
     
-    <meta property="og:description" content="Visual C&#43;&#43;" />
+    <meta property="og:description" content="MFC" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2023-12-15T08:08:08&#43;08:00" />
+    <meta property="article:published_time" content="2024-09-23T10:08:08&#43;08:00" />
 
     
     
 
-    <title>Windows串口 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+    <title>串口读写工具 - Windows &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
 
     
-    <meta name="description" content="Visual C&#43;&#43;" />
+    <meta name="description" content="MFC" />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.127.0">
+    <meta name="generator" content="Hugo 0.134.3">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/vc-serial_communication/" />
 
@@ -90,20 +90,20 @@
             
         ]
     },
-    "headline": "Windows串口",
-    "name": "Windows串口",
-    "wordCount":  245 ,
+    "headline": "串口读写工具 - Windows",
+    "name": "串口读写工具 - Windows",
+    "wordCount":  313 ,
     "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/vc-serial_communication/",
-    "datePublished": "2023-12-15T08:08Z",
-    "dateModified": "2023-12-15T08:08Z",
+    "datePublished": "2024-09-23T10:08Z",
+    "dateModified": "2024-09-23T10:08Z",
     
     
-    "description": "Visual C++",
+    "description": "MFC",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://tdtc-hrb.github.io/csdn/post/vc-serial_communication/"
@@ -163,13 +163,13 @@
   <article class="post post">
 
     <header class="post-header">
-        <h1 class="post-title">Windows串口</h1>
-        <small>Visual C&#43;&#43;</small>
+        <h1 class="post-title">串口读写工具 - Windows</h1>
+        <small>MFC</small>
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2023-12-15T08:08:08&#43;08:00">
-            Dec 15, 2023
+          <time class="post-date" datetime="2024-09-23T10:08:08&#43;08:00">
+            Sep 23, 2024
           </time>
         
          
@@ -177,20 +177,21 @@
     </header>
 
     <section class="post-content">
-      <p>串口读写工具</p>
-<!-- Program on Windows XP - 1: https://gitee.com/xiaobin80/csdn/raw/master/images/20150118233218968.png -->
+      <!-- Program on Windows XP - 1: https://gitee.com/xiaobin80/csdn/raw/master/images/20150118233218968.png -->
 <p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/prog81-0.png" alt="Program on Windows 8.1 - UI1">
 PC has no serial device</p>
 <!-- Program on Windows XP - 2: https://gitee.com/xiaobin80/csdn/raw/master/images/20150118233246359.png -->
 <p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/prog81-1.png" alt="Program on Windows 8.1 - UI2">
 PC has serial device</p>
 <ul>
-<li>CSerialPort</li>
-</ul>
-<pre tabindex="0"><code>author: Remon Spekreijse
-</code></pre><ul>
-<li>MFC <br>
-<a href="https://www.microsoft.com/en-us/download/confirmation.aspx?id=40770">Vs2013</a>(VC12)/Vs2019(VC14.2)</li>
+<li>
+<p>CSerialPort <br>
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20140427134802562.png" alt="class diagram"></p>
+</li>
+<li>
+<p>MFC and its multibyte character set <br>
+<a href="https://learn.microsoft.com/en-us/cpp/mfc/mfc-mbcs-dll-add-on?view=msvc-140">Multibyte MFC Library</a></p>
+</li>
 </ul>
 <h1 id="程序介绍">程序介绍</h1>
 <p>界面分三块： 端口配置、发送区域、接收区域</p>
@@ -201,66 +202,121 @@ PC has serial device</p>
 </ul>
 <h2 id="1-端口配置">1. 端口配置</h2>
 <h3 id="11-在port-number选择端口号">1.1 在“Port Number”选择端口号；</h3>
-<h3 id="12-在config配置端口的属性比如波特率奇偶校验数据位停止位等等">1.2 在“Config”配置端口的属性，比如波特率、奇偶校验、数据位、停止位等等。</h3>
+<h3 id="12-config">1.2 Config</h3>
 <!-- Program on Windows XP - 3: https://gitee.com/xiaobin80/csdn/raw/master/images/20150119144350996.png -->
 <p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/prog81-2.png" alt="Program on Windows 8.1 - ui3">
-Setting Serial Communication Number</p>
-<h2 id="2-发送区域">2. 发送区域</h2>
-<h3 id="21-loop-send">2.1 Loop Send</h3>
-<p>当我们钩选此复选框时，必须选择“发送频率”，然后才能执行循环发送数据。</p>
-<p>### 2.2 发送频率 <br>
+配置串口比如，串口号，波特率，数据位，停止位等等。</p>
+<h2 id="2-发送">2. 发送</h2>
+<ul>
+<li>A类（自动化）</li>
+</ul>
+<pre tabindex="0"><code>2.2-》2.3-》2.1
+</code></pre><ul>
+<li>B类（手动)</li>
+</ul>
+<pre tabindex="0"><code>  2.3-》点击“Send”按钮。
+</code></pre><h3 id="21-loop-send">2.1 Loop Send</h3>
+<p>当我们钩选此复选框时，必须选择“发送间隔”，然后才能执行循环发送数据。</p>
+<p>### 2.2 间隔
 选择其一：500、1000、2000毫秒。</p>
 <!-- Program on Windows XP - 4: https://gitee.com/xiaobin80/csdn/raw/master/images/20150119144408343.png -->
 <p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/prog81-3.png" alt="Program on Windows 8.1 - ui4">
 Setting time</p>
-<blockquote>
 <p>如果要更改读取自定义的时间频率：</p>
+<pre tabindex="0"><code>请将SerialCommView.cpp-Ln292，更为：((CComboBox *)GetDlgItem(IDC_COMBO1Timer))-&gt;GetWindowTextA(strTemp);)
+</code></pre><h3 id="23-数据">2.3 数据</h3>
+<p>发送的数据</p>
+<h2 id="3-接收">3. 接收</h2>
+<p>配置完串口，默认为接收状态</p>
+<h3 id="31-16进制显示">3.1 16进制显示</h3>
+<p>Hex View: 是否16进制显示</p>
+<h3 id="32-清除">3.2 清除</h3>
+<p>Clear: 清空接收框数据</p>
+<h3 id="33-保存">3.3 保存</h3>
+<p>Save As: 保存接收框数据； <br>
+默认为rtf</p>
+<h2 id="测试无硬件串口">测试(无硬件串口)</h2>
+<p><a href="https://ubuntuforums.org/showthread.php?t=2197743">VMWare/VirtualBox</a></p>
+<h3 id="设置-serial-port">设置 &ldquo;Serial Port&rdquo;</h3>
+<ul>
+<li>
+<p>connection <br>
+Use named pipe</p>
+</li>
+<li>
+<p>I/O mode</p>
+</li>
+</ul>
+<pre tabindex="0"><code>Yield CPU on poll
+</code></pre><h4 id="connection">connection</h4>
+<ul>
+<li>name</li>
+</ul>
+<pre tabindex="0"><code>\\.\pipe\com_1
+</code></pre><ul>
+<li>type</li>
+</ul>
+<pre tabindex="0"><code>This end is the server
+</code></pre><ul>
+<li>type(other end)</li>
+</ul>
+<pre tabindex="0"><code>The other end is a virtual machine
+</code></pre><h3 id="设置-putty">设置 putty</h3>
 <blockquote>
-<p>请将SerialCommView.cpp-Ln292，更为：</p>
-<blockquote>
-<p>((CComboBox *)GetDlgItem(IDC_COMBO1Timer))-&gt;GetWindowTextA(strTemp);)</p>
+<p>connection type: Serial</p>
 </blockquote>
-</blockquote>
-</blockquote>
-<h3 id="23-发送内容框">2.3 发送内容框</h3>
-<p>在“发送信息框”输入内容就可发送数据了！</p>
-<h3 id="24-操作流程">2.4 操作流程</h3>
-<h3 id="a类自动化">A类（自动化）</h3>
-<p>2.2-》2.3-》2.1</p>
-<h3 id="b类手动">B类（手动）</h3>
-<p>2.3-》点击“Send”按钮。</p>
-<h2 id="3-接收区域">3. 接收区域</h2>
-<h3 id="31-制式切换">3.1 制式切换</h3>
-<p>当钩选了“Hex View”复选框，接收到的数据就以16进制显示。</p>
-<h3 id="32-清除数据">3.2 清除数据</h3>
-<p>当点击“Clear”按钮，即清空接收框数据。</p>
-<h3 id="33-数据保存">3.3 数据保存</h3>
-<p>当点击“Save As”按钮，即保存接收框数据；默认文件格式为rtf文件。</p>
-<h1 id="操作串口">操作串口</h1>
-<p>主要分为：初始化串口、读/写串口。</p>
-<p>其中，读串口需要使用线程。</p>
-<h2 id="初始化串口">初始化串口</h2>
-<p>配置串口比如，串口号，波特率，数据位，停止位等等。
-<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/2020051500152383.png" alt="flow diagram"></p>
-<p>首先，如果有线程在运行则停止它。防止数据出现错读。 <br>
-然后，建立事件以及把它们的值放到数组中。 <br>
-这时要初始化临界区，准备进入临界编码。 <br>
-如果要设定的串口打开了，我们要关闭它。 <br>
-建立串口以及设置超时时间设定这时我们要设置等待事件，之后设置RTS为高。 获得通讯状态，配置DCB以及清空缓存。
-最后退出临界区编码。</p>
-<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20140427134802562.png" alt="class diagram"></p>
-<h1 id="code">code</h1>
+<ul>
+<li>Serial line</li>
+</ul>
+<pre tabindex="0"><code>\\.\pipe\com_1
+</code></pre><ul>
+<li>Speed</li>
+</ul>
+<pre tabindex="0"><code>9600
+</code></pre><h3 id="开始测试">开始测试</h3>
+<ul>
+<li>Port Number</li>
+</ul>
+<pre tabindex="0"><code>Communications Port (COM1)
+</code></pre><ul>
+<li>Baud rate</li>
+</ul>
+<pre tabindex="0"><code>9600
+</code></pre><h3 id="发送数据">发送数据</h3>
+<ul>
+<li>data</li>
+</ul>
+<pre tabindex="0"><code>hello world
+</code></pre><ul>
+<li>interval</li>
+</ul>
+<pre tabindex="0"><code>1000
+</code></pre><ul>
+<li>repeat
+Do you want to send data repeatedly?</li>
+</ul>
+<p>yes:</p>
+<pre tabindex="0"><code>Check the &#34;Loop Send&#34;
+</code></pre><p>no:</p>
+<pre tabindex="0"><code>Uncheck &#34;Loop Send&#34;
+</code></pre><h1 id="code">code</h1>
 <ul>
 <li><a href="https://github.com/xiaobin80/SerialComm.git">SerialComm</a>
 <img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20150119160142237.png" alt="project file"></li>
 <li>IDE <br>
-<a href="http://download.microsoft.com/download/e/0/4/e04de840-8f6b-4fe5-ac3d-d3ad8e4c2443/En_vs_2005_Pro_90_Trial.img">Vs2005</a> +
-<a href="https://catalog.s.download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/vs80sp1-kb926601-x86-enu_d4b5c73253a7a4f5b4b389f41b94fea4a7247b57.exe">VS80sp1-KB926604</a></li>
+Visual Studio series is backward compatible:</li>
 </ul>
-<p>Visual Studio series is backward compatible:</p>
 <pre tabindex="0"><code>Visual Studio 2008 / Visual Studio 2010 / Visual Studio 2012 / Visual Studio 2013 / Visual Studio 2015, 
 Visual Studio 2017 / Visual Studio 2019 / Visual Studio 2022 can all(皆可) open Visual Studio 2005 projects.
-</code></pre><h2 id="update">update</h2>
+</code></pre><h2 id="flow-diagram">flow diagram</h2>
+<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/2020051500152383.png" alt="flow diagram"></p>
+<p>首先，如果有线程在运行则停止它。防止数据出现错读。 <br>
+然后，建立事件以及把它们的值放到数组中。 <br>
+这时要初始化临界区，准备进入临界编码。 <br>
+如果要设定的串口打开了，我们要关闭它。 <br>
+建立串口以及设置超时时间设定这时我们要设置等待事件，之后设置RTS为高。 获得通讯状态，配置DCB以及清空缓存。 <br>
+最后退出临界区编码。</p>
+<h2 id="update">update</h2>
 <ul>
 <li>GetVersionEx</li>
 </ul>
@@ -302,7 +358,6 @@ int main()
 <ul>
 <li><a href="https://learn.microsoft.com/en-us/windows/win32/api/lmwksta/nf-lmwksta-netwkstagetinfo">NetWkstaGetInfo function (lmwksta.h)</a></li>
 <li><a href="https://www.codeproject.com/articles/678606/part1-overcoming-windows-8-1s-deprecation-of-getve">Part1: Overcoming Windows 8.1&rsquo;s deprecation of GetVersionEx and GetVersion APIs</a></li>
-<li><a href="https://www.catalog.update.microsoft.com/Search.aspx?q=visual%20studio%202005">vs05 sp1 find</a></li>
 </ul>
 
     </section>
@@ -319,7 +374,7 @@ int main()
     
 <section class="share">
   <h4>Share this post</h4>
-  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Windows%e4%b8%b2%e5%8f%a3&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fvc-serial_communication%2f"
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=%e4%b8%b2%e5%8f%a3%e8%af%bb%e5%86%99%e5%b7%a5%e5%85%b7%20-%20Windows&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fvc-serial_communication%2f"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="hidden">Twitter</span>
   </a>
@@ -327,7 +382,7 @@ int main()
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="hidden">Facebook</span>
   </a>
-  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fvc-serial_communication%2f&amp;description=Windows%e4%b8%b2%e5%8f%a3"
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fvc-serial_communication%2f&amp;description=%e4%b8%b2%e5%8f%a3%e8%af%bb%e5%86%99%e5%b7%a5%e5%85%b7%20-%20Windows"
       onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
       <span class="hidden">Pinterest</span>
   </a>
@@ -355,17 +410,10 @@ int main()
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/dp-cor-java/">
-          <section class="post">
-              <h2>Chain of Command 模式</h2>
-              
-          </section>
-      </a>
   
-  
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/dp-template-java/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/mysql57-win/">
           <section class="post">
-              <h2>模板方法模式</h2>
+              <h2>安装配置MySQL 5.7</h2>
           </section>
       </a>
   

@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.127.0">
+    <meta name="generator" content="Hugo 0.134.3">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -168,9 +168,32 @@
     </header>
     <section class="post-excerpt">
         
-            <p>The GNU Privacy Guard
-1. install $yum install gnupg $yum install rng-tools 2. gen key $gpg --gen-key Decompose 20180804215500757.png step: Press Key: enter Press Key: enter Press Key: enter Press Key: y Real name: xiaobin Email address: veic_2005@163 Comment: enter(press key) Press Key: O 输入完，按“Tab”切换到“OK”,按回车。 再输入一次， 2.1 gen random Generate random numbers and done. Open a new terminal:
-rngd -f -r /dev/urandom The old terminal shows the result： 3. gen revoke $gpg gen-revoke 7209DBAD Press Key: y 4. <a class="read-more" href="/csdn/post/ops_gnupg/">&raquo;</a></p>
+            <p><p>The GNU Privacy Guard</p>
+<h1 id="1-install">1. install</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum install gnupg
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum install rng-tools
+</span></span></code></pre></div><h1 id="2-gen-key">2. gen key</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$gpg --gen-key
+</span></span></code></pre></div><p>Decompose 20180804215500757.png step:
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/gpg1key-1.png" alt="gen 1 key 1">
+Press Key: enter
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/gpg1key-2.png" alt="gen 1 key 2">
+Press Key: enter
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/gpg1key-3.png" alt="gen 1 key 3">
+Press Key: enter
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/gpg1key-4.png" alt="gen 1 key 4">
+Press Key: y
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/gpg1key-5.png" alt="gen 1 key 5"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Real name: xiaobin
+</span></span><span style="display:flex;"><span>Email address: veic_2005@163
+</span></span><span style="display:flex;"><span>Comment: enter<span style="color:#f92672">(</span>press key<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Press Key: O
+</span></span></code></pre></div><p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20180804215653837.png" alt="gen key 2">
+输入完，按“Tab”切换到“OK”,按回车。
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20180804215907772.png" alt="gen key 3">
+再输入一次，
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/2018080422004955.png" alt="gen key 4"></p>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20180804220108336.png" alt="gen key 5"></p> <a class="read-more" href="/csdn/post/ops_gnupg/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -192,10 +215,30 @@ rngd -f -r /dev/urandom The old terminal shows the result： 3. gen revoke $gpg 
     </header>
     <section class="post-excerpt">
         
-            <p>本安装大部分同&ldquo;安装 MariaDB 10.3数据库&rdquo;
-Installation 1. add repo sudo yum install http://repo.mysql.com/mysql57-community-release-el7.rpm 2. install import GPG:
-sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022 CentOS7 sudo yum install mysql-community-server CentOS8 Install after doing the following(disable default repo, config-manager, close gpgcheck):
-sudo dnf install mysql-community-server disable default repo sudo dnf remove @mysql sudo dnf module reset mysql sudo dnf module disable mysql config-manager sudo dnf config-manager --disable mysql80-community sudo dnf config-manager --enable mysql57-community close gpgcheck sudo vi /etc/yum. <a class="read-more" href="/csdn/post/mysql57-cenos7/">&raquo;</a></p>
+            <p><blockquote>
+<p>本安装大部分同<a href="https://tdtc-hrb.github.io/csdn/post/mysql-mdb-v103/">&ldquo;安装 MariaDB 10.3数据库&rdquo;</a></p>
+</blockquote>
+<h1 id="installation">Installation</h1>
+<h2 id="1-add-repo">1. add repo</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install http://repo.mysql.com/mysql57-community-release-el7.rpm
+</span></span></code></pre></div><h2 id="2-install">2. install</h2>
+<p>import GPG:</p>
+<pre tabindex="0"><code>sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
+</code></pre><h2 id="centos7">CentOS7</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install mysql-community-server
+</span></span></code></pre></div><h2 id="centos8">CentOS8</h2>
+<p>Install after doing the following(disable default repo, config-manager, close gpgcheck):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf install mysql-community-server
+</span></span></code></pre></div><h3 id="disable-default-repo">disable default repo</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf remove @mysql
+</span></span><span style="display:flex;"><span>sudo dnf module reset mysql
+</span></span><span style="display:flex;"><span>sudo dnf module disable mysql
+</span></span></code></pre></div><h3 id="config-manager">config-manager</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf config-manager --disable mysql80-community
+</span></span><span style="display:flex;"><span>sudo dnf config-manager --enable mysql57-community
+</span></span></code></pre></div><h3 id="close-gpgcheck">close gpgcheck</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/yum.repos.d/mysql-community.repo
+</span></span></code></pre></div><p>mysql-community.repo:</p> <a class="read-more" href="/csdn/post/mysql57-cenos7/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -217,9 +260,27 @@ sudo dnf install mysql-community-server disable default repo sudo dnf remove @my
     </header>
     <section class="post-excerpt">
         
-            <p>1. install jre
-$sudo yum install java -y jdk $sudo yum install java-1.8.0-openjdk-devel 2. set path $sudo vi /etc/profile export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.345.b01-1.el7_9.x86_64 export CLASSPATH=.:$JAVA_HOME/jre/lib/:. export PATH=$PATH:$JAVA_HOME/bin $su - root #source /etc/profile About path 3.3. INSTALL OPENJDK ON RED HAT ENTERPRISE LINUX - 2.Optional: Set the JAVA_HOME environment variable
-Reference How to install Java on CentOS 7 OpenJDK Version Info - Releases  <a class="read-more" href="/csdn/post/ops_openjdk_centos/">&raquo;</a></p>
+            <p><h1 id="1-install">1. install</h1>
+<blockquote>
+<p>jre</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum install java -y
+</span></span></code></pre></div><h2 id="jdk">jdk</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum install java-1.8.0-openjdk-devel
+</span></span></code></pre></div><h1 id="2-set-path">2. set path</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo vi /etc/profile
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export JAVA_HOME<span style="color:#f92672">=</span>/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.345.b01-1.el7_9.x86_64
+</span></span><span style="display:flex;"><span>export CLASSPATH<span style="color:#f92672">=</span>.:$JAVA_HOME/jre/lib/:.
+</span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span>$PATH:$JAVA_HOME/bin
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$su - root 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#source /etc/profile</span>
+</span></span></code></pre></div><h2 id="about-path">About path</h2>
+<p><a href="https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/6/html/installation_guide/install_openjdk_on_red_hat_enterprise_linux">3.3. INSTALL OPENJDK ON RED HAT ENTERPRISE LINUX</a> - 2.Optional: Set the JAVA_HOME environment variable</p>
+<h1 id="reference">Reference</h1>
+<ul>
+<li><a href="https://linuxize.com/post/install-java-on-centos-7/">How to install Java on CentOS 7</a></li>
+<li><a href="https://wiki.openjdk.java.net/display/jdk8u/Main">OpenJDK Version Info</a> - Releases</li>
+</ul> <a class="read-more" href="/csdn/post/ops_openjdk_centos/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -241,11 +302,51 @@ Reference How to install Java on CentOS 7 OpenJDK Version Info - Releases  <a cl
     </header>
     <section class="post-excerpt">
         
-            <p>使用版本：v16.1
-一、连接数据库 1. 新建pdm File-》New Model model types -&gt; physical data model model name: newmodel-phy dbms: mysql5.0
-2. config connect profile DataBase -&gt; Configure connections Connection profile 3. connect Database -&gt; connect Flag: &ldquo;Disconnect&rdquo; Available
-dcp文件（mysql5-crm.dcp） [ConnectionProfile]ConnectionType=JDBCDbms=MySQLDisableBind=0Driver=com.mysql.jdbc.DriverJarFiles=D:\war\mysql-connector-java-5.1.49.jarLogId=rootTrimSpaces=0URL=jdbc:mysql://106.14.141.40:3306/crm 二、生成phy图 1. Reverse Engineer File -&gt; Reverse Engineer-&gt;Database 选择数据库： 其他数据库全部反选： 例如： 最后，点击ok生成phy图。
-Tips：如果想从pdm生成CDM，Tools -&gt; Generate Conceptual Data Model <a class="read-more" href="/csdn/post/pd-db-phy/">&raquo;</a></p>
+            <p><blockquote>
+<p>使用版本：v16.1</p>
+</blockquote>
+<h1 id="一连接数据库">一、连接数据库</h1>
+<h2 id="1-新建pdm">1. 新建pdm</h2>
+<p>File-》New Model <br>
+model types -&gt; physical data model
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/2019082714153526.png" alt="new project"></p>
+<blockquote>
+<p>model name: newmodel-phy <br>
+dbms: mysql5.0</p>
+</blockquote>
+<h2 id="2-config-connect-profile">2. config connect profile</h2>
+<p>DataBase -&gt; Configure connections <br>
+Connection profile
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20190827152244711.png" alt="Connection profile"></p>
+<h2 id="3-connect">3. connect</h2>
+<p>Database -&gt; connect
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20190827152618753.png" alt="connect dialog"></p>
+<p>Flag: &ldquo;Disconnect&rdquo; Available</p>
+<ul>
+<li>dcp文件（mysql5-crm.dcp）</li>
+</ul>
+<pre tabindex="0"><code class="language-file" data-lang="file">[ConnectionProfile]
+ConnectionType=JDBC
+Dbms=MySQL
+DisableBind=0
+Driver=com.mysql.jdbc.Driver
+JarFiles=D:\war\mysql-connector-java-5.1.49.jar
+LogId=root
+TrimSpaces=0
+URL=jdbc:mysql://106.14.141.40:3306/crm
+</code></pre><h1 id="二生成phy图">二、生成phy图</h1>
+<h2 id="1-reverse-engineer">1. Reverse Engineer</h2>
+<p>File -&gt; Reverse Engineer-&gt;Database <br>
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20190827153110808.png" alt="Reverse Engineer 1">
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20190827153305897.png" alt="Reverse Engineer 2">
+选择数据库：
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20190827153501155.png" alt="Reverse Engineer 3">
+其他数据库全部反选： <br>
+例如： <br>
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20190827153501155.png" alt="Reverse Engineer 4">
+最后，点击ok生成phy图。</p>
+<blockquote>
+<p>Tips：如果想从pdm生成CDM，Tools -&gt; Generate Conceptual Data Model</p> <a class="read-more" href="/csdn/post/pd-db-phy/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -267,8 +368,37 @@ Tips：如果想从pdm生成CDM，Tools -&gt; Generate Conceptual Data Model <a 
     </header>
     <section class="post-excerpt">
         
-            <p>导出数据库 $mysqldump dbName &gt; dbName.sql -u user -p v5.6/5.7 $mysqldump --no-defaults dbName &gt; dbName.sql -u user -p 导入数据库 mysql&gt;CREATE DATABASE `dbName` CHARACTER SET utf8 COLLATE utf8_general_ci; mysql&gt;USE dbName; win mysql&gt;SOURCE C:/Users/xiaobin/dbName.sql; Linux mysql&gt;SOURCE /home/xiaobin/dbName.sql; upload win10
-scp D:\progFiles\carnumber.sql tdtc@192.168.0.151:/home/tdtc/ create user mysql&gt; CREATE USER &#39;DBAdmin&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;xbfirst&#39;; mysql&gt; GRANT ALL PRIVILEGES ON *.* TO &#39;DBAdmin&#39;@&#39;localhost&#39; WITH GRANT OPTION; mysql&gt; flush privileges; Reference MySQL Create Database with UTF8 Character Set Syntax  <a class="read-more" href="/csdn/post/mysql-imp-exp/">&raquo;</a></p>
+            <p><h1 id="导出数据库">导出数据库</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$mysqldump dbName &gt; dbName.sql -u user -p
+</span></span></code></pre></div><ul>
+<li>v5.6/5.7</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$mysqldump --no-defaults dbName &gt; dbName.sql -u user -p
+</span></span></code></pre></div><h1 id="导入数据库">导入数据库</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql&gt;CREATE DATABASE <span style="color:#e6db74">`</span>dbName<span style="color:#e6db74">`</span> CHARACTER SET utf8 COLLATE utf8_general_ci;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mysql&gt;USE dbName;
+</span></span></code></pre></div><ul>
+<li>win</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>mysql&gt;SOURCE C:/Users/xiaobin/dbName.sql;
+</span></span></code></pre></div><ul>
+<li>Linux</li>
+</ul>
+<pre tabindex="0"><code>mysql&gt;SOURCE /home/xiaobin/dbName.sql;
+</code></pre><h2 id="upload">upload</h2>
+<blockquote>
+<p>win10</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>scp D:\progFiles\carnumber.sql tdtc@192.168.0.151:/home/tdtc/
+</span></span></code></pre></div><h2 id="create-user">create user</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql&gt; CREATE USER <span style="color:#e6db74">&#39;DBAdmin&#39;</span>@<span style="color:#e6db74">&#39;localhost&#39;</span> IDENTIFIED BY <span style="color:#e6db74">&#39;xbfirst&#39;</span>;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql&gt; GRANT ALL PRIVILEGES ON *.* TO <span style="color:#e6db74">&#39;DBAdmin&#39;</span>@<span style="color:#e6db74">&#39;localhost&#39;</span> WITH GRANT OPTION;
+</span></span><span style="display:flex;"><span>mysql&gt; flush privileges;
+</span></span></code></pre></div><h1 id="reference">Reference</h1>
+<ul>
+<li><a href="https://www.euperia.com/development/mysql-create-database-with-utf8-character-set-syntax/1064">MySQL Create Database with UTF8 Character Set Syntax</a></li>
+</ul> <a class="read-more" href="/csdn/post/mysql-imp-exp/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -290,8 +420,46 @@ scp D:\progFiles\carnumber.sql tdtc@192.168.0.151:/home/tdtc/ create user mysql&
     </header>
     <section class="post-excerpt">
         
-            <p>IDE Eclipse IDE for C/C++ Developers 主程序 Create Project File -&gt; New -&gt; C/C++ Project &ldquo;C++ Managed Build&rdquo;
-Template Project type Executable: Hello World C++ Project Toolchains cygwin GCC / mingw GCC ansi版 int main(int argc, char* argv[]) { double dRadius = 3; if (argc &gt; 1) { dRadius = atof(argv[1]); } /// todo return 0; } unicode版 int main(int argc, wchar_t* argv[]) { double dRadius = 3; if (argc &gt; 1) { dRadius = _wtof(argv[1]); } /// todo return 0; } C2065: &lsquo;cout&rsquo; : undeclared identifier 强制使用命名空间 <a class="read-more" href="/csdn/post/c-console_app/">&raquo;</a></p>
+            <p><ul>
+<li>IDE <a href="https://www.eclipse.org/downloads/packages/">Eclipse IDE for C/C++ Developers</a></li>
+</ul>
+<h1 id="主程序">主程序</h1>
+<h2 id="create-project">Create Project</h2>
+<p>File -&gt; New -&gt; C/C++ Project <br>
+&ldquo;C++ Managed Build&rdquo;</p>
+<h3 id="template">Template</h3>
+<ul>
+<li>Project type</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Executable: Hello World C++ Project
+</span></span></code></pre></div><ul>
+<li>Toolchains</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cygwin GCC / mingw GCC
+</span></span></code></pre></div><h2 id="ansi版">ansi版</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> argv[])
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">double</span> dRadius <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (argc <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>) {
+</span></span><span style="display:flex;"><span>        dRadius <span style="color:#f92672">=</span> atof(argv[<span style="color:#ae81ff">1</span>]);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// todo
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="unicode版">unicode版</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">wchar_t</span><span style="color:#f92672">*</span> argv[])
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">double</span> dRadius <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (argc <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>) {
+</span></span><span style="display:flex;"><span>        dRadius <span style="color:#f92672">=</span> _wtof(argv[<span style="color:#ae81ff">1</span>]);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// todo
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="c2065-cout--undeclared-identifier">C2065: &lsquo;cout&rsquo; : undeclared identifier</h2>
+<p>强制使用命名空间</p> <a class="read-more" href="/csdn/post/c-console_app/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -313,10 +481,43 @@ Template Project type Executable: Hello World C++ Project Toolchains cygwin GCC 
     </header>
     <section class="post-excerpt">
         
-            <p>MySQL 5 &amp; 8 remote server bind-address=0.0.0.0 utf8 [MY-013242] [Server] --character-set-server: &#39;utf8&#39; is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous. mysql5 character-set-server=utf8 mysql8 character-set-server=utf8mb4 validate password 注意： mysql8.0.4， 我们将无法直接使用phpMyAdmin来登录！
-使用phpMyAdmin需要设置MySQL5.7兼容模式：
-authentication_policy=mysql_native_password,, mysql5 mysql_native_password mysql8 caching_sha2_password Ubuntu install mysql8:
-sudo apt install mysql-server sudo systemctl start mysql.service config mysql secure sudo mysql ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH mysql_native_password by &#39;xbfirst80&#39;; sudo mysql_secure_installation add user password rule: <a class="read-more" href="/csdn/post/mysql80-install/">&raquo;</a></p>
+            <p><h1 id="mysql-5--8">MySQL 5 &amp; 8</h1>
+<h2 id="remote-server">remote server</h2>
+<pre tabindex="0"><code>bind-address=0.0.0.0
+</code></pre><h2 id="utf8">utf8</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>[MY<span style="color:#f92672">-</span><span style="color:#ae81ff">013242</span>] [Server] <span style="color:#75715e">--character-set-server: &#39;utf8&#39; is currently an alias for the character set UTF8MB3,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>but will be an <span style="color:#66d9ef">alias</span> <span style="color:#66d9ef">for</span> UTF8MB4 <span style="color:#66d9ef">in</span> a future release. Please consider <span style="color:#66d9ef">using</span> UTF8MB4 <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">to</span> be unambiguous.
+</span></span></code></pre></div><ul>
+<li>mysql5</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>character<span style="color:#f92672">-</span><span style="color:#66d9ef">set</span><span style="color:#f92672">-</span>server<span style="color:#f92672">=</span>utf8
+</span></span></code></pre></div><ul>
+<li>mysql8</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>character<span style="color:#f92672">-</span><span style="color:#66d9ef">set</span><span style="color:#f92672">-</span>server<span style="color:#f92672">=</span>utf8mb4
+</span></span></code></pre></div><h2 id="validate-password">validate password</h2>
+<p>注意： <a href="https://mysqlserverteam.com/mysql-8-0-4-new-default-authentication-plugin-caching_sha2_password/">mysql8.0.4</a>，
+我们将无法直接使用phpMyAdmin来登录！</p>
+<p>使用phpMyAdmin需要设置MySQL5.7兼容模式：</p>
+<pre tabindex="0"><code>authentication_policy=mysql_native_password,,
+</code></pre><ul>
+<li>mysql5</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>mysql_native_password
+</span></span></code></pre></div><ul>
+<li>mysql8</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>caching_sha2_password
+</span></span></code></pre></div><h1 id="ubuntu">Ubuntu</h1>
+<p>install mysql8:</p>
+<pre tabindex="0"><code>sudo apt install mysql-server
+</code></pre><pre tabindex="0"><code>sudo systemctl start mysql.service
+</code></pre><h2 id="config-mysql-secure">config mysql secure</h2>
+<pre tabindex="0"><code>sudo mysql
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;root&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span> IDENTIFIED <span style="color:#66d9ef">WITH</span> mysql_native_password <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;xbfirst80&#39;</span>;
+</span></span></code></pre></div><pre tabindex="0"><code>sudo mysql_secure_installation
+</code></pre><h2 id="add-user">add user</h2>
+<p>password rule:</p> <a class="read-more" href="/csdn/post/mysql80-install/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -338,10 +539,29 @@ sudo apt install mysql-server sudo systemctl start mysql.service config mysql se
     </header>
     <section class="post-excerpt">
         
-            <p>Installing and Setting up the Percona Server for MySQL 8.0 Repository yum install -y https://repo.percona.com/yum/percona-release-latest.noarch.rpm disable mysql module repo:
-percona-release setup ps80 Installing and Setting up the Percona Server for MySQL 8.0 Binaries yum -y install percona-server-server Launch:
-systemctl start mysqldsystemctl status mysqld change password sudo grep &#34;temporary password&#34; /var/log/mysqld.log mysql -uroot -p Change default password：
-ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;qaz1!Xsw2@&#39;; Weak password mysql&gt; set global validate_password.policy=0; set password ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;xbfirst80&#39;; Ref Installing Percona Server for MySQL on Rocky Linux 8 How to Change MySQL Password Policy Level  <a class="read-more" href="/csdn/post/mysql80-cenos8/">&raquo;</a></p>
+            <p><h3 id="installing-and-setting-up-the-percona-server-for-mysql-80--repository">Installing and Setting up the Percona Server for MySQL 8.0  Repository</h3>
+<pre tabindex="0"><code>yum install -y https://repo.percona.com/yum/percona-release-latest.noarch.rpm
+</code></pre><p>disable mysql module repo:</p>
+<pre tabindex="0"><code>percona-release setup ps80
+</code></pre><h3 id="installing-and-setting-up-the-percona-server-for-mysql-80-binaries">Installing and Setting up the Percona Server for MySQL 8.0 Binaries</h3>
+<pre tabindex="0"><code>yum -y install percona-server-server
+</code></pre><p>Launch:</p>
+<pre tabindex="0"><code>systemctl start mysqld
+systemctl status mysqld
+</code></pre><h2 id="change-password">change password</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo grep <span style="color:#e6db74">&#34;temporary password&#34;</span> /var/log/mysqld.log
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql -uroot -p
+</span></span></code></pre></div><p>Change default password：</p>
+<pre tabindex="0"><code>ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;qaz1!Xsw2@&#39;;
+</code></pre><h3 id="weak-password">Weak password</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql&gt; set global validate_password.policy<span style="color:#f92672">=</span>0;
+</span></span></code></pre></div><h3 id="set-password">set password</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ALTER USER <span style="color:#e6db74">&#39;root&#39;</span>@<span style="color:#e6db74">&#39;localhost&#39;</span> IDENTIFIED BY <span style="color:#e6db74">&#39;xbfirst80&#39;</span>;
+</span></span></code></pre></div><h1 id="ref">Ref</h1>
+<ul>
+<li><a href="https://www.percona.com/blog/installing-percona-server-for-mysql-on-rocky-linux-8/">Installing Percona Server for MySQL on Rocky Linux 8</a></li>
+<li><a href="https://tecadmin.net/change-mysql-password-policy-level/">How to Change MySQL Password Policy Level</a></li>
+</ul> <a class="read-more" href="/csdn/post/mysql80-cenos8/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -371,11 +591,349 @@ ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;qaz1!Xsw2@&#39;
     </header>
     <section class="post-excerpt">
         
-            <p>二进制文件工具：EditPlus Edit -&gt; Hex Viewer replace(regexp/substr,replacement) 使用这个函数来替换多余的空格。 str.replace(/\s/g, &#34;&#34;); split(separator,howmany) 字符串转换成字符数组。 string.split(&#34;,&#34;); 一、js部分 我们把所有的方法放到一个对象（RepoInfo）中。
-var RepoInfo = { }; 1. 获取对象 RepoInfo.getObj = function(objName) { return new ActiveXObject(objName); }; 2. 获取数组 RepoInfo.getArray = function(str) { var ret = new Array(16); var string = str.replace(/\s/g, &#34;&#34;); ret = string.split(&#34;,&#34;); return ret; }; 3. 解码字串 输入字串校验 如果字串空，退出。
-输出框清空 每次赋值前，清空。
-执行COM中的方法 在获取对象非空的情况下，执行。
-RepoInfo.decode = function(string) { if (string == null) return; var obj = RepoInfo. <a class="read-more" href="/csdn/post/com-ie-repoinfo/">&raquo;</a></p>
+            <p><ul>
+<li>二进制文件工具：<a href="https://www.editplus.com/download.html">EditPlus</a> <br>
+Edit -&gt; Hex Viewer</li>
+</ul>
+<blockquote>
+<ul>
+<li>replace(regexp/substr,replacement)
+使用这个函数来替换多余的空格。</li>
+</ul>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/\s/g</span>, <span style="color:#e6db74">&#34;&#34;</span>);
+</span></span></code></pre></div><blockquote>
+<ul>
+<li>split(separator,howmany)
+字符串转换成字符数组。</li>
+</ul>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">string</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;,&#34;</span>);
+</span></span></code></pre></div><h1 id="一js部分">一、js部分</h1>
+<p>我们把所有的方法放到一个对象（RepoInfo）中。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">RepoInfo</span> <span style="color:#f92672">=</span> { };
+</span></span></code></pre></div><h2 id="1-获取对象">1. 获取对象</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">RepoInfo</span>.<span style="color:#a6e22e">getObj</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">objName</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ActiveXObject</span>(<span style="color:#a6e22e">objName</span>);
+</span></span><span style="display:flex;"><span>	};
+</span></span></code></pre></div><h2 id="2-获取数组">2. 获取数组</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">RepoInfo</span>.<span style="color:#a6e22e">getArray</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">str</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ret</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array(<span style="color:#ae81ff">16</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">string</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/\s/g</span>, <span style="color:#e6db74">&#34;&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ret</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">string</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;,&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ret</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h2 id="3-解码字串">3. 解码字串</h2>
+<h3 id="输入字串校验">输入字串校验</h3>
+<p>如果字串空，退出。</p>
+<h3 id="输出框清空">输出框清空</h3>
+<p>每次赋值前，清空。</p>
+<h3 id="执行com中的方法">执行COM中的方法</h3>
+<p>在获取对象非空的情况下，执行。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">RepoInfo</span>.<span style="color:#a6e22e">decode</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">string</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">string</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">RepoInfo</span>.<span style="color:#a6e22e">getObj</span>(<span style="color:#e6db74">&#34;repoInfo.LabelInfo&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">edtView</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;edtView&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">edtView</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">str</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">RepoInfo</span>.<span style="color:#a6e22e">getArray</span>(<span style="color:#a6e22e">string</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">obj</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">edtView</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">getInfo</span>(<span style="color:#a6e22e">str</span>);
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h1 id="二html部分">二、html部分</h1>
+<h2 id="按钮事件">按钮事件</h2>
+<p>从输入框获取字串作为js方法的输入参数，注意：两种引号的配合使用。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btnOk&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;执行数据解析&#34;</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;RepoInfo.decode(document.getElementById(&#39;edtData&#39;).value)&#34;</span> /&gt;
+</span></span></code></pre></div><h2 id="源代码含js代码">源代码（含js代码）</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html PUBLIC &#34;-//W3C//DTD XHTML 1.0 Transitional//EN&#34; &#34;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&#34;&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">xmlns</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.w3.org/1999/xhtml&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Content-Type&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/html; charset=utf-8&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">title</span>&gt;报文数据信息 - IE&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">RepoInfo</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>		};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">RepoInfo</span>.<span style="color:#a6e22e">getObj</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">objName</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ActiveXObject</span>(<span style="color:#a6e22e">objName</span>);
+</span></span><span style="display:flex;"><span>	};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">RepoInfo</span>.<span style="color:#a6e22e">getArray</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">str</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ret</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array(<span style="color:#ae81ff">16</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">string</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/\s/g</span>, <span style="color:#e6db74">&#34;&#34;</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">string</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">ret</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">string</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;,&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ret</span>;
+</span></span><span style="display:flex;"><span>	};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">RepoInfo</span>.<span style="color:#a6e22e">decode</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">string</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">string</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">RepoInfo</span>.<span style="color:#a6e22e">getObj</span>(<span style="color:#e6db74">&#34;repoInfo.LabelInfo&#34;</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">edtView</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;edtView&#34;</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">edtView</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">str</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">RepoInfo</span>.<span style="color:#a6e22e">getArray</span>(<span style="color:#a6e22e">string</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">obj</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>)
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">edtView</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">getInfo</span>(<span style="color:#a6e22e">str</span>);
+</span></span><span style="display:flex;"><span>	};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>                    
+</span></span><span style="display:flex;"><span>	  
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">textarea</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;note&#34;</span> <span style="color:#a6e22e">cols</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;98&#34;</span> <span style="color:#a6e22e">rows</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;7&#34;</span> <span style="color:#a6e22e">readonly</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;readonly&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>       注意：本测试只能运行在IE浏览器！
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  首先，要注册Dll（regsvr32 repoInfo.dll）；
+</span></span><span style="display:flex;"><span>  然后，从“BinJiang_2005.rep”（滨江站），复制行数据到“标签数据”框。
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  示例（固定格式）：
+</span></span><span style="display:flex;"><span>    0xD3, 0x05, 0x94, 0x84, 0x00, 0x13, 0x51, 0x2F, 0x59, 0x34, 0x57, 0x45, 0x58, 0x50, 0x41, 0x98&lt;/<span style="color:#f92672">textarea</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">br</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">br</span>&gt;
+</span></span><span style="display:flex;"><span>标签数据：&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;edtData&#34;</span> <span style="color:#a6e22e">size</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;98&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">br</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">br</span>&gt;
+</span></span><span style="display:flex;"><span>执行结果：&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;edtView&#34;</span> <span style="color:#a6e22e">size</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;50&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">br</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">br</span>&gt;
+</span></span><span style="display:flex;"><span>                  
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btnOk&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;执行数据解析&#34;</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;RepoInfo.decode(document.getElementById(&#39;edtData&#39;).value)&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><h1 id="test">Test</h1>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">File Name(.DAT)</th>
+          <th style="text-align: left">Car Number</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">D2011914</td>
+          <td style="text-align: left">312490215</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2011926</td>
+          <td style="text-align: left">331926515</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2011955</td>
+          <td style="text-align: left">342272515</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2012009</td>
+          <td style="text-align: left">346553415</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2012035</td>
+          <td style="text-align: left">345000715</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2021643</td>
+          <td style="text-align: left">350199715</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2021741</td>
+          <td style="text-align: left">345008515</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2021743</td>
+          <td style="text-align: left">345001615</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2021926</td>
+          <td style="text-align: left">332465615</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2021959</td>
+          <td style="text-align: left">342312215</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2022011</td>
+          <td style="text-align: left">345005915</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2022044</td>
+          <td style="text-align: left">342018915</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2031744</td>
+          <td style="text-align: left">342637015</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2031752</td>
+          <td style="text-align: left">345003215</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2031913</td>
+          <td style="text-align: left">340937115</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2031932</td>
+          <td style="text-align: left">332869515</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2031958</td>
+          <td style="text-align: left">331071015</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2032039</td>
+          <td style="text-align: left">340848715</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2032042</td>
+          <td style="text-align: left">345008015</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2032339</td>
+          <td style="text-align: left">346034315</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2032344</td>
+          <td style="text-align: left">312071215</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2041241</td>
+          <td style="text-align: left">350324015</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2041738</td>
+          <td style="text-align: left">350323015</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2041808</td>
+          <td style="text-align: left">345006515</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2042012</td>
+          <td style="text-align: left">345002415</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2042017</td>
+          <td style="text-align: left">346445515</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2042038</td>
+          <td style="text-align: left">340173615</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2042140</td>
+          <td style="text-align: left">312747515</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2051607</td>
+          <td style="text-align: left">350323415</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2051746</td>
+          <td style="text-align: left">345007615</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2051922</td>
+          <td style="text-align: left">331183715</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2051934</td>
+          <td style="text-align: left">346033215</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2051946</td>
+          <td style="text-align: left">312525215</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2052008</td>
+          <td style="text-align: left">345200015</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2052022</td>
+          <td style="text-align: left">345005215</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2061808</td>
+          <td style="text-align: left">345002915</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2061920</td>
+          <td style="text-align: left">332753815</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2061945</td>
+          <td style="text-align: left">342158015</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2061957</td>
+          <td style="text-align: left">340534815</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2062015</td>
+          <td style="text-align: left">345002115</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2071750</td>
+          <td style="text-align: left">345004115</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2071915</td>
+          <td style="text-align: left">342772915</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2071934</td>
+          <td style="text-align: left">346033215</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2071949</td>
+          <td style="text-align: left">342700815</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2072018</td>
+          <td style="text-align: left">345008715</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2072047</td>
+          <td style="text-align: left">346288015</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2081108</td>
+          <td style="text-align: left">331115215</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2081118</td>
+          <td style="text-align: left">331115215</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2081325</td>
+          <td style="text-align: left">350338915</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2081757</td>
+          <td style="text-align: left">345000715</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D2081917</td>
+          <td style="text-align: left">342941715</td>
+      </tr>
+  </tbody>
+</table>
+<h1 id="参考文档w3school">参考文档(W3School)：</h1>
+<ul>
+<li><a href="http://www.w3school.com.cn/jsref/jsref_replace.asp">replace 方法</a></li>
+<li><a href="http://www.w3school.com.cn/jsref/jsref_obj_regexp.asp">RegExp 对象</a></li>
+<li><a href="http://w3school.com.cn/jsref/jsref_split.asp">split 方法</a></li>
+</ul> <a class="read-more" href="/csdn/post/com-ie-repoinfo/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -397,8 +955,51 @@ RepoInfo.decode = function(string) { if (string == null) return; var obj = RepoI
     </header>
     <section class="post-excerpt">
         
-            <p>0. preinstall User set $ useradd tdtc $ passwd tdtc Yum Repo 1) yum install $sudo yum groupinstall &#34;Development Tools&#34; $sudo yum install tcl wget v6+ Just to clarify: there is no way this issue will be fixed, Redis &gt;= 6 will require a C11 compiler.
-sudo yum install centos-release-scl sudo yum install devtoolset-8 scl enable devtoolset-8 bash 2) verification $gcc -v $make -v $echo &#39;puts [info patchlevel];exit 0&#39; | tclsh 1. <a class="read-more" href="/csdn/post/redis-centos7/">&raquo;</a></p>
+            <p><h1 id="0-preinstall">0. preinstall</h1>
+<ul>
+<li>User set</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ useradd tdtc
+</span></span><span style="display:flex;"><span>$ passwd tdtc
+</span></span></code></pre></div><ul>
+<li><a href="https://tdtc-hrb.github.io/csdn/post/ops_rhel_repo/">Yum Repo</a></li>
+</ul>
+<h2 id="1-yum-install">1) yum install</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum groupinstall <span style="color:#e6db74">&#34;Development Tools&#34;</span>
+</span></span><span style="display:flex;"><span>$sudo yum install tcl wget
+</span></span></code></pre></div><h3 id="v6">v6+</h3>
+<p>Just to clarify: there is no way this issue will be fixed, Redis &gt;= 6 will require a C11 compiler.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install centos-release-scl
+</span></span><span style="display:flex;"><span>sudo yum install devtoolset-8
+</span></span><span style="display:flex;"><span>scl enable devtoolset-8 bash
+</span></span></code></pre></div><h2 id="2-verification">2) verification</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$gcc -v
+</span></span><span style="display:flex;"><span>$make -v
+</span></span><span style="display:flex;"><span>$echo <span style="color:#e6db74">&#39;puts [info patchlevel];exit 0&#39;</span> | tclsh
+</span></span></code></pre></div><h1 id="1-installation">1. installation</h1>
+<h2 id="1-install">1) install</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://download.redis.io/releases/redis-6.0.16.tar.gz
+</span></span><span style="display:flex;"><span>$tar xzvf redis-6.0.16.tar.gz
+</span></span><span style="display:flex;"><span>$cd redis-6.0.16
+</span></span><span style="display:flex;"><span>$make
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Single Core</span>
+</span></span><span style="display:flex;"><span>$taskset -c <span style="color:#ae81ff">0</span> make test
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## sudo</span>
+</span></span><span style="display:flex;"><span>$sudo make install
+</span></span></code></pre></div><h2 id="2-config">2) config</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo mkdir /etc/redis
+</span></span><span style="display:flex;"><span>$sudo mkdir -p /var/redis
+</span></span><span style="display:flex;"><span>$sudo cp /home/tdtc/redis-6.0.16/redis.conf /etc/redis
+</span></span></code></pre></div><h3 id="redisconf">redis.conf</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>port  6379				         <span style="color:#75715e">#default port is already 6379.</span>
+</span></span><span style="display:flex;"><span>daemonize yes			         <span style="color:#75715e">#run as a daemon</span>
+</span></span><span style="display:flex;"><span>supervised systemd			     <span style="color:#75715e">#signal systemd</span>
+</span></span><span style="display:flex;"><span>pidfile /var/run/redis_6379.pid  <span style="color:#75715e">#specify pid file</span>
+</span></span><span style="display:flex;"><span>loglevel notice			         <span style="color:#75715e">#server verbosity level</span>
+</span></span><span style="display:flex;"><span>logfile /var/log/redis.log		 <span style="color:#75715e">#log file name</span>
+</span></span><span style="display:flex;"><span>dir  /var/redis/		         <span style="color:#75715e">#redis directory</span>
+</span></span></code></pre></div><h1 id="2-command">2. command</h1>
+<p>You do not need to execute the following commands when you are not maintaining it, only the first time.</p> <a class="read-more" href="/csdn/post/redis-centos7/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">

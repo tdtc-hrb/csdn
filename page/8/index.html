@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.127.0">
+    <meta name="generator" content="Hugo 0.134.3">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -201,13 +201,92 @@
     </header>
     <section class="post-excerpt">
         
-            <p>工作原理：
-16进制数 * 16n 之和就是10进制数。
-手算 16进制: 0x61E
-0位： E * 160 = 14 1位： 1 * 161 = 16 2位： 6 * 162 = 1536
-10进制： 14+16+1536 = 1566
-code 程序的需要两部分组成：
-权值计算 16的几次方，power(16, x) unsigned long power(int a, int b) { int i; unsigned long result = 1; for(i = 0; i &lt; b; i++) result = result * a; return result; }; 单16进制值转10进制值 例如：如果是F，则表示15 switch (ch) { case &#39;0&#39;: iCh = 0; break; case &#39;1&#39;: iCh = 1; break; case &#39;2&#39;: iCh = 2; break; case &#39;3&#39;: iCh = 3; break; case &#39;4&#39;: iCh = 4; break; case &#39;5&#39;: iCh = 5; break; case &#39;6&#39;: iCh = 6; break; case &#39;7&#39;: iCh = 7; break; case &#39;8&#39;: iCh = 8; break; case &#39;9&#39;: iCh = 9; break; case &#39;a&#39;: iCh = 10; break; case &#39;b&#39;: iCh = 11; break; case &#39;c&#39;: iCh = 12; break; case &#39;d&#39;: iCh = 13; break; case &#39;e&#39;: iCh = 14; break; case &#39;f&#39;: iCh = 15; break; default: iCh = -1; break; } 为了满足，把所有输入转换为小写字母，可以使用系统函数tolower()或者我们自己写的函数toLower() <a class="read-more" href="/csdn/post/c-string-h2i/">&raquo;</a></p>
+            <p><p>工作原理：</p>
+<blockquote>
+<p>　16进制数 * 16<sup>n</sup> 之和就是10进制数。</p>
+</blockquote>
+<h1 id="手算">手算</h1>
+<p>16进制: 0x61E</p>
+<p>0位：  E * 16<sup>0</sup> = 14  <br>
+1位：  1 * 16<sup>1</sup> = 16 <br>
+2位：  6 * 16<sup>2</sup> = 1536</p>
+<p>10进制： <br>
+14+16+1536 = 1566</p>
+<h1 id="code">code</h1>
+<p>程序的需要两部分组成：</p>
+<ol>
+<li>权值计算  <br>
+16的几次方，power(16, x)</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">long</span> <span style="color:#a6e22e">power</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> i;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">long</span> result <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span>(i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> b; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    result <span style="color:#f92672">=</span> result <span style="color:#f92672">*</span> a;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> result;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><ol start="2">
+<li>单16进制值转10进制值  <br>
+例如：如果是F，则表示15</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">switch</span> (ch)
+</span></span><span style="display:flex;"><span> {
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;0&#39;</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   iCh <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;1&#39;</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   iCh <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;2&#39;</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   iCh <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;3&#39;</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   iCh <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;4&#39;</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   iCh <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;5&#39;</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   iCh <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;6&#39;</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   iCh <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;7&#39;</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   iCh <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;8&#39;</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   iCh <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;9&#39;</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   iCh <span style="color:#f92672">=</span> <span style="color:#ae81ff">9</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;a&#39;</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   iCh <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;b&#39;</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    iCh <span style="color:#f92672">=</span> <span style="color:#ae81ff">11</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;c&#39;</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>     iCh <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;d&#39;</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>     iCh <span style="color:#f92672">=</span> <span style="color:#ae81ff">13</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;e&#39;</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>     iCh <span style="color:#f92672">=</span> <span style="color:#ae81ff">14</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;f&#39;</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>     iCh <span style="color:#f92672">=</span> <span style="color:#ae81ff">15</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>   iCh <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span> }
+</span></span></code></pre></div><p>为了满足，把所有输入转换为小写字母，可以使用系统函数tolower()或者我们自己写的函数toLower()</p> <a class="read-more" href="/csdn/post/c-string-h2i/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -229,8 +308,31 @@ code 程序的需要两部分组成：
     </header>
     <section class="post-excerpt">
         
-            <p>JDK install see 设置OpenJDK
-Stage I 1. 《sudo - CentOS》 2. FQDN #127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomain4 #::1 localhost localhost.localdomain localhost6 localhost6.localdomain6 192.168.0.137 tdtc101 192.168.0.138 tdtc102 192.168.0.139 tdtc103 3. 《ssh相互免密》 Stage II 1. unzip $wget https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/zookeeper-3.6.3/apache-zookeeper-3.6.3-bin.tar.gz --no-check-certificate $mkdir -p ~/app/zookeeper $tar xzvf apache-zookeeper-3.6.3-bin.tar.gz -C ~/app/zookeeper $mv ~/app/zookeeper/apache-zookeeper-3.6.3-bin ~/app/zookeeper/3.6.3 2. zk home $sudo vi /etc/bashrc export ZK_HOME=/home/tdtc/app/zookeeper/3.6.3 export PATH=$PATH:$ZK_HOME/bin Stage III 1. zoo.cfg Add the following configuration, and the other options default. <a class="read-more" href="/csdn/post/ops_zookeeper/">&raquo;</a></p>
+            <p><blockquote>
+<p>JDK install see <a href="https://tdtc-hrb.github.io/csdn/post/ops_openjdk_centos/">设置OpenJDK</a></p>
+</blockquote>
+<h1 id="stage-i">Stage I</h1>
+<h2 id="1-sudo---centoshttpstdtc-hrbgithubiocsdnpostops_sudo">1. 《<a href="https://tdtc-hrb.github.io/csdn/post/ops_sudo/">sudo - CentOS</a>》</h2>
+<h2 id="2-fqdn">2. FQDN</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#::1         localhost localhost.localdomain localhost6 localhost6.localdomain6</span>
+</span></span><span style="display:flex;"><span>192.168.0.137 tdtc101
+</span></span><span style="display:flex;"><span>192.168.0.138 tdtc102
+</span></span><span style="display:flex;"><span>192.168.0.139 tdtc103
+</span></span></code></pre></div><h2 id="3-ssh相互免密httpstdtc-hrbgithubiocsdnpostops_ssh_without_password">3. 《<a href="https://tdtc-hrb.github.io/csdn/post/ops_ssh_without_password/">ssh相互免密</a>》</h2>
+<h1 id="stage-ii">Stage II</h1>
+<h2 id="1-unzip">1. unzip</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/zookeeper-3.6.3/apache-zookeeper-3.6.3-bin.tar.gz --no-check-certificate
+</span></span><span style="display:flex;"><span>$mkdir -p ~/app/zookeeper
+</span></span><span style="display:flex;"><span>$tar xzvf apache-zookeeper-3.6.3-bin.tar.gz -C ~/app/zookeeper
+</span></span><span style="display:flex;"><span>$mv ~/app/zookeeper/apache-zookeeper-3.6.3-bin ~/app/zookeeper/3.6.3
+</span></span></code></pre></div><h2 id="2-zk-home">2. zk home</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo vi /etc/bashrc
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export ZK_HOME<span style="color:#f92672">=</span>/home/tdtc/app/zookeeper/3.6.3
+</span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span>$PATH:$ZK_HOME/bin
+</span></span></code></pre></div><h1 id="stage-iii">Stage III</h1>
+<h2 id="1-zoocfg">1. zoo.cfg</h2>
+<p>Add the following configuration, and the other options default.</p> <a class="read-more" href="/csdn/post/ops_zookeeper/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -252,10 +354,43 @@ Stage I 1. 《sudo - CentOS》 2. FQDN #127.0.0.1 localhost localhost.localdomai
     </header>
     <section class="post-excerpt">
         
-            <p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).
-VMware: Ubuntu 20.04.2
-Install and update #sudo apt-get install memcached [0] #sudo apt-get install build-essential #sudo apt-get install libevent-dev* #wget http://memcached.org/files/memcached-1.6.15.tar.gz #tar -zxvf memcached-1.6.15.tar.gz #cd memcached-1.6.15 #./configure &amp;&amp; make &amp;&amp; sudo make install Start allow port sudo ufw allow 11211 config sudo vi /etc/memcached.conf 修改为服务器的IP:
-# Specify which IP address to listen on. The default is to listen on all IP addresses # This parameter is one of the only security measures that memcached has, so make sure # it&#39;s listening on a firewalled interface. <a class="read-more" href="/csdn/post/ops_memcached_ubuntu/">&raquo;</a></p>
+            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
+<blockquote>
+<p>VMware: Ubuntu 20.04.2</p>
+</blockquote>
+<h1 id="install-and-update">Install and update</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#sudo apt-get install memcached [0]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#sudo apt-get install build-essential</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#sudo apt-get install libevent-dev*</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#wget http://memcached.org/files/memcached-1.6.15.tar.gz</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#tar -zxvf memcached-1.6.15.tar.gz</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#cd memcached-1.6.15</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#./configure &amp;&amp; make &amp;&amp; sudo make install</span>
+</span></span></code></pre></div><h1 id="start">Start</h1>
+<h2 id="allow-port">allow port</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ufw allow <span style="color:#ae81ff">11211</span>
+</span></span></code></pre></div><h2 id="config">config</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/memcached.conf
+</span></span></code></pre></div><p>修改为服务器的IP:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Specify which IP address to listen on. The default is to listen on all IP addresses</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># This parameter is one of the only security measures that memcached has, so make sure</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># it&#39;s listening on a firewalled interface.</span>
+</span></span><span style="display:flex;"><span>-l 192.168.0.103
+</span></span></code></pre></div><h2 id="run">run</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo service memcached start
+</span></span></code></pre></div><h3 id="view">view</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ps -ef|grep memcached
+</span></span></code></pre></div><h1 id="reference">Reference</h1>
+<ul>
+<li>
+<ol start="0">
+<li>default version</li>
+</ol>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ memcached -V
+</span></span><span style="display:flex;"><span>memcached 1.5.22
+</span></span></code></pre></div> <a class="read-more" href="/csdn/post/ops_memcached_ubuntu/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -277,11 +412,52 @@ Install and update #sudo apt-get install memcached [0] #sudo apt-get install bui
     </header>
     <section class="post-excerpt">
         
-            <p>安装Rose2007 下载并安装
-ed2k://|file|%5BIBM%E8%BD%AF%E4%BB%B6%E7%B3%BB%E5%88%97%5D.IBM.Rational.Rose.Enterprise.v7.0-TFTISO.bin|621038544|71d09610bb53d2d905d278675b333c75|h=utnlhfjwnzjdp2wecfeujoptd7pqlrps|/ 默认安装即可。
-lic 序号有两种方式：本机和导入Lic
-本机 本地机器作为lic服务器
-1. 修改授权文件。 打开license.dat文件， 大约在文件的中间位置有：SERVER Microsoft ANY DAEMON rational “C:\Program Files\Rational\common\rational.exe” 将其修改为：SERVER 计算机名　ANY DAEMON rational “自己安装的目录\rational.exe”后，保存2. 拷贝授权检查程序。 将license.dat、 lmgrd.exe 、rational.exe三个文件拷贝到：安装目录\rational\common\3. 将授权程序放到控制面板。 将flexlm.cpl拷贝到system32目录下。如win2000系统中为C:\WINNT\system32目录。4. 设置授权程序。 打开FLEXlm License Manager（控制面板中）， 在Setup页中lmgrd.exe右侧目录填写：C:\Program Files\Rational\Common\lmgrd.exe（若为默认安装目录） License File右侧目录写为：C:\Program Files\Rational\Common\license.dat5. 查看状态。 回到Control页，点击Start，若出现”Server Started”，则表示已经成功， 可以点击Status,若状态为：计算机名：license server UP(MASTER)则成功（否则，Start-&gt;Status来回点~~）。6. 修改Server Name。 打开Rational License Key Administrator， 点击工具栏中的&quot;Start WIzard&quot;, 点击下一步， 选择&quot;Point to a Rational License Server to get my licenses&quot; , 点击下一步， 在Server Name中的名字改为自己的计算机名即可。导入License IBM Rational License Key Administrator Import a Rational License File Browse . <a class="read-more" href="/csdn/post/rose-uml/">&raquo;</a></p>
+            <p><h1 id="安装rose2007">安装Rose2007</h1>
+<p>下载并安装</p>
+<pre tabindex="0"><code class="language-bt" data-lang="bt">ed2k://|file|%5BIBM%E8%BD%AF%E4%BB%B6%E7%B3%BB%E5%88%97%5D.IBM.Rational.Rose.Enterprise.v7.0-TFTISO.bin|621038544|71d09610bb53d2d905d278675b333c75|h=utnlhfjwnzjdp2wecfeujoptd7pqlrps|/
+</code></pre><p>默认安装即可。</p>
+<h1 id="lic">lic</h1>
+<p>序号有两种方式：本机和导入Lic</p>
+<h2 id="本机">本机</h2>
+<p>本地机器作为lic服务器</p>
+<h3 id="1-修改授权文件">1. 修改授权文件。</h3>
+<pre><code>打开license.dat文件，    
+大约在文件的中间位置有：SERVER Microsoft ANY DAEMON rational “C:\Program Files\Rational\common\rational.exe”    
+将其修改为：SERVER 计算机名　ANY DAEMON rational “自己安装的目录\rational.exe”后，保存
+</code></pre>
+<h3 id="2-拷贝授权检查程序">2. 拷贝授权检查程序。</h3>
+<pre><code>将license.dat、 lmgrd.exe 、rational.exe三个文件拷贝到：安装目录\rational\common\
+</code></pre>
+<h3 id="3-将授权程序放到控制面板">3. 将授权程序放到控制面板。</h3>
+<pre><code>将flexlm.cpl拷贝到system32目录下。如win2000系统中为C:\WINNT\system32目录。
+</code></pre>
+<h3 id="4-设置授权程序">4. 设置授权程序。</h3>
+<pre><code>打开FLEXlm License Manager（控制面板中），    
+在Setup页中lmgrd.exe右侧目录填写：C:\Program Files\Rational\Common\lmgrd.exe（若为默认安装目录）    
+License File右侧目录写为：C:\Program Files\Rational\Common\license.dat
+</code></pre>
+<h3 id="5-查看状态">5. 查看状态。</h3>
+<pre><code>回到Control页，
+点击Start，若出现”Server Started”，则表示已经成功，    
+可以点击Status,若状态为：计算机名：license server UP(MASTER)则成功（否则，Start-&gt;Status来回点~~）。
+</code></pre>
+<h3 id="6-修改server-name">6. 修改Server Name。</h3>
+<pre><code>打开Rational License Key Administrator，     
+点击工具栏中的&quot;Start WIzard&quot;, 点击下一步，    
+选择&quot;Point to a Rational License Server to get my licenses&quot; , 点击下一步，    
+在Server Name中的名字改为自己的计算机名即可。
+</code></pre>
+<h2 id="导入license">导入License</h2>
+<ol>
+<li>IBM Rational License Key Administrator</li>
+<li>Import a Rational License File</li>
+</ol>
+<ul>
+<li>Browse</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>../crack/license.udp
+</span></span></code></pre></div><h1 id="业务用例">业务用例</h1>
+<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20140427132252406.png" alt="busines use-case"></p> <a class="read-more" href="/csdn/post/rose-uml/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -303,8 +479,32 @@ lic 序号有两种方式：本机和导入Lic
     </header>
     <section class="post-excerpt">
         
-            <p>关于移植在U-boot文档中这样介绍： README
-If the system board that you have is not listed, then you will need to port U-Boot to your hardware platform. To do this, follow these steps: 1. Add a new configuration option for your board to the toplevel &#34;Makefile&#34; and to the &#34;MAKEALL&#34; script, using the existing entries as examples. Note that here and at many other places boards and other names are listed in alphabetical sort order. <a class="read-more" href="/csdn/post/hw-uboot_v134-at91sam9260/">&raquo;</a></p>
+            <p><p>关于移植在U-boot文档中这样介绍：
+README</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>If the system board that you have is not listed, then you will need
+</span></span><span style="display:flex;"><span>to port U-Boot to your hardware platform. To do this, follow these
+</span></span><span style="display:flex;"><span>steps:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>1.  Add a new configuration option for your board to the toplevel
+</span></span><span style="display:flex;"><span>    &#34;Makefile&#34; and to the &#34;MAKEALL&#34; script, using the existing
+</span></span><span style="display:flex;"><span>    entries as examples. Note that here and at many other places
+</span></span><span style="display:flex;"><span>    boards and other names are listed in alphabetical sort order. Please
+</span></span><span style="display:flex;"><span>    keep this order.
+</span></span><span style="display:flex;"><span>2.  Create a new directory to hold your board specific code. Add any
+</span></span><span style="display:flex;"><span>    files you need. In your board directory, you will need at least
+</span></span><span style="display:flex;"><span>    the &#34;Makefile&#34;, a &#34;&lt;board&gt;.c&#34;, &#34;flash.c&#34; and &#34;u-boot.lds&#34;.
+</span></span><span style="display:flex;"><span>3.  Create a new configuration file &#34;include/configs/&lt;board&gt;.h&#34; for
+</span></span><span style="display:flex;"><span>    your board
+</span></span><span style="display:flex;"><span>3.  If you&#39;re porting U-Boot to a new CPU, then also create a new
+</span></span><span style="display:flex;"><span>    directory to hold your CPU specific code. Add any files you need.
+</span></span><span style="display:flex;"><span>4.  Run &#34;make &lt;board&gt;_config&#34; with your new name.
+</span></span><span style="display:flex;"><span>5.  Type &#34;make&#34;, and you should get a working &#34;u-boot.srec&#34; file
+</span></span><span style="display:flex;"><span>    to be installed on your target system.
+</span></span><span style="display:flex;"><span>6.  Debug and solve any problems that might arise.
+</span></span><span style="display:flex;"><span>    [Of course, this last step is much harder than it sounds.]
+</span></span></code></pre></div><h1 id="0-准备工作">0. 准备工作</h1>
+<h2 id="1-下载">1) 下载</h2>
+<p><a href="ftp://ftp.denx.de/pub/u-boot/u-boot-1.3.4.tar.bz2">V1.3.4</a></p> <a class="read-more" href="/csdn/post/hw-uboot_v134-at91sam9260/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -326,12 +526,48 @@ If the system board that you have is not listed, then you will need to port U-Bo
     </header>
     <section class="post-excerpt">
         
-            <p>在很多网站上都有一个导航记录栏 - 面包屑；
-官方文档 举例
-&lt;ol class=&#34;breadcrumb&#34;&gt; &lt;li&gt;&lt;a href=&#34;#&#34;&gt;Home&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&#34;#&#34;&gt;Library&lt;/a&gt;&lt;/li&gt; &lt;li class=&#34;active&#34;&gt;Data&lt;/li&gt; &lt;/ol&gt; php example CodeIgniter v2.2.x/3.x
-建立一个php文件 breadcrumb.php
-&lt;ol class=&#34;breadcrumb&#34;&gt; &lt;?php echo get_breadcrumb($breadData, $menu_prefix); ?&gt; &lt;li class=&#34;active&#34;&gt; &lt;?php echo empty($breadData) ? $this-&gt;Glossary_M-&gt;get_word(&#39;home&#39;, $this-&gt;data[&#39;lang_id&#39;]) : $body; ?&gt; &lt;/li&gt; &lt;/ol&gt; 在helper中建立如下方法：
-function get_breadcrumb($array, $prefix = NULL) { $str = &#39;&#39;; if (count($array)) { foreach ($array as $item) { if ($item[&#39;homeFlag&#39;]) { // &#39;&lt;li&gt;&lt;a href=&#34;http://&#39; $str .= &#39;&lt;li&gt;&lt;a href=&#34;&#39; . $item[&#39;linkAddr&#39;] . <a class="read-more" href="/csdn/post/css-bootstrap-breadcrumbs/">&raquo;</a></p>
+            <p><p>在很多网站上都有一个导航记录栏 - 面包屑；</p>
+<h1 id="官方文档">官方文档</h1>
+<p><a href="https://v3.bootcss.com/components/#breadcrumbs">举例</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;ol</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;breadcrumb&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;li&gt;&lt;a</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;#&#34;</span><span style="color:#f92672">&gt;</span>Home<span style="color:#f92672">&lt;/a&gt;&lt;/li&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;li&gt;&lt;a</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;#&#34;</span><span style="color:#f92672">&gt;</span>Library<span style="color:#f92672">&lt;/a&gt;&lt;/li&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;li</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;active&#34;</span><span style="color:#f92672">&gt;</span>Data<span style="color:#f92672">&lt;/li&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/ol&gt;</span>
+</span></span></code></pre></div><h1 id="php-example">php example</h1>
+<blockquote>
+<p>CodeIgniter v2.2.x/3.x</p>
+</blockquote>
+<p>建立一个php文件
+breadcrumb.php</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ol</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;breadcrumb&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span> <span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">get_breadcrumb</span>($breadData, $menu_prefix); <span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">  &lt;li class=&#34;active&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">  &lt;?php echo empty($breadData) ?
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">  $this-&gt;Glossary_M-&gt;get_word(&#39;home&#39;, $this-&gt;data[&#39;lang_id&#39;]) :
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">  $body;
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">  ?&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">  &lt;/li&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;/ol&gt;
+</span></span></span></code></pre></div><p>在helper中建立如下方法：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">get_breadcrumb</span>($array, $prefix <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>) {
+</span></span><span style="display:flex;"><span>	$str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">count</span>($array)) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">foreach</span> ($array <span style="color:#66d9ef">as</span> $item) {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> ($item[<span style="color:#e6db74">&#39;homeFlag&#39;</span>]) {
+</span></span><span style="display:flex;"><span>				<span style="color:#75715e">// &#39;&lt;li&gt;&lt;a href=&#34;http://&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>				$str <span style="color:#f92672">.=</span> <span style="color:#e6db74">&#39;&lt;li&gt;&lt;a href=&#34;&#39;</span> <span style="color:#f92672">.</span> $item[<span style="color:#e6db74">&#39;linkAddr&#39;</span>] <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;&#34;&gt;&#39;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">e</span>($item[<span style="color:#e6db74">&#39;name&#39;</span>]) <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;&lt;/a&gt;&lt;/li&gt;&#39;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">PHP_EOL</span>;
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>			  $str <span style="color:#f92672">.=</span> <span style="color:#e6db74">&#39;&lt;li&gt;&lt;a href=&#34;&#39;</span> <span style="color:#f92672">.</span> $prefix <span style="color:#f92672">.</span> $item[<span style="color:#e6db74">&#39;linkAddr&#39;</span>] <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;&#34;&gt;&#39;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">e</span>($item[<span style="color:#e6db74">&#39;name&#39;</span>]) <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;&lt;/a&gt;&lt;/li&gt;&#39;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">PHP_EOL</span>;
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> $str;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>实现效果：
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20140113150326015.png" alt="website info"></p> <a class="read-more" href="/csdn/post/css-bootstrap-breadcrumbs/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -353,8 +589,11 @@ function get_breadcrumb($array, $prefix = NULL) { $str = &#39;&#39;; if (count($
     </header>
     <section class="post-excerpt">
         
-            <p>Portel DXP 2004
-CTM1050.7z 提取码: pcah <a class="read-more" href="/csdn/post/hw-schematic_diagram-ctm1050/">&raquo;</a></p>
+            <p><blockquote>
+<p>Portel DXP 2004</p>
+</blockquote>
+<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20140501003738375.png" alt="rational rose1"></p>
+<p><a href="https://pan.baidu.com/s/1JpUJduEgk-1_qa6yBPL_3A">CTM1050.7z</a> 提取码: pcah</p> <a class="read-more" href="/csdn/post/hw-schematic_diagram-ctm1050/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -376,11 +615,17 @@ CTM1050.7z 提取码: pcah <a class="read-more" href="/csdn/post/hw-schematic_di
     </header>
     <section class="post-excerpt">
         
-            <p>tool: Rational Rose
-功能简介： 当主程序收到CAN口的数据后；根据按键的不同来选择是使用CAN口发送，还是使用UART口发送。
-时序图
-协作图
-down can2uart.mdl 提取码: bb8h <a class="read-more" href="/csdn/post/uml-ommunication_diagram-can/">&raquo;</a></p>
+            <p><blockquote>
+<p>tool: Rational Rose</p>
+</blockquote>
+<p>功能简介： <br>
+当主程序收到CAN口的数据后；根据按键的不同来选择是使用CAN口发送，还是使用UART口发送。</p>
+<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20140427133600421.png" alt="rational rose1">
+时序图</p>
+<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20140427133638062.png" alt="rational rose1">
+协作图</p>
+<h1 id="down">down</h1>
+<p><a href="https://pan.baidu.com/s/1cXzIxeMKLcEuP3uYx7rKTw">can2uart.mdl</a> 提取码: bb8h</p> <a class="read-more" href="/csdn/post/uml-ommunication_diagram-can/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -402,13 +647,51 @@ down can2uart.mdl 提取码: bb8h <a class="read-more" href="/csdn/post/uml-ommu
     </header>
     <section class="post-excerpt">
         
-            <p>完结篇 《CAN转COM或CAN-1》介绍了CAN，本篇其余部分。
-开发板：英蓓特MCB2300（LPC2368）
-开发工具：MDK3.8a
-开发主机：Windows XP SP3 中文专业版
-UART 因为我们使用UART主要是进行发送的，所以关闭接收可以更加快速的进行发送处理。
-控制接收缓存寄存（Receiver Buffer Register）即可达到此目的。
-禁止RBR void preUARTInitRBR( unsigned char i ) { switch (i) { case 0: U0IER = IER_THRE | IER_RLS;	/* Disable RBR */ break; case 1: U1IER = IER_THRE | IER_RLS;	/* Disable RBR */ break; } } 允许RBR void postUARTInitRBR( unsigned char i ) { switch (i) { case 0: U0IER = IER_THRE | IER_RLS | IER_RBR;	/* Re-enable RBR */ break; case 1: U1IER = IER_THRE | IER_RLS | IER_RBR;	/* Re-enable RBR */ break; } } 完成后的UART NXP的官方例程UART加入RBR后的code <a class="read-more" href="/csdn/post/hw-can-uart-key/">&raquo;</a></p>
+            <p><h1 id="完结篇">完结篇</h1>
+<p>《<a href="https://blog.csdn.net/xiaobin_HLJ80/article/details/44890423">CAN转COM或CAN-1</a>》介绍了CAN，本篇其余部分。</p>
+<ul>
+<li>
+<p>开发板：英蓓特MCB2300（LPC2368）</p>
+</li>
+<li>
+<p>开发工具：MDK3.8a</p>
+</li>
+<li>
+<p>开发主机：Windows XP SP3 中文专业版</p>
+</li>
+</ul>
+<h1 id="uart">UART</h1>
+<p>因为我们使用UART主要是进行发送的，所以关闭接收可以更加快速的进行发送处理。</p>
+<p>控制接收缓存寄存（Receiver Buffer Register）即可达到此目的。</p>
+<h2 id="禁止rbr">禁止RBR</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">preUARTInitRBR</span>( <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">char</span> i )
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">switch</span> (i) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">case</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>			U0IER <span style="color:#f92672">=</span> IER_THRE <span style="color:#f92672">|</span> IER_RLS;			<span style="color:#75715e">/* Disable RBR */</span>
+</span></span><span style="display:flex;"><span>	  		<span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>			U1IER <span style="color:#f92672">=</span> IER_THRE <span style="color:#f92672">|</span> IER_RLS;			<span style="color:#75715e">/* Disable RBR */</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>	}   
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="允许rbr">允许RBR</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">postUARTInitRBR</span>( <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">char</span> i )
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">switch</span> (i) {
+</span></span><span style="display:flex;"><span>	  	<span style="color:#66d9ef">case</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>			U0IER <span style="color:#f92672">=</span> IER_THRE <span style="color:#f92672">|</span> IER_RLS <span style="color:#f92672">|</span> IER_RBR;	<span style="color:#75715e">/* Re-enable RBR */</span>
+</span></span><span style="display:flex;"><span>	  	  	<span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>			U1IER <span style="color:#f92672">=</span> IER_THRE <span style="color:#f92672">|</span> IER_RLS <span style="color:#f92672">|</span> IER_RBR;	<span style="color:#75715e">/* Re-enable RBR */</span>
+</span></span><span style="display:flex;"><span>	  		<span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>	}  
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="完成后的uart">完成后的UART</h2>
+<blockquote>
+<p>NXP的官方例程UART加入RBR后的code</p> <a class="read-more" href="/csdn/post/hw-can-uart-key/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -430,10 +713,30 @@ UART 因为我们使用UART主要是进行发送的，所以关闭接收可以�
     </header>
     <section class="post-excerpt">
         
-            <p>日志文件问题 由于使用时间比较长积累了很多的日志文件（\data目录下），所以删除之！
-mysql-bin.000001 ... ... mysql-bin.000278 原来删除都留最后一个编号的日志，这次太过彻底~~都删了!
-执行net start mysql： 出现了mysql 1067错误！ 查看，主机名.err文件（lenovo-7c8f808d.err）：
-130416 9:59:23 InnoDB: Started; log sequence number 0 43655 MySQL: File &#39;.\mysql-bin.000278&#39; not found (Errcode: 2) 130416 9:59:23 [ERROR] Failed to open log (file &#39;.\mysql-bin.000278&#39;, errno 2) 130416 9:59:23 [ERROR] Could not open log file 130416 9:59:23 [ERROR] Can&#39;t init tc log 130416 9:59:23 [ERROR] Aborting 130416 9:59:23 InnoDB: Starting shutdown... 130416 9:59:24 InnoDB: Shutdown completed; log sequence number 0 43655 130416 9:59:24 [Note] MySQL: Shutdown complete 告诉我们找不到mysql-bin. <a class="read-more" href="/csdn/post/ops_mysql_error1067/">&raquo;</a></p>
+            <p><h1 id="日志文件问题">日志文件问题</h1>
+<p>由于使用时间比较长积累了很多的日志文件（\data目录下），所以删除之！</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql-bin.000001
+</span></span><span style="display:flex;"><span>... ...
+</span></span><span style="display:flex;"><span>mysql-bin.000278
+</span></span></code></pre></div><p>原来删除都留最后一个编号的日志，这次太过彻底~~都删了!</p>
+<p>执行net start mysql：
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/2020051514104614.png" alt="cmd info">
+出现了mysql 1067错误！ <br>
+查看，主机名.err文件（lenovo-7c8f808d.err）：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ae81ff">130416</span>  9:59:23  InnoDB: Started; log sequence number <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">43655</span>
+</span></span><span style="display:flex;"><span>MySQL: File <span style="color:#e6db74">&#39;.\mysql-bin.000278&#39;</span> not found <span style="color:#f92672">(</span>Errcode: 2<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">130416</span>  9:59:23 <span style="color:#f92672">[</span>ERROR<span style="color:#f92672">]</span> Failed to open log <span style="color:#f92672">(</span>file <span style="color:#e6db74">&#39;.\mysql-bin.000278&#39;</span>, errno 2<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">130416</span>  9:59:23 <span style="color:#f92672">[</span>ERROR<span style="color:#f92672">]</span> Could not open log file
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">130416</span>  9:59:23 <span style="color:#f92672">[</span>ERROR<span style="color:#f92672">]</span> Can<span style="color:#960050;background-color:#1e0010">&#39;</span>t init tc log
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">130416</span>  9:59:23 <span style="color:#f92672">[</span>ERROR<span style="color:#f92672">]</span> Aborting
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">130416</span>  9:59:23  InnoDB: Starting shutdown...
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">130416</span>  9:59:24  InnoDB: Shutdown completed; log sequence number <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">43655</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">130416</span>  9:59:24 <span style="color:#f92672">[</span>Note<span style="color:#f92672">]</span> MySQL: Shutdown complete
+</span></span></code></pre></div><p>告诉我们找不到mysql-bin.000278文件！ <br>
+既然找不到，我们新弄一个日志文件： <br>
+打开my.ini文件
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/2020051514154614.png" alt="cmd info"></p> <a class="read-more" href="/csdn/post/ops_mysql_error1067/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">

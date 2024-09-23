@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.127.0">
+    <meta name="generator" content="Hugo 0.134.3">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -199,14 +199,87 @@
     
         <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/vc-serial_communication/">串口读写工具 - Windows</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><!-- Program on Windows XP - 1: https://gitee.com/xiaobin80/csdn/raw/master/images/20150118233218968.png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/prog81-0.png" alt="Program on Windows 8.1 - UI1">
+PC has no serial device</p>
+<!-- Program on Windows XP - 2: https://gitee.com/xiaobin80/csdn/raw/master/images/20150118233246359.png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/prog81-1.png" alt="Program on Windows 8.1 - UI2">
+PC has serial device</p>
+<ul>
+<li>
+<p>CSerialPort <br>
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20140427134802562.png" alt="class diagram"></p>
+</li>
+<li>
+<p>MFC and its multibyte character set <br>
+<a href="https://learn.microsoft.com/en-us/cpp/mfc/mfc-mbcs-dll-add-on?view=msvc-140">Multibyte MFC Library</a></p>
+</li>
+</ul>
+<h1 id="程序介绍">程序介绍</h1>
+<p>界面分三块： 端口配置、发送区域、接收区域</p>
+<ul>
+<li>v2.0 <br>
+使用<a href="https://tdtc-hrb.github.io/csdn/post/vc-boost/">boost thread</a> + <a href="https://tdtc-hrb.github.io/cnblogs/post/vc-sqlite3lib/">SQLite3 library</a>
+实现串口数据存储到SQLite数据库.</li>
+</ul>
+<h2 id="1-端口配置">1. 端口配置</h2>
+<h3 id="11-在port-number选择端口号">1.1 在“Port Number”选择端口号；</h3>
+<h3 id="12-config">1.2 Config</h3>
+<!-- Program on Windows XP - 3: https://gitee.com/xiaobin80/csdn/raw/master/images/20150119144350996.png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/prog81-2.png" alt="Program on Windows 8.1 - ui3">
+配置串口比如，串口号，波特率，数据位，停止位等等。</p> <a class="read-more" href="/csdn/post/vc-serial_communication/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-09-23T10:08:08&#43;08:00">
+            23 Sep 2024
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/mysql57-win/">安装配置MySQL 5.7</a></h2>
     </header>
     <section class="post-excerpt">
         
-            <p>一、配置和安装 ini配置详见附录
-预配置 需要vc12 redist
-设置环境变量 名称：MYSQL57_HOME 赋值：D:\progFiles\mysql-5.7 init data %MYSQL57_HOME%\bin\mysqld --initialize-insecure --console 注册/注销服务 注册 多个版本的MySQL运行：
-%MYSQL57_HOME%\bin\mysqld --install MySQL57 --defaults-file=&#34;D:\progFiles\mysql-5.7\my.ini&#34; 注销 sc delete mysql57 warnning info 2024-05-13T16:33:17.643640Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).2024-05-13T16:33:17.644951Z 0 [ERROR] Cannot open Windows EventLog; check privileges, or start server with --log_syslog=02024-05-13T16:33:17.823377Z 0 [Warning] InnoDB: New log files created, LSN=457902024-05-13T16:33:17.859294Z 0 [Warning] InnoDB: Creating foreign key constraint system tables. <a class="read-more" href="/csdn/post/mysql57-win/">&raquo;</a></p>
+            <p><h1 id="一配置和安装">一、配置和安装</h1>
+<p>ini配置详见附录</p>
+<h2 id="预配置">预配置</h2>
+<p>需要<a href="https://docs.microsoft.com/en-US/cpp/windows/latest-supported-vc-redist?view=msvc-170#visual-studio-2013-vc-120">vc12 redist</a></p>
+<h3 id="设置环境变量">设置环境变量</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>名称：MYSQL57_HOME
+</span></span><span style="display:flex;"><span>赋值：D:<span style="color:#ae81ff">\p</span>rogFiles<span style="color:#ae81ff">\m</span>ysql-5.7
+</span></span></code></pre></div><h3 id="init-data">init data</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>%MYSQL57_HOME%<span style="color:#ae81ff">\b</span>in<span style="color:#ae81ff">\m</span>ysqld --initialize-insecure --console
+</span></span></code></pre></div><h2 id="注册注销服务">注册/注销服务</h2>
+<h3 id="注册">注册</h3>
+<p>多个版本的MySQL运行：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>%MYSQL57_HOME%<span style="color:#ae81ff">\b</span>in<span style="color:#ae81ff">\m</span>ysqld --install MySQL57 --defaults-file<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;D:\progFiles\mysql-5.7\my.ini&#34;</span>
+</span></span></code></pre></div><h3 id="注销">注销</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sc delete mysql57
+</span></span></code></pre></div><h2 id="warnning-info">warnning info</h2>
+<pre tabindex="0"><code>2024-05-13T16:33:17.643640Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+2024-05-13T16:33:17.644951Z 0 [ERROR] Cannot open Windows EventLog; check privileges, or start server with --log_syslog=0
+2024-05-13T16:33:17.823377Z 0 [Warning] InnoDB: New log files created, LSN=45790
+2024-05-13T16:33:17.859294Z 0 [Warning] InnoDB: Creating foreign key constraint system tables.
+2024-05-13T16:33:17.936952Z 0 [Warning] No existing UUID has been found, so we assume that this is the first time that this server has been started. Generating a new UUID: 80e0a1b1-1146-11ef-a356-00be430eb090.
+2024-05-13T16:33:17.940739Z 0 [Warning] Gtid table is not ready to be used. Table &#39;mysql.gtid_executed&#39; cannot be opened.
+2024-05-13T16:33:18.666030Z 0 [Warning] A deprecated TLS version TLSv1 is enabled. Please use TLSv1.2 or higher.
+2024-05-13T16:33:18.666152Z 0 [Warning] A deprecated TLS version TLSv1.1 is enabled. Please use TLSv1.2 or higher.
+2024-05-13T16:33:18.668880Z 0 [Warning] CA certificate ca.pem is self signed.
+2024-05-13T16:33:18.835389Z 1 [Warning] root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.
+</code></pre><p>注意： 可以忽略如下警告信息：</p> <a class="read-more" href="/csdn/post/mysql57-win/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -228,10 +301,23 @@
     </header>
     <section class="post-excerpt">
         
-            <p>Dirctory Data:
-%MYSQL84_HOME%\bin\mysqld --initialize --console Uploads: manually create the folder &ldquo;Uploads&rdquo;.
-What Is New in MySQL 8.4 since MySQL 8.0 MySQL native password authentication changes Beginning with MySQL 8.4.0, the deprecated mysql_native_password authentication plugin is no longer enabled by default. To enable it, start the server with &ndash;mysql-native-password=ON (added in MySQL 8.4.0), or by including mysql_native_password=ON in the [mysqld] section of your MySQL configuration file (added in MySQL 8.4.0).
-Replication Metadata Repositories sync-relay-log-info&#39; is deprecated and will be removed in a future release. <a class="read-more" href="/csdn/post/mysql84-install/">&raquo;</a></p>
+            <p><h2 id="dirctory">Dirctory</h2>
+<p>Data:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>%MYSQL84_HOME%\bin\mysqld --initialize --console
+</span></span></code></pre></div><p>Uploads:
+manually create the folder &ldquo;Uploads&rdquo;.</p>
+<h2 id="what-is-new-in-mysql-84-since-mysql-80httpsdevmysqlcomdocrefman84enmysql-nutshellhtml"><a href="https://dev.mysql.com/doc/refman/8.4/en/mysql-nutshell.html">What Is New in MySQL 8.4 since MySQL 8.0</a></h2>
+<ul>
+<li>MySQL native password authentication changes</li>
+</ul>
+<p>Beginning with MySQL 8.4.0, the deprecated mysql_native_password authentication plugin is no longer enabled by default.
+To enable it, start the server with &ndash;mysql-native-password=ON (added in MySQL 8.4.0),
+or by including mysql_native_password=ON in the <code>[mysqld]</code> section of your MySQL configuration file (added in MySQL 8.4.0).</p>
+<ul>
+<li><a href="https://dev.mysql.com/doc/refman/8.4/en/replica-logs-status.html">Replication Metadata Repositories</a></li>
+</ul>
+<pre tabindex="0"><code>sync-relay-log-info&#39; is deprecated and will be removed in a future release.
+</code></pre><p>removed configure at my.ini:</p> <a class="read-more" href="/csdn/post/mysql84-install/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -253,7 +339,142 @@ Replication Metadata Repositories sync-relay-log-info&#39; is deprecated and wil
     </header>
     <section class="post-excerpt">
         
-            <p>Servlet Spec JSP Spec EL Spec WebSocket Spec Authentication (JASIC) Spec Apache Tomcat Version Latest Released Version Supported Java Versions 6.0 3.1 5.0 2.1 3.0 10.1.x 10.1.20 11 and later 3.1 2.3 3.0 1.1 1.1 8.5.x 8.5.100 7 and later 2.5 2.1 2.1 N/A N/A 6.0.x 6.0.53 5 and later 2.4 2.0 N/A N/A N/A 5.5.x 5.5.36 1.4 and later installation Platform version Released Specification Java SE Support Important Changes Jakarta EE 10 2022-03-31 10 Java SE 17/Java SE 11 Removal of deprecated items in Servlet, Faces, CDI and EJB (Entity Beans and Embeddable Container). <a class="read-more" href="/csdn/post/ops_tomcat/">&raquo;</a></p>
+            <p><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Servlet Spec</th>
+          <th style="text-align: left">JSP Spec</th>
+          <th style="text-align: left">EL Spec</th>
+          <th style="text-align: left">WebSocket Spec</th>
+          <th style="text-align: left">Authentication (JASIC) Spec</th>
+          <th style="text-align: left">Apache Tomcat Version</th>
+          <th style="text-align: left">Latest Released Version</th>
+          <th style="text-align: left">Supported Java Versions</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">6.0</td>
+          <td style="text-align: left">3.1</td>
+          <td style="text-align: left">5.0</td>
+          <td style="text-align: left">2.1</td>
+          <td style="text-align: left">3.0</td>
+          <td style="text-align: left">10.1.x</td>
+          <td style="text-align: left">10.1.20</td>
+          <td style="text-align: left">11 and later</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">3.1</td>
+          <td style="text-align: left">2.3</td>
+          <td style="text-align: left">3.0</td>
+          <td style="text-align: left">1.1</td>
+          <td style="text-align: left">1.1</td>
+          <td style="text-align: left">8.5.x</td>
+          <td style="text-align: left"><a href="https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.100/bin/apache-tomcat-8.5.100.zip">8.5.100</a></td>
+          <td style="text-align: left">7 and later</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">2.5</td>
+          <td style="text-align: left">2.1</td>
+          <td style="text-align: left">2.1</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">6.0.x</td>
+          <td style="text-align: left"><a href="https://archive.apache.org/dist/tomcat/tomcat-6/v6.0.53/bin/apache-tomcat-6.0.53.zip">6.0.53</a></td>
+          <td style="text-align: left">5 and later</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">2.4</td>
+          <td style="text-align: left">2.0</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">5.5.x</td>
+          <td style="text-align: left"><a href="https://archive.apache.org/dist/tomcat/tomcat-5/v5.5.36/bin/apache-tomcat-5.5.36.zip">5.5.36</a></td>
+          <td style="text-align: left">1.4 and later</td>
+      </tr>
+  </tbody>
+</table>
+<h1 id="installation">installation</h1>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Platform version</th>
+          <th style="text-align: left">Released</th>
+          <th style="text-align: left">Specification</th>
+          <th style="text-align: left">Java SE Support</th>
+          <th style="text-align: left">Important Changes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Jakarta EE 10</td>
+          <td style="text-align: left">2022-03-31</td>
+          <td style="text-align: left">10</td>
+          <td style="text-align: left">Java SE 17/Java SE 11</td>
+          <td style="text-align: left">Removal of deprecated items in Servlet, Faces, CDI and EJB (Entity Beans and Embeddable Container). CDI-Build Time.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Jakarta EE 9.1</td>
+          <td style="text-align: left">2021-05-25</td>
+          <td style="text-align: left">9.1</td>
+          <td style="text-align: left">Java SE 11/Java SE 8</td>
+          <td style="text-align: left">JDK 11 support</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Jakarta EE 9</td>
+          <td style="text-align: left">2020-12-08</td>
+          <td style="text-align: left">9</td>
+          <td style="text-align: left">Java SE 8</td>
+          <td style="text-align: left">API namespace move from javax to jakarta</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Jakarta EE 8</td>
+          <td style="text-align: left">2019-09-10</td>
+          <td style="text-align: left">8</td>
+          <td style="text-align: left">Java SE 8</td>
+          <td style="text-align: left">Full compatiblity with Java EE 8</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Java EE 8</td>
+          <td style="text-align: left">2017-08-31</td>
+          <td style="text-align: left">JSR 366</td>
+          <td style="text-align: left">Java SE 8</td>
+          <td style="text-align: left">HTTP/2 and CDI based Security</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Java EE 7</td>
+          <td style="text-align: left">2013-05-28</td>
+          <td style="text-align: left">JSR 342</td>
+          <td style="text-align: left">Java SE 7</td>
+          <td style="text-align: left">WebSocket, JSON and HTML5 support</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Java EE 6</td>
+          <td style="text-align: left">2009-12-10</td>
+          <td style="text-align: left">JSR 316</td>
+          <td style="text-align: left">Java SE 6</td>
+          <td style="text-align: left">CDI managed Beans and REST</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Java EE 5</td>
+          <td style="text-align: left">2006-05-11</td>
+          <td style="text-align: left">JSR 244</td>
+          <td style="text-align: left">Java SE 5</td>
+          <td style="text-align: left">Java annotations</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="安装jdk">安装JDK</h2>
+<ul>
+<li>RHEL Community <br>
+参见 <a href="https://tdtc-hrb.github.io/cnblogs/post/ops_openjdk_rhel/">设置OpenJDK - RHEL</a></li>
+<li>Ubuntu <br>
+参见 <a href="https://tdtc-hrb.github.io/csdn/post/ops_openjdk_ubuntu/">设置OpenJDK - Ubuntu</a></li>
+</ul>
+<h2 id="安装tomcat">安装Tomcat</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo dnf install wget tar
+</span></span></code></pre></div><p>下载(choose one):</p> <a class="read-more" href="/csdn/post/ops_tomcat/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -275,10 +496,26 @@ Replication Metadata Repositories sync-relay-log-info&#39; is deprecated and wil
     </header>
     <section class="post-excerpt">
         
-            <p>apt适合手动输入(有交互); apt-get适合脚本(无交互).
-Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).
-Manage 卸载 apt-get autoremove vsftpd --purge 安装指定版本 apt-get install &lt;package name&gt;=&lt;version&gt; 列出版本 apt-cache madison &lt;&lt;package name&gt;&gt; DebIan sudo sudo.d(directory):
-Note also, that becasuse sudoers contents can vary widely, no attempt is made to add this directive to existing sudoers files on upgrade. Feel free to add the above directive to the end of your /etc/sudoers file to enabe this functionality for existing installations if you wish! <a class="read-more" href="/csdn/post/apt-oper-ubuntu/">&raquo;</a></p>
+            <p><p>apt适合手动输入(有交互); apt-get适合脚本(无交互).</p>
+<p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
+<h1 id="manage">Manage</h1>
+<h2 id="卸载">卸载</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get autoremove vsftpd --purge
+</span></span></code></pre></div><h2 id="安装指定版本">安装指定版本</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get install &lt;package name&gt;<span style="color:#f92672">=</span>&lt;version&gt;
+</span></span></code></pre></div><h2 id="列出版本">列出版本</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-cache madison &lt;&lt;package name&gt;&gt;
+</span></span></code></pre></div><h1 id="debian">DebIan</h1>
+<h2 id="sudo">sudo</h2>
+<p>sudo.d(directory):</p>
+<pre tabindex="0"><code>Note also, that becasuse sudoers contents can vary widely, no attempt is made to add this 
+directive to existing sudoers files on upgrade. Feel free to add the above directive to the 
+end of your /etc/sudoers file to enabe this functionality for existing installations if you 
+wish! Sudo versions older than the one in Debian 11(bullseye) require the directive will only 
+support the old syntax #includedir, and the current sudo will happily accept both @includedir 
+and #includedir
+</code></pre><h3 id="install">install</h3>
+<p>using root:</p> <a class="read-more" href="/csdn/post/apt-oper-ubuntu/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -300,8 +537,36 @@ Note also, that becasuse sudoers contents can vary widely, no attempt is made to
     </header>
     <section class="post-excerpt">
         
-            <p>new user #useradd tdtc #passwd tdtc Append group Modify su file CentOS 6 v6 and below versions Open wheel #vi /etc/pam.d/su auth required /lib/security/$ISA/pam_wheel.so use_uid Attachment of group members #gpasswd -a tdtc wheel Command CentOS 7/8 Debian Migrate to Debian before Ubuntu 20.04 ends support (April, 2025). CentOS 7/8 CentOS8 needs to be executed locally, Unable to execute on ssh network side.
-#usermod –aG wheel tdtc Debian adduser tdtc sudo test Query all users with sudo permissions. <a class="read-more" href="/csdn/post/ops_sudo/">&raquo;</a></p>
+            <p><h1 id="new-user">new user</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#useradd tdtc</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#passwd tdtc</span>
+</span></span></code></pre></div><h1 id="append-group">Append group</h1>
+<h2 id="modify-su-file">Modify su file</h2>
+<ul>
+<li>CentOS 6
+v6 and below versions</li>
+</ul>
+<h3 id="open-wheel">Open wheel</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#vi /etc/pam.d/su</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>auth required /lib/security/$ISA/pam_wheel.so use_uid
+</span></span></code></pre></div><h3 id="attachment-of-group-members">Attachment of group members</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#gpasswd -a tdtc wheel</span>
+</span></span></code></pre></div><h2 id="command">Command</h2>
+<ul>
+<li>CentOS 7/8</li>
+<li>Debian <br>
+Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</li>
+</ul>
+<h3 id="centos-78">CentOS 7/8</h3>
+<blockquote>
+<p>CentOS8 needs to be executed locally,
+Unable to execute on ssh network side.</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#usermod –aG wheel tdtc</span>
+</span></span></code></pre></div><h3 id="debian">Debian</h3>
+<pre tabindex="0"><code>adduser tdtc sudo
+</code></pre><h1 id="test">test</h1>
+<p>Query all users with sudo permissions.</p> <a class="read-more" href="/csdn/post/ops_sudo/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -323,21 +588,51 @@ Note also, that becasuse sudoers contents can vary widely, no attempt is made to
     </header>
     <section class="post-excerpt">
         
-            <p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).
-Arch： x64
-OS: Windows 10 1809 LTSC
-在powerShell的管理员模式下运行命令!
-安装/卸载 ON:
-Control Panel -&gt; Uninstall a program -&gt; Turn Windows features on or off, 勾选“Windows Subsystem for Linux” 安装Ubuntu down appx:
-Ubuntu 2004
-Ubuntu 1804
-从AppxBundle提取appx.
-Add-AppxPackage .\Ubuntu_2004.xxx.appx 卸载 如果“普通”方式不工作，请使用“命令行”。
-普通 右击“Ubuntu xxx” 图标，选择“Uninstall”即可。
-命令行 v1803-v1809
-wslconfig /u 使用 更改源列表:
-sudo vi /etc/apt/sources.list http://archive.ubuntu.com -&gt; https://mirrors.aliyun.com/ubuntu/ 文件互访 首先，使用windows记事本，建立一个testTxtFile.txt； 然后，在WSL查看文件内容。
-cd /mnt/c/Users/tdtc/ vi testTxtFile. <a class="read-more" href="/csdn/post/dev_wsl_ubuntu/">&raquo;</a></p>
+            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
+<ul>
+<li>
+<p>Arch： x64</p>
+</li>
+<li>
+<p>OS: Windows 10 1809 LTSC</p>
+<p>在powerShell的管理员模式下运行命令!</p>
+</li>
+</ul>
+<h1 id="安装卸载">安装/卸载</h1>
+<p>ON:</p>
+<pre tabindex="0"><code>Control Panel -&gt; Uninstall a program -&gt; Turn Windows features on or off, 
+勾选“Windows Subsystem for Linux”
+</code></pre><h2 id="安装ubuntu">安装Ubuntu</h2>
+<p><a href="https://learn.microsoft.com/en-us/windows/wsl/install-manual#downloading-distributions">down appx</a>:</p>
+<ul>
+<li>
+<p><a href="https://aka.ms/wslubuntu2004">Ubuntu 2004</a></p>
+</li>
+<li>
+<p><a href="https://aka.ms/wsl-ubuntu-1804">Ubuntu 1804</a></p>
+<p>从AppxBundle提取appx.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Add-AppxPackage .\Ubuntu_2004.xxx.appx
+</span></span></code></pre></div><h2 id="卸载">卸载</h2>
+<p>如果“普通”方式不工作，请使用“命令行”。</p>
+<h3 id="普通">普通</h3>
+<p>右击“Ubuntu xxx” 图标，选择“Uninstall”即可。</p>
+<h3 id="命令行httpsdocsmicrosoftcomzh-cnwindowswslreference"><a href="https://docs.microsoft.com/zh-cn/windows/wsl/reference">命令行</a></h3>
+<blockquote>
+<p>v1803-v1809</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wslconfig /u
+</span></span></code></pre></div><h1 id="使用">使用</h1>
+<p>更改源列表:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/apt/sources.list
+</span></span></code></pre></div><pre tabindex="0"><code>http://archive.ubuntu.com -&gt; https://mirrors.aliyun.com/ubuntu/
+</code></pre><h2 id="文件互访">文件互访</h2>
+<p>首先，使用windows记事本，建立一个testTxtFile.txt； <br>
+然后，在WSL查看文件内容。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /mnt/c/Users/tdtc/
+</span></span><span style="display:flex;"><span>vi testTxtFile.txt
+</span></span></code></pre></div><p>最后，用WSL重命名文件名:</p> <a class="read-more" href="/csdn/post/dev_wsl_ubuntu/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -359,11 +654,37 @@ cd /mnt/c/Users/tdtc/ vi testTxtFile. <a class="read-more" href="/csdn/post/dev_
     </header>
     <section class="post-excerpt">
         
-            <p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).
-WSL: Ubuntu 18.04.1
-Prepare Java 8+, Python 2.7+/3.4+ and R 3.1+
-Spark runs on Java 8+, Python 2.7+/3.4+ and R 3.1+. For the Scala API, Spark 2.4.1 uses Scala 2.12. You will need to use a compatible Scala version (2.12.x). 1. java 设置OpenJDK - Ubuntu
-2. Python sudo apt-get install python 3. R language 1) add ppa sudo add-apt-repository ppa:marutter/rrutter sudo apt-get update 2) install sudo apt-get install r-base r-base-dev Installation 1. <a class="read-more" href="/csdn/post/ops_spark_ubuntu/">&raquo;</a></p>
+            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
+<blockquote>
+<p>WSL: Ubuntu 18.04.1</p>
+</blockquote>
+<h1 id="prepare">Prepare</h1>
+<blockquote>
+<p>Java 8+, Python 2.7+/3.4+ and R 3.1+</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Spark runs on Java 8+, Python 2.7+/3.4+ and R 3.1+.
+</span></span><span style="display:flex;"><span>For the Scala API, Spark 2.4.1 uses Scala 2.12.
+</span></span><span style="display:flex;"><span>You will need to use a compatible Scala version <span style="color:#f92672">(</span>2.12.x<span style="color:#f92672">)</span>.
+</span></span></code></pre></div><h2 id="1-java">1. java</h2>
+<p><a href="https://xiaobin80.gitee.io/csdn/post/ops_openjdk_ubuntu/">设置OpenJDK - Ubuntu</a></p>
+<h2 id="2-python">2. Python</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install python
+</span></span></code></pre></div><h2 id="3-r-language">3. R language</h2>
+<h3 id="1-add-ppa">1) add ppa</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo add-apt-repository ppa:marutter/rrutter
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span></code></pre></div><h3 id="2-install">2) install</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install r-base r-base-dev
+</span></span></code></pre></div><h1 id="installation">Installation</h1>
+<h2 id="1-unzip">1. unzip</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>~/spark-2.4.1-bin-hadoop2.7
+</span></span></code></pre></div><h2 id="2-test">2. test</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd ~/spark-2.4.1-bin-hadoop2.7
+</span></span></code></pre></div><h3 id="1-pi">1) pi</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./bin/run-example SparkPi <span style="color:#ae81ff">10</span>
+</span></span></code></pre></div><h3 id="2-scala-shell">2) Scala shell</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./bin/spark-shell --master local<span style="color:#f92672">[</span>2<span style="color:#f92672">]</span>
+</span></span></code></pre></div><p>input:</p> <a class="read-more" href="/csdn/post/ops_spark_ubuntu/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -385,9 +706,33 @@ Spark runs on Java 8+, Python 2.7+/3.4+ and R 3.1+. For the Scala API, Spark 2.4
     </header>
     <section class="post-excerpt">
         
-            <p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).
-ubuntu 20.04.2
-wsl1017@DESKTOP-14G6K9S:~$ java -version Command &#39;java&#39; not found, but can be installed with: sudo apt install default-jre sudo apt install openjdk-11-jre-headless sudo apt install openjdk-8-jre-headless installation install jre wsl1017@DESKTOP-14G6K9S:/tmp$ sudo apt-get install openjdk-8-jre-headless install jdk sudo apt-get install openjdk-8-jdk-headless set JAVA home sudo vi /etc/profile export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 ubuntu version The very short answer is that OpenJDK 8 as of 2017-08-08 is not officially available for Ubuntu 14. <a class="read-more" href="/csdn/post/ops_openjdk_ubuntu/">&raquo;</a></p>
+            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
+<blockquote>
+<p>ubuntu 20.04.2</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wsl1017@DESKTOP-14G6K9S:~$ java -version
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Command <span style="color:#e6db74">&#39;java&#39;</span> not found, but can be installed with:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo apt install default-jre
+</span></span><span style="display:flex;"><span>sudo apt install openjdk-11-jre-headless
+</span></span><span style="display:flex;"><span>sudo apt install openjdk-8-jre-headless
+</span></span></code></pre></div><h1 id="installation">installation</h1>
+<ol>
+<li>install jre</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wsl1017@DESKTOP-14G6K9S:/tmp$ sudo apt-get install openjdk-8-jre-headless
+</span></span></code></pre></div><ol start="2">
+<li>install jdk</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install openjdk-8-jdk-headless
+</span></span></code></pre></div><ol start="3">
+<li>set JAVA home</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/profile
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export JAVA_HOME<span style="color:#f92672">=</span>/usr/lib/jvm/java-8-openjdk-amd64
+</span></span></code></pre></div><h2 id="ubuntu-versionhttpsaskubuntucoma944260"><a href="https://askubuntu.com/a/944260">ubuntu version</a></h2>
+<p>The very short answer is that OpenJDK 8 as of 2017-08-08 is not officially available for Ubuntu 14.04.</p> <a class="read-more" href="/csdn/post/ops_openjdk_ubuntu/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -409,9 +754,50 @@ wsl1017@DESKTOP-14G6K9S:~$ java -version Command &#39;java&#39; not found, but c
     </header>
     <section class="post-excerpt">
         
-            <p>RHEL Diban Migrate to Debian before Ubuntu 20.04 ends support (April, 2025). RHEL-like Alma/Rocky CentOS Less than RHEL version 8 View net adapter list:
-$cd /etc/sysconfig/network-scripts$ls ifcfg-* -l ipv4 $ip addr ipv6 $ip -6 addr Setup Start job network adapter:
-ONBOOT=yes static $cd /etc/sysconfig/network-scripts $sudo vi ifcfg-enp0s3 BOOTPROTO=none IPADDR=192.168.1.186 PREFIX=24 GATEWAY=192.168.1.1 DNS1=211.161.191.235 DNS2=211.161.122.197 IPv6 Network IPV6INIT=yes This initializes the interface for IPv6 addressing. IPV6_AUTOCONF=yes This enables the IPv6 auto-configuration for the interface. <a class="read-more" href="/csdn/post/ops_network_adapter_linux/">&raquo;</a></p>
+            <p><ul>
+<li>RHEL</li>
+<li>Diban <br>
+Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</li>
+</ul>
+<h1 id="rhel-like">RHEL-like</h1>
+<ul>
+<li>Alma/Rocky</li>
+<li>CentOS <br>
+Less than RHEL version 8</li>
+</ul>
+<h2 id="view">View</h2>
+<p>net adapter list:</p>
+<pre tabindex="0"><code>$cd /etc/sysconfig/network-scripts
+$ls ifcfg-* -l
+</code></pre><h3 id="ipv4">ipv4</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ip addr
+</span></span></code></pre></div><h3 id="ipv6">ipv6</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ip -6 addr
+</span></span></code></pre></div><h2 id="setup">Setup</h2>
+<p>Start job network adapter:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ONBOOT<span style="color:#f92672">=</span>yes
+</span></span></code></pre></div><h3 id="static">static</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cd /etc/sysconfig/network-scripts
+</span></span><span style="display:flex;"><span>$sudo vi ifcfg-enp0s3
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>BOOTPROTO<span style="color:#f92672">=</span>none
+</span></span><span style="display:flex;"><span>IPADDR<span style="color:#f92672">=</span>192.168.1.186
+</span></span><span style="display:flex;"><span>PREFIX<span style="color:#f92672">=</span><span style="color:#ae81ff">24</span>
+</span></span><span style="display:flex;"><span>GATEWAY<span style="color:#f92672">=</span>192.168.1.1
+</span></span><span style="display:flex;"><span>DNS1<span style="color:#f92672">=</span>211.161.191.235
+</span></span><span style="display:flex;"><span>DNS2<span style="color:#f92672">=</span>211.161.122.197
+</span></span></code></pre></div><h3 id="ipv6-network">IPv6 Network</h3>
+<ul>
+<li>IPV6INIT=yes <br>
+This initializes the interface for IPv6 addressing.</li>
+<li>IPV6_AUTOCONF=yes <br>
+This enables the IPv6 auto-configuration for the interface.</li>
+<li>IPV6_DEFROUTE=yes <br>
+This indicates that the default IPv6 route has been assigned to the interface.</li>
+<li>IPV6_FAILURE_FATAL=no <br>
+indicates that the system won’t fail even when IPv6 fails.</li>
+</ul>
+<h3 id="virtual-machine">virtual machine</h3>
+<p>设置Network Adapter为Bridged</p> <a class="read-more" href="/csdn/post/ops_network_adapter_linux/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -422,31 +808,6 @@ ONBOOT=yes static $cd /etc/sysconfig/network-scripts $sudo vi ifcfg-enp0s3 BOOTP
         
         <time class="post-date" datetime="2024-03-12T08:38:08&#43;08:00">
             12 Mar 2024
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_dc_redis_ubuntu/">安装redis-server</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).
-1. 安装 Prerequisites:
-sudo apt install lsb-release curl gpg Add the repository to the apt index:
-curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpgecho &#34;deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main&#34; | sudo tee /etc/apt/sources.list.d/redis.list install sudo apt-get update sudo apt-get install redis-server Launch local(WSL) redis-server remote(Virtual Box or VM ware etc.) sudo redis-server /etc/redis/redis.conf View port install netstat: <a class="read-more" href="/csdn/post/ops_dc_redis_ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2024-03-10T08:08:08&#43;08:00">
-            10 Mar 2024
         </time>
     </footer>
 </article>

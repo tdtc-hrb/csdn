@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.127.0">
+    <meta name="generator" content="Hugo 0.134.3">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_network_proxy/" />
 
@@ -92,7 +92,7 @@
     },
     "headline": "设置proxy",
     "name": "设置proxy",
-    "wordCount":  239 ,
+    "wordCount":  251 ,
     "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
@@ -262,8 +262,16 @@ $ wine fg798p.exe
 </span></span><span style="display:flex;"><span>https-proxy<span style="color:#f92672">=</span>http://127.0.0.1:8580
 </span></span><span style="display:flex;"><span>strict-ssl<span style="color:#f92672">=</span>false
 </span></span></code></pre></div><h3 id="yarn">yarn</h3>
+<ul>
+<li>v1</li>
+</ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yarn config set proxy http://host:port
 </span></span><span style="display:flex;"><span>yarn config set https-proxy http://host:port
+</span></span></code></pre></div><ul>
+<li>v2</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yarn config set httpProxy http://host:port
+</span></span><span style="display:flex;"><span>yarn config set httpsProxy http://host:port
 </span></span></code></pre></div><h1 id="agent-website">Agent Website</h1>
 <p>国内网站代理</p>
 <h2 id="ruby-gems">ruby gems</h2>

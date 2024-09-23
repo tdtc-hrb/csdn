@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.127.0">
+    <meta name="generator" content="Hugo 0.134.3">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -201,8 +201,74 @@
     </header>
     <section class="post-excerpt">
         
-            <p>IDE vs2008 Express(sp1) reference COM 注册COM @echo cd /d %~dp0 Regsvr32 xbfInfo.dll Add Reference COM选项卡 添加完成时
-添加事件 import class using System.IO; using xbfInfoLib; 写xbf文件 读Ini文件配置 Boolean flagMSSQL = false; Boolean flagSecu = false; string sectionName = ini.readIniFileVal(&#34;config&#34;, &#34;type&#34;); string strSrv = ini.readIniFileVal(sectionName, &#34;Server&#34;); if (!Equals(strSrv, &#34;&#34;)) flagMSSQL = true; if (flagMSSQL) { strConn = &#34;Provider=SQLOLEDB.1;&#34; + &#34;Password=&#34; + ini.readIniFileVal(sectionName, &#34;Pwd&#34;) + &#34;;&#34; + &#34;Persist Security Info=True;&#34; + &#34;User ID=&#34; + ini. <a class="read-more" href="/csdn/post/c2plus-com-dll/">&raquo;</a></p>
+            <p><ul>
+<li>IDE <br>
+vs2008 Express(sp1)</li>
+</ul>
+<h1 id="reference-com">reference COM</h1>
+<h2 id="注册com">注册COM</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>@echo
+</span></span><span style="display:flex;"><span>cd /d %~dp0
+</span></span><span style="display:flex;"><span>Regsvr32 xbfInfo.dll
+</span></span></code></pre></div><h2 id="add-reference">Add Reference</h2>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20200514021327.png" alt="vs2008 ui1"></p>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20200514021444.png" alt="vs2008 ui2"></p>
+<p>COM选项卡
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20200514021640.png" alt="vs2008 ui3">
+添加完成时</p>
+<h1 id="添加事件">添加事件</h1>
+<h2 id="import-class">import class</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>using System.IO;
+</span></span><span style="display:flex;"><span>using xbfInfoLib;
+</span></span></code></pre></div><h2 id="写xbf文件">写xbf文件</h2>
+<h3 id="读ini文件配置">读Ini文件配置</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>Boolean flagMSSQL <span style="color:#f92672">=</span> false;
+</span></span><span style="display:flex;"><span>Boolean flagSecu <span style="color:#f92672">=</span> false;
+</span></span><span style="display:flex;"><span>string sectionName <span style="color:#f92672">=</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(<span style="color:#e6db74">&#34;config&#34;</span>, <span style="color:#e6db74">&#34;type&#34;</span>);
+</span></span><span style="display:flex;"><span>string strSrv <span style="color:#f92672">=</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Server&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">Equals</span>(strSrv, <span style="color:#e6db74">&#34;&#34;</span>))
+</span></span><span style="display:flex;"><span>    flagMSSQL <span style="color:#f92672">=</span> true;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (flagMSSQL)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    strConn <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Provider=SQLOLEDB.1;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Password=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Pwd&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Persist Security Info=True;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;User ID=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;User&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Initial Catalog=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;DB&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Data Source=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Server&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span> <span style="color:#75715e">// MS Access
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{
+</span></span><span style="display:flex;"><span>    string strPWD <span style="color:#f92672">=</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Pwd&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">Equals</span>(strPWD, <span style="color:#e6db74">&#34;&#34;</span>))
+</span></span><span style="display:flex;"><span>        flagSecu <span style="color:#f92672">=</span> true;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (flagSecu)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        strConn <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Provider=Microsoft.Jet.OLEDB.4.0;&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Data Source=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;DB&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Persist Security Info=False;&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Jet OLEDB:Database Password=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Pwd&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        strConn <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Provider=Microsoft.Jet.OLEDB.4.0;&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Data Source=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;DB&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Persist Security Info=True&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="调用com接口">调用COM接口</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>xbfInfoLib.FormatClass xbf <span style="color:#f92672">=</span> new <span style="color:#a6e22e">FormatClass</span>();
+</span></span><span style="display:flex;"><span>xbf.<span style="color:#a6e22e">setFileInfo</span>(strConn);
+</span></span></code></pre></div><h2 id="读xbf文件">读xbf文件</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>xbfInfoLib.FormatClass xbf <span style="color:#f92672">=</span> new <span style="color:#a6e22e">FormatClass</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>string filePath <span style="color:#f92672">=</span> currDir <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#f92672">+</span> edtFileName.Text;
+</span></span><span style="display:flex;"><span>string strRet <span style="color:#f92672">=</span> xbf.<span style="color:#a6e22e">getFileInfo</span>(filePath);
+</span></span><span style="display:flex;"><span>MessageBox.<span style="color:#a6e22e">Show</span>(strRet);
+</span></span></code></pre></div><h1 id="code">code</h1>
+<blockquote>
+<p>Form1.cs</p> <a class="read-more" href="/csdn/post/c2plus-com-dll/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -224,11 +290,54 @@
     </header>
     <section class="post-excerpt">
         
-            <p>取消目录所有权限
-chmod -R 777 /tmp/etc 一、ISO文件 mkisofs -r -o etc.iso /tmp/etc 二、压缩文件 1. zip zip -r etc.zip /tmp/etc 2. tar 仅打包，不压缩！
-tar -cvf /tmp/etc.tar /etc transform --transform s/OLD_NAME/NEW_NAME/ gz tar -zcvf /tmp/etc.tar.gz /etc transform:
-tar -zcvf /tmp/etc.tar.gz /etc --transform s/etc/myetc/ bz2 tar -jcvf /tmp/etc.tar.bz2 /etc transform:
-tar -jcvf /tmp/etc.tar.bz2 /etc --transform s/etc/myetc/ FAQ This does not look like a tar archive #gzip -d xxxx.tar.gz #tar -xf xxxx.tar gzip: stdin: not in gzip format $ tar xvf xxxx. <a class="read-more" href="/csdn/post/pack-file-linux/">&raquo;</a></p>
+            <p><blockquote>
+<p>取消目录所有权限</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod -R <span style="color:#ae81ff">777</span> /tmp/etc
+</span></span></code></pre></div><h1 id="一iso文件">一、ISO文件</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkisofs -r -o etc.iso /tmp/etc
+</span></span></code></pre></div><h1 id="二压缩文件">二、压缩文件</h1>
+<h2 id="1-zip">1. zip</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>zip -r etc.zip /tmp/etc
+</span></span></code></pre></div><h2 id="2-tar">2. tar</h2>
+<blockquote>
+<p>仅打包，不压缩！</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -cvf /tmp/etc.tar /etc
+</span></span></code></pre></div><ul>
+<li>transform</li>
+</ul>
+<pre tabindex="0"><code>--transform s/OLD_NAME/NEW_NAME/
+</code></pre><h3 id="gz">gz</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -zcvf /tmp/etc.tar.gz /etc
+</span></span></code></pre></div><p>transform:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -zcvf /tmp/etc.tar.gz /etc --transform s/etc/myetc/
+</span></span></code></pre></div><h3 id="bz2">bz2</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -jcvf /tmp/etc.tar.bz2 /etc
+</span></span></code></pre></div><p>transform:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -jcvf /tmp/etc.tar.bz2 /etc --transform s/etc/myetc/
+</span></span></code></pre></div><h1 id="faq">FAQ</h1>
+<h2 id="this-does-not-look-like-a-tar-archive">This does not look like a tar archive</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#gzip -d xxxx.tar.gz</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#tar -xf xxxx.tar</span>
+</span></span></code></pre></div><h2 id="gzip-stdin-not-in-gzip-format">gzip: stdin: not in gzip format</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ tar xvf xxxx.tar.gz
+</span></span></code></pre></div><h1 id="参考文章">参考文章</h1>
+<ul>
+<li><a href="https://www.tecmint.com/18-tar-command-examples-in-linux/">18 Tar Command Examples in Linux</a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>c – Creates a new .tar archive file.
+</span></span><span style="display:flex;"><span>v – Verbosely show the .tar file progress.
+</span></span><span style="display:flex;"><span>f – File name type of the archive file.
+</span></span></code></pre></div><ol>
+<li>To create a compressed <strong>gzip</strong> archive file we use the option as <strong style="color: red;">z</strong>.</li>
+<li>To create highly compressed tar file we use option as <strong style="color: red;">j</strong>.</li>
+</ol>
+<ul>
+<li><a href="http://blog.csdn.net/chenjiiinliang/article/details/7288173">Linux下更改目录及其下的子目录和文件的访问权限</a></li>
+<li><a href="http://www.cnblogs.com/lucyjiayou/archive/2011/12/25/2301046.html">linux zip/unzip命令</a></li>
+<li><a href="http://blog.csdn.net/clozxy/article/details/5748539">Linux下制作ISO与刻录ISO</a></li>
+</ul> <a class="read-more" href="/csdn/post/pack-file-linux/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -250,16 +359,248 @@ tar -jcvf /tmp/etc.tar.bz2 /etc --transform s/etc/myetc/ FAQ This does not look 
     </header>
     <section class="post-excerpt">
         
-            <p>VMware Host OS Win10(x64) -Guest OS Ubuntu 14.04(x64)
-目的：Ubuntu独立使用1块网卡与局域网中的设备或主机通讯。
-问题：宿主机器有两个网卡
-（1）无线网卡（2）有线网卡
-VMware Network overview
-VM &lt;-&gt; Host VM1 &lt;-&gt; VM2 VM -&gt; Internet VM &lt;- Internet HostOnly Yes Yes No No Internal No Yes No No Bridged Yes Yes Yes Yes NAT No No Yes Port forward 编辑-&gt;虚拟网络编辑器 默认设置
-我们更改桥接模式中“桥接到”，即可。（由自动更改为下图） 网络适配器 NFS AT91SAM9260 in terminal
-启动NFS，工作正常。
-输出信息如下：
-This is the boot programm!鶷his is the boot programm! Load UBOOT, please wait...... Load UBOOT from 0x10010000 to 0x23f00000 Over U-Boot 1. <a class="read-more" href="/csdn/post/ops_vmware_netadapter/">&raquo;</a></p>
+            <p><h1 id="vmware">VMware</h1>
+<ul>
+<li>Host OS <br>
+Win10(x64)</li>
+</ul>
+<p>-Guest OS <br>
+Ubuntu 14.04(x64)</p>
+<p>目的：Ubuntu独立使用1块网卡与局域网中的设备或主机通讯。</p>
+<p>问题：宿主机器有两个网卡</p>
+<p>（1）无线网卡（2）有线网卡</p>
+<h2 id="vmware-network">VMware Network</h2>
+<p><a href="https://stackoverflow.com/a/54232899">overview</a></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"></th>
+          <th style="text-align: left">VM &lt;-&gt; Host</th>
+          <th style="text-align: left">VM1 &lt;-&gt; VM2</th>
+          <th style="text-align: left">VM -&gt; Internet</th>
+          <th style="text-align: left">VM &lt;- Internet</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">HostOnly</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">No</td>
+          <td style="text-align: left">No</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Internal</td>
+          <td style="text-align: left">No</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">No</td>
+          <td style="text-align: left">No</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Bridged</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">Yes</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">NAT</td>
+          <td style="text-align: left">No</td>
+          <td style="text-align: left">No</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">Port forward</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="编辑-虚拟网络编辑器">编辑-&gt;虚拟网络编辑器</h3>
+<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20171227034323068.png" alt="vmware ui">
+默认设置</p>
+<p>我们更改桥接模式中“桥接到”，即可。（由自动更改为下图）
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20171227034811154.png" alt="vmware ui"></p>
+<h3 id="网络适配器">网络适配器</h3>
+<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20171227035131591.png" alt="vmware ui"></p>
+<h1 id="nfs">NFS</h1>
+<blockquote>
+<p>AT91SAM9260 in terminal</p>
+</blockquote>
+<p>启动NFS，工作正常。</p>
+<p>输出信息如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>This is the boot programm!鶷his is the boot programm!
+</span></span><span style="display:flex;"><span>Load UBOOT, please wait......
+</span></span><span style="display:flex;"><span>Load UBOOT from 0x10010000 to 0x23f00000 Over
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>U-Boot 1.3.4 <span style="color:#f92672">(</span>Mar <span style="color:#ae81ff">18</span> <span style="color:#ae81ff">2015</span> - 07:00:42<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DRAM:  <span style="color:#ae81ff">64</span> MB
+</span></span><span style="display:flex;"><span>MAN_ID: 0x00bf
+</span></span><span style="display:flex;"><span>PRO_ID: 0x234b
+</span></span><span style="display:flex;"><span>Flash:  <span style="color:#ae81ff">2</span> MB
+</span></span><span style="display:flex;"><span>NAND:  NAND device: Manufacturer ID: 0xec, Chip ID: 0x76 <span style="color:#f92672">(</span>/狺掰掰?NAND <span style="color:#ae81ff">64</span>
+</span></span><span style="display:flex;"><span>MiB 3,3V 8-bit<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">64</span> MiB
+</span></span><span style="display:flex;"><span>DataFlash:AT45DB161
+</span></span><span style="display:flex;"><span>Nb pages:   <span style="color:#ae81ff">4096</span>
+</span></span><span style="display:flex;"><span>Page Size:    <span style="color:#ae81ff">528</span>
+</span></span><span style="display:flex;"><span>Size<span style="color:#f92672">=</span> <span style="color:#ae81ff">2162688</span> bytes
+</span></span><span style="display:flex;"><span>Logical address: 0xD0000000
+</span></span><span style="display:flex;"><span>Area 0: D0000000 to D0003FFF <span style="color:#f92672">(</span>RO<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Area 1: D0004000 to D0007FFF
+</span></span><span style="display:flex;"><span>Area 2: D0008000 to D0037FFF <span style="color:#f92672">(</span>RO<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Area 3: D0038000 to D020FFFF
+</span></span><span style="display:flex;"><span>In:    serial
+</span></span><span style="display:flex;"><span>Out:   serial
+</span></span><span style="display:flex;"><span>Err:   serial
+</span></span><span style="display:flex;"><span>PHY Detected <span style="color:#f92672">(</span>mdio-addr 1, ID 0x0013:0x78e2<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>link up, 100Mbps, full-duplex
+</span></span><span style="display:flex;"><span>Hit any key to stop autoboot:  <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Booting kernel from Legacy Image at 20400000 ...</span>
+</span></span><span style="display:flex;"><span>   Image Name:   Linux-2.6.30
+</span></span><span style="display:flex;"><span>   Image Type:   ARM Linux Kernel Image <span style="color:#f92672">(</span>uncompressed<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>   Data Size:    <span style="color:#ae81ff">1439844</span> Bytes <span style="color:#f92672">=</span>  1.4 MB
+</span></span><span style="display:flex;"><span>   Load Address: <span style="color:#ae81ff">20008000</span>
+</span></span><span style="display:flex;"><span>   Entry Point:  <span style="color:#ae81ff">20008000</span>
+</span></span><span style="display:flex;"><span>   Verifying Checksum ... OK
+</span></span><span style="display:flex;"><span>   Loading Kernel Image ... OK
+</span></span><span style="display:flex;"><span>OK
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Starting kernel ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Uncompressing Linux.............................................................
+</span></span><span style="display:flex;"><span>............................... <span style="color:#66d9ef">done</span>, booting the kernel.
+</span></span><span style="display:flex;"><span>Linux version 2.6.30 <span style="color:#f92672">(</span>root@ubuntu<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>gcc version 4.3.2 <span style="color:#f92672">(</span>crosstool-NG 1.19.0<span style="color:#f92672">)</span> <span style="color:#f92672">)</span> <span style="color:#75715e">#1</span>
+</span></span><span style="display:flex;"><span> Fri Mar <span style="color:#ae81ff">27</span> 07:55:15 PDT <span style="color:#ae81ff">2015</span>
+</span></span><span style="display:flex;"><span>CPU: ARM926EJ-S <span style="color:#f92672">[</span>41069265<span style="color:#f92672">]</span> revision <span style="color:#ae81ff">5</span> <span style="color:#f92672">(</span>ARMv5TEJ<span style="color:#f92672">)</span>, cr<span style="color:#f92672">=</span><span style="color:#ae81ff">00053177</span>
+</span></span><span style="display:flex;"><span>CPU: VIVT data cache, VIVT instruction cache
+</span></span><span style="display:flex;"><span>Machine: Atmel AT91SAM9260-EK
+</span></span><span style="display:flex;"><span>Memory policy: ECC disabled, Data cache writeback
+</span></span><span style="display:flex;"><span>Clocks: CPU <span style="color:#ae81ff">199</span> MHz, master <span style="color:#ae81ff">99</span> MHz, main 18.432 MHz
+</span></span><span style="display:flex;"><span>Built <span style="color:#ae81ff">1</span> zonelists in Zone order, mobility grouping on.  Total pages: <span style="color:#ae81ff">16256</span>
+</span></span><span style="display:flex;"><span>Kernel command line: console<span style="color:#f92672">=</span>ttyS0,115200 ip<span style="color:#f92672">=</span>dhcp root<span style="color:#f92672">=</span>/dev/nfs rw
+</span></span><span style="display:flex;"><span>NR_IRQS:192
+</span></span><span style="display:flex;"><span>AT91: <span style="color:#ae81ff">96</span> gpio irqs in <span style="color:#ae81ff">3</span> banks
+</span></span><span style="display:flex;"><span>PID hash table entries: <span style="color:#ae81ff">256</span> <span style="color:#f92672">(</span>order: 8, <span style="color:#ae81ff">1024</span> bytes<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Console: colour dummy device 80x30
+</span></span><span style="display:flex;"><span>console <span style="color:#f92672">[</span>ttyS0<span style="color:#f92672">]</span> enabled
+</span></span><span style="display:flex;"><span>Dentry cache hash table entries: <span style="color:#ae81ff">8192</span> <span style="color:#f92672">(</span>order: 3, <span style="color:#ae81ff">32768</span> bytes<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Inode-cache hash table entries: <span style="color:#ae81ff">4096</span> <span style="color:#f92672">(</span>order: 2, <span style="color:#ae81ff">16384</span> bytes<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Memory: 64MB <span style="color:#f92672">=</span> 64MB total
+</span></span><span style="display:flex;"><span>Memory: 61956KB available <span style="color:#f92672">(</span>2484K code, 222K data, 120K init, 0K highmem<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Calibrating delay loop... 99.32 BogoMIPS <span style="color:#f92672">(</span>lpj<span style="color:#f92672">=</span>496640<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Mount-cache hash table entries: <span style="color:#ae81ff">512</span>
+</span></span><span style="display:flex;"><span>CPU: Testing write buffer coherency: ok
+</span></span><span style="display:flex;"><span>net_namespace: <span style="color:#ae81ff">296</span> bytes
+</span></span><span style="display:flex;"><span>NET: Registered protocol family <span style="color:#ae81ff">16</span>
+</span></span><span style="display:flex;"><span>AT91: Power Management
+</span></span><span style="display:flex;"><span>AT91: Starting after user reset
+</span></span><span style="display:flex;"><span>bio: create slab &lt;bio-0&gt; at <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>SCSI subsystem initialized
+</span></span><span style="display:flex;"><span>usbcore: registered new interface driver usbfs
+</span></span><span style="display:flex;"><span>usbcore: registered new interface driver hub
+</span></span><span style="display:flex;"><span>usbcore: registered new device driver usb
+</span></span><span style="display:flex;"><span>NET: Registered protocol family <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>IP route cache hash table entries: <span style="color:#ae81ff">1024</span> <span style="color:#f92672">(</span>order: 0, <span style="color:#ae81ff">4096</span> bytes<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>TCP established hash table entries: <span style="color:#ae81ff">2048</span> <span style="color:#f92672">(</span>order: 2, <span style="color:#ae81ff">16384</span> bytes<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>TCP bind hash table entries: <span style="color:#ae81ff">2048</span> <span style="color:#f92672">(</span>order: 1, <span style="color:#ae81ff">8192</span> bytes<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>TCP: Hash tables configured <span style="color:#f92672">(</span>established <span style="color:#ae81ff">2048</span> bind 2048<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>TCP reno registered
+</span></span><span style="display:flex;"><span>NET: Registered protocol family <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>NetWinder Floating Point Emulator V0.97 <span style="color:#f92672">(</span>double precision<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>msgmni has been set to <span style="color:#ae81ff">121</span>
+</span></span><span style="display:flex;"><span>alg: No test <span style="color:#66d9ef">for</span> stdrng <span style="color:#f92672">(</span>krng<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>io scheduler noop registered
+</span></span><span style="display:flex;"><span>io scheduler anticipatory registered <span style="color:#f92672">(</span>default<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>atmel_usart.0: ttyS0 at MMIO 0xfefff200 <span style="color:#f92672">(</span>irq <span style="color:#f92672">=</span> 1<span style="color:#f92672">)</span> is a ATMEL_SERIAL
+</span></span><span style="display:flex;"><span>atmel_usart.1: ttyS1 at MMIO 0xfffb0000 <span style="color:#f92672">(</span>irq <span style="color:#f92672">=</span> 6<span style="color:#f92672">)</span> is a ATMEL_SERIAL
+</span></span><span style="display:flex;"><span>atmel_usart.2: ttyS2 at MMIO 0xfffb4000 <span style="color:#f92672">(</span>irq <span style="color:#f92672">=</span> 7<span style="color:#f92672">)</span> is a ATMEL_SERIAL
+</span></span><span style="display:flex;"><span>brd: module loaded
+</span></span><span style="display:flex;"><span>loop: module loaded
+</span></span><span style="display:flex;"><span>ssc ssc.0: Atmel SSC device at 0xc4820000 <span style="color:#f92672">(</span>irq 14<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Driver <span style="color:#e6db74">&#39;sd&#39;</span> needs updating - please use bus_type methods
+</span></span><span style="display:flex;"><span>MACB_mii_bus: probed
+</span></span><span style="display:flex;"><span>eth0: Atmel MACB at 0xfffc4000 irq <span style="color:#ae81ff">21</span> <span style="color:#f92672">(</span>20:00:00:00:00:00<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>eth0: attached PHY driver <span style="color:#f92672">[</span>LXT971<span style="color:#f92672">]</span> <span style="color:#f92672">(</span>mii_bus:phy_addr<span style="color:#f92672">=</span>ffffffff:01, irq<span style="color:#f92672">=</span>-1<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>NAND device: Manufacturer ID: 0xec, Chip ID: 0x76 <span style="color:#f92672">(</span>Samsung NAND 64MiB 3,3V 8-bit
+</span></span><span style="display:flex;"><span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>AT91 NAND: 8-bit, Software ECC
+</span></span><span style="display:flex;"><span>Scanning device <span style="color:#66d9ef">for</span> bad blocks
+</span></span><span style="display:flex;"><span>Creating <span style="color:#ae81ff">1</span> MTD partitions on <span style="color:#e6db74">&#34;atmel_nand&#34;</span>:
+</span></span><span style="display:flex;"><span>0x000000000000-0x000004000000 : <span style="color:#e6db74">&#34;AT91 NAND my_P1&#34;</span>
+</span></span><span style="display:flex;"><span>ohci_hcd: USB 1.1 <span style="color:#e6db74">&#39;Open&#39;</span> Host Controller <span style="color:#f92672">(</span>OHCI<span style="color:#f92672">)</span> Driver
+</span></span><span style="display:flex;"><span>at91_ohci at91_ohci: AT91 OHCI
+</span></span><span style="display:flex;"><span>at91_ohci at91_ohci: new USB bus registered, assigned bus number <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>at91_ohci at91_ohci: irq 20, io mem 0x00500000
+</span></span><span style="display:flex;"><span>usb usb1: configuration <span style="color:#75715e">#1 chosen from 1 choice</span>
+</span></span><span style="display:flex;"><span>hub 1-0:1.0: USB hub found
+</span></span><span style="display:flex;"><span>hub 1-0:1.0: <span style="color:#ae81ff">2</span> ports detected
+</span></span><span style="display:flex;"><span>Initializing USB Mass Storage driver...
+</span></span><span style="display:flex;"><span>usbcore: registered new interface driver usb-storage
+</span></span><span style="display:flex;"><span>USB Mass Storage support registered.
+</span></span><span style="display:flex;"><span>udc: at91_udc version <span style="color:#ae81ff">3</span> May <span style="color:#ae81ff">2006</span>
+</span></span><span style="display:flex;"><span>mice: PS/2 mouse device common <span style="color:#66d9ef">for</span> all mice
+</span></span><span style="display:flex;"><span>input: gpio-keys as /class/input/input0
+</span></span><span style="display:flex;"><span>rtc-at91sam9 at91_rtt.0: rtc core: registered at91_rtt as rtc0
+</span></span><span style="display:flex;"><span>IRQ 1/rtc0: IRQF_DISABLED is not guaranteed on shared IRQs
+</span></span><span style="display:flex;"><span>rtc-at91sam9 at91_rtt.0: rtc0: SET TIME!
+</span></span><span style="display:flex;"><span>Registered led device: ds5
+</span></span><span style="display:flex;"><span>Registered led device: ds1
+</span></span><span style="display:flex;"><span>TCP cubic registered
+</span></span><span style="display:flex;"><span>NET: Registered protocol family <span style="color:#ae81ff">17</span>
+</span></span><span style="display:flex;"><span>RPC: Registered udp transport module.
+</span></span><span style="display:flex;"><span>RPC: Registered tcp transport module.
+</span></span><span style="display:flex;"><span>rtc-at91sam9 at91_rtt.0: hctosys: unable to read the hardware clock
+</span></span><span style="display:flex;"><span>Sending DHCP requests .&lt;6&gt;eth0: link up <span style="color:#f92672">(</span>100/Full<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>, OK
+</span></span><span style="display:flex;"><span>IP-Config: Got DHCP answer from 192.168.0.135, my address is 192.168.0.251
+</span></span><span style="display:flex;"><span>IP-Config: Complete:
+</span></span><span style="display:flex;"><span>     device<span style="color:#f92672">=</span>eth0, addr<span style="color:#f92672">=</span>192.168.0.251, mask<span style="color:#f92672">=</span>255.255.255.0, gw<span style="color:#f92672">=</span>255.255.255.255,
+</span></span><span style="display:flex;"><span>     host<span style="color:#f92672">=</span>192.168.0.251, domain<span style="color:#f92672">=</span>example.org, nis-domain<span style="color:#f92672">=(</span>none<span style="color:#f92672">)</span>,
+</span></span><span style="display:flex;"><span>     bootserver<span style="color:#f92672">=</span>192.168.0.135, rootserver<span style="color:#f92672">=</span>192.168.0.135, rootpath<span style="color:#f92672">=</span>/opt/tdtc/rfs
+</span></span><span style="display:flex;"><span>Looking up port of RPC 100003/2 on 192.168.0.135
+</span></span><span style="display:flex;"><span>Looking up port of RPC 100005/1 on 192.168.0.135
+</span></span><span style="display:flex;"><span>VFS: Mounted root <span style="color:#f92672">(</span>nfs filesystem<span style="color:#f92672">)</span> on device 0:12.
+</span></span><span style="display:flex;"><span>Freeing init memory: 120K
+</span></span><span style="display:flex;"><span>init started: BusyBox v1.23.2 <span style="color:#f92672">(</span>2015-11-09 22:59:50 EST<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Setting hotplug handler: <span style="color:#f92672">[</span> OK <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Creating device files: <span style="color:#f92672">[</span> OK <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Setting timezone and system clock: <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Starting system logging.
+</span></span><span style="display:flex;"><span>Configuring network interfaces: ifdown: interface lo not configured
+</span></span><span style="display:flex;"><span>ip: RTNETLINK answers: File exists
+</span></span><span style="display:flex;"><span>failed
+</span></span><span style="display:flex;"><span>Generating RSA Key...
+</span></span><span style="display:flex;"><span>Will output <span style="color:#ae81ff">1024</span> bit rsa secret key to <span style="color:#e6db74">&#39;/etc/dropbear/dropbear_rsa_host_key&#39;</span>
+</span></span><span style="display:flex;"><span>Generating key, this may take a <span style="color:#66d9ef">while</span>...
+</span></span><span style="display:flex;"><span>Public key portion is:
+</span></span><span style="display:flex;"><span>ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgwCE5v/Ap3hCcJwDxLtDe3e4E6kQtgyBb1FKdFiJwmXa
+</span></span><span style="display:flex;"><span>FIgbaguUjNyl8uq4yNbU9ewsmyqTHGtKShvxpJAD789cL/vMfHbKNxdBhwJ+dpuvyYtd/wexNcZ3EMPJ
+</span></span><span style="display:flex;"><span>mvqqNXp0K/oTG0GdM1cnHES1AJQe26RYgiH2ew8DaATycT6IugBJ root@at91sam9260_ek
+</span></span><span style="display:flex;"><span>Fingerprint: md5 48:fb:27:a2:8f:fc:0f:68:6a:75:00:98:13:36:c7:28
+</span></span><span style="display:flex;"><span>Generating DSS Key...
+</span></span><span style="display:flex;"><span>Will output <span style="color:#ae81ff">1024</span> bit dss secret key to <span style="color:#e6db74">&#39;/etc/dropbear/dropbear_dss_host_key&#39;</span>
+</span></span><span style="display:flex;"><span>Generating key, this may take a <span style="color:#66d9ef">while</span>...
+</span></span><span style="display:flex;"><span>Public key portion is:
+</span></span><span style="display:flex;"><span>ssh-dss AAAAB3NzaC1kc3MAAACBAP6C7qLaTYM4bGxHSekRnhqUV61kUFCAWv1LyW6fPbMlJlIjpv5B
+</span></span><span style="display:flex;"><span>Q1FRhsucQjY4BKfPEjLUB46veq0BMuTSs5ADVgrOKBXE5GnPu8oT04XZu+UjWO5wgYD6G1MyFVlzuY6m
+</span></span><span style="display:flex;"><span>N5i3jdYpNE3J4YaYfC0xdUNn8WWkJH7cdSaiB3OTAAAAFQCfUA2AFBa9DQ+sUFOlAN3KvvaSywAAAIAs
+</span></span><span style="display:flex;"><span>SOR8U0D+kO3aGWr+R73zH/oR2wqF/2TuRUqxIZQo6tzfuhmqRlvEtQ+2cN+NOac8BWO7PEa4txVI8aKe
+</span></span><span style="display:flex;"><span>GC9AODlknbdorlYWfxqbqD4H05JQlCr/FY43KctjSSgcg81Ezk3Rh50CbkLk12E7EUh7e0khohuWOZhA
+</span></span><span style="display:flex;"><span>AeH9v0xFrQAAAIAucDdk5oGeAKQ67pmgUake69h4oRUCN727lZFjRrGhduTfSYo1IyLZ78/CGXab8sF4
+</span></span><span style="display:flex;"><span>aTSGa2PimN8evxyz2zAxghNqRpw1FVnjuglNjPH4GbbAPcRdVIYut19nFG7J8ULDvIDkIaHQHbdN1M3d
+</span></span><span style="display:flex;"><span>/803WER1YCaJhWxq5BvRYgf10g<span style="color:#f92672">==</span> root@at91sam9260_ek
+</span></span><span style="display:flex;"><span>Fingerprint: md5 b4:f5:28:b4:c4:f2:27:15:32:f6:77:56:44:f5:da:85
+</span></span><span style="display:flex;"><span>Starting dropbear sshd: OK
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>BusyBox v1.23.2 <span style="color:#f92672">(</span>2015-11-09 22:59:50 EST<span style="color:#f92672">)</span> built-in shell <span style="color:#f92672">(</span>ash<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Enter <span style="color:#e6db74">&#39;help&#39;</span> <span style="color:#66d9ef">for</span> a list of built-in commands.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ls</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span>        dev      lib      mnt      root     share    usr
+</span></span><span style="display:flex;"><span>bin      etc      linuxrc  opt      run      sys      var
+</span></span><span style="display:flex;"><span>config   home     media    proc     sbin     tmp
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span></code></pre></div> <a class="read-more" href="/csdn/post/ops_vmware_netadapter/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -281,12 +622,62 @@ This is the boot programm!鶷his is the boot programm! Load UBOOT, please wait..
     </header>
     <section class="post-excerpt">
         
-            <p>IDE: vs2008 Express(sp1)
-callXBFLibrary 我们需要使用API函数来读取INI文件。
-建立P/Invoke应用类 在pinvoke.net中查找Win32 API在C#定义。 GetPrivateProfileString 读取Ini文件的API
-[DllImport(&#34;kernel32.dll&#34;, CharSet=CharSet.Unicode)] static extern uint GetPrivateProfileString( string lpAppName, string lpKeyName, string lpDefault, StringBuilder lpReturnedString, uint nSize, string lpFileName); 注意：DllImport属性来自using System.Runtime.InteropServices;
-lpAppName 小节名 lpKeyName 键名 lpDefault 缺省值 lpReturnedString 返回值 nSize 返回值长度 lpFileName 读取文件的名称 import class using System.Runtime.InteropServices; readIniFileVal 建立一个公共方法，以供程序使用。
-public string readIniFileVal(string iniFileName, string section, string key) { StringBuilder retStrBuilder = new StringBuilder(256); GetPrivateProfileString( section, key, &#34;&#34;, retStrBuilder, 256, iniFileName); return retStrBuilder. <a class="read-more" href="/csdn/post/c2plus-unmanaged-dll/">&raquo;</a></p>
+            <p><blockquote>
+<p>IDE: vs2008 Express(sp1)</p>
+</blockquote>
+<h1 id="callxbflibrary">callXBFLibrary</h1>
+<p>我们需要使用API函数来读取INI文件。</p>
+<h1 id="建立pinvoke应用类">建立P/Invoke应用类</h1>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20200514014607.png" alt="vs2008 ui1"></p>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20200514014830.png" alt="vs2008 ui2"></p>
+<p>在<a href="http://pinvoke.net/index.aspx">pinvoke.net</a>中查找Win32 API在C#定义。
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20140303141518625.png" alt="vs2008 ui"></p>
+<h2 id="getprivateprofilestring">GetPrivateProfileString</h2>
+<p>读取Ini文件的API</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>[<span style="color:#a6e22e">DllImport</span>(<span style="color:#e6db74">&#34;kernel32.dll&#34;</span>, CharSet<span style="color:#f92672">=</span>CharSet.Unicode)]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">extern</span> uint <span style="color:#a6e22e">GetPrivateProfileString</span>(
+</span></span><span style="display:flex;"><span>   string lpAppName,
+</span></span><span style="display:flex;"><span>   string lpKeyName,
+</span></span><span style="display:flex;"><span>   string lpDefault,
+</span></span><span style="display:flex;"><span>   StringBuilder lpReturnedString,
+</span></span><span style="display:flex;"><span>   uint nSize,
+</span></span><span style="display:flex;"><span>   string lpFileName);
+</span></span></code></pre></div><blockquote>
+<p>注意：DllImport属性来自using System.Runtime.InteropServices;</p>
+</blockquote>
+<ul>
+<li>lpAppName <br>
+  小节名</li>
+<li>lpKeyName <br>
+键名</li>
+<li>lpDefault <br>
+缺省值</li>
+<li>lpReturnedString  <br>
+返回值</li>
+<li>nSize  <br>
+返回值长度</li>
+<li>lpFileName <br>
+读取文件的名称</li>
+</ul>
+<h3 id="import-class">import class</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>  using System.Runtime.InteropServices;
+</span></span></code></pre></div><h2 id="readinifileval">readIniFileVal</h2>
+<p>建立一个公共方法，以供程序使用。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>public string <span style="color:#a6e22e">readIniFileVal</span>(string iniFileName, string section, string key)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    StringBuilder retStrBuilder <span style="color:#f92672">=</span> new <span style="color:#a6e22e">StringBuilder</span>(<span style="color:#ae81ff">256</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">GetPrivateProfileString</span>(
+</span></span><span style="display:flex;"><span>        section,
+</span></span><span style="display:flex;"><span>        key,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>        retStrBuilder,
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">256</span>,
+</span></span><span style="display:flex;"><span>        iniFileName);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> retStrBuilder.<span style="color:#a6e22e">ToString</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="code">code</h1>
+<blockquote>
+<p>Cwin32API.cs</p> <a class="read-more" href="/csdn/post/c2plus-unmanaged-dll/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -308,12 +699,72 @@ public string readIniFileVal(string iniFileName, string section, string key) { S
     </header>
     <section class="post-excerpt">
         
-            <p>系统需求 Mixed(x86 and x64): Windows 10 - Windows Vista Pure(x86): Windows XP - Windows 3.1
-ref &ldquo;VC Redist&rdquo;
-注册下列COM组件
-xbfInfo.dllrepoInfo.dll callXBFLib 生成/读取xbf文件.
-文档请参考 callXBFLibrary - 调用非托管DLL callXBFLibrary - 调用COM 配置文件 xbfConfig.ini
-[config] type = MySQL [MS-Access] DB = v:\fde.mdb Pwd = wwsrts12 [MSSQL] Server = ddrwaas2 DB = dddrrewq User = ttrrre Pwd = qwerty [MySQL] Server = 192.168.1.107 DB = mysql User = DBAdmin Pwd = xbfirst repoFmtGen 生成固定格式的报文。 <a class="read-more" href="/csdn/post/demo-tdtc/">&raquo;</a></p>
+            <p><ul>
+<li>
+<p>系统需求 <br>
+Mixed(x86 and x64): Windows 10 - Windows Vista <br>
+Pure(x86): Windows XP - Windows 3.1</p>
+<p>ref &ldquo;VC Redist&rdquo;</p>
+</li>
+<li>
+<p>注册下列COM组件</p>
+</li>
+</ul>
+<pre tabindex="0"><code>xbfInfo.dll
+repoInfo.dll
+</code></pre><h1 id="callxbflib">callXBFLib</h1>
+<blockquote>
+<p>生成/读取xbf文件.</p>
+</blockquote>
+<h2 id="文档请参考">文档请参考</h2>
+<ul>
+<li><a href="https://tdtc-hrb.github.io/csdn/post/c2plus-unmanaged-dll/">callXBFLibrary - 调用非托管DLL</a></li>
+<li><a href="https://tdtc-hrb.github.io/csdn/post/c2plus-com-dll/">callXBFLibrary - 调用COM</a></li>
+</ul>
+<h2 id="配置文件">配置文件</h2>
+<blockquote>
+<p>xbfConfig.ini</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>config<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>type <span style="color:#f92672">=</span> MySQL
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>MS-Access<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>DB <span style="color:#f92672">=</span> v:<span style="color:#ae81ff">\f</span>de.mdb
+</span></span><span style="display:flex;"><span>Pwd <span style="color:#f92672">=</span> wwsrts12
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>MSSQL<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Server <span style="color:#f92672">=</span> ddrwaas2
+</span></span><span style="display:flex;"><span>DB     <span style="color:#f92672">=</span> dddrrewq
+</span></span><span style="display:flex;"><span>User   <span style="color:#f92672">=</span> ttrrre
+</span></span><span style="display:flex;"><span>Pwd    <span style="color:#f92672">=</span> qwerty
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>MySQL<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Server <span style="color:#f92672">=</span> 192.168.1.107
+</span></span><span style="display:flex;"><span>DB     <span style="color:#f92672">=</span> mysql
+</span></span><span style="display:flex;"><span>User   <span style="color:#f92672">=</span> DBAdmin
+</span></span><span style="display:flex;"><span>Pwd    <span style="color:#f92672">=</span> xbfirst
+</span></span></code></pre></div><h1 id="repofmtgen">repoFmtGen</h1>
+<blockquote>
+<p>生成固定格式的报文。</p>
+</blockquote>
+<h3 id="文档请参考-1">文档请参考</h3>
+<ul>
+<li><a href="https://tdtc-hrb.github.io/csdn/post/com-safearray-vc/">读取SafeArray数据</a></li>
+</ul>
+<h2 id="运行效果">运行效果</h2>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20151225213801939.png" alt="program ui"></p>
+<h2 id="ie调用repoinfodll">IE调用repoInfo.dll</h2>
+<blockquote>
+<p>IE6/7/8/9/10/11</p>
+</blockquote>
+<h3 id="文档请参考-2">文档请参考</h3>
+<ul>
+<li><a href="https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/">创建COM</a></li>
+<li><a href="https://tdtc-hrb.github.io/csdn/post/com-ie-test/">使用IE测试COM</a></li>
+<li><a href="https://tdtc-hrb.github.io/csdn/post/com-ie-repoinfo/">铁路车号读取 - IE</a></li>
+</ul>
+<h4 id="repoinfo_testhtml">repoInfo_test.html</h4>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/win81ie11-repinfo.png" alt="ie ui"></p> <a class="read-more" href="/csdn/post/demo-tdtc/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -335,9 +786,110 @@ xbfInfo.dllrepoInfo.dll callXBFLib 生成/读取xbf文件.
     </header>
     <section class="post-excerpt">
         
-            <p>Prepare server1 server2 server3 server4 NameNode y y DataNode y y y ResourceManager y y NodeManager y y y y Zookeeper y y y y JournalNode y y y ZK-FC y y JobHistor y Server Name IP Host Name server1 192.168.42.107 tdtc201 server2 192.168.42.108 tdtc202 server3 192.168.42.109 tdtc203 server4 192.168.42.110 tdtc204 1. zk zkServer.sh start 安装详见《ZooKeeper multi-server install》
-2. Open firewall Stage I: Installation 1. Unzip /home/$USER/app/hadoop/$version 路径参考Oracle11g
-mkdir -p ~/app/hadoop tar zxvf hadoop-2. <a class="read-more" href="/csdn/post/ops_hadoop_cluster/">&raquo;</a></p>
+            <p><h1 id="prepare">Prepare</h1>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"></th>
+          <th style="text-align: left">server1</th>
+          <th style="text-align: left">server2</th>
+          <th style="text-align: left">server3</th>
+          <th style="text-align: left">server4</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">NameNode</td>
+          <td style="text-align: left">y</td>
+          <td style="text-align: left">y</td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">DataNode</td>
+          <td style="text-align: left"> </td>
+          <td style="text-align: left">y</td>
+          <td style="text-align: left">y</td>
+          <td style="text-align: left">y</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">ResourceManager</td>
+          <td style="text-align: left"> </td>
+          <td style="text-align: left"> </td>
+          <td style="text-align: left">y</td>
+          <td style="text-align: left">y</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">NodeManager</td>
+          <td style="text-align: left">y</td>
+          <td style="text-align: left">y</td>
+          <td style="text-align: left">y</td>
+          <td style="text-align: left">y</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Zookeeper</td>
+          <td style="text-align: left">y</td>
+          <td style="text-align: left">y</td>
+          <td style="text-align: left">y</td>
+          <td style="text-align: left">y</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">JournalNode</td>
+          <td style="text-align: left">y</td>
+          <td style="text-align: left">y</td>
+          <td style="text-align: left">y</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">ZK-FC</td>
+          <td style="text-align: left">y</td>
+          <td style="text-align: left">y</td>
+          <td style="text-align: left"> </td>
+          <td style="text-align: left"> </td>
+      </tr>
+      <tr>
+          <td style="text-align: left">JobHistor</td>
+          <td style="text-align: left">y</td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+      </tr>
+  </tbody>
+</table>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Server Name</th>
+          <th style="text-align: left">IP</th>
+          <th style="text-align: left">Host Name</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">server1</td>
+          <td style="text-align: left">192.168.42.107</td>
+          <td style="text-align: left">tdtc201</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">server2</td>
+          <td style="text-align: left">192.168.42.108</td>
+          <td style="text-align: left">tdtc202</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">server3</td>
+          <td style="text-align: left">192.168.42.109</td>
+          <td style="text-align: left">tdtc203</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">server4</td>
+          <td style="text-align: left">192.168.42.110</td>
+          <td style="text-align: left">tdtc204</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="1-zk">1. zk</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>zkServer.sh start
+</span></span></code></pre></div><p>安装详见《<a href="https://tdtc-hrb.github.io/csdn/post/ops_zookeeper/">ZooKeeper multi-server install</a>》</p> <a class="read-more" href="/csdn/post/ops_hadoop_cluster/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -359,16 +911,112 @@ mkdir -p ~/app/hadoop tar zxvf hadoop-2. <a class="read-more" href="/csdn/post/o
     </header>
     <section class="post-excerpt">
         
-            <p>准备工作：
-修改网卡为固定IP 开启sudo 总览 OS: minimal
-Alma CentOS7.9 Real Server RHEL78RS1 192.168.0.127
-Nginx v1.22 Tomcat v8.5.82 RHEL78RS2 192.168.0.122
-Nginx v1.22 Tomcat v9.0.68 Keepalived Server RHEL78Master 192.168.0.129
-RHEL78Bak 192.168.0.130
-一、Real Server 安装前准备:
-Linux下安装Tomcat nginx - CentOS7 nginx - RHEL8 config ARP ifconfig:
-$sudo yum install net-tools Service #vi /etc/init.d/realserver /etc/init.d/realserver:
-#!/bin/bash SNS_VIP=192.168.0.220 case &#34;$1&#34; in start) ifconfig lo:0 $SNS_VIP netmask 255.255.255.255 broadcast $SNS_VIP /sbin/route add -host $SNS_VIP dev lo:0 echo &#34;1&#34; &gt;/proc/sys/net/ipv4/conf/lo/arp_ignore echo &#34;2&#34; &gt;/proc/sys/net/ipv4/conf/lo/arp_announce echo &#34;1&#34; &gt;/proc/sys/net/ipv4/conf/all/arp_ignore echo &#34;2&#34; &gt;/proc/sys/net/ipv4/conf/all/arp_announce sysctl -p &gt;/dev/null 2&gt;&amp;1 echo &#34;RealServer Start OK&#34; ;; stop) ifconfig lo:0 down route del $SNS_VIP &gt;/dev/null 2&gt;&amp;1 echo &#34;0&#34; &gt;/proc/sys/net/ipv4/conf/lo/arp_ignore echo &#34;0&#34; &gt;/proc/sys/net/ipv4/conf/lo/arp_announce echo &#34;0&#34; &gt;/proc/sys/net/ipv4/conf/all/arp_ignore echo &#34;0&#34; &gt;/proc/sys/net/ipv4/conf/all/arp_announce echo &#34;RealServer Stoped&#34; ;; *) echo &#34;Usage: $0 {start|stop}&#34; exit 1 esac exit 0 exec $sudo chmod 755 /etc/init. <a class="read-more" href="/csdn/post/ops_real_keepalived/">&raquo;</a></p>
+            <p><p>准备工作：</p>
+<ul>
+<li><a href="https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/">修改网卡为固定IP</a></li>
+<li><a href="https://tdtc-hrb.github.io/csdn/post/ops_sudo/">开启sudo</a></li>
+</ul>
+<h1 id="总览">总览</h1>
+<p>OS:  minimal</p>
+<ul>
+<li><a href="https://mirrors.almalinux.org/isos/x86_64/8.6.html">Alma</a></li>
+<li><a href="http://isoredirect.centos.org/centos/7/isos/x86_64/">CentOS7.9</a></li>
+</ul>
+<h2 id="real-server">Real Server</h2>
+<ul>
+<li>RHEL78RS1</li>
+</ul>
+<blockquote>
+<p>192.168.0.127</p>
+</blockquote>
+<ol>
+<li>Nginx v1.22</li>
+<li>Tomcat v8.5.82</li>
+</ol>
+<ul>
+<li>RHEL78RS2</li>
+</ul>
+<blockquote>
+<p>192.168.0.122</p>
+</blockquote>
+<ol>
+<li>Nginx v1.22</li>
+<li>Tomcat v9.0.68</li>
+</ol>
+<h2 id="keepalived-server">Keepalived Server</h2>
+<ul>
+<li>RHEL78Master</li>
+</ul>
+<blockquote>
+<p>192.168.0.129</p>
+</blockquote>
+<ul>
+<li>RHEL78Bak</li>
+</ul>
+<blockquote>
+<p>192.168.0.130</p>
+</blockquote>
+<h1 id="一real-server">一、Real Server</h1>
+<p>安装前准备:</p>
+<ul>
+<li><a href="https://tdtc-hrb.github.io/csdn/post/ops_tomcat/">Linux下安装Tomcat</a></li>
+<li><a href="https://tdtc-hrb.github.io/csdn/post/ops_nginx/">nginx - CentOS7</a></li>
+<li><a href="https://tdtc-hrb.github.io/cnblogs/post/ops_nginx-v2/">nginx - RHEL8</a></li>
+</ul>
+<h2 id="config-arp">config ARP</h2>
+<p>ifconfig:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum install net-tools
+</span></span></code></pre></div><h3 id="service">Service</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#vi /etc/init.d/realserver</span>
+</span></span></code></pre></div><p>/etc/init.d/realserver:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>SNS_VIP<span style="color:#f92672">=</span>192.168.0.220
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> in
+</span></span><span style="display:flex;"><span>start<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>       ifconfig lo:0 $SNS_VIP netmask 255.255.255.255 broadcast $SNS_VIP
+</span></span><span style="display:flex;"><span>       /sbin/route add -host $SNS_VIP dev lo:0
+</span></span><span style="display:flex;"><span>       echo <span style="color:#e6db74">&#34;1&#34;</span> &gt;/proc/sys/net/ipv4/conf/lo/arp_ignore
+</span></span><span style="display:flex;"><span>       echo <span style="color:#e6db74">&#34;2&#34;</span> &gt;/proc/sys/net/ipv4/conf/lo/arp_announce
+</span></span><span style="display:flex;"><span>       echo <span style="color:#e6db74">&#34;1&#34;</span> &gt;/proc/sys/net/ipv4/conf/all/arp_ignore
+</span></span><span style="display:flex;"><span>       echo <span style="color:#e6db74">&#34;2&#34;</span> &gt;/proc/sys/net/ipv4/conf/all/arp_announce
+</span></span><span style="display:flex;"><span>       sysctl -p &gt;/dev/null 2&gt;&amp;<span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>       echo <span style="color:#e6db74">&#34;RealServer Start OK&#34;</span>
+</span></span><span style="display:flex;"><span>       ;;
+</span></span><span style="display:flex;"><span>stop<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>       ifconfig lo:0 down
+</span></span><span style="display:flex;"><span>       route del $SNS_VIP &gt;/dev/null 2&gt;&amp;<span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>       echo <span style="color:#e6db74">&#34;0&#34;</span> &gt;/proc/sys/net/ipv4/conf/lo/arp_ignore
+</span></span><span style="display:flex;"><span>       echo <span style="color:#e6db74">&#34;0&#34;</span> &gt;/proc/sys/net/ipv4/conf/lo/arp_announce
+</span></span><span style="display:flex;"><span>       echo <span style="color:#e6db74">&#34;0&#34;</span> &gt;/proc/sys/net/ipv4/conf/all/arp_ignore
+</span></span><span style="display:flex;"><span>       echo <span style="color:#e6db74">&#34;0&#34;</span> &gt;/proc/sys/net/ipv4/conf/all/arp_announce
+</span></span><span style="display:flex;"><span>       echo <span style="color:#e6db74">&#34;RealServer Stoped&#34;</span>
+</span></span><span style="display:flex;"><span>       ;;
+</span></span><span style="display:flex;"><span>*<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>       echo <span style="color:#e6db74">&#34;Usage: </span>$0<span style="color:#e6db74"> {start|stop}&#34;</span>
+</span></span><span style="display:flex;"><span>       exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">esac</span>
+</span></span><span style="display:flex;"><span>exit <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><h2 id="exec">exec</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo chmod <span style="color:#ae81ff">755</span> /etc/init.d/realserver
+</span></span><span style="display:flex;"><span>$sudo service realserver start
+</span></span></code></pre></div><ul>
+<li>tomcat</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/usr/local/tomcat/bin/startup.sh
+</span></span></code></pre></div><ul>
+<li>nginx</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo /usr/sbin/nginx
+</span></span></code></pre></div><h1 id="二keepalived-server">二、Keepalived Server</h1>
+<ul>
+<li><a href="https://tdtc-hrb.github.io/csdn/post/ops_keepalived/">v1</a></li>
+<li><a href="https://tdtc-hrb.github.io/cnblogs/post/ops_keepalived_v2/">v2</a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#systemctl start keepalived</span>
+</span></span></code></pre></div><h2 id="see-state">see state</h2>
+<p>virtual IP show:</p> <a class="read-more" href="/csdn/post/ops_real_keepalived/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -390,13 +1038,43 @@ $sudo yum install net-tools Service #vi /etc/init.d/realserver /etc/init.d/reals
     </header>
     <section class="post-excerpt">
         
-            <p>OS: CentOS7 minimal(VBox)
-Virtual Box Network configure:
-Attached to Bridged Adapter Advanced promiscuous mode: Allow All 一、安装 prepare tool:
-#yum install gcc make autoconf automake openssl-devel libnl3-devel \ iptables-devel ipset-devel net-snmp-devel libnfnetlink-devel file-devel \ glib2-devel pcre2-revel libnftnl-devel libmnl-devel systemd-devel kmod-devel LVS manager:
-yum install ipvsadm installation MASTER Node 1 BACKUP Node 2 down and unzip $git clone https://github.com/acassen/keepalived.git for me:
-$git clone https://gitee.com/xiaobin80/keepalived installation $cd keepalived $./autogen.sh configure:
-$./configure --prefix=/usr make: <a class="read-more" href="/csdn/post/ops_keepalived-v2/">&raquo;</a></p>
+            <p><blockquote>
+<p>OS: CentOS7 minimal(VBox)</p>
+</blockquote>
+<p>Virtual Box Network configure:</p>
+<ul>
+<li>Attached to</li>
+</ul>
+<pre tabindex="0"><code>Bridged Adapter
+</code></pre><ul>
+<li>Advanced <br>
+promiscuous mode:</li>
+</ul>
+<pre tabindex="0"><code>Allow All
+</code></pre><h1 id="一安装">一、安装</h1>
+<p>prepare tool:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#yum install gcc make autoconf automake openssl-devel libnl3-devel \</span>
+</span></span><span style="display:flex;"><span>    iptables-devel ipset-devel net-snmp-devel libnfnetlink-devel file-devel <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    glib2-devel pcre2-revel libnftnl-devel libmnl-devel systemd-devel kmod-devel
+</span></span></code></pre></div><p>LVS manager:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yum install ipvsadm
+</span></span></code></pre></div><h2 id="installation">installation</h2>
+<ul>
+<li>MASTER <br>
+Node 1</li>
+<li>BACKUP <br>
+Node 2</li>
+</ul>
+<h3 id="down-and-unzip">down and unzip</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$git clone https://github.com/acassen/keepalived.git
+</span></span></code></pre></div><p>for me:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$git clone https://gitee.com/xiaobin80/keepalived
+</span></span></code></pre></div><h3 id="installation-1">installation</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cd keepalived
+</span></span><span style="display:flex;"><span>$./autogen.sh
+</span></span></code></pre></div><p>configure:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$./configure --prefix<span style="color:#f92672">=</span>/usr
+</span></span></code></pre></div><p>make:</p> <a class="read-more" href="/csdn/post/ops_keepalived-v2/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -418,12 +1096,27 @@ $./configure --prefix=/usr make: <a class="read-more" href="/csdn/post/ops_keepa
     </header>
     <section class="post-excerpt">
         
-            <p>Nginx&rsquo;s load balancing
-一、安装 OS: CentOS7 minimal（安装时的选项）
-0. prepare $yum -y install gcc gcc-c++ automake pcre pcre-devel zlib zlib-devel openssl openssl-devel 1) update OpenSSL default directory: /usr/ssl
-$wget https://www.openssl.org/source/openssl-1.1.1q.tar.gz --no-check-certificate 2) setup $./config --prefix=/usr --shared $make Root permission Required
-$sudo make install 1. installation First, install Nginx of centos repo; Then, replace the nginx program file. Note: The replaced program file version must be the same as the repo!
-$sudo rpm -Uvh http://nginx. <a class="read-more" href="/csdn/post/ops_nginx/">&raquo;</a></p>
+            <p><p>Nginx&rsquo;s load balancing</p>
+<h1 id="一安装">一、安装</h1>
+<p>OS: CentOS7 minimal（安装时的选项）</p>
+<h2 id="0-prepare">0. prepare</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum -y install gcc gcc-c++ automake pcre pcre-devel zlib zlib-devel openssl openssl-devel
+</span></span></code></pre></div><h3 id="1-update-openssl">1) update OpenSSL</h3>
+<blockquote>
+<p>default directory: /usr/ssl</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://www.openssl.org/source/openssl-1.1.1q.tar.gz --no-check-certificate
+</span></span></code></pre></div><h3 id="2-setup">2) setup</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$./config --prefix<span style="color:#f92672">=</span>/usr --shared
+</span></span><span style="display:flex;"><span>$make
+</span></span></code></pre></div><blockquote>
+<p>Root permission Required</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo make install
+</span></span></code></pre></div><h2 id="1-installation">1. installation</h2>
+<p>First, install Nginx of centos repo; <br>
+Then, replace the nginx program file. <br>
+Note: The replaced program file version must be the same as the repo!</p> <a class="read-more" href="/csdn/post/ops_nginx/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -445,16 +1138,73 @@ $sudo rpm -Uvh http://nginx. <a class="read-more" href="/csdn/post/ops_nginx/">&
     </header>
     <section class="post-excerpt">
         
-            <p>在进行安装配置前，请确认已经完成了 MySQL 主从复制
-MHA (V0.58)
-Manager Node baidu yun - backup
-Mha manager Mha node 安装前准备 ssh相互免密
-一、安装 Name IP Memo mha1 192.168.0.151 Monitor host 使用pscp上传文件请参考 MySQL 主从复制 - 5. test data
-1. MHA Node 所有MySQL服务器（mysql1、mysql11、mysql12）和MHA 管理机（MHA）都要安装。
-sudo yum localinstall mha4mysql-node-0.58-0.el7.centos.noarch.rpm 2. MHA Manager CentOS源有perl-Config-Tiny。
-sudo yum install perl-Config-Tiny 安装epel， 可以找到perl-Log-Dispatch、perl-Parallel-ForkManager。
-sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm sudo yum install perl-Log-Dispatch perl-Parallel-ForkManager -y 安装manager
-sudo yum localinstall mha4mysql-manager-0.58-0.el7.centos.noarch.rpm 3. MySQL主从配置 （补充部分） <a class="read-more" href="/csdn/post/mysql-mha/">&raquo;</a></p>
+            <p><blockquote>
+<p>在进行安装配置前，请确认已经完成了 <a href="https://tdtc-hrb.github.io/csdn/post/mysql-master-slave-replication/">MySQL 主从复制</a></p>
+</blockquote>
+<ul>
+<li>MHA</li>
+</ul>
+<blockquote>
+<p>(V0.58)</p>
+</blockquote>
+<ol>
+<li><a href="https://github.com/yoshinorim/mha4mysql-manager">Manager</a></li>
+<li><a href="https://github.com/yoshinorim/mha4mysql-node">Node</a></li>
+</ol>
+<blockquote>
+<blockquote>
+<p>baidu yun - backup</p>
+</blockquote>
+</blockquote>
+<ol>
+<li><a href="https://pan.baidu.com/s/1FBX1yI4HncdI9UZCdzdcHQ">Mha manager</a></li>
+<li><a href="https://pan.baidu.com/s/1wA5NOUgjnDDJxQTL0U-1DA">Mha node</a></li>
+</ol>
+<blockquote>
+<p>安装前准备 <a href="https://tdtc-hrb.github.io/csdn/post/ops_ssh_without_password/">ssh相互免密</a></p>
+</blockquote>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/wuhan2017120193.png" alt="sql status"></p>
+<h1 id="一安装">一、安装</h1>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Name</th>
+          <th style="text-align: left">IP</th>
+          <th style="text-align: left">Memo</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">mha1</td>
+          <td style="text-align: left">192.168.0.151</td>
+          <td style="text-align: left">Monitor host</td>
+      </tr>
+  </tbody>
+</table>
+<p>使用pscp上传文件请参考 <a href="https://tdtc-hrb.github.io/csdn/post/mysql-master-slave-replication/">MySQL 主从复制</a> - 5. test data</p>
+<h2 id="1-mha-node">1. MHA Node</h2>
+<blockquote>
+<p>所有MySQL服务器（mysql1、mysql11、mysql12）和MHA 管理机（MHA）都要安装。</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum localinstall mha4mysql-node-0.58-0.el7.centos.noarch.rpm
+</span></span></code></pre></div><h2 id="2-mha-manager">2. MHA Manager</h2>
+<blockquote>
+<p>CentOS源有perl-Config-Tiny。</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install perl-Config-Tiny
+</span></span></code></pre></div><blockquote>
+<p>安装<a href="https://fedoraproject.org/wiki/EPEL">epel</a>，
+可以找到<a href="https://github.com/yoshinorim/mha4mysql-manager/wiki/Installation#installing-mha-manager">perl-Log-Dispatch、perl-Parallel-ForkManager</a>。</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+</span></span><span style="display:flex;"><span>sudo yum install perl-Log-Dispatch perl-Parallel-ForkManager -y
+</span></span></code></pre></div><blockquote>
+<p>安装manager</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum localinstall mha4mysql-manager-0.58-0.el7.centos.noarch.rpm
+</span></span></code></pre></div><h2 id="3-mysql主从配置">3. MySQL主从配置</h2>
+<blockquote>
+<p>（补充部分）</p> <a class="read-more" href="/csdn/post/mysql-mha/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">

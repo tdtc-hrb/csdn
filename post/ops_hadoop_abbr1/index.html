@@ -41,7 +41,10 @@
     <title>hadoop名词解释 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
 
     
-    <meta name="description" content="QJM and shuffle 1. QJM 1.1 背景 自从hadoop2版本开始，社区引入了NameNode高可用方案。NameNode主从节点间需要同步操作日志来达到主从节点元数据一致。最初业界均通过NFS来实现日志同步，大家之所以选择NFS，一方面因为可以很方便地实现数据共享，另外一方面因为NFS已经发展20" />
+    <meta name="description" content="&lt;h1 id=&#34;qjm-and-shuffle&#34;&gt;QJM and shuffle&lt;/h1&gt;
+&lt;h1 id=&#34;1-qjm&#34;&gt;1. QJM&lt;/h1&gt;
+&lt;h2 id=&#34;11-背景&#34;&gt;1.1 背景&lt;/h2&gt;
+&lt;p&gt;自从hadoop2版本开始，社区引入了NameNode高可用方案。NameNode主从节点间需要同步操作日志来达到" />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -63,7 +66,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.127.0">
+    <meta name="generator" content="Hugo 0.134.3">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_hadoop_abbr1/" />
 
@@ -191,74 +194,74 @@
 <p>自从hadoop2版本开始，社区引入了NameNode高可用方案。NameNode主从节点间需要同步操作日志来达到主从节点元数据一致。最初业界均通过NFS来实现日志同步，大家之所以选择NFS，一方面因为可以很方便地实现数据共享，另外一方面因为NFS已经发展20多年，已经相对稳定成熟。</p>
 <p>虽然如此，NFS也有缺点不能满足HDFS的在线存储业务：网络单点及其存储节点单点。业界提供了数据共享的一些高可用解决方案，但均不能很好地满足目前HDFS的应用场景。</p>
 <table>
-<thead>
-<tr>
-<th>方案</th>
-<th>网络单点</th>
-<th>存储单点</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Mysql</td>
-<td>HA</td>
-<td>无</td>
-<td>无</td>
-</tr>
-<tr>
-<td>Drbd+heartbeat+NFS</td>
-<td>无</td>
-<td>无</td>
-<td>脑裂；数据有丢失风险</td>
-</tr>
-<tr>
-<td>Keepalive+NFS</td>
-<td>无</td>
-<td>有</td>
-<td>数据有丢失风险</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">方案</th>
+          <th style="text-align: left">网络单点</th>
+          <th style="text-align: left">存储单点</th>
+          <th style="text-align: left">备注</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Mysql</td>
+          <td style="text-align: left">HA</td>
+          <td style="text-align: left">无</td>
+          <td style="text-align: left">无</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Drbd+heartbeat+NFS</td>
+          <td style="text-align: left">无</td>
+          <td style="text-align: left">无</td>
+          <td style="text-align: left">脑裂；数据有丢失风险</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Keepalive+NFS</td>
+          <td style="text-align: left">无</td>
+          <td style="text-align: left">有</td>
+          <td style="text-align: left">数据有丢失风险</td>
+      </tr>
+  </tbody>
 </table>
 <p>为了满足共享日志的高可用性，社区引入QJM。QJM由cloudera开发，实现了读写高可用性，使HDFS达到真正的高可用性成为可能。</p>
 <h2 id="12-术语和定义">1.2 术语和定义</h2>
 <table>
-<thead>
-<tr>
-<th>术语和定义</th>
-<th>解释</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Epoch</td>
-<td>由主节点在启动及其切换为主的时候分配，每次操作JN节点均会检查该值,类似zookeeper中的zxid，此时主NameNode类似zookeeper中的leader，JN节点类似ZK中的Follower</td>
-</tr>
-<tr>
-<td>JournalNode</td>
-<td>QJM存储段进程，提供日志读写，存储，修复等服务</td>
-</tr>
-<tr>
-<td>QJM</td>
-<td>Qurom Journal Manager</td>
-</tr>
-<tr>
-<td>startLogSegment</td>
-<td>开始一个新的日志段,该日志段状态为接收写入日志的状态</td>
-</tr>
-<tr>
-<td>finalizeLogSegment</td>
-<td>将文件由正在写入日志的状态转化为不接收写日志的状态</td>
-</tr>
-<tr>
-<td>recoverUnfinalizedSegments</td>
-<td>主从切换等情况下，恢复没有转换为finalized状态的日志</td>
-</tr>
-<tr>
-<td>journalId</td>
-<td>日志ID，由配置指定，如qjournal://g42:8485;g35:8485;uhp9:8485/geminifs，则其中的geminifs即为journalId</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">术语和定义</th>
+          <th style="text-align: left">解释</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Epoch</td>
+          <td style="text-align: left">由主节点在启动及其切换为主的时候分配，每次操作JN节点均会检查该值,类似zookeeper中的zxid，此时主NameNode类似zookeeper中的leader，JN节点类似ZK中的Follower</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">JournalNode</td>
+          <td style="text-align: left">QJM存储段进程，提供日志读写，存储，修复等服务</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">QJM</td>
+          <td style="text-align: left">Qurom Journal Manager</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">startLogSegment</td>
+          <td style="text-align: left">开始一个新的日志段,该日志段状态为接收写入日志的状态</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">finalizeLogSegment</td>
+          <td style="text-align: left">将文件由正在写入日志的状态转化为不接收写日志的状态</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">recoverUnfinalizedSegments</td>
+          <td style="text-align: left">主从切换等情况下，恢复没有转换为finalized状态的日志</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">journalId</td>
+          <td style="text-align: left">日志ID，由配置指定，如qjournal://g42:8485;g35:8485;uhp9:8485/geminifs，则其中的geminifs即为journalId</td>
+      </tr>
+  </tbody>
 </table>
 <h1 id="2shuffle">2. shuffle</h1>
 <p>作者：Lijie Xu

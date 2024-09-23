@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.127.0">
+    <meta name="generator" content="Hugo 0.134.3">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -164,16 +164,88 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_dc_redis_ubuntu/">安装redis-server</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
+<h1 id="1-安装">1. 安装</h1>
+<p>Prerequisites:</p>
+<pre tabindex="0"><code>sudo apt install lsb-release curl gpg
+</code></pre><p>Add the repository to the apt index:</p>
+<pre tabindex="0"><code>curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
+
+echo &#34;deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main&#34; | sudo tee /etc/apt/sources.list.d/redis.list
+</code></pre><ul>
+<li>install</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install redis-server
+</span></span></code></pre></div><h2 id="launch">Launch</h2>
+<ul>
+<li>local(WSL)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>redis-server
+</span></span></code></pre></div><ul>
+<li>remote(Virtual Box or VM ware etc.)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo redis-server /etc/redis/redis.conf
+</span></span></code></pre></div><h3 id="view-port">View port</h3>
+<p>install netstat:</p> <a class="read-more" href="/csdn/post/ops_dc_redis_ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-03-10T08:08:08&#43;08:00">
+            10 Mar 2024
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/nodejs-ubuntu/">在Ubuntu下安装NodeJS</a></h2>
     </header>
     <section class="post-excerpt">
         
-            <p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).
-1.node.js v20.x/v18.x/16.x
-v20.x curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - v18.x curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - v16.x curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - install sudo apt-get install -y nodejs update first remove:
-sudo apt remove nodejs and then, remove libnode72:
-sudo dpkg --remove --force-remove-reinstreq libnode72:amd64 last install:
-sudo apt-get install -y nodejs 2. yarn js curl --silent --show-error https://dl. <a class="read-more" href="/csdn/post/nodejs-ubuntu/">&raquo;</a></p>
+            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
+<h1 id="1nodejs">1.node.js</h1>
+<p><a href="https://github.com/nodesource/distributions">v20.x/v18.x/16.x</a></p>
+<ul>
+<li>v20.x</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+</span></span></code></pre></div><ul>
+<li>v18.x</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+</span></span></code></pre></div><ul>
+<li>v16.x</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+</span></span></code></pre></div><h2 id="install">install</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install -y nodejs
+</span></span></code></pre></div><h2 id="update">update</h2>
+<p>first remove:</p>
+<pre tabindex="0"><code>sudo apt remove nodejs
+</code></pre><p>and then, remove <a href="https://unix.stackexchange.com/a/722477">libnode72</a>:</p>
+<pre tabindex="0"><code>sudo dpkg --remove --force-remove-reinstreq libnode72:amd64
+</code></pre><p>last install:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install -y nodejs
+</span></span></code></pre></div><h1 id="2-yarn-js">2. yarn js</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl --silent --show-error https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;deb https://dl.yarnpkg.com/debian/ stable main&#34;</span> | sudo tee /etc/apt/sources.list.d/yarn.list
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install yarn
+</span></span></code></pre></div><h1 id="ref">Ref</h1>
+<ul>
+<li><a href="https://phoenixnap.com/kb/how-to-install-yarn-ubuntu">How to Install Yarn on Ubuntu 18.04</a></li>
+</ul> <a class="read-more" href="/csdn/post/nodejs-ubuntu/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -195,9 +267,95 @@ sudo apt-get install -y nodejs 2. yarn js curl --silent --show-error https://dl.
     </header>
     <section class="post-excerpt">
         
-            <p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).
-components version 查看内核版本:
-#uname -a 查看Glibc库版本 #apt-cache show libc6 查看binutils版本 #ld -v 查看ubuntu版本号 #cat /etc/issue 查看debian对应版本 #cat /etc/debian_version debian code name code version status bullseye 11 statble buster 10 old statble stretch 9 old old statble jessie 8 archived wheezy 7 obsolete squeeze 6.0 obsolete lenny 5.0 obsolete etch 4.0 obsolete sarge 3.1 obsolete woody 3.0 obsolete potato 2.2 obsolete slink 2. <a class="read-more" href="/csdn/post/version-ubuntu/">&raquo;</a></p>
+            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
+<h1 id="components-version">components version</h1>
+<p>查看内核版本:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#uname -a</span>
+</span></span></code></pre></div><h2 id="查看glibc库版本">查看Glibc库版本</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#apt-cache show libc6</span>
+</span></span></code></pre></div><h2 id="查看binutils版本">查看binutils版本</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#ld -v</span>
+</span></span></code></pre></div><h1 id="查看ubuntu版本号">查看ubuntu版本号</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#cat /etc/issue</span>
+</span></span></code></pre></div><h2 id="查看debian对应版本">查看debian对应版本</h2>
+<pre tabindex="0"><code>#cat /etc/debian_version
+</code></pre><h3 id="debian-code-namehttpswwwdebianorgreleases"><a href="https://www.debian.org/releases/">debian code name</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">code</th>
+          <th style="text-align: left">version</th>
+          <th style="text-align: left">status</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">bullseye</td>
+          <td style="text-align: left">11</td>
+          <td style="text-align: left">statble</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">buster</td>
+          <td style="text-align: left">10</td>
+          <td style="text-align: left">old statble</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">stretch</td>
+          <td style="text-align: left">9</td>
+          <td style="text-align: left">old old statble</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">jessie</td>
+          <td style="text-align: left">8</td>
+          <td style="text-align: left">archived</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">wheezy</td>
+          <td style="text-align: left">7</td>
+          <td style="text-align: left">obsolete</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">squeeze</td>
+          <td style="text-align: left">6.0</td>
+          <td style="text-align: left">obsolete</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">lenny</td>
+          <td style="text-align: left">5.0</td>
+          <td style="text-align: left">obsolete</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">etch</td>
+          <td style="text-align: left">4.0</td>
+          <td style="text-align: left">obsolete</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">sarge</td>
+          <td style="text-align: left">3.1</td>
+          <td style="text-align: left">obsolete</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">woody</td>
+          <td style="text-align: left">3.0</td>
+          <td style="text-align: left">obsolete</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">potato</td>
+          <td style="text-align: left">2.2</td>
+          <td style="text-align: left">obsolete</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">slink</td>
+          <td style="text-align: left">2.1</td>
+          <td style="text-align: left">obsolete</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">hamm</td>
+          <td style="text-align: left">2.0</td>
+          <td style="text-align: left">obsolete</td>
+      </tr>
+  </tbody>
+</table> <a class="read-more" href="/csdn/post/version-ubuntu/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -229,11 +387,86 @@ components version 查看内核版本:
     </header>
     <section class="post-excerpt">
         
-            <p>我们知道Chain of Responsibility模式，其实就是Template method + Next。
-在进行多个调用时，按顺序执行；需要调用2个方法。
-此模式，只适合抽象方法！
-在进行设计模式的程序实现中xiaobin使用已编写的SSL程序做演示。
-Chain of Command import com.cartionsoft.xbf.ContentXbf;import com.cartionsoft.xbf.LibXbf;import com.cartionsoft.xbf.ReadXbf;import com.cartionsoft.xbf.XiaobinFile;public class Demo {public static void init() throws Exception {int stationID = 0;String keyPWD;String libPath = &#34;xbfLibR.dll&#34;;String xbfPath = &#34;C://send//dySSL.xbf&#34;;ContentXbf contentXbf = new ContentXbf(xbfPath);// All checks are linked. Client can build various chains using the same// components.XiaobinFile xiaobinFile = XiaobinFile.link(new LibXbf(libPath),new ReadXbf());// Server gets a chain from client code. <a class="read-more" href="/csdn/post/dp-cor-java/">&raquo;</a></p>
+            <p><p>我们知道Chain of Responsibility模式，其实就是Template method + Next。</p>
+<p>在进行多个调用时，按顺序执行；需要调用2个方法。</p>
+<p>此模式，只适合抽象方法！</p>
+<p>在进行设计模式的程序实现中xiaobin使用已编写的SSL程序做演示。</p>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/chain-of-command.png" alt="chain of command"></p>
+<h2 id="chain-of-command">Chain of Command</h2>
+<pre tabindex="0"><code>import com.cartionsoft.xbf.ContentXbf;
+import com.cartionsoft.xbf.LibXbf;
+import com.cartionsoft.xbf.ReadXbf;
+import com.cartionsoft.xbf.XiaobinFile;
+
+public class Demo {
+
+	public static void init() throws Exception {
+		int stationID = 0;
+	    String keyPWD;
+
+		String libPath = &#34;xbfLibR.dll&#34;;
+		String xbfPath = &#34;C://send//dySSL.xbf&#34;;
+
+		ContentXbf contentXbf = new ContentXbf(xbfPath);
+
+        // All checks are linked. Client can build various chains using the same
+        // components.
+        XiaobinFile xiaobinFile = XiaobinFile.link(
+            new LibXbf(libPath),
+            new ReadXbf()
+        );
+
+        // Server gets a chain from client code.
+        contentXbf.setXbf(xiaobinFile);
+        
+        stationID = contentXbf.getStationID(-1);
+        keyPWD = contentXbf.getKeyPWD(-1);
+        
+        System.out.println(keyPWD + &#34; : &#34; + stationID);
+	}
+
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+		init();
+	}
+
+}
+</code></pre><ul>
+<li>template-method(abstract)</li>
+</ul>
+<pre tabindex="0"><code>readRecord()
+</code></pre><ul>
+<li>Next</li>
+</ul>
+<pre tabindex="0"><code>readRecordNext()
+</code></pre><ul>
+<li>traverse</li>
+</ul>
+<pre tabindex="0"><code>link()
+</code></pre><h3 id="next">Next</h3>
+<pre tabindex="0"><code>	/**
+     * Runs readRecord on the next object in chain or ends traversing if we&#39;re in
+     * last object in chain.
+     */
+    protected String readRecordNext(int dimRecord, String filename) {
+        if (next == null) {
+            return &#34;&#34;;
+        }
+        return next.readRecord(dimRecord, filename);
+    }
+</code></pre><h3 id="link">link</h3>
+<pre tabindex="0"><code>    /**
+     * Builds chains of XiaobinFile objects.
+     */
+    public static XiaobinFile link(XiaobinFile first, XiaobinFile... chain) {
+    	XiaobinFile head = first;
+        for (XiaobinFile nextInChain: chain) {
+            head.next = nextInChain;
+            head = nextInChain;
+        }
+        return first;
+    }
+</code></pre> <a class="read-more" href="/csdn/post/dp-cor-java/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -251,52 +484,73 @@ Chain of Command import com.cartionsoft.xbf.ContentXbf;import com.cartionsoft.x
 	
 	   <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/vc-serial_communication/">Windows串口</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>串口读写工具
-PC has no serial device
-PC has serial device
-CSerialPort author: Remon Spekreijse MFC Vs2013(VC12)/Vs2019(VC14.2) 程序介绍 界面分三块： 端口配置、发送区域、接收区域
-v2.0 使用boost thread + SQLite3 library 实现串口数据存储到SQLite数据库. 1. 端口配置 1.1 在“Port Number”选择端口号； 1.2 在“Config”配置端口的属性，比如波特率、奇偶校验、数据位、停止位等等。 Setting Serial Communication Number
-2. 发送区域 2.1 Loop Send 当我们钩选此复选框时，必须选择“发送频率”，然后才能执行循环发送数据。
-### 2.2 发送频率 选择其一：500、1000、2000毫秒。
-Setting time
-如果要更改读取自定义的时间频率：
-请将SerialCommView.cpp-Ln292，更为：
-((CComboBox *)GetDlgItem(IDC_COMBO1Timer))-&gt;GetWindowTextA(strTemp);)
-2.3 发送内容框 在“发送信息框”输入内容就可发送数据了！
-2.4 操作流程 A类（自动化） 2.2-》2.3-》2.1
-B类（手动） 2.3-》点击“Send”按钮。
-3. 接收区域 3.1 制式切换 当钩选了“Hex View”复选框，接收到的数据就以16进制显示。
-3.2 清除数据 当点击“Clear”按钮，即清空接收框数据。 <a class="read-more" href="/csdn/post/vc-serial_communication/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-12-15T08:08:08&#43;08:00">
-            15 Dec 2023
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/dp-template-java/">模板方法模式</a></h2>
     </header>
     <section class="post-excerpt">
         
-            <p>我们知道模板方法模式，其实就是等待被实现的方法。
-在进行多个可选择调用时，可以根据不同的方式；只调用一个方法即可解决不同的实现。
-此模式，只适合抽象方法！
-在进行设计模式的程序实现中xiaobin使用已编写的SSL程序做演示。
-Template Method import java.io.*;import java.util.*;import javax.net.ssl.*;public abstract class Transmission {protected String host;protected int port;protected String keyPath;protected String keyPwd;private SSLSocket socket;protected abstract SSLSocket createSocket() throws Exception;/*** &lt;p&gt; Receive byte array data &lt;/p&gt;* @return data*/public byte[] receiveData() throws Exception {// TODO Auto-generated method stubsocket = createSocket();InputStream in = new BufferedInputStream(socket.getInputStream());int b;List&lt;Byte&gt; listBuffer = new ArrayList&lt;Byte&gt;();while((b = in. <a class="read-more" href="/csdn/post/dp-template-java/">&raquo;</a></p>
+            <p><p>我们知道模板方法模式，其实就是等待被实现的方法。</p>
+<p>在进行多个可选择调用时，可以根据不同的方式；只调用一个方法即可解决不同的实现。</p>
+<p>此模式，只适合抽象方法！</p>
+<p>在进行设计模式的程序实现中xiaobin使用已编写的SSL程序做演示。</p>
+<p><img src="https://github.com/tdtc-hrb/cnblogs/raw/master/images/template-method.png" alt="template method"></p>
+<h2 id="template-method">Template Method</h2>
+<pre tabindex="0"><code>import java.io.*;
+import java.util.*;
+import javax.net.ssl.*;
+
+public abstract class Transmission {
+
+	protected String host;
+	protected int port;
+	protected String keyPath;
+	protected String keyPwd;
+	
+	private SSLSocket socket;
+	
+	protected abstract SSLSocket createSocket() throws Exception;
+	
+	/**
+	 * &lt;p&gt; Receive byte array data &lt;/p&gt;
+	 * @return data
+	 */
+	public byte[] receiveData() throws Exception {
+		// TODO Auto-generated method stub
+		socket = createSocket();
+		
+		InputStream in = new BufferedInputStream(
+				socket.getInputStream());
+		int b;
+		List&lt;Byte&gt; listBuffer = new ArrayList&lt;Byte&gt;();
+		while((b = in.read()) != -1) {
+			listBuffer.add((byte) b);
+		}
+		
+		int i = 0;
+		byte[] data = new byte[listBuffer.size()];
+		for (Byte byte1 : listBuffer) {
+			data[i] = byte1;
+			i++;
+		}
+
+		in.close();
+		
+		return data;
+	}
+	
+	/**
+	 * &lt;p&gt; Send byte array data &lt;/p&gt;
+	 * @param data
+	 */
+	public void sendData(byte[] data) throws Exception {
+		socket = createSocket();
+		OutputStream out = new BufferedOutputStream(
+				socket.getOutputStream());
+		out.write(data);
+		out.flush();
+		out.close();
+	}
+}
+</code></pre><p>template-method(abstract):</p> <a class="read-more" href="/csdn/post/dp-template-java/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -318,9 +572,69 @@ Template Method import java.io.*;import java.util.*;import javax.net.ssl.*;pu
     </header>
     <section class="post-excerpt">
         
-            <p>IDE Visual Studio 2017(v15.9)/Visual Studio 2019(v16.11) 本文参考: 创建COM
-一、创建COM 增加IE支持： IObjectWithSite
-增加方法 Add STDMETHODIMP CtestSOW::Add(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x + y); return S_OK; } Subtract STDMETHODIMP CtestSOW::Sub(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x - y); return S_OK; } Multiply STDMETHODIMP CtestSOW::Mul(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x * y); return S_OK; } Divide STDMETHODIMP CtestSOW::Div(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x / y); return S_OK; } Modulo STDMETHODIMP CtestSOW::Mod(LONG x, LONG y, LONG* ret) { // TODO: Add your implementation code here *ret = (x % y); return S_OK; } Logarithm STDMETHODIMP CtestSOW::Lg(LONG x, LONG y, DOUBLE* ret){// https://en. <a class="read-more" href="/csdn/post/com-ie-test/">&raquo;</a></p>
+            <p><ul>
+<li>IDE <br>
+Visual Studio 2017(v15.9)/Visual Studio 2019(v16.11)</li>
+</ul>
+<p>本文参考: <a href="https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/">创建COM</a></p>
+<h1 id="一创建com">一、创建COM</h1>
+<p>增加IE支持： IObjectWithSite</p>
+<!-- VS2010: https://github.com/tdtc-hrb/csdn/raw/master/images/20140420153532328.png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-simple4.png" alt="atl simple object - Support"></p>
+<h2 id="增加方法">增加方法</h2>
+<!-- VS2010: https://github.com/tdtc-hrb/csdn/raw/master/images/20140420160424359.png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-interface3.png" alt="atl interface - list"></p>
+<h3 id="add">Add</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>STDMETHODIMP CtestSOW<span style="color:#f92672">::</span>Add(LONG x, LONG y, LONG<span style="color:#f92672">*</span> ret)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// TODO: Add your implementation code here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span>ret <span style="color:#f92672">=</span> (x <span style="color:#f92672">+</span> y);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> S_OK;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="subtract">Subtract</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>STDMETHODIMP CtestSOW<span style="color:#f92672">::</span>Sub(LONG x, LONG y, LONG<span style="color:#f92672">*</span> ret)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// TODO: Add your implementation code here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span>ret <span style="color:#f92672">=</span> (x <span style="color:#f92672">-</span> y);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> S_OK;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="multiply">Multiply</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>STDMETHODIMP CtestSOW<span style="color:#f92672">::</span>Mul(LONG x, LONG y, LONG<span style="color:#f92672">*</span> ret)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// TODO: Add your implementation code here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span>ret <span style="color:#f92672">=</span> (x <span style="color:#f92672">*</span> y);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> S_OK;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="divide">Divide</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>STDMETHODIMP CtestSOW<span style="color:#f92672">::</span>Div(LONG x, LONG y, LONG<span style="color:#f92672">*</span> ret)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// TODO: Add your implementation code here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span>ret <span style="color:#f92672">=</span> (x <span style="color:#f92672">/</span> y);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> S_OK;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="modulo">Modulo</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>STDMETHODIMP CtestSOW<span style="color:#f92672">::</span>Mod(LONG x, LONG y, LONG<span style="color:#f92672">*</span> ret)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// TODO: Add your implementation code here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span>ret <span style="color:#f92672">=</span> (x <span style="color:#f92672">%</span> y);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> S_OK;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="logarithm">Logarithm</h3>
+<pre tabindex="0"><code>STDMETHODIMP CtestSOW::Lg(LONG x, LONG y, DOUBLE* ret)
+{
+	// https://en.cppreference.com/w/c/numeric/math/log
+	*ret = log(x) / log(y);
+
+	return S_OK;
+}
+</code></pre><h1 id="二测试平台">二、测试平台</h1>
+<blockquote>
+<p>查看依赖：<a href="http://dependencywalker.com/depends22_x86.zip">win8.1-</a>；<a href="https://github.com/lucasg/Dependencies/releases">Win10</a></p> <a class="read-more" href="/csdn/post/com-ie-test/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -342,16 +656,43 @@ Template Method import java.io.*;import java.util.*;import javax.net.ssl.*;pu
     </header>
     <section class="post-excerpt">
         
-            <p>Use Visual Studio&rsquo;s wizard to create COM
-Visual Studio 2013 Visual Studio 2015 Visual Studio 2017/2019/2022 step by step:
-建立ATL工程 建立ATL Simple Object 添加IDL方法 测试添加的method 建立ATL工程 File-&gt;New-&gt;Project
-name: testATL Note: name即是要生成的DLL文件 选择&quot;MFC/ATL&quot;中&quot;ATL Project&quot;:
-Default
-取消编译时注册Dll Project -&gt; PropertiesLinker -&gt; Register OutputNo Add ATL Simple Object (vs2017/vs2019)右击项目名称，选择Add -&gt;New Item
-vs2013/vs2015: Add -&gt; Class
-ATL Simple Object:
-设置 Short name: testSOW
-Simple Object ID ProgID: testATL.testSOW IE支持 vs2013/vs2015 Options -&gt; Support vs2017/vs2019 Other Options 添加IDL方法 Tab switching from &ldquo;Solution Explorer&rdquo; to &ldquo;Class View&rdquo; Select the interface, Right-click -&gt; add -&gt; add method <a class="read-more" href="/csdn/post/com-wizards-vc/">&raquo;</a></p>
+            <p><p>Use Visual Studio&rsquo;s wizard to create COM</p>
+<ul>
+<li>Visual Studio 2013</li>
+<li>Visual Studio 2015</li>
+<li>Visual Studio 2017/2019/2022</li>
+</ul>
+<p>step by step:</p>
+<ul>
+<li>建立ATL工程</li>
+<li>建立ATL Simple Object</li>
+<li>添加IDL方法</li>
+<li>测试添加的method</li>
+</ul>
+<h1 id="建立atl工程">建立ATL工程</h1>
+<p>File-&gt;New-&gt;Project</p>
+<!-- vs2017: https://gitee.com/xiaobin80/csdn/raw/master/images/20200201162120769.png -->
+<!-- vs2013: https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new1(vs2013).png -->
+<!-- vs2015: https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new1(vs2015).png -->
+<pre tabindex="0"><code>name: testATL
+</code></pre><p>Note: name即是要生成的DLL文件 <br>
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new1(vs2019).png" alt="project type">
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new2(vs2019).png" alt="project name"></p>
+<p>选择&quot;MFC/ATL&quot;中&quot;ATL Project&quot;:</p>
+<blockquote>
+<p>Default</p>
+</blockquote>
+<!-- vs2017: https://gitee.com/xiaobin80/csdn/raw/master/images/20200201171441614.png -->
+<!-- vs2013: https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new2(vs2013).png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new3(vs2019).png" alt="project property"></p>
+<ul>
+<li>取消编译时注册Dll</li>
+</ul>
+<pre tabindex="0"><code>Project -&gt; Properties
+Linker -&gt; Register Output
+No
+</code></pre><h2 id="add-atl-simple-object">Add ATL Simple Object</h2>
+<p>(vs2017/vs2019)右击项目名称，选择Add -&gt;New Item</p> <a class="read-more" href="/csdn/post/com-wizards-vc/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -373,10 +714,63 @@ Simple Object ID ProgID: testATL.testSOW IE支持 vs2013/vs2015 Options -&gt; Su
     </header>
     <section class="post-excerpt">
         
-            <p>1.59.0 support of msvc-14.0 1.64.0 support of msvc-14.1 1.71.0 support of msvc-14.2 1.78.0 support of msvc-14.3 MSVC++ versions
-名称 VS版本 msvc-14.0 VS2015 msvc-14.1 VS2017 msvc-14.2 VS2019 msvc-14.3 VS2022 1. 编译(x86) x86 Native Tools Command Prompt for VS xxxx
-down source zip package, and unzip. for example: v1.83
-About b2 vs bjam as of Boost 1.47.0, the official name of the executable was changed to b2. Gen b2 and build cd C:\boost_1_83_0 bootstrap. <a class="read-more" href="/csdn/post/vc-boost/">&raquo;</a></p>
+            <p><ul>
+<li><a href="https://sourceforge.net/projects/boost/files/boost-binaries/">1.59.0</a></li>
+</ul>
+<pre tabindex="0"><code>support of msvc-14.0
+</code></pre><ul>
+<li><a href="https://boostorg.jfrog.io/artifactory/main/release/">1.64.0</a></li>
+</ul>
+<pre tabindex="0"><code>support of msvc-14.1
+</code></pre><ul>
+<li>1.71.0</li>
+</ul>
+<pre tabindex="0"><code>support of msvc-14.2
+</code></pre><ul>
+<li>1.78.0</li>
+</ul>
+<pre tabindex="0"><code>support of msvc-14.3
+</code></pre><p><a href="https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B#Internal_version_numbering">MSVC++ versions</a></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">名称</th>
+          <th style="text-align: left">VS版本</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">msvc-14.0</td>
+          <td style="text-align: left">VS2015</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">msvc-14.1</td>
+          <td style="text-align: left">VS2017</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">msvc-14.2</td>
+          <td style="text-align: left">VS2019</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">msvc-14.3</td>
+          <td style="text-align: left">VS2022</td>
+      </tr>
+  </tbody>
+</table>
+<h1 id="1-编译x86">1. 编译(x86)</h1>
+<blockquote>
+<p>x86 Native Tools Command Prompt for VS xxxx</p>
+</blockquote>
+<p>down source zip package, and unzip. <br>
+for example: <a href="https://boostorg.jfrog.io/artifactory/main/release/1.83.0/source/boost_1_83_0.zip">v1.83</a></p>
+<h2 id="about-b2-vs-bjamhttpswwwboostorgbuilddochtmlbbv2faqnameshtml"><a href="https://www.boost.org/build/doc/html/bbv2/faq/names.html">About b2 vs bjam</a></h2>
+<pre tabindex="0"><code>as of Boost 1.47.0, the official name of the executable was changed to b2.
+</code></pre><h2 id="gen-b2-and-build">Gen b2 and build</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span><span style="color:#66d9ef">cd</span> C:\boost_1_83_0
+</span></span><span style="display:flex;"><span>bootstrap.bat
+</span></span></code></pre></div><!-- vs2019: https://github.com/tdtc-hrb/csdn/raw/master/images/boost-cmd1.png -->
+<!-- vs2015: https://github.com/tdtc-hrb/csdn/raw/master/images/boost-cmd1(vs2015).png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/boost-cmd1(vs2022).png" alt="windows cmd1"></p> <a class="read-more" href="/csdn/post/vc-boost/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -398,19 +792,81 @@ About b2 vs bjam as of Boost 1.47.0, the official name of the executable was cha
     </header>
     <section class="post-excerpt">
         
-            <p>disabled Windows feature Delivery Optimization windows 10 2004+ startup -&gt; settings: Update &amp; security:
-Allow downloads from other PCs : off Limit Advanced options set minimum
-Download settings background 5% foreground 5% 禁止记事本 开始-&gt;运行-&gt;gpedit.msc-&gt;计算机配置-&gt;windows设置-&gt;安全设置-&gt;软件限制策略
-右键点软件限制策略-&gt;创建软件限制策略
-点其他规则-&gt;右键新建路径规则-&gt; 在“路径”下的空白输入框中“%windir%\notepad.exe“（或者c盘是系统盘的情况下：c:\windows\notepad.exe)-&gt;在“安全级别”中选择“不允许”
-附：如果你要限制.txt的程序打开，可以在路径中输入*.txt。
-日文系统 key101 日文改英文键盘
-修改注册表主键： HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\i8042prt\Parameters
-LayerDriver JPN: KBD101.DLL OverrideKeyboardIdentifier: PCAT_101KEY OverrideKeyboardSubtype: 0x00000000(0) win7+添加日文输入 “区域和语言“ ==&gt; ”键盘和语言“
-”键盘和语言“中，点击”更改键盘“， 点”添加“，找到 ”日语（日本）“， 勾选”Microsoft IME“和”日语“，其它不要勾选.
-按键盘”Alt“+”Shift“即可调出日语输入法.
-文件或目录 文件或目录损坏且无法读取 无法读取的所在逻辑盘E:
-chkdsk /F E: How to Delete Old Windows Folder in Windows 10 – Access Denied? <a class="read-more" href="/csdn/post/ops_win_faq1/">&raquo;</a></p>
+            <p><h1 id="disabled-windows-feature">disabled Windows feature</h1>
+<h2 id="delivery-optimization">Delivery Optimization</h2>
+<blockquote>
+<p>windows 10 2004+
+startup -&gt; settings: Update &amp; security:</p>
+</blockquote>
+<pre tabindex="0"><code>Allow downloads from other PCs : off
+</code></pre><h3 id="limit">Limit</h3>
+<blockquote>
+<p>Advanced options
+set minimum</p>
+</blockquote>
+<h4 id="download-settings">Download settings</h4>
+<ul>
+<li>background</li>
+</ul>
+<pre tabindex="0"><code>5%
+</code></pre><ul>
+<li>foreground</li>
+</ul>
+<pre tabindex="0"><code>5%
+</code></pre><h2 id="禁止记事本">禁止记事本</h2>
+<ol>
+<li>
+<p>开始-&gt;运行-&gt;gpedit.msc-&gt;计算机配置-&gt;windows设置-&gt;安全设置-&gt;软件限制策略</p>
+</li>
+<li>
+<p>右键点软件限制策略-&gt;创建软件限制策略</p>
+</li>
+<li>
+<p>点其他规则-&gt;右键新建路径规则-&gt;
+在“路径”下的空白输入框中“%windir%\notepad.exe“（或者c盘是系统盘的情况下：c:\windows\notepad.exe)-&gt;在“安全级别”中选择“不允许”</p>
+</li>
+</ol>
+<blockquote>
+<p>附：如果你要限制.txt的程序打开，可以在路径中输入*.txt。</p>
+</blockquote>
+<h1 id="日文系统">日文系统</h1>
+<h2 id="key101">key101</h2>
+<blockquote>
+<p>日文改英文键盘</p>
+</blockquote>
+<p>修改注册表主键：
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\i8042prt\Parameters</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>LayerDriver JPN: KBD101.DLL
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>OverrideKeyboardIdentifier: PCAT_101KEY
+</span></span><span style="display:flex;"><span>OverrideKeyboardSubtype:    0x00000000<span style="color:#f92672">(</span>0<span style="color:#f92672">)</span>
+</span></span></code></pre></div><h2 id="win7添加日文输入httpsjingyanbaiducomarticlee75aca855ed81f142fdac665html"><a href="https://jingyan.baidu.com/article/e75aca855ed81f142fdac665.html">win7+添加日文输入</a></h2>
+<ol>
+<li>
+<p>“区域和语言“ ==&gt; ”键盘和语言“</p>
+</li>
+<li>
+<p>”键盘和语言“中，点击”更改键盘“，
+点”添加“，找到 ”日语（日本）“， <br>
+勾选”Microsoft IME“和”日语“，其它不要勾选.</p>
+</li>
+</ol>
+<p>按键盘”Alt“+”Shift“即可调出日语输入法.</p>
+<h1 id="文件或目录">文件或目录</h1>
+<h2 id="文件或目录损坏且无法读取">文件或目录损坏且无法读取</h2>
+<blockquote>
+<p><a href="https://www.cnblogs.com/hf1432/p/5643193.html">无法读取的所在逻辑盘E:</a></p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chkdsk /F E:
+</span></span></code></pre></div><h2 id="how-to-delete-old-windows-folder-in-windows-10--access-denied">How to Delete Old Windows Folder in Windows 10 – Access Denied?</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>takeown /F <span style="color:#e6db74">&#34;C:\Windows.old&#34;</span> /A /R /D Y
+</span></span><span style="display:flex;"><span>icacls <span style="color:#e6db74">&#34;C:\Windows.old&#34;</span> /T /grant administrators:F
+</span></span><span style="display:flex;"><span>rmdir /s /q <span style="color:#e6db74">&#34;C:\Windows.old&#34;</span>
+</span></span></code></pre></div><h1 id="notepadhttpsnotepad-plus-plusorg"><a href="https://notepad-plus-plus.org/">notepad++</a></h1>
+<h2 id="关闭历史文件">关闭历史文件</h2>
+<p>打开首选项-&gt;备份
+<sub>√</sub>“记住最后打开的文件” <br>
+把对勾去掉即可。</p> <a class="read-more" href="/csdn/post/ops_win_faq1/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -432,15 +888,97 @@ chkdsk /F E: How to Delete Old Windows Folder in Windows 10 – Access Denied? <
     </header>
     <section class="post-excerpt">
         
-            <p>automake manual make automake 注意: am文件是需要手工创建的!
-ac文件 生成configure.scan文件, 并重命名为configure.ac
-$ autoscan $ mv configure.scan configure.ac 修改配置 注意: 所有新修改的值都需要方括号([])
-程序属性 AC_INIT([hex2int], [v0.1], [veic_2005@163.com]) 目录结构 如果只有本目录, 使用空值 AM_INIT_AUTOMAKE 检查编译器 C compiler: AC_PROG_CC C++ compiler:
-AC_PROG_CXX 输出Makefile.in AC_CONFIG_FILES([Makefile]) 检查system头文件 AC_CHECK_HEADERS([string.h]) 生成Makefile aclocal autoconf 自定义宏(可选) 在ac file中的定义：
-AC_CONFIG_HEADERS([config.h]) 执行：
-autoheader 输出Makefile automake --add-missing 输出Makefile:
-./configure Example 源代码参见十六进制转十进制
-main.c 只保留主程序入口 hex2int.c 保留整个程序的结构 hex2int.h 函数名声明 Makefile.am AUTOMAKE_OPTIONS=foreign bin_PROGRAMS=hex2int hex2int_SOURCES=main.c hex2int.c include_HEADERS=hex2int.h configure.ac # -*- Autoconf -*- # Process this file with autoconf to produce a configure script. <a class="read-more" href="/csdn/post/c-automake/">&raquo;</a></p>
+            <p><ul>
+<li>automake</li>
+<li>manual make</li>
+</ul>
+<h1 id="automake">automake</h1>
+<p>注意: am文件是需要手工创建的!</p>
+<h2 id="ac文件">ac文件</h2>
+<p>生成configure.scan文件, 并重命名为configure.ac</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ autoscan
+</span></span><span style="display:flex;"><span>$ mv configure.scan configure.ac
+</span></span></code></pre></div><h3 id="修改配置">修改配置</h3>
+<p>注意: 所有新修改的值都需要方括号([])</p>
+<ul>
+<li>程序属性</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_INIT<span style="color:#f92672">([</span>hex2int<span style="color:#f92672">]</span>, <span style="color:#f92672">[</span>v0.1<span style="color:#f92672">]</span>, <span style="color:#f92672">[</span>veic_2005@163.com<span style="color:#f92672">])</span>
+</span></span></code></pre></div><ul>
+<li>目录结构
+如果只有本目录, 使用空值</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AM_INIT_AUTOMAKE
+</span></span></code></pre></div><ul>
+<li>检查编译器
+<a href="http://www.adp-gmbh.ch/misc/tools/configure/configure_in.html#ac_prog_cc">C compiler</a>:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_PROG_CC
+</span></span></code></pre></div><p><a href="http://www.adp-gmbh.ch/misc/tools/configure/configure_in.html#ac_prog_cxx">C++ compiler</a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_PROG_CXX
+</span></span></code></pre></div><ul>
+<li><a href="https://www.gnu.org/software/autoconf/manual/autoconf-2.71/html_node/Configuration-Files.html">输出Makefile.in</a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_CONFIG_FILES<span style="color:#f92672">([</span>Makefile<span style="color:#f92672">])</span>
+</span></span></code></pre></div><ul>
+<li>检查system头文件</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_CHECK_HEADERS<span style="color:#f92672">([</span>string.h<span style="color:#f92672">])</span>
+</span></span></code></pre></div><h2 id="生成makefile">生成Makefile</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aclocal
+</span></span><span style="display:flex;"><span>autoconf
+</span></span></code></pre></div><h3 id="自定义宏可选">自定义宏(可选)</h3>
+<p>在ac file中的定义：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_CONFIG_HEADERS<span style="color:#f92672">([</span>config.h<span style="color:#f92672">])</span>
+</span></span></code></pre></div><p>执行：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>autoheader
+</span></span></code></pre></div><h3 id="输出makefile">输出Makefile</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>automake --add-missing
+</span></span></code></pre></div><p>输出Makefile:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./configure
+</span></span></code></pre></div><h2 id="example">Example</h2>
+<p>源代码参见<a href="https://tdtc-hrb.github.io/csdn/post/c-string-h2i/">十六进制转十进制</a></p>
+<ul>
+<li>main.c <br>
+只保留主程序入口</li>
+<li>hex2int.c <br>
+保留整个程序的结构</li>
+<li>hex2int.h <br>
+函数名声明</li>
+</ul>
+<h3 id="makefileam">Makefile.am</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AUTOMAKE_OPTIONS<span style="color:#f92672">=</span>foreign
+</span></span><span style="display:flex;"><span>bin_PROGRAMS<span style="color:#f92672">=</span>hex2int
+</span></span><span style="display:flex;"><span>hex2int_SOURCES<span style="color:#f92672">=</span>main.c hex2int.c
+</span></span><span style="display:flex;"><span>include_HEADERS<span style="color:#f92672">=</span>hex2int.h
+</span></span></code></pre></div><h3 id="configureac">configure.ac</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#                                               -*- Autoconf -*-</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Process this file with autoconf to produce a configure script.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>AC_PREREQ<span style="color:#f92672">([</span>2.71<span style="color:#f92672">])</span>
+</span></span><span style="display:flex;"><span>AC_INIT<span style="color:#f92672">([</span>hex2int<span style="color:#f92672">]</span>, <span style="color:#f92672">[</span>v0.1<span style="color:#f92672">]</span>, <span style="color:#f92672">[</span>veic_2005@163.com<span style="color:#f92672">])</span>
+</span></span><span style="display:flex;"><span>AM_INIT_AUTOMAKE
+</span></span><span style="display:flex;"><span>AC_CONFIG_SRCDIR<span style="color:#f92672">([</span>hex2int.c<span style="color:#f92672">])</span>
+</span></span><span style="display:flex;"><span>AC_CONFIG_HEADERS<span style="color:#f92672">([</span>config.h<span style="color:#f92672">])</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Checks for programs.</span>
+</span></span><span style="display:flex;"><span>AC_PROG_CC
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Checks for libraries.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Checks for header files.</span>
+</span></span><span style="display:flex;"><span>AC_CHECK_HEADERS<span style="color:#f92672">([</span>string.h<span style="color:#f92672">])</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Checks for typedefs, structures, and compiler characteristics.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Checks for library functions.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>AC_CONFIG_FILES<span style="color:#f92672">([</span>Makefile<span style="color:#f92672">])</span>
+</span></span><span style="display:flex;"><span>AC_OUTPUT
+</span></span></code></pre></div><h1 id="手动makefile">手动Makefile</h1>
+<blockquote>
+<p>小项目可以。
+注意：所有的命令前必须为TAB，不能使空格！</p> <a class="read-more" href="/csdn/post/c-automake/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">

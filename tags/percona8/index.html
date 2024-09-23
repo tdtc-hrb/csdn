@@ -57,7 +57,7 @@
         <link href='/csdn/tags/percona8/index.xml' rel="alternate" type="application/rss+xml" title="Percona8 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.127.0">
+    <meta name="generator" content="Hugo 0.134.3">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/tags/percona8/" />
 
@@ -164,10 +164,29 @@
     </header>
     <section class="post-excerpt">
         
-            <p>Installing and Setting up the Percona Server for MySQL 8.0 Repository yum install -y https://repo.percona.com/yum/percona-release-latest.noarch.rpm disable mysql module repo:
-percona-release setup ps80 Installing and Setting up the Percona Server for MySQL 8.0 Binaries yum -y install percona-server-server Launch:
-systemctl start mysqldsystemctl status mysqld change password sudo grep &#34;temporary password&#34; /var/log/mysqld.log mysql -uroot -p Change default password：
-ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;qaz1!Xsw2@&#39;; Weak password mysql&gt; set global validate_password.policy=0; set password ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;xbfirst80&#39;; Ref Installing Percona Server for MySQL on Rocky Linux 8 How to Change MySQL Password Policy Level  <a class="read-more" href="/csdn/post/mysql80-cenos8/">&raquo;</a></p>
+            <p><h3 id="installing-and-setting-up-the-percona-server-for-mysql-80--repository">Installing and Setting up the Percona Server for MySQL 8.0  Repository</h3>
+<pre tabindex="0"><code>yum install -y https://repo.percona.com/yum/percona-release-latest.noarch.rpm
+</code></pre><p>disable mysql module repo:</p>
+<pre tabindex="0"><code>percona-release setup ps80
+</code></pre><h3 id="installing-and-setting-up-the-percona-server-for-mysql-80-binaries">Installing and Setting up the Percona Server for MySQL 8.0 Binaries</h3>
+<pre tabindex="0"><code>yum -y install percona-server-server
+</code></pre><p>Launch:</p>
+<pre tabindex="0"><code>systemctl start mysqld
+systemctl status mysqld
+</code></pre><h2 id="change-password">change password</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo grep <span style="color:#e6db74">&#34;temporary password&#34;</span> /var/log/mysqld.log
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql -uroot -p
+</span></span></code></pre></div><p>Change default password：</p>
+<pre tabindex="0"><code>ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;qaz1!Xsw2@&#39;;
+</code></pre><h3 id="weak-password">Weak password</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql&gt; set global validate_password.policy<span style="color:#f92672">=</span>0;
+</span></span></code></pre></div><h3 id="set-password">set password</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ALTER USER <span style="color:#e6db74">&#39;root&#39;</span>@<span style="color:#e6db74">&#39;localhost&#39;</span> IDENTIFIED BY <span style="color:#e6db74">&#39;xbfirst80&#39;</span>;
+</span></span></code></pre></div><h1 id="ref">Ref</h1>
+<ul>
+<li><a href="https://www.percona.com/blog/installing-percona-server-for-mysql-on-rocky-linux-8/">Installing Percona Server for MySQL on Rocky Linux 8</a></li>
+<li><a href="https://tecadmin.net/change-mysql-password-policy-level/">How to Change MySQL Password Policy Level</a></li>
+</ul> <a class="read-more" href="/csdn/post/mysql80-cenos8/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
