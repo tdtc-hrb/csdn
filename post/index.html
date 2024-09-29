@@ -162,6 +162,79 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/dev_wsl_ubuntu/">使用 WSL(v1) 在Windows 10</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
+<ul>
+<li>
+<p>Arch： x64</p>
+</li>
+<li>
+<p><a href="https://learn.microsoft.com/en-us/windows/wsl/install-manual#downloading-distributions">down appx</a></p>
+<p>在powerShell的管理员模式下运行命令!</p>
+</li>
+</ul>
+<h1 id="安装卸载">安装/卸载</h1>
+<p>ON:</p>
+<pre tabindex="0"><code>Control Panel -&gt; Uninstall a program -&gt; Turn Windows features on or off, 
+勾选“Windows Subsystem for Linux”
+</code></pre><h2 id="ubuntu">Ubuntu</h2>
+<p>OS: Windows 10 1809 LTSC</p>
+<ul>
+<li>
+<p><a href="https://aka.ms/wslubuntu2004">Ubuntu 2004</a></p>
+<p>从AppxBundle提取appx.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Add-AppxPackage .\Ubuntu_2004.xxx.appx
+</span></span></code></pre></div><h3 id="卸载">卸载</h3>
+<p>如果“普通”方式不工作，请使用“命令行”。</p>
+<ul>
+<li>
+<p>普通
+右击“Ubuntu xxx” 图标，选择“Uninstall”即可。</p>
+</li>
+<li>
+<p><a href="https://docs.microsoft.com/zh-cn/windows/wsl/reference">命令行</a></p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wslconfig /u
+</span></span></code></pre></div><h2 id="debian">Debian</h2>
+<p>OS: Windows 10 21h2 LTSC</p>
+<ul>
+<li>Enable Virtual Machine feature</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>dism.exe /online /enable-feature /featurename<span style="color:#960050;background-color:#1e0010">:</span>VirtualMachinePlatform /all /norestart
+</span></span></code></pre></div><h3 id="download-the-linux-kernel-update-package">Download the Linux kernel update package</h3>
+<ul>
+<li><a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">x64</a></li>
+</ul>
+<h3 id="install">install</h3>
+<ul>
+<li>v11</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Add-AppxPackage .\DistroLauncher-Appx_1.12.2.0_x64.appx
+</span></span></code></pre></div><h3 id="debian-11-to-12">Debian 11 to 12</h3>
+<p>switch root:</p> <a class="read-more" href="/csdn/post/dev_wsl_ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-09-25T12:08:08&#43;08:00">
+            25 Sep 2024
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/vc-serial_communication/">串口读写工具 - Windows</a></h2>
     </header>
     <section class="post-excerpt">
@@ -540,72 +613,6 @@ Unable to execute on ssh network side.</p>
         
         <time class="post-date" datetime="2024-03-20T00:08:08&#43;08:00">
             20 Mar 2024
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/dev_wsl_ubuntu/">使用WSL(V1.0)在Windows 10</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
-<ul>
-<li>
-<p>Arch： x64</p>
-</li>
-<li>
-<p>OS: Windows 10 1809 LTSC</p>
-<p>在powerShell的管理员模式下运行命令!</p>
-</li>
-</ul>
-<h1 id="安装卸载">安装/卸载</h1>
-<p>ON:</p>
-<pre tabindex="0"><code>Control Panel -&gt; Uninstall a program -&gt; Turn Windows features on or off, 
-勾选“Windows Subsystem for Linux”
-</code></pre><h2 id="安装ubuntu">安装Ubuntu</h2>
-<p><a href="https://learn.microsoft.com/en-us/windows/wsl/install-manual#downloading-distributions">down appx</a>:</p>
-<ul>
-<li>
-<p><a href="https://aka.ms/wslubuntu2004">Ubuntu 2004</a></p>
-</li>
-<li>
-<p><a href="https://aka.ms/wsl-ubuntu-1804">Ubuntu 1804</a></p>
-<p>从AppxBundle提取appx.</p>
-</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Add-AppxPackage .\Ubuntu_2004.xxx.appx
-</span></span></code></pre></div><h2 id="卸载">卸载</h2>
-<p>如果“普通”方式不工作，请使用“命令行”。</p>
-<h3 id="普通">普通</h3>
-<p>右击“Ubuntu xxx” 图标，选择“Uninstall”即可。</p>
-<h3 id="命令行httpsdocsmicrosoftcomzh-cnwindowswslreference"><a href="https://docs.microsoft.com/zh-cn/windows/wsl/reference">命令行</a></h3>
-<blockquote>
-<p>v1803-v1809</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wslconfig /u
-</span></span></code></pre></div><h1 id="使用">使用</h1>
-<p>更改源列表:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/apt/sources.list
-</span></span></code></pre></div><pre tabindex="0"><code>http://archive.ubuntu.com -&gt; https://mirrors.aliyun.com/ubuntu/
-</code></pre><h2 id="文件互访">文件互访</h2>
-<p>首先，使用windows记事本，建立一个testTxtFile.txt； <br>
-然后，在WSL查看文件内容。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /mnt/c/Users/tdtc/
-</span></span><span style="display:flex;"><span>vi testTxtFile.txt
-</span></span></code></pre></div><p>最后，用WSL重命名文件名:</p> <a class="read-more" href="/csdn/post/dev_wsl_ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2024-03-15T12:08:08&#43;08:00">
-            15 Mar 2024
         </time>
     </footer>
 </article>
