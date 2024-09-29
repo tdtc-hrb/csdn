@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.134.3">
+    <meta name="generator" content="Hugo 0.135.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -205,6 +205,47 @@ PC has serial device</p>
         
         <time class="post-date" datetime="2024-09-23T10:08:08&#43;08:00">
             23 Sep 2024
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/apt-oper-ubuntu/">apt的安装问题</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>apt适合手动输入(有交互); apt-get适合脚本(无交互).</p>
+<p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
+<h1 id="manage">Manage</h1>
+<h2 id="卸载">卸载</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get autoremove vsftpd --purge
+</span></span></code></pre></div><h2 id="安装指定版本">安装指定版本</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get install &lt;package name&gt;<span style="color:#f92672">=</span>&lt;version&gt;
+</span></span></code></pre></div><h2 id="列出版本">列出版本</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-cache madison &lt;&lt;package name&gt;&gt;
+</span></span></code></pre></div><h1 id="debian">DebIan</h1>
+<h2 id="sudo">sudo</h2>
+<p>sudo.d(directory):</p>
+<pre tabindex="0"><code>Note also, that becasuse sudoers contents can vary widely, no attempt is made to add this 
+directive to existing sudoers files on upgrade. Feel free to add the above directive to the 
+end of your /etc/sudoers file to enabe this functionality for existing installations if you 
+wish! Sudo versions older than the one in Debian 11(bullseye) require the directive will only 
+support the old syntax #includedir, and the current sudo will happily accept both @includedir 
+and #includedir
+</code></pre><h3 id="install">install</h3>
+<p>using root:</p> <a class="read-more" href="/csdn/post/apt-oper-ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-09-21T02:20:39&#43;08:00">
+            21 Sep 2024
         </time>
     </footer>
 </article>
@@ -448,47 +489,6 @@ or by including mysql_native_password=ON in the <code>[mysqld]</code> section of
         
         <time class="post-date" datetime="2024-04-09T12:38:08&#43;08:00">
             9 Apr 2024
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/apt-oper-ubuntu/">apt的安装问题</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><p>apt适合手动输入(有交互); apt-get适合脚本(无交互).</p>
-<p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
-<h1 id="manage">Manage</h1>
-<h2 id="卸载">卸载</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get autoremove vsftpd --purge
-</span></span></code></pre></div><h2 id="安装指定版本">安装指定版本</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get install &lt;package name&gt;<span style="color:#f92672">=</span>&lt;version&gt;
-</span></span></code></pre></div><h2 id="列出版本">列出版本</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-cache madison &lt;&lt;package name&gt;&gt;
-</span></span></code></pre></div><h1 id="debian">DebIan</h1>
-<h2 id="sudo">sudo</h2>
-<p>sudo.d(directory):</p>
-<pre tabindex="0"><code>Note also, that becasuse sudoers contents can vary widely, no attempt is made to add this 
-directive to existing sudoers files on upgrade. Feel free to add the above directive to the 
-end of your /etc/sudoers file to enabe this functionality for existing installations if you 
-wish! Sudo versions older than the one in Debian 11(bullseye) require the directive will only 
-support the old syntax #includedir, and the current sudo will happily accept both @includedir 
-and #includedir
-</code></pre><h3 id="install">install</h3>
-<p>using root:</p> <a class="read-more" href="/csdn/post/apt-oper-ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2024-03-21T02:20:39&#43;08:00">
-            21 Mar 2024
         </time>
     </footer>
 </article>

@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="apt安装中使用到卸载、安装指定版本、以及查看deb版本" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2024-03-21T02:20:39&#43;08:00" />
+    <meta property="article:published_time" content="2024-09-21T02:20:39&#43;08:00" />
 
     
     
@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.134.3">
+    <meta name="generator" content="Hugo 0.135.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/apt-oper-ubuntu/" />
 
@@ -92,15 +92,15 @@
     },
     "headline": "apt的安装问题",
     "name": "apt的安装问题",
-    "wordCount":  169 ,
+    "wordCount":  175 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/apt-oper-ubuntu/",
-    "datePublished": "2024-03-21T02:20Z",
-    "dateModified": "2024-03-21T02:20Z",
+    "datePublished": "2024-09-21T02:20Z",
+    "dateModified": "2024-09-21T02:20Z",
     
     
     "description": "apt安装中使用到卸载、安装指定版本、以及查看deb版本",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2024-03-21T02:20:39&#43;08:00">
-            Mar 21, 2024
+          <time class="post-date" datetime="2024-09-21T02:20:39&#43;08:00">
+            Sep 21, 2024
           </time>
         
          
@@ -202,8 +202,10 @@ and #includedir
 <pre tabindex="0"><code class="language-sudo" data-lang="sudo">apt install sudo
 </code></pre><h3 id="manual">manual</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod <span style="color:#ae81ff">640</span> /etc/sudoers
+</span></span><span style="display:flex;"><span>nano /etc/sudoers
 </span></span></code></pre></div><p>在配置文件/etc/sudoers加入：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tdtc ALL<span style="color:#f92672">=(</span>ALL:ALL<span style="color:#f92672">)</span> ALL
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># User privilege specification</span>
+</span></span><span style="display:flex;"><span>tdtc ALL<span style="color:#f92672">=(</span>ALL:ALL<span style="color:#f92672">)</span> ALL
 </span></span></code></pre></div><p>把文件权限改为只读:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod <span style="color:#ae81ff">440</span> /etc/sudoers
 </span></span></code></pre></div><h2 id="cd-rom-in-source">CD-ROM in source</h2>
@@ -275,17 +277,17 @@ $ sudo apt update
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_tomcat/">
+      <a class="read-next-story" style="no-cover" href="/csdn/post/vc-serial_communication/">
           <section class="post">
-              <h2>Tomcat安装</h2>
+              <h2>串口读写工具 - Windows</h2>
               
           </section>
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_sudo/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/mysql57-win/">
           <section class="post">
-              <h2>开启sudo</h2>
+              <h2>安装配置MySQL 5.7</h2>
           </section>
       </a>
   
