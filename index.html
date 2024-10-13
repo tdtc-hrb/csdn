@@ -199,6 +199,163 @@
     
         <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_tomcat/">Tomcat安装</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Servlet Spec</th>
+          <th style="text-align: left">JSP Spec</th>
+          <th style="text-align: left">EL Spec</th>
+          <th style="text-align: left">WebSocket Spec</th>
+          <th style="text-align: left">Authentication (JASIC) Spec</th>
+          <th style="text-align: left">Apache Tomcat Version</th>
+          <th style="text-align: left">Latest Released Version</th>
+          <th style="text-align: left">Supported Java Versions</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">6.1</td>
+          <td style="text-align: left">4.0</td>
+          <td style="text-align: left">6.0</td>
+          <td style="text-align: left">2.2</td>
+          <td style="text-align: left">3.1</td>
+          <td style="text-align: left">11.0.x</td>
+          <td style="text-align: left">11.0.0</td>
+          <td style="text-align: left">17 and later</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">3.1</td>
+          <td style="text-align: left">2.3</td>
+          <td style="text-align: left">3.0</td>
+          <td style="text-align: left">1.1</td>
+          <td style="text-align: left">1.1</td>
+          <td style="text-align: left">8.5.x</td>
+          <td style="text-align: left"><a href="https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.100/bin/apache-tomcat-8.5.100.zip">8.5.100</a></td>
+          <td style="text-align: left">7 and later</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">2.5</td>
+          <td style="text-align: left">2.1</td>
+          <td style="text-align: left">2.1</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">6.0.x</td>
+          <td style="text-align: left"><a href="https://archive.apache.org/dist/tomcat/tomcat-6/v6.0.53/bin/apache-tomcat-6.0.53.zip">6.0.53</a></td>
+          <td style="text-align: left">5 and later</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">2.4</td>
+          <td style="text-align: left">2.0</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">5.5.x</td>
+          <td style="text-align: left"><a href="https://archive.apache.org/dist/tomcat/tomcat-5/v5.5.36/bin/apache-tomcat-5.5.36.zip">5.5.36</a></td>
+          <td style="text-align: left">1.4 and later</td>
+      </tr>
+  </tbody>
+</table>
+<h1 id="installation">installation</h1>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Platform version</th>
+          <th style="text-align: left">Released</th>
+          <th style="text-align: left">Specification</th>
+          <th style="text-align: left">Java SE Support</th>
+          <th style="text-align: left">Important Changes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Jakarta EE 10</td>
+          <td style="text-align: left">2022-03-31</td>
+          <td style="text-align: left">10</td>
+          <td style="text-align: left">Java SE 17/Java SE 11</td>
+          <td style="text-align: left">Removal of deprecated items in Servlet, Faces, CDI and EJB (Entity Beans and Embeddable Container). CDI-Build Time.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Jakarta EE 9.1</td>
+          <td style="text-align: left">2021-05-25</td>
+          <td style="text-align: left">9.1</td>
+          <td style="text-align: left">Java SE 11/Java SE 8</td>
+          <td style="text-align: left">JDK 11 support</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Jakarta EE 9</td>
+          <td style="text-align: left">2020-12-08</td>
+          <td style="text-align: left">9</td>
+          <td style="text-align: left">Java SE 8</td>
+          <td style="text-align: left">API namespace move from javax to jakarta</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Jakarta EE 8</td>
+          <td style="text-align: left">2019-09-10</td>
+          <td style="text-align: left">8</td>
+          <td style="text-align: left">Java SE 8</td>
+          <td style="text-align: left">Full compatiblity with Java EE 8</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Java EE 8</td>
+          <td style="text-align: left">2017-08-31</td>
+          <td style="text-align: left">JSR 366</td>
+          <td style="text-align: left">Java SE 8</td>
+          <td style="text-align: left">HTTP/2 and CDI based Security</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Java EE 7</td>
+          <td style="text-align: left">2013-05-28</td>
+          <td style="text-align: left">JSR 342</td>
+          <td style="text-align: left">Java SE 7</td>
+          <td style="text-align: left">WebSocket, JSON and HTML5 support</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Java EE 6</td>
+          <td style="text-align: left">2009-12-10</td>
+          <td style="text-align: left">JSR 316</td>
+          <td style="text-align: left">Java SE 6</td>
+          <td style="text-align: left">CDI managed Beans and REST</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Java EE 5</td>
+          <td style="text-align: left">2006-05-11</td>
+          <td style="text-align: left">JSR 244</td>
+          <td style="text-align: left">Java SE 5</td>
+          <td style="text-align: left">Java annotations</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="安装jdk">安装JDK</h2>
+<ul>
+<li>RHEL Community <br>
+参见 <a href="https://tdtc-hrb.github.io/cnblogs/post/ops_openjdk_rhel/">设置OpenJDK - RHEL</a></li>
+<li>Ubuntu <br>
+参见 <a href="https://tdtc-hrb.github.io/csdn/post/ops_openjdk_ubuntu/">设置OpenJDK - Ubuntu</a></li>
+</ul>
+<h2 id="安装tomcat">安装Tomcat</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo dnf install wget tar
+</span></span></code></pre></div><p>下载(choose one):</p> <a class="read-more" href="/csdn/post/ops_tomcat/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-10-12T12:38:08&#43;08:00">
+            12 Oct 2024
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/dev_wsl_ubuntu/">使用 WSL 在Windows 10</a></h2>
     </header>
     <section class="post-excerpt">
@@ -441,163 +598,6 @@ or by including mysql_native_password=ON in the <code>[mysqld]</code> section of
         
         <time class="post-date" datetime="2024-04-30T06:08:39&#43;08:00">
             30 Apr 2024
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_tomcat/">Tomcat安装</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Servlet Spec</th>
-          <th style="text-align: left">JSP Spec</th>
-          <th style="text-align: left">EL Spec</th>
-          <th style="text-align: left">WebSocket Spec</th>
-          <th style="text-align: left">Authentication (JASIC) Spec</th>
-          <th style="text-align: left">Apache Tomcat Version</th>
-          <th style="text-align: left">Latest Released Version</th>
-          <th style="text-align: left">Supported Java Versions</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">6.0</td>
-          <td style="text-align: left">3.1</td>
-          <td style="text-align: left">5.0</td>
-          <td style="text-align: left">2.1</td>
-          <td style="text-align: left">3.0</td>
-          <td style="text-align: left">10.1.x</td>
-          <td style="text-align: left">10.1.20</td>
-          <td style="text-align: left">11 and later</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">3.1</td>
-          <td style="text-align: left">2.3</td>
-          <td style="text-align: left">3.0</td>
-          <td style="text-align: left">1.1</td>
-          <td style="text-align: left">1.1</td>
-          <td style="text-align: left">8.5.x</td>
-          <td style="text-align: left"><a href="https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.100/bin/apache-tomcat-8.5.100.zip">8.5.100</a></td>
-          <td style="text-align: left">7 and later</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">2.5</td>
-          <td style="text-align: left">2.1</td>
-          <td style="text-align: left">2.1</td>
-          <td style="text-align: left">N/A</td>
-          <td style="text-align: left">N/A</td>
-          <td style="text-align: left">6.0.x</td>
-          <td style="text-align: left"><a href="https://archive.apache.org/dist/tomcat/tomcat-6/v6.0.53/bin/apache-tomcat-6.0.53.zip">6.0.53</a></td>
-          <td style="text-align: left">5 and later</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">2.4</td>
-          <td style="text-align: left">2.0</td>
-          <td style="text-align: left">N/A</td>
-          <td style="text-align: left">N/A</td>
-          <td style="text-align: left">N/A</td>
-          <td style="text-align: left">5.5.x</td>
-          <td style="text-align: left"><a href="https://archive.apache.org/dist/tomcat/tomcat-5/v5.5.36/bin/apache-tomcat-5.5.36.zip">5.5.36</a></td>
-          <td style="text-align: left">1.4 and later</td>
-      </tr>
-  </tbody>
-</table>
-<h1 id="installation">installation</h1>
-<table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Platform version</th>
-          <th style="text-align: left">Released</th>
-          <th style="text-align: left">Specification</th>
-          <th style="text-align: left">Java SE Support</th>
-          <th style="text-align: left">Important Changes</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">Jakarta EE 10</td>
-          <td style="text-align: left">2022-03-31</td>
-          <td style="text-align: left">10</td>
-          <td style="text-align: left">Java SE 17/Java SE 11</td>
-          <td style="text-align: left">Removal of deprecated items in Servlet, Faces, CDI and EJB (Entity Beans and Embeddable Container). CDI-Build Time.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Jakarta EE 9.1</td>
-          <td style="text-align: left">2021-05-25</td>
-          <td style="text-align: left">9.1</td>
-          <td style="text-align: left">Java SE 11/Java SE 8</td>
-          <td style="text-align: left">JDK 11 support</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Jakarta EE 9</td>
-          <td style="text-align: left">2020-12-08</td>
-          <td style="text-align: left">9</td>
-          <td style="text-align: left">Java SE 8</td>
-          <td style="text-align: left">API namespace move from javax to jakarta</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Jakarta EE 8</td>
-          <td style="text-align: left">2019-09-10</td>
-          <td style="text-align: left">8</td>
-          <td style="text-align: left">Java SE 8</td>
-          <td style="text-align: left">Full compatiblity with Java EE 8</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Java EE 8</td>
-          <td style="text-align: left">2017-08-31</td>
-          <td style="text-align: left">JSR 366</td>
-          <td style="text-align: left">Java SE 8</td>
-          <td style="text-align: left">HTTP/2 and CDI based Security</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Java EE 7</td>
-          <td style="text-align: left">2013-05-28</td>
-          <td style="text-align: left">JSR 342</td>
-          <td style="text-align: left">Java SE 7</td>
-          <td style="text-align: left">WebSocket, JSON and HTML5 support</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Java EE 6</td>
-          <td style="text-align: left">2009-12-10</td>
-          <td style="text-align: left">JSR 316</td>
-          <td style="text-align: left">Java SE 6</td>
-          <td style="text-align: left">CDI managed Beans and REST</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Java EE 5</td>
-          <td style="text-align: left">2006-05-11</td>
-          <td style="text-align: left">JSR 244</td>
-          <td style="text-align: left">Java SE 5</td>
-          <td style="text-align: left">Java annotations</td>
-      </tr>
-  </tbody>
-</table>
-<h2 id="安装jdk">安装JDK</h2>
-<ul>
-<li>RHEL Community <br>
-参见 <a href="https://tdtc-hrb.github.io/cnblogs/post/ops_openjdk_rhel/">设置OpenJDK - RHEL</a></li>
-<li>Ubuntu <br>
-参见 <a href="https://tdtc-hrb.github.io/csdn/post/ops_openjdk_ubuntu/">设置OpenJDK - Ubuntu</a></li>
-</ul>
-<h2 id="安装tomcat">安装Tomcat</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo dnf install wget tar
-</span></span></code></pre></div><p>下载(choose one):</p> <a class="read-more" href="/csdn/post/ops_tomcat/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2024-04-09T12:38:08&#43;08:00">
-            9 Apr 2024
         </time>
     </footer>
 </article>

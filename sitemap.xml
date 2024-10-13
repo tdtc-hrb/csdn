@@ -3,12 +3,15 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://tdtc-hrb.github.io/csdn/post/</loc>
-    <lastmod>2024-10-02T18:08:08+08:00</lastmod>
+    <lastmod>2024-10-12T12:38:08+08:00</lastmod>
   </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/dev_wsl_ubuntu/</loc>
-    <lastmod>2024-10-02T18:08:08+08:00</lastmod>
+    <loc>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</loc>
+    <lastmod>2024-10-12T12:38:08+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/</loc>
+    <lastmod>2024-10-12T12:38:08+08:00</lastmod>
+  </url><url>
+    <loc>https://tdtc-hrb.github.io/csdn/post/dev_wsl_ubuntu/</loc>
     <lastmod>2024-10-02T18:08:08+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/vc-serial_communication/</loc>
@@ -22,9 +25,6 @@
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/mysql84-install/</loc>
     <lastmod>2024-04-30T06:08:39+08:00</lastmod>
-  </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</loc>
-    <lastmod>2024-04-09T12:38:08+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/ops_sudo/</loc>
     <lastmod>2024-03-20T00:08:08+08:00</lastmod>
