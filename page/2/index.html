@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Hugo 0.136.5">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -197,6 +197,71 @@
     
         <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_network_adapter_linux/">Linux修改网卡为固定IP</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><ul>
+<li>RHEL</li>
+<li>Diban <br>
+Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</li>
+</ul>
+<h1 id="rhel-like">RHEL-like</h1>
+<ul>
+<li>Alma/Rocky</li>
+<li>CentOS <br>
+Less than RHEL version 8</li>
+</ul>
+<h2 id="view">View</h2>
+<p>net adapter list:</p>
+<pre tabindex="0"><code>$cd /etc/sysconfig/network-scripts
+$ls ifcfg-* -l
+</code></pre><h3 id="ipv4">ipv4</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ip addr
+</span></span></code></pre></div><h3 id="ipv6">ipv6</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ip -6 addr
+</span></span></code></pre></div><h2 id="setup">Setup</h2>
+<p>Start job network adapter:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ONBOOT<span style="color:#f92672">=</span>yes
+</span></span></code></pre></div><h3 id="static">static</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cd /etc/sysconfig/network-scripts
+</span></span><span style="display:flex;"><span>$sudo vi ifcfg-enp0s3
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>BOOTPROTO<span style="color:#f92672">=</span>none
+</span></span><span style="display:flex;"><span>IPADDR<span style="color:#f92672">=</span>192.168.1.186
+</span></span><span style="display:flex;"><span>PREFIX<span style="color:#f92672">=</span><span style="color:#ae81ff">24</span>
+</span></span><span style="display:flex;"><span>GATEWAY<span style="color:#f92672">=</span>192.168.1.1
+</span></span><span style="display:flex;"><span>DNS1<span style="color:#f92672">=</span>211.161.191.235
+</span></span><span style="display:flex;"><span>DNS2<span style="color:#f92672">=</span>211.161.122.197
+</span></span></code></pre></div><h3 id="ipv6-network">IPv6 Network</h3>
+<ul>
+<li>IPV6INIT=yes <br>
+This initializes the interface for IPv6 addressing.</li>
+<li>IPV6_AUTOCONF=yes <br>
+This enables the IPv6 auto-configuration for the interface.</li>
+<li>IPV6_DEFROUTE=yes <br>
+This indicates that the default IPv6 route has been assigned to the interface.</li>
+<li>IPV6_FAILURE_FATAL=no <br>
+indicates that the system won’t fail even when IPv6 fails.</li>
+</ul>
+<h3 id="virtual-machine">virtual machine</h3>
+<p>设置Network Adapter为Bridged</p> <a class="read-more" href="/csdn/post/ops_network_adapter_linux/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-03-12T08:38:08&#43;08:00">
+            12 Mar 2024
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_dc_redis_ubuntu/">安装redis-server</a></h2>
     </header>
     <section class="post-excerpt">
@@ -316,76 +381,76 @@ echo &#34;deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://
 <table>
   <thead>
       <tr>
-          <th style="text-align: left">code</th>
-          <th style="text-align: left">version</th>
-          <th style="text-align: left">status</th>
+          <th>code</th>
+          <th>version</th>
+          <th>status</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left">bullseye</td>
-          <td style="text-align: left">11</td>
-          <td style="text-align: left">statble</td>
+          <td>bullseye</td>
+          <td>11</td>
+          <td>statble</td>
       </tr>
       <tr>
-          <td style="text-align: left">buster</td>
-          <td style="text-align: left">10</td>
-          <td style="text-align: left">old statble</td>
+          <td>buster</td>
+          <td>10</td>
+          <td>old statble</td>
       </tr>
       <tr>
-          <td style="text-align: left">stretch</td>
-          <td style="text-align: left">9</td>
-          <td style="text-align: left">old old statble</td>
+          <td>stretch</td>
+          <td>9</td>
+          <td>old old statble</td>
       </tr>
       <tr>
-          <td style="text-align: left">jessie</td>
-          <td style="text-align: left">8</td>
-          <td style="text-align: left">archived</td>
+          <td>jessie</td>
+          <td>8</td>
+          <td>archived</td>
       </tr>
       <tr>
-          <td style="text-align: left">wheezy</td>
-          <td style="text-align: left">7</td>
-          <td style="text-align: left">obsolete</td>
+          <td>wheezy</td>
+          <td>7</td>
+          <td>obsolete</td>
       </tr>
       <tr>
-          <td style="text-align: left">squeeze</td>
-          <td style="text-align: left">6.0</td>
-          <td style="text-align: left">obsolete</td>
+          <td>squeeze</td>
+          <td>6.0</td>
+          <td>obsolete</td>
       </tr>
       <tr>
-          <td style="text-align: left">lenny</td>
-          <td style="text-align: left">5.0</td>
-          <td style="text-align: left">obsolete</td>
+          <td>lenny</td>
+          <td>5.0</td>
+          <td>obsolete</td>
       </tr>
       <tr>
-          <td style="text-align: left">etch</td>
-          <td style="text-align: left">4.0</td>
-          <td style="text-align: left">obsolete</td>
+          <td>etch</td>
+          <td>4.0</td>
+          <td>obsolete</td>
       </tr>
       <tr>
-          <td style="text-align: left">sarge</td>
-          <td style="text-align: left">3.1</td>
-          <td style="text-align: left">obsolete</td>
+          <td>sarge</td>
+          <td>3.1</td>
+          <td>obsolete</td>
       </tr>
       <tr>
-          <td style="text-align: left">woody</td>
-          <td style="text-align: left">3.0</td>
-          <td style="text-align: left">obsolete</td>
+          <td>woody</td>
+          <td>3.0</td>
+          <td>obsolete</td>
       </tr>
       <tr>
-          <td style="text-align: left">potato</td>
-          <td style="text-align: left">2.2</td>
-          <td style="text-align: left">obsolete</td>
+          <td>potato</td>
+          <td>2.2</td>
+          <td>obsolete</td>
       </tr>
       <tr>
-          <td style="text-align: left">slink</td>
-          <td style="text-align: left">2.1</td>
-          <td style="text-align: left">obsolete</td>
+          <td>slink</td>
+          <td>2.1</td>
+          <td>obsolete</td>
       </tr>
       <tr>
-          <td style="text-align: left">hamm</td>
-          <td style="text-align: left">2.0</td>
-          <td style="text-align: left">obsolete</td>
+          <td>hamm</td>
+          <td>2.0</td>
+          <td>obsolete</td>
       </tr>
   </tbody>
 </table> <a class="read-more" href="/csdn/post/version-ubuntu/">&raquo;</a></p>
@@ -767,26 +832,26 @@ No
 <table>
   <thead>
       <tr>
-          <th style="text-align: left">名称</th>
-          <th style="text-align: left">VS版本</th>
+          <th>名称</th>
+          <th>VS版本</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left">msvc-14.0</td>
-          <td style="text-align: left">VS2015</td>
+          <td>msvc-14.0</td>
+          <td>VS2015</td>
       </tr>
       <tr>
-          <td style="text-align: left">msvc-14.1</td>
-          <td style="text-align: left">VS2017</td>
+          <td>msvc-14.1</td>
+          <td>VS2017</td>
       </tr>
       <tr>
-          <td style="text-align: left">msvc-14.2</td>
-          <td style="text-align: left">VS2019</td>
+          <td>msvc-14.2</td>
+          <td>VS2019</td>
       </tr>
       <tr>
-          <td style="text-align: left">msvc-14.3</td>
-          <td style="text-align: left">VS2022</td>
+          <td>msvc-14.3</td>
+          <td>VS2022</td>
       </tr>
   </tbody>
 </table>
@@ -910,118 +975,6 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\i8042prt\Parameters</p>
         
         <time class="post-date" datetime="2023-08-18T08:08:08&#43;08:00">
             18 Aug 2023
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/c-automake/">生成makefile</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><ul>
-<li>automake</li>
-<li>manual make</li>
-</ul>
-<h1 id="automake">automake</h1>
-<p>注意: am文件是需要手工创建的!</p>
-<h2 id="ac文件">ac文件</h2>
-<p>生成configure.scan文件, 并重命名为configure.ac</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ autoscan
-</span></span><span style="display:flex;"><span>$ mv configure.scan configure.ac
-</span></span></code></pre></div><h3 id="修改配置">修改配置</h3>
-<p>注意: 所有新修改的值都需要方括号([])</p>
-<ul>
-<li>程序属性</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_INIT<span style="color:#f92672">([</span>hex2int<span style="color:#f92672">]</span>, <span style="color:#f92672">[</span>v0.1<span style="color:#f92672">]</span>, <span style="color:#f92672">[</span>veic_2005@163.com<span style="color:#f92672">])</span>
-</span></span></code></pre></div><ul>
-<li>目录结构
-如果只有本目录, 使用空值</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AM_INIT_AUTOMAKE
-</span></span></code></pre></div><ul>
-<li>检查编译器
-<a href="http://www.adp-gmbh.ch/misc/tools/configure/configure_in.html#ac_prog_cc">C compiler</a>:</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_PROG_CC
-</span></span></code></pre></div><p><a href="http://www.adp-gmbh.ch/misc/tools/configure/configure_in.html#ac_prog_cxx">C++ compiler</a>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_PROG_CXX
-</span></span></code></pre></div><ul>
-<li><a href="https://www.gnu.org/software/autoconf/manual/autoconf-2.71/html_node/Configuration-Files.html">输出Makefile.in</a></li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_CONFIG_FILES<span style="color:#f92672">([</span>Makefile<span style="color:#f92672">])</span>
-</span></span></code></pre></div><ul>
-<li>检查system头文件</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_CHECK_HEADERS<span style="color:#f92672">([</span>string.h<span style="color:#f92672">])</span>
-</span></span></code></pre></div><h2 id="生成makefile">生成Makefile</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aclocal
-</span></span><span style="display:flex;"><span>autoconf
-</span></span></code></pre></div><h3 id="自定义宏可选">自定义宏(可选)</h3>
-<p>在ac file中的定义：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_CONFIG_HEADERS<span style="color:#f92672">([</span>config.h<span style="color:#f92672">])</span>
-</span></span></code></pre></div><p>执行：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>autoheader
-</span></span></code></pre></div><h3 id="输出makefile">输出Makefile</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>automake --add-missing
-</span></span></code></pre></div><p>输出Makefile:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./configure
-</span></span></code></pre></div><h2 id="example">Example</h2>
-<p>源代码参见<a href="https://tdtc-hrb.github.io/csdn/post/c-string-h2i/">十六进制转十进制</a></p>
-<ul>
-<li>main.c <br>
-只保留主程序入口</li>
-<li>hex2int.c <br>
-保留整个程序的结构</li>
-<li>hex2int.h <br>
-函数名声明</li>
-</ul>
-<h3 id="makefileam">Makefile.am</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AUTOMAKE_OPTIONS<span style="color:#f92672">=</span>foreign
-</span></span><span style="display:flex;"><span>bin_PROGRAMS<span style="color:#f92672">=</span>hex2int
-</span></span><span style="display:flex;"><span>hex2int_SOURCES<span style="color:#f92672">=</span>main.c hex2int.c
-</span></span><span style="display:flex;"><span>include_HEADERS<span style="color:#f92672">=</span>hex2int.h
-</span></span></code></pre></div><h3 id="configureac">configure.ac</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#                                               -*- Autoconf -*-</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Process this file with autoconf to produce a configure script.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>AC_PREREQ<span style="color:#f92672">([</span>2.71<span style="color:#f92672">])</span>
-</span></span><span style="display:flex;"><span>AC_INIT<span style="color:#f92672">([</span>hex2int<span style="color:#f92672">]</span>, <span style="color:#f92672">[</span>v0.1<span style="color:#f92672">]</span>, <span style="color:#f92672">[</span>veic_2005@163.com<span style="color:#f92672">])</span>
-</span></span><span style="display:flex;"><span>AM_INIT_AUTOMAKE
-</span></span><span style="display:flex;"><span>AC_CONFIG_SRCDIR<span style="color:#f92672">([</span>hex2int.c<span style="color:#f92672">])</span>
-</span></span><span style="display:flex;"><span>AC_CONFIG_HEADERS<span style="color:#f92672">([</span>config.h<span style="color:#f92672">])</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Checks for programs.</span>
-</span></span><span style="display:flex;"><span>AC_PROG_CC
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Checks for libraries.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Checks for header files.</span>
-</span></span><span style="display:flex;"><span>AC_CHECK_HEADERS<span style="color:#f92672">([</span>string.h<span style="color:#f92672">])</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Checks for typedefs, structures, and compiler characteristics.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Checks for library functions.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>AC_CONFIG_FILES<span style="color:#f92672">([</span>Makefile<span style="color:#f92672">])</span>
-</span></span><span style="display:flex;"><span>AC_OUTPUT
-</span></span></code></pre></div><h1 id="手动makefile">手动Makefile</h1>
-<blockquote>
-<p>小项目可以。
-注意：所有的命令前必须为TAB，不能使空格！</p> <a class="read-more" href="/csdn/post/c-automake/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-08-08T02:20:39&#43;08:00">
-            8 Aug 2023
         </time>
     </footer>
 </article>

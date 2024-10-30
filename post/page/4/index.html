@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Hugo 0.136.5">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -341,41 +341,41 @@ Ubuntu 14.04(x64)</p>
 <table>
   <thead>
       <tr>
-          <th style="text-align: left"></th>
-          <th style="text-align: left">VM &lt;-&gt; Host</th>
-          <th style="text-align: left">VM1 &lt;-&gt; VM2</th>
-          <th style="text-align: left">VM -&gt; Internet</th>
-          <th style="text-align: left">VM &lt;- Internet</th>
+          <th></th>
+          <th>VM &lt;-&gt; Host</th>
+          <th>VM1 &lt;-&gt; VM2</th>
+          <th>VM -&gt; Internet</th>
+          <th>VM &lt;- Internet</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left">HostOnly</td>
-          <td style="text-align: left">Yes</td>
-          <td style="text-align: left">Yes</td>
-          <td style="text-align: left">No</td>
-          <td style="text-align: left">No</td>
+          <td>HostOnly</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>No</td>
       </tr>
       <tr>
-          <td style="text-align: left">Internal</td>
-          <td style="text-align: left">No</td>
-          <td style="text-align: left">Yes</td>
-          <td style="text-align: left">No</td>
-          <td style="text-align: left">No</td>
+          <td>Internal</td>
+          <td>No</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>No</td>
       </tr>
       <tr>
-          <td style="text-align: left">Bridged</td>
-          <td style="text-align: left">Yes</td>
-          <td style="text-align: left">Yes</td>
-          <td style="text-align: left">Yes</td>
-          <td style="text-align: left">Yes</td>
+          <td>Bridged</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes</td>
       </tr>
       <tr>
-          <td style="text-align: left">NAT</td>
-          <td style="text-align: left">No</td>
-          <td style="text-align: left">No</td>
-          <td style="text-align: left">Yes</td>
-          <td style="text-align: left">Port forward</td>
+          <td>NAT</td>
+          <td>No</td>
+          <td>No</td>
+          <td>Yes</td>
+          <td>Port forward</td>
       </tr>
   </tbody>
 </table>
@@ -757,106 +757,112 @@ repoInfo.dll
 <table>
   <thead>
       <tr>
-          <th style="text-align: left"></th>
-          <th style="text-align: left">server1</th>
-          <th style="text-align: left">server2</th>
-          <th style="text-align: left">server3</th>
-          <th style="text-align: left">server4</th>
+          <th></th>
+          <th>server1</th>
+          <th>server2</th>
+          <th>server3</th>
+          <th>server4</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left">NameNode</td>
-          <td style="text-align: left">y</td>
-          <td style="text-align: left">y</td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left"></td>
+          <td>NameNode</td>
+          <td>y</td>
+          <td>y</td>
+          <td></td>
+          <td></td>
       </tr>
       <tr>
-          <td style="text-align: left">DataNode</td>
-          <td style="text-align: left"> </td>
-          <td style="text-align: left">y</td>
-          <td style="text-align: left">y</td>
-          <td style="text-align: left">y</td>
+          <td>DataNode</td>
+          <td> </td>
+          <td>y</td>
+          <td>y</td>
+          <td>y</td>
       </tr>
       <tr>
-          <td style="text-align: left">ResourceManager</td>
-          <td style="text-align: left"> </td>
-          <td style="text-align: left"> </td>
-          <td style="text-align: left">y</td>
-          <td style="text-align: left">y</td>
+          <td>ResourceManager</td>
+          <td> </td>
+          <td> </td>
+          <td>y</td>
+          <td>y</td>
       </tr>
       <tr>
-          <td style="text-align: left">NodeManager</td>
-          <td style="text-align: left">y</td>
-          <td style="text-align: left">y</td>
-          <td style="text-align: left">y</td>
-          <td style="text-align: left">y</td>
+          <td>NodeManager</td>
+          <td>y</td>
+          <td>y</td>
+          <td>y</td>
+          <td>y</td>
       </tr>
       <tr>
-          <td style="text-align: left">Zookeeper</td>
-          <td style="text-align: left">y</td>
-          <td style="text-align: left">y</td>
-          <td style="text-align: left">y</td>
-          <td style="text-align: left">y</td>
+          <td>Zookeeper</td>
+          <td>y</td>
+          <td>y</td>
+          <td>y</td>
+          <td>y</td>
       </tr>
       <tr>
-          <td style="text-align: left">JournalNode</td>
-          <td style="text-align: left">y</td>
-          <td style="text-align: left">y</td>
-          <td style="text-align: left">y</td>
-          <td style="text-align: left"></td>
+          <td>JournalNode</td>
+          <td>y</td>
+          <td>y</td>
+          <td>y</td>
+          <td></td>
       </tr>
       <tr>
-          <td style="text-align: left">ZK-FC</td>
-          <td style="text-align: left">y</td>
-          <td style="text-align: left">y</td>
-          <td style="text-align: left"> </td>
-          <td style="text-align: left"> </td>
+          <td>ZK-FC</td>
+          <td>y</td>
+          <td>y</td>
+          <td> </td>
+          <td> </td>
       </tr>
       <tr>
-          <td style="text-align: left">JobHistor</td>
-          <td style="text-align: left">y</td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left"></td>
+          <td>JobHistor</td>
+          <td>y</td>
+          <td></td>
+          <td></td>
+          <td></td>
       </tr>
   </tbody>
 </table>
 <table>
   <thead>
       <tr>
-          <th style="text-align: left">Server Name</th>
-          <th style="text-align: left">IP</th>
-          <th style="text-align: left">Host Name</th>
+          <th>Server Name</th>
+          <th>IP</th>
+          <th>Host Name</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left">server1</td>
-          <td style="text-align: left">192.168.42.107</td>
-          <td style="text-align: left">tdtc201</td>
+          <td>server1</td>
+          <td>192.168.42.107</td>
+          <td>tdtc201</td>
       </tr>
       <tr>
-          <td style="text-align: left">server2</td>
-          <td style="text-align: left">192.168.42.108</td>
-          <td style="text-align: left">tdtc202</td>
+          <td>server2</td>
+          <td>192.168.42.108</td>
+          <td>tdtc202</td>
       </tr>
       <tr>
-          <td style="text-align: left">server3</td>
-          <td style="text-align: left">192.168.42.109</td>
-          <td style="text-align: left">tdtc203</td>
+          <td>server3</td>
+          <td>192.168.42.109</td>
+          <td>tdtc203</td>
       </tr>
       <tr>
-          <td style="text-align: left">server4</td>
-          <td style="text-align: left">192.168.42.110</td>
-          <td style="text-align: left">tdtc204</td>
+          <td>server4</td>
+          <td>192.168.42.110</td>
+          <td>tdtc204</td>
       </tr>
   </tbody>
 </table>
 <h2 id="1-zk">1. zk</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>zkServer.sh start
-</span></span></code></pre></div><p>安装详见《<a href="https://tdtc-hrb.github.io/csdn/post/ops_zookeeper/">ZooKeeper multi-server install</a>》</p> <a class="read-more" href="/csdn/post/ops_hadoop_cluster/">&raquo;</a></p>
+</span></span></code></pre></div><p>安装详见《<a href="https://tdtc-hrb.github.io/csdn/post/ops_zookeeper/">ZooKeeper multi-server install</a>》</p>
+<h2 id="2-open-firewallhttpstdtc-hrbgithubiocsdnpostops_firewall">2. Open <a href="https://tdtc-hrb.github.io/csdn/post/ops_firewall/">firewall</a></h2>
+<h1 id="stage-i-installation">Stage I: Installation</h1>
+<h2 id="1-unzip">1. Unzip</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/home/$USER/app/hadoop/$version
+</span></span></code></pre></div><blockquote>
+<p>路径参考<a href="https://www.tecmint.com/oracle-database-11g-release-2-installation-in-linux/">Oracle11g</a></p> <a class="read-more" href="/csdn/post/ops_hadoop_cluster/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -1135,16 +1141,16 @@ Note: The replaced program file version must be the same as the repo!</p> <a cla
 <table>
   <thead>
       <tr>
-          <th style="text-align: left">Name</th>
-          <th style="text-align: left">IP</th>
-          <th style="text-align: left">Memo</th>
+          <th>Name</th>
+          <th>IP</th>
+          <th>Memo</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left">mha1</td>
-          <td style="text-align: left">192.168.0.151</td>
-          <td style="text-align: left">Monitor host</td>
+          <td>mha1</td>
+          <td>192.168.0.151</td>
+          <td>Monitor host</td>
       </tr>
   </tbody>
 </table>
