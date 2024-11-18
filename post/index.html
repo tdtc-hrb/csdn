@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.136.5">
+    <meta name="generator" content="Hugo 0.138.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -158,6 +158,157 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/com-wizards-vc/">VC 创建 Component Object Model</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>Use Visual Studio&rsquo;s wizard to create COM</p>
+<ul>
+<li>Visual Studio 2013</li>
+<li>Visual Studio 2015</li>
+<li>Visual Studio 2017/2019/2022</li>
+</ul>
+<p>step by step:</p>
+<ul>
+<li>建立ATL工程</li>
+<li>建立ATL Simple Object</li>
+<li>添加IDL方法</li>
+<li>测试添加的method</li>
+</ul>
+<h1 id="建立atl工程">建立ATL工程</h1>
+<p>File-&gt;New-&gt;Project</p>
+<!-- vs2017: https://gitee.com/xiaobin80/csdn/raw/master/images/20200201162120769.png -->
+<!-- vs2013: https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new1(vs2013).png -->
+<!-- vs2015: https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new1(vs2015).png -->
+<pre tabindex="0"><code>name: testATL
+</code></pre><p>Note: name即是要生成的DLL文件 <br>
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new1(vs2019).png" alt="project type">
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new2(vs2019).png" alt="project name"></p>
+<p>选择&quot;MFC/ATL&quot;中&quot;ATL Project&quot;:</p>
+<blockquote>
+<p>Default</p>
+</blockquote>
+<!-- vs2017: https://gitee.com/xiaobin80/csdn/raw/master/images/20200201171441614.png -->
+<!-- vs2013: https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new2(vs2013).png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new3(vs2019).png" alt="project property"></p>
+<h3 id="取消编译时注册dll">取消编译时注册Dll</h3>
+<blockquote>
+<p>Project -&gt; Properties</p>
+</blockquote>
+<ul>
+<li>vs2022-</li>
+</ul>
+<pre tabindex="0"><code>Linker -&gt; Register Output
+No
+</code></pre><ul>
+<li>vs2022</li>
+</ul>
+<pre tabindex="0"><code>Linker -&gt; All Options -&gt; 
+Register Output: No
+</code></pre><h2 id="add-atl-simple-object">Add ATL Simple Object</h2>
+<blockquote>
+<p>右击项目名称</p> <a class="read-more" href="/csdn/post/com-wizards-vc/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-11-17T23:08:08&#43;08:00">
+            17 Nov 2024
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/com-ie-test/">使用IE测试COM</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><ul>
+<li>IDE <br>
+Visual Studio 2017(v15.9)/Visual Studio 2019(v16.11)/Visual Studio 2022(v17.12+)</li>
+</ul>
+<p>本文参考: <a href="https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/">创建COM</a></p>
+<h1 id="一创建com">一、创建COM</h1>
+<p>增加IE支持： IObjectWithSite</p>
+<!-- VS2010: https://github.com/tdtc-hrb/csdn/raw/master/images/20140420153532328.png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-simple4.png" alt="atl simple object - Support"></p>
+<h2 id="增加方法">增加方法</h2>
+<!-- VS2010: https://github.com/tdtc-hrb/csdn/raw/master/images/20140420160424359.png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-interface3.png" alt="atl interface - list"></p>
+<h3 id="add">Add</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>STDMETHODIMP CtestSOW<span style="color:#f92672">::</span>Add(LONG x, LONG y, LONG<span style="color:#f92672">*</span> ret)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// TODO: Add your implementation code here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span>ret <span style="color:#f92672">=</span> (x <span style="color:#f92672">+</span> y);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> S_OK;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="subtract">Subtract</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>STDMETHODIMP CtestSOW<span style="color:#f92672">::</span>Sub(LONG x, LONG y, LONG<span style="color:#f92672">*</span> ret)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// TODO: Add your implementation code here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span>ret <span style="color:#f92672">=</span> (x <span style="color:#f92672">-</span> y);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> S_OK;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="multiply">Multiply</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>STDMETHODIMP CtestSOW<span style="color:#f92672">::</span>Mul(LONG x, LONG y, LONG<span style="color:#f92672">*</span> ret)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// TODO: Add your implementation code here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span>ret <span style="color:#f92672">=</span> (x <span style="color:#f92672">*</span> y);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> S_OK;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="divide">Divide</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>STDMETHODIMP CtestSOW<span style="color:#f92672">::</span>Div(LONG x, LONG y, LONG<span style="color:#f92672">*</span> ret)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// TODO: Add your implementation code here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span>ret <span style="color:#f92672">=</span> (x <span style="color:#f92672">/</span> y);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> S_OK;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="modulo">Modulo</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>STDMETHODIMP CtestSOW<span style="color:#f92672">::</span>Mod(LONG x, LONG y, LONG<span style="color:#f92672">*</span> ret)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// TODO: Add your implementation code here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span>ret <span style="color:#f92672">=</span> (x <span style="color:#f92672">%</span> y);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> S_OK;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="logarithm">Logarithm</h3>
+<pre tabindex="0"><code>STDMETHODIMP CtestSOW::Lg(LONG x, LONG y, DOUBLE* ret)
+{
+	// https://en.cppreference.com/w/c/numeric/math/log
+	*ret = log(x) / log(y);
+
+	return S_OK;
+}
+</code></pre><h1 id="二测试平台">二、测试平台</h1>
+<blockquote>
+<p>查看依赖：<a href="http://dependencywalker.com/depends22_x86.zip">win8.1-</a>；<a href="https://github.com/lucasg/Dependencies/releases">Win10</a></p> <a class="read-more" href="/csdn/post/com-ie-test/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-11-17T18:08:08&#43;08:00">
+            17 Nov 2024
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -712,106 +863,6 @@ Unable to execute on ssh network side.</p>
         
         <time class="post-date" datetime="2024-03-20T00:08:08&#43;08:00">
             20 Mar 2024
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_spark_ubuntu/">安装spark</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
-<blockquote>
-<p>WSL: Ubuntu 18.04.1</p>
-</blockquote>
-<h1 id="prepare">Prepare</h1>
-<blockquote>
-<p>Java 8+, Python 2.7+/3.4+ and R 3.1+</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Spark runs on Java 8+, Python 2.7+/3.4+ and R 3.1+.
-</span></span><span style="display:flex;"><span>For the Scala API, Spark 2.4.1 uses Scala 2.12.
-</span></span><span style="display:flex;"><span>You will need to use a compatible Scala version <span style="color:#f92672">(</span>2.12.x<span style="color:#f92672">)</span>.
-</span></span></code></pre></div><h2 id="1-java">1. java</h2>
-<p><a href="https://xiaobin80.gitee.io/csdn/post/ops_openjdk_ubuntu/">设置OpenJDK - Ubuntu</a></p>
-<h2 id="2-python">2. Python</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install python
-</span></span></code></pre></div><h2 id="3-r-language">3. R language</h2>
-<h3 id="1-add-ppa">1) add ppa</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo add-apt-repository ppa:marutter/rrutter
-</span></span><span style="display:flex;"><span>sudo apt-get update
-</span></span></code></pre></div><h3 id="2-install">2) install</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install r-base r-base-dev
-</span></span></code></pre></div><h1 id="installation">Installation</h1>
-<h2 id="1-unzip">1. unzip</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>~/spark-2.4.1-bin-hadoop2.7
-</span></span></code></pre></div><h2 id="2-test">2. test</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd ~/spark-2.4.1-bin-hadoop2.7
-</span></span></code></pre></div><h3 id="1-pi">1) pi</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./bin/run-example SparkPi <span style="color:#ae81ff">10</span>
-</span></span></code></pre></div><h3 id="2-scala-shell">2) Scala shell</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./bin/spark-shell --master local<span style="color:#f92672">[</span>2<span style="color:#f92672">]</span>
-</span></span></code></pre></div><p>input:</p> <a class="read-more" href="/csdn/post/ops_spark_ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2024-03-15T08:08:08&#43;08:00">
-            15 Mar 2024
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_openjdk_ubuntu/">设置OpenJDK</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
-<blockquote>
-<p>ubuntu 20.04.2</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wsl1017@DESKTOP-14G6K9S:~$ java -version
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Command <span style="color:#e6db74">&#39;java&#39;</span> not found, but can be installed with:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>sudo apt install default-jre
-</span></span><span style="display:flex;"><span>sudo apt install openjdk-11-jre-headless
-</span></span><span style="display:flex;"><span>sudo apt install openjdk-8-jre-headless
-</span></span></code></pre></div><h1 id="installation">installation</h1>
-<ol>
-<li>install jre</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wsl1017@DESKTOP-14G6K9S:/tmp$ sudo apt-get install openjdk-8-jre-headless
-</span></span></code></pre></div><ol start="2">
-<li>install jdk</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install openjdk-8-jdk-headless
-</span></span></code></pre></div><ol start="3">
-<li>set JAVA home</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/profile
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export JAVA_HOME<span style="color:#f92672">=</span>/usr/lib/jvm/java-8-openjdk-amd64
-</span></span></code></pre></div><h2 id="ubuntu-versionhttpsaskubuntucoma944260"><a href="https://askubuntu.com/a/944260">ubuntu version</a></h2>
-<p>The very short answer is that OpenJDK 8 as of 2017-08-08 is not officially available for Ubuntu 14.04.</p> <a class="read-more" href="/csdn/post/ops_openjdk_ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2024-03-15T07:08:08&#43;08:00">
-            15 Mar 2024
         </time>
     </footer>
 </article>
