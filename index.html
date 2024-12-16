@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.139.0">
+    <meta name="generator" content="Hugo 0.139.4">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -199,6 +199,225 @@
     
         <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/com-wizards-vc/">VC 创建 Component Object Model</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>Use Visual Studio&rsquo;s wizard to create COM</p>
+<ul>
+<li>Visual Studio 2013</li>
+<li>Visual Studio 2015</li>
+<li>Visual Studio 2017/2019/2022</li>
+</ul>
+<p>step by step:</p>
+<ul>
+<li>建立ATL工程</li>
+<li>建立ATL Simple Object</li>
+<li>添加IDL方法</li>
+<li>测试添加的method</li>
+</ul>
+<h1 id="建立atl工程">建立ATL工程</h1>
+<p>File-&gt;New-&gt;Project</p>
+<!-- vs2017: https://gitee.com/xiaobin80/csdn/raw/master/images/20200201162120769.png -->
+<!-- vs2013: https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new1(vs2013).png -->
+<!-- vs2015: https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new1(vs2015).png -->
+<pre tabindex="0"><code>name: testATL
+</code></pre><p>Note: name即是要生成的DLL文件 <br>
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new1(vs2019).png" alt="project type">
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new2(vs2019).png" alt="project name"></p>
+<p>选择&quot;MFC/ATL&quot;中&quot;ATL Project&quot;:</p>
+<blockquote>
+<p>Default</p>
+</blockquote>
+<!-- vs2017: https://gitee.com/xiaobin80/csdn/raw/master/images/20200201171441614.png -->
+<!-- vs2013: https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new2(vs2013).png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new3(vs2019).png" alt="project property"></p>
+<h3 id="choice-platform">Choice Platform</h3>
+<p>Build -&gt; Configuration Manager</p>
+<pre tabindex="0"><code>x64 or x86
+</code></pre><h3 id="取消编译时注册dll">取消编译时注册Dll</h3>
+<blockquote>
+<p>Project -&gt; Properties</p>
+</blockquote>
+<ul>
+<li>x86</li>
+</ul>
+<pre tabindex="0"><code>Linker -&gt; Register Output
+No
+</code></pre><ul>
+<li>x64</li>
+</ul>
+<pre tabindex="0"><code>Linker -&gt; All Options -&gt; 
+Register Output: No
+</code></pre><h2 id="add-atl-simple-object">Add ATL Simple Object</h2>
+<blockquote>
+<p>右击项目名称</p> <a class="read-more" href="/csdn/post/com-wizards-vc/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-12-15T23:08:08&#43;08:00">
+            15 Dec 2024
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/com-ie-test/">使用IE测试COM</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><ul>
+<li>Target <br>
+x86</li>
+</ul>
+<p><a href="https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/">创建COM</a> 中 增加对IE支持： IObjectWithSite</p>
+<!-- VS2010: https://github.com/tdtc-hrb/csdn/raw/master/images/20140420153532328.png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-simple4.png" alt="atl simple object - Support"></p>
+<h2 id="增加方法">增加方法</h2>
+<!-- VS2010: https://github.com/tdtc-hrb/csdn/raw/master/images/20140420160424359.png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-interface3.png" alt="atl interface - list">
+testSOW.h:</p>
+<pre tabindex="0"><code>	STDMETHOD(Add)(LONG x, LONG y, LONG* ret);
+	STDMETHOD(Sub)(LONG x, LONG y, LONG* ret);
+	STDMETHOD(Mul)(LONG x, LONG y, LONG* ret);
+	STDMETHOD(Div)(LONG x, LONG y, LONG* ret);
+	STDMETHOD(Mod)(LONG x, LONG y, LONG* ret);
+	STDMETHOD(Lg)(LONG x, LONG y, DOUBLE* ret);
+</code></pre><h3 id="add">Add</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>STDMETHODIMP CtestSOW<span style="color:#f92672">::</span>Add(LONG x, LONG y, LONG<span style="color:#f92672">*</span> ret)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// TODO: Add your implementation code here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span>ret <span style="color:#f92672">=</span> (x <span style="color:#f92672">+</span> y);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> S_OK;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="subtract">Subtract</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>STDMETHODIMP CtestSOW<span style="color:#f92672">::</span>Sub(LONG x, LONG y, LONG<span style="color:#f92672">*</span> ret)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// TODO: Add your implementation code here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span>ret <span style="color:#f92672">=</span> (x <span style="color:#f92672">-</span> y);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> S_OK;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="multiply">Multiply</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>STDMETHODIMP CtestSOW<span style="color:#f92672">::</span>Mul(LONG x, LONG y, LONG<span style="color:#f92672">*</span> ret)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// TODO: Add your implementation code here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span>ret <span style="color:#f92672">=</span> (x <span style="color:#f92672">*</span> y);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> S_OK;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="divide">Divide</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>STDMETHODIMP CtestSOW<span style="color:#f92672">::</span>Div(LONG x, LONG y, LONG<span style="color:#f92672">*</span> ret)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// TODO: Add your implementation code here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span>ret <span style="color:#f92672">=</span> (x <span style="color:#f92672">/</span> y);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> S_OK;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="modulo">Modulo</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>STDMETHODIMP CtestSOW<span style="color:#f92672">::</span>Mod(LONG x, LONG y, LONG<span style="color:#f92672">*</span> ret)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// TODO: Add your implementation code here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span>ret <span style="color:#f92672">=</span> (x <span style="color:#f92672">%</span> y);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> S_OK;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="logarithm">Logarithm</h3>
+<pre tabindex="0"><code>STDMETHODIMP CtestSOW::Lg(LONG x, LONG y, DOUBLE* ret)
+{
+	// https://en.cppreference.com/w/c/numeric/math/log
+	*ret = log(x) / log(y);
+
+	return S_OK;
+}
+</code></pre><h2 id="测试">测试</h2>
+<ul>
+<li>
+<p>查看依赖 <br>
+<a href="http://dependencywalker.com/depends22_x86.zip">x86</a></p> <a class="read-more" href="/csdn/post/com-ie-test/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-12-15T18:08:08&#43;08:00">
+            15 Dec 2024
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_memcached_ubuntu/">安装memcached</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
+<blockquote>
+<p>VMware: Ubuntu 20.04.2</p>
+</blockquote>
+<h1 id="install-and-update">Install and update</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#sudo apt-get install memcached [0]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#sudo apt-get install build-essential</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#sudo apt-get install libevent-dev*</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#wget http://memcached.org/files/memcached-1.6.33.tar.gz</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#tar -zxvf memcached-1.6.33.tar.gz</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#cd memcached-1.6.33</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#./configure &amp;&amp; make &amp;&amp; sudo make install</span>
+</span></span></code></pre></div><h1 id="start">Start</h1>
+<h2 id="allow-port">allow port</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ufw allow <span style="color:#ae81ff">11211</span>
+</span></span></code></pre></div><h2 id="config">config</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/memcached.conf
+</span></span></code></pre></div><p>修改为服务器的IP:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Specify which IP address to listen on. The default is to listen on all IP addresses</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># This parameter is one of the only security measures that memcached has, so make sure</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># it&#39;s listening on a firewalled interface.</span>
+</span></span><span style="display:flex;"><span>-l 192.168.0.103
+</span></span></code></pre></div><h2 id="run">run</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo service memcached start
+</span></span></code></pre></div><h3 id="view">view</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ps -ef|grep memcached
+</span></span></code></pre></div><h1 id="reference">Reference</h1>
+<ul>
+<li>
+<ol start="0">
+<li>default version</li>
+</ol>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ memcached -V
+</span></span><span style="display:flex;"><span>memcached 1.5.22
+</span></span></code></pre></div> <a class="read-more" href="/csdn/post/ops_memcached_ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-12-11T09:08:08&#43;08:00">
+            11 Dec 2024
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/vc-boost/">安装boost库(VC)</a></h2>
     </header>
     <section class="post-excerpt">
@@ -269,157 +488,6 @@
         
         <time class="post-date" datetime="2024-11-19T10:08:39&#43;08:00">
             19 Nov 2024
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/com-ie-test/">使用IE测试COM</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><ul>
-<li>Target <br>
-x86</li>
-</ul>
-<p><a href="https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/">创建COM</a> 中 增加对IE支持： IObjectWithSite</p>
-<!-- VS2010: https://github.com/tdtc-hrb/csdn/raw/master/images/20140420153532328.png -->
-<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-simple4.png" alt="atl simple object - Support"></p>
-<h2 id="增加方法">增加方法</h2>
-<!-- VS2010: https://github.com/tdtc-hrb/csdn/raw/master/images/20140420160424359.png -->
-<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-interface3.png" alt="atl interface - list"></p>
-<h3 id="add">Add</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>STDMETHODIMP CtestSOW<span style="color:#f92672">::</span>Add(LONG x, LONG y, LONG<span style="color:#f92672">*</span> ret)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// TODO: Add your implementation code here
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span>ret <span style="color:#f92672">=</span> (x <span style="color:#f92672">+</span> y);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> S_OK;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="subtract">Subtract</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>STDMETHODIMP CtestSOW<span style="color:#f92672">::</span>Sub(LONG x, LONG y, LONG<span style="color:#f92672">*</span> ret)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// TODO: Add your implementation code here
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span>ret <span style="color:#f92672">=</span> (x <span style="color:#f92672">-</span> y);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> S_OK;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="multiply">Multiply</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>STDMETHODIMP CtestSOW<span style="color:#f92672">::</span>Mul(LONG x, LONG y, LONG<span style="color:#f92672">*</span> ret)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// TODO: Add your implementation code here
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span>ret <span style="color:#f92672">=</span> (x <span style="color:#f92672">*</span> y);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> S_OK;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="divide">Divide</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>STDMETHODIMP CtestSOW<span style="color:#f92672">::</span>Div(LONG x, LONG y, LONG<span style="color:#f92672">*</span> ret)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// TODO: Add your implementation code here
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span>ret <span style="color:#f92672">=</span> (x <span style="color:#f92672">/</span> y);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> S_OK;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="modulo">Modulo</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>STDMETHODIMP CtestSOW<span style="color:#f92672">::</span>Mod(LONG x, LONG y, LONG<span style="color:#f92672">*</span> ret)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// TODO: Add your implementation code here
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span>ret <span style="color:#f92672">=</span> (x <span style="color:#f92672">%</span> y);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> S_OK;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="logarithm">Logarithm</h3>
-<pre tabindex="0"><code>STDMETHODIMP CtestSOW::Lg(LONG x, LONG y, DOUBLE* ret)
-{
-	// https://en.cppreference.com/w/c/numeric/math/log
-	*ret = log(x) / log(y);
-
-	return S_OK;
-}
-</code></pre><h2 id="测试">测试</h2>
-<ul>
-<li>
-<p>查看依赖 <br>
-<a href="http://dependencywalker.com/depends22_x86.zip">x86</a></p> <a class="read-more" href="/csdn/post/com-ie-test/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2024-11-18T18:08:08&#43;08:00">
-            18 Nov 2024
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/com-wizards-vc/">VC 创建 Component Object Model</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><p>Use Visual Studio&rsquo;s wizard to create COM</p>
-<ul>
-<li>Visual Studio 2013</li>
-<li>Visual Studio 2015</li>
-<li>Visual Studio 2017/2019/2022</li>
-</ul>
-<p>step by step:</p>
-<ul>
-<li>建立ATL工程</li>
-<li>建立ATL Simple Object</li>
-<li>添加IDL方法</li>
-<li>测试添加的method</li>
-</ul>
-<h1 id="建立atl工程">建立ATL工程</h1>
-<p>File-&gt;New-&gt;Project</p>
-<!-- vs2017: https://gitee.com/xiaobin80/csdn/raw/master/images/20200201162120769.png -->
-<!-- vs2013: https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new1(vs2013).png -->
-<!-- vs2015: https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new1(vs2015).png -->
-<pre tabindex="0"><code>name: testATL
-</code></pre><p>Note: name即是要生成的DLL文件 <br>
-<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new1(vs2019).png" alt="project type">
-<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new2(vs2019).png" alt="project name"></p>
-<p>选择&quot;MFC/ATL&quot;中&quot;ATL Project&quot;:</p>
-<blockquote>
-<p>Default</p>
-</blockquote>
-<!-- vs2017: https://gitee.com/xiaobin80/csdn/raw/master/images/20200201171441614.png -->
-<!-- vs2013: https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new2(vs2013).png -->
-<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new3(vs2019).png" alt="project property"></p>
-<h3 id="取消编译时注册dll">取消编译时注册Dll</h3>
-<blockquote>
-<p>Project -&gt; Properties</p>
-</blockquote>
-<ul>
-<li>vs2022-</li>
-</ul>
-<pre tabindex="0"><code>Linker -&gt; Register Output
-No
-</code></pre><ul>
-<li>vs2022</li>
-</ul>
-<pre tabindex="0"><code>Linker -&gt; All Options -&gt; 
-Register Output: No
-</code></pre><h2 id="add-atl-simple-object">Add ATL Simple Object</h2>
-<blockquote>
-<p>右击项目名称</p> <a class="read-more" href="/csdn/post/com-wizards-vc/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2024-11-17T23:08:08&#43;08:00">
-            17 Nov 2024
         </time>
     </footer>
 </article>
@@ -888,44 +956,6 @@ and #includedir
         
         <time class="post-date" datetime="2024-05-07T12:08:39&#43;08:00">
             7 May 2024
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/mysql84-install/">安装MySQL 8.4</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><h2 id="dirctory">Dirctory</h2>
-<p>Data:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>%MYSQL84_HOME%\bin\mysqld --initialize --console
-</span></span></code></pre></div><p>Uploads:
-manually create the folder &ldquo;Uploads&rdquo;.</p>
-<h2 id="what-is-new-in-mysql-84-since-mysql-80httpsdevmysqlcomdocrefman84enmysql-nutshellhtml"><a href="https://dev.mysql.com/doc/refman/8.4/en/mysql-nutshell.html">What Is New in MySQL 8.4 since MySQL 8.0</a></h2>
-<ul>
-<li>MySQL native password authentication changes</li>
-</ul>
-<p>Beginning with MySQL 8.4.0, the deprecated mysql_native_password authentication plugin is no longer enabled by default.
-To enable it, start the server with &ndash;mysql-native-password=ON (added in MySQL 8.4.0),
-or by including mysql_native_password=ON in the <code>[mysqld]</code> section of your MySQL configuration file (added in MySQL 8.4.0).</p>
-<ul>
-<li><a href="https://dev.mysql.com/doc/refman/8.4/en/replica-logs-status.html">Replication Metadata Repositories</a></li>
-</ul>
-<pre tabindex="0"><code>sync-relay-log-info&#39; is deprecated and will be removed in a future release.
-</code></pre><p>removed configure at my.ini:</p> <a class="read-more" href="/csdn/post/mysql84-install/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2024-04-30T06:08:39&#43;08:00">
-            30 Apr 2024
         </time>
     </footer>
 </article>

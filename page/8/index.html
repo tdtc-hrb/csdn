@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.139.0">
+    <meta name="generator" content="Hugo 0.139.4">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -193,6 +193,168 @@
 </nav>
 
     </div>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/js-calday/"> 使用Ts/Js计算天数</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>在JS练习题中，有这么一道：</p>
+<p>请计算某天是这一年的第几天。</p>
+<p>首先，我们要看此年是否闰年</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">IsLeapYear</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">year</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">flag</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> ( ((<span style="color:#a6e22e">year</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">&amp;&amp;</span> (<span style="color:#a6e22e">year</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">100</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>)) <span style="color:#f92672">||</span> (<span style="color:#a6e22e">year</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">400</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) )
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">flag</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">flag</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>其次，累加每月天数。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">month</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">iDay</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">months</span>[<span style="color:#a6e22e">i</span>];
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote>
+<p>其中months为数组</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">months</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array(<span style="color:#ae81ff">31</span>, <span style="color:#a6e22e">day2</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">31</span>);
+</span></span></code></pre></div><p>day2如果是闰年赋值29，否则28。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">IsLeapYear</span>(<span style="color:#a6e22e">iYear</span>)) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">day2</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">29</span>;
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">day2</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">28</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="js-code">js code</h1>
+<blockquote>
+<p>tsc calDay.ts</p>
+</blockquote>
+<h2 id="caldayts">calDay.ts</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MY</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">DayOfYear</span>(<span style="color:#a6e22e">year</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">number</span>, <span style="color:#a6e22e">month</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">number</span>, <span style="color:#a6e22e">day</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">number</span>) <span style="color:#f92672">:</span> <span style="color:#a6e22e">number</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">day2</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">number</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">iDay</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">number</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date();
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">setFullYear</span>(<span style="color:#a6e22e">year</span>, <span style="color:#a6e22e">month</span>, <span style="color:#a6e22e">day</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">iYear</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">number</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getFullYear</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">IsLeapYear</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">year</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">number</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">flag</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">boolean</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> ( ((<span style="color:#a6e22e">year</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">&amp;&amp;</span> (<span style="color:#a6e22e">year</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">100</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>)) <span style="color:#f92672">||</span> (<span style="color:#a6e22e">year</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">400</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) )
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">flag</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">flag</span>;
+</span></span><span style="display:flex;"><span>        };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">IsLeapYear</span>(<span style="color:#a6e22e">iYear</span>)) {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">day2</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">29</span>;
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">day2</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">28</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">months</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array(<span style="color:#ae81ff">31</span>, <span style="color:#a6e22e">day2</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">31</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">month</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">iDay</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">months</span>[<span style="color:#a6e22e">i</span>];
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">iDay</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">day</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">SetInputVal</span>(<span style="color:#a6e22e">iDay</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">iDay</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">SetInputVal</span> (<span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">any</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">val</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">any</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">HTMLInputElement</span><span style="color:#f92672">&gt;</span>document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;daySum&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">val</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="caldayjs">calDay.js</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * xiaobin in SYSIT schools completed
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">MY</span> <span style="color:#f92672">=</span> {};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">MY</span>.<span style="color:#a6e22e">DayOfYear</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">year</span>, <span style="color:#a6e22e">month</span>, <span style="color:#a6e22e">day</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">day2</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">iDay</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date();
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">setFullYear</span>(<span style="color:#a6e22e">year</span>, <span style="color:#a6e22e">month</span>, <span style="color:#a6e22e">day</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">iYear</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getFullYear</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">IsLeapYear</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">year</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">flag</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> ( ((<span style="color:#a6e22e">year</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">&amp;&amp;</span> (<span style="color:#a6e22e">year</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">100</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>)) <span style="color:#f92672">||</span> (<span style="color:#a6e22e">year</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">400</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) )
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">flag</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">flag</span>;
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">IsLeapYear</span>(<span style="color:#a6e22e">iYear</span>)) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">day2</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">29</span>;
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">day2</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">28</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">months</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array(<span style="color:#ae81ff">31</span>, <span style="color:#a6e22e">day2</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">31</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">month</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">iDay</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">months</span>[<span style="color:#a6e22e">i</span>];
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">iDay</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">day</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">SetInputVal</span>(<span style="color:#a6e22e">iDay</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">iDay</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">SetInputVal</span> (<span style="color:#a6e22e">value</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">val</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;daySum&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">val</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h1 id="caldayhtml">calDay.html</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE HTML PUBLIC &#34;-//W3C//DTD HTML 4.01 Transitional//EN&#34; &#34;http://www.w3.org/TR/html4/loose.dtd&#34;&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Content-Type&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/html; charset=utf-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">title</span>&gt;Example01&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;calDay.js&#34;</span> &gt; &lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">br</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;daySum&#34;</span> &gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;test02&#34;</span>  <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cal day&#34;</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;MY.DayOfYear(2000, 2, 8)&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">br</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;test03&#34;</span>  <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cal day (type-script)&#34;</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;MY.prototype.DayOfYear(2000, 2, 8)&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div> <a class="read-more" href="/csdn/post/js-calday/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2021-10-01T02:16:39&#43;08:00">
+            1 Oct 2021
+        </time>
+    </footer>
+</article>
 
     
         <article class="post post">
@@ -343,64 +505,6 @@
         
         <time class="post-date" datetime="2021-04-14T01:08:08&#43;08:00">
             14 Apr 2021
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_memcached_ubuntu/">安装memcached</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
-<blockquote>
-<p>VMware: Ubuntu 20.04.2</p>
-</blockquote>
-<h1 id="install-and-update">Install and update</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#sudo apt-get install memcached [0]</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#sudo apt-get install build-essential</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#sudo apt-get install libevent-dev*</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#wget http://memcached.org/files/memcached-1.6.15.tar.gz</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#tar -zxvf memcached-1.6.15.tar.gz</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#cd memcached-1.6.15</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#./configure &amp;&amp; make &amp;&amp; sudo make install</span>
-</span></span></code></pre></div><h1 id="start">Start</h1>
-<h2 id="allow-port">allow port</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ufw allow <span style="color:#ae81ff">11211</span>
-</span></span></code></pre></div><h2 id="config">config</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/memcached.conf
-</span></span></code></pre></div><p>修改为服务器的IP:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Specify which IP address to listen on. The default is to listen on all IP addresses</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># This parameter is one of the only security measures that memcached has, so make sure</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># it&#39;s listening on a firewalled interface.</span>
-</span></span><span style="display:flex;"><span>-l 192.168.0.103
-</span></span></code></pre></div><h2 id="run">run</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo service memcached start
-</span></span></code></pre></div><h3 id="view">view</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ps -ef|grep memcached
-</span></span></code></pre></div><h1 id="reference">Reference</h1>
-<ul>
-<li>
-<ol start="0">
-<li>default version</li>
-</ol>
-</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ memcached -V
-</span></span><span style="display:flex;"><span>memcached 1.5.22
-</span></span></code></pre></div> <a class="read-more" href="/csdn/post/ops_memcached_ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2021-02-01T09:08:08&#43;08:00">
-            1 Feb 2021
         </time>
     </footer>
 </article>

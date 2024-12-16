@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.139.0">
+    <meta name="generator" content="Hugo 0.139.4">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,6 +160,44 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql84-install/">安装MySQL 8.4</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h2 id="dirctory">Dirctory</h2>
+<p>Data:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>%MYSQL84_HOME%\bin\mysqld --initialize --console
+</span></span></code></pre></div><p>Uploads:
+manually create the folder &ldquo;Uploads&rdquo;.</p>
+<h2 id="what-is-new-in-mysql-84-since-mysql-80httpsdevmysqlcomdocrefman84enmysql-nutshellhtml"><a href="https://dev.mysql.com/doc/refman/8.4/en/mysql-nutshell.html">What Is New in MySQL 8.4 since MySQL 8.0</a></h2>
+<ul>
+<li>MySQL native password authentication changes</li>
+</ul>
+<p>Beginning with MySQL 8.4.0, the deprecated mysql_native_password authentication plugin is no longer enabled by default.
+To enable it, start the server with &ndash;mysql-native-password=ON (added in MySQL 8.4.0),
+or by including mysql_native_password=ON in the <code>[mysqld]</code> section of your MySQL configuration file (added in MySQL 8.4.0).</p>
+<ul>
+<li><a href="https://dev.mysql.com/doc/refman/8.4/en/replica-logs-status.html">Replication Metadata Repositories</a></li>
+</ul>
+<pre tabindex="0"><code>sync-relay-log-info&#39; is deprecated and will be removed in a future release.
+</code></pre><p>removed configure at my.ini:</p> <a class="read-more" href="/csdn/post/mysql84-install/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-04-30T06:08:39&#43;08:00">
+            30 Apr 2024
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -777,102 +815,6 @@ public abstract class Transmission {
         
         <time class="post-date" datetime="2023-12-08T12:08:08&#43;08:00">
             8 Dec 2023
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_win_faq1/">Windows的一些设置</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><h1 id="disabled-windows-feature">disabled Windows feature</h1>
-<h2 id="delivery-optimization">Delivery Optimization</h2>
-<blockquote>
-<p>windows 10 2004+
-startup -&gt; settings: Update &amp; security:</p>
-</blockquote>
-<pre tabindex="0"><code>Allow downloads from other PCs : off
-</code></pre><h3 id="limit">Limit</h3>
-<blockquote>
-<p>Advanced options
-set minimum</p>
-</blockquote>
-<h4 id="download-settings">Download settings</h4>
-<ul>
-<li>background</li>
-</ul>
-<pre tabindex="0"><code>5%
-</code></pre><ul>
-<li>foreground</li>
-</ul>
-<pre tabindex="0"><code>5%
-</code></pre><h2 id="禁止记事本">禁止记事本</h2>
-<ol>
-<li>
-<p>开始-&gt;运行-&gt;gpedit.msc-&gt;计算机配置-&gt;windows设置-&gt;安全设置-&gt;软件限制策略</p>
-</li>
-<li>
-<p>右键点软件限制策略-&gt;创建软件限制策略</p>
-</li>
-<li>
-<p>点其他规则-&gt;右键新建路径规则-&gt;
-在“路径”下的空白输入框中“%windir%\notepad.exe“（或者c盘是系统盘的情况下：c:\windows\notepad.exe)-&gt;在“安全级别”中选择“不允许”</p>
-</li>
-</ol>
-<blockquote>
-<p>附：如果你要限制.txt的程序打开，可以在路径中输入*.txt。</p>
-</blockquote>
-<h1 id="日文系统">日文系统</h1>
-<h2 id="key101">key101</h2>
-<blockquote>
-<p>日文改英文键盘</p>
-</blockquote>
-<p>修改注册表主键：
-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\i8042prt\Parameters</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>LayerDriver JPN: KBD101.DLL
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>OverrideKeyboardIdentifier: PCAT_101KEY
-</span></span><span style="display:flex;"><span>OverrideKeyboardSubtype:    0x00000000<span style="color:#f92672">(</span>0<span style="color:#f92672">)</span>
-</span></span></code></pre></div><h2 id="win7添加日文输入httpsjingyanbaiducomarticlee75aca855ed81f142fdac665html"><a href="https://jingyan.baidu.com/article/e75aca855ed81f142fdac665.html">win7+添加日文输入</a></h2>
-<ol>
-<li>
-<p>“区域和语言“ ==&gt; ”键盘和语言“</p>
-</li>
-<li>
-<p>”键盘和语言“中，点击”更改键盘“，
-点”添加“，找到 ”日语（日本）“， <br>
-勾选”Microsoft IME“和”日语“，其它不要勾选.</p>
-</li>
-</ol>
-<p>按键盘”Alt“+”Shift“即可调出日语输入法.</p>
-<h1 id="文件或目录">文件或目录</h1>
-<h2 id="文件或目录损坏且无法读取">文件或目录损坏且无法读取</h2>
-<blockquote>
-<p><a href="https://www.cnblogs.com/hf1432/p/5643193.html">无法读取的所在逻辑盘E:</a></p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chkdsk /F E:
-</span></span></code></pre></div><h2 id="how-to-delete-old-windows-folder-in-windows-10--access-denied">How to Delete Old Windows Folder in Windows 10 – Access Denied?</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>takeown /F <span style="color:#e6db74">&#34;C:\Windows.old&#34;</span> /A /R /D Y
-</span></span><span style="display:flex;"><span>icacls <span style="color:#e6db74">&#34;C:\Windows.old&#34;</span> /T /grant administrators:F
-</span></span><span style="display:flex;"><span>rmdir /s /q <span style="color:#e6db74">&#34;C:\Windows.old&#34;</span>
-</span></span></code></pre></div><h1 id="notepadhttpsnotepad-plus-plusorg"><a href="https://notepad-plus-plus.org/">notepad++</a></h1>
-<h2 id="关闭历史文件">关闭历史文件</h2>
-<p>打开首选项-&gt;备份
-<sub>√</sub>“记住最后打开的文件” <br>
-把对勾去掉即可。</p> <a class="read-more" href="/csdn/post/ops_win_faq1/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-08-18T08:08:08&#43;08:00">
-            18 Aug 2023
         </time>
     </footer>
 </article>
