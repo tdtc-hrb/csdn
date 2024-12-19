@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.139.4">
+    <meta name="generator" content="Hugo 0.140.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -343,6 +343,125 @@ testSOW.h:</p>
         
         <time class="post-date" datetime="2024-12-15T18:08:08&#43;08:00">
             15 Dec 2024
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/nodejs-ubuntu/">在Ubuntu下安装NodeJS</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
+<h1 id="1nodejs">1.node.js</h1>
+<p><a href="https://github.com/nodesource/distributions">v22.x/20.x/18.x/16.x</a></p>
+<ul>
+<li>v22.x</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
+</span></span></code></pre></div><ul>
+<li>v20.x</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+</span></span></code></pre></div><ul>
+<li>v18.x</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+</span></span></code></pre></div><h2 id="install">install</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install -y nodejs
+</span></span></code></pre></div><h2 id="update">update</h2>
+<p>first remove:</p>
+<pre tabindex="0"><code>sudo apt remove nodejs
+</code></pre><p>and then, remove <a href="https://unix.stackexchange.com/a/722477">libnode72</a>:</p>
+<pre tabindex="0"><code>sudo dpkg --remove --force-remove-reinstreq libnode72:amd64
+</code></pre><p>last install:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install -y nodejs
+</span></span></code></pre></div><h1 id="2-yarn-js">2. yarn js</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl --silent --show-error https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;deb https://dl.yarnpkg.com/debian/ stable main&#34;</span> | sudo tee /etc/apt/sources.list.d/yarn.list
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install yarn
+</span></span></code></pre></div><h1 id="ref">Ref</h1>
+<ul>
+<li><a href="https://phoenixnap.com/kb/how-to-install-yarn-ubuntu">How to Install Yarn on Ubuntu 18.04</a></li>
+</ul> <a class="read-more" href="/csdn/post/nodejs-ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-12-12T23:08:39&#43;08:00">
+            12 Dec 2024
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/dev_wsl_ubuntu/">使用 WSL 在Windows</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
+<ul>
+<li>Windows 10 1809+ <br>
+缺省为WSL1</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps" data-lang="ps"><span style="display:flex;"><span><span style="color:#a6e22e">wsl</span> <span style="color:#a6e22e">-l</span> <span style="color:#a6e22e">-v</span>
+</span></span></code></pre></div><blockquote>
+<p>在powerShell的管理员模式下运行命令!</p>
+</blockquote>
+<h1 id="安装卸载">安装/卸载</h1>
+<p>ON:</p>
+<pre tabindex="0"><code>Control Panel -&gt; Uninstall a program -&gt; Turn Windows features on or off, 
+勾选“Windows Subsystem for Linux”
+</code></pre><h2 id="ubuntu">Ubuntu</h2>
+<ul>
+<li>
+<p><a href="https://aka.ms/wslubuntu2004">Ubuntu 2004</a></p>
+<p>从AppxBundle提取appx.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Add-AppxPackage .\Ubuntu_2004.xxx.appx
+</span></span></code></pre></div><h3 id="卸载">卸载</h3>
+<p>如果“普通”方式不工作，请使用“命令行”。</p>
+<ul>
+<li>
+<p>普通
+右击“Ubuntu xxx” 图标，选择“Uninstall”即可。</p>
+</li>
+<li>
+<p><a href="https://docs.microsoft.com/zh-cn/windows/wsl/reference">命令行</a></p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wslconfig /u
+</span></span></code></pre></div><h2 id="debian">Debian</h2>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/windows/wsl/install-manual#downloading-distributions">down appx - debian v11</a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Add-AppxPackage .\DistroLauncher-Appx_1.12.2.0_x64.appx
+</span></span></code></pre></div><h3 id="wsl2">WSL2</h3>
+<ul>
+<li>Enable Virtual Machine feature</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>dism.exe /online /enable-feature /featurename<span style="color:#960050;background-color:#1e0010">:</span>VirtualMachinePlatform /all /norestart
+</span></span></code></pre></div><p>Reboot your Windows 10 host</p> <a class="read-more" href="/csdn/post/dev_wsl_ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-12-12T18:08:08&#43;08:00">
+            12 Dec 2024
         </time>
     </footer>
 </article>
@@ -742,78 +861,6 @@ $ wine fg798p.exe
     
         <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/dev_wsl_ubuntu/">使用 WSL 在Windows 10</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
-<ul>
-<li>Ubuntu</li>
-</ul>
-<blockquote>
-<p>Windows 10 1809 LTSC(x64)</p>
-</blockquote>
-<ul>
-<li>Debian</li>
-</ul>
-<blockquote>
-<p>Windows 10 21h2 LTSC(x64)</p>
-</blockquote>
-<blockquote>
-<p>在powerShell的管理员模式下运行命令!</p>
-</blockquote>
-<h1 id="安装卸载">安装/卸载</h1>
-<p>ON:</p>
-<pre tabindex="0"><code>Control Panel -&gt; Uninstall a program -&gt; Turn Windows features on or off, 
-勾选“Windows Subsystem for Linux”
-</code></pre><h2 id="ubuntu">Ubuntu</h2>
-<ul>
-<li>
-<p><a href="https://aka.ms/wslubuntu2004">Ubuntu 2004</a></p>
-<p>从AppxBundle提取appx.</p>
-</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Add-AppxPackage .\Ubuntu_2004.xxx.appx
-</span></span></code></pre></div><h3 id="卸载">卸载</h3>
-<p>如果“普通”方式不工作，请使用“命令行”。</p>
-<ul>
-<li>
-<p>普通
-右击“Ubuntu xxx” 图标，选择“Uninstall”即可。</p>
-</li>
-<li>
-<p><a href="https://docs.microsoft.com/zh-cn/windows/wsl/reference">命令行</a></p>
-</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wslconfig /u
-</span></span></code></pre></div><h2 id="debian">Debian</h2>
-<ul>
-<li><a href="https://learn.microsoft.com/en-us/windows/wsl/install-manual#downloading-distributions">down appx - debian v11</a></li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Add-AppxPackage .\DistroLauncher-Appx_1.12.2.0_x64.appx
-</span></span></code></pre></div><h3 id="wsl2">WSL2</h3>
-<ul>
-<li>Enable Virtual Machine feature</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>dism.exe /online /enable-feature /featurename<span style="color:#960050;background-color:#1e0010">:</span>VirtualMachinePlatform /all /norestart
-</span></span></code></pre></div><p>Reboot your Windows 10 host</p> <a class="read-more" href="/csdn/post/dev_wsl_ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2024-10-02T18:08:08&#43;08:00">
-            2 Oct 2024
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/vc-serial_communication/">串口读写工具 - Windows</a></h2>
     </header>
     <section class="post-excerpt">
@@ -898,54 +945,6 @@ and #includedir
         
         <time class="post-date" datetime="2024-09-21T02:20:39&#43;08:00">
             21 Sep 2024
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/mysql57-win/">安装配置MySQL 5.7</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><h1 id="一配置和安装">一、配置和安装</h1>
-<p>ini配置详见附录</p>
-<h2 id="预配置">预配置</h2>
-<p>需要<a href="https://docs.microsoft.com/en-US/cpp/windows/latest-supported-vc-redist?view=msvc-170#visual-studio-2013-vc-120">vc12 redist</a></p>
-<h3 id="设置环境变量">设置环境变量</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>名称：MYSQL57_HOME
-</span></span><span style="display:flex;"><span>赋值：D:<span style="color:#ae81ff">\p</span>rogFiles<span style="color:#ae81ff">\m</span>ysql-5.7
-</span></span></code></pre></div><h3 id="init-data">init data</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>%MYSQL57_HOME%<span style="color:#ae81ff">\b</span>in<span style="color:#ae81ff">\m</span>ysqld --initialize-insecure --console
-</span></span></code></pre></div><h2 id="注册注销服务">注册/注销服务</h2>
-<h3 id="注册">注册</h3>
-<p>多个版本的MySQL运行：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>%MYSQL57_HOME%<span style="color:#ae81ff">\b</span>in<span style="color:#ae81ff">\m</span>ysqld --install MySQL57 --defaults-file<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;D:\progFiles\mysql-5.7\my.ini&#34;</span>
-</span></span></code></pre></div><h3 id="注销">注销</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sc delete mysql57
-</span></span></code></pre></div><h2 id="warnning-info">warnning info</h2>
-<pre tabindex="0"><code>2024-05-13T16:33:17.643640Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
-2024-05-13T16:33:17.644951Z 0 [ERROR] Cannot open Windows EventLog; check privileges, or start server with --log_syslog=0
-2024-05-13T16:33:17.823377Z 0 [Warning] InnoDB: New log files created, LSN=45790
-2024-05-13T16:33:17.859294Z 0 [Warning] InnoDB: Creating foreign key constraint system tables.
-2024-05-13T16:33:17.936952Z 0 [Warning] No existing UUID has been found, so we assume that this is the first time that this server has been started. Generating a new UUID: 80e0a1b1-1146-11ef-a356-00be430eb090.
-2024-05-13T16:33:17.940739Z 0 [Warning] Gtid table is not ready to be used. Table &#39;mysql.gtid_executed&#39; cannot be opened.
-2024-05-13T16:33:18.666030Z 0 [Warning] A deprecated TLS version TLSv1 is enabled. Please use TLSv1.2 or higher.
-2024-05-13T16:33:18.666152Z 0 [Warning] A deprecated TLS version TLSv1.1 is enabled. Please use TLSv1.2 or higher.
-2024-05-13T16:33:18.668880Z 0 [Warning] CA certificate ca.pem is self signed.
-2024-05-13T16:33:18.835389Z 1 [Warning] root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.
-</code></pre><p>注意： 可以忽略如下警告信息：</p> <a class="read-more" href="/csdn/post/mysql57-win/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2024-05-07T12:08:39&#43;08:00">
-            7 May 2024
         </time>
     </footer>
 </article>
