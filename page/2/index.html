@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.140.0">
+    <meta name="generator" content="Hugo 0.140.1">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -197,6 +197,97 @@
     
         <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/vc-serial_communication/">串口读写工具 - Windows</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><!-- Program on Windows XP - 1: https://gitee.com/xiaobin80/csdn/raw/master/images/20150118233218968.png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/prog81-0.png" alt="Program on Windows 8.1 - UI1">
+PC has no serial device</p>
+<!-- Program on Windows XP - 2: https://gitee.com/xiaobin80/csdn/raw/master/images/20150118233246359.png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/prog81-1.png" alt="Program on Windows 8.1 - UI2">
+PC has serial device</p>
+<ul>
+<li>
+<p>CSerialPort <br>
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20140427134802562.png" alt="class diagram"></p>
+</li>
+<li>
+<p>MFC and its multibyte character set <br>
+<a href="https://learn.microsoft.com/en-us/cpp/mfc/mfc-mbcs-dll-add-on?view=msvc-140">Multibyte MFC Library</a></p>
+</li>
+</ul>
+<h1 id="程序介绍">程序介绍</h1>
+<p>界面分三块： 端口配置、发送区域、接收区域</p>
+<ul>
+<li>v2.0 <br>
+使用<a href="https://tdtc-hrb.github.io/csdn/post/vc-boost/">boost thread</a> + <a href="https://tdtc-hrb.github.io/cnblogs/post/vc-sqlite3lib/">SQLite3 library</a>
+实现串口数据存储到SQLite数据库.</li>
+</ul>
+<h2 id="1-端口配置">1. 端口配置</h2>
+<h3 id="11-在port-number选择端口号">1.1 在“Port Number”选择端口号；</h3>
+<h3 id="12-config">1.2 Config</h3>
+<!-- Program on Windows XP - 3: https://gitee.com/xiaobin80/csdn/raw/master/images/20150119144350996.png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/prog81-2.png" alt="Program on Windows 8.1 - ui3">
+配置串口比如，串口号，波特率，数据位，停止位等等。</p> <a class="read-more" href="/csdn/post/vc-serial_communication/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-09-23T10:08:08&#43;08:00">
+            23 Sep 2024
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/apt-oper-ubuntu/">apt的安装问题</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>apt适合手动输入(有交互); apt-get适合脚本(无交互).</p>
+<p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
+<h1 id="manage">Manage</h1>
+<h2 id="卸载">卸载</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get autoremove vsftpd --purge
+</span></span></code></pre></div><h2 id="安装指定版本">安装指定版本</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get install &lt;package name&gt;<span style="color:#f92672">=</span>&lt;version&gt;
+</span></span></code></pre></div><h2 id="列出版本">列出版本</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-cache madison &lt;&lt;package name&gt;&gt;
+</span></span></code></pre></div><h1 id="debian">DebIan</h1>
+<h2 id="sudo">sudo</h2>
+<p>sudo.d(directory):</p>
+<pre tabindex="0"><code>Note also, that becasuse sudoers contents can vary widely, no attempt is made to add this 
+directive to existing sudoers files on upgrade. Feel free to add the above directive to the 
+end of your /etc/sudoers file to enabe this functionality for existing installations if you 
+wish! Sudo versions older than the one in Debian 11(bullseye) require the directive will only 
+support the old syntax #includedir, and the current sudo will happily accept both @includedir 
+and #includedir
+</code></pre><h3 id="install">install</h3>
+<p>using root:</p> <a class="read-more" href="/csdn/post/apt-oper-ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-09-21T02:20:39&#43;08:00">
+            21 Sep 2024
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/mysql57-win/">安装配置MySQL 5.7</a></h2>
     </header>
     <section class="post-excerpt">
@@ -238,44 +329,6 @@
         
         <time class="post-date" datetime="2024-05-07T12:08:39&#43;08:00">
             7 May 2024
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/mysql84-install/">安装MySQL 8.4</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><h2 id="dirctory">Dirctory</h2>
-<p>Data:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>%MYSQL84_HOME%\bin\mysqld --initialize --console
-</span></span></code></pre></div><p>Uploads:
-manually create the folder &ldquo;Uploads&rdquo;.</p>
-<h2 id="what-is-new-in-mysql-84-since-mysql-80httpsdevmysqlcomdocrefman84enmysql-nutshellhtml"><a href="https://dev.mysql.com/doc/refman/8.4/en/mysql-nutshell.html">What Is New in MySQL 8.4 since MySQL 8.0</a></h2>
-<ul>
-<li>MySQL native password authentication changes</li>
-</ul>
-<p>Beginning with MySQL 8.4.0, the deprecated mysql_native_password authentication plugin is no longer enabled by default.
-To enable it, start the server with &ndash;mysql-native-password=ON (added in MySQL 8.4.0),
-or by including mysql_native_password=ON in the <code>[mysqld]</code> section of your MySQL configuration file (added in MySQL 8.4.0).</p>
-<ul>
-<li><a href="https://dev.mysql.com/doc/refman/8.4/en/replica-logs-status.html">Replication Metadata Repositories</a></li>
-</ul>
-<pre tabindex="0"><code>sync-relay-log-info&#39; is deprecated and will be removed in a future release.
-</code></pre><p>removed configure at my.ini:</p> <a class="read-more" href="/csdn/post/mysql84-install/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2024-04-30T06:08:39&#43;08:00">
-            30 Apr 2024
         </time>
     </footer>
 </article>
@@ -758,90 +811,6 @@ public class Demo {
         
         <time class="post-date" datetime="2023-12-22T12:08:08&#43;08:00">
             22 Dec 2023
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/dp-template-java/">模板方法模式</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><p>我们知道模板方法模式，其实就是等待被实现的方法。</p>
-<p>在进行多个可选择调用时，可以根据不同的方式；只调用一个方法即可解决不同的实现。</p>
-<p>此模式，只适合抽象方法！</p>
-<p>在进行设计模式的程序实现中xiaobin使用已编写的SSL程序做演示。</p>
-<p><img src="https://github.com/tdtc-hrb/cnblogs/raw/master/images/template-method.png" alt="template method"></p>
-<h2 id="template-method">Template Method</h2>
-<pre tabindex="0"><code>import java.io.*;
-import java.util.*;
-import javax.net.ssl.*;
-
-public abstract class Transmission {
-
-	protected String host;
-	protected int port;
-	protected String keyPath;
-	protected String keyPwd;
-	
-	private SSLSocket socket;
-	
-	protected abstract SSLSocket createSocket() throws Exception;
-	
-	/**
-	 * &lt;p&gt; Receive byte array data &lt;/p&gt;
-	 * @return data
-	 */
-	public byte[] receiveData() throws Exception {
-		// TODO Auto-generated method stub
-		socket = createSocket();
-		
-		InputStream in = new BufferedInputStream(
-				socket.getInputStream());
-		int b;
-		List&lt;Byte&gt; listBuffer = new ArrayList&lt;Byte&gt;();
-		while((b = in.read()) != -1) {
-			listBuffer.add((byte) b);
-		}
-		
-		int i = 0;
-		byte[] data = new byte[listBuffer.size()];
-		for (Byte byte1 : listBuffer) {
-			data[i] = byte1;
-			i++;
-		}
-
-		in.close();
-		
-		return data;
-	}
-	
-	/**
-	 * &lt;p&gt; Send byte array data &lt;/p&gt;
-	 * @param data
-	 */
-	public void sendData(byte[] data) throws Exception {
-		socket = createSocket();
-		OutputStream out = new BufferedOutputStream(
-				socket.getOutputStream());
-		out.write(data);
-		out.flush();
-		out.close();
-	}
-}
-</code></pre><p>template-method(abstract):</p> <a class="read-more" href="/csdn/post/dp-template-java/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-12-08T12:08:08&#43;08:00">
-            8 Dec 2023
         </time>
     </footer>
 </article>

@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.140.0">
+    <meta name="generator" content="Hugo 0.140.1">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -195,6 +195,137 @@
 </nav>
 
     </div>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql80-install/">安装MySQL 8.0</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="mysql-5--8">MySQL 5 &amp; 8</h1>
+<ul>
+<li>Windows 建议使用 包(msi)安装 MySQL v8.0</li>
+<li><a href="https://tdtc-hrb.github.io/csdn/post/mysql57-win/">安装MySQL 5.7</a></li>
+</ul>
+<h2 id="remote-server">remote server</h2>
+<pre tabindex="0"><code>bind-address=0.0.0.0
+</code></pre><h2 id="utf8">utf8</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>[MY<span style="color:#f92672">-</span><span style="color:#ae81ff">013242</span>] [Server] <span style="color:#75715e">--character-set-server: &#39;utf8&#39; is currently an alias for the character set UTF8MB3,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>but will be an <span style="color:#66d9ef">alias</span> <span style="color:#66d9ef">for</span> UTF8MB4 <span style="color:#66d9ef">in</span> a future release. Please consider <span style="color:#66d9ef">using</span> UTF8MB4 <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">to</span> be unambiguous.
+</span></span></code></pre></div><ul>
+<li>mysql5</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>character<span style="color:#f92672">-</span><span style="color:#66d9ef">set</span><span style="color:#f92672">-</span>server<span style="color:#f92672">=</span>utf8
+</span></span></code></pre></div><ul>
+<li>mysql8</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>character<span style="color:#f92672">-</span><span style="color:#66d9ef">set</span><span style="color:#f92672">-</span>server<span style="color:#f92672">=</span>utf8mb4
+</span></span></code></pre></div><h2 id="validate-password">validate password</h2>
+<p>注意： <a href="https://mysqlserverteam.com/mysql-8-0-4-new-default-authentication-plugin-caching_sha2_password/">mysql8.0.4</a>，
+我们将无法直接使用phpMyAdmin来登录！</p>
+<p>使用phpMyAdmin需要设置MySQL5.7兼容模式：</p>
+<pre tabindex="0"><code>authentication_policy=mysql_native_password,,
+</code></pre><ul>
+<li>mysql5</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>mysql_native_password
+</span></span></code></pre></div><ul>
+<li>mysql8</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>caching_sha2_password
+</span></span></code></pre></div><h1 id="ubuntu">Ubuntu</h1>
+<p>install mysql8:</p>
+<pre tabindex="0"><code>sudo apt install mysql-server
+</code></pre><pre tabindex="0"><code>sudo systemctl start mysql.service
+</code></pre><h2 id="config-mysql-secure">config mysql secure</h2>
+<pre tabindex="0"><code>sudo mysql
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;root&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span> IDENTIFIED <span style="color:#66d9ef">WITH</span> mysql_native_password <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;xbfirst80&#39;</span>;
+</span></span></code></pre></div><pre tabindex="0"><code>sudo mysql_secure_installation
+</code></pre><h2 id="add-user">add user</h2>
+<p>password rule:</p> <a class="read-more" href="/csdn/post/mysql80-install/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-12-26T01:08:39&#43;08:00">
+            26 Dec 2024
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql84-install/">安装MySQL 8.4</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h2 id="migration">Migration</h2>
+<ul>
+<li><a href="https://dev.mysql.com/doc/refman/8.0/en/upgrade-paths.html">The last release of v5.7, v8.0, and v8.4</a></li>
+<li><a href="https://dev.mysql.com/doc/refman/8.4/en/upgrade-paths.html">Table 3.1 Upgrade Paths for MySQL Server</a></li>
+</ul>
+<pre tabindex="0"><code>v5.7 -&gt; v8.0 -&gt; v8.4
+</code></pre><ul>
+<li>Re-enable MySQL Native Password Plugin</li>
+</ul>
+<pre tabindex="0"><code># Enable mysql_native_password plugin
+[mysqld]
+mysql_native_password=ON
+</code></pre><h3 id="mysql-upgradehttpsdevmysqlcomdocrefman80enupgrading-what-is-upgradedhtml"><a href="https://dev.mysql.com/doc/refman/8.0/en/upgrading-what-is-upgraded.html">mysql upgrade</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>mysql_upgrade Option</th>
+          <th>Server Option</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&ndash;skip-sys-schema</td>
+          <td>&ndash;upgrade=NONE or &ndash;upgrade=MINIMAL</td>
+      </tr>
+      <tr>
+          <td>&ndash;upgrade-system-tables</td>
+          <td>&ndash;upgrade=NONE or &ndash;upgrade=MINIMAL</td>
+      </tr>
+      <tr>
+          <td>&ndash;force</td>
+          <td>&ndash;upgrade=FORCE</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>v8.0</li>
+</ul>
+<pre tabindex="0"><code>mysql_upgrade --updgrade-systme-tables
+</code></pre><ul>
+<li>v8.4</li>
+</ul>
+<pre tabindex="0"><code>mysqld --upgrade=MINIMAL
+</code></pre><h2 id="what-is-new-in-mysql-84-since-mysql-80httpsdevmysqlcomdocrefman84enmysql-nutshellhtml"><a href="https://dev.mysql.com/doc/refman/8.4/en/mysql-nutshell.html">What Is New in MySQL 8.4 since MySQL 8.0</a></h2>
+<ul>
+<li>
+<p>MySQL native password <br>
+Beginning with MySQL 8.4.0, the deprecated mysql_native_password authentication plugin is no longer enabled by default.</p> <a class="read-more" href="/csdn/post/mysql84-install/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-12-26T00:08:39&#43;08:00">
+            26 Dec 2024
+        </time>
+    </footer>
+</article>
 
     
         <article class="post post">
@@ -854,97 +985,6 @@ $ wine fg798p.exe
         
         <time class="post-date" datetime="2024-10-12T12:38:08&#43;08:00">
             12 Oct 2024
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/vc-serial_communication/">串口读写工具 - Windows</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><!-- Program on Windows XP - 1: https://gitee.com/xiaobin80/csdn/raw/master/images/20150118233218968.png -->
-<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/prog81-0.png" alt="Program on Windows 8.1 - UI1">
-PC has no serial device</p>
-<!-- Program on Windows XP - 2: https://gitee.com/xiaobin80/csdn/raw/master/images/20150118233246359.png -->
-<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/prog81-1.png" alt="Program on Windows 8.1 - UI2">
-PC has serial device</p>
-<ul>
-<li>
-<p>CSerialPort <br>
-<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20140427134802562.png" alt="class diagram"></p>
-</li>
-<li>
-<p>MFC and its multibyte character set <br>
-<a href="https://learn.microsoft.com/en-us/cpp/mfc/mfc-mbcs-dll-add-on?view=msvc-140">Multibyte MFC Library</a></p>
-</li>
-</ul>
-<h1 id="程序介绍">程序介绍</h1>
-<p>界面分三块： 端口配置、发送区域、接收区域</p>
-<ul>
-<li>v2.0 <br>
-使用<a href="https://tdtc-hrb.github.io/csdn/post/vc-boost/">boost thread</a> + <a href="https://tdtc-hrb.github.io/cnblogs/post/vc-sqlite3lib/">SQLite3 library</a>
-实现串口数据存储到SQLite数据库.</li>
-</ul>
-<h2 id="1-端口配置">1. 端口配置</h2>
-<h3 id="11-在port-number选择端口号">1.1 在“Port Number”选择端口号；</h3>
-<h3 id="12-config">1.2 Config</h3>
-<!-- Program on Windows XP - 3: https://gitee.com/xiaobin80/csdn/raw/master/images/20150119144350996.png -->
-<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/prog81-2.png" alt="Program on Windows 8.1 - ui3">
-配置串口比如，串口号，波特率，数据位，停止位等等。</p> <a class="read-more" href="/csdn/post/vc-serial_communication/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2024-09-23T10:08:08&#43;08:00">
-            23 Sep 2024
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/apt-oper-ubuntu/">apt的安装问题</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><p>apt适合手动输入(有交互); apt-get适合脚本(无交互).</p>
-<p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
-<h1 id="manage">Manage</h1>
-<h2 id="卸载">卸载</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get autoremove vsftpd --purge
-</span></span></code></pre></div><h2 id="安装指定版本">安装指定版本</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get install &lt;package name&gt;<span style="color:#f92672">=</span>&lt;version&gt;
-</span></span></code></pre></div><h2 id="列出版本">列出版本</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-cache madison &lt;&lt;package name&gt;&gt;
-</span></span></code></pre></div><h1 id="debian">DebIan</h1>
-<h2 id="sudo">sudo</h2>
-<p>sudo.d(directory):</p>
-<pre tabindex="0"><code>Note also, that becasuse sudoers contents can vary widely, no attempt is made to add this 
-directive to existing sudoers files on upgrade. Feel free to add the above directive to the 
-end of your /etc/sudoers file to enabe this functionality for existing installations if you 
-wish! Sudo versions older than the one in Debian 11(bullseye) require the directive will only 
-support the old syntax #includedir, and the current sudo will happily accept both @includedir 
-and #includedir
-</code></pre><h3 id="install">install</h3>
-<p>using root:</p> <a class="read-more" href="/csdn/post/apt-oper-ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2024-09-21T02:20:39&#43;08:00">
-            21 Sep 2024
         </time>
     </footer>
 </article>

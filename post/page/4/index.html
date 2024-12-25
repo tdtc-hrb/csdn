@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.140.0">
+    <meta name="generator" content="Hugo 0.140.1">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,6 +160,67 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_data_transmission/">Linux与Windows互传数据</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="一光盘">一、光盘</h1>
+<p>制作ISO: <br>
+打开UltralISO，把需要的文件拖拽过去即可。</p>
+<h2 id="2-linux">2. Linux</h2>
+<h3 id="1-look">1) look</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls -l /dev | grep cdrom
+</span></span></code></pre></div><h3 id="2-load">2) load</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mount /dev/cdrom /mnt/
+</span></span></code></pre></div><h3 id="3-unload">3) unload</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo umount /mnt
+</span></span></code></pre></div><h1 id="二scp">二、scp</h1>
+<p>如果Windows没有SSH服务器，只能进行发送.</p>
+<h2 id="发送">发送</h2>
+<ul>
+<li>Linux</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>scp /home/tdtc/go1.19.7.linux-amd64.tar.gz xiaobin@192.168.211.112:/D:<span style="color:#ae81ff">\w</span>ar
+</span></span></code></pre></div><ul>
+<li>Windows <br>
+Windows的scp包含在putty工具中。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pscp f:<span style="color:#ae81ff">\d</span>ocker-soft<span style="color:#ae81ff">\d</span>ocker-compose-Linux-x86_64 tdtc@192.168.211.131:/home/tdtc/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pscp f:<span style="color:#ae81ff">\d</span>ocker-soft<span style="color:#ae81ff">\p</span>rotobuf-cpp-3.21.12.tar.gz tdtc@192.168.211.131:/home/tdtc/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pscp f:<span style="color:#ae81ff">\d</span>ocker-soft<span style="color:#ae81ff">\g</span>o1.19.7.linux-amd64.tar.gz tdtc@192.168.211.131:/home/tdtc
+</span></span></code></pre></div><h2 id="接收">接收</h2>
+<p>注意：仅适用于win10.</p>
+<ul>
+<li>
+<p>安装OpenSSH
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20200222182445523.png" alt="添加功能">
+开始菜单-》设置-》应用-》管理可选功能</p>
+</li>
+<li>
+<p>开启OpenSSH
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/2020022218283850.png" alt="win info">
+注意：关闭Windows防火墙或允许22端口。</p>
+</li>
+</ul> <a class="read-more" href="/csdn/post/ops_data_transmission/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-02-15T16:08:08&#43;08:00">
+            15 Feb 2023
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -1243,48 +1304,6 @@ Node 2</li>
         
         <time class="post-date" datetime="2022-09-30T09:38:08&#43;08:00">
             30 Sep 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_nginx/">前端（Web）负载均衡</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><p>Nginx&rsquo;s load balancing</p>
-<h1 id="一安装">一、安装</h1>
-<p>OS: CentOS7 minimal（安装时的选项）</p>
-<h2 id="0-prepare">0. prepare</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum -y install gcc gcc-c++ automake pcre pcre-devel zlib zlib-devel openssl openssl-devel
-</span></span></code></pre></div><h3 id="1-update-openssl">1) update OpenSSL</h3>
-<blockquote>
-<p>default directory: /usr/ssl</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://www.openssl.org/source/openssl-1.1.1q.tar.gz --no-check-certificate
-</span></span></code></pre></div><h3 id="2-setup">2) setup</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$./config --prefix<span style="color:#f92672">=</span>/usr --shared
-</span></span><span style="display:flex;"><span>$make
-</span></span></code></pre></div><blockquote>
-<p>Root permission Required</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo make install
-</span></span></code></pre></div><h2 id="1-installation">1. installation</h2>
-<p>First, install Nginx of centos repo; <br>
-Then, replace the nginx program file. <br>
-Note: The replaced program file version must be the same as the repo!</p> <a class="read-more" href="/csdn/post/ops_nginx/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-09-29T08:38:08&#43;08:00">
-            29 Sep 2022
         </time>
     </footer>
 </article>

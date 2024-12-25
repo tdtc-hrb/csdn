@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.140.0">
+    <meta name="generator" content="Hugo 0.140.1">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -193,6 +193,48 @@
 </nav>
 
     </div>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_nginx/">前端（Web）负载均衡</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>Nginx&rsquo;s load balancing</p>
+<h1 id="一安装">一、安装</h1>
+<p>OS: CentOS7 minimal（安装时的选项）</p>
+<h2 id="0-prepare">0. prepare</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum -y install gcc gcc-c++ automake pcre pcre-devel zlib zlib-devel openssl openssl-devel
+</span></span></code></pre></div><h3 id="1-update-openssl">1) update OpenSSL</h3>
+<blockquote>
+<p>default directory: /usr/ssl</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://www.openssl.org/source/openssl-1.1.1q.tar.gz --no-check-certificate
+</span></span></code></pre></div><h3 id="2-setup">2) setup</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$./config --prefix<span style="color:#f92672">=</span>/usr --shared
+</span></span><span style="display:flex;"><span>$make
+</span></span></code></pre></div><blockquote>
+<p>Root permission Required</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo make install
+</span></span></code></pre></div><h2 id="1-installation">1. installation</h2>
+<p>First, install Nginx of centos repo; <br>
+Then, replace the nginx program file. <br>
+Note: The replaced program file version must be the same as the repo!</p> <a class="read-more" href="/csdn/post/ops_nginx/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-09-29T08:38:08&#43;08:00">
+            29 Sep 2022
+        </time>
+    </footer>
+</article>
 
     
         <article class="post post">
@@ -591,64 +633,6 @@ URL=jdbc:mysql://106.14.141.40:3306/crm
         
         <time class="post-date" datetime="2022-09-01T08:08:08&#43;08:00">
             1 Sep 2022
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/mysql80-install/">安装MySQL 8.0</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><h1 id="mysql-5--8">MySQL 5 &amp; 8</h1>
-<h2 id="remote-server">remote server</h2>
-<pre tabindex="0"><code>bind-address=0.0.0.0
-</code></pre><h2 id="utf8">utf8</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>[MY<span style="color:#f92672">-</span><span style="color:#ae81ff">013242</span>] [Server] <span style="color:#75715e">--character-set-server: &#39;utf8&#39; is currently an alias for the character set UTF8MB3,
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>but will be an <span style="color:#66d9ef">alias</span> <span style="color:#66d9ef">for</span> UTF8MB4 <span style="color:#66d9ef">in</span> a future release. Please consider <span style="color:#66d9ef">using</span> UTF8MB4 <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">to</span> be unambiguous.
-</span></span></code></pre></div><ul>
-<li>mysql5</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>character<span style="color:#f92672">-</span><span style="color:#66d9ef">set</span><span style="color:#f92672">-</span>server<span style="color:#f92672">=</span>utf8
-</span></span></code></pre></div><ul>
-<li>mysql8</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>character<span style="color:#f92672">-</span><span style="color:#66d9ef">set</span><span style="color:#f92672">-</span>server<span style="color:#f92672">=</span>utf8mb4
-</span></span></code></pre></div><h2 id="validate-password">validate password</h2>
-<p>注意： <a href="https://mysqlserverteam.com/mysql-8-0-4-new-default-authentication-plugin-caching_sha2_password/">mysql8.0.4</a>，
-我们将无法直接使用phpMyAdmin来登录！</p>
-<p>使用phpMyAdmin需要设置MySQL5.7兼容模式：</p>
-<pre tabindex="0"><code>authentication_policy=mysql_native_password,,
-</code></pre><ul>
-<li>mysql5</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>mysql_native_password
-</span></span></code></pre></div><ul>
-<li>mysql8</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>caching_sha2_password
-</span></span></code></pre></div><h1 id="ubuntu">Ubuntu</h1>
-<p>install mysql8:</p>
-<pre tabindex="0"><code>sudo apt install mysql-server
-</code></pre><pre tabindex="0"><code>sudo systemctl start mysql.service
-</code></pre><h2 id="config-mysql-secure">config mysql secure</h2>
-<pre tabindex="0"><code>sudo mysql
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;root&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span> IDENTIFIED <span style="color:#66d9ef">WITH</span> mysql_native_password <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;xbfirst80&#39;</span>;
-</span></span></code></pre></div><pre tabindex="0"><code>sudo mysql_secure_installation
-</code></pre><h2 id="add-user">add user</h2>
-<p>password rule:</p> <a class="read-more" href="/csdn/post/mysql80-install/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-07-07T06:08:39&#43;08:00">
-            7 Jul 2022
         </time>
     </footer>
 </article>
