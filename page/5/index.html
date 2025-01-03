@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.140.1">
+    <meta name="generator" content="Hugo 0.140.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -193,6 +193,64 @@
 </nav>
 
     </div>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_keepalived-v2/">安装配置Keepalived</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><blockquote>
+<p>OS: CentOS7 minimal(VBox)</p>
+</blockquote>
+<p>Virtual Box Network configure:</p>
+<ul>
+<li>Attached to</li>
+</ul>
+<pre tabindex="0"><code>Bridged Adapter
+</code></pre><ul>
+<li>Advanced <br>
+promiscuous mode:</li>
+</ul>
+<pre tabindex="0"><code>Allow All
+</code></pre><h1 id="一安装">一、安装</h1>
+<p>prepare tool:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#yum install gcc make autoconf automake openssl-devel libnl3-devel \</span>
+</span></span><span style="display:flex;"><span>    iptables-devel ipset-devel net-snmp-devel libnfnetlink-devel file-devel <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    glib2-devel pcre2-revel libnftnl-devel libmnl-devel systemd-devel kmod-devel
+</span></span></code></pre></div><p>LVS manager:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yum install ipvsadm
+</span></span></code></pre></div><h2 id="installation">installation</h2>
+<ul>
+<li>MASTER <br>
+Node 1</li>
+<li>BACKUP <br>
+Node 2</li>
+</ul>
+<h3 id="down-and-unzip">down and unzip</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$git clone https://github.com/acassen/keepalived.git
+</span></span></code></pre></div><p>for me:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$git clone https://gitee.com/xiaobin80/keepalived
+</span></span></code></pre></div><h3 id="installation-1">installation</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cd keepalived
+</span></span><span style="display:flex;"><span>$./autogen.sh
+</span></span></code></pre></div><p>configure:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$./configure --prefix<span style="color:#f92672">=</span>/usr
+</span></span></code></pre></div><p>make:</p> <a class="read-more" href="/csdn/post/ops_keepalived-v2/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-09-30T09:38:08&#43;08:00">
+            30 Sep 2022
+        </time>
+    </footer>
+</article>
 
     
         <article class="post post">
@@ -572,67 +630,6 @@ URL=jdbc:mysql://106.14.141.40:3306/crm
         
         <time class="post-date" datetime="2022-09-10T02:18:39&#43;08:00">
             10 Sep 2022
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/c-console_app/">计算圆的面积和周长</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><ul>
-<li>IDE <a href="https://www.eclipse.org/downloads/packages/">Eclipse IDE for C/C++ Developers</a></li>
-</ul>
-<h1 id="主程序">主程序</h1>
-<h2 id="create-project">Create Project</h2>
-<p>File -&gt; New -&gt; C/C++ Project <br>
-&ldquo;C++ Managed Build&rdquo;</p>
-<h3 id="template">Template</h3>
-<ul>
-<li>Project type</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Executable: Hello World C++ Project
-</span></span></code></pre></div><ul>
-<li>Toolchains</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cygwin GCC / mingw GCC
-</span></span></code></pre></div><h2 id="ansi版">ansi版</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> argv[])
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">double</span> dRadius <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (argc <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>) {
-</span></span><span style="display:flex;"><span>        dRadius <span style="color:#f92672">=</span> atof(argv[<span style="color:#ae81ff">1</span>]);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// todo
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h2 id="unicode版">unicode版</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">wchar_t</span><span style="color:#f92672">*</span> argv[])
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">double</span> dRadius <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (argc <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>) {
-</span></span><span style="display:flex;"><span>        dRadius <span style="color:#f92672">=</span> _wtof(argv[<span style="color:#ae81ff">1</span>]);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/// todo
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h2 id="c2065-cout--undeclared-identifier">C2065: &lsquo;cout&rsquo; : undeclared identifier</h2>
-<p>强制使用命名空间</p> <a class="read-more" href="/csdn/post/c-console_app/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-09-01T08:08:08&#43;08:00">
-            1 Sep 2022
         </time>
     </footer>
 </article>

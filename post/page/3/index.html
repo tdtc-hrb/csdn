@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.140.1">
+    <meta name="generator" content="Hugo 0.140.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,6 +160,107 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/dp-cor-java/">Chain of Command 模式</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>我们知道Chain of Responsibility模式，其实就是Template method + Next。</p>
+<p>在进行多个调用时，按顺序执行；需要调用2个方法。</p>
+<p>此模式，只适合抽象方法！</p>
+<p>在进行设计模式的程序实现中xiaobin使用已编写的SSL程序做演示。</p>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/chain-of-command.png" alt="chain of command"></p>
+<h2 id="chain-of-command">Chain of Command</h2>
+<pre tabindex="0"><code>import com.cartionsoft.xbf.ContentXbf;
+import com.cartionsoft.xbf.LibXbf;
+import com.cartionsoft.xbf.ReadXbf;
+import com.cartionsoft.xbf.XiaobinFile;
+
+public class Demo {
+
+	public static void init() throws Exception {
+		int stationID = 0;
+	    String keyPWD;
+
+		String libPath = &#34;xbfLibR.dll&#34;;
+		String xbfPath = &#34;C://send//dySSL.xbf&#34;;
+
+		ContentXbf contentXbf = new ContentXbf(xbfPath);
+
+        // All checks are linked. Client can build various chains using the same
+        // components.
+        XiaobinFile xiaobinFile = XiaobinFile.link(
+            new LibXbf(libPath),
+            new ReadXbf()
+        );
+
+        // Server gets a chain from client code.
+        contentXbf.setXbf(xiaobinFile);
+        
+        stationID = contentXbf.getStationID(-1);
+        keyPWD = contentXbf.getKeyPWD(-1);
+        
+        System.out.println(keyPWD + &#34; : &#34; + stationID);
+	}
+
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+		init();
+	}
+
+}
+</code></pre><ul>
+<li>template-method(abstract)</li>
+</ul>
+<pre tabindex="0"><code>readRecord()
+</code></pre><ul>
+<li>Next</li>
+</ul>
+<pre tabindex="0"><code>readRecordNext()
+</code></pre><ul>
+<li>traverse</li>
+</ul>
+<pre tabindex="0"><code>link()
+</code></pre><h3 id="next">Next</h3>
+<pre tabindex="0"><code>	/**
+     * Runs readRecord on the next object in chain or ends traversing if we&#39;re in
+     * last object in chain.
+     */
+    protected String readRecordNext(int dimRecord, String filename) {
+        if (next == null) {
+            return &#34;&#34;;
+        }
+        return next.readRecord(dimRecord, filename);
+    }
+</code></pre><h3 id="link">link</h3>
+<pre tabindex="0"><code>    /**
+     * Builds chains of XiaobinFile objects.
+     */
+    public static XiaobinFile link(XiaobinFile first, XiaobinFile... chain) {
+    	XiaobinFile head = first;
+        for (XiaobinFile nextInChain: chain) {
+            head.next = nextInChain;
+            head = nextInChain;
+        }
+        return first;
+    }
+</code></pre> <a class="read-more" href="/csdn/post/dp-cor-java/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-12-22T12:08:08&#43;08:00">
+            22 Dec 2023
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -912,144 +1013,6 @@ Switch from Less to Sass for the source CSS files</p>
         
         <time class="post-date" datetime="2023-03-10T09:28:08&#43;08:00">
             10 Mar 2023
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/vc-bsd_socket/">使用BSD socket</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><p>BSD Socket是标准的套接字规范，那么怎么在windows使用他们呢？</p>
-<h1 id="init--clean">Init &amp; clean</h1>
-<p>首先要引用&lt;winsock2.h&gt;和ws2_32.lib；
-使用struct addrinfo需引用&lt;ws2tcpip.h&gt;。</p>
-<p>程序头: WSAStartup(),
-程序尾: WSACleanup();</p>
-<h1 id="code">code</h1>
-<blockquote>
-<p>以下程序在VC9/VC14.1下编译通过</p>
-</blockquote>
-<h2 id="客户端程序">客户端程序</h2>
-<h3 id="prj1clt">prj1Clt</h3>
-<blockquote>
-<p>无getaddrinfo版</p>
-<blockquote>
-<p>注意：InetPton函数只能在Windows Version &gt;=6上实现！</p>
-</blockquote>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">// prj1Clt.cpp : This file contains the &#39;main&#39; function. Program execution begins and ends there.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Networking program is Win version with BSD Socket
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Client side
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Author: xiaobin
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Date: 2013-12-12
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Modfity: 2020-5-28
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#if _MSC_VER &gt; 1800
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;tchar.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#endif
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#ifdef _WIN32
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;winsock2.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;ws2tcpip.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#pragma comment(lib, &#34;ws2_32.lib&#34;)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#else
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;sys/socket.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;netinet/in.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;arpa/in.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#endif
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#define MAXLINE 254
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define DEFAULT_PORT 3293
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> argv[])
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> 				 sockfd;
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">struct</span>  <span style="color:#a6e22e">sockaddr_in</span>  servaddr;
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span>					 iStatus;
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">char</span>				<span style="color:#f92672">*</span>sendBuff <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;this is test message!&#34;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#ifdef _WIN32
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	WORD wVersionRequested;
-</span></span><span style="display:flex;"><span>	WSADATA wsaData;
-</span></span><span style="display:flex;"><span>	wVersionRequested <span style="color:#f92672">=</span> MAKEWORD(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>);
-</span></span><span style="display:flex;"><span>	iStatus <span style="color:#f92672">=</span> WSAStartup(wVersionRequested, <span style="color:#f92672">&amp;</span>wsaData);
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (iStatus <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>) {
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (LOBYTE(wsaData.wVersion) <span style="color:#f92672">!=</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">||</span>
-</span></span><span style="display:flex;"><span>		HIBYTE(wsaData.wVersion) <span style="color:#f92672">!=</span> <span style="color:#ae81ff">1</span>) {
-</span></span><span style="display:flex;"><span>		WSACleanup();
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#endif
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (argc <span style="color:#f92672">!=</span> <span style="color:#ae81ff">2</span>)
-</span></span><span style="display:flex;"><span>		printf(<span style="color:#e6db74">&#34;Usage: &lt;IPaddress&gt;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	sockfd <span style="color:#f92672">=</span> socket(AF_INET, SOCK_STREAM, <span style="color:#ae81ff">0</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (sockfd <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>)
-</span></span><span style="display:flex;"><span>		printf(<span style="color:#e6db74">&#34;socket error</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">/* check Server address */</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// inet_pton is win version - InetPton
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> (InetPton(AF_INET, (<span style="color:#66d9ef">wchar_t</span><span style="color:#f92672">*</span>)argv[<span style="color:#ae81ff">1</span>], <span style="color:#f92672">&amp;</span>servaddr.sin_addr) <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>)
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//if (InetPtonA(AF_INET, argv[1], &amp;servaddr.sin_addr) &lt; 0)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		printf(<span style="color:#e6db74">&#34;inet_pton error for %ls&#34;</span>, argv[<span style="color:#ae81ff">1</span>]);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">/* Set serveraddr */</span>
-</span></span><span style="display:flex;"><span>	memset(<span style="color:#f92672">&amp;</span>servaddr, <span style="color:#ae81ff">0</span>, <span style="color:#66d9ef">sizeof</span>(servaddr));
-</span></span><span style="display:flex;"><span>	servaddr.sin_family <span style="color:#f92672">=</span> AF_INET;
-</span></span><span style="display:flex;"><span>	servaddr.sin_addr.S_un.S_addr <span style="color:#f92672">=</span> inet_addr((<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>)argv[<span style="color:#ae81ff">1</span>]);
-</span></span><span style="display:flex;"><span>	servaddr.sin_port <span style="color:#f92672">=</span> htons(DEFAULT_PORT);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	printf(<span style="color:#e6db74">&#34;%s%ls%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;Connecting &#34;</span>, argv[<span style="color:#ae81ff">1</span>], <span style="color:#e6db74">&#34; ...&#34;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">/* connect server */</span>
-</span></span><span style="display:flex;"><span>	iStatus <span style="color:#f92672">=</span> connect(sockfd, (<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">sockaddr</span> <span style="color:#f92672">*</span>) <span style="color:#f92672">&amp;</span>servaddr, <span style="color:#66d9ef">sizeof</span>(servaddr));
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (iStatus <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>) {
-</span></span><span style="display:flex;"><span>		closesocket(sockfd);
-</span></span><span style="display:flex;"><span>		printf(<span style="color:#e6db74">&#34;connect error</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	printf(<span style="color:#e6db74">&#34;%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;Writing...&#34;</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">/* Write data */</span>
-</span></span><span style="display:flex;"><span>	iStatus <span style="color:#f92672">=</span> send(sockfd, sendBuff, (<span style="color:#66d9ef">int</span>)strlen(sendBuff), <span style="color:#ae81ff">0</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (iStatus <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>) {
-</span></span><span style="display:flex;"><span>		printf(<span style="color:#e6db74">&#34;%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;write data error&#34;</span>);
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>	printf(<span style="color:#e6db74">&#34;%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;Writed.&#34;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#ifdef _WIN32
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	closesocket(sockfd);
-</span></span><span style="display:flex;"><span>	WSACleanup();
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#endif
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="prj2clt">prj2Clt</h3>
-<blockquote>
-<p>getaddrinfo版</p> <a class="read-more" href="/csdn/post/vc-bsd_socket/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-03-05T21:30:08-08:00">
-            5 Mar 2023
         </time>
     </footer>
 </article>

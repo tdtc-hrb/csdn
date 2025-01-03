@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.140.1">
+    <meta name="generator" content="Hugo 0.140.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,6 +160,144 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/vc-bsd_socket/">使用BSD socket</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>BSD Socket是标准的套接字规范，那么怎么在windows使用他们呢？</p>
+<h1 id="init--clean">Init &amp; clean</h1>
+<p>首先要引用&lt;winsock2.h&gt;和ws2_32.lib；
+使用struct addrinfo需引用&lt;ws2tcpip.h&gt;。</p>
+<p>程序头: WSAStartup(),
+程序尾: WSACleanup();</p>
+<h1 id="code">code</h1>
+<blockquote>
+<p>以下程序在VC9/VC14.1下编译通过</p>
+</blockquote>
+<h2 id="客户端程序">客户端程序</h2>
+<h3 id="prj1clt">prj1Clt</h3>
+<blockquote>
+<p>无getaddrinfo版</p>
+<blockquote>
+<p>注意：InetPton函数只能在Windows Version &gt;=6上实现！</p>
+</blockquote>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">// prj1Clt.cpp : This file contains the &#39;main&#39; function. Program execution begins and ends there.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Networking program is Win version with BSD Socket
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Client side
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Author: xiaobin
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Date: 2013-12-12
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Modfity: 2020-5-28
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#if _MSC_VER &gt; 1800
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;tchar.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#endif
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#ifdef _WIN32
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;winsock2.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;ws2tcpip.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#pragma comment(lib, &#34;ws2_32.lib&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#else
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;sys/socket.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;netinet/in.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;arpa/in.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#endif
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define MAXLINE 254
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define DEFAULT_PORT 3293
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> argv[])
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> 				 sockfd;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">struct</span>  <span style="color:#a6e22e">sockaddr_in</span>  servaddr;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span>					 iStatus;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">char</span>				<span style="color:#f92672">*</span>sendBuff <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;this is test message!&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#ifdef _WIN32
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	WORD wVersionRequested;
+</span></span><span style="display:flex;"><span>	WSADATA wsaData;
+</span></span><span style="display:flex;"><span>	wVersionRequested <span style="color:#f92672">=</span> MAKEWORD(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>	iStatus <span style="color:#f92672">=</span> WSAStartup(wVersionRequested, <span style="color:#f92672">&amp;</span>wsaData);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (iStatus <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (LOBYTE(wsaData.wVersion) <span style="color:#f92672">!=</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">||</span>
+</span></span><span style="display:flex;"><span>		HIBYTE(wsaData.wVersion) <span style="color:#f92672">!=</span> <span style="color:#ae81ff">1</span>) {
+</span></span><span style="display:flex;"><span>		WSACleanup();
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#endif
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (argc <span style="color:#f92672">!=</span> <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>		printf(<span style="color:#e6db74">&#34;Usage: &lt;IPaddress&gt;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	sockfd <span style="color:#f92672">=</span> socket(AF_INET, SOCK_STREAM, <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (sockfd <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>		printf(<span style="color:#e6db74">&#34;socket error</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">/* check Server address */</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// inet_pton is win version - InetPton
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> (InetPton(AF_INET, (<span style="color:#66d9ef">wchar_t</span><span style="color:#f92672">*</span>)argv[<span style="color:#ae81ff">1</span>], <span style="color:#f92672">&amp;</span>servaddr.sin_addr) <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//if (InetPtonA(AF_INET, argv[1], &amp;servaddr.sin_addr) &lt; 0)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		printf(<span style="color:#e6db74">&#34;inet_pton error for %ls&#34;</span>, argv[<span style="color:#ae81ff">1</span>]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">/* Set serveraddr */</span>
+</span></span><span style="display:flex;"><span>	memset(<span style="color:#f92672">&amp;</span>servaddr, <span style="color:#ae81ff">0</span>, <span style="color:#66d9ef">sizeof</span>(servaddr));
+</span></span><span style="display:flex;"><span>	servaddr.sin_family <span style="color:#f92672">=</span> AF_INET;
+</span></span><span style="display:flex;"><span>	servaddr.sin_addr.S_un.S_addr <span style="color:#f92672">=</span> inet_addr((<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>)argv[<span style="color:#ae81ff">1</span>]);
+</span></span><span style="display:flex;"><span>	servaddr.sin_port <span style="color:#f92672">=</span> htons(DEFAULT_PORT);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	printf(<span style="color:#e6db74">&#34;%s%ls%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;Connecting &#34;</span>, argv[<span style="color:#ae81ff">1</span>], <span style="color:#e6db74">&#34; ...&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">/* connect server */</span>
+</span></span><span style="display:flex;"><span>	iStatus <span style="color:#f92672">=</span> connect(sockfd, (<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">sockaddr</span> <span style="color:#f92672">*</span>) <span style="color:#f92672">&amp;</span>servaddr, <span style="color:#66d9ef">sizeof</span>(servaddr));
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (iStatus <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>		closesocket(sockfd);
+</span></span><span style="display:flex;"><span>		printf(<span style="color:#e6db74">&#34;connect error</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	printf(<span style="color:#e6db74">&#34;%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;Writing...&#34;</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">/* Write data */</span>
+</span></span><span style="display:flex;"><span>	iStatus <span style="color:#f92672">=</span> send(sockfd, sendBuff, (<span style="color:#66d9ef">int</span>)strlen(sendBuff), <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (iStatus <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>		printf(<span style="color:#e6db74">&#34;%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;write data error&#34;</span>);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	printf(<span style="color:#e6db74">&#34;%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;Writed.&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#ifdef _WIN32
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	closesocket(sockfd);
+</span></span><span style="display:flex;"><span>	WSACleanup();
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#endif
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="prj2clt">prj2Clt</h3>
+<blockquote>
+<p>getaddrinfo版</p> <a class="read-more" href="/csdn/post/vc-bsd_socket/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-03-05T21:30:08-08:00">
+            5 Mar 2023
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -1246,64 +1384,6 @@ repoInfo.dll
         
         <time class="post-date" datetime="2022-10-03T02:38:08&#43;08:00">
             3 Oct 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_keepalived-v2/">安装配置Keepalived</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><blockquote>
-<p>OS: CentOS7 minimal(VBox)</p>
-</blockquote>
-<p>Virtual Box Network configure:</p>
-<ul>
-<li>Attached to</li>
-</ul>
-<pre tabindex="0"><code>Bridged Adapter
-</code></pre><ul>
-<li>Advanced <br>
-promiscuous mode:</li>
-</ul>
-<pre tabindex="0"><code>Allow All
-</code></pre><h1 id="一安装">一、安装</h1>
-<p>prepare tool:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#yum install gcc make autoconf automake openssl-devel libnl3-devel \</span>
-</span></span><span style="display:flex;"><span>    iptables-devel ipset-devel net-snmp-devel libnfnetlink-devel file-devel <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    glib2-devel pcre2-revel libnftnl-devel libmnl-devel systemd-devel kmod-devel
-</span></span></code></pre></div><p>LVS manager:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yum install ipvsadm
-</span></span></code></pre></div><h2 id="installation">installation</h2>
-<ul>
-<li>MASTER <br>
-Node 1</li>
-<li>BACKUP <br>
-Node 2</li>
-</ul>
-<h3 id="down-and-unzip">down and unzip</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$git clone https://github.com/acassen/keepalived.git
-</span></span></code></pre></div><p>for me:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$git clone https://gitee.com/xiaobin80/keepalived
-</span></span></code></pre></div><h3 id="installation-1">installation</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cd keepalived
-</span></span><span style="display:flex;"><span>$./autogen.sh
-</span></span></code></pre></div><p>configure:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$./configure --prefix<span style="color:#f92672">=</span>/usr
-</span></span></code></pre></div><p>make:</p> <a class="read-more" href="/csdn/post/ops_keepalived-v2/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-09-30T09:38:08&#43;08:00">
-            30 Sep 2022
         </time>
     </footer>
 </article>
