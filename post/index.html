@@ -166,35 +166,53 @@
     </header>
     <section class="post-excerpt">
         
-            <p><p>Use <a href="https://www.eclipse.org/downloads/packages/">Eclipse IDE for C/C++ Developers</a> to create a project;
-then create Circular class;
-then call Circular class in the main program;
-finally run it on Posix.</p>
-<h1 id="project">Project</h1>
-<ul>
-<li>Create Project</li>
-<li>Create Circular class</li>
-<li>Call Circular class in the main program</li>
+            <p><ul>
+<li><a href="https://www.eclipse.org/downloads/packages/">Eclipse IDE for C/C++ Developers</a></li>
+<li><a href="https://www.msys2.org/">msys2</a> or <a href="https://cygwin.com/">cygwin</a></li>
 </ul>
-<h2 id="create-project">Create Project</h2>
-<p>File -&gt; New -&gt; C/C++ Project <br>
-&ldquo;C++ Managed Build&rdquo;</p>
+<pre tabindex="0"><code>automake, gcc-core, gcc-g++, gdb, make
+</code></pre><h2 id="circular-类">Circular 类</h2>
 <ul>
-<li>Project type</li>
+<li>Circular.h</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Executable: Hello World C++ Project
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#pragma once
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Circular</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    Circular(<span style="color:#66d9ef">double</span> pi);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">virtual</span> <span style="color:#f92672">~</span>Circular();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">double</span> PI;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">getArea</span>(<span style="color:#66d9ef">double</span> radius);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">getCircumference</span>(<span style="color:#66d9ef">double</span> radius);
+</span></span><span style="display:flex;"><span>};
 </span></span></code></pre></div><ul>
-<li>Toolchains</li>
+<li>Circular.cpp</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cygwin GCC / mingw GCC
-</span></span></code></pre></div><h2 id="circular-类">Circular 类</h2>
-<ul>
-<li>Head</li>
-<li>Source</li>
-</ul>
-<h3 id="head">Head</h3>
-<blockquote>
-<p>Circular.h</p> <a class="read-more" href="/csdn/post/c-console_app/">&raquo;</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;Circular.h&#34;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>Circular<span style="color:#f92672">::</span>Circular(<span style="color:#66d9ef">double</span> pi)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    PI <span style="color:#f92672">=</span> pi;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Circular<span style="color:#f92672">::~</span>Circular()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">double</span> Circular<span style="color:#f92672">::</span>getArea(<span style="color:#66d9ef">double</span> radius) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> PI <span style="color:#f92672">*</span> (radius <span style="color:#f92672">*</span> radius);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">double</span> Circular<span style="color:#f92672">::</span>getCircumference(<span style="color:#66d9ef">double</span> radius) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> PI <span style="color:#f92672">*</span> (radius <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="create-project">Create Project</h2>
+<p>File -&gt; New -&gt; C/C++ Project <br>
+&ldquo;C++ Managed Build&rdquo;</p> <a class="read-more" href="/csdn/post/c-console_app/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -203,8 +221,8 @@ finally run it on Posix.</p>
         
 
         
-        <time class="post-date" datetime="2025-01-03T18:08:08&#43;08:00">
-            3 Jan 2025
+        <time class="post-date" datetime="2025-01-06T18:08:08&#43;08:00">
+            6 Jan 2025
         </time>
     </footer>
 </article>
