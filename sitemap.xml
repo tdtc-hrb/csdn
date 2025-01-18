@@ -3,12 +3,24 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://tdtc-hrb.github.io/csdn/post/</loc>
-    <lastmod>2025-01-07T08:08:08+08:00</lastmod>
-  </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/c-console_app/</loc>
-    <lastmod>2025-01-07T08:08:08+08:00</lastmod>
+    <lastmod>2025-01-18T23:08:08+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/</loc>
+    <lastmod>2025-01-18T23:08:08+08:00</lastmod>
+  </url><url>
+    <loc>https://tdtc-hrb.github.io/csdn/post/com-ie-repoinfo/</loc>
+    <lastmod>2025-01-18T16:08:08+08:00</lastmod>
+  </url><url>
+    <loc>https://tdtc-hrb.github.io/csdn/post/com-safearray-vc/</loc>
+    <lastmod>2025-01-18T12:08:08+08:00</lastmod>
+  </url><url>
+    <loc>https://tdtc-hrb.github.io/csdn/post/vc-update-atl/</loc>
+    <lastmod>2025-01-18T08:18:08+08:00</lastmod>
+  </url><url>
+    <loc>https://tdtc-hrb.github.io/csdn/post/c2plus-com-dll/</loc>
+    <lastmod>2025-01-18T08:08:08+08:00</lastmod>
+  </url><url>
+    <loc>https://tdtc-hrb.github.io/csdn/post/c-console_app/</loc>
     <lastmod>2025-01-07T08:08:08+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/mysql80-install/</loc>
@@ -16,12 +28,6 @@
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/mysql84-install/</loc>
     <lastmod>2024-12-26T00:08:39+08:00</lastmod>
-  </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/</loc>
-    <lastmod>2024-12-15T23:08:08+08:00</lastmod>
-  </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/com-ie-test/</loc>
-    <lastmod>2024-12-15T18:08:08+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/nodejs-ubuntu/</loc>
     <lastmod>2024-12-12T23:08:39+08:00</lastmod>
@@ -101,9 +107,6 @@
     <loc>https://tdtc-hrb.github.io/csdn/post/mysql-mdb-v104/</loc>
     <lastmod>2023-08-06T01:08:39+08:00</lastmod>
   </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/vc-update-atl/</loc>
-    <lastmod>2023-06-20T08:18:08+08:00</lastmod>
-  </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/ops_grub_ubuntu/</loc>
     <lastmod>2023-03-15T00:19:08+08:00</lastmod>
   </url><url>
@@ -121,9 +124,6 @@
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/c-bsd_socket/</loc>
     <lastmod>2023-02-14T00:08:08+08:00</lastmod>
-  </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/c2plus-com-dll/</loc>
-    <lastmod>2023-02-13T08:08:08+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/pack-file-linux/</loc>
     <lastmod>2023-02-10T02:20:39+08:00</lastmod>
@@ -178,9 +178,6 @@
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/tags/rocky-linux-8/</loc>
     <lastmod>2022-06-27T03:21:39+08:00</lastmod>
-  </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/com-ie-repoinfo/</loc>
-    <lastmod>2022-06-13T16:08:08+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/tags/centos7/</loc>
     <lastmod>2022-06-11T04:58:39+08:00</lastmod>
@@ -241,9 +238,6 @@
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/ops_git_oper1/</loc>
     <lastmod>2022-02-02T01:38:08+08:00</lastmod>
-  </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/com-safearray-vc/</loc>
-    <lastmod>2022-01-13T12:08:08+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/js-thousand-separator/</loc>
     <lastmod>2021-11-18T02:18:39+08:00</lastmod>

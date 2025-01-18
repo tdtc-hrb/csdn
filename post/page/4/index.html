@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.140.2">
+    <meta name="generator" content="Hugo 0.141.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,6 +160,47 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_vi/">简单使用vi</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>The default editor that comes with the UNIX operating system is called vi (visual editor).</p>
+<p>The UNIX vi editor is a full screen editor and has two modes of operation:</p>
+<ul>
+<li>Command mode commands which cause action to be taken on the file, and</li>
+<li>Insert mode in which entered text is inserted into the file.</li>
+</ul>
+<h1 id="insert-mode">Insert mode</h1>
+<ul>
+<li>正常使用</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ vi myfile
+</span></span></code></pre></div><ul>
+<li>恢复使用</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ vi -r myfile
+</span></span></code></pre></div><p>恢复系统崩溃时正在编辑的文件名</p>
+<p>要进行文字编辑工作, 按“i”即进入</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>i
+</span></span></code></pre></div><h2 id="移动光标">移动光标</h2>
+<p>使用方向键来进行位置的移动。</p> <a class="read-more" href="/csdn/post/ops_vi/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-03-10T09:28:08&#43;08:00">
+            10 Mar 2023
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -541,95 +582,6 @@ Windows的scp包含在putty工具中。</li>
         
         <time class="post-date" datetime="2023-02-14T00:08:08&#43;08:00">
             14 Feb 2023
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/c2plus-com-dll/">c#调用COM</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><ul>
-<li>IDE <br>
-vs2008 Express(sp1)</li>
-</ul>
-<h1 id="reference-com">reference COM</h1>
-<h2 id="注册com">注册COM</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>@echo
-</span></span><span style="display:flex;"><span>cd /d %~dp0
-</span></span><span style="display:flex;"><span>Regsvr32 xbfInfo.dll
-</span></span></code></pre></div><h2 id="add-reference">Add Reference</h2>
-<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20200514021327.png" alt="vs2008 ui1"></p>
-<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20200514021444.png" alt="vs2008 ui2"></p>
-<p>COM选项卡
-<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20200514021640.png" alt="vs2008 ui3">
-添加完成时</p>
-<h1 id="添加事件">添加事件</h1>
-<h2 id="import-class">import class</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>using System.IO;
-</span></span><span style="display:flex;"><span>using xbfInfoLib;
-</span></span></code></pre></div><h2 id="写xbf文件">写xbf文件</h2>
-<h3 id="读ini文件配置">读Ini文件配置</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>Boolean flagMSSQL <span style="color:#f92672">=</span> false;
-</span></span><span style="display:flex;"><span>Boolean flagSecu <span style="color:#f92672">=</span> false;
-</span></span><span style="display:flex;"><span>string sectionName <span style="color:#f92672">=</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(<span style="color:#e6db74">&#34;config&#34;</span>, <span style="color:#e6db74">&#34;type&#34;</span>);
-</span></span><span style="display:flex;"><span>string strSrv <span style="color:#f92672">=</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Server&#34;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">Equals</span>(strSrv, <span style="color:#e6db74">&#34;&#34;</span>))
-</span></span><span style="display:flex;"><span>    flagMSSQL <span style="color:#f92672">=</span> true;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (flagMSSQL)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    strConn <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Provider=SQLOLEDB.1;&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Password=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Pwd&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Persist Security Info=True;&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;User ID=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;User&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Initial Catalog=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;DB&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Data Source=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Server&#34;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span> <span style="color:#75715e">// MS Access
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{
-</span></span><span style="display:flex;"><span>    string strPWD <span style="color:#f92672">=</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Pwd&#34;</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">Equals</span>(strPWD, <span style="color:#e6db74">&#34;&#34;</span>))
-</span></span><span style="display:flex;"><span>        flagSecu <span style="color:#f92672">=</span> true;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (flagSecu)
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        strConn <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Provider=Microsoft.Jet.OLEDB.4.0;&#34;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Data Source=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;DB&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Persist Security Info=False;&#34;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Jet OLEDB:Database Password=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Pwd&#34;</span>);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        strConn <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Provider=Microsoft.Jet.OLEDB.4.0;&#34;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Data Source=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;DB&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Persist Security Info=True&#34;</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="调用com接口">调用COM接口</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>xbfInfoLib.FormatClass xbf <span style="color:#f92672">=</span> new <span style="color:#a6e22e">FormatClass</span>();
-</span></span><span style="display:flex;"><span>xbf.<span style="color:#a6e22e">setFileInfo</span>(strConn);
-</span></span></code></pre></div><h2 id="读xbf文件">读xbf文件</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>xbfInfoLib.FormatClass xbf <span style="color:#f92672">=</span> new <span style="color:#a6e22e">FormatClass</span>();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>string filePath <span style="color:#f92672">=</span> currDir <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#f92672">+</span> edtFileName.Text;
-</span></span><span style="display:flex;"><span>string strRet <span style="color:#f92672">=</span> xbf.<span style="color:#a6e22e">getFileInfo</span>(filePath);
-</span></span><span style="display:flex;"><span>MessageBox.<span style="color:#a6e22e">Show</span>(strRet);
-</span></span></code></pre></div><h1 id="code">code</h1>
-<blockquote>
-<p>Form1.cs</p> <a class="read-more" href="/csdn/post/c2plus-com-dll/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-02-13T08:08:08&#43;08:00">
-            13 Feb 2023
         </time>
     </footer>
 </article>

@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.140.2">
+    <meta name="generator" content="Hugo 0.141.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,6 +160,171 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_dc_redis_ubuntu/">安装redis-server</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
+<h1 id="1-安装">1. 安装</h1>
+<p>Prerequisites:</p>
+<pre tabindex="0"><code>sudo apt install lsb-release curl gpg
+</code></pre><p>Add the repository to the apt index:</p>
+<pre tabindex="0"><code>curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
+
+echo &#34;deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main&#34; | sudo tee /etc/apt/sources.list.d/redis.list
+</code></pre><ul>
+<li>install</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install redis-server
+</span></span></code></pre></div><h2 id="launch">Launch</h2>
+<ul>
+<li>local(WSL)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>redis-server
+</span></span></code></pre></div><ul>
+<li>remote(Virtual Box or VM ware etc.)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo redis-server /etc/redis/redis.conf
+</span></span></code></pre></div><h3 id="view-port">View port</h3>
+<p>install netstat:</p> <a class="read-more" href="/csdn/post/ops_dc_redis_ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-03-10T08:08:08&#43;08:00">
+            10 Mar 2024
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/version-ubuntu/">查看版本-Ubuntu</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
+<h1 id="components-version">components version</h1>
+<p>查看内核版本:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#uname -a</span>
+</span></span></code></pre></div><h2 id="查看glibc库版本">查看Glibc库版本</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#apt-cache show libc6</span>
+</span></span></code></pre></div><h2 id="查看binutils版本">查看binutils版本</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#ld -v</span>
+</span></span></code></pre></div><h1 id="查看ubuntu版本号">查看ubuntu版本号</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#cat /etc/issue</span>
+</span></span></code></pre></div><h2 id="查看debian对应版本">查看debian对应版本</h2>
+<pre tabindex="0"><code>#cat /etc/debian_version
+</code></pre><h3 id="debian-code-namehttpswwwdebianorgreleases"><a href="https://www.debian.org/releases/">debian code name</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>code</th>
+          <th>version</th>
+          <th>status</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>bullseye</td>
+          <td>11</td>
+          <td>statble</td>
+      </tr>
+      <tr>
+          <td>buster</td>
+          <td>10</td>
+          <td>old statble</td>
+      </tr>
+      <tr>
+          <td>stretch</td>
+          <td>9</td>
+          <td>old old statble</td>
+      </tr>
+      <tr>
+          <td>jessie</td>
+          <td>8</td>
+          <td>archived</td>
+      </tr>
+      <tr>
+          <td>wheezy</td>
+          <td>7</td>
+          <td>obsolete</td>
+      </tr>
+      <tr>
+          <td>squeeze</td>
+          <td>6.0</td>
+          <td>obsolete</td>
+      </tr>
+      <tr>
+          <td>lenny</td>
+          <td>5.0</td>
+          <td>obsolete</td>
+      </tr>
+      <tr>
+          <td>etch</td>
+          <td>4.0</td>
+          <td>obsolete</td>
+      </tr>
+      <tr>
+          <td>sarge</td>
+          <td>3.1</td>
+          <td>obsolete</td>
+      </tr>
+      <tr>
+          <td>woody</td>
+          <td>3.0</td>
+          <td>obsolete</td>
+      </tr>
+      <tr>
+          <td>potato</td>
+          <td>2.2</td>
+          <td>obsolete</td>
+      </tr>
+      <tr>
+          <td>slink</td>
+          <td>2.1</td>
+          <td>obsolete</td>
+      </tr>
+      <tr>
+          <td>hamm</td>
+          <td>2.0</td>
+          <td>obsolete</td>
+      </tr>
+  </tbody>
+</table> <a class="read-more" href="/csdn/post/version-ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        on
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/glibc/">#Glibc</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/sh/">#sh</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/binutils/">#binutils</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/system/">#system</a>,
+            
+        
+        <time class="post-date" datetime="2024-03-01T02:12:39&#43;08:00">
+            1 Mar 2024
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -760,67 +925,6 @@ CentOS v7.9(2009)</li>
 	
 	   <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/vc-update-atl/">VC升级时出现的问题</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><blockquote>
-<p>VC6迁移到VC2008+</p>
-</blockquote>
-<h1 id="atl">ATL</h1>
-<p>Active Template Library (ATL)</p>
-<h2 id="c1189">C1189</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>c:<span style="color:#ae81ff">\p</span>rogram files<span style="color:#ae81ff">\m</span>icrosoft visual studio 10.0<span style="color:#ae81ff">\v</span>c<span style="color:#ae81ff">\a</span>tlmfc<span style="color:#ae81ff">\i</span>nclude<span style="color:#ae81ff">\a</span>tlcore.h<span style="color:#f92672">(</span>35<span style="color:#f92672">)</span>:
-</span></span><span style="display:flex;"><span>fatal error C1189: <span style="color:#75715e">#error :  This file requires _WIN32_WINNT to be #defined at least to 0x0403. Value 0x0501 or higher is recommended.</span>
-</span></span></code></pre></div><p>A:</p>
-<blockquote>
-<p>StdAfx.h</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#define _WIN32_WINNT 0x0400
-</span></span></span></code></pre></div><p>-&gt;</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#define _WIN32_WINNT 0x0501
-</span></span></span></code></pre></div><h2 id="c1083atlimpl">C1083(atlimpl)</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>c:<span style="color:#ae81ff">\u</span>sers<span style="color:#ae81ff">\x</span>iaobin<span style="color:#ae81ff">\d</span>ocuments<span style="color:#ae81ff">\v</span>isual studio 2013<span style="color:#ae81ff">\p</span>rojects<span style="color:#ae81ff">\c</span>rcfcn_vc<span style="color:#ae81ff">\s</span>tdafx.cpp<span style="color:#f92672">(</span>13<span style="color:#f92672">)</span>:
-</span></span><span style="display:flex;"><span>fatal error C1083: Cannot open include file: <span style="color:#e6db74">&#39;atlimpl.cpp&#39;</span>: No such file or directory
-</span></span></code></pre></div><p>A: solution 1 or 2.</p>
-<ul>
-<li>solution 1 <br>
-Comment out this line <br>
-stdAfx.cpp</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">// stdafx.cpp : source file that includes just the standard includes
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  stdafx.pch will be the pre-compiled header
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  stdafx.obj will contain the pre-compiled type information
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;stdafx.h&#34;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#ifdef _ATL_STATIC_REGISTRY
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;statreg.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;statreg.cpp&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#endif
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//#include &lt;atlimpl.cpp&gt;
-</span></span></span></code></pre></div><ul>
-<li>
-<p>solution 2 <br>
-Copy this file to the Project folder，</p> <a class="read-more" href="/csdn/post/vc-update-atl/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-06-20T08:18:08&#43;08:00">
-            20 Jun 2023
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_grub_ubuntu/">grub救援模式</a></h2>
     </header>
     <section class="post-excerpt">
@@ -971,47 +1075,6 @@ Switch from Less to Sass for the source CSS files</p>
 
         
         <time class="post-date" datetime="2023-03-10T14:08:08&#43;08:00">
-            10 Mar 2023
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_vi/">简单使用vi</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><p>The default editor that comes with the UNIX operating system is called vi (visual editor).</p>
-<p>The UNIX vi editor is a full screen editor and has two modes of operation:</p>
-<ul>
-<li>Command mode commands which cause action to be taken on the file, and</li>
-<li>Insert mode in which entered text is inserted into the file.</li>
-</ul>
-<h1 id="insert-mode">Insert mode</h1>
-<ul>
-<li>正常使用</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ vi myfile
-</span></span></code></pre></div><ul>
-<li>恢复使用</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ vi -r myfile
-</span></span></code></pre></div><p>恢复系统崩溃时正在编辑的文件名</p>
-<p>要进行文字编辑工作, 按“i”即进入</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>i
-</span></span></code></pre></div><h2 id="移动光标">移动光标</h2>
-<p>使用方向键来进行位置的移动。</p> <a class="read-more" href="/csdn/post/ops_vi/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-03-10T09:28:08&#43;08:00">
             10 Mar 2023
         </time>
     </footer>

@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.140.2">
+    <meta name="generator" content="Hugo 0.141.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -158,6 +158,316 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/com-ie-repoinfo/">铁路车号读取</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>!!! 注意： 除非维护IE的ACTIVE项目，不推荐使用ATL !!! <br>
+!!! Unless you are maintaining an IE ActiveX project, it is not recommended to use ATL! !!!</p>
+<ul>
+<li>二进制文件工具：<a href="https://www.editplus.com/download.html">EditPlus</a> <br>
+Edit -&gt; Hex Viewer</li>
+</ul>
+<blockquote>
+<ul>
+<li>replace(regexp/substr,replacement)
+使用这个函数来替换多余的空格。</li>
+</ul>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/\s/g</span>, <span style="color:#e6db74">&#34;&#34;</span>);
+</span></span></code></pre></div><blockquote>
+<ul>
+<li>split(separator,howmany)
+字符串转换成字符数组。</li>
+</ul>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">string</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;,&#34;</span>);
+</span></span></code></pre></div><h1 id="一js部分">一、js部分</h1>
+<p>我们把所有的方法放到一个对象（RepoInfo）中。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">RepoInfo</span> <span style="color:#f92672">=</span> { };
+</span></span></code></pre></div><h2 id="1-获取对象">1. 获取对象</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">RepoInfo</span>.<span style="color:#a6e22e">getObj</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">objName</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ActiveXObject</span>(<span style="color:#a6e22e">objName</span>);
+</span></span><span style="display:flex;"><span>	};
+</span></span></code></pre></div><h2 id="2-获取数组">2. 获取数组</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">RepoInfo</span>.<span style="color:#a6e22e">getArray</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">str</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ret</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array(<span style="color:#ae81ff">16</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">string</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/\s/g</span>, <span style="color:#e6db74">&#34;&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ret</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">string</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;,&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ret</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h2 id="3-解码字串">3. 解码字串</h2>
+<h3 id="输入字串校验">输入字串校验</h3>
+<p>如果字串空，退出。</p>
+<h3 id="输出框清空">输出框清空</h3>
+<p>每次赋值前，清空。</p>
+<h3 id="执行com中的方法">执行COM中的方法</h3>
+<p>在获取对象非空的情况下，执行。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">RepoInfo</span>.<span style="color:#a6e22e">decode</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">string</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">string</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">RepoInfo</span>.<span style="color:#a6e22e">getObj</span>(<span style="color:#e6db74">&#34;repoInfo.LabelInfo&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">edtView</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;edtView&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">edtView</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">str</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">RepoInfo</span>.<span style="color:#a6e22e">getArray</span>(<span style="color:#a6e22e">string</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">obj</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">edtView</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">getInfo</span>(<span style="color:#a6e22e">str</span>);
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h1 id="二html部分">二、html部分</h1>
+<h2 id="按钮事件">按钮事件</h2>
+<p>从输入框获取字串作为js方法的输入参数，注意：两种引号的配合使用。</p> <a class="read-more" href="/csdn/post/com-ie-repoinfo/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2025-01-18T16:08:08&#43;08:00">
+            18 Jan 2025
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/com-safearray-vc/">SafeArray数据</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>!!! 注意： 除非维护IE的ACTIVE项目，不推荐使用ATL !!! <br>
+!!! Unless you are maintaining an IE ActiveX project, it is not recommended to use ATL! !!!</p>
+<h1 id="com">COM</h1>
+<blockquote>
+<p>vc</p>
+</blockquote>
+<h2 id="1-定义safearray变量">1. 定义SAFEARRAY变量</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>SAFEARRAY <span style="color:#f92672">*</span>pSArray <span style="color:#f92672">=</span> NULL;
+</span></span></code></pre></div><h2 id="2-释放此变量">2. 释放此变量</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>SafeArrayDestroy(pSArray);
+</span></span></code></pre></div><h2 id="3-建立向量表">3. 建立向量表</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>pSArray <span style="color:#f92672">=</span> SafeArrayCreateVector(VT_UI1, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">32</span>);
+</span></span></code></pre></div><p>向量变量（VT_UI1）的定义：<a href="https://docs.microsoft.com/en-us/previous-versions/aa910805(v=msdn.10)?redirectedfrom=MSDN">msdn</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>VT_UI1
+</span></span><span style="display:flex;"><span>Variable type is unsigned char.
+</span></span></code></pre></div><h2 id="4-写入数据">4. 写入数据</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>SafeArrayPutElement(pSArray, <span style="color:#f92672">&amp;</span>l, <span style="color:#f92672">&amp;</span>inqReport[l]);
+</span></span></code></pre></div><h2 id="getinqrepo方法">getInqRepo方法：</h2>
+<blockquote>
+<p>AA：屏蔽的数值</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>STDMETHODIMP CRepoFmt<span style="color:#f92672">::</span>getInqRepo(ULONG iStation, SAFEARRAY<span style="color:#f92672">**</span> ret)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	SAFEARRAY <span style="color:#f92672">*</span>pSArray <span style="color:#f92672">=</span> NULL;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">char</span> inqReport[<span style="color:#ae81ff">32</span>];
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">char</span> xorByte <span style="color:#f92672">=</span> AA;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> iStationID <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (iStation <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>		iStationID <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>		iStationID <span style="color:#f92672">=</span> iStation;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	inqReport[<span style="color:#ae81ff">0</span>]  <span style="color:#f92672">=</span> AA;
+</span></span><span style="display:flex;"><span>	inqReport[<span style="color:#ae81ff">1</span>]  <span style="color:#f92672">=</span> AA;
+</span></span><span style="display:flex;"><span>	inqReport[<span style="color:#ae81ff">2</span>]  <span style="color:#f92672">=</span> AA;
+</span></span><span style="display:flex;"><span>	inqReport[<span style="color:#ae81ff">3</span>]  <span style="color:#f92672">=</span> AA;
+</span></span><span style="display:flex;"><span>	inqReport[<span style="color:#ae81ff">4</span>]  <span style="color:#f92672">=</span> (iStationID <span style="color:#f92672">%</span> AA);
+</span></span><span style="display:flex;"><span>	inqReport[<span style="color:#ae81ff">5</span>]  <span style="color:#f92672">=</span> (iStationID <span style="color:#f92672">/</span> AA);
+</span></span><span style="display:flex;"><span>	inqReport[<span style="color:#ae81ff">6</span>]  <span style="color:#f92672">=</span> AA;
+</span></span><span style="display:flex;"><span>	inqReport[<span style="color:#ae81ff">7</span>]  <span style="color:#f92672">=</span> AA;
+</span></span><span style="display:flex;"><span>	inqReport[<span style="color:#ae81ff">8</span>]  <span style="color:#f92672">=</span> AA;
+</span></span><span style="display:flex;"><span>	inqReport[<span style="color:#ae81ff">9</span>]  <span style="color:#f92672">=</span> AA;
+</span></span><span style="display:flex;"><span>	inqReport[<span style="color:#ae81ff">10</span>] <span style="color:#f92672">=</span> AA;
+</span></span><span style="display:flex;"><span>	inqReport[<span style="color:#ae81ff">11</span>] <span style="color:#f92672">=</span> AA;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">18</span>; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>		xorByte <span style="color:#f92672">^=</span> inqReport[i];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	inqReport[<span style="color:#ae81ff">18</span>] <span style="color:#f92672">=</span> xorByte;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Fill the inqReport etc.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>; j <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">18</span>; j<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>		inqReport[j] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> <span style="color:#ae81ff">19</span>; k <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">32</span>; k<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>		inqReport[k] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>ret)
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> E_POINTER;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (<span style="color:#f92672">*</span>ret) {
+</span></span><span style="display:flex;"><span>		SafeArrayDestroy(pSArray);
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">*</span>ret <span style="color:#f92672">=</span> NULL;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	pSArray <span style="color:#f92672">=</span> SafeArrayCreateVector(VT_UI1, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">32</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">long</span> l <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; l <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">32</span>; l<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>		SafeArrayPutElement(pSArray, <span style="color:#f92672">&amp;</span>l, <span style="color:#f92672">&amp;</span>inqReport[l]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">*</span>ret <span style="color:#f92672">=</span> pSArray;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> S_OK;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="调用com">调用COM</h1>
+<blockquote>
+<p>c#的按钮事件</p> <a class="read-more" href="/csdn/post/com-safearray-vc/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2025-01-18T12:08:08&#43;08:00">
+            18 Jan 2025
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/vc-update-atl/">VC升级时出现的问题</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><blockquote>
+<p>VC6迁移到VC2008+
+!!! 注意： 除非维护IE的ACTIVE项目，不推荐使用ATL !!! <br>
+!!! Unless you are maintaining an IE ActiveX project, it is not recommended to use ATL! !!!</p>
+</blockquote>
+<h1 id="atl">ATL</h1>
+<p>Active Template Library (ATL)</p>
+<h2 id="c1189">C1189</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>c:<span style="color:#ae81ff">\p</span>rogram files<span style="color:#ae81ff">\m</span>icrosoft visual studio 10.0<span style="color:#ae81ff">\v</span>c<span style="color:#ae81ff">\a</span>tlmfc<span style="color:#ae81ff">\i</span>nclude<span style="color:#ae81ff">\a</span>tlcore.h<span style="color:#f92672">(</span>35<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>fatal error C1189: <span style="color:#75715e">#error :  This file requires _WIN32_WINNT to be #defined at least to 0x0403. Value 0x0501 or higher is recommended.</span>
+</span></span></code></pre></div><p>A:</p>
+<blockquote>
+<p>StdAfx.h</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#define _WIN32_WINNT 0x0400
+</span></span></span></code></pre></div><p>-&gt;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#define _WIN32_WINNT 0x0501
+</span></span></span></code></pre></div><h2 id="c1083atlimpl">C1083(atlimpl)</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>c:<span style="color:#ae81ff">\u</span>sers<span style="color:#ae81ff">\x</span>iaobin<span style="color:#ae81ff">\d</span>ocuments<span style="color:#ae81ff">\v</span>isual studio 2013<span style="color:#ae81ff">\p</span>rojects<span style="color:#ae81ff">\c</span>rcfcn_vc<span style="color:#ae81ff">\s</span>tdafx.cpp<span style="color:#f92672">(</span>13<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>fatal error C1083: Cannot open include file: <span style="color:#e6db74">&#39;atlimpl.cpp&#39;</span>: No such file or directory
+</span></span></code></pre></div><p>A: solution 1 or 2.</p> <a class="read-more" href="/csdn/post/vc-update-atl/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2025-01-18T08:18:08&#43;08:00">
+            18 Jan 2025
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c2plus-com-dll/">c#调用COM</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><ul>
+<li>IDE <br>
+vs2008 Express(sp1)</li>
+</ul>
+<p>!!! 注意： 除非维护IE的ACTIVE项目，不推荐使用ATL !!! <br>
+!!! Unless you are maintaining an IE ActiveX project, it is not recommended to use ATL! !!!</p>
+<h1 id="reference-com">reference COM</h1>
+<h2 id="注册com">注册COM</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>@echo
+</span></span><span style="display:flex;"><span>cd /d %~dp0
+</span></span><span style="display:flex;"><span>Regsvr32 xbfInfo.dll
+</span></span></code></pre></div><h2 id="add-reference">Add Reference</h2>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20200514021327.png" alt="vs2008 ui1"></p>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20200514021444.png" alt="vs2008 ui2"></p>
+<p>COM选项卡
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20200514021640.png" alt="vs2008 ui3">
+添加完成时</p>
+<h1 id="添加事件">添加事件</h1>
+<h2 id="import-class">import class</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>using System.IO;
+</span></span><span style="display:flex;"><span>using xbfInfoLib;
+</span></span></code></pre></div><h2 id="写xbf文件">写xbf文件</h2>
+<h3 id="读ini文件配置">读Ini文件配置</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>Boolean flagMSSQL <span style="color:#f92672">=</span> false;
+</span></span><span style="display:flex;"><span>Boolean flagSecu <span style="color:#f92672">=</span> false;
+</span></span><span style="display:flex;"><span>string sectionName <span style="color:#f92672">=</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(<span style="color:#e6db74">&#34;config&#34;</span>, <span style="color:#e6db74">&#34;type&#34;</span>);
+</span></span><span style="display:flex;"><span>string strSrv <span style="color:#f92672">=</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Server&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">Equals</span>(strSrv, <span style="color:#e6db74">&#34;&#34;</span>))
+</span></span><span style="display:flex;"><span>    flagMSSQL <span style="color:#f92672">=</span> true;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (flagMSSQL)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    strConn <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Provider=SQLOLEDB.1;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Password=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Pwd&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Persist Security Info=True;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;User ID=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;User&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Initial Catalog=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;DB&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Data Source=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Server&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span> <span style="color:#75715e">// MS Access
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{
+</span></span><span style="display:flex;"><span>    string strPWD <span style="color:#f92672">=</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Pwd&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">Equals</span>(strPWD, <span style="color:#e6db74">&#34;&#34;</span>))
+</span></span><span style="display:flex;"><span>        flagSecu <span style="color:#f92672">=</span> true;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (flagSecu)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        strConn <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Provider=Microsoft.Jet.OLEDB.4.0;&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Data Source=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;DB&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Persist Security Info=False;&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Jet OLEDB:Database Password=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Pwd&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        strConn <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Provider=Microsoft.Jet.OLEDB.4.0;&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Data Source=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;DB&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Persist Security Info=True&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="调用com接口">调用COM接口</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>xbfInfoLib.FormatClass xbf <span style="color:#f92672">=</span> new <span style="color:#a6e22e">FormatClass</span>();
+</span></span><span style="display:flex;"><span>xbf.<span style="color:#a6e22e">setFileInfo</span>(strConn);
+</span></span></code></pre></div><h2 id="读xbf文件">读xbf文件</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>xbfInfoLib.FormatClass xbf <span style="color:#f92672">=</span> new <span style="color:#a6e22e">FormatClass</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>string filePath <span style="color:#f92672">=</span> currDir <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#f92672">+</span> edtFileName.Text;
+</span></span><span style="display:flex;"><span>string strRet <span style="color:#f92672">=</span> xbf.<span style="color:#a6e22e">getFileInfo</span>(filePath);
+</span></span><span style="display:flex;"><span>MessageBox.<span style="color:#a6e22e">Show</span>(strRet);
+</span></span></code></pre></div><h1 id="code">code</h1>
+<blockquote>
+<p>Form1.cs</p> <a class="read-more" href="/csdn/post/c2plus-com-dll/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2025-01-18T08:08:08&#43;08:00">
+            18 Jan 2025
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -361,157 +671,6 @@ Beginning with MySQL 8.4.0, the deprecated mysql_native_password authentication 
 	
 	   <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/com-wizards-vc/">VC 创建 Component Object Model</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><p>Use Visual Studio&rsquo;s wizard to create COM</p>
-<ul>
-<li>Visual Studio 2013</li>
-<li>Visual Studio 2015</li>
-<li>Visual Studio 2017/2019</li>
-<li>Visual Studio 2022</li>
-</ul>
-<blockquote>
-<p>x64 IDE</p>
-</blockquote>
-<p>step by step:</p>
-<ul>
-<li>建立ATL工程</li>
-<li>建立ATL Simple Object</li>
-<li>添加IDL方法</li>
-<li>测试添加的method</li>
-</ul>
-<h1 id="建立atl工程">建立ATL工程</h1>
-<p>File-&gt;New-&gt;Project</p>
-<!-- vs2017: https://gitee.com/xiaobin80/csdn/raw/master/images/20200201162120769.png -->
-<!-- vs2013: https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new1(vs2013).png -->
-<!-- vs2015: https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new1(vs2015).png -->
-<pre tabindex="0"><code>name: testATL
-</code></pre><p>Note: name即是要生成的DLL文件 <br>
-<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new1(vs2019).png" alt="project type">
-<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new2(vs2019).png" alt="project name"></p>
-<p>选择&quot;MFC/ATL&quot;中&quot;ATL Project&quot;:</p>
-<blockquote>
-<p>Default</p>
-</blockquote>
-<!-- vs2017: https://gitee.com/xiaobin80/csdn/raw/master/images/20200201171441614.png -->
-<!-- vs2013: https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new2(vs2013).png -->
-<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new3(vs2019).png" alt="project property"></p>
-<h3 id="choice-platform">Choice Platform</h3>
-<p>Build -&gt; Configuration Manager</p>
-<pre tabindex="0"><code>x64 or x86
-</code></pre><h3 id="取消编译时注册dll">取消编译时注册Dll</h3>
-<blockquote>
-<p>Project -&gt; Properties</p> <a class="read-more" href="/csdn/post/com-wizards-vc/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2024-12-15T23:08:08&#43;08:00">
-            15 Dec 2024
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/com-ie-test/">使用IE测试COM</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><ul>
-<li>Target <br>
-x86</li>
-</ul>
-<p><a href="https://tdtc-hrb.github.io/csdn/post/com-wizards-vc/">创建COM</a> 中 增加对IE支持： IObjectWithSite</p>
-<!-- VS2010: https://github.com/tdtc-hrb/csdn/raw/master/images/20140420153532328.png -->
-<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-simple4.png" alt="atl simple object - Support"></p>
-<h2 id="增加方法">增加方法</h2>
-<!-- VS2010: https://github.com/tdtc-hrb/csdn/raw/master/images/20140420160424359.png -->
-<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-interface3.png" alt="atl interface - list">
-testSOW.h:</p>
-<pre tabindex="0"><code>	STDMETHOD(Add)(LONG x, LONG y, LONG* ret);
-	STDMETHOD(Sub)(LONG x, LONG y, LONG* ret);
-	STDMETHOD(Mul)(LONG x, LONG y, LONG* ret);
-	STDMETHOD(Div)(LONG x, LONG y, LONG* ret);
-	STDMETHOD(Mod)(LONG x, LONG y, LONG* ret);
-	STDMETHOD(Lg)(LONG x, LONG y, DOUBLE* ret);
-</code></pre><h3 id="add">Add</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>STDMETHODIMP CtestSOW<span style="color:#f92672">::</span>Add(LONG x, LONG y, LONG<span style="color:#f92672">*</span> ret)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// TODO: Add your implementation code here
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span>ret <span style="color:#f92672">=</span> (x <span style="color:#f92672">+</span> y);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> S_OK;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="subtract">Subtract</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>STDMETHODIMP CtestSOW<span style="color:#f92672">::</span>Sub(LONG x, LONG y, LONG<span style="color:#f92672">*</span> ret)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// TODO: Add your implementation code here
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span>ret <span style="color:#f92672">=</span> (x <span style="color:#f92672">-</span> y);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> S_OK;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="multiply">Multiply</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>STDMETHODIMP CtestSOW<span style="color:#f92672">::</span>Mul(LONG x, LONG y, LONG<span style="color:#f92672">*</span> ret)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// TODO: Add your implementation code here
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span>ret <span style="color:#f92672">=</span> (x <span style="color:#f92672">*</span> y);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> S_OK;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="divide">Divide</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>STDMETHODIMP CtestSOW<span style="color:#f92672">::</span>Div(LONG x, LONG y, LONG<span style="color:#f92672">*</span> ret)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// TODO: Add your implementation code here
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span>ret <span style="color:#f92672">=</span> (x <span style="color:#f92672">/</span> y);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> S_OK;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="modulo">Modulo</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>STDMETHODIMP CtestSOW<span style="color:#f92672">::</span>Mod(LONG x, LONG y, LONG<span style="color:#f92672">*</span> ret)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// TODO: Add your implementation code here
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span>ret <span style="color:#f92672">=</span> (x <span style="color:#f92672">%</span> y);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> S_OK;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="logarithm">Logarithm</h3>
-<pre tabindex="0"><code>STDMETHODIMP CtestSOW::Lg(LONG x, LONG y, DOUBLE* ret)
-{
-	// https://en.cppreference.com/w/c/numeric/math/log
-	*ret = log(x) / log(y);
-
-	return S_OK;
-}
-</code></pre><h2 id="测试">测试</h2>
-<ul>
-<li>
-<p>查看依赖 <br>
-<a href="http://dependencywalker.com/depends22_x86.zip">x86</a></p> <a class="read-more" href="/csdn/post/com-ie-test/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2024-12-15T18:08:08&#43;08:00">
-            15 Dec 2024
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/nodejs-ubuntu/">在Ubuntu下安装NodeJS</a></h2>
     </header>
     <section class="post-excerpt">
@@ -682,183 +841,6 @@ testSOW.h:</p>
         
         <time class="post-date" datetime="2024-12-11T09:08:08&#43;08:00">
             11 Dec 2024
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/vc-boost/">安装boost库(VC)</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><p>support of <a href="https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B#Internal_version_numbering">MSVC</a></p>
-<table>
-  <thead>
-      <tr>
-          <th>名称</th>
-          <th>VS版本</th>
-          <th>Minimum version</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>msvc-11.0</td>
-          <td>VS2012</td>
-          <td><a href="https://sourceforge.net/projects/boost/files/boost-binaries">1.52.0</a></td>
-      </tr>
-      <tr>
-          <td>msvc-12.0</td>
-          <td>VS2013</td>
-          <td><a href="https://sourceforge.net/projects/boost/files/boost-binaries">1.55.0</a></td>
-      </tr>
-      <tr>
-          <td>msvc-14.0</td>
-          <td>VS2015</td>
-          <td><a href="https://sourceforge.net/projects/boost/files/boost-binaries">1.59.0</a></td>
-      </tr>
-      <tr>
-          <td>msvc-14.1</td>
-          <td>VS2017</td>
-          <td><a href="https://boostorg.jfrog.io/artifactory/main/release">1.64.0</a></td>
-      </tr>
-      <tr>
-          <td>msvc-14.2</td>
-          <td>VS2019</td>
-          <td><a href="https://boostorg.jfrog.io/artifactory/main/release">1.71.0</a></td>
-      </tr>
-      <tr>
-          <td>msvc-14.3</td>
-          <td>VS2022</td>
-          <td><a href="https://boostorg.jfrog.io/artifactory/main/release">1.78.0</a></td>
-      </tr>
-  </tbody>
-</table>
-<p>Current Version(xyz): <a href="https://www.boost.org/users/download/">1.86.0</a></p>
-<h1 id="1-编译x86">1. 编译(x86)</h1>
-<p>x86 Native Tools Command Prompt for VS xxxx</p>
-<ul>
-<li><a href="https://www.boost.org/build/doc/html/bbv2/faq/names.html">About b2 vs bjam</a></li>
-</ul>
-<pre tabindex="0"><code>as of Boost 1.47.0, the official name of the executable was changed to b2.
-</code></pre><h2 id="gen-b2-and-build">Gen b2 and build</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span><span style="color:#66d9ef">cd</span> C:\boost_x_y_z
-</span></span><span style="display:flex;"><span>bootstrap.bat
-</span></span></code></pre></div><!-- vs2019: https://github.com/tdtc-hrb/csdn/raw/master/images/boost-cmd1.png -->
-<!-- vs2015: https://github.com/tdtc-hrb/csdn/raw/master/images/boost-cmd1(vs2015).png -->
-<!-- vs2022.6: https://github.com/tdtc-hrb/csdn/raw/master/images/boost-cmd1(vs2022).png -->
-<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/boost-cmd1(vs2022.12).png" alt="windows cmd1"></p> <a class="read-more" href="/csdn/post/vc-boost/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2024-11-19T10:08:39&#43;08:00">
-            19 Nov 2024
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_network_proxy/">设置proxy</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><h1 id="os">OS</h1>
-<h2 id="windows">Windows</h2>
-<ul>
-<li>cmd</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>set http_proxy<span style="color:#f92672">=</span>http://127.0.0.1:8580
-</span></span><span style="display:flex;"><span>set https_proxy<span style="color:#f92672">=</span>http://127.0.0.1:8580
-</span></span></code></pre></div><ul>
-<li>powershell</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps" data-lang="ps"><span style="display:flex;"><span><span style="color:#a6e22e">$proxy=&#39;http:</span><span style="color:#960050;background-color:#1e0010">//</span>&lt;<span style="color:#a6e22e">IP</span>&gt;<span style="color:#a6e22e">:</span>&lt;<span style="color:#a6e22e">PORT</span>&gt;<span style="color:#a6e22e">&#39;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">$ENV:HTTP_PROXY=$proxy</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">$ENV:HTTPS_PROXY=$proxy</span>
-</span></span></code></pre></div><p>ref: <a href="https://stackoverflow.com/a/47624713">https://stackoverflow.com/a/47624713</a></p>
-<h2 id="ubuntu">Ubuntu</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export http_proxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://192.168.1.108:1080&#34;</span>
-</span></span><span style="display:flex;"><span>export https_proxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://192.168.1.108:1080&#34;</span>
-</span></span></code></pre></div><h3 id="with-user-and-password">With user and password</h3>
-<p>Set up the server in the tool: <br>
-Check &ldquo;Run xxx as Server(listens 0.0.0.0)&rdquo;</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export http_proxy<span style="color:#f92672">=</span>http://USERNAME:PASSWORD@192.168.1.108:8580/
-</span></span><span style="display:flex;"><span>export https_proxy<span style="color:#f92672">=</span>http://USERNAME:PASSWORD@192.168.1.108:8580/
-</span></span></code></pre></div><h2 id="freebsdhttpsnanxiaogitbooksiofreebsd-101-hackscontentpostsconfigure-proxyhtml"><a href="https://nanxiao.gitbooks.io/freebsd-101-hacks/content/posts/configure-proxy.html">FreeBSD</a></h2>
-<blockquote>
-<p>v12.4</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csh" data-lang="csh"><span style="display:flex;"><span>setenv HTTP_PROXY http://web-proxy.xxxxxx.com:8080
-</span></span><span style="display:flex;"><span>setenv HTTPS_PROXY https://web-proxy.xxxxxx.com:8080
-</span></span></code></pre></div><h1 id="software">software</h1>
-<h2 id="virtualbox">VirtualBox</h2>
-<ul>
-<li>
-<p>Adapter 1 <br>
-host only, vboxnet0</p>
-</li>
-<li>
-<p>Adapter 2 <br>
-NAT</p>
-</li>
-</ul>
-<h3 id="guest-os">Guest os</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/netplan/00-installer-config.yaml
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>network:
-</span></span><span style="display:flex;"><span>    version: 2
-</span></span><span style="display:flex;"><span>    renderer: networkd
-</span></span><span style="display:flex;"><span>    ethernets:
-</span></span><span style="display:flex;"><span>        enp0s3:
-</span></span><span style="display:flex;"><span>            addresses:
-</span></span><span style="display:flex;"><span>                - 192.168.56.12/24
-</span></span><span style="display:flex;"><span>            dhcp4: no
-</span></span><span style="display:flex;"><span>        enp0s8:
-</span></span><span style="display:flex;"><span>            dhcp4: no
-</span></span></code></pre></div><h2 id="wine">Wine</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>sudo dpkg --add-architecture i386
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>sudo curl -O https://dl.winehq.org/wine-builds/winehq.key
-</span></span><span style="display:flex;"><span>sudo apt-key add winehq.key
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>sudo apt-add-repository <span style="color:#e6db74">&#39;deb https://dl.winehq.org/wine-builds/ubuntu/ focal main&#39;</span>
-</span></span><span style="display:flex;"><span>sudo apt update
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>sudo apt install -y --install-recommends winehq-stable
-</span></span></code></pre></div><h3 id="usage-wine">usage wine</h3>
-<pre tabindex="0"><code>$ wine --version
-$ wine fg798p.exe
-</code></pre><h2 id="git">git</h2>
-<h3 id="set-proxy">set proxy</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config --global http.proxy http://127.0.0.1:8580
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>git config --global https.proxy https://127.0.0.1:8580
-</span></span></code></pre></div><h3 id="unset">unset</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config --global --unset http.proxy
-</span></span><span style="display:flex;"><span>git config --global --unset https.proxy
-</span></span></code></pre></div><h2 id="node-js">node-js</h2>
-<blockquote>
-<p><a href="https://github.com/yarnpkg/yarn/issues/3227#issuecomment-389596918">.npmrc</a></p> <a class="read-more" href="/csdn/post/ops_network_proxy/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2024-10-30T14:08:08&#43;08:00">
-            30 Oct 2024
         </time>
     </footer>
 </article>

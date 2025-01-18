@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.140.2">
+    <meta name="generator" content="Hugo 0.141.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -193,6 +193,183 @@
 </nav>
 
     </div>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/vc-boost/">安装boost库(VC)</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>support of <a href="https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B#Internal_version_numbering">MSVC</a></p>
+<table>
+  <thead>
+      <tr>
+          <th>名称</th>
+          <th>VS版本</th>
+          <th>Minimum version</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>msvc-11.0</td>
+          <td>VS2012</td>
+          <td><a href="https://sourceforge.net/projects/boost/files/boost-binaries">1.52.0</a></td>
+      </tr>
+      <tr>
+          <td>msvc-12.0</td>
+          <td>VS2013</td>
+          <td><a href="https://sourceforge.net/projects/boost/files/boost-binaries">1.55.0</a></td>
+      </tr>
+      <tr>
+          <td>msvc-14.0</td>
+          <td>VS2015</td>
+          <td><a href="https://sourceforge.net/projects/boost/files/boost-binaries">1.59.0</a></td>
+      </tr>
+      <tr>
+          <td>msvc-14.1</td>
+          <td>VS2017</td>
+          <td><a href="https://boostorg.jfrog.io/artifactory/main/release">1.64.0</a></td>
+      </tr>
+      <tr>
+          <td>msvc-14.2</td>
+          <td>VS2019</td>
+          <td><a href="https://boostorg.jfrog.io/artifactory/main/release">1.71.0</a></td>
+      </tr>
+      <tr>
+          <td>msvc-14.3</td>
+          <td>VS2022</td>
+          <td><a href="https://boostorg.jfrog.io/artifactory/main/release">1.78.0</a></td>
+      </tr>
+  </tbody>
+</table>
+<p>Current Version(xyz): <a href="https://www.boost.org/users/download/">1.86.0</a></p>
+<h1 id="1-编译x86">1. 编译(x86)</h1>
+<p>x86 Native Tools Command Prompt for VS xxxx</p>
+<ul>
+<li><a href="https://www.boost.org/build/doc/html/bbv2/faq/names.html">About b2 vs bjam</a></li>
+</ul>
+<pre tabindex="0"><code>as of Boost 1.47.0, the official name of the executable was changed to b2.
+</code></pre><h2 id="gen-b2-and-build">Gen b2 and build</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span><span style="color:#66d9ef">cd</span> C:\boost_x_y_z
+</span></span><span style="display:flex;"><span>bootstrap.bat
+</span></span></code></pre></div><!-- vs2019: https://github.com/tdtc-hrb/csdn/raw/master/images/boost-cmd1.png -->
+<!-- vs2015: https://github.com/tdtc-hrb/csdn/raw/master/images/boost-cmd1(vs2015).png -->
+<!-- vs2022.6: https://github.com/tdtc-hrb/csdn/raw/master/images/boost-cmd1(vs2022).png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/boost-cmd1(vs2022.12).png" alt="windows cmd1"></p> <a class="read-more" href="/csdn/post/vc-boost/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-11-19T10:08:39&#43;08:00">
+            19 Nov 2024
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_network_proxy/">设置proxy</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="os">OS</h1>
+<h2 id="windows">Windows</h2>
+<ul>
+<li>cmd</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>set http_proxy<span style="color:#f92672">=</span>http://127.0.0.1:8580
+</span></span><span style="display:flex;"><span>set https_proxy<span style="color:#f92672">=</span>http://127.0.0.1:8580
+</span></span></code></pre></div><ul>
+<li>powershell</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps" data-lang="ps"><span style="display:flex;"><span><span style="color:#a6e22e">$proxy=&#39;http:</span><span style="color:#960050;background-color:#1e0010">//</span>&lt;<span style="color:#a6e22e">IP</span>&gt;<span style="color:#a6e22e">:</span>&lt;<span style="color:#a6e22e">PORT</span>&gt;<span style="color:#a6e22e">&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">$ENV:HTTP_PROXY=$proxy</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">$ENV:HTTPS_PROXY=$proxy</span>
+</span></span></code></pre></div><p>ref: <a href="https://stackoverflow.com/a/47624713">https://stackoverflow.com/a/47624713</a></p>
+<h2 id="ubuntu">Ubuntu</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export http_proxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://192.168.1.108:1080&#34;</span>
+</span></span><span style="display:flex;"><span>export https_proxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://192.168.1.108:1080&#34;</span>
+</span></span></code></pre></div><h3 id="with-user-and-password">With user and password</h3>
+<p>Set up the server in the tool: <br>
+Check &ldquo;Run xxx as Server(listens 0.0.0.0)&rdquo;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export http_proxy<span style="color:#f92672">=</span>http://USERNAME:PASSWORD@192.168.1.108:8580/
+</span></span><span style="display:flex;"><span>export https_proxy<span style="color:#f92672">=</span>http://USERNAME:PASSWORD@192.168.1.108:8580/
+</span></span></code></pre></div><h2 id="freebsdhttpsnanxiaogitbooksiofreebsd-101-hackscontentpostsconfigure-proxyhtml"><a href="https://nanxiao.gitbooks.io/freebsd-101-hacks/content/posts/configure-proxy.html">FreeBSD</a></h2>
+<blockquote>
+<p>v12.4</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csh" data-lang="csh"><span style="display:flex;"><span>setenv HTTP_PROXY http://web-proxy.xxxxxx.com:8080
+</span></span><span style="display:flex;"><span>setenv HTTPS_PROXY https://web-proxy.xxxxxx.com:8080
+</span></span></code></pre></div><h1 id="software">software</h1>
+<h2 id="virtualbox">VirtualBox</h2>
+<ul>
+<li>
+<p>Adapter 1 <br>
+host only, vboxnet0</p>
+</li>
+<li>
+<p>Adapter 2 <br>
+NAT</p>
+</li>
+</ul>
+<h3 id="guest-os">Guest os</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/netplan/00-installer-config.yaml
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>network:
+</span></span><span style="display:flex;"><span>    version: 2
+</span></span><span style="display:flex;"><span>    renderer: networkd
+</span></span><span style="display:flex;"><span>    ethernets:
+</span></span><span style="display:flex;"><span>        enp0s3:
+</span></span><span style="display:flex;"><span>            addresses:
+</span></span><span style="display:flex;"><span>                - 192.168.56.12/24
+</span></span><span style="display:flex;"><span>            dhcp4: no
+</span></span><span style="display:flex;"><span>        enp0s8:
+</span></span><span style="display:flex;"><span>            dhcp4: no
+</span></span></code></pre></div><h2 id="wine">Wine</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>sudo dpkg --add-architecture i386
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo curl -O https://dl.winehq.org/wine-builds/winehq.key
+</span></span><span style="display:flex;"><span>sudo apt-key add winehq.key
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo apt-add-repository <span style="color:#e6db74">&#39;deb https://dl.winehq.org/wine-builds/ubuntu/ focal main&#39;</span>
+</span></span><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo apt install -y --install-recommends winehq-stable
+</span></span></code></pre></div><h3 id="usage-wine">usage wine</h3>
+<pre tabindex="0"><code>$ wine --version
+$ wine fg798p.exe
+</code></pre><h2 id="git">git</h2>
+<h3 id="set-proxy">set proxy</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config --global http.proxy http://127.0.0.1:8580
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git config --global https.proxy https://127.0.0.1:8580
+</span></span></code></pre></div><h3 id="unset">unset</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config --global --unset http.proxy
+</span></span><span style="display:flex;"><span>git config --global --unset https.proxy
+</span></span></code></pre></div><h2 id="node-js">node-js</h2>
+<blockquote>
+<p><a href="https://github.com/yarnpkg/yarn/issues/3227#issuecomment-389596918">.npmrc</a></p> <a class="read-more" href="/csdn/post/ops_network_proxy/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-10-30T14:08:08&#43;08:00">
+            30 Oct 2024
+        </time>
+    </footer>
+</article>
 
     
         <article class="post post">
@@ -702,171 +879,6 @@ indicates that the system won’t fail even when IPv6 fails.</li>
         
         <time class="post-date" datetime="2024-03-12T08:38:08&#43;08:00">
             12 Mar 2024
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_dc_redis_ubuntu/">安装redis-server</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
-<h1 id="1-安装">1. 安装</h1>
-<p>Prerequisites:</p>
-<pre tabindex="0"><code>sudo apt install lsb-release curl gpg
-</code></pre><p>Add the repository to the apt index:</p>
-<pre tabindex="0"><code>curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
-
-echo &#34;deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main&#34; | sudo tee /etc/apt/sources.list.d/redis.list
-</code></pre><ul>
-<li>install</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get update
-</span></span><span style="display:flex;"><span>sudo apt-get install redis-server
-</span></span></code></pre></div><h2 id="launch">Launch</h2>
-<ul>
-<li>local(WSL)</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>redis-server
-</span></span></code></pre></div><ul>
-<li>remote(Virtual Box or VM ware etc.)</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo redis-server /etc/redis/redis.conf
-</span></span></code></pre></div><h3 id="view-port">View port</h3>
-<p>install netstat:</p> <a class="read-more" href="/csdn/post/ops_dc_redis_ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2024-03-10T08:08:08&#43;08:00">
-            10 Mar 2024
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/version-ubuntu/">查看版本-Ubuntu</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
-<h1 id="components-version">components version</h1>
-<p>查看内核版本:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#uname -a</span>
-</span></span></code></pre></div><h2 id="查看glibc库版本">查看Glibc库版本</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#apt-cache show libc6</span>
-</span></span></code></pre></div><h2 id="查看binutils版本">查看binutils版本</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#ld -v</span>
-</span></span></code></pre></div><h1 id="查看ubuntu版本号">查看ubuntu版本号</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#cat /etc/issue</span>
-</span></span></code></pre></div><h2 id="查看debian对应版本">查看debian对应版本</h2>
-<pre tabindex="0"><code>#cat /etc/debian_version
-</code></pre><h3 id="debian-code-namehttpswwwdebianorgreleases"><a href="https://www.debian.org/releases/">debian code name</a></h3>
-<table>
-  <thead>
-      <tr>
-          <th>code</th>
-          <th>version</th>
-          <th>status</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>bullseye</td>
-          <td>11</td>
-          <td>statble</td>
-      </tr>
-      <tr>
-          <td>buster</td>
-          <td>10</td>
-          <td>old statble</td>
-      </tr>
-      <tr>
-          <td>stretch</td>
-          <td>9</td>
-          <td>old old statble</td>
-      </tr>
-      <tr>
-          <td>jessie</td>
-          <td>8</td>
-          <td>archived</td>
-      </tr>
-      <tr>
-          <td>wheezy</td>
-          <td>7</td>
-          <td>obsolete</td>
-      </tr>
-      <tr>
-          <td>squeeze</td>
-          <td>6.0</td>
-          <td>obsolete</td>
-      </tr>
-      <tr>
-          <td>lenny</td>
-          <td>5.0</td>
-          <td>obsolete</td>
-      </tr>
-      <tr>
-          <td>etch</td>
-          <td>4.0</td>
-          <td>obsolete</td>
-      </tr>
-      <tr>
-          <td>sarge</td>
-          <td>3.1</td>
-          <td>obsolete</td>
-      </tr>
-      <tr>
-          <td>woody</td>
-          <td>3.0</td>
-          <td>obsolete</td>
-      </tr>
-      <tr>
-          <td>potato</td>
-          <td>2.2</td>
-          <td>obsolete</td>
-      </tr>
-      <tr>
-          <td>slink</td>
-          <td>2.1</td>
-          <td>obsolete</td>
-      </tr>
-      <tr>
-          <td>hamm</td>
-          <td>2.0</td>
-          <td>obsolete</td>
-      </tr>
-  </tbody>
-</table> <a class="read-more" href="/csdn/post/version-ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        on
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/glibc/">#Glibc</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/sh/">#sh</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/binutils/">#binutils</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/system/">#system</a>,
-            
-        
-        <time class="post-date" datetime="2024-03-01T02:12:39&#43;08:00">
-            1 Mar 2024
         </time>
     </footer>
 </article>
