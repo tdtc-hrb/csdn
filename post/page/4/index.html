@@ -164,6 +164,164 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_grub_ubuntu/">grub救援模式</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
+<p>出现“grub rescue&gt;”提示符；也称grub救援模式。</p>
+<h1 id="1-设置引导">1. 设置引导</h1>
+<blockquote>
+<p>(hd?,?)：安装的引导分区  <br>
+在我的机器是(hd0, msdos3)</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>grub rescue&gt;ls
+</span></span><span style="display:flex;"><span>grub rescue&gt;ls <span style="color:#f92672">(</span>hd?,?<span style="color:#f92672">)</span>/boot/grub
+</span></span><span style="display:flex;"><span>grub rescue&gt;set root<span style="color:#f92672">(</span>hd?,?<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>grub rescue&gt;set prefix<span style="color:#f92672">=(</span>hd?,?<span style="color:#f92672">)</span>/boot/grub
+</span></span></code></pre></div><h2 id="insmod">insmod</h2>
+<p>one:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>insmod /boot/grub/normal.mod
+</span></span><span style="display:flex;"><span>/boot/grub/normal
+</span></span></code></pre></div><p>two:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>insmod normal
+</span></span><span style="display:flex;"><span>normal
+</span></span></code></pre></div><h1 id="2-更新grub">2. 更新grub</h1>
+<p>在终端上执行：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo grub-install /dev/sda
+</span></span><span style="display:flex;"><span>sudo update-grub
+</span></span></code></pre></div> <a class="read-more" href="/csdn/post/ops_grub_ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-03-15T00:19:08&#43;08:00">
+            15 Mar 2023
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/css-bootstrap-grid/">Grid system</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>在V2.3.2中，栅格系统默认是不支持移动设备的；  <br>
+但V3.0版本，已经默认支持移动设备。</p>
+<p>在V4.6.x, 更加细化了移动设备支持。</p>
+<h1 id="v2">v2</h1>
+<p><a href="https://getbootstrap.com/2.3.2/scaffolding.html#gridSystem">Bootstrap(v2)</a> 默认的栅格系统为12列 ，
+形成一个940px宽的容器，默认没有启用 &ldquo;<a href="https://getbootstrap.com/2.3.2/scaffolding.html#responsive">响应式布局特性</a>&rdquo; 。 <br>
+如果加入响应式布局CSS文件，栅格系统会自动根据可视窗口的宽度从724px到1170px进行动态调整。 <br>
+在可视窗口低于767px宽的情况下，列将不再固定并且会在垂直方向堆叠。</p>
+<h2 id="example">example</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;row&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;span4&#34;</span><span style="color:#f92672">&gt;</span>...<span style="color:#f92672">&lt;/div&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;span8&#34;</span><span style="color:#f92672">&gt;</span>...<span style="color:#f92672">&lt;/div&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/div&gt;</span>
+</span></span></code></pre></div><h1 id="v3">v3</h1>
+<blockquote>
+<p>class变化：.span* -〉.col-md-*</p>
+</blockquote>
+<p><a href="https://getbootstrap.com/docs/3.4/css/#grid">Bootstrap(v3)</a> 内置了一套响应式、移动设备优先的流式栅格系统，
+随着屏幕设备或视口（viewport）尺寸的增加，系统会自动分为最多12列。
+它包含了易于使用的<a href="https://getbootstrap.com/docs/3.4/css/#grid-example-basic">预定义classe</a>，
+还有强大的<a href="https://getbootstrap.com/docs/3.4/css/#grid-less">mixin用于生成更具语义的布局</a>。</p>
+<h2 id="grid-optionshttpsgetbootstrapcomdocs34cssgrid-options"><a href="https://getbootstrap.com/docs/3.4/css/#grid-options">Grid options</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Name</th>
+          <th>Size</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Extra small devices Phones</td>
+          <td>&lt;768px</td>
+      </tr>
+      <tr>
+          <td>Small devices Tablets</td>
+          <td>≥768px</td>
+      </tr>
+      <tr>
+          <td>Medium devices Desktops</td>
+          <td>≥992px</td>
+      </tr>
+      <tr>
+          <td>Large devices Desktops</td>
+          <td>≥1200px</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="example-1">example</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;row&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;col-md-4&#34;</span><span style="color:#f92672">&gt;</span>...<span style="color:#f92672">&lt;/div&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;col-md-8&#34;</span><span style="color:#f92672">&gt;</span>...<span style="color:#f92672">&lt;/div&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/div&gt;</span>
+</span></span></code></pre></div><h1 id="v4">v4</h1>
+<p><a href="https://getbootstrap.com/docs/4.6/layout/grid/">Bootstrap(v4)</a> 调整了小屏幕的适配。
+Switch from Less to Sass for the source CSS files</p>
+<h2 id="grid-optionshttpsgetbootstrapcomdocs46layoutgridgrid-options"><a href="https://getbootstrap.com/docs/4.6/layout/grid/#grid-options">Grid options</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Name</th>
+          <th>Size</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Extra small</td>
+          <td>&lt;576px</td>
+      </tr>
+      <tr>
+          <td>Small</td>
+          <td>≥576px</td>
+      </tr>
+      <tr>
+          <td>Medium</td>
+          <td>≥768px</td>
+      </tr>
+      <tr>
+          <td>Large</td>
+          <td>≥992px</td>
+      </tr>
+      <tr>
+          <td>Extra large</td>
+          <td>≥1200px</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="example-2">example</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;row&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;col-lg-4&#34;</span><span style="color:#f92672">&gt;</span>...<span style="color:#f92672">&lt;/div&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;col-lg-8&#34;</span><span style="color:#f92672">&gt;</span>...<span style="color:#f92672">&lt;/div&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/div&gt;</span>
+</span></span></code></pre></div> <a class="read-more" href="/csdn/post/css-bootstrap-grid/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-03-10T14:08:08&#43;08:00">
+            10 Mar 2023
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_vi/">简单使用vi</a></h2>
     </header>
     <section class="post-excerpt">
@@ -1078,264 +1236,6 @@ repoInfo.dll
         
         <time class="post-date" datetime="2022-12-17T08:18:18&#43;08:00">
             17 Dec 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_hadoop_cluster/">Hadoop - cluster</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><h1 id="prepare">Prepare</h1>
-<table>
-  <thead>
-      <tr>
-          <th></th>
-          <th>server1</th>
-          <th>server2</th>
-          <th>server3</th>
-          <th>server4</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>NameNode</td>
-          <td>y</td>
-          <td>y</td>
-          <td></td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>DataNode</td>
-          <td> </td>
-          <td>y</td>
-          <td>y</td>
-          <td>y</td>
-      </tr>
-      <tr>
-          <td>ResourceManager</td>
-          <td> </td>
-          <td> </td>
-          <td>y</td>
-          <td>y</td>
-      </tr>
-      <tr>
-          <td>NodeManager</td>
-          <td>y</td>
-          <td>y</td>
-          <td>y</td>
-          <td>y</td>
-      </tr>
-      <tr>
-          <td>Zookeeper</td>
-          <td>y</td>
-          <td>y</td>
-          <td>y</td>
-          <td>y</td>
-      </tr>
-      <tr>
-          <td>JournalNode</td>
-          <td>y</td>
-          <td>y</td>
-          <td>y</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>ZK-FC</td>
-          <td>y</td>
-          <td>y</td>
-          <td> </td>
-          <td> </td>
-      </tr>
-      <tr>
-          <td>JobHistor</td>
-          <td>y</td>
-          <td></td>
-          <td></td>
-          <td></td>
-      </tr>
-  </tbody>
-</table>
-<table>
-  <thead>
-      <tr>
-          <th>Server Name</th>
-          <th>IP</th>
-          <th>Host Name</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>server1</td>
-          <td>192.168.42.107</td>
-          <td>tdtc201</td>
-      </tr>
-      <tr>
-          <td>server2</td>
-          <td>192.168.42.108</td>
-          <td>tdtc202</td>
-      </tr>
-      <tr>
-          <td>server3</td>
-          <td>192.168.42.109</td>
-          <td>tdtc203</td>
-      </tr>
-      <tr>
-          <td>server4</td>
-          <td>192.168.42.110</td>
-          <td>tdtc204</td>
-      </tr>
-  </tbody>
-</table>
-<h2 id="1-zk">1. zk</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>zkServer.sh start
-</span></span></code></pre></div><p>安装详见《<a href="https://tdtc-hrb.github.io/csdn/post/ops_zookeeper/">ZooKeeper multi-server install</a>》</p>
-<h2 id="2-open-firewallhttpstdtc-hrbgithubiocsdnpostops_firewall">2. Open <a href="https://tdtc-hrb.github.io/csdn/post/ops_firewall/">firewall</a></h2>
-<h1 id="stage-i-installation">Stage I: Installation</h1>
-<h2 id="1-unzip">1. Unzip</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/home/$USER/app/hadoop/$version
-</span></span></code></pre></div><blockquote>
-<p>路径参考<a href="https://www.tecmint.com/oracle-database-11g-release-2-installation-in-linux/">Oracle11g</a></p> <a class="read-more" href="/csdn/post/ops_hadoop_cluster/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-10-11T00:08:08&#43;08:00">
-            11 Oct 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_real_keepalived/">架设Real Server和Keepalived Server</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><p>准备工作：</p>
-<ul>
-<li><a href="https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/">修改网卡为固定IP</a></li>
-<li><a href="https://tdtc-hrb.github.io/csdn/post/ops_sudo/">开启sudo</a></li>
-</ul>
-<h1 id="总览">总览</h1>
-<p>OS:  minimal</p>
-<ul>
-<li><a href="https://mirrors.almalinux.org/isos/x86_64/8.6.html">Alma</a></li>
-<li><a href="http://isoredirect.centos.org/centos/7/isos/x86_64/">CentOS7.9</a></li>
-</ul>
-<h2 id="real-server">Real Server</h2>
-<ul>
-<li>RHEL78RS1</li>
-</ul>
-<blockquote>
-<p>192.168.0.127</p>
-</blockquote>
-<ol>
-<li>Nginx v1.22</li>
-<li>Tomcat v8.5.82</li>
-</ol>
-<ul>
-<li>RHEL78RS2</li>
-</ul>
-<blockquote>
-<p>192.168.0.122</p>
-</blockquote>
-<ol>
-<li>Nginx v1.22</li>
-<li>Tomcat v9.0.68</li>
-</ol>
-<h2 id="keepalived-server">Keepalived Server</h2>
-<ul>
-<li>RHEL78Master</li>
-</ul>
-<blockquote>
-<p>192.168.0.129</p>
-</blockquote>
-<ul>
-<li>RHEL78Bak</li>
-</ul>
-<blockquote>
-<p>192.168.0.130</p>
-</blockquote>
-<h1 id="一real-server">一、Real Server</h1>
-<p>安装前准备:</p>
-<ul>
-<li><a href="https://tdtc-hrb.github.io/csdn/post/ops_tomcat/">Linux下安装Tomcat</a></li>
-<li><a href="https://tdtc-hrb.github.io/csdn/post/ops_nginx/">nginx - CentOS7</a></li>
-<li><a href="https://tdtc-hrb.github.io/cnblogs/post/ops_nginx-v2/">nginx - RHEL8</a></li>
-</ul>
-<h2 id="config-arp">config ARP</h2>
-<p>ifconfig:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum install net-tools
-</span></span></code></pre></div><h3 id="service">Service</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#vi /etc/init.d/realserver</span>
-</span></span></code></pre></div><p>/etc/init.d/realserver:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>SNS_VIP<span style="color:#f92672">=</span>192.168.0.220
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> in
-</span></span><span style="display:flex;"><span>start<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>       ifconfig lo:0 $SNS_VIP netmask 255.255.255.255 broadcast $SNS_VIP
-</span></span><span style="display:flex;"><span>       /sbin/route add -host $SNS_VIP dev lo:0
-</span></span><span style="display:flex;"><span>       echo <span style="color:#e6db74">&#34;1&#34;</span> &gt;/proc/sys/net/ipv4/conf/lo/arp_ignore
-</span></span><span style="display:flex;"><span>       echo <span style="color:#e6db74">&#34;2&#34;</span> &gt;/proc/sys/net/ipv4/conf/lo/arp_announce
-</span></span><span style="display:flex;"><span>       echo <span style="color:#e6db74">&#34;1&#34;</span> &gt;/proc/sys/net/ipv4/conf/all/arp_ignore
-</span></span><span style="display:flex;"><span>       echo <span style="color:#e6db74">&#34;2&#34;</span> &gt;/proc/sys/net/ipv4/conf/all/arp_announce
-</span></span><span style="display:flex;"><span>       sysctl -p &gt;/dev/null 2&gt;&amp;<span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>       echo <span style="color:#e6db74">&#34;RealServer Start OK&#34;</span>
-</span></span><span style="display:flex;"><span>       ;;
-</span></span><span style="display:flex;"><span>stop<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>       ifconfig lo:0 down
-</span></span><span style="display:flex;"><span>       route del $SNS_VIP &gt;/dev/null 2&gt;&amp;<span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>       echo <span style="color:#e6db74">&#34;0&#34;</span> &gt;/proc/sys/net/ipv4/conf/lo/arp_ignore
-</span></span><span style="display:flex;"><span>       echo <span style="color:#e6db74">&#34;0&#34;</span> &gt;/proc/sys/net/ipv4/conf/lo/arp_announce
-</span></span><span style="display:flex;"><span>       echo <span style="color:#e6db74">&#34;0&#34;</span> &gt;/proc/sys/net/ipv4/conf/all/arp_ignore
-</span></span><span style="display:flex;"><span>       echo <span style="color:#e6db74">&#34;0&#34;</span> &gt;/proc/sys/net/ipv4/conf/all/arp_announce
-</span></span><span style="display:flex;"><span>       echo <span style="color:#e6db74">&#34;RealServer Stoped&#34;</span>
-</span></span><span style="display:flex;"><span>       ;;
-</span></span><span style="display:flex;"><span>*<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>       echo <span style="color:#e6db74">&#34;Usage: </span>$0<span style="color:#e6db74"> {start|stop}&#34;</span>
-</span></span><span style="display:flex;"><span>       exit <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">esac</span>
-</span></span><span style="display:flex;"><span>exit <span style="color:#ae81ff">0</span>
-</span></span></code></pre></div><h2 id="exec">exec</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo chmod <span style="color:#ae81ff">755</span> /etc/init.d/realserver
-</span></span><span style="display:flex;"><span>$sudo service realserver start
-</span></span></code></pre></div><ul>
-<li>tomcat</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/usr/local/tomcat/bin/startup.sh
-</span></span></code></pre></div><ul>
-<li>nginx</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo /usr/sbin/nginx
-</span></span></code></pre></div><h1 id="二keepalived-server">二、Keepalived Server</h1>
-<ul>
-<li><a href="https://tdtc-hrb.github.io/csdn/post/ops_keepalived/">v1</a></li>
-<li><a href="https://tdtc-hrb.github.io/cnblogs/post/ops_keepalived_v2/">v2</a></li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#systemctl start keepalived</span>
-</span></span></code></pre></div><h2 id="see-state">see state</h2>
-<p>virtual IP show:</p> <a class="read-more" href="/csdn/post/ops_real_keepalived/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-10-03T02:38:08&#43;08:00">
-            3 Oct 2022
         </time>
     </footer>
 </article>

@@ -164,6 +164,136 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql80-cenos8/">CentOS8安装mysql8.0</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h3 id="installing-and-setting-up-the-percona-server-for-mysql-80--repository">Installing and Setting up the Percona Server for MySQL 8.0  Repository</h3>
+<pre tabindex="0"><code>yum install -y https://repo.percona.com/yum/percona-release-latest.noarch.rpm
+</code></pre><p>disable mysql module repo:</p>
+<pre tabindex="0"><code>percona-release setup ps80
+</code></pre><h3 id="installing-and-setting-up-the-percona-server-for-mysql-80-binaries">Installing and Setting up the Percona Server for MySQL 8.0 Binaries</h3>
+<pre tabindex="0"><code>yum -y install percona-server-server
+</code></pre><p>Launch:</p>
+<pre tabindex="0"><code>systemctl start mysqld
+systemctl status mysqld
+</code></pre><h2 id="change-password">change password</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo grep <span style="color:#e6db74">&#34;temporary password&#34;</span> /var/log/mysqld.log
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql -uroot -p
+</span></span></code></pre></div><p>Change default password：</p>
+<pre tabindex="0"><code>ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;qaz1!Xsw2@&#39;;
+</code></pre><h3 id="weak-password">Weak password</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql&gt; set global validate_password.policy<span style="color:#f92672">=</span>0;
+</span></span></code></pre></div><h3 id="set-password">set password</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ALTER USER <span style="color:#e6db74">&#39;root&#39;</span>@<span style="color:#e6db74">&#39;localhost&#39;</span> IDENTIFIED BY <span style="color:#e6db74">&#39;xbfirst80&#39;</span>;
+</span></span></code></pre></div><h1 id="ref">Ref</h1>
+<ul>
+<li><a href="https://www.percona.com/blog/installing-percona-server-for-mysql-on-rocky-linux-8/">Installing Percona Server for MySQL on Rocky Linux 8</a></li>
+<li><a href="https://tecadmin.net/change-mysql-password-policy-level/">How to Change MySQL Password Policy Level</a></li>
+</ul> <a class="read-more" href="/csdn/post/mysql80-cenos8/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        on
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/rocky-linux-8/">#Rocky Linux 8</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/alma-linux-8/">#Alma Linux 8</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/percona8/">#Percona8</a>,
+            
+        
+        <time class="post-date" datetime="2022-06-27T03:21:39&#43;08:00">
+            27 Jun 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/redis-centos7/">在RHEL/CentOS安装Redis</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="0-preinstall">0. preinstall</h1>
+<ul>
+<li>User set</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ useradd tdtc
+</span></span><span style="display:flex;"><span>$ passwd tdtc
+</span></span></code></pre></div><ul>
+<li><a href="https://tdtc-hrb.github.io/csdn/post/ops_rhel_repo/">Yum Repo</a></li>
+</ul>
+<h2 id="1-yum-install">1) yum install</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum groupinstall <span style="color:#e6db74">&#34;Development Tools&#34;</span>
+</span></span><span style="display:flex;"><span>$sudo yum install tcl wget
+</span></span></code></pre></div><h3 id="v6">v6+</h3>
+<p>Just to clarify: there is no way this issue will be fixed, Redis &gt;= 6 will require a C11 compiler.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install centos-release-scl
+</span></span><span style="display:flex;"><span>sudo yum install devtoolset-8
+</span></span><span style="display:flex;"><span>scl enable devtoolset-8 bash
+</span></span></code></pre></div><h2 id="2-verification">2) verification</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$gcc -v
+</span></span><span style="display:flex;"><span>$make -v
+</span></span><span style="display:flex;"><span>$echo <span style="color:#e6db74">&#39;puts [info patchlevel];exit 0&#39;</span> | tclsh
+</span></span></code></pre></div><h1 id="1-installation">1. installation</h1>
+<h2 id="1-install">1) install</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://download.redis.io/releases/redis-6.0.16.tar.gz
+</span></span><span style="display:flex;"><span>$tar xzvf redis-6.0.16.tar.gz
+</span></span><span style="display:flex;"><span>$cd redis-6.0.16
+</span></span><span style="display:flex;"><span>$make
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Single Core</span>
+</span></span><span style="display:flex;"><span>$taskset -c <span style="color:#ae81ff">0</span> make test
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## sudo</span>
+</span></span><span style="display:flex;"><span>$sudo make install
+</span></span></code></pre></div><h2 id="2-config">2) config</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo mkdir /etc/redis
+</span></span><span style="display:flex;"><span>$sudo mkdir -p /var/redis
+</span></span><span style="display:flex;"><span>$sudo cp /home/tdtc/redis-6.0.16/redis.conf /etc/redis
+</span></span></code></pre></div><h3 id="redisconf">redis.conf</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>port  6379				         <span style="color:#75715e">#default port is already 6379.</span>
+</span></span><span style="display:flex;"><span>daemonize yes			         <span style="color:#75715e">#run as a daemon</span>
+</span></span><span style="display:flex;"><span>supervised systemd			     <span style="color:#75715e">#signal systemd</span>
+</span></span><span style="display:flex;"><span>pidfile /var/run/redis_6379.pid  <span style="color:#75715e">#specify pid file</span>
+</span></span><span style="display:flex;"><span>loglevel notice			         <span style="color:#75715e">#server verbosity level</span>
+</span></span><span style="display:flex;"><span>logfile /var/log/redis.log		 <span style="color:#75715e">#log file name</span>
+</span></span><span style="display:flex;"><span>dir  /var/redis/		         <span style="color:#75715e">#redis directory</span>
+</span></span></code></pre></div><h1 id="2-command">2. command</h1>
+<p>You do not need to execute the following commands when you are not maintaining it, only the first time.</p> <a class="read-more" href="/csdn/post/redis-centos7/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        on
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/redis/">#Redis</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/centos7/">#CentOS7</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/development-tools/">#Development Tools</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/wget/">#wget</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/rhel/">#RHEL</a>,
+            
+        
+        <time class="post-date" datetime="2022-06-11T04:58:39&#43;08:00">
+            11 Jun 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/reduxjs-asyn/">重构asyn</a></h2>
     </header>
     <section class="post-excerpt">
@@ -1066,131 +1196,6 @@
         
         <time class="post-date" datetime="2022-04-13T03:18:08&#43;08:00">
             13 Apr 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/reduxjs-asyn-dispatcher/">dispatcher - Asynchronous</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><h1 id="1-program-flow">1. Program Flow</h1>
-<h2 id="1-synchronous">1) Synchronous</h2>
-<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/flux-unidir-ui-arch.png" alt="flux-unidir-ui-arch"></p>
-<h2 id="2-asynchronous">2) Asynchronous</h2>
-<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/redux-unidir-ui-arch.png" alt="redux-unidir-ui-arch"></p>
-<h1 id="2-redux-saga">2. redux-saga</h1>
-<blockquote>
-<p>about CQRS: <a href="http://codebetter.com/gregyoung/2010/02/20/why-use-event-sourcing/">Event-sourcing</a></p>
-</blockquote>
-<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/redux-unidir-ui-arch.png" alt="Event-sourcing"></p>
-<h2 id="1-install">1) Install</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install --save redux-saga
-</span></span></code></pre></div><p><a href="https://github.com/redux-saga/redux-saga/tree/master/examples">examples</a></p>
-<h1 id="reference">Reference</h1>
-<ul>
-<li><a href="https://staltz.com/unidirectional-user-interface-architectures.html">UNIDIRECTIONAL USER INTERFACE ARCHITECTURES - André Staltz</a></li>
-<li><a href="http://udidahan.com/2009/12/09/clarified-cqrs/">Clarified CQRS</a></li>
-</ul> <a class="read-more" href="/csdn/post/reduxjs-asyn-dispatcher/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-04-10T17:26:39&#43;08:00">
-            10 Apr 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/css-selector-basic/">CSS选择器</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><p>浏览器建议：</p>
-<ul>
-<li>Google Chrome <a href="https://dl.google.com/release2/h8vnfiy7pvn3lxy9ehfsaxlrnnukgff8jnodrp0y21vrlem4x71lor5zzkliyh8fv3sryayu5uk5zi20ep7dwfnwr143dzxqijv/49.0.2623.112_chrome_installer.exe">v49.0.2623.112</a>+</li>
-<li>IE11</li>
-</ul>
-<table>
-  <thead>
-      <tr>
-          <th>Selector type</th>
-          <th>CSS</th>
-          <th>说明</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Tag name</td>
-          <td>p {}</td>
-          <td>对整个网页中标签有效</td>
-      </tr>
-      <tr>
-          <td>ID</td>
-          <td>#some-id {}</td>
-          <td>对网页中指定id有效</td>
-      </tr>
-      <tr>
-          <td>Class</td>
-          <td>.some-class {}</td>
-          <td>对网页中相同类名有效</td>
-      </tr>
-  </tbody>
-</table>
-<h1 id="元素">元素</h1>
-<p>document的<a href="https://www.w3school.com.cn/css/css_selector_type.asp">元素</a>就是最基本的选择器。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>html {color:black;}
-</span></span><span style="display:flex;"><span>h1 {color:blue;}
-</span></span><span style="display:flex;"><span>h2 {color:silver;}
-</span></span></code></pre></div><h2 id="下级元素">下级元素</h2>
-<h3 id="子元素httpswwww3schoolcomcncsscss_selector_childasp"><a href="https://www.w3school.com.cn/css/css_selector_child.asp">子元素</a></h3>
-<blockquote>
-<p>当前元素的下一级元素。</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">&gt;</span>
-</span></span></code></pre></div><h3 id="后代元素httpswwww3schoolcomcncsscss_selector_descendantasp"><a href="https://www.w3school.com.cn/css/css_selector_descendant.asp">后代元素</a></h3>
-<blockquote>
-<p>空格替代 “&gt;”
-例如:</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>ol li
-</span></span></code></pre></div><p>就表示当前元素（ol）下的所有li元素。</p>
-<h1 id="属性选择器">属性选择器</h1>
-<p><a href="https://www.w3school.com.cn/cssref/selector_attribute.asp">属性</a></p>
-<h2 id="1设置多个属性">1）设置多个属性</h2>
-<ul>
-<li>
-<p><a href="https://www.w3school.com.cn/cssref/selector_attr_begin.asp">“^” 开头匹配</a></p>
-</li>
-<li>
-<p><a href="https://www.w3school.com.cn/cssref/selector_attr_end.asp">“$” 结尾匹配</a></p>
-</li>
-<li>
-<p><a href="https://www.w3school.com.cn/cssref/selector_attr_contain.asp">&quot;*&quot; 包含匹配</a></p>
-</li>
-</ul>
-<h1 id="3-奇偶选择器">3. 奇偶选择器</h1>
-<p><a href="https://www.w3school.com.cn/cssref/selector_nth-child.asp">:nth-child</a> 其常用值有：odd和even</p> <a class="read-more" href="/csdn/post/css-selector-basic/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-04-10T16:26:39&#43;08:00">
-            10 Apr 2022
         </time>
     </footer>
 </article>

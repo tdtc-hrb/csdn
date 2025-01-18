@@ -164,6 +164,119 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_openjdk_ubuntu/">设置OpenJDK</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
+<blockquote>
+<p>ubuntu 20.04.2</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wsl1017@DESKTOP-14G6K9S:~$ java -version
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Command <span style="color:#e6db74">&#39;java&#39;</span> not found, but can be installed with:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo apt install default-jre
+</span></span><span style="display:flex;"><span>sudo apt install openjdk-11-jre-headless
+</span></span><span style="display:flex;"><span>sudo apt install openjdk-8-jre-headless
+</span></span></code></pre></div><h1 id="installation">installation</h1>
+<ol>
+<li>install jre</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wsl1017@DESKTOP-14G6K9S:/tmp$ sudo apt-get install openjdk-8-jre-headless
+</span></span></code></pre></div><ol start="2">
+<li>install jdk</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install openjdk-8-jdk-headless
+</span></span></code></pre></div><ol start="3">
+<li>set JAVA home</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/profile
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export JAVA_HOME<span style="color:#f92672">=</span>/usr/lib/jvm/java-8-openjdk-amd64
+</span></span></code></pre></div><h2 id="ubuntu-versionhttpsaskubuntucoma944260"><a href="https://askubuntu.com/a/944260">ubuntu version</a></h2>
+<p>The very short answer is that OpenJDK 8 as of 2017-08-08 is not officially available for Ubuntu 14.04.</p> <a class="read-more" href="/csdn/post/ops_openjdk_ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-03-15T07:08:08&#43;08:00">
+            15 Mar 2024
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_network_adapter_linux/">Linux修改网卡为固定IP</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><ul>
+<li>RHEL</li>
+<li>Diban <br>
+Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</li>
+</ul>
+<h1 id="rhel-like">RHEL-like</h1>
+<ul>
+<li>Alma/Rocky</li>
+<li>CentOS <br>
+Less than RHEL version 8</li>
+</ul>
+<h2 id="view">View</h2>
+<p>net adapter list:</p>
+<pre tabindex="0"><code>$cd /etc/sysconfig/network-scripts
+$ls ifcfg-* -l
+</code></pre><h3 id="ipv4">ipv4</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ip addr
+</span></span></code></pre></div><h3 id="ipv6">ipv6</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ip -6 addr
+</span></span></code></pre></div><h2 id="setup">Setup</h2>
+<p>Start job network adapter:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ONBOOT<span style="color:#f92672">=</span>yes
+</span></span></code></pre></div><h3 id="static">static</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cd /etc/sysconfig/network-scripts
+</span></span><span style="display:flex;"><span>$sudo vi ifcfg-enp0s3
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>BOOTPROTO<span style="color:#f92672">=</span>none
+</span></span><span style="display:flex;"><span>IPADDR<span style="color:#f92672">=</span>192.168.1.186
+</span></span><span style="display:flex;"><span>PREFIX<span style="color:#f92672">=</span><span style="color:#ae81ff">24</span>
+</span></span><span style="display:flex;"><span>GATEWAY<span style="color:#f92672">=</span>192.168.1.1
+</span></span><span style="display:flex;"><span>DNS1<span style="color:#f92672">=</span>211.161.191.235
+</span></span><span style="display:flex;"><span>DNS2<span style="color:#f92672">=</span>211.161.122.197
+</span></span></code></pre></div><h3 id="ipv6-network">IPv6 Network</h3>
+<ul>
+<li>IPV6INIT=yes <br>
+This initializes the interface for IPv6 addressing.</li>
+<li>IPV6_AUTOCONF=yes <br>
+This enables the IPv6 auto-configuration for the interface.</li>
+<li>IPV6_DEFROUTE=yes <br>
+This indicates that the default IPv6 route has been assigned to the interface.</li>
+<li>IPV6_FAILURE_FATAL=no <br>
+indicates that the system won’t fail even when IPv6 fails.</li>
+</ul>
+<h3 id="virtual-machine">virtual machine</h3>
+<p>设置Network Adapter为Bridged</p> <a class="read-more" href="/csdn/post/ops_network_adapter_linux/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-03-12T08:38:08&#43;08:00">
+            12 Mar 2024
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_dc_redis_ubuntu/">安装redis-server</a></h2>
     </header>
     <section class="post-excerpt">
@@ -918,164 +1031,6 @@ CentOS v7.9(2009)</li>
         
         <time class="post-date" datetime="2023-08-06T01:08:39&#43;08:00">
             6 Aug 2023
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_grub_ubuntu/">grub救援模式</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
-<p>出现“grub rescue&gt;”提示符；也称grub救援模式。</p>
-<h1 id="1-设置引导">1. 设置引导</h1>
-<blockquote>
-<p>(hd?,?)：安装的引导分区  <br>
-在我的机器是(hd0, msdos3)</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>grub rescue&gt;ls
-</span></span><span style="display:flex;"><span>grub rescue&gt;ls <span style="color:#f92672">(</span>hd?,?<span style="color:#f92672">)</span>/boot/grub
-</span></span><span style="display:flex;"><span>grub rescue&gt;set root<span style="color:#f92672">(</span>hd?,?<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>grub rescue&gt;set prefix<span style="color:#f92672">=(</span>hd?,?<span style="color:#f92672">)</span>/boot/grub
-</span></span></code></pre></div><h2 id="insmod">insmod</h2>
-<p>one:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>insmod /boot/grub/normal.mod
-</span></span><span style="display:flex;"><span>/boot/grub/normal
-</span></span></code></pre></div><p>two:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>insmod normal
-</span></span><span style="display:flex;"><span>normal
-</span></span></code></pre></div><h1 id="2-更新grub">2. 更新grub</h1>
-<p>在终端上执行：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo grub-install /dev/sda
-</span></span><span style="display:flex;"><span>sudo update-grub
-</span></span></code></pre></div> <a class="read-more" href="/csdn/post/ops_grub_ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-03-15T00:19:08&#43;08:00">
-            15 Mar 2023
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/css-bootstrap-grid/">Grid system</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><p>在V2.3.2中，栅格系统默认是不支持移动设备的；  <br>
-但V3.0版本，已经默认支持移动设备。</p>
-<p>在V4.6.x, 更加细化了移动设备支持。</p>
-<h1 id="v2">v2</h1>
-<p><a href="https://getbootstrap.com/2.3.2/scaffolding.html#gridSystem">Bootstrap(v2)</a> 默认的栅格系统为12列 ，
-形成一个940px宽的容器，默认没有启用 &ldquo;<a href="https://getbootstrap.com/2.3.2/scaffolding.html#responsive">响应式布局特性</a>&rdquo; 。 <br>
-如果加入响应式布局CSS文件，栅格系统会自动根据可视窗口的宽度从724px到1170px进行动态调整。 <br>
-在可视窗口低于767px宽的情况下，列将不再固定并且会在垂直方向堆叠。</p>
-<h2 id="example">example</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;row&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;span4&#34;</span><span style="color:#f92672">&gt;</span>...<span style="color:#f92672">&lt;/div&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;span8&#34;</span><span style="color:#f92672">&gt;</span>...<span style="color:#f92672">&lt;/div&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/div&gt;</span>
-</span></span></code></pre></div><h1 id="v3">v3</h1>
-<blockquote>
-<p>class变化：.span* -〉.col-md-*</p>
-</blockquote>
-<p><a href="https://getbootstrap.com/docs/3.4/css/#grid">Bootstrap(v3)</a> 内置了一套响应式、移动设备优先的流式栅格系统，
-随着屏幕设备或视口（viewport）尺寸的增加，系统会自动分为最多12列。
-它包含了易于使用的<a href="https://getbootstrap.com/docs/3.4/css/#grid-example-basic">预定义classe</a>，
-还有强大的<a href="https://getbootstrap.com/docs/3.4/css/#grid-less">mixin用于生成更具语义的布局</a>。</p>
-<h2 id="grid-optionshttpsgetbootstrapcomdocs34cssgrid-options"><a href="https://getbootstrap.com/docs/3.4/css/#grid-options">Grid options</a></h2>
-<table>
-  <thead>
-      <tr>
-          <th>Name</th>
-          <th>Size</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Extra small devices Phones</td>
-          <td>&lt;768px</td>
-      </tr>
-      <tr>
-          <td>Small devices Tablets</td>
-          <td>≥768px</td>
-      </tr>
-      <tr>
-          <td>Medium devices Desktops</td>
-          <td>≥992px</td>
-      </tr>
-      <tr>
-          <td>Large devices Desktops</td>
-          <td>≥1200px</td>
-      </tr>
-  </tbody>
-</table>
-<h2 id="example-1">example</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;row&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;col-md-4&#34;</span><span style="color:#f92672">&gt;</span>...<span style="color:#f92672">&lt;/div&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;col-md-8&#34;</span><span style="color:#f92672">&gt;</span>...<span style="color:#f92672">&lt;/div&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/div&gt;</span>
-</span></span></code></pre></div><h1 id="v4">v4</h1>
-<p><a href="https://getbootstrap.com/docs/4.6/layout/grid/">Bootstrap(v4)</a> 调整了小屏幕的适配。
-Switch from Less to Sass for the source CSS files</p>
-<h2 id="grid-optionshttpsgetbootstrapcomdocs46layoutgridgrid-options"><a href="https://getbootstrap.com/docs/4.6/layout/grid/#grid-options">Grid options</a></h2>
-<table>
-  <thead>
-      <tr>
-          <th>Name</th>
-          <th>Size</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Extra small</td>
-          <td>&lt;576px</td>
-      </tr>
-      <tr>
-          <td>Small</td>
-          <td>≥576px</td>
-      </tr>
-      <tr>
-          <td>Medium</td>
-          <td>≥768px</td>
-      </tr>
-      <tr>
-          <td>Large</td>
-          <td>≥992px</td>
-      </tr>
-      <tr>
-          <td>Extra large</td>
-          <td>≥1200px</td>
-      </tr>
-  </tbody>
-</table>
-<h2 id="example-2">example</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;row&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;col-lg-4&#34;</span><span style="color:#f92672">&gt;</span>...<span style="color:#f92672">&lt;/div&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;col-lg-8&#34;</span><span style="color:#f92672">&gt;</span>...<span style="color:#f92672">&lt;/div&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/div&gt;</span>
-</span></span></code></pre></div> <a class="read-more" href="/csdn/post/css-bootstrap-grid/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-03-10T14:08:08&#43;08:00">
-            10 Mar 2023
         </time>
     </footer>
 </article>
