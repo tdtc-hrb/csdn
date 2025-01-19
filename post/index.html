@@ -162,38 +162,77 @@
 	
 	   <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/com-wizards-vc/">VC 创建 Component Object Model</a></h2>
+        <h2 class="post-title"><a href="/csdn/post/c2plus-com-dll/">c#调用COM</a></h2>
     </header>
     <section class="post-excerpt">
         
-            <p><p>!!! 注意： 除非维护IE的ACTIVE项目，不推荐使用ATL !!! <br>
-!!! Unless you are maintaining an IE ActiveX project, it is not recommended to use ATL! !!!</p>
-<p>Use Visual Studio&rsquo;s wizard to create COM</p>
+            <p><p>!!! 除了IE的ActiveX项目，不推荐ATL !!! <br>
+!!! ATL is not recommended except for IE ActiveX projects. !!!</p>
+<h2 id="add-reference">Add Reference</h2>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20200514021327.png" alt="vs2008 ui1"></p>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20200514021444.png" alt="vs2008 ui2"></p>
+<p>COM选项卡
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20200514021640.png" alt="vs2008 ui3">
+添加完成时</p>
+<h1 id="添加事件">添加事件</h1>
 <ul>
-<li>Visual Studio 2013</li>
-<li>Visual Studio 2015</li>
-<li>Visual Studio 2017/2019</li>
-<li>Visual Studio 2022</li>
+<li>import class</li>
 </ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>using System.IO;
+</span></span><span style="display:flex;"><span>using xbfInfoLib;
+</span></span></code></pre></div><h2 id="写xbf文件">写xbf文件</h2>
+<ul>
+<li>读Ini文件配置</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>Boolean flagMSSQL <span style="color:#f92672">=</span> false;
+</span></span><span style="display:flex;"><span>Boolean flagSecu <span style="color:#f92672">=</span> false;
+</span></span><span style="display:flex;"><span>string sectionName <span style="color:#f92672">=</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(<span style="color:#e6db74">&#34;config&#34;</span>, <span style="color:#e6db74">&#34;type&#34;</span>);
+</span></span><span style="display:flex;"><span>string strSrv <span style="color:#f92672">=</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Server&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">Equals</span>(strSrv, <span style="color:#e6db74">&#34;&#34;</span>))
+</span></span><span style="display:flex;"><span>    flagMSSQL <span style="color:#f92672">=</span> true;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (flagMSSQL)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    strConn <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Provider=SQLOLEDB.1;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Password=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Pwd&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Persist Security Info=True;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;User ID=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;User&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Initial Catalog=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;DB&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Data Source=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Server&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span> <span style="color:#75715e">// MS Access
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{
+</span></span><span style="display:flex;"><span>    string strPWD <span style="color:#f92672">=</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Pwd&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">Equals</span>(strPWD, <span style="color:#e6db74">&#34;&#34;</span>))
+</span></span><span style="display:flex;"><span>        flagSecu <span style="color:#f92672">=</span> true;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (flagSecu)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        strConn <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Provider=Microsoft.Jet.OLEDB.4.0;&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Data Source=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;DB&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Persist Security Info=False;&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Jet OLEDB:Database Password=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Pwd&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        strConn <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Provider=Microsoft.Jet.OLEDB.4.0;&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Data Source=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;DB&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Persist Security Info=True&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li>调用COM接口</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>xbfInfoLib.FormatClass xbf <span style="color:#f92672">=</span> new <span style="color:#a6e22e">FormatClass</span>();
+</span></span><span style="display:flex;"><span>xbf.<span style="color:#a6e22e">setFileInfo</span>(strConn);
+</span></span></code></pre></div><h2 id="读xbf文件">读xbf文件</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>xbfInfoLib.FormatClass xbf <span style="color:#f92672">=</span> new <span style="color:#a6e22e">FormatClass</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>string filePath <span style="color:#f92672">=</span> currDir <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#f92672">+</span> edtFileName.Text;
+</span></span><span style="display:flex;"><span>string strRet <span style="color:#f92672">=</span> xbf.<span style="color:#a6e22e">getFileInfo</span>(filePath);
+</span></span><span style="display:flex;"><span>MessageBox.<span style="color:#a6e22e">Show</span>(strRet);
+</span></span></code></pre></div><h1 id="code">code</h1>
 <blockquote>
-<p>x64 IDE</p>
-</blockquote>
-<p>step by step:</p>
-<ul>
-<li>建立ATL工程</li>
-<li>建立ATL Simple Object</li>
-<li>添加IDL方法</li>
-<li>测试添加的method</li>
-</ul>
-<h1 id="建立atl工程">建立ATL工程</h1>
-<p>File-&gt;New-&gt;Project</p>
-<!-- vs2017: https://gitee.com/xiaobin80/csdn/raw/master/images/20200201162120769.png -->
-<!-- vs2013: https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new1(vs2013).png -->
-<!-- vs2015: https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new1(vs2015).png -->
-<pre tabindex="0"><code>name: testATL
-</code></pre><p>Note: name即是要生成的DLL文件 <br>
-<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new1(vs2019).png" alt="project type">
-<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new2(vs2019).png" alt="project name"></p> <a class="read-more" href="/csdn/post/com-wizards-vc/">&raquo;</a></p>
+<p>Form1.cs</p> <a class="read-more" href="/csdn/post/c2plus-com-dll/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -202,8 +241,8 @@
         
 
         
-        <time class="post-date" datetime="2025-01-18T23:08:08&#43;08:00">
-            18 Jan 2025
+        <time class="post-date" datetime="2025-01-19T18:08:08&#43;08:00">
+            19 Jan 2025
         </time>
     </footer>
 </article>
@@ -211,13 +250,436 @@
 	
 	   <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/com-ie-test/">使用IE测试COM</a></h2>
+        <h2 class="post-title"><a href="/csdn/post/com-ie-repoinfo/">铁路车号读取</a></h2>
     </header>
     <section class="post-excerpt">
         
-            <p><p>!!! 注意： 除非维护IE的ACTIVE项目，不推荐使用ATL !!! <br>
-!!! Unless you are maintaining an IE ActiveX project, it is not recommended to use ATL! !!!</p>
+            <p><blockquote>
 <ul>
+<li>replace(regexp/substr,replacement)
+使用这个函数来替换多余的空格。</li>
+</ul>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/\s/g</span>, <span style="color:#e6db74">&#34;&#34;</span>);
+</span></span></code></pre></div><blockquote>
+<ul>
+<li>split(separator,howmany)
+字符串转换成字符数组。</li>
+</ul>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">string</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;,&#34;</span>);
+</span></span></code></pre></div><h1 id="一js部分">一、js部分</h1>
+<p>我们把所有的方法放到一个对象（RepoInfo）中。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">RepoInfo</span> <span style="color:#f92672">=</span> { };
+</span></span></code></pre></div><h2 id="1-获取对象">1. 获取对象</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">RepoInfo</span>.<span style="color:#a6e22e">getObj</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">objName</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ActiveXObject</span>(<span style="color:#a6e22e">objName</span>);
+</span></span><span style="display:flex;"><span>	};
+</span></span></code></pre></div><h2 id="2-获取数组">2. 获取数组</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">RepoInfo</span>.<span style="color:#a6e22e">getArray</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">str</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ret</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array(<span style="color:#ae81ff">16</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">string</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/\s/g</span>, <span style="color:#e6db74">&#34;&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ret</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">string</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;,&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ret</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h2 id="3-解码字串">3. 解码字串</h2>
+<h3 id="输入字串校验">输入字串校验</h3>
+<p>如果字串空，退出。</p>
+<h3 id="输出框清空">输出框清空</h3>
+<p>每次赋值前，清空。</p>
+<h3 id="执行com中的方法">执行COM中的方法</h3>
+<p>在获取对象非空的情况下，执行。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">RepoInfo</span>.<span style="color:#a6e22e">decode</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">string</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">string</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">RepoInfo</span>.<span style="color:#a6e22e">getObj</span>(<span style="color:#e6db74">&#34;repoInfo.LabelInfo&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">edtView</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;edtView&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">edtView</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">str</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">RepoInfo</span>.<span style="color:#a6e22e">getArray</span>(<span style="color:#a6e22e">string</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">obj</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">edtView</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">getInfo</span>(<span style="color:#a6e22e">str</span>);
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h1 id="二html部分">二、html部分</h1>
+<h2 id="按钮事件">按钮事件</h2>
+<p>从输入框获取字串作为js方法的输入参数，注意：两种引号的配合使用。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btnOk&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;执行数据解析&#34;</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;RepoInfo.decode(document.getElementById(&#39;edtData&#39;).value)&#34;</span> /&gt;
+</span></span></code></pre></div><h2 id="源代码含js代码">源代码（含js代码）</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html PUBLIC &#34;-//W3C//DTD XHTML 1.0 Transitional//EN&#34; &#34;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&#34;&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">xmlns</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.w3.org/1999/xhtml&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Content-Type&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/html; charset=utf-8&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">title</span>&gt;报文数据信息 - IE&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">RepoInfo</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>		};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">RepoInfo</span>.<span style="color:#a6e22e">getObj</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">objName</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ActiveXObject</span>(<span style="color:#a6e22e">objName</span>);
+</span></span><span style="display:flex;"><span>	};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">RepoInfo</span>.<span style="color:#a6e22e">getArray</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">str</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ret</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array(<span style="color:#ae81ff">16</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">string</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/\s/g</span>, <span style="color:#e6db74">&#34;&#34;</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">string</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">ret</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">string</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;,&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ret</span>;
+</span></span><span style="display:flex;"><span>	};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">RepoInfo</span>.<span style="color:#a6e22e">decode</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">string</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">string</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">RepoInfo</span>.<span style="color:#a6e22e">getObj</span>(<span style="color:#e6db74">&#34;repoInfo.LabelInfo&#34;</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">edtView</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;edtView&#34;</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">edtView</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">str</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">RepoInfo</span>.<span style="color:#a6e22e">getArray</span>(<span style="color:#a6e22e">string</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">obj</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>)
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">edtView</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">getInfo</span>(<span style="color:#a6e22e">str</span>);
+</span></span><span style="display:flex;"><span>	};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>                    
+</span></span><span style="display:flex;"><span>	  
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">textarea</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;note&#34;</span> <span style="color:#a6e22e">cols</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;98&#34;</span> <span style="color:#a6e22e">rows</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;7&#34;</span> <span style="color:#a6e22e">readonly</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;readonly&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>       注意：本测试只能运行在IE浏览器！
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  首先，要注册Dll（regsvr32 repoInfo.dll）；
+</span></span><span style="display:flex;"><span>  然后，从“BinJiang_2005.rep”（滨江站），复制行数据到“标签数据”框。
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  示例（固定格式）：
+</span></span><span style="display:flex;"><span>    0xD3, 0x05, 0x94, 0x84, 0x00, 0x13, 0x51, 0x2F, 0x59, 0x34, 0x57, 0x45, 0x58, 0x50, 0x41, 0x98&lt;/<span style="color:#f92672">textarea</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">br</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">br</span>&gt;
+</span></span><span style="display:flex;"><span>标签数据：&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;edtData&#34;</span> <span style="color:#a6e22e">size</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;98&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">br</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">br</span>&gt;
+</span></span><span style="display:flex;"><span>执行结果：&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;edtView&#34;</span> <span style="color:#a6e22e">size</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;50&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">br</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">br</span>&gt;
+</span></span><span style="display:flex;"><span>                  
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btnOk&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;执行数据解析&#34;</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;RepoInfo.decode(document.getElementById(&#39;edtData&#39;).value)&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><h1 id="test">Test</h1>
+<ul>
+<li>二进制文件工具：<a href="https://www.editplus.com/download.html">EditPlus</a> <br>
+Edit -&gt; Hex Viewer</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>File Name(.DAT)</th>
+          <th>Car Number</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>D2011914</td>
+          <td>312490215</td>
+      </tr>
+      <tr>
+          <td>D2011926</td>
+          <td>331926515</td>
+      </tr>
+      <tr>
+          <td>D2011955</td>
+          <td>342272515</td>
+      </tr>
+      <tr>
+          <td>D2012009</td>
+          <td>346553415</td>
+      </tr>
+      <tr>
+          <td>D2012035</td>
+          <td>345000715</td>
+      </tr>
+      <tr>
+          <td>D2021643</td>
+          <td>350199715</td>
+      </tr>
+      <tr>
+          <td>D2021741</td>
+          <td>345008515</td>
+      </tr>
+      <tr>
+          <td>D2021743</td>
+          <td>345001615</td>
+      </tr>
+      <tr>
+          <td>D2021926</td>
+          <td>332465615</td>
+      </tr>
+      <tr>
+          <td>D2021959</td>
+          <td>342312215</td>
+      </tr>
+      <tr>
+          <td>D2022011</td>
+          <td>345005915</td>
+      </tr>
+      <tr>
+          <td>D2022044</td>
+          <td>342018915</td>
+      </tr>
+      <tr>
+          <td>D2031744</td>
+          <td>342637015</td>
+      </tr>
+      <tr>
+          <td>D2031752</td>
+          <td>345003215</td>
+      </tr>
+      <tr>
+          <td>D2031913</td>
+          <td>340937115</td>
+      </tr>
+      <tr>
+          <td>D2031932</td>
+          <td>332869515</td>
+      </tr>
+      <tr>
+          <td>D2031958</td>
+          <td>331071015</td>
+      </tr>
+      <tr>
+          <td>D2032039</td>
+          <td>340848715</td>
+      </tr>
+      <tr>
+          <td>D2032042</td>
+          <td>345008015</td>
+      </tr>
+      <tr>
+          <td>D2032339</td>
+          <td>346034315</td>
+      </tr>
+      <tr>
+          <td>D2032344</td>
+          <td>312071215</td>
+      </tr>
+      <tr>
+          <td>D2041241</td>
+          <td>350324015</td>
+      </tr>
+      <tr>
+          <td>D2041738</td>
+          <td>350323015</td>
+      </tr>
+      <tr>
+          <td>D2041808</td>
+          <td>345006515</td>
+      </tr>
+      <tr>
+          <td>D2042012</td>
+          <td>345002415</td>
+      </tr>
+      <tr>
+          <td>D2042017</td>
+          <td>346445515</td>
+      </tr>
+      <tr>
+          <td>D2042038</td>
+          <td>340173615</td>
+      </tr>
+      <tr>
+          <td>D2042140</td>
+          <td>312747515</td>
+      </tr>
+      <tr>
+          <td>D2051607</td>
+          <td>350323415</td>
+      </tr>
+      <tr>
+          <td>D2051746</td>
+          <td>345007615</td>
+      </tr>
+      <tr>
+          <td>D2051922</td>
+          <td>331183715</td>
+      </tr>
+      <tr>
+          <td>D2051934</td>
+          <td>346033215</td>
+      </tr>
+      <tr>
+          <td>D2051946</td>
+          <td>312525215</td>
+      </tr>
+      <tr>
+          <td>D2052008</td>
+          <td>345200015</td>
+      </tr>
+      <tr>
+          <td>D2052022</td>
+          <td>345005215</td>
+      </tr>
+      <tr>
+          <td>D2061808</td>
+          <td>345002915</td>
+      </tr>
+      <tr>
+          <td>D2061920</td>
+          <td>332753815</td>
+      </tr>
+      <tr>
+          <td>D2061945</td>
+          <td>342158015</td>
+      </tr>
+      <tr>
+          <td>D2061957</td>
+          <td>340534815</td>
+      </tr>
+      <tr>
+          <td>D2062015</td>
+          <td>345002115</td>
+      </tr>
+      <tr>
+          <td>D2071750</td>
+          <td>345004115</td>
+      </tr>
+      <tr>
+          <td>D2071915</td>
+          <td>342772915</td>
+      </tr>
+      <tr>
+          <td>D2071934</td>
+          <td>346033215</td>
+      </tr>
+      <tr>
+          <td>D2071949</td>
+          <td>342700815</td>
+      </tr>
+      <tr>
+          <td>D2072018</td>
+          <td>345008715</td>
+      </tr>
+      <tr>
+          <td>D2072047</td>
+          <td>346288015</td>
+      </tr>
+      <tr>
+          <td>D2081108</td>
+          <td>331115215</td>
+      </tr>
+      <tr>
+          <td>D2081118</td>
+          <td>331115215</td>
+      </tr>
+      <tr>
+          <td>D2081325</td>
+          <td>350338915</td>
+      </tr>
+      <tr>
+          <td>D2081757</td>
+          <td>345000715</td>
+      </tr>
+      <tr>
+          <td>D2081917</td>
+          <td>342941715</td>
+      </tr>
+  </tbody>
+</table>
+<h1 id="参考文档w3school">参考文档(W3School)：</h1>
+<ul>
+<li><a href="http://www.w3school.com.cn/jsref/jsref_replace.asp">replace 方法</a></li>
+<li><a href="http://www.w3school.com.cn/jsref/jsref_obj_regexp.asp">RegExp 对象</a></li>
+<li><a href="http://w3school.com.cn/jsref/jsref_split.asp">split 方法</a></li>
+</ul> <a class="read-more" href="/csdn/post/com-ie-repoinfo/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2025-01-19T16:08:08&#43;08:00">
+            19 Jan 2025
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/com-safearray-vc/">SafeArray数据</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>!!! 除了IE的ActiveX项目，不推荐ATL !!! <br>
+!!! ATL is not recommended except for IE ActiveX projects. !!!</p>
+<h1 id="com">COM</h1>
+<blockquote>
+<p>vc</p>
+</blockquote>
+<h2 id="1-定义safearray变量">1. 定义SAFEARRAY变量</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>SAFEARRAY <span style="color:#f92672">*</span>pSArray <span style="color:#f92672">=</span> NULL;
+</span></span></code></pre></div><h2 id="2-释放此变量">2. 释放此变量</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>SafeArrayDestroy(pSArray);
+</span></span></code></pre></div><h2 id="3-建立向量表">3. 建立向量表</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>pSArray <span style="color:#f92672">=</span> SafeArrayCreateVector(VT_UI1, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">32</span>);
+</span></span></code></pre></div><h3 id="向量变量vt_ui1">向量变量(VT_UI1)</h3>
+<ul>
+<li>Definition in wtypes.h</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-wtypes.h" data-lang="wtypes.h"><span style="display:flex;"><span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">short</span> VARTYPE;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * VARENUM usage key,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * * [V] - may appear in a VARIANT
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * * [T] - may appear in a TYPEDESC
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * * [P] - may appear in an OLE property set
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * * [S] - may appear in a Safe Array
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">enum</span> VARENUM {
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  VT_UI1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">17</span>,
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>} ;
+</span></span></code></pre></div><ul>
+<li><a href="https://learn.microsoft.com/en-us/windows/win32/api/wtypes/ne-wtypes-varenum#constants">Constants</a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>VT_UI1
+</span></span><span style="display:flex;"><span>Variable type is unsigned char.
+</span></span></code></pre></div><h2 id="4-写入数据">4. 写入数据</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>SafeArrayPutElement(pSArray, <span style="color:#f92672">&amp;</span>l, <span style="color:#f92672">&amp;</span>inqReport[l]);
+</span></span></code></pre></div><h2 id="getinqrepo方法">getInqRepo方法：</h2>
+<blockquote>
+<p>AA：屏蔽的数值</p> <a class="read-more" href="/csdn/post/com-safearray-vc/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2025-01-19T14:08:08&#43;08:00">
+            19 Jan 2025
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/com-ie-test/">使用Internet Explorer测试COM</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><ul>
 <li>Target <br>
 x86</li>
 </ul>
@@ -284,9 +746,11 @@ testSOW.h:</p>
 }
 </code></pre><h2 id="测试">测试</h2>
 <ul>
-<li>
-<p>查看依赖 <br>
-<a href="http://dependencywalker.com/depends22_x86.zip">x86</a></p> <a class="read-more" href="/csdn/post/com-ie-test/">&raquo;</a></p>
+<li>IE</li>
+<li>non-IE</li>
+</ul>
+<h3 id="ie">IE</h3>
+<p>[ActiveXObject](<a href="https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2010/6958xykx(v=vs.100)">https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2010/6958xykx(v=vs.100)</a>:</p> <a class="read-more" href="/csdn/post/com-ie-test/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -295,8 +759,8 @@ testSOW.h:</p>
         
 
         
-        <time class="post-date" datetime="2025-01-18T18:08:08&#43;08:00">
-            18 Jan 2025
+        <time class="post-date" datetime="2025-01-19T12:08:08&#43;08:00">
+            19 Jan 2025
         </time>
     </footer>
 </article>
@@ -304,68 +768,48 @@ testSOW.h:</p>
 	
 	   <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/com-ie-repoinfo/">铁路车号读取</a></h2>
+        <h2 class="post-title"><a href="/csdn/post/com-wizards-vc/">VC 创建 Component Object Model</a></h2>
     </header>
     <section class="post-excerpt">
         
-            <p><p>!!! 注意： 除非维护IE的ACTIVE项目，不推荐使用ATL !!! <br>
-!!! Unless you are maintaining an IE ActiveX project, it is not recommended to use ATL! !!!</p>
+            <p><p>!!! 除了IE的ActiveX项目，不推荐ATL !!! <br>
+!!! ATL is not recommended except for IE ActiveX projects. !!!</p>
+<p>Use Visual Studio&rsquo;s wizard to create COM</p>
 <ul>
-<li>二进制文件工具：<a href="https://www.editplus.com/download.html">EditPlus</a> <br>
-Edit -&gt; Hex Viewer</li>
+<li>Visual Studio 2013 ~ 2019</li>
 </ul>
 <blockquote>
-<ul>
-<li>replace(regexp/substr,replacement)
-使用这个函数来替换多余的空格。</li>
-</ul>
+<p>x86 IDE</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/\s/g</span>, <span style="color:#e6db74">&#34;&#34;</span>);
-</span></span></code></pre></div><blockquote>
 <ul>
-<li>split(separator,howmany)
-字符串转换成字符数组。</li>
+<li>Visual Studio 2022</li>
 </ul>
+<blockquote>
+<p>x64 IDE</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">string</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;,&#34;</span>);
-</span></span></code></pre></div><h1 id="一js部分">一、js部分</h1>
-<p>我们把所有的方法放到一个对象（RepoInfo）中。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">RepoInfo</span> <span style="color:#f92672">=</span> { };
-</span></span></code></pre></div><h2 id="1-获取对象">1. 获取对象</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">RepoInfo</span>.<span style="color:#a6e22e">getObj</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">objName</span>) {
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ActiveXObject</span>(<span style="color:#a6e22e">objName</span>);
-</span></span><span style="display:flex;"><span>	};
-</span></span></code></pre></div><h2 id="2-获取数组">2. 获取数组</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">RepoInfo</span>.<span style="color:#a6e22e">getArray</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">str</span>) {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ret</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array(<span style="color:#ae81ff">16</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">string</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/\s/g</span>, <span style="color:#e6db74">&#34;&#34;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ret</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">string</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;,&#34;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ret</span>;
-</span></span><span style="display:flex;"><span>};
-</span></span></code></pre></div><h2 id="3-解码字串">3. 解码字串</h2>
-<h3 id="输入字串校验">输入字串校验</h3>
-<p>如果字串空，退出。</p>
-<h3 id="输出框清空">输出框清空</h3>
-<p>每次赋值前，清空。</p>
-<h3 id="执行com中的方法">执行COM中的方法</h3>
-<p>在获取对象非空的情况下，执行。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">RepoInfo</span>.<span style="color:#a6e22e">decode</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">string</span>) {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">string</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) <span style="color:#66d9ef">return</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">RepoInfo</span>.<span style="color:#a6e22e">getObj</span>(<span style="color:#e6db74">&#34;repoInfo.LabelInfo&#34;</span>);
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">edtView</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;edtView&#34;</span>);
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">edtView</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; &#34;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">str</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">RepoInfo</span>.<span style="color:#a6e22e">getArray</span>(<span style="color:#a6e22e">string</span>);
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">obj</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">edtView</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">getInfo</span>(<span style="color:#a6e22e">str</span>);
-</span></span><span style="display:flex;"><span>};
-</span></span></code></pre></div><h1 id="二html部分">二、html部分</h1>
-<h2 id="按钮事件">按钮事件</h2>
-<p>从输入框获取字串作为js方法的输入参数，注意：两种引号的配合使用。</p> <a class="read-more" href="/csdn/post/com-ie-repoinfo/">&raquo;</a></p>
+<p>step by step:</p>
+<ul>
+<li>建立ATL工程</li>
+<li>建立ATL Simple Object</li>
+<li>添加IDL方法</li>
+<li>测试添加的method</li>
+</ul>
+<h1 id="建立atl工程">建立ATL工程</h1>
+<p>File-&gt;New-&gt;Project</p>
+<!-- vs2017: https://gitee.com/xiaobin80/csdn/raw/master/images/20200201162120769.png -->
+<!-- vs2013: https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new1(vs2013).png -->
+<!-- vs2015: https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new1(vs2015).png -->
+<pre tabindex="0"><code>name: testATL
+</code></pre><p>Note: name即是要生成的DLL文件 <br>
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new1(vs2019).png" alt="project type">
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new2(vs2019).png" alt="project name"></p>
+<p>选择&quot;MFC/ATL&quot;中&quot;ATL Project&quot;:</p>
+<blockquote>
+<p>Default</p>
+</blockquote>
+<!-- vs2017: https://gitee.com/xiaobin80/csdn/raw/master/images/20200201171441614.png -->
+<!-- vs2013: https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new2(vs2013).png -->
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/atl-new3(vs2019).png" alt="project property"></p> <a class="read-more" href="/csdn/post/com-wizards-vc/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -374,106 +818,8 @@ Edit -&gt; Hex Viewer</li>
         
 
         
-        <time class="post-date" datetime="2025-01-18T16:08:08&#43;08:00">
-            18 Jan 2025
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/com-safearray-vc/">SafeArray数据</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><p>!!! 注意： 除非维护IE的ACTIVE项目，不推荐使用ATL !!! <br>
-!!! Unless you are maintaining an IE ActiveX project, it is not recommended to use ATL! !!!</p>
-<h1 id="com">COM</h1>
-<blockquote>
-<p>vc</p>
-</blockquote>
-<h2 id="1-定义safearray变量">1. 定义SAFEARRAY变量</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>SAFEARRAY <span style="color:#f92672">*</span>pSArray <span style="color:#f92672">=</span> NULL;
-</span></span></code></pre></div><h2 id="2-释放此变量">2. 释放此变量</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>SafeArrayDestroy(pSArray);
-</span></span></code></pre></div><h2 id="3-建立向量表">3. 建立向量表</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>pSArray <span style="color:#f92672">=</span> SafeArrayCreateVector(VT_UI1, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">32</span>);
-</span></span></code></pre></div><p>向量变量（VT_UI1）的定义：<a href="https://docs.microsoft.com/en-us/previous-versions/aa910805(v=msdn.10)?redirectedfrom=MSDN">msdn</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>VT_UI1
-</span></span><span style="display:flex;"><span>Variable type is unsigned char.
-</span></span></code></pre></div><h2 id="4-写入数据">4. 写入数据</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>SafeArrayPutElement(pSArray, <span style="color:#f92672">&amp;</span>l, <span style="color:#f92672">&amp;</span>inqReport[l]);
-</span></span></code></pre></div><h2 id="getinqrepo方法">getInqRepo方法：</h2>
-<blockquote>
-<p>AA：屏蔽的数值</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>STDMETHODIMP CRepoFmt<span style="color:#f92672">::</span>getInqRepo(ULONG iStation, SAFEARRAY<span style="color:#f92672">**</span> ret)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	SAFEARRAY <span style="color:#f92672">*</span>pSArray <span style="color:#f92672">=</span> NULL;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">char</span> inqReport[<span style="color:#ae81ff">32</span>];
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">char</span> xorByte <span style="color:#f92672">=</span> AA;
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> iStationID <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (iStation <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1</span>)
-</span></span><span style="display:flex;"><span>		iStationID <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>		iStationID <span style="color:#f92672">=</span> iStation;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	inqReport[<span style="color:#ae81ff">0</span>]  <span style="color:#f92672">=</span> AA;
-</span></span><span style="display:flex;"><span>	inqReport[<span style="color:#ae81ff">1</span>]  <span style="color:#f92672">=</span> AA;
-</span></span><span style="display:flex;"><span>	inqReport[<span style="color:#ae81ff">2</span>]  <span style="color:#f92672">=</span> AA;
-</span></span><span style="display:flex;"><span>	inqReport[<span style="color:#ae81ff">3</span>]  <span style="color:#f92672">=</span> AA;
-</span></span><span style="display:flex;"><span>	inqReport[<span style="color:#ae81ff">4</span>]  <span style="color:#f92672">=</span> (iStationID <span style="color:#f92672">%</span> AA);
-</span></span><span style="display:flex;"><span>	inqReport[<span style="color:#ae81ff">5</span>]  <span style="color:#f92672">=</span> (iStationID <span style="color:#f92672">/</span> AA);
-</span></span><span style="display:flex;"><span>	inqReport[<span style="color:#ae81ff">6</span>]  <span style="color:#f92672">=</span> AA;
-</span></span><span style="display:flex;"><span>	inqReport[<span style="color:#ae81ff">7</span>]  <span style="color:#f92672">=</span> AA;
-</span></span><span style="display:flex;"><span>	inqReport[<span style="color:#ae81ff">8</span>]  <span style="color:#f92672">=</span> AA;
-</span></span><span style="display:flex;"><span>	inqReport[<span style="color:#ae81ff">9</span>]  <span style="color:#f92672">=</span> AA;
-</span></span><span style="display:flex;"><span>	inqReport[<span style="color:#ae81ff">10</span>] <span style="color:#f92672">=</span> AA;
-</span></span><span style="display:flex;"><span>	inqReport[<span style="color:#ae81ff">11</span>] <span style="color:#f92672">=</span> AA;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">18</span>; i<span style="color:#f92672">++</span>)
-</span></span><span style="display:flex;"><span>		xorByte <span style="color:#f92672">^=</span> inqReport[i];
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	inqReport[<span style="color:#ae81ff">18</span>] <span style="color:#f92672">=</span> xorByte;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Fill the inqReport etc.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>; j <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">18</span>; j<span style="color:#f92672">++</span>)
-</span></span><span style="display:flex;"><span>		inqReport[j] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> <span style="color:#ae81ff">19</span>; k <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">32</span>; k<span style="color:#f92672">++</span>)
-</span></span><span style="display:flex;"><span>		inqReport[k] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>ret)
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> E_POINTER;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (<span style="color:#f92672">*</span>ret) {
-</span></span><span style="display:flex;"><span>		SafeArrayDestroy(pSArray);
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">*</span>ret <span style="color:#f92672">=</span> NULL;
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	pSArray <span style="color:#f92672">=</span> SafeArrayCreateVector(VT_UI1, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">32</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">long</span> l <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; l <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">32</span>; l<span style="color:#f92672">++</span>)
-</span></span><span style="display:flex;"><span>		SafeArrayPutElement(pSArray, <span style="color:#f92672">&amp;</span>l, <span style="color:#f92672">&amp;</span>inqReport[l]);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">*</span>ret <span style="color:#f92672">=</span> pSArray;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> S_OK;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h1 id="调用com">调用COM</h1>
-<blockquote>
-<p>c#的按钮事件</p> <a class="read-more" href="/csdn/post/com-safearray-vc/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2025-01-18T12:08:08&#43;08:00">
-            18 Jan 2025
+        <time class="post-date" datetime="2025-01-19T10:08:08&#43;08:00">
+            19 Jan 2025
         </time>
     </footer>
 </article>
@@ -485,13 +831,13 @@ Edit -&gt; Hex Viewer</li>
     </header>
     <section class="post-excerpt">
         
-            <p><blockquote>
-<p>VC6迁移到VC2008+
-!!! 注意： 除非维护IE的ACTIVE项目，不推荐使用ATL !!! <br>
-!!! Unless you are maintaining an IE ActiveX project, it is not recommended to use ATL! !!!</p>
-</blockquote>
-<h1 id="atl">ATL</h1>
-<p>Active Template Library (ATL)</p>
+            <p><ul>
+<li>ATL</li>
+<li>CRT</li>
+</ul>
+<h1 id="active-template-library-atl">Active Template Library (ATL)</h1>
+<p>!!! 除了IE的ActiveX项目，不推荐ATL !!! <br>
+!!! ATL is not recommended except for IE ActiveX projects. !!!</p>
 <h2 id="c1189">C1189</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>c:<span style="color:#ae81ff">\p</span>rogram files<span style="color:#ae81ff">\m</span>icrosoft visual studio 10.0<span style="color:#ae81ff">\v</span>c<span style="color:#ae81ff">\a</span>tlmfc<span style="color:#ae81ff">\i</span>nclude<span style="color:#ae81ff">\a</span>tlcore.h<span style="color:#f92672">(</span>35<span style="color:#f92672">)</span>:
 </span></span><span style="display:flex;"><span>fatal error C1189: <span style="color:#75715e">#error :  This file requires _WIN32_WINNT to be #defined at least to 0x0403. Value 0x0501 or higher is recommended.</span>
@@ -514,99 +860,8 @@ Edit -&gt; Hex Viewer</li>
         
 
         
-        <time class="post-date" datetime="2025-01-18T08:18:08&#43;08:00">
-            18 Jan 2025
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/c2plus-com-dll/">c#调用COM</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><ul>
-<li>IDE <br>
-vs2008 Express(sp1)</li>
-</ul>
-<p>!!! 注意： 除非维护IE的ACTIVE项目，不推荐使用ATL !!! <br>
-!!! Unless you are maintaining an IE ActiveX project, it is not recommended to use ATL! !!!</p>
-<h1 id="reference-com">reference COM</h1>
-<h2 id="注册com">注册COM</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>@echo
-</span></span><span style="display:flex;"><span>cd /d %~dp0
-</span></span><span style="display:flex;"><span>Regsvr32 xbfInfo.dll
-</span></span></code></pre></div><h2 id="add-reference">Add Reference</h2>
-<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20200514021327.png" alt="vs2008 ui1"></p>
-<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20200514021444.png" alt="vs2008 ui2"></p>
-<p>COM选项卡
-<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20200514021640.png" alt="vs2008 ui3">
-添加完成时</p>
-<h1 id="添加事件">添加事件</h1>
-<h2 id="import-class">import class</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>using System.IO;
-</span></span><span style="display:flex;"><span>using xbfInfoLib;
-</span></span></code></pre></div><h2 id="写xbf文件">写xbf文件</h2>
-<h3 id="读ini文件配置">读Ini文件配置</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>Boolean flagMSSQL <span style="color:#f92672">=</span> false;
-</span></span><span style="display:flex;"><span>Boolean flagSecu <span style="color:#f92672">=</span> false;
-</span></span><span style="display:flex;"><span>string sectionName <span style="color:#f92672">=</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(<span style="color:#e6db74">&#34;config&#34;</span>, <span style="color:#e6db74">&#34;type&#34;</span>);
-</span></span><span style="display:flex;"><span>string strSrv <span style="color:#f92672">=</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Server&#34;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">Equals</span>(strSrv, <span style="color:#e6db74">&#34;&#34;</span>))
-</span></span><span style="display:flex;"><span>    flagMSSQL <span style="color:#f92672">=</span> true;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (flagMSSQL)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    strConn <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Provider=SQLOLEDB.1;&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Password=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Pwd&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Persist Security Info=True;&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;User ID=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;User&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Initial Catalog=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;DB&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Data Source=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Server&#34;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span> <span style="color:#75715e">// MS Access
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{
-</span></span><span style="display:flex;"><span>    string strPWD <span style="color:#f92672">=</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Pwd&#34;</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">Equals</span>(strPWD, <span style="color:#e6db74">&#34;&#34;</span>))
-</span></span><span style="display:flex;"><span>        flagSecu <span style="color:#f92672">=</span> true;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (flagSecu)
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        strConn <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Provider=Microsoft.Jet.OLEDB.4.0;&#34;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Data Source=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;DB&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Persist Security Info=False;&#34;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Jet OLEDB:Database Password=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Pwd&#34;</span>);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        strConn <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Provider=Microsoft.Jet.OLEDB.4.0;&#34;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Data Source=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;DB&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Persist Security Info=True&#34;</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="调用com接口">调用COM接口</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>xbfInfoLib.FormatClass xbf <span style="color:#f92672">=</span> new <span style="color:#a6e22e">FormatClass</span>();
-</span></span><span style="display:flex;"><span>xbf.<span style="color:#a6e22e">setFileInfo</span>(strConn);
-</span></span></code></pre></div><h2 id="读xbf文件">读xbf文件</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>xbfInfoLib.FormatClass xbf <span style="color:#f92672">=</span> new <span style="color:#a6e22e">FormatClass</span>();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>string filePath <span style="color:#f92672">=</span> currDir <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#f92672">+</span> edtFileName.Text;
-</span></span><span style="display:flex;"><span>string strRet <span style="color:#f92672">=</span> xbf.<span style="color:#a6e22e">getFileInfo</span>(filePath);
-</span></span><span style="display:flex;"><span>MessageBox.<span style="color:#a6e22e">Show</span>(strRet);
-</span></span></code></pre></div><h1 id="code">code</h1>
-<blockquote>
-<p>Form1.cs</p> <a class="read-more" href="/csdn/post/c2plus-com-dll/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2025-01-18T08:08:08&#43;08:00">
-            18 Jan 2025
+        <time class="post-date" datetime="2025-01-19T08:18:08&#43;08:00">
+            19 Jan 2025
         </time>
     </footer>
 </article>

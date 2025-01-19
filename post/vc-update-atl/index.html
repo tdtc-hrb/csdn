@@ -13,7 +13,7 @@
 
 
 <meta name="twitter:title" content="VC升级时出现的问题"/>
-<meta name="twitter:description" content="atl工程 - deprecated"/>
+<meta name="twitter:description" content="ATL and CRT"/>
 <meta name="twitter:site" content="@"/>
 
 
@@ -27,9 +27,9 @@
     
 
     
-    <meta property="og:description" content="atl工程 - deprecated" />
+    <meta property="og:description" content="ATL and CRT" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2025-01-18T08:18:08&#43;08:00" />
+    <meta property="article:published_time" content="2025-01-19T08:18:08&#43;08:00" />
 
     
     
@@ -37,7 +37,7 @@
     <title>VC升级时出现的问题 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
 
     
-    <meta name="description" content="atl工程 - deprecated" />
+    <meta name="description" content="ATL and CRT" />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -92,18 +92,18 @@
     },
     "headline": "VC升级时出现的问题",
     "name": "VC升级时出现的问题",
-    "wordCount":  785 ,
+    "wordCount":  778 ,
     "timeRequired": "PT4M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/vc-update-atl/",
-    "datePublished": "2025-01-18T08:18Z",
-    "dateModified": "2025-01-18T08:18Z",
+    "datePublished": "2025-01-19T08:18Z",
+    "dateModified": "2025-01-19T08:18Z",
     
     
-    "description": "atl工程 - deprecated",
+    "description": "ATL and CRT",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://tdtc-hrb.github.io/csdn/post/vc-update-atl/"
@@ -164,12 +164,12 @@
 
     <header class="post-header">
         <h1 class="post-title">VC升级时出现的问题</h1>
-        <small>atl工程 - deprecated</small>
+        <small>ATL and CRT</small>
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2025-01-18T08:18:08&#43;08:00">
-            Jan 18, 2025
+          <time class="post-date" datetime="2025-01-19T08:18:08&#43;08:00">
+            Jan 19, 2025
           </time>
         
          
@@ -177,13 +177,13 @@
     </header>
 
     <section class="post-content">
-      <blockquote>
-<p>VC6迁移到VC2008+
-!!! 注意： 除非维护IE的ACTIVE项目，不推荐使用ATL !!! <br>
-!!! Unless you are maintaining an IE ActiveX project, it is not recommended to use ATL! !!!</p>
-</blockquote>
-<h1 id="atl">ATL</h1>
-<p>Active Template Library (ATL)</p>
+      <ul>
+<li>ATL</li>
+<li>CRT</li>
+</ul>
+<h1 id="active-template-library-atl">Active Template Library (ATL)</h1>
+<p>!!! 除了IE的ActiveX项目，不推荐ATL !!! <br>
+!!! ATL is not recommended except for IE ActiveX projects. !!!</p>
 <h2 id="c1189">C1189</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>c:<span style="color:#ae81ff">\p</span>rogram files<span style="color:#ae81ff">\m</span>icrosoft visual studio 10.0<span style="color:#ae81ff">\v</span>c<span style="color:#ae81ff">\a</span>tlmfc<span style="color:#ae81ff">\i</span>nclude<span style="color:#ae81ff">\a</span>tlcore.h<span style="color:#f92672">(</span>35<span style="color:#f92672">)</span>:
 </span></span><span style="display:flex;"><span>fatal error C1189: <span style="color:#75715e">#error :  This file requires _WIN32_WINNT to be #defined at least to 0x0403. Value 0x0501 or higher is recommended.</span>
@@ -297,7 +297,7 @@ Command line: Empty content.    
 <pre tabindex="0"><code>“project property” -&gt; “Configuration Properties” -&gt; “Linker”: “Register Output”为 “No”；
 </code></pre><h2 id="validate-parameters">Validate Parameters</h2>
 <pre tabindex="0"><code>“project property” -&gt;“Configuration Properties”-&gt;&#34;MIDL&#34;-&gt;“Advanced”: &#34;Validate Parameters&#34;为“Yes(/robust)”
-</code></pre><h1 id="crt">Crt</h1>
+</code></pre><h1 id="crt">CRT</h1>
 <p>C runtime Library (CRT)</p>
 <h2 id="c1019">C1019</h2>
 <p><a href="https://stackoverflow.com/a/38522139">stdAfx.h issue</a>:</p>
@@ -347,7 +347,7 @@ like &#34;unresolved external symbol memcmp&#34;, &#34;unresolved external symbo
 To resolve the issue I had to add to the linker vcruntime.lib, libucrt.lib and libcmt.lib
 </code></pre><p>properties-&gt;Linker-&gt;Input-&gt;Additional Dependencies</p>
 <pre tabindex="0"><code>vcruntime.lib
-</code></pre><h1 id="character-constant">Character constant</h1>
+</code></pre><h2 id="character-constant">Character constant</h2>
 <p><a href="https://en.cppreference.com/w/c/language/character_constant">Syntax</a>:</p>
 <table>
   <thead>
@@ -410,7 +410,7 @@ To resolve the issue I had to add to the linker vcruntime.lib, libucrt.lib and l
 <p><a href="https://www.virtualbox.org/browser/vbox/trunk/src/VBox/Frontends/VBoxAutostart/VBoxAutostart-win.cpp#L788">v7.0.6</a></p>
 </blockquote>
 <pre tabindex="0"><code>L&#34;Winmgmt\0RpcSs\0\0&#34;,           /* lpDependencies */
-</code></pre><h2 id="multibyte-vs-wide-charactershttpslearnmicrosoftcomen-uscppc-languagemultibyte-and-wide-characters"><a href="https://learn.microsoft.com/en-us/cpp/c-language/multibyte-and-wide-characters">Multibyte vs Wide Characters</a></h2>
+</code></pre><h3 id="multibyte-vs-wide-charactershttpslearnmicrosoftcomen-uscppc-languagemultibyte-and-wide-characters"><a href="https://learn.microsoft.com/en-us/cpp/c-language/multibyte-and-wide-characters">Multibyte vs Wide Characters</a></h3>
 <pre tabindex="0"><code>A multibyte character is a character composed of sequences of one or more bytes. 
 Each byte sequence represents a single character in the extended character set. 
 Multibyte characters are used in character sets such as Kanji.
@@ -424,7 +424,7 @@ The wide-character-string literal L&#34;hello&#34; becomes an array of six integ
 <ul>
 <li><a href="https://social.msdn.microsoft.com/Forums/vstudio/en-US/f3565ee2-813b-4082-8b80-328caa0a14c9/to-disable-deprecation-use-crtsecurenowarnings-see-online-help-for-details-i-am-creating-a-c?forum=vcgeneral">To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. I am creating a C program using C++ ,it gives me error of scanf.Use scan_f instead.Y is it so. </a></li>
 <li><a href="https://docs.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warning-level-3-c4996?f1url=%3FappId%3DDev16IDEF1%26l%3DEN-US%26k%3Dk(C4996)%26rd%3Dtrue&amp;view=msvc-140#unsafe-crt-library-functions">Unsafe CRT Library functions</a></li>
-<li><a href="https://docs.microsoft.com/en-us/cpp/preprocessor/predefined-macros?view=msvc-160#microsoft-specific-predefined-macros">_MSC_VER</a></li>
+<li><a href="https://learn.microsoft.com/en-us/cpp/preprocessor/predefined-macros?view=msvc-160#microsoft-specific-predefined-macros">_MSC_VER</a></li>
 <li><a href="https://docs.microsoft.com/en-us/cpp/porting/modifying-winver-and-win32-winnt?view=msvc-160#remarks">_WIN32_WINNT</a></li>
 <li><a href="https://stackoverflow.com/questions/47154505/initializecriticalsectionex-is-not-member-of-global-namespace-in-atlwinverapi-h">InitializeCriticalSectionEx is not member of global namespace in atlwinverapi.h</a></li>
 <li><a href="https://social.msdn.microsoft.com/Forums/vstudio/en-US/4117ea1a-23a9-4b57-a753-547f9fc1087b/statregcpp-atlimplcpp-is-obsolete">statreg.cpp, atlimpl.cpp is obsolete</a></li>
@@ -480,17 +480,17 @@ The wide-character-string literal L&#34;hello&#34; becomes an array of six integ
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/com-safearray-vc/">
+      <a class="read-next-story" style="no-cover" href="/csdn/post/com-wizards-vc/">
           <section class="post">
-              <h2>SafeArray数据</h2>
+              <h2>VC 创建 Component Object Model</h2>
               
           </section>
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/c2plus-com-dll/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/c-console_app/">
           <section class="post">
-              <h2>c#调用COM</h2>
+              <h2>计算圆的面积和周长</h2>
           </section>
       </a>
   
