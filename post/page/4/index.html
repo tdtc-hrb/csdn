@@ -164,6 +164,81 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c2plus-unmanaged-dll/">调用非托管DLL</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><blockquote>
+<p>IDE: vs2008 Express(sp1)</p></blockquote>
+<h1 id="callxbflibrary">callXBFLibrary</h1>
+<p>我们需要使用API函数来读取INI文件。</p>
+<h1 id="建立pinvoke应用类">建立P/Invoke应用类</h1>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20200514014607.png" alt="vs2008 ui1"></p>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20200514014830.png" alt="vs2008 ui2"></p>
+<p>在<a href="http://pinvoke.net/index.aspx">pinvoke.net</a>中查找Win32 API在C#定义。
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20140303141518625.png" alt="vs2008 ui"></p>
+<h2 id="getprivateprofilestring">GetPrivateProfileString</h2>
+<p>读取Ini文件的API</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>[<span style="color:#a6e22e">DllImport</span>(<span style="color:#e6db74">&#34;kernel32.dll&#34;</span>, CharSet<span style="color:#f92672">=</span>CharSet.Unicode)]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">extern</span> uint <span style="color:#a6e22e">GetPrivateProfileString</span>(
+</span></span><span style="display:flex;"><span>   string lpAppName,
+</span></span><span style="display:flex;"><span>   string lpKeyName,
+</span></span><span style="display:flex;"><span>   string lpDefault,
+</span></span><span style="display:flex;"><span>   StringBuilder lpReturnedString,
+</span></span><span style="display:flex;"><span>   uint nSize,
+</span></span><span style="display:flex;"><span>   string lpFileName);
+</span></span></code></pre></div><blockquote>
+<p>注意：DllImport属性来自using System.Runtime.InteropServices;</p></blockquote>
+<ul>
+<li>lpAppName <br>
+  小节名</li>
+<li>lpKeyName <br>
+键名</li>
+<li>lpDefault <br>
+缺省值</li>
+<li>lpReturnedString  <br>
+返回值</li>
+<li>nSize  <br>
+返回值长度</li>
+<li>lpFileName <br>
+读取文件的名称</li>
+</ul>
+<h3 id="import-class">import class</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>  using System.Runtime.InteropServices;
+</span></span></code></pre></div><h2 id="readinifileval">readIniFileVal</h2>
+<p>建立一个公共方法，以供程序使用。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>public string <span style="color:#a6e22e">readIniFileVal</span>(string iniFileName, string section, string key)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    StringBuilder retStrBuilder <span style="color:#f92672">=</span> new <span style="color:#a6e22e">StringBuilder</span>(<span style="color:#ae81ff">256</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">GetPrivateProfileString</span>(
+</span></span><span style="display:flex;"><span>        section,
+</span></span><span style="display:flex;"><span>        key,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>        retStrBuilder,
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">256</span>,
+</span></span><span style="display:flex;"><span>        iniFileName);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> retStrBuilder.<span style="color:#a6e22e">ToString</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="code">code</h1>
+<blockquote>
+<p>Cwin32API.cs</p> <a class="read-more" href="/csdn/post/c2plus-unmanaged-dll/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-01-03T00:08:08&#43;08:00">
+            3 Jan 2023
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/demo-tdtc/">TDTC Demo</a></h2>
     </header>
     <section class="post-excerpt">
@@ -787,68 +862,6 @@ Press Key: y
         
         <time class="post-date" datetime="2022-09-15T08:08:08-08:00">
             15 Sep 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/pd-db-phy/">powerDesigner生成phy图</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><blockquote>
-<p>使用版本：v16.1</p></blockquote>
-<h1 id="一连接数据库">一、连接数据库</h1>
-<h2 id="1-新建pdm">1. 新建pdm</h2>
-<p>File-》New Model <br>
-model types -&gt; physical data model
-<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/2019082714153526.png" alt="new project"></p>
-<blockquote>
-<p>model name: newmodel-phy <br>
-dbms: mysql5.0</p></blockquote>
-<h2 id="2-config-connect-profile">2. config connect profile</h2>
-<p>DataBase -&gt; Configure connections <br>
-Connection profile
-<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20190827152244711.png" alt="Connection profile"></p>
-<h2 id="3-connect">3. connect</h2>
-<p>Database -&gt; connect
-<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20190827152618753.png" alt="connect dialog"></p>
-<p>Flag: &ldquo;Disconnect&rdquo; Available</p>
-<ul>
-<li>dcp文件（mysql5-crm.dcp）</li>
-</ul>
-<pre tabindex="0"><code class="language-file" data-lang="file">[ConnectionProfile]
-ConnectionType=JDBC
-Dbms=MySQL
-DisableBind=0
-Driver=com.mysql.jdbc.Driver
-JarFiles=D:\war\mysql-connector-java-5.1.49.jar
-LogId=root
-TrimSpaces=0
-URL=jdbc:mysql://106.14.141.40:3306/crm
-</code></pre><h1 id="二生成phy图">二、生成phy图</h1>
-<h2 id="1-reverse-engineer">1. Reverse Engineer</h2>
-<p>File -&gt; Reverse Engineer-&gt;Database <br>
-<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20190827153110808.png" alt="Reverse Engineer 1">
-<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20190827153305897.png" alt="Reverse Engineer 2">
-选择数据库：
-<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20190827153501155.png" alt="Reverse Engineer 3">
-其他数据库全部反选： <br>
-例如： <br>
-<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20190827153501155.png" alt="Reverse Engineer 4">
-最后，点击ok生成phy图。</p> <a class="read-more" href="/csdn/post/pd-db-phy/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-09-10T02:26:39&#43;08:00">
-            10 Sep 2022
         </time>
     </footer>
 </article>

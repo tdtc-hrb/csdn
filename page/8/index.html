@@ -197,6 +197,72 @@
     
         <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/hw-can-uart-key/">CAN数据转发</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="完结篇">完结篇</h1>
+<p>《<a href="https://blog.csdn.net/xiaobin_HLJ80/article/details/44890423">CAN转COM或CAN-1</a>》介绍了CAN，本篇其余部分。</p>
+<ul>
+<li>
+<p>开发板：英蓓特MCB2300（LPC2368）</p>
+</li>
+<li>
+<p>开发工具：MDK3.8a</p>
+</li>
+<li>
+<p>开发主机：Windows XP SP3 中文专业版</p>
+</li>
+</ul>
+<h1 id="uart">UART</h1>
+<p>因为我们使用UART主要是进行发送的，所以关闭接收可以更加快速的进行发送处理。</p>
+<p>控制接收缓存寄存（Receiver Buffer Register）即可达到此目的。</p>
+<h2 id="禁止rbr">禁止RBR</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">preUARTInitRBR</span>( <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">char</span> i )
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">switch</span> (i) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">case</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>			U0IER <span style="color:#f92672">=</span> IER_THRE <span style="color:#f92672">|</span> IER_RLS;			<span style="color:#75715e">/* Disable RBR */</span>
+</span></span><span style="display:flex;"><span>	  		<span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>			U1IER <span style="color:#f92672">=</span> IER_THRE <span style="color:#f92672">|</span> IER_RLS;			<span style="color:#75715e">/* Disable RBR */</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>	}   
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="允许rbr">允许RBR</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">postUARTInitRBR</span>( <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">char</span> i )
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">switch</span> (i) {
+</span></span><span style="display:flex;"><span>	  	<span style="color:#66d9ef">case</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>			U0IER <span style="color:#f92672">=</span> IER_THRE <span style="color:#f92672">|</span> IER_RLS <span style="color:#f92672">|</span> IER_RBR;	<span style="color:#75715e">/* Re-enable RBR */</span>
+</span></span><span style="display:flex;"><span>	  	  	<span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>			U1IER <span style="color:#f92672">=</span> IER_THRE <span style="color:#f92672">|</span> IER_RLS <span style="color:#f92672">|</span> IER_RBR;	<span style="color:#75715e">/* Re-enable RBR */</span>
+</span></span><span style="display:flex;"><span>	  		<span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>	}  
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="完成后的uart">完成后的UART</h2>
+<blockquote>
+<p>NXP的官方例程UART加入RBR后的code</p> <a class="read-more" href="/csdn/post/hw-can-uart-key/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-15T23:08:08&#43;08:00">
+            15 May 2020
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_mysql_error1067/">mysql的1067错误</a></h2>
     </header>
     <section class="post-excerpt">
@@ -1103,72 +1169,6 @@ sub check2Sex {
     }
 }
 </code></pre> <a class="read-more" href="/csdn/post/ops_perl_excel/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-08T16:08:08&#43;08:00">
-            8 May 2020
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_perl_mysql/">数据库的查询</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><p>Perl操作数据库与其他的语言操作数据库没有什么区别。</p>
-<ul>
-<li>
-<p>首先，要连接数据库。</p>
-</li>
-<li>
-<p>然后，执行SQL语句。</p>
-</li>
-<li>
-<p>最后，关闭连接。</p>
-</li>
-</ul>
-<h1 id="code">code</h1>
-<p>循环中为使用游标读取每行数据。</p>
-<p>test.pl</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span><span style="color:#75715e">#! /usr/bin/perl</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># test DBI and DBD::mysql</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> DBI;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>$dsn <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;DBI:mysql:database=carnumber;host=localhost;port=3306&#34;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">my</span> $dbh <span style="color:#f92672">=</span> DBI<span style="color:#f92672">-&gt;</span>connect($dsn, <span style="color:#e6db74">&#34;root&#34;</span>, <span style="color:#e6db74">&#34;qazxsw&#34;</span>, {<span style="color:#e6db74">&#39;RaiseError&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>});
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">my</span> $strSQL <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;select train_number, seriary_number, car_number,&#34;</span><span style="color:#f92672">.</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34; car_marque, past_time from trainOrder where train_number &lt; 100&#34;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">my</span> $sth <span style="color:#f92672">=</span> $dbh<span style="color:#f92672">-&gt;</span>prepare($strSQL);
-</span></span><span style="display:flex;"><span>$sth<span style="color:#f92672">-&gt;</span>execute();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;TN\tSN\tNumber\tMarque\tPastTime\n&#34;</span>;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> (<span style="color:#66d9ef">my</span> $ref <span style="color:#f92672">=</span> $sth<span style="color:#f92672">-&gt;</span>fetchrow_hashref()) {
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;$ref-&gt;{&#39;train_number&#39;}\t&#34;</span><span style="color:#f92672">.</span>
-</span></span><span style="display:flex;"><span>	    <span style="color:#e6db74">&#34;$ref-&gt;{&#39;seriary_number&#39;}\t&#34;</span><span style="color:#f92672">.</span>
-</span></span><span style="display:flex;"><span>	    <span style="color:#e6db74">&#34;$ref-&gt;{&#39;car_number&#39;}\t&#34;</span><span style="color:#f92672">.</span>
-</span></span><span style="display:flex;"><span>	    <span style="color:#e6db74">&#34;$ref-&gt;{&#39;car_marque&#39;}\t&#34;</span><span style="color:#f92672">.</span>
-</span></span><span style="display:flex;"><span>	    <span style="color:#e6db74">&#34;$ref-&gt;{&#39;past_time&#39;}\n&#34;</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>$sth<span style="color:#f92672">-&gt;</span>finish();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>$dbh<span style="color:#f92672">-&gt;</span>disconnect();
-</span></span></code></pre></div> <a class="read-more" href="/csdn/post/ops_perl_mysql/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">

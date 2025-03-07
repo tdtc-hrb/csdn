@@ -197,6 +197,47 @@
     
         <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/apt-oper-ubuntu/">apt的安装问题</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>apt适合手动输入(有交互); apt-get适合脚本(无交互).</p>
+<p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
+<h1 id="manage">Manage</h1>
+<h2 id="卸载">卸载</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get autoremove vsftpd --purge
+</span></span></code></pre></div><h2 id="安装指定版本">安装指定版本</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get install &lt;package name&gt;<span style="color:#f92672">=</span>&lt;version&gt;
+</span></span></code></pre></div><h2 id="列出版本">列出版本</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-cache madison &lt;&lt;package name&gt;&gt;
+</span></span></code></pre></div><h1 id="debian">DebIan</h1>
+<h2 id="sudo">sudo</h2>
+<p>sudo.d(directory):</p>
+<pre tabindex="0"><code>Note also, that becasuse sudoers contents can vary widely, no attempt is made to add this 
+directive to existing sudoers files on upgrade. Feel free to add the above directive to the 
+end of your /etc/sudoers file to enabe this functionality for existing installations if you 
+wish! Sudo versions older than the one in Debian 11(bullseye) require the directive will only 
+support the old syntax #includedir, and the current sudo will happily accept both @includedir 
+and #includedir
+</code></pre><h3 id="install">install</h3>
+<p>using root:</p> <a class="read-more" href="/csdn/post/apt-oper-ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-09-21T02:20:39&#43;08:00">
+            21 Sep 2024
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/mysql57-win/">安装配置MySQL 5.7</a></h2>
     </header>
     <section class="post-excerpt">
@@ -800,118 +841,6 @@ public abstract class Transmission {
         
         <time class="post-date" datetime="2023-12-08T12:08:08&#43;08:00">
             8 Dec 2023
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/c-automake/">生成makefile</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><ul>
-<li>automake</li>
-<li>manual make</li>
-</ul>
-<h1 id="automake">automake</h1>
-<p>注意: am文件是需要手工创建的!</p>
-<h2 id="ac文件">ac文件</h2>
-<p>生成configure.scan文件, 并重命名为configure.ac</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ autoscan
-</span></span><span style="display:flex;"><span>$ mv configure.scan configure.ac
-</span></span></code></pre></div><h3 id="修改配置">修改配置</h3>
-<p>注意: 所有新修改的值都需要方括号([])</p>
-<ul>
-<li>程序属性</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_INIT<span style="color:#f92672">([</span>hex2int<span style="color:#f92672">]</span>, <span style="color:#f92672">[</span>v0.1<span style="color:#f92672">]</span>, <span style="color:#f92672">[</span>veic_2005@163.com<span style="color:#f92672">])</span>
-</span></span></code></pre></div><ul>
-<li>目录结构
-如果只有本目录, 使用空值</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AM_INIT_AUTOMAKE
-</span></span></code></pre></div><ul>
-<li>检查编译器
-<a href="http://www.adp-gmbh.ch/misc/tools/configure/configure_in.html#ac_prog_cc">C compiler</a>:</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_PROG_CC
-</span></span></code></pre></div><p><a href="http://www.adp-gmbh.ch/misc/tools/configure/configure_in.html#ac_prog_cxx">C++ compiler</a>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_PROG_CXX
-</span></span></code></pre></div><ul>
-<li><a href="https://www.gnu.org/software/autoconf/manual/autoconf-2.71/html_node/Configuration-Files.html">输出Makefile.in</a></li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_CONFIG_FILES<span style="color:#f92672">([</span>Makefile<span style="color:#f92672">])</span>
-</span></span></code></pre></div><ul>
-<li>检查system头文件</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_CHECK_HEADERS<span style="color:#f92672">([</span>string.h<span style="color:#f92672">])</span>
-</span></span></code></pre></div><h2 id="生成makefile">生成Makefile</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aclocal
-</span></span><span style="display:flex;"><span>autoconf
-</span></span></code></pre></div><h3 id="自定义宏可选">自定义宏(可选)</h3>
-<p>在ac file中的定义：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_CONFIG_HEADERS<span style="color:#f92672">([</span>config.h<span style="color:#f92672">])</span>
-</span></span></code></pre></div><p>执行：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>autoheader
-</span></span></code></pre></div><h3 id="输出makefile">输出Makefile</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>automake --add-missing
-</span></span></code></pre></div><p>输出Makefile:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./configure
-</span></span></code></pre></div><h2 id="example">Example</h2>
-<p>源代码参见<a href="https://tdtc-hrb.github.io/csdn/post/c-string-h2i/">十六进制转十进制</a></p>
-<ul>
-<li>main.c <br>
-只保留主程序入口</li>
-<li>hex2int.c <br>
-保留整个程序的结构</li>
-<li>hex2int.h <br>
-函数名声明</li>
-</ul>
-<h3 id="makefileam">Makefile.am</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AUTOMAKE_OPTIONS<span style="color:#f92672">=</span>foreign
-</span></span><span style="display:flex;"><span>bin_PROGRAMS<span style="color:#f92672">=</span>hex2int
-</span></span><span style="display:flex;"><span>hex2int_SOURCES<span style="color:#f92672">=</span>main.c hex2int.c
-</span></span><span style="display:flex;"><span>include_HEADERS<span style="color:#f92672">=</span>hex2int.h
-</span></span></code></pre></div><h3 id="configureac">configure.ac</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#                                               -*- Autoconf -*-</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Process this file with autoconf to produce a configure script.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>AC_PREREQ<span style="color:#f92672">([</span>2.71<span style="color:#f92672">])</span>
-</span></span><span style="display:flex;"><span>AC_INIT<span style="color:#f92672">([</span>hex2int<span style="color:#f92672">]</span>, <span style="color:#f92672">[</span>v0.1<span style="color:#f92672">]</span>, <span style="color:#f92672">[</span>veic_2005@163.com<span style="color:#f92672">])</span>
-</span></span><span style="display:flex;"><span>AM_INIT_AUTOMAKE
-</span></span><span style="display:flex;"><span>AC_CONFIG_SRCDIR<span style="color:#f92672">([</span>hex2int.c<span style="color:#f92672">])</span>
-</span></span><span style="display:flex;"><span>AC_CONFIG_HEADERS<span style="color:#f92672">([</span>config.h<span style="color:#f92672">])</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Checks for programs.</span>
-</span></span><span style="display:flex;"><span>AC_PROG_CC
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Checks for libraries.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Checks for header files.</span>
-</span></span><span style="display:flex;"><span>AC_CHECK_HEADERS<span style="color:#f92672">([</span>string.h<span style="color:#f92672">])</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Checks for typedefs, structures, and compiler characteristics.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Checks for library functions.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>AC_CONFIG_FILES<span style="color:#f92672">([</span>Makefile<span style="color:#f92672">])</span>
-</span></span><span style="display:flex;"><span>AC_OUTPUT
-</span></span></code></pre></div><h1 id="手动makefile">手动Makefile</h1>
-<blockquote>
-<p>小项目可以。
-注意：所有的命令前必须为TAB，不能使空格！</p> <a class="read-more" href="/csdn/post/c-automake/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-08-08T02:20:39&#43;08:00">
-            8 Aug 2023
         </time>
     </footer>
 </article>

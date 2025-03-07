@@ -197,6 +197,68 @@
     
         <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/pd-db-phy/">powerDesigner生成phy图</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><blockquote>
+<p>使用版本：v16.1</p></blockquote>
+<h1 id="一连接数据库">一、连接数据库</h1>
+<h2 id="1-新建pdm">1. 新建pdm</h2>
+<p>File-》New Model <br>
+model types -&gt; physical data model
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/2019082714153526.png" alt="new project"></p>
+<blockquote>
+<p>model name: newmodel-phy <br>
+dbms: mysql5.0</p></blockquote>
+<h2 id="2-config-connect-profile">2. config connect profile</h2>
+<p>DataBase -&gt; Configure connections <br>
+Connection profile
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20190827152244711.png" alt="Connection profile"></p>
+<h2 id="3-connect">3. connect</h2>
+<p>Database -&gt; connect
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20190827152618753.png" alt="connect dialog"></p>
+<p>Flag: &ldquo;Disconnect&rdquo; Available</p>
+<ul>
+<li>dcp文件（mysql5-crm.dcp）</li>
+</ul>
+<pre tabindex="0"><code class="language-file" data-lang="file">[ConnectionProfile]
+ConnectionType=JDBC
+Dbms=MySQL
+DisableBind=0
+Driver=com.mysql.jdbc.Driver
+JarFiles=D:\war\mysql-connector-java-5.1.49.jar
+LogId=root
+TrimSpaces=0
+URL=jdbc:mysql://106.14.141.40:3306/crm
+</code></pre><h1 id="二生成phy图">二、生成phy图</h1>
+<h2 id="1-reverse-engineer">1. Reverse Engineer</h2>
+<p>File -&gt; Reverse Engineer-&gt;Database <br>
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20190827153110808.png" alt="Reverse Engineer 1">
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20190827153305897.png" alt="Reverse Engineer 2">
+选择数据库：
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20190827153501155.png" alt="Reverse Engineer 3">
+其他数据库全部反选： <br>
+例如： <br>
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20190827153501155.png" alt="Reverse Engineer 4">
+最后，点击ok生成phy图。</p> <a class="read-more" href="/csdn/post/pd-db-phy/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-09-10T02:26:39&#43;08:00">
+            10 Sep 2022
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/mysql-imp-exp/">MySQL导入导出数据库</a></h2>
     </header>
     <section class="post-excerpt">
@@ -1163,60 +1225,6 @@ systemctl status mysqld
 
         
         <time class="post-date" datetime="2022-04-13T09:38:08&#43;08:00">
-            13 Apr 2022
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_keepalived/">安装配置Keepalived</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><blockquote>
-<p>OS: CentOS7 minimal(VMware)</p></blockquote>
-<h1 id="一安装">一、安装</h1>
-<h2 id="0-prepare-tool">0. prepare tool</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum group list
-</span></span></code></pre></div><h3 id="1-dev-tools">1) dev tools</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum group install <span style="color:#e6db74">&#34;Development Tools&#34;</span>
-</span></span></code></pre></div><h3 id="2-openssl-devel">2) openssl-devel</h3>
-<blockquote>
-<p>update see &ldquo;nginx’s load balancing的安装部分的<a href="https://xiaobin80.gitee.io/csdn/post/ops_nginx/">update OpenSSL</a>&rdquo;</p></blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum install openssl-devel
-</span></span></code></pre></div><h3 id="3-libnl">3) libnl</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum install libnl libnl-devel libnfnetlink-devel
-</span></span></code></pre></div><h2 id="1-keepalived">1. keepalived</h2>
-<blockquote>
-<p>v1.4.5</p></blockquote>
-<h3 id="down-and-unzip">down and unzip</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget http://www.keepalived.org/software/keepalived-1.4.5.tar.gz
-</span></span><span style="display:flex;"><span>$ tar zxvf keepalived-1.4.5.tar.gz
-</span></span></code></pre></div><h3 id="installation">installation</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cd keepalived-1.4.5
-</span></span><span style="display:flex;"><span>$./configure --prefix<span style="color:#f92672">=</span>/usr/local/keepalived
-</span></span><span style="display:flex;"><span>$make
-</span></span></code></pre></div><p>Root permission Required</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$make install
-</span></span></code></pre></div><h3 id="setup">setup</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cp /usr/local/keepalived/sbin/keepalived /usr/sbin/
-</span></span><span style="display:flex;"><span>$mkdir -p /etc/keepalived
-</span></span><span style="display:flex;"><span>$cp /usr/local/keepalived/etc/keepalived/keepalived.conf /etc/keepalived/keepalived.conf
-</span></span><span style="display:flex;"><span>$cp /usr/local/keepalived/etc/sysconfig/keepalived /etc/sysconfig/
-</span></span><span style="display:flex;"><span>$cp /tmp/keepalived-1.4.5/keepalived/etc/init.d/keepalived /etc/init.d/
-</span></span><span style="display:flex;"><span>$chmod <span style="color:#ae81ff">755</span> /etc/init.d/keepalived
-</span></span></code></pre></div><p>edit service config file</p> <a class="read-more" href="/csdn/post/ops_keepalived/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-04-13T08:38:08&#43;08:00">
             13 Apr 2022
         </time>
     </footer>

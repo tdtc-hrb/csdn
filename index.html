@@ -199,6 +199,53 @@
     
         <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_git_oper2/">git操作 部分2</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="how-to-delete-all-commit-history-in-github"><a href="https://stackoverflow.com/questions/13716658/how-to-delete-all-commit-history-in-github">how to delete all commit history in github?</a></h1>
+<ul>
+<li>Checkout/create orphan branch (this branch won&rsquo;t show in git branch command):</li>
+</ul>
+<pre tabindex="0"><code>git checkout --orphan latest_branch
+</code></pre><ul>
+<li>Add all the files to the newly created branch:</li>
+</ul>
+<pre tabindex="0"><code>git add -A
+</code></pre><ul>
+<li>Commit the changes:</li>
+</ul>
+<pre tabindex="0"><code>git commit -am &#34;first commit&#34;
+</code></pre><ul>
+<li>Delete master (default) branch (this step is permanent):</li>
+</ul>
+<pre tabindex="0"><code>git branch -D master
+</code></pre><ul>
+<li>Rename the current branch to master:</li>
+</ul>
+<pre tabindex="0"><code>git branch -m master
+</code></pre><ul>
+<li>Finally, all changes are completed on your local repository, and force update your remote repository:</li>
+</ul>
+<pre tabindex="0"><code>git push -f origin master
+</code></pre><p>PS: This will not keep your old commit history around. Now you should only see your new commit in the history of your git repository.</p> <a class="read-more" href="/csdn/post/ops_git_oper2/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2025-02-02T01:38:08&#43;08:00">
+            2 Feb 2025
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/c2plus-com-dll/">c#调用COM</a></h2>
     </header>
     <section class="post-excerpt">
@@ -910,47 +957,6 @@ $ wine fg798p.exe
         
         <time class="post-date" datetime="2024-10-12T12:38:08&#43;08:00">
             12 Oct 2024
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/apt-oper-ubuntu/">apt的安装问题</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><p>apt适合手动输入(有交互); apt-get适合脚本(无交互).</p>
-<p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
-<h1 id="manage">Manage</h1>
-<h2 id="卸载">卸载</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get autoremove vsftpd --purge
-</span></span></code></pre></div><h2 id="安装指定版本">安装指定版本</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get install &lt;package name&gt;<span style="color:#f92672">=</span>&lt;version&gt;
-</span></span></code></pre></div><h2 id="列出版本">列出版本</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-cache madison &lt;&lt;package name&gt;&gt;
-</span></span></code></pre></div><h1 id="debian">DebIan</h1>
-<h2 id="sudo">sudo</h2>
-<p>sudo.d(directory):</p>
-<pre tabindex="0"><code>Note also, that becasuse sudoers contents can vary widely, no attempt is made to add this 
-directive to existing sudoers files on upgrade. Feel free to add the above directive to the 
-end of your /etc/sudoers file to enabe this functionality for existing installations if you 
-wish! Sudo versions older than the one in Debian 11(bullseye) require the directive will only 
-support the old syntax #includedir, and the current sudo will happily accept both @includedir 
-and #includedir
-</code></pre><h3 id="install">install</h3>
-<p>using root:</p> <a class="read-more" href="/csdn/post/apt-oper-ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2024-09-21T02:20:39&#43;08:00">
-            21 Sep 2024
         </time>
     </footer>
 </article>

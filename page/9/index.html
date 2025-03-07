@@ -197,6 +197,72 @@
     
         <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_perl_mysql/">数据库的查询</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>Perl操作数据库与其他的语言操作数据库没有什么区别。</p>
+<ul>
+<li>
+<p>首先，要连接数据库。</p>
+</li>
+<li>
+<p>然后，执行SQL语句。</p>
+</li>
+<li>
+<p>最后，关闭连接。</p>
+</li>
+</ul>
+<h1 id="code">code</h1>
+<p>循环中为使用游标读取每行数据。</p>
+<p>test.pl</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span><span style="color:#75715e">#! /usr/bin/perl</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># test DBI and DBD::mysql</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> DBI;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$dsn <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;DBI:mysql:database=carnumber;host=localhost;port=3306&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">my</span> $dbh <span style="color:#f92672">=</span> DBI<span style="color:#f92672">-&gt;</span>connect($dsn, <span style="color:#e6db74">&#34;root&#34;</span>, <span style="color:#e6db74">&#34;qazxsw&#34;</span>, {<span style="color:#e6db74">&#39;RaiseError&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">my</span> $strSQL <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;select train_number, seriary_number, car_number,&#34;</span><span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34; car_marque, past_time from trainOrder where train_number &lt; 100&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">my</span> $sth <span style="color:#f92672">=</span> $dbh<span style="color:#f92672">-&gt;</span>prepare($strSQL);
+</span></span><span style="display:flex;"><span>$sth<span style="color:#f92672">-&gt;</span>execute();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;TN\tSN\tNumber\tMarque\tPastTime\n&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> (<span style="color:#66d9ef">my</span> $ref <span style="color:#f92672">=</span> $sth<span style="color:#f92672">-&gt;</span>fetchrow_hashref()) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;$ref-&gt;{&#39;train_number&#39;}\t&#34;</span><span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>	    <span style="color:#e6db74">&#34;$ref-&gt;{&#39;seriary_number&#39;}\t&#34;</span><span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>	    <span style="color:#e6db74">&#34;$ref-&gt;{&#39;car_number&#39;}\t&#34;</span><span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>	    <span style="color:#e6db74">&#34;$ref-&gt;{&#39;car_marque&#39;}\t&#34;</span><span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>	    <span style="color:#e6db74">&#34;$ref-&gt;{&#39;past_time&#39;}\n&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$sth<span style="color:#f92672">-&gt;</span>finish();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$dbh<span style="color:#f92672">-&gt;</span>disconnect();
+</span></span></code></pre></div> <a class="read-more" href="/csdn/post/ops_perl_mysql/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-08T16:08:08&#43;08:00">
+            8 May 2020
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/dp-singleton-java/">单例模式</a></h2>
     </header>
     <section class="post-excerpt">
@@ -679,74 +745,6 @@
         
         <time class="post-date" datetime="2020-05-04T10:08:08&#43;08:00">
             4 May 2020
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/embeded_ip_nfs/">设置固定IP</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><blockquote>
-<p>开发板访问NFS 服务器IP地址是固定的。</p></blockquote>
-<h1 id="一u16及以下">一、U16及以下</h1>
-<blockquote>
-<p>（Ubuntu16.04-） <br>
-使用root权限更改interfaces文件。</p></blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#gedit /etc/network/interfaces</span>
-</span></span></code></pre></div><p>完整例子：</p>
-<blockquote>
-<p>/etc/network/interfaces</p></blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>auto lo
-</span></span><span style="display:flex;"><span>iface lo inet loopback
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>auto eth0
-</span></span><span style="display:flex;"><span>iface eth0 inet static
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>address 192.168.0.111
-</span></span><span style="display:flex;"><span>netmask 255.255.255.0
-</span></span><span style="display:flex;"><span>gateway 192.168.0.1
-</span></span></code></pre></div><h1 id="二u18及以上">二、U18及以上</h1>
-<blockquote>
-<p>（Ubuntu18.04+）</p></blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#vi /etc/netplan/50-cloud-init.yaml</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>network:
-</span></span><span style="display:flex;"><span>    ethernets:
-</span></span><span style="display:flex;"><span>        ens32:
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">#dhcp4: true</span>
-</span></span><span style="display:flex;"><span>            addresses:
-</span></span><span style="display:flex;"><span>            - 192.168.0.124/24
-</span></span><span style="display:flex;"><span>            gateway4: 192.168.0.1
-</span></span><span style="display:flex;"><span>            nameservers:
-</span></span><span style="display:flex;"><span>                addresses: <span style="color:#f92672">[</span>192.168.0.1, 219.146.3.226, 219.146.3.230, 219.146.3.238<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>            optional: true
-</span></span><span style="display:flex;"><span>    version: <span style="color:#ae81ff">2</span>
-</span></span></code></pre></div><blockquote>
-<p>ens32：你的网卡，根据实际情况设置
-dhcp4，gateway4：IPv4协议下的。</p></blockquote>
-<ul>
-<li>apply</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#netplan apply</span>
-</span></span></code></pre></div><h1 id="reference">Reference</h1>
-<ul>
-<li><a href="http://manpages.ubuntu.com/manpages/saucy/en/man5/interfaces.5.html">network interface configuration</a></li>
-<li><a href="https://help.ubuntu.com/lts/serverguide/network-configuration.html">网络配置 - ubuntu</a></li>
-<li><a href="https://blog.csdn.net/zhengchaooo/article/details/80146185">Ubuntu 18.04修改IP地址 - zhengchaooo</a></li>
-</ul> <a class="read-more" href="/csdn/post/embeded_ip_nfs/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-16T00:08:08&#43;08:00">
-            16 Apr 2020
         </time>
     </footer>
 </article>

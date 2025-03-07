@@ -197,6 +197,36 @@
     
         <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_hadoop_cluster_base/">Hadoop配置 - base</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><blockquote>
+<p>(../etc/hadoop)</p></blockquote>
+<h1 id="1-core-sitexml">1. core-site.xml</h1>
+<h2 id="1-hdfs">1) HDFS</h2>
+<blockquote>
+<p>the default path prefix used by the Hadoop FS client when none is given
+Optionally, you may now configure the default path for Hadoop clients to use the new HA-enabled logical URI.
+If you used “mycluster” as the nameservice ID earlier, this will be the value of the authority portion of all of your HDFS paths.
+This may be configured like so, in your core-site.xml file:</p> <a class="read-more" href="/csdn/post/ops_hadoop_cluster_base/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-14T08:08:08&#43;08:00">
+            14 Apr 2020
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_hadoop_abbr1/">hadoop名词解释</a></h2>
     </header>
     <section class="post-excerpt">
@@ -849,74 +879,6 @@ OS: CentOS 7.2 x64</p></blockquote>
 
         
         <time class="post-date" datetime="2020-04-10T13:26:39&#43;08:00">
-            10 Apr 2020
-        </time>
-    </footer>
-</article>
-
-    
-        <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/java-tomcat-pool-hikaricp/">设置HikariCP</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><h1 id="1-contextxml">1. context.xml</h1>
-<blockquote>
-<p>tomcat</p></blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  Licensed to the Apache Software Foundation (ASF) under one or more
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  contributor license agreements.  See the NOTICE file distributed with
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  this work for additional information regarding copyright ownership.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  The ASF licenses this file to You under the Apache License, Version 2.0
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  (the &#34;License&#34;); you may not use this file except in compliance with
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  the License.  You may obtain a copy of the License at
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">      http://www.apache.org/licenses/LICENSE-2.0
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  Unless required by applicable law or agreed to in writing, software
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  distributed under the License is distributed on an &#34;AS IS&#34; BASIS,
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  See the License for the specific language governing permissions and
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  limitations under the License.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">--&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- The contents of this file will be loaded for each web application --&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;Context&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- Default set of monitored resources. If one of these changes, the    --&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- web application will be reloaded.                                   --&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;WatchedResource&gt;</span>WEB-INF/web.xml<span style="color:#f92672">&lt;/WatchedResource&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;WatchedResource&gt;</span>WEB-INF/tomcat-web.xml<span style="color:#f92672">&lt;/WatchedResource&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;WatchedResource&gt;</span>${catalina.base}/conf/web.xml<span style="color:#f92672">&lt;/WatchedResource&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- Uncomment this to disable session persistence across Tomcat restarts --&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!--
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    &lt;Manager pathname=&#34;&#34; /&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    --&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;Resource</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;jdbc/mysqlds&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">auth=</span><span style="color:#e6db74">&#34;Container&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;com.zaxxer.hikari.HikariDataSource&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">username=</span><span style="color:#e6db74">&#34;DBAdmin&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">password=</span><span style="color:#e6db74">&#34;xbfirst&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">maximumPoolSize=</span><span style="color:#e6db74">&#34;100&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">idleTimeout=</span><span style="color:#e6db74">&#34;10000&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">maxLifetime=</span><span style="color:#e6db74">&#34;30000&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">minimumIdle=</span><span style="color:#e6db74">&#34;5&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">connectionTimeout=</span><span style="color:#e6db74">&#34;10000&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">driverClassName=</span><span style="color:#e6db74">&#34;com.mysql.jdbc.Driver&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">dataSourceClassName=</span><span style="color:#e6db74">&#34;jdbc:mysql://127.0.0.1:3306/carnumber&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/Context&gt;</span>
-</span></span></code></pre></div><h1 id="2-webxml">2. web.xml</h1>
-<blockquote>
-<p><a href="https://github.com/xiaobin80/SpringMVC-Spring-Mybatis/commit/7adb63e00e61b6c919d18e2546e1d4c2865feead">github</a></p> <a class="read-more" href="/csdn/post/java-tomcat-pool-hikaricp/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-10T12:26:39&#43;08:00">
             10 Apr 2020
         </time>
     </footer>

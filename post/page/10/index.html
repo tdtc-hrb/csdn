@@ -164,6 +164,74 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/embeded_ip_nfs/">设置固定IP</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><blockquote>
+<p>开发板访问NFS 服务器IP地址是固定的。</p></blockquote>
+<h1 id="一u16及以下">一、U16及以下</h1>
+<blockquote>
+<p>（Ubuntu16.04-） <br>
+使用root权限更改interfaces文件。</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#gedit /etc/network/interfaces</span>
+</span></span></code></pre></div><p>完整例子：</p>
+<blockquote>
+<p>/etc/network/interfaces</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>auto lo
+</span></span><span style="display:flex;"><span>iface lo inet loopback
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>auto eth0
+</span></span><span style="display:flex;"><span>iface eth0 inet static
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>address 192.168.0.111
+</span></span><span style="display:flex;"><span>netmask 255.255.255.0
+</span></span><span style="display:flex;"><span>gateway 192.168.0.1
+</span></span></code></pre></div><h1 id="二u18及以上">二、U18及以上</h1>
+<blockquote>
+<p>（Ubuntu18.04+）</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#vi /etc/netplan/50-cloud-init.yaml</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>network:
+</span></span><span style="display:flex;"><span>    ethernets:
+</span></span><span style="display:flex;"><span>        ens32:
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">#dhcp4: true</span>
+</span></span><span style="display:flex;"><span>            addresses:
+</span></span><span style="display:flex;"><span>            - 192.168.0.124/24
+</span></span><span style="display:flex;"><span>            gateway4: 192.168.0.1
+</span></span><span style="display:flex;"><span>            nameservers:
+</span></span><span style="display:flex;"><span>                addresses: <span style="color:#f92672">[</span>192.168.0.1, 219.146.3.226, 219.146.3.230, 219.146.3.238<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>            optional: true
+</span></span><span style="display:flex;"><span>    version: <span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><blockquote>
+<p>ens32：你的网卡，根据实际情况设置
+dhcp4，gateway4：IPv4协议下的。</p></blockquote>
+<ul>
+<li>apply</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#netplan apply</span>
+</span></span></code></pre></div><h1 id="reference">Reference</h1>
+<ul>
+<li><a href="http://manpages.ubuntu.com/manpages/saucy/en/man5/interfaces.5.html">network interface configuration</a></li>
+<li><a href="https://help.ubuntu.com/lts/serverguide/network-configuration.html">网络配置 - ubuntu</a></li>
+<li><a href="https://blog.csdn.net/zhengchaooo/article/details/80146185">Ubuntu 18.04修改IP地址 - zhengchaooo</a></li>
+</ul> <a class="read-more" href="/csdn/post/embeded_ip_nfs/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-16T00:08:08&#43;08:00">
+            16 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_mail/">mail的使用</a></h2>
     </header>
     <section class="post-excerpt">
@@ -713,36 +781,6 @@ http://192.168.42.109:8081/</p>
 
         
         <time class="post-date" datetime="2020-04-14T09:08:08&#43;08:00">
-            14 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_hadoop_cluster_base/">Hadoop配置 - base</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><blockquote>
-<p>(../etc/hadoop)</p></blockquote>
-<h1 id="1-core-sitexml">1. core-site.xml</h1>
-<h2 id="1-hdfs">1) HDFS</h2>
-<blockquote>
-<p>the default path prefix used by the Hadoop FS client when none is given
-Optionally, you may now configure the default path for Hadoop clients to use the new HA-enabled logical URI.
-If you used “mycluster” as the nameservice ID earlier, this will be the value of the authority portion of all of your HDFS paths.
-This may be configured like so, in your core-site.xml file:</p> <a class="read-more" href="/csdn/post/ops_hadoop_cluster_base/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-14T08:08:08&#43;08:00">
             14 Apr 2020
         </time>
     </footer>
