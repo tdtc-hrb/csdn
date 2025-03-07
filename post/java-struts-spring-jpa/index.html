@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="referrer" content="no-referrer"/>
+    
+
+
+
+<meta name="twitter:title" content="Struts2 &#43; Spring &#43; JPA"/>
+<meta name="twitter:description" content="使用Struts2时，无法使用最新的Spring"/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Struts2 &#43; Spring &#43; JPA &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/java-struts-spring-jpa/" />
+
+    
+        
+    
+
+    
+    <meta property="og:description" content="使用Struts2时，无法使用最新的Spring" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2020-04-10T10:26:39&#43;08:00" />
+
+    
+    
+
+    <title>Struts2 &#43; Spring &#43; JPA &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="使用Struts2时，无法使用最新的Spring" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.145.0">
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/java-struts-spring-jpa/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null 
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "Struts2 + Spring + JPA",
+    "name": "Struts2 + Spring + JPA",
+    "wordCount":  453 ,
+    "timeRequired": "PT3M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/post/java-struts-spring-jpa/",
+    "datePublished": "2020-04-10T10:26Z",
+    "dateModified": "2020-04-10T10:26Z",
+    
+    
+    "description": "使用Struts2时，无法使用最新的Spring",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/post/java-struts-spring-jpa/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button icon-feed" href="/csdn/index.xml" >&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">Struts2 &#43; Spring &#43; JPA</h1>
+        <small>使用Struts2时，无法使用最新的Spring</small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2020-04-10T10:26:39&#43;08:00">
+            Apr 10, 2020
+          </time>
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <h1 id="part-i-struts2">PART I: Struts2</h1>
+<blockquote>
+<p>Refence: <a href="https://struts.apache.org/getting-started/how-to-create-a-struts2-web-application.html">《how to create a struts2 web application》</a></p></blockquote>
+<h2 id="1-pomxml">1. pom.xml</h2>
+<h2 id="1-struts2">1) Struts2</h2>
+<blockquote>
+<p>struts2-spring-plugin</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;groupId&gt;</span>org.apache.struts<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;artifactId&gt;</span>struts2-spring-plugin<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;version&gt;</span>${struts2.version}<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><h2 id="2-jsp">2) jsp</h2>
+<h3 id="servlet">servlet</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;groupId&gt;</span>javax.servlet<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;artifactId&gt;</span>javax.servlet-api<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;version&gt;</span>3.1.0<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><h3 id="jstl">jstl</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl --&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>javax.servlet.jsp.jstl<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>jstl<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>1.2<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><h2 id="2-webxml">2. web.xml</h2>
+<ul>
+<li>filter</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;filter&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;filter-name&gt;</span>struts2<span style="color:#f92672">&lt;/filter-name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;filter-class&gt;</span>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter<span style="color:#f92672">&lt;/filter-class&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/filter&gt;</span>
+</span></span></code></pre></div><h2 id="3-strutsxml">3. struts.xml</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE struts PUBLIC
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    &#34;-//Apache Software Foundation//DTD Struts Configuration 2.5//EN&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    &#34;http://struts.apache.org/dtds/struts-2.5.dtd&#34;&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;struts&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;constant</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;struts.devMode&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;package</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;basicstruts2&#34;</span> <span style="color:#a6e22e">extends=</span><span style="color:#e6db74">&#34;struts-default&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    	<span style="color:#f92672">&lt;action</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;index&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;result&gt;</span>/index.html<span style="color:#f92672">&lt;/result&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/action&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/package&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/struts&gt;</span>
+</span></span></code></pre></div><h2 id="4-homeaction-extends-actionsupport">4. HomeAction extends ActionSupport</h2>
+<p><a href="https://struts.apache.org/getting-started/coding-actions.html">https://struts.apache.org/getting-started/coding-actions.html</a></p>
+<ul>
+<li>add class and method name</li>
+</ul>
+<blockquote>
+<p>struts.xml-&gt;action</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;action</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;home&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.example.controller.HomeAction&#34;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#34;index&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;result</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;success&#34;</span><span style="color:#f92672">&gt;</span>views/home.jsp<span style="color:#f92672">&lt;/result&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/action&gt;</span>
+</span></span></code></pre></div><h2 id="5-homejsp">5. home.jsp</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>%@ page language=&#34;java&#34; contentType=&#34;text/html; charset=UTF-8&#34; pageEncoding=&#34;UTF-8&#34; %&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html PUBLIC &#34;-//W3C//DTD HTML 4.01 Transitional//EN&#34; &#34;http://www.w3.org/TR/html4/loose.dtd&#34;&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Content-Type&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/html; charset=UTF-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">title</span>&gt;Basic Struts 2 Application - home&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">h1</span>&gt;Welcome To Struts 2!&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><h1 id="part-ii-data">PART II: Data</h1>
+<h2 id="1-add-spring">1. add spring</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;listener&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;listener-class&gt;</span>org.springframework.web.context.ContextLoaderListener<span style="color:#f92672">&lt;/listener-class&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/listener&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;context-param&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;param-name&gt;</span>contextConfigLocation<span style="color:#f92672">&lt;/param-name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;param-value&gt;</span>
+</span></span><span style="display:flex;"><span>    classpath:applicationContext.xml,
+</span></span><span style="display:flex;"><span>    classpath:dataAccessContext-jpa.xml
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/param-value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/context-param&gt;</span>
+</span></span></code></pre></div><h2 id="2-applicationcontextxml">2. applicationContext.xml</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;beans</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://www.springframework.org/schema/beans&#34;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">xmlns:aop=</span><span style="color:#e6db74">&#34;http://www.springframework.org/schema/aop&#34;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">xmlns:tx=</span><span style="color:#e6db74">&#34;http://www.springframework.org/schema/tx&#34;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">xmlns:context=</span><span style="color:#e6db74">&#34;http://www.springframework.org/schema/context&#34;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">xsi:schemaLocation=</span><span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">			http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd&#34;</span> <span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;context:component-scan</span> <span style="color:#a6e22e">base-package=</span><span style="color:#e6db74">&#34;com.example.demo&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/beans&gt;</span>
+</span></span></code></pre></div><h2 id="3-update-pomxml">3. update pom.xml</h2>
+<ul>
+<li>spring-orm</li>
+<li>hibernate-entityManager</li>
+<li>commons-dbcp2</li>
+<li>mysql-connector</li>
+</ul>
+<h2 id="4-jdbcproperties">4. jdbc.properties</h2>
+<h3 id="1-update-applicationcontextxml">1) update applicationContext.xml</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- ========================= GENERAL DEFINITIONS ========================= --&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;propertyConfigurer&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;org.springframework.beans.factory.config.PropertyPlaceholderConfigurer&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;locations&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;list&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;value&gt;</span>classpath:jdbc.properties<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/list&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/bean&gt;</span>
+</span></span></code></pre></div><h2 id="5-dataaccesscontext-jpaxml">5. dataAccessContext-jpa.xml</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE beans PUBLIC &#34;-//SPRING//DTD BEAN 2.0//EN&#34; &#34;http://www.springframework.org/dtd/spring-beans-2.0.dtd&#34;&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;beans&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">&lt;!-- DBCP1: &lt;bean id=&#34;dataSource&#34; class=&#34;org.apache.commons.dbcp.BasicDataSource&#34; destroy-method=&#34;close&#34;&gt; --&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;dataSource&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;org.apache.commons.dbcp2.BasicDataSource&#34;</span> <span style="color:#a6e22e">destroy-method=</span><span style="color:#e6db74">&#34;close&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;driverClassName&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;${jdbc.driverClassName}&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;url&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;${jdbc.url}&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;username&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;${jdbc.username}&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;password&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;${jdbc.password}&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;/bean&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;persistenceUnitMgr&#34;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;persistenceXmlLocations&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;list&gt;</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#f92672">&lt;value&gt;</span>classpath*:META-INF/persistence.xml<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;/list&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;defaultDataSource&#34;</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;dataSource&#34;</span><span style="color:#f92672">&gt;&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;/bean&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;entityManagerFactory&#34;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;persistenceUnitManager&#34;</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;persistenceUnitMgr&#34;</span><span style="color:#f92672">&gt;&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;/bean&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;transactionMgr&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;org.springframework.orm.jpa.JpaTransactionManager&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;entityManagerFactory&#34;</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;entityManagerFactory&#34;</span><span style="color:#f92672">&gt;&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;/bean&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/beans&gt;</span>
+</span></span></code></pre></div><h2 id="6-persistencexml">6. persistence.xml</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;persistence</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#34;2.0&#34;</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://java.sun.com/xml/ns/persistence&#34;</span> <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> <span style="color:#a6e22e">xsi:schemaLocation=</span><span style="color:#e6db74">&#34;http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd &#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;persistence-unit</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;UP_AB&#34;</span> <span style="color:#a6e22e">transaction-type=</span><span style="color:#e6db74">&#34;RESOURCE_LOCAL&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;provider&gt;</span>org.hibernate.jpa.HibernatePersistenceProvider<span style="color:#f92672">&lt;/provider&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;properties&gt;</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.dialect&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;org.hibernate.dialect.MySQLDialect&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.hbm2ddl.auto&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;update&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibetnate.show_sql&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;/properties&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/persistence-unit&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/persistence&gt;</span>
+</span></span></code></pre></div><blockquote>
+<p>NOTE:</p>
+<blockquote>
+<p><a href="https://stackoverflow.com/questions/22691252/error-deprecated-persistenceprovider-use-hibernatepersistenceprovider-instead">org.hibernate.ejb.HibernatePersistenceProvider</a> =》org.hibernate.jpa.HibernatePersistenceProvider</p></blockquote></blockquote>
+<h2 id="7-establish-crud">7. Establish CRUD</h2>
+<h2 id="8-add-dao-definitions">8. add DAO definitions</h2>
+<p>update dataAccessContext-jpa.xml</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- ========================= DAO DEFINITIONS: IBATIS IMPLEMENTATIONS ========================= --&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;userDao&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.example.demo.dao.UserDetailsImpl&#34;</span><span style="color:#f92672">&gt;&lt;/bean&gt;</span>
+</span></span></code></pre></div><h2 id="9-add-business-object-definitions">9. add business object definitions</h2>
+<p>update applicationContext.xml</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- ========================= BUSINESS OBJECT DEFINITIONS ======================== --&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;user&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.example.demo.service.UserDetailsServiceImpl&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;userDao&#34;</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;userDao&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/bean&gt;</span>
+</span></span></code></pre></div><h2 id="10-add-processing-code">10. Add processing code</h2>
+<p>update HomeAction.java</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">userList</span>() {
+</span></span><span style="display:flex;"><span>  List<span style="color:#f92672">&lt;</span>UserDetails<span style="color:#f92672">&gt;</span> users <span style="color:#f92672">=</span> userService.<span style="color:#a6e22e">getUsers</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span>(UserDetails user : users) {
+</span></span><span style="display:flex;"><span>    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(user.<span style="color:#a6e22e">getEmail</span>() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> user.<span style="color:#a6e22e">getName</span>());
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  ActionContext ctx <span style="color:#f92672">=</span> ActionContext.<span style="color:#a6e22e">getContext</span>();
+</span></span><span style="display:flex;"><span>      ctx.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;users&#34;</span>, users);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> SUCCESS;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="11-userlistjsp">11. userList.jsp</h2>
+<blockquote>
+<p>base on JSTL</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>%@ page language=&#34;java&#34; contentType=&#34;text/html; charset=UTF-8&#34; pageEncoding=&#34;UTF-8&#34;%&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html PUBLIC &#34;-//W3C//DTD HTML 4.01 Transitional//EN&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">		&#34;http://www.w3.org/TR/html4/loose.dtd&#34;&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>%@ taglib prefix=&#34;c&#34;      uri=&#34;http://java.sun.com/jsp/jstl/core&#34; %&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Content-Type&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/html; charset=UTF-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">title</span>&gt;User List Page&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">border</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>		&lt;<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>		&lt;<span style="color:#f92672">th</span>&gt;User ID&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>		&lt;<span style="color:#f92672">th</span>&gt;User Name&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>		&lt;<span style="color:#f92672">th</span>&gt;Name&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>		&lt;<span style="color:#f92672">th</span>&gt;Email&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>		&lt;<span style="color:#f92672">th</span>&gt;Address&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>		&lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		&lt;<span style="color:#f92672">c:forEach</span> <span style="color:#a6e22e">var</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myData&#34;</span> <span style="color:#a6e22e">items</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${users}&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>			&lt;<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>			&lt;<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>				&lt;<span style="color:#f92672">c:out</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${myData.userId}&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>			&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>			&lt;<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>				&lt;<span style="color:#f92672">c:out</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${myData.userName}&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>			&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>			&lt;<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>				&lt;<span style="color:#f92672">c:out</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${myData.name}&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>			&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>			&lt;<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>				&lt;<span style="color:#f92672">c:out</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${myData.email}&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>			&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>			&lt;<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>				&lt;<span style="color:#f92672">c:out</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${myData.address}&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>			&lt;/<span style="color:#f92672">td</span>&gt;											
+</span></span><span style="display:flex;"><span>			&lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>		&lt;/<span style="color:#f92672">c:forEach</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;/<span style="color:#f92672">table</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><p>GitHub: <a href="https://github.com/xiaobin80/struts2-spring-jpa">https://github.com/xiaobin80/struts2-spring-jpa</a></p>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Struts2%20%2b%20Spring%20%2b%20JPA&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fjava-struts-spring-jpa%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fjava-struts-spring-jpa%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fjava-struts-spring-jpa%2f&amp;description=Struts2%20%2b%20Spring%20%2b%20JPA"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fjava-struts-spring-jpa%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/csdn/post/java-spring-security/">
+          <section class="post">
+              <h2>关于Spring Security 4例子的补充</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/js-redux-update/">
+          <section class="post">
+              <h2>update redux</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>
+

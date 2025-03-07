@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="referrer" content="no-referrer"/>
+    
+
+
+
+<meta name="twitter:title" content="安装spark"/>
+<meta name="twitter:description" content="ubuntu"/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="安装spark &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/ops_spark_ubuntu/" />
+
+    
+        
+    
+
+    
+    <meta property="og:description" content="ubuntu" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2024-03-15T08:08:08&#43;08:00" />
+
+    
+    
+
+    <title>安装spark &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="ubuntu" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.145.0">
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_spark_ubuntu/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null 
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "安装spark",
+    "name": "安装spark",
+    "wordCount":  162 ,
+    "timeRequired": "PT1M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/post/ops_spark_ubuntu/",
+    "datePublished": "2024-03-15T08:08Z",
+    "dateModified": "2024-03-15T08:08Z",
+    
+    
+    "description": "ubuntu",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/post/ops_spark_ubuntu/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button icon-feed" href="/csdn/index.xml" >&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">安装spark</h1>
+        <small>ubuntu</small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2024-03-15T08:08:08&#43;08:00">
+            Mar 15, 2024
+          </time>
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
+<blockquote>
+<p>WSL: Ubuntu 18.04.1</p></blockquote>
+<h1 id="prepare">Prepare</h1>
+<blockquote>
+<p>Java 8+, Python 2.7+/3.4+ and R 3.1+</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Spark runs on Java 8+, Python 2.7+/3.4+ and R 3.1+.
+</span></span><span style="display:flex;"><span>For the Scala API, Spark 2.4.1 uses Scala 2.12.
+</span></span><span style="display:flex;"><span>You will need to use a compatible Scala version <span style="color:#f92672">(</span>2.12.x<span style="color:#f92672">)</span>.
+</span></span></code></pre></div><h2 id="1-java">1. java</h2>
+<p><a href="https://xiaobin80.gitee.io/csdn/post/ops_openjdk_ubuntu/">设置OpenJDK - Ubuntu</a></p>
+<h2 id="2-python">2. Python</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install python
+</span></span></code></pre></div><h2 id="3-r-language">3. R language</h2>
+<h3 id="1-add-ppa">1) add ppa</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo add-apt-repository ppa:marutter/rrutter
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span></code></pre></div><h3 id="2-install">2) install</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install r-base r-base-dev
+</span></span></code></pre></div><h1 id="installation">Installation</h1>
+<h2 id="1-unzip">1. unzip</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>~/spark-2.4.1-bin-hadoop2.7
+</span></span></code></pre></div><h2 id="2-test">2. test</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd ~/spark-2.4.1-bin-hadoop2.7
+</span></span></code></pre></div><h3 id="1-pi">1) pi</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./bin/run-example SparkPi <span style="color:#ae81ff">10</span>
+</span></span></code></pre></div><h3 id="2-scala-shell">2) Scala shell</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./bin/spark-shell --master local<span style="color:#f92672">[</span>2<span style="color:#f92672">]</span>
+</span></span></code></pre></div><p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>i &lt;- <span style="color:#ae81ff">1</span> to 3; j &lt;- <span style="color:#ae81ff">1</span> to 3<span style="color:#f92672">)</span> print<span style="color:#f92672">(</span><span style="color:#ae81ff">10</span> * i + j + <span style="color:#e6db74">&#34;\t&#34;</span><span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>quit:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>:q
+</span></span></code></pre></div><h3 id="3-pyspark">3) pyspark</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./bin/spark-submit examples/src/main/python/pi.py <span style="color:#ae81ff">10</span>
+</span></span></code></pre></div><h3 id="4-sparkr">4) sparkR</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./bin/sparkR --master local<span style="color:#f92672">[</span>2<span style="color:#f92672">]</span>
+</span></span></code></pre></div><p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>print<span style="color:#f92672">(</span>matrix<span style="color:#f92672">(</span>c<span style="color:#f92672">(</span>.3,  .6,  .9, .3 + .6<span style="color:#f92672">))</span>, digits <span style="color:#f92672">=</span> 18<span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>quit:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>q<span style="color:#f92672">()</span>
+</span></span></code></pre></div><h3 id="5-r-example">5) R example</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./bin/spark-submit examples/src/main/r/dataframe.R
+</span></span></code></pre></div><h1 id="run">run</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd ~/spark-2.4.1-bin-hadoop2.7
+</span></span><span style="display:flex;"><span>./sbin/start-master.sh
+</span></span></code></pre></div><p>web: http://localhost:8080/
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20190420164245413.png" alt="spark info"></p>
+<h1 id="reference">Reference</h1>
+<ul>
+<li><a href="https://medium.com/@josemarcialportilla/installing-scala-and-spark-on-ubuntu-5665ee4b62b1">Installing Scala and Spark on Ubuntu</a></li>
+<li><a href="http://sites.psu.edu/theubunturblog/installing-r-in-ubuntu/">installing-r-in-ubuntu</a></li>
+</ul>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=%e5%ae%89%e8%a3%85spark&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_spark_ubuntu%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_spark_ubuntu%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_spark_ubuntu%2f&amp;description=%e5%ae%89%e8%a3%85spark"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_spark_ubuntu%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_sudo/">
+          <section class="post">
+              <h2>开启sudo</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_openjdk_ubuntu/">
+          <section class="post">
+              <h2>设置OpenJDK</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>
+

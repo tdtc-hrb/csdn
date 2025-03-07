@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <meta name="referrer" content="no-referrer"/>
+    
+
+
+
+<meta name="twitter:title" content="Posts"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/" />
+
+    
+        
+    
+
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="" />
+    
+
+    <title>Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+        <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+    
+    <meta name="generator" content="Hugo 0.145.0">
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/"
+    },
+    "description":  null 
+}
+  </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/post/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+	<header class="main-header tag-head no-cover">
+
+    <nav class="main-nav overlay clearfix">
+      
+      
+        
+          <a class="menu-button icon-feed" href='/csdn/post/index.xml'>&nbsp;&nbsp;Subscribe</a>
+        
+      
+    </nav>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            <h1 class="page-title">Posts</h1>
+            <h2 class="page-description">
+                
+            </h2>
+        </div>
+    </div>
+</header>
+
+<main class="content" role="main">
+    
+
+	<div class="extra-pagination inner">
+    <nav class="pagination" role="navigation">
+	
+	<span class="page-number">Page 1 of 12</span>
+	
+	    <a class="older-posts" href="/csdn/post/page/2/">Older Posts &rarr;</a>
+	
+</nav>
+
+	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c2plus-com-dll/">c#调用COM</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>!!! 除了IE的ActiveX项目，不推荐ATL !!! <br>
+!!! ATL is not recommended except for IE ActiveX projects. !!!</p>
+<h2 id="add-reference">Add Reference</h2>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20200514021327.png" alt="vs2008 ui1"></p>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20200514021444.png" alt="vs2008 ui2"></p>
+<p>COM选项卡
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20200514021640.png" alt="vs2008 ui3">
+添加完成时</p>
+<h1 id="添加事件">添加事件</h1>
+<ul>
+<li>import class</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>using System.IO;
+</span></span><span style="display:flex;"><span>using xbfInfoLib;
+</span></span></code></pre></div><h2 id="写xbf文件">写xbf文件</h2>
+<ul>
+<li>读Ini文件配置</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>Boolean flagMSSQL <span style="color:#f92672">=</span> false;
+</span></span><span style="display:flex;"><span>Boolean flagSecu <span style="color:#f92672">=</span> false;
+</span></span><span style="display:flex;"><span>string sectionName <span style="color:#f92672">=</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(<span style="color:#e6db74">&#34;config&#34;</span>, <span style="color:#e6db74">&#34;type&#34;</span>);
+</span></span><span style="display:flex;"><span>string strSrv <span style="color:#f92672">=</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Server&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">Equals</span>(strSrv, <span style="color:#e6db74">&#34;&#34;</span>))
+</span></span><span style="display:flex;"><span>    flagMSSQL <span style="color:#f92672">=</span> true;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (flagMSSQL)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    strConn <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Provider=SQLOLEDB.1;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Password=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Pwd&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Persist Security Info=True;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;User ID=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;User&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Initial Catalog=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;DB&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Data Source=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Server&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span> <span style="color:#75715e">// MS Access
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{
+</span></span><span style="display:flex;"><span>    string strPWD <span style="color:#f92672">=</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Pwd&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">Equals</span>(strPWD, <span style="color:#e6db74">&#34;&#34;</span>))
+</span></span><span style="display:flex;"><span>        flagSecu <span style="color:#f92672">=</span> true;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (flagSecu)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        strConn <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Provider=Microsoft.Jet.OLEDB.4.0;&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Data Source=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;DB&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Persist Security Info=False;&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Jet OLEDB:Database Password=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Pwd&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        strConn <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Provider=Microsoft.Jet.OLEDB.4.0;&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Data Source=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;DB&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Persist Security Info=True&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li>调用COM接口</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>xbfInfoLib.FormatClass xbf <span style="color:#f92672">=</span> new <span style="color:#a6e22e">FormatClass</span>();
+</span></span><span style="display:flex;"><span>xbf.<span style="color:#a6e22e">setFileInfo</span>(strConn);
+</span></span></code></pre></div><h2 id="读xbf文件">读xbf文件</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>xbfInfoLib.FormatClass xbf <span style="color:#f92672">=</span> new <span style="color:#a6e22e">FormatClass</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>string filePath <span style="color:#f92672">=</span> currDir <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#f92672">+</span> edtFileName.Text;
+</span></span><span style="display:flex;"><span>string strRet <span style="color:#f92672">=</span> xbf.<span style="color:#a6e22e">getFileInfo</span>(filePath);
+</span></span><span style="display:flex;"><span>MessageBox.<span style="color:#a6e22e">Show</span>(strRet);
+</span></span></code></pre></div><h1 id="code">code</h1>
+<blockquote>
+<p>Form1.cs</p> <a class="read-more" href="/csdn/post/c2plus-com-dll/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2025-01-19T18:08:08&#43;08:00">
+            19 Jan 2025
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c-console_app/">计算圆的面积和周长</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><ul>
+<li><a href="https://www.eclipse.org/downloads/packages/">Eclipse IDE for C/C++ Developers</a></li>
+<li><a href="https://www.msys2.org/">msys2</a> or <a href="https://cygwin.com/">cygwin</a></li>
+</ul>
+<pre tabindex="0"><code>automake, gcc-core, gcc-g++, gdb, make
+</code></pre><h2 id="circular-类">Circular 类</h2>
+<ul>
+<li>Circular.h</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#pragma once
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Circular</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    Circular(<span style="color:#66d9ef">double</span> pi);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">virtual</span> <span style="color:#f92672">~</span>Circular();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">double</span> PI;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">getArea</span>(<span style="color:#66d9ef">double</span> radius);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">getCircumference</span>(<span style="color:#66d9ef">double</span> radius);
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><ul>
+<li>Circular.cpp</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;Circular.h&#34;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>Circular<span style="color:#f92672">::</span>Circular(<span style="color:#66d9ef">double</span> pi)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    PI <span style="color:#f92672">=</span> pi;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Circular<span style="color:#f92672">::~</span>Circular()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">double</span> Circular<span style="color:#f92672">::</span>getArea(<span style="color:#66d9ef">double</span> radius) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> PI <span style="color:#f92672">*</span> (radius <span style="color:#f92672">*</span> radius);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">double</span> Circular<span style="color:#f92672">::</span>getCircumference(<span style="color:#66d9ef">double</span> radius) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> PI <span style="color:#f92672">*</span> (radius <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="create-project">Create Project</h2>
+<p>File -&gt; New -&gt; C/C++ Project <br>
+&ldquo;C++ Managed Build&rdquo;</p> <a class="read-more" href="/csdn/post/c-console_app/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2025-01-07T08:08:08&#43;08:00">
+            7 Jan 2025
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql80-install/">安装MySQL 8.0</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="mysql-5--8">MySQL 5 &amp; 8</h1>
+<ul>
+<li>Windows 建议使用 包(msi)安装 MySQL v8.0</li>
+<li><a href="https://tdtc-hrb.github.io/csdn/post/mysql57-win/">安装MySQL 5.7</a></li>
+</ul>
+<h2 id="remote-server">remote server</h2>
+<pre tabindex="0"><code>bind-address=0.0.0.0
+</code></pre><h2 id="utf8">utf8</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>[MY<span style="color:#f92672">-</span><span style="color:#ae81ff">013242</span>] [Server] <span style="color:#75715e">--character-set-server: &#39;utf8&#39; is currently an alias for the character set UTF8MB3,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>but will be an <span style="color:#66d9ef">alias</span> <span style="color:#66d9ef">for</span> UTF8MB4 <span style="color:#66d9ef">in</span> a future release. Please consider <span style="color:#66d9ef">using</span> UTF8MB4 <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">to</span> be unambiguous.
+</span></span></code></pre></div><ul>
+<li>mysql5</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>character<span style="color:#f92672">-</span><span style="color:#66d9ef">set</span><span style="color:#f92672">-</span>server<span style="color:#f92672">=</span>utf8
+</span></span></code></pre></div><ul>
+<li>mysql8</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>character<span style="color:#f92672">-</span><span style="color:#66d9ef">set</span><span style="color:#f92672">-</span>server<span style="color:#f92672">=</span>utf8mb4
+</span></span></code></pre></div><h2 id="validate-password">validate password</h2>
+<p>注意： <a href="https://mysqlserverteam.com/mysql-8-0-4-new-default-authentication-plugin-caching_sha2_password/">mysql8.0.4</a>，
+我们将无法直接使用phpMyAdmin来登录！</p>
+<p>使用phpMyAdmin需要设置MySQL5.7兼容模式：</p>
+<pre tabindex="0"><code>authentication_policy=mysql_native_password,,
+</code></pre><ul>
+<li>mysql5</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>mysql_native_password
+</span></span></code></pre></div><ul>
+<li>mysql8</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>caching_sha2_password
+</span></span></code></pre></div><h1 id="ubuntu">Ubuntu</h1>
+<p>install mysql8:</p>
+<pre tabindex="0"><code>sudo apt install mysql-server
+</code></pre><pre tabindex="0"><code>sudo systemctl start mysql.service
+</code></pre><h2 id="config-mysql-secure">config mysql secure</h2>
+<pre tabindex="0"><code>sudo mysql
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;root&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span> IDENTIFIED <span style="color:#66d9ef">WITH</span> mysql_native_password <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;xbfirst80&#39;</span>;
+</span></span></code></pre></div><pre tabindex="0"><code>sudo mysql_secure_installation
+</code></pre><h2 id="add-user">add user</h2>
+<p>password rule:</p> <a class="read-more" href="/csdn/post/mysql80-install/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-12-26T01:08:39&#43;08:00">
+            26 Dec 2024
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql84-install/">安装MySQL 8.4</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h2 id="migration">Migration</h2>
+<ul>
+<li><a href="https://dev.mysql.com/doc/refman/8.0/en/upgrade-paths.html">The last release of v5.7, v8.0, and v8.4</a></li>
+<li><a href="https://dev.mysql.com/doc/refman/8.4/en/upgrade-paths.html">Table 3.1 Upgrade Paths for MySQL Server</a></li>
+</ul>
+<pre tabindex="0"><code>v5.7 -&gt; v8.0 -&gt; v8.4
+</code></pre><ul>
+<li>Re-enable MySQL Native Password Plugin</li>
+</ul>
+<pre tabindex="0"><code># Enable mysql_native_password plugin
+[mysqld]
+mysql_native_password=ON
+</code></pre><h3 id="mysql-upgrade"><a href="https://dev.mysql.com/doc/refman/8.0/en/upgrading-what-is-upgraded.html">mysql upgrade</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>mysql_upgrade Option</th>
+          <th>Server Option</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&ndash;skip-sys-schema</td>
+          <td>&ndash;upgrade=NONE or &ndash;upgrade=MINIMAL</td>
+      </tr>
+      <tr>
+          <td>&ndash;upgrade-system-tables</td>
+          <td>&ndash;upgrade=NONE or &ndash;upgrade=MINIMAL</td>
+      </tr>
+      <tr>
+          <td>&ndash;force</td>
+          <td>&ndash;upgrade=FORCE</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>v8.0</li>
+</ul>
+<pre tabindex="0"><code>mysql_upgrade --updgrade-systme-tables
+</code></pre><ul>
+<li>v8.4</li>
+</ul>
+<pre tabindex="0"><code>mysqld --upgrade=MINIMAL
+</code></pre><h2 id="what-is-new-in-mysql-84-since-mysql-80"><a href="https://dev.mysql.com/doc/refman/8.4/en/mysql-nutshell.html">What Is New in MySQL 8.4 since MySQL 8.0</a></h2>
+<ul>
+<li>
+<p>MySQL native password <br>
+Beginning with MySQL 8.4.0, the deprecated mysql_native_password authentication plugin is no longer enabled by default.</p> <a class="read-more" href="/csdn/post/mysql84-install/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-12-26T00:08:39&#43;08:00">
+            26 Dec 2024
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/nodejs-ubuntu/">在Ubuntu下安装NodeJS</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
+<h1 id="1nodejs">1.node.js</h1>
+<p><a href="https://github.com/nodesource/distributions">v22.x/20.x/18.x/16.x</a></p>
+<ul>
+<li>v22.x</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
+</span></span></code></pre></div><ul>
+<li>v20.x</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+</span></span></code></pre></div><ul>
+<li>v18.x</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+</span></span></code></pre></div><h2 id="install">install</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install -y nodejs
+</span></span></code></pre></div><h2 id="update">update</h2>
+<p>first remove:</p>
+<pre tabindex="0"><code>sudo apt remove nodejs
+</code></pre><p>and then, remove <a href="https://unix.stackexchange.com/a/722477">libnode72</a>:</p>
+<pre tabindex="0"><code>sudo dpkg --remove --force-remove-reinstreq libnode72:amd64
+</code></pre><p>last install:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install -y nodejs
+</span></span></code></pre></div><h1 id="2-yarn-js">2. yarn js</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl --silent --show-error https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;deb https://dl.yarnpkg.com/debian/ stable main&#34;</span> | sudo tee /etc/apt/sources.list.d/yarn.list
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install yarn
+</span></span></code></pre></div><h1 id="ref">Ref</h1>
+<ul>
+<li><a href="https://phoenixnap.com/kb/how-to-install-yarn-ubuntu">How to Install Yarn on Ubuntu 18.04</a></li>
+</ul> <a class="read-more" href="/csdn/post/nodejs-ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-12-12T23:08:39&#43;08:00">
+            12 Dec 2024
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/dev_wsl_ubuntu/">使用 WSL 在Windows</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
+<ul>
+<li>Windows 10 1809+ <br>
+缺省为WSL1</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps" data-lang="ps"><span style="display:flex;"><span><span style="color:#a6e22e">wsl</span> <span style="color:#a6e22e">-l</span> <span style="color:#a6e22e">-v</span>
+</span></span></code></pre></div><blockquote>
+<p>在powerShell的管理员模式下运行命令!</p></blockquote>
+<h1 id="安装卸载">安装/卸载</h1>
+<p>ON:</p>
+<pre tabindex="0"><code>Control Panel -&gt; Uninstall a program -&gt; Turn Windows features on or off, 
+勾选“Windows Subsystem for Linux”
+</code></pre><h2 id="ubuntu">Ubuntu</h2>
+<ul>
+<li>
+<p><a href="https://aka.ms/wslubuntu2004">Ubuntu 2004</a></p>
+<p>从AppxBundle提取appx.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Add-AppxPackage .\Ubuntu_2004.xxx.appx
+</span></span></code></pre></div><h3 id="卸载">卸载</h3>
+<p>如果“普通”方式不工作，请使用“命令行”。</p>
+<ul>
+<li>
+<p>普通
+右击“Ubuntu xxx” 图标，选择“Uninstall”即可。</p>
+</li>
+<li>
+<p><a href="https://docs.microsoft.com/zh-cn/windows/wsl/reference">命令行</a></p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wslconfig /u
+</span></span></code></pre></div><h2 id="debian">Debian</h2>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/windows/wsl/install-manual#downloading-distributions">down appx - debian v11</a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Add-AppxPackage .\DistroLauncher-Appx_1.12.2.0_x64.appx
+</span></span></code></pre></div><h3 id="wsl2">WSL2</h3>
+<ul>
+<li>Enable Virtual Machine feature</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>dism.exe /online /enable-feature /featurename<span style="color:#960050;background-color:#1e0010">:</span>VirtualMachinePlatform /all /norestart
+</span></span></code></pre></div><p>Reboot your Windows 10 host</p> <a class="read-more" href="/csdn/post/dev_wsl_ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-12-12T18:08:08&#43;08:00">
+            12 Dec 2024
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_memcached_ubuntu/">安装memcached</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
+<blockquote>
+<p>VMware: Ubuntu 20.04.2</p></blockquote>
+<h1 id="install-and-update">Install and update</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#sudo apt-get install memcached [0]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#sudo apt-get install build-essential</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#sudo apt-get install libevent-dev*</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#wget http://memcached.org/files/memcached-1.6.33.tar.gz</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#tar -zxvf memcached-1.6.33.tar.gz</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#cd memcached-1.6.33</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#./configure &amp;&amp; make &amp;&amp; sudo make install</span>
+</span></span></code></pre></div><h1 id="start">Start</h1>
+<h2 id="allow-port">allow port</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ufw allow <span style="color:#ae81ff">11211</span>
+</span></span></code></pre></div><h2 id="config">config</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/memcached.conf
+</span></span></code></pre></div><p>修改为服务器的IP:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Specify which IP address to listen on. The default is to listen on all IP addresses</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># This parameter is one of the only security measures that memcached has, so make sure</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># it&#39;s listening on a firewalled interface.</span>
+</span></span><span style="display:flex;"><span>-l 192.168.0.103
+</span></span></code></pre></div><h2 id="run">run</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo service memcached start
+</span></span></code></pre></div><h3 id="view">view</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ps -ef|grep memcached
+</span></span></code></pre></div><h1 id="reference">Reference</h1>
+<ul>
+<li>
+<ol start="0">
+<li>default version</li>
+</ol>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ memcached -V
+</span></span><span style="display:flex;"><span>memcached 1.5.22
+</span></span></code></pre></div> <a class="read-more" href="/csdn/post/ops_memcached_ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-12-11T09:08:08&#43;08:00">
+            11 Dec 2024
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_network_proxy/">设置proxy</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="os">OS</h1>
+<h2 id="windows">Windows</h2>
+<ul>
+<li>cmd</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>set http_proxy<span style="color:#f92672">=</span>http://127.0.0.1:8580
+</span></span><span style="display:flex;"><span>set https_proxy<span style="color:#f92672">=</span>http://127.0.0.1:8580
+</span></span></code></pre></div><ul>
+<li>powershell</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps" data-lang="ps"><span style="display:flex;"><span><span style="color:#a6e22e">$proxy=&#39;http:</span><span style="color:#960050;background-color:#1e0010">//</span>&lt;<span style="color:#a6e22e">IP</span>&gt;<span style="color:#a6e22e">:</span>&lt;<span style="color:#a6e22e">PORT</span>&gt;<span style="color:#a6e22e">&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">$ENV:HTTP_PROXY=$proxy</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">$ENV:HTTPS_PROXY=$proxy</span>
+</span></span></code></pre></div><p>ref: <a href="https://stackoverflow.com/a/47624713">https://stackoverflow.com/a/47624713</a></p>
+<h2 id="ubuntu">Ubuntu</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export http_proxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://192.168.1.108:1080&#34;</span>
+</span></span><span style="display:flex;"><span>export https_proxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://192.168.1.108:1080&#34;</span>
+</span></span></code></pre></div><h3 id="with-user-and-password">With user and password</h3>
+<p>Set up the server in the tool: <br>
+Check &ldquo;Run xxx as Server(listens 0.0.0.0)&rdquo;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export http_proxy<span style="color:#f92672">=</span>http://USERNAME:PASSWORD@192.168.1.108:8580/
+</span></span><span style="display:flex;"><span>export https_proxy<span style="color:#f92672">=</span>http://USERNAME:PASSWORD@192.168.1.108:8580/
+</span></span></code></pre></div><h2 id="freebsd"><a href="https://nanxiao.gitbooks.io/freebsd-101-hacks/content/posts/configure-proxy.html">FreeBSD</a></h2>
+<blockquote>
+<p>v12.4</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csh" data-lang="csh"><span style="display:flex;"><span>setenv HTTP_PROXY http://web-proxy.xxxxxx.com:8080
+</span></span><span style="display:flex;"><span>setenv HTTPS_PROXY https://web-proxy.xxxxxx.com:8080
+</span></span></code></pre></div><h1 id="software">software</h1>
+<h2 id="virtualbox">VirtualBox</h2>
+<ul>
+<li>
+<p>Adapter 1 <br>
+host only, vboxnet0</p>
+</li>
+<li>
+<p>Adapter 2 <br>
+NAT</p>
+</li>
+</ul>
+<h3 id="guest-os">Guest os</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/netplan/00-installer-config.yaml
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>network:
+</span></span><span style="display:flex;"><span>    version: 2
+</span></span><span style="display:flex;"><span>    renderer: networkd
+</span></span><span style="display:flex;"><span>    ethernets:
+</span></span><span style="display:flex;"><span>        enp0s3:
+</span></span><span style="display:flex;"><span>            addresses:
+</span></span><span style="display:flex;"><span>                - 192.168.56.12/24
+</span></span><span style="display:flex;"><span>            dhcp4: no
+</span></span><span style="display:flex;"><span>        enp0s8:
+</span></span><span style="display:flex;"><span>            dhcp4: no
+</span></span></code></pre></div><h2 id="wine">Wine</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>sudo dpkg --add-architecture i386
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo curl -O https://dl.winehq.org/wine-builds/winehq.key
+</span></span><span style="display:flex;"><span>sudo apt-key add winehq.key
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo apt-add-repository <span style="color:#e6db74">&#39;deb https://dl.winehq.org/wine-builds/ubuntu/ focal main&#39;</span>
+</span></span><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo apt install -y --install-recommends winehq-stable
+</span></span></code></pre></div><h3 id="usage-wine">usage wine</h3>
+<pre tabindex="0"><code>$ wine --version
+$ wine fg798p.exe
+</code></pre><h2 id="git">git</h2>
+<h3 id="set-proxy">set proxy</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config --global http.proxy http://127.0.0.1:8580
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git config --global https.proxy https://127.0.0.1:8580
+</span></span></code></pre></div><h3 id="unset">unset</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config --global --unset http.proxy
+</span></span><span style="display:flex;"><span>git config --global --unset https.proxy
+</span></span></code></pre></div><h2 id="node-js">node-js</h2>
+<blockquote>
+<p><a href="https://github.com/yarnpkg/yarn/issues/3227#issuecomment-389596918">.npmrc</a></p> <a class="read-more" href="/csdn/post/ops_network_proxy/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-10-30T14:08:08&#43;08:00">
+            30 Oct 2024
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_tomcat/">Tomcat安装</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><table>
+  <thead>
+      <tr>
+          <th>Servlet Spec</th>
+          <th>JSP Spec</th>
+          <th>EL Spec</th>
+          <th>WebSocket Spec</th>
+          <th>Authentication (JASIC) Spec</th>
+          <th>Apache Tomcat Version</th>
+          <th>Latest Released Version</th>
+          <th>Supported Java Versions</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>6.1</td>
+          <td>4.0</td>
+          <td>6.0</td>
+          <td>2.2</td>
+          <td>3.1</td>
+          <td>11.0.x</td>
+          <td>11.0.0</td>
+          <td>17 and later</td>
+      </tr>
+      <tr>
+          <td>3.1</td>
+          <td>2.3</td>
+          <td>3.0</td>
+          <td>1.1</td>
+          <td>1.1</td>
+          <td>8.5.x</td>
+          <td><a href="https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.100/bin/apache-tomcat-8.5.100.zip">8.5.100</a></td>
+          <td>7 and later</td>
+      </tr>
+      <tr>
+          <td>2.5</td>
+          <td>2.1</td>
+          <td>2.1</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>6.0.x</td>
+          <td><a href="https://archive.apache.org/dist/tomcat/tomcat-6/v6.0.53/bin/apache-tomcat-6.0.53.zip">6.0.53</a></td>
+          <td>5 and later</td>
+      </tr>
+      <tr>
+          <td>2.4</td>
+          <td>2.0</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>5.5.x</td>
+          <td><a href="https://archive.apache.org/dist/tomcat/tomcat-5/v5.5.36/bin/apache-tomcat-5.5.36.zip">5.5.36</a></td>
+          <td>1.4 and later</td>
+      </tr>
+  </tbody>
+</table>
+<h1 id="installation">installation</h1>
+<table>
+  <thead>
+      <tr>
+          <th>Platform version</th>
+          <th>Released</th>
+          <th>Specification</th>
+          <th>Java SE Support</th>
+          <th>Important Changes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Jakarta EE 10</td>
+          <td>2022-03-31</td>
+          <td>10</td>
+          <td>Java SE 17/Java SE 11</td>
+          <td>Removal of deprecated items in Servlet, Faces, CDI and EJB (Entity Beans and Embeddable Container). CDI-Build Time.</td>
+      </tr>
+      <tr>
+          <td>Jakarta EE 9.1</td>
+          <td>2021-05-25</td>
+          <td>9.1</td>
+          <td>Java SE 11/Java SE 8</td>
+          <td>JDK 11 support</td>
+      </tr>
+      <tr>
+          <td>Jakarta EE 9</td>
+          <td>2020-12-08</td>
+          <td>9</td>
+          <td>Java SE 8</td>
+          <td>API namespace move from javax to jakarta</td>
+      </tr>
+      <tr>
+          <td>Jakarta EE 8</td>
+          <td>2019-09-10</td>
+          <td>8</td>
+          <td>Java SE 8</td>
+          <td>Full compatiblity with Java EE 8</td>
+      </tr>
+      <tr>
+          <td>Java EE 8</td>
+          <td>2017-08-31</td>
+          <td>JSR 366</td>
+          <td>Java SE 8</td>
+          <td>HTTP/2 and CDI based Security</td>
+      </tr>
+      <tr>
+          <td>Java EE 7</td>
+          <td>2013-05-28</td>
+          <td>JSR 342</td>
+          <td>Java SE 7</td>
+          <td>WebSocket, JSON and HTML5 support</td>
+      </tr>
+      <tr>
+          <td>Java EE 6</td>
+          <td>2009-12-10</td>
+          <td>JSR 316</td>
+          <td>Java SE 6</td>
+          <td>CDI managed Beans and REST</td>
+      </tr>
+      <tr>
+          <td>Java EE 5</td>
+          <td>2006-05-11</td>
+          <td>JSR 244</td>
+          <td>Java SE 5</td>
+          <td>Java annotations</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="安装jdk">安装JDK</h2>
+<ul>
+<li>RHEL Community <br>
+参见 <a href="https://tdtc-hrb.github.io/cnblogs/post/ops_openjdk_rhel/">设置OpenJDK - RHEL</a></li>
+<li>Ubuntu <br>
+参见 <a href="https://tdtc-hrb.github.io/csdn/post/ops_openjdk_ubuntu/">设置OpenJDK - Ubuntu</a></li>
+</ul>
+<h2 id="安装tomcat">安装Tomcat</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo dnf install wget tar
+</span></span></code></pre></div><p>下载(choose one):</p> <a class="read-more" href="/csdn/post/ops_tomcat/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-10-12T12:38:08&#43;08:00">
+            12 Oct 2024
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/apt-oper-ubuntu/">apt的安装问题</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>apt适合手动输入(有交互); apt-get适合脚本(无交互).</p>
+<p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
+<h1 id="manage">Manage</h1>
+<h2 id="卸载">卸载</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get autoremove vsftpd --purge
+</span></span></code></pre></div><h2 id="安装指定版本">安装指定版本</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get install &lt;package name&gt;<span style="color:#f92672">=</span>&lt;version&gt;
+</span></span></code></pre></div><h2 id="列出版本">列出版本</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-cache madison &lt;&lt;package name&gt;&gt;
+</span></span></code></pre></div><h1 id="debian">DebIan</h1>
+<h2 id="sudo">sudo</h2>
+<p>sudo.d(directory):</p>
+<pre tabindex="0"><code>Note also, that becasuse sudoers contents can vary widely, no attempt is made to add this 
+directive to existing sudoers files on upgrade. Feel free to add the above directive to the 
+end of your /etc/sudoers file to enabe this functionality for existing installations if you 
+wish! Sudo versions older than the one in Debian 11(bullseye) require the directive will only 
+support the old syntax #includedir, and the current sudo will happily accept both @includedir 
+and #includedir
+</code></pre><h3 id="install">install</h3>
+<p>using root:</p> <a class="read-more" href="/csdn/post/apt-oper-ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-09-21T02:20:39&#43;08:00">
+            21 Sep 2024
+        </time>
+    </footer>
+</article>
+
+	
+
+	<nav class="pagination" role="navigation">
+	
+	<span class="page-number">Page 1 of 12</span>
+	
+	    <a class="older-posts" href="/csdn/post/page/2/">Older Posts &rarr;</a>
+	
+</nav>
+
+</main>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>

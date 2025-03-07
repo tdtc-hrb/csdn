@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="referrer" content="no-referrer"/>
+    
+
+
+
+<meta name="twitter:title" content="AK100驱动过时问题"/>
+<meta name="twitter:description" content="MDKV4.0 - V4.74"/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="AK100驱动过时问题 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/mdk-ak100-driver/" />
+
+    
+        
+    
+
+    
+    <meta property="og:description" content="MDKV4.0 - V4.74" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2020-05-04T10:08:08&#43;08:00" />
+
+    
+    
+
+    <title>AK100驱动过时问题 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="MDKV4.0 - V4.74" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.145.0">
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/mdk-ak100-driver/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null 
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "AK100驱动过时问题",
+    "name": "AK100驱动过时问题",
+    "wordCount":  22 ,
+    "timeRequired": "PT1M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/post/mdk-ak100-driver/",
+    "datePublished": "2020-05-04T10:08Z",
+    "dateModified": "2020-05-04T10:08Z",
+    
+    
+    "description": "MDKV4.0 - V4.74",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/post/mdk-ak100-driver/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button icon-feed" href="/csdn/index.xml" >&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">AK100驱动过时问题</h1>
+        <small>MDKV4.0 - V4.74</small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2020-05-04T10:08:08&#43;08:00">
+            May 4, 2020
+          </time>
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <ul>
+<li>IDE：MDKV4.0 - V4.74</li>
+<li>AK100驱动：<a href="http://www.zlgmcu.com/download/downs.asp?ID=6405">V6.0</a></li>
+</ul>
+<p>现象：&quot;..\TKScope\UL2ARM_TKSCP_DRV_ARM_for_AGDI.dll - Driver is outdated !&quot;
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20140519181217156.png" alt="mdk info"></p>
+<p>解决办法：</p>
+<ol>
+<li>
+<p>删除工程目录中的“TKScope.cfg”</p>
+</li>
+<li>
+<p>重新设置调试器 <br>
+&ldquo;Target Options&rdquo; -&gt; &ldquo;Debug&rdquo;
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20140519181639937.png" alt="mdk info">
+选择TKScope
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20140519181750765.png" alt="mdk info">
+硬件选择（调试器与MCU）
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20140519181831203.png" alt="mdk info">
+选择调试器
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20140519181900625.png" alt="mdk info">
+选择MCU对应的调试器</p>
+</li>
+</ol>
+<p>其他设置（主要设置、附加设置、TAP设置、程序烧写、初始化宏、硬件自检）请参考“<a href="http://www.zlg.cn/sitecn/down.aspx?id=64">用户手册</a>”。</p>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=AK100%e9%a9%b1%e5%8a%a8%e8%bf%87%e6%97%b6%e9%97%ae%e9%a2%98&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fmdk-ak100-driver%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fmdk-ak100-driver%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fmdk-ak100-driver%2f&amp;description=AK100%e9%a9%b1%e5%8a%a8%e8%bf%87%e6%97%b6%e9%97%ae%e9%a2%98"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fmdk-ak100-driver%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/csdn/post/c-preprocessor1/">
+          <section class="post">
+              <h2>c预处理器</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/embeded_ip_nfs/">
+          <section class="post">
+              <h2>设置固定IP</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>
+

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="referrer" content="no-referrer"/>
+    
+
+
+
+<meta name="twitter:title" content="安装MySQL 8.4"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="安装MySQL 8.4 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/mysql84-install/" />
+
+    
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2024-12-26T00:08:39&#43;08:00" />
+
+    
+    
+
+    <title>安装MySQL 8.4 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="&lt;h2 id=&#34;migration&#34;&gt;Migration&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.mysql.com/doc/refman/8.0/en/upgrade-paths.html&#34;&gt;The last release of v5.7, v8.0, and v8.4&lt;/a&gt;&lt;/li" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.145.0">
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/mysql84-install/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null 
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "安装MySQL 8.4",
+    "name": "安装MySQL 8.4",
+    "wordCount":  154 ,
+    "timeRequired": "PT1M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/post/mysql84-install/",
+    "datePublished": "2024-12-26T00:08Z",
+    "dateModified": "2024-12-26T00:08Z",
+    
+    
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/post/mysql84-install/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button icon-feed" href="/csdn/index.xml" >&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">安装MySQL 8.4</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2024-12-26T00:08:39&#43;08:00">
+            Dec 26, 2024
+          </time>
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <h2 id="migration">Migration</h2>
+<ul>
+<li><a href="https://dev.mysql.com/doc/refman/8.0/en/upgrade-paths.html">The last release of v5.7, v8.0, and v8.4</a></li>
+<li><a href="https://dev.mysql.com/doc/refman/8.4/en/upgrade-paths.html">Table 3.1 Upgrade Paths for MySQL Server</a></li>
+</ul>
+<pre tabindex="0"><code>v5.7 -&gt; v8.0 -&gt; v8.4
+</code></pre><ul>
+<li>Re-enable MySQL Native Password Plugin</li>
+</ul>
+<pre tabindex="0"><code># Enable mysql_native_password plugin
+[mysqld]
+mysql_native_password=ON
+</code></pre><h3 id="mysql-upgrade"><a href="https://dev.mysql.com/doc/refman/8.0/en/upgrading-what-is-upgraded.html">mysql upgrade</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>mysql_upgrade Option</th>
+          <th>Server Option</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&ndash;skip-sys-schema</td>
+          <td>&ndash;upgrade=NONE or &ndash;upgrade=MINIMAL</td>
+      </tr>
+      <tr>
+          <td>&ndash;upgrade-system-tables</td>
+          <td>&ndash;upgrade=NONE or &ndash;upgrade=MINIMAL</td>
+      </tr>
+      <tr>
+          <td>&ndash;force</td>
+          <td>&ndash;upgrade=FORCE</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>v8.0</li>
+</ul>
+<pre tabindex="0"><code>mysql_upgrade --updgrade-systme-tables
+</code></pre><ul>
+<li>v8.4</li>
+</ul>
+<pre tabindex="0"><code>mysqld --upgrade=MINIMAL
+</code></pre><h2 id="what-is-new-in-mysql-84-since-mysql-80"><a href="https://dev.mysql.com/doc/refman/8.4/en/mysql-nutshell.html">What Is New in MySQL 8.4 since MySQL 8.0</a></h2>
+<ul>
+<li>
+<p>MySQL native password <br>
+Beginning with MySQL 8.4.0, the deprecated mysql_native_password authentication plugin is no longer enabled by default.</p>
+</li>
+<li>
+<p><a href="https://dev.mysql.com/doc/refman/8.4/en/replica-logs-status.html">Replication Metadata Repositories</a></p>
+</li>
+</ul>
+<pre tabindex="0"><code>sync-relay-log-info&#39; is deprecated and will be removed in a future release.
+</code></pre><p>removed configure at my.ini:</p>
+<pre tabindex="0"><code># If the value of this variable is greater than 0, a replica synchronizes its relay-log.info file to disk.
+# (using fdatasync()) after every sync_relay_log_info transactions.
+sync_relay_log_info=10000
+</code></pre><h3 id="authentication-policy">authentication policy</h3>
+<pre tabindex="0"><code>[ERROR] [MY-013797] [Server] Option --authentication-policy is set to an invalid value. Please check if the specified authentication plugins are valid.
+</code></pre><p>to set:</p>
+<pre tabindex="0"><code>authentication_policy=*,,
+</code></pre><h3 id="sql-mode">SQL Mode</h3>
+<pre tabindex="0"><code>sql-mode=&#34;ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION&#34;
+</code></pre>
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=%e5%ae%89%e8%a3%85MySQL%208.4&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fmysql84-install%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fmysql84-install%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fmysql84-install%2f&amp;description=%e5%ae%89%e8%a3%85MySQL%208.4"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fmysql84-install%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/csdn/post/mysql80-install/">
+          <section class="post">
+              <h2>安装MySQL 8.0</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/nodejs-ubuntu/">
+          <section class="post">
+              <h2>在Ubuntu下安装NodeJS</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>
+

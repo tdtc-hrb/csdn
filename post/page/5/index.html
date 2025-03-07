@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <meta name="referrer" content="no-referrer"/>
+    
+
+
+
+<meta name="twitter:title" content="Posts"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/" />
+
+    
+        
+    
+
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="" />
+    
+
+    <title>Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+        <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+    
+    <meta name="generator" content="Hugo 0.145.0">
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/"
+    },
+    "description":  null 
+}
+  </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/post/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+	<header class="main-header tag-head no-cover">
+
+    <nav class="main-nav overlay clearfix">
+      
+      
+        
+          <a class="menu-button icon-feed" href='/csdn/post/index.xml'>&nbsp;&nbsp;Subscribe</a>
+        
+      
+    </nav>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            <h1 class="page-title">Posts</h1>
+            <h2 class="page-description">
+                
+            </h2>
+        </div>
+    </div>
+</header>
+
+<main class="content" role="main">
+    
+
+	<div class="extra-pagination inner">
+    <nav class="pagination" role="navigation">
+	
+	    <a class="newer-posts" href="/csdn/post/page/4/">&larr; Newer Posts</a>
+	
+	<span class="page-number">Page 5 of 12</span>
+	
+	    <a class="older-posts" href="/csdn/post/page/6/">Older Posts &rarr;</a>
+	
+</nav>
+
+	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql-imp-exp/">MySQL导入导出数据库</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="导出数据库">导出数据库</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$mysqldump dbName &gt; dbName.sql -u user -p
+</span></span></code></pre></div><ul>
+<li>v5.6/5.7</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$mysqldump --no-defaults dbName &gt; dbName.sql -u user -p
+</span></span></code></pre></div><h1 id="导入数据库">导入数据库</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql&gt;CREATE DATABASE <span style="color:#e6db74">`</span>dbName<span style="color:#e6db74">`</span> CHARACTER SET utf8 COLLATE utf8_general_ci;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mysql&gt;USE dbName;
+</span></span></code></pre></div><ul>
+<li>win</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>mysql&gt;SOURCE C:/Users/xiaobin/dbName.sql;
+</span></span></code></pre></div><ul>
+<li>Linux</li>
+</ul>
+<pre tabindex="0"><code>mysql&gt;SOURCE /home/xiaobin/dbName.sql;
+</code></pre><h2 id="upload">upload</h2>
+<blockquote>
+<p>win10</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>scp D:\progFiles\carnumber.sql tdtc@192.168.0.151:/home/tdtc/
+</span></span></code></pre></div><h2 id="create-user">create user</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql&gt; CREATE USER <span style="color:#e6db74">&#39;DBAdmin&#39;</span>@<span style="color:#e6db74">&#39;localhost&#39;</span> IDENTIFIED BY <span style="color:#e6db74">&#39;xbfirst&#39;</span>;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql&gt; GRANT ALL PRIVILEGES ON *.* TO <span style="color:#e6db74">&#39;DBAdmin&#39;</span>@<span style="color:#e6db74">&#39;localhost&#39;</span> WITH GRANT OPTION;
+</span></span><span style="display:flex;"><span>mysql&gt; flush privileges;
+</span></span></code></pre></div><h1 id="reference">Reference</h1>
+<ul>
+<li><a href="https://www.euperia.com/development/mysql-create-database-with-utf8-character-set-syntax/1064">MySQL Create Database with UTF8 Character Set Syntax</a></li>
+</ul> <a class="read-more" href="/csdn/post/mysql-imp-exp/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-09-10T02:18:39&#43;08:00">
+            10 Sep 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql80-cenos8/">CentOS8安装mysql8.0</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h3 id="installing-and-setting-up-the-percona-server-for-mysql-80--repository">Installing and Setting up the Percona Server for MySQL 8.0  Repository</h3>
+<pre tabindex="0"><code>yum install -y https://repo.percona.com/yum/percona-release-latest.noarch.rpm
+</code></pre><p>disable mysql module repo:</p>
+<pre tabindex="0"><code>percona-release setup ps80
+</code></pre><h3 id="installing-and-setting-up-the-percona-server-for-mysql-80-binaries">Installing and Setting up the Percona Server for MySQL 8.0 Binaries</h3>
+<pre tabindex="0"><code>yum -y install percona-server-server
+</code></pre><p>Launch:</p>
+<pre tabindex="0"><code>systemctl start mysqld
+systemctl status mysqld
+</code></pre><h2 id="change-password">change password</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo grep <span style="color:#e6db74">&#34;temporary password&#34;</span> /var/log/mysqld.log
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql -uroot -p
+</span></span></code></pre></div><p>Change default password：</p>
+<pre tabindex="0"><code>ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;qaz1!Xsw2@&#39;;
+</code></pre><h3 id="weak-password">Weak password</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql&gt; set global validate_password.policy<span style="color:#f92672">=</span>0;
+</span></span></code></pre></div><h3 id="set-password">set password</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ALTER USER <span style="color:#e6db74">&#39;root&#39;</span>@<span style="color:#e6db74">&#39;localhost&#39;</span> IDENTIFIED BY <span style="color:#e6db74">&#39;xbfirst80&#39;</span>;
+</span></span></code></pre></div><h1 id="ref">Ref</h1>
+<ul>
+<li><a href="https://www.percona.com/blog/installing-percona-server-for-mysql-on-rocky-linux-8/">Installing Percona Server for MySQL on Rocky Linux 8</a></li>
+<li><a href="https://tecadmin.net/change-mysql-password-policy-level/">How to Change MySQL Password Policy Level</a></li>
+</ul> <a class="read-more" href="/csdn/post/mysql80-cenos8/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        on
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/rocky-linux-8/">#Rocky Linux 8</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/alma-linux-8/">#Alma Linux 8</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/percona8/">#Percona8</a>,
+            
+        
+        <time class="post-date" datetime="2022-06-27T03:21:39&#43;08:00">
+            27 Jun 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/redis-centos7/">在RHEL/CentOS安装Redis</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="0-preinstall">0. preinstall</h1>
+<ul>
+<li>User set</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ useradd tdtc
+</span></span><span style="display:flex;"><span>$ passwd tdtc
+</span></span></code></pre></div><ul>
+<li><a href="https://tdtc-hrb.github.io/csdn/post/ops_rhel_repo/">Yum Repo</a></li>
+</ul>
+<h2 id="1-yum-install">1) yum install</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum groupinstall <span style="color:#e6db74">&#34;Development Tools&#34;</span>
+</span></span><span style="display:flex;"><span>$sudo yum install tcl wget
+</span></span></code></pre></div><h3 id="v6">v6+</h3>
+<p>Just to clarify: there is no way this issue will be fixed, Redis &gt;= 6 will require a C11 compiler.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install centos-release-scl
+</span></span><span style="display:flex;"><span>sudo yum install devtoolset-8
+</span></span><span style="display:flex;"><span>scl enable devtoolset-8 bash
+</span></span></code></pre></div><h2 id="2-verification">2) verification</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$gcc -v
+</span></span><span style="display:flex;"><span>$make -v
+</span></span><span style="display:flex;"><span>$echo <span style="color:#e6db74">&#39;puts [info patchlevel];exit 0&#39;</span> | tclsh
+</span></span></code></pre></div><h1 id="1-installation">1. installation</h1>
+<h2 id="1-install">1) install</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://download.redis.io/releases/redis-6.0.16.tar.gz
+</span></span><span style="display:flex;"><span>$tar xzvf redis-6.0.16.tar.gz
+</span></span><span style="display:flex;"><span>$cd redis-6.0.16
+</span></span><span style="display:flex;"><span>$make
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Single Core</span>
+</span></span><span style="display:flex;"><span>$taskset -c <span style="color:#ae81ff">0</span> make test
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## sudo</span>
+</span></span><span style="display:flex;"><span>$sudo make install
+</span></span></code></pre></div><h2 id="2-config">2) config</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo mkdir /etc/redis
+</span></span><span style="display:flex;"><span>$sudo mkdir -p /var/redis
+</span></span><span style="display:flex;"><span>$sudo cp /home/tdtc/redis-6.0.16/redis.conf /etc/redis
+</span></span></code></pre></div><h3 id="redisconf">redis.conf</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>port  6379				         <span style="color:#75715e">#default port is already 6379.</span>
+</span></span><span style="display:flex;"><span>daemonize yes			         <span style="color:#75715e">#run as a daemon</span>
+</span></span><span style="display:flex;"><span>supervised systemd			     <span style="color:#75715e">#signal systemd</span>
+</span></span><span style="display:flex;"><span>pidfile /var/run/redis_6379.pid  <span style="color:#75715e">#specify pid file</span>
+</span></span><span style="display:flex;"><span>loglevel notice			         <span style="color:#75715e">#server verbosity level</span>
+</span></span><span style="display:flex;"><span>logfile /var/log/redis.log		 <span style="color:#75715e">#log file name</span>
+</span></span><span style="display:flex;"><span>dir  /var/redis/		         <span style="color:#75715e">#redis directory</span>
+</span></span></code></pre></div><h1 id="2-command">2. command</h1>
+<p>You do not need to execute the following commands when you are not maintaining it, only the first time.</p> <a class="read-more" href="/csdn/post/redis-centos7/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        on
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/redis/">#Redis</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/centos7/">#CentOS7</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/development-tools/">#Development Tools</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/wget/">#wget</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/rhel/">#RHEL</a>,
+            
+        
+        <time class="post-date" datetime="2022-06-11T04:58:39&#43;08:00">
+            11 Jun 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/reduxjs-asyn/">重构asyn</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="0-pre">0. pre</h1>
+<h2 id="生成基本框">生成基本框</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install -g create-react-app
+</span></span><span style="display:flex;"><span>create-react-app async
+</span></span></code></pre></div><h2 id="clone-repo">clone repo</h2>
+<p><a href="https://github.com/redux-saga/redux-saga.git">https://github.com/redux-saga/redux-saga.git</a></p>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/dropdown1-rjs.png" alt="final effect 1"></p>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/dropdown2-frd.png" alt="final effect 2"></p>
+<h1 id="1-copy-directorys">1. copy directorys</h1>
+<p>Copy the examples/async/src from the redux-saga to your async/src.</p>
+<h1 id="2-rename-mainjs">2. rename main.js</h1>
+<blockquote>
+<p>async/src</p></blockquote>
+<p>Rename main.js to index.js</p>
+<h1 id="3-move-files">3. move files</h1>
+<blockquote>
+<p>async/src</p></blockquote>
+<p>App.css &amp;&amp; logo.svg
+-&gt;</p>
+<blockquote>
+<p>async/src/containers</p></blockquote>
+<p>App.css &amp;&amp; logo.svg</p>
+<h1 id="4-modify-containersappjs">4. modify containers/App.js</h1>
+<p>Add the following two blocks of code.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">logo</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./logo.svg&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;./App.css&#39;</span>;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;App&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">header</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;App-header&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">logo</span>} <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;App-logo&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;logo&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;App-title&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Welcome</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">React</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/header&gt;</span>
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+</span></span></code></pre></div><h1 id="5-install-dependencies">5. install dependencies</h1>
+<blockquote>
+<p>redux-saga v1.1.3</p> <a class="read-more" href="/csdn/post/reduxjs-asyn/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-06-10T07:26:39&#43;08:00">
+            10 Jun 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c-bsd_socket-server/">使用fork的server</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><blockquote>
+<p>GNU Compiler Collection(GCC)</p></blockquote>
+<p>在“<a href="https://tdtc-hrb.github.io/csdn/post/c-bsd_socket/">Socket服务器端程序</a>”基础上增加子进程。</p>
+<h1 id="beejs-guide-network-to-programming"><a href="https://blog.csdn.net/xiaobin_hlj80/category_6092337.html">Beej’s Guide Network to Programming</a></h1>
+<blockquote>
+<p>关于Unix/Linux子进程：</p>
+<blockquote>
+<p>相当于Windows的线程</p></blockquote></blockquote>
+<p>调用fork()即可增加子进程。</p>
+<p>要使用fork必须调用waitpid() ！</p>
+<h1 id="waitpid">waitpid()</h1>
+<p>waitpid函数原型：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;sys/types.h&gt;   /* 提供类型pid_t的定义 */</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;sys/wait.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">pid_t</span> <span style="color:#a6e22e">waitpid</span>(<span style="color:#66d9ef">pid_t</span> pid, <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>status, <span style="color:#66d9ef">int</span> options);
+</span></span></code></pre></div><ul>
+<li>
+<p>pid <br>
+等于-1时，等待任何一个子进程退出，没有任何限制，此时waitpid和wait的作用一模一样。</p>
+</li>
+<li>
+<p>status <br>
+我们设置为NULL。</p>
+</li>
+<li>
+<p>options <br>
+提供了一些额外的选项来控制waitpid，WNOHANG常量表示，
+即使没有子进程退出，它也会立即返回，不会像wait那样永远等下去。</p>
+</li>
+</ul>
+<h1 id="sigaction">sigaction()</h1>
+<blockquote>
+<p>sigaction()是waitpid()的开关</p></blockquote>
+<p>只有给waitpid()信号时，才开启它(waitpid)！
+这时，需要sigaction()。</p>
+<p>sigaction函数原型：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;signal.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">sigaction</span>(<span style="color:#66d9ef">int</span> signum, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> sigaction <span style="color:#f92672">*</span>act, <span style="color:#66d9ef">struct</span> sigaction <span style="color:#f92672">*</span>oldact);
+</span></span></code></pre></div><ul>
+<li>
+<p>signum <br>
+等于SIGCHLD时，只有子进程停止或者退出才进行调用。</p>
+</li>
+<li>
+<p>act <br>
+一个指向sigaction结构的指针。</p>
+</li>
+<li>
+<p>oldact <br>
+一般废止不用。</p>
+</li>
+</ul>
+<p>我们主要设置结构sigaction的sa_handler、sa_mask和sa_flags三个成员变量即可！</p>
+<h1 id="code">code</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Version: 0.2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Description: Add signal
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;sys/types.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;sys/socket.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;netdb.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;arpa/inet.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;signal.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;sys/wait.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;		/* exit declare */</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;unistd.h&gt;		/* fork declare */</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define SERVPORT &#34;2349&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sigchild_handler</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">waitpid</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, NULL, WNOHANG) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>argv[])
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">struct</span> addrinfo hints, <span style="color:#f92672">*</span>res;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> status;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> sockfd;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> connFd;
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">/* struct sockaddr_in cliAddr;  Only IPv4  */</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">struct</span> sockaddr_storage clientAddr;	<span style="color:#75715e">/* both IPv4 and IPv6 */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">struct</span> sigaction sa;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> sendSta;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>msg;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (argc <span style="color:#f92672">!=</span> <span style="color:#ae81ff">2</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fprintf</span>(stderr, <span style="color:#e6db74">&#34;Usage: Not found Read File&#34;</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">memset</span>(<span style="color:#f92672">&amp;</span>hints, <span style="color:#ae81ff">0</span>, <span style="color:#66d9ef">sizeof</span>(hints));
+</span></span><span style="display:flex;"><span>	hints.ai_family <span style="color:#f92672">=</span> AF_UNSPEC;
+</span></span><span style="display:flex;"><span>	hints.ai_socktype <span style="color:#f92672">=</span> SOCK_STREAM;
+</span></span><span style="display:flex;"><span>	hints.ai_flags <span style="color:#f92672">=</span> AI_PASSIVE;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	status <span style="color:#f92672">=</span> <span style="color:#a6e22e">getaddrinfo</span>(NULL, SERVPORT, <span style="color:#f92672">&amp;</span>hints, <span style="color:#f92672">&amp;</span>res);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (status <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fprintf</span>(stderr, <span style="color:#e6db74">&#34;getaddrinfo, fail!&#34;</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	sockfd <span style="color:#f92672">=</span> <span style="color:#a6e22e">socket</span>(res<span style="color:#f92672">-&gt;</span>ai_family, res<span style="color:#f92672">-&gt;</span>ai_socktype, res<span style="color:#f92672">-&gt;</span>ai_protocol);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">bind</span>(sockfd, res<span style="color:#f92672">-&gt;</span>ai_addr, res<span style="color:#f92672">-&gt;</span>ai_addrlen);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">listen</span>(sockfd, <span style="color:#ae81ff">5</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;======== Please Wait Client =========</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">/* struct sigaction notes from POSIX:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> 	 *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> 	 *  (1) Routines stored in sa_handler should take a single int as
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> 	 *      their argument although the POSIX standard does not require this.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> 	 *  (2) The fields sa_handler and sa_sigaction may overlap, and a conforming
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> 	 *      application should not use both simultaneously.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> 	 */</span>
+</span></span><span style="display:flex;"><span>	sa.sa_handler <span style="color:#f92672">=</span> sigchild_handler;
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sigemptyset</span>(<span style="color:#f92672">&amp;</span>sa.sa_mask);	<span style="color:#75715e">/* Additional set of signals to be blocked */</span>
+</span></span><span style="display:flex;"><span>                              	<span style="color:#75715e">/* during execution of signal-catching function. */</span>
+</span></span><span style="display:flex;"><span>	sa.sa_flags <span style="color:#f92672">=</span> SA_RESTART;	<span style="color:#75715e">/* Special flags to affect behavior of signal */</span>
+</span></span><span style="display:flex;"><span>								<span style="color:#75715e">/* SA_RESTART 0x10000000 	// Restart syscall on signal return */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">sigaction</span>(SIGCHLD, <span style="color:#f92672">&amp;</span>sa, NULL) <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) {	<span style="color:#75715e">/* SIGCHLD 20	// to parent on child stop or exit */</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fprintf</span>(stderr, <span style="color:#e6db74">&#34;sigaction fail!&#34;</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">exit</span>(<span style="color:#ae81ff">3</span>);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">while</span>(<span style="color:#ae81ff">1</span>) { <span style="color:#75715e">// loop forever!
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">char</span> ipstr[INET_ADDRSTRLEN];
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>addr;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">int</span> len <span style="color:#f92672">=</span> <span style="color:#66d9ef">sizeof</span>(clientAddr);
+</span></span><span style="display:flex;"><span>		connFd <span style="color:#f92672">=</span> <span style="color:#a6e22e">accept</span>(sockfd, (<span style="color:#66d9ef">struct</span> sockaddr <span style="color:#f92672">*</span>)<span style="color:#f92672">&amp;</span>clientAddr, <span style="color:#f92672">&amp;</span>len);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">/* View Client IP */</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">struct</span> sockaddr_in <span style="color:#f92672">*</span>ipv4 <span style="color:#f92672">=</span> (<span style="color:#66d9ef">struct</span> sockaddr_in <span style="color:#f92672">*</span>)<span style="color:#f92672">&amp;</span>clientAddr;
+</span></span><span style="display:flex;"><span>		addr <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>(ipv4<span style="color:#f92672">-&gt;</span>sin_addr);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">inet_ntop</span>(AF_INET, addr, ipstr, <span style="color:#66d9ef">sizeof</span>(ipstr));
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;client: %s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ipstr);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">fork</span>()) {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">close</span>(sockfd);	<span style="color:#75715e">/* child doesn&#39;t need the listener */</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">/* Copy Data */</span>
+</span></span><span style="display:flex;"><span>			msg <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;The server simply displays a message!&#34;</span>;
+</span></span><span style="display:flex;"><span>			sendSta <span style="color:#f92672">=</span> <span style="color:#a6e22e">send</span>(connFd, msg, <span style="color:#a6e22e">strlen</span>(msg), <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> (sendSta <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">fprintf</span>(stderr, <span style="color:#e6db74">&#34;send fail!&#34;</span>);
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">close</span>(connFd);
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">exit</span>(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">close</span>(connFd);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">close</span>(sockfd);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="测试windows客户端程序">测试Windows客户端程序</h2>
+<ul>
+<li>Server : WSL (Windows 1809 LTSC) - Ubuntu 18.04.1</li>
+<li><a href="https://tdtc-hrb.github.io/csdn/post/vc-bsd_socket/">Client code</a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Version: 0.2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Description: Add signal
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * file: bgnetServ.c
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Version: 0.2.1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * New features:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Receive messages from the Windows client program(prj1Clt.exe/prj2Clt.exe).
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * file: bgnetServ2.c
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * $ gcc bgnetServ2.c -o server2.o
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * $ ./server2.o
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;sys/types.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;sys/socket.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;netdb.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;arpa/inet.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;signal.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;sys/wait.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">		</span><span style="color:#75715e">/* exit declare */</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;unistd.h&gt;</span><span style="color:#75715e">		</span><span style="color:#75715e">/* fork declare */</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define SERVPORT &#34;3293&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sigchild_handler</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">while</span> (waitpid(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, NULL, WNOHANG) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>);	
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>argv[])
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">addrinfo</span> hints, <span style="color:#f92672">*</span>res;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> status;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> sockfd;
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> connFd;
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">/* struct sockaddr_in cliAddr;  Only IPv4  */</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">sockaddr_storage</span> clientAddr;	<span style="color:#75715e">/* both IPv4 and IPv6 */</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">sigaction</span> sa;
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> recvSta;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">char</span> buffer[<span style="color:#ae81ff">1024</span>];
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> sendSta;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>msg;
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	if (argc != 2) {
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">		fprintf(stderr, &#34;Usage: Not found Read File&#34;);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">		return 1;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	}
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	*/</span>
+</span></span><span style="display:flex;"><span>	memset(<span style="color:#f92672">&amp;</span>hints, <span style="color:#ae81ff">0</span>, <span style="color:#66d9ef">sizeof</span>(hints));
+</span></span><span style="display:flex;"><span>	hints.ai_family <span style="color:#f92672">=</span> AF_UNSPEC;
+</span></span><span style="display:flex;"><span>	hints.ai_socktype <span style="color:#f92672">=</span> SOCK_STREAM;
+</span></span><span style="display:flex;"><span>	hints.ai_flags <span style="color:#f92672">=</span> AI_PASSIVE;
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	status <span style="color:#f92672">=</span> getaddrinfo(NULL, SERVPORT, <span style="color:#f92672">&amp;</span>hints, <span style="color:#f92672">&amp;</span>res);
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (status <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>		fprintf(stderr, <span style="color:#e6db74">&#34;getaddrinfo, fail!&#34;</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	sockfd <span style="color:#f92672">=</span> socket(res<span style="color:#f92672">-&gt;</span>ai_family, res<span style="color:#f92672">-&gt;</span>ai_socktype, res<span style="color:#f92672">-&gt;</span>ai_protocol);
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	bind(sockfd, res<span style="color:#f92672">-&gt;</span>ai_addr, res<span style="color:#f92672">-&gt;</span>ai_addrlen);
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	listen(sockfd, <span style="color:#ae81ff">5</span>);
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	printf(<span style="color:#e6db74">&#34;======== Please Wait Client =========</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">/* struct sigaction notes from POSIX:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> 	 *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> 	 *  (1) Routines stored in sa_handler should take a single int as
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> 	 *      their argument although the POSIX standard does not require this.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> 	 *  (2) The fields sa_handler and sa_sigaction may overlap, and a conforming
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> 	 *      application should not use both simultaneously.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> 	 */</span>
+</span></span><span style="display:flex;"><span>	sa.sa_handler <span style="color:#f92672">=</span> sigchild_handler;	
+</span></span><span style="display:flex;"><span>	sigemptyset(<span style="color:#f92672">&amp;</span>sa.sa_mask);	<span style="color:#75715e">/* Additional set of signals to be blocked */</span>
+</span></span><span style="display:flex;"><span>                              	<span style="color:#75715e">/* during execution of signal-catching function. */</span>
+</span></span><span style="display:flex;"><span>	sa.sa_flags <span style="color:#f92672">=</span> SA_RESTART;	<span style="color:#75715e">/* Special flags to affect behavior of signal */</span>
+</span></span><span style="display:flex;"><span>								<span style="color:#75715e">/* 0x10000000 	// Restart syscall on signal return */</span>
+</span></span><span style="display:flex;"><span>								
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (sigaction(SIGCHLD, <span style="color:#f92672">&amp;</span>sa, NULL) <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) {	<span style="color:#75715e">/* SIGCHLD 20	// to parent on child stop or exit */</span>
+</span></span><span style="display:flex;"><span>		fprintf(stderr, <span style="color:#e6db74">&#34;sigaction fail!&#34;</span>);
+</span></span><span style="display:flex;"><span>		exit(<span style="color:#ae81ff">3</span>);	
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">while</span>(<span style="color:#ae81ff">1</span>) { <span style="color:#75715e">// loop forever!
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">char</span> ipstr[INET_ADDRSTRLEN];
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>addr;
+</span></span><span style="display:flex;"><span>		
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">int</span> len <span style="color:#f92672">=</span> <span style="color:#66d9ef">sizeof</span>(clientAddr);
+</span></span><span style="display:flex;"><span>		connFd <span style="color:#f92672">=</span> accept(sockfd, (<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">sockaddr</span> <span style="color:#f92672">*</span>)<span style="color:#f92672">&amp;</span>clientAddr, <span style="color:#f92672">&amp;</span>len);
+</span></span><span style="display:flex;"><span>		
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">/* View Client IP */</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">sockaddr_in</span> <span style="color:#f92672">*</span>ipv4 <span style="color:#f92672">=</span> (<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">sockaddr_in</span> <span style="color:#f92672">*</span>)<span style="color:#f92672">&amp;</span>clientAddr;
+</span></span><span style="display:flex;"><span>		addr <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>(ipv4<span style="color:#f92672">-&gt;</span>sin_addr);
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>		inet_ntop(AF_INET, addr, ipstr, <span style="color:#66d9ef">sizeof</span>(ipstr));
+</span></span><span style="display:flex;"><span>		printf(<span style="color:#e6db74">&#34;client: %s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ipstr);
+</span></span><span style="display:flex;"><span>		
+</span></span><span style="display:flex;"><span>		recvSta <span style="color:#f92672">=</span> recv(connFd, buffer, <span style="color:#66d9ef">sizeof</span>(buffer), <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span>(recvSta <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>			printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, buffer);
+</span></span><span style="display:flex;"><span>		
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>fork()) {
+</span></span><span style="display:flex;"><span>			close(sockfd);	<span style="color:#75715e">/* child doesn&#39;t need the listener */</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">/* Copy Data */</span>
+</span></span><span style="display:flex;"><span>			msg <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;The Server Simply displays a message!</span><span style="color:#ae81ff">\r</span><span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>			sendSta <span style="color:#f92672">=</span> send(connFd, msg, strlen(msg), <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> (sendSta <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>				fprintf(stderr, <span style="color:#e6db74">&#34;send fail!&#34;</span>);
+</span></span><span style="display:flex;"><span>			close(connFd);
+</span></span><span style="display:flex;"><span>			exit(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		
+</span></span><span style="display:flex;"><span>		close(connFd);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	close(sockfd);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div> <a class="read-more" href="/csdn/post/c-bsd_socket-server/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-05-16T08:08:08&#43;08:00">
+            16 May 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/java-maven-qa1/">maven的QA</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="1-orgeclipsem2emaven2_classpath_container">1. org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER</h1>
+<p>Q:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Classpath entry org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER will not be exported or published. Runtime ClassNotFoundExceptions may result.  
+</span></span></code></pre></div><p>A:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$mvn eclipse:clean
+</span></span></code></pre></div><h2 id="reference">reference</h2>
+<ul>
+<li><a href="https://stackoverflow.com/questions/37624859/what-is-org-eclipse-m2e-maven2-classpath-container-and-how-do-i-make-it-work-in">what-is-org-eclipse-m2e-maven2-classpath-container-and-how-do-i-make-it-work-in</a></li>
+</ul>
+<h1 id="2-no-main-manifest-attribute-java-jar">2. no main manifest attribute java jar</h1>
+<p>Q:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$java -jar cliDemo-0.0.1-SNAPSHOT.jar
+</span></span><span style="display:flex;"><span>no main manifest attribute, in cliDemo-0.0.1-SNAPSHOT.jar
+</span></span></code></pre></div><p>A:</p>
+<blockquote>
+<p>for win:</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>java -cp cliDemo-0.0.1-SNAPSHOT.jar;C:<span style="color:#ae81ff">\U</span>sers<span style="color:#ae81ff">\x</span>iaobin<span style="color:#ae81ff">\.</span>m2<span style="color:#ae81ff">\r</span>epository<span style="color:#ae81ff">\c</span>ommons-cli<span style="color:#ae81ff">\c</span>ommons-cli<span style="color:#ae81ff">\1</span>.4<span style="color:#ae81ff">\c</span>ommons-cli-1.4.jar my.csdn9.ConsoleLauncher --help
+</span></span></code></pre></div><h2 id="reference-1">Reference</h2>
+<ul>
+<li><a href="https://stackoverflow.com/questions/41035499/how-to-run-jar-files-depend-on-jar-files">how-to-run-jar-files-depend-on-jar-files</a></li>
+</ul>
+<h1 id="3-coreexception-could-not-calculate-build-plan-plugin-orgapachemavenpluginsmaven-compiler-plugin">3. CoreException: Could not calculate build plan: Plugin org.apache.maven.plugins:maven-compiler-plugin</h1>
+<p>Q:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>CoreException: Could not calculate build plan: Plugin org.apache.maven.plugins:maven-compiler-plugin:3.1 or one of its dependencies could not be resolved: Failure to find org.apache.maven.plugins:maven-compiler-plugin:jar:3.1 in http://repository.jboss.org/nexus/content/groups/public was cached in the local repository, resolution will not be reattempted <span style="color:#66d9ef">until</span> the update interval of jboss-public-repository-group has elapsed or updates are forced
+</span></span></code></pre></div><p>A:
+找到maven库目录，进入：~.m2\repository\org\apache\maven\plugins\maven-compiler-plugin   <br>
+删除3.1文件夹</p> <a class="read-more" href="/csdn/post/java-maven-qa1/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-05-15T10:08:08&#43;08:00">
+            15 May 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/java-springboot-jpa/">thymeleaf &#43; Spring Boot &#43; JPA</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="1-自动构建">1. 自动构建</h1>
+<h2 id="1-boot向导">1) <a href="https://start.spring.io/">boot向导</a></h2>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/springboot-dep.png" alt="project wizzard"></p>
+<h2 id="2-pom依赖">2) pom依赖</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;project</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">xsi:schemaLocation=</span><span style="color:#e6db74">&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;modelVersion&gt;</span>4.0.0<span style="color:#f92672">&lt;/modelVersion&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;groupId&gt;</span>com.example<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;artifactId&gt;</span>demo<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;version&gt;</span>0.0.2-SNAPSHOT<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;packaging&gt;</span>jar<span style="color:#f92672">&lt;/packaging&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;name&gt;</span>demo-jpa<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;description&gt;</span>Demo project for Spring Boot<span style="color:#f92672">&lt;/description&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;parent&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;artifactId&gt;</span>spring-boot-starter-parent<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;version&gt;</span>2.0.2.RELEASE<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;relativePath/&gt;</span> <span style="color:#75715e">&lt;!-- lookup parent from repository --&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;/parent&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;properties&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;project.build.sourceEncoding&gt;</span>UTF-8<span style="color:#f92672">&lt;/project.build.sourceEncoding&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;project.reporting.outputEncoding&gt;</span>UTF-8<span style="color:#f92672">&lt;/project.reporting.outputEncoding&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;java.version&gt;</span>1.8<span style="color:#f92672">&lt;/java.version&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;/properties&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;dependencies&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;artifactId&gt;</span>spring-boot-starter-data-jpa<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;artifactId&gt;</span>spring-boot-starter-web<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;artifactId&gt;</span>spring-boot-devtools<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;scope&gt;</span>runtime<span style="color:#f92672">&lt;/scope&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;groupId&gt;</span>mysql<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;artifactId&gt;</span>mysql-connector-java<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;scope&gt;</span>runtime<span style="color:#f92672">&lt;/scope&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;artifactId&gt;</span>spring-boot-starter-test<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;scope&gt;</span>test<span style="color:#f92672">&lt;/scope&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;artifactId&gt;</span>spring-boot-starter-thymeleaf<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;/dependencies&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;build&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;plugins&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;plugin&gt;</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#f92672">&lt;artifactId&gt;</span>spring-boot-maven-plugin<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;/plugin&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;/plugins&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;/build&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/project&gt;</span>
+</span></span></code></pre></div><h1 id="2-dml">2. DML</h1>
+<h2 id="1-db">1) DB</h2>
+<h3 id="applicationproperties">application.properties</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.driverClassName</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">com.mysql.jdbc.Driver</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.url</span><span style="color:#f92672">=</span><span style="color:#e6db74">jdbc:mysql://localhost:3306/test</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.username</span><span style="color:#f92672">=</span><span style="color:#e6db74">DBAdmin</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.password</span><span style="color:#f92672">=</span><span style="color:#e6db74">xbfirst</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.tomcat.max-wait</span><span style="color:#f92672">=</span><span style="color:#e6db74">20000</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.tomcat.max-active</span><span style="color:#f92672">=</span><span style="color:#e6db74">50</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.tomcat.max-idle</span><span style="color:#f92672">=</span><span style="color:#e6db74">20</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.tomcat.min-idle</span><span style="color:#f92672">=</span><span style="color:#e6db74">15</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.jpa.properties.hibernate.dialect</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">org.hibernate.dialect.MySQLDialect</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.jpa.properties.hibernate.id.new_generator_mappings</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.jpa.properties.hibernate.format_sql</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">logging.level.org.hibernate.SQL</span><span style="color:#f92672">=</span><span style="color:#e6db74">DEBUG</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">logging.level.org.hibernate.type.descriptor.sql.BasicBinder</span><span style="color:#f92672">=</span><span style="color:#e6db74">TRACE</span>
+</span></span></code></pre></div><h3 id="sql">SQL</h3>
+<blockquote>
+<p>table: user_details</p> <a class="read-more" href="/csdn/post/java-springboot-jpa/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-05-10T10:26:39&#43;08:00">
+            10 May 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c-string-i2h/">十进制转十六进制</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>工作原理：</p>
+<blockquote>
+<p>规则是从低位到高位
+被除数，除以16, 直到商小于16。  <br>
+将余数加上余商，就是16进制数。</p></blockquote>
+<ul>
+<li>被除数</li>
+</ul>
+<ol>
+<li>等于转换数</li>
+<li>等于商 <br>
+如果商大于16，就是被除数。</li>
+</ol>
+<h1 id="手算">手算</h1>
+<p>10进制：1566</p>
+<p>  (1) 1566 ÷ 16 = 97    余数为14 <br>
+  (2) 97   ÷ 16 = 6     余数为1</p>
+<p>16进制：第1个余数(14) + 第2个余数(1) + 余商(6)  = 0x61E</p>
+<h1 id="code">code</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Int2hex.c
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *  Created on: 2010-07-20
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *      Author: xiaobin
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">int2hex</span>(<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> input, <span style="color:#66d9ef">char</span> output[]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> argv[])
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> iDigit <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>; <span style="color:#75715e">// 2205071409 // date: 2022.5.7 14:09
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">char</span> out[<span style="color:#ae81ff">10</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> k;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> input <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (argc <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        input <span style="color:#f92672">=</span> <span style="color:#a6e22e">atoll</span>(argv[<span style="color:#ae81ff">1</span>]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">int2hex</span>(input, out);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s%llu%s&#34;</span>, <span style="color:#e6db74">&#34;Integer: &#34;</span>, input, <span style="color:#e6db74">&#34; Hex: 0x&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (k <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; k <span style="color:#f92672">&lt;</span> iDigit; k<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">char</span> ch <span style="color:#f92672">=</span> out[k];
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%c&#34;</span>, ch);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">int2hex</span>(<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> input, <span style="color:#66d9ef">char</span> output[]) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">9</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> j;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (((input <span style="color:#f92672">%</span> <span style="color:#ae81ff">16</span>) <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">||</span> (input <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">15</span>)) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">char</span> tempCh;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">switch</span> (input <span style="color:#f92672">%</span> <span style="color:#ae81ff">16</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>                 tempCh <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;0&#39;</span>;
+</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>                 tempCh <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;1&#39;</span>;
+</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>                 tempCh <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;2&#39;</span>;
+</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>                 tempCh <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;3&#39;</span>;
+</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">4</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>                 tempCh <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;4&#39;</span>;
+</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">5</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>                 tempCh <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;5&#39;</span>;
+</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">6</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>                 tempCh <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;6&#39;</span>;
+</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">7</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>                 tempCh <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;7&#39;</span>;
+</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">8</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>                 tempCh <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;8&#39;</span>;
+</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">9</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>                 tempCh <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;9&#39;</span>;
+</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">10</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>                 tempCh <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;A&#39;</span>;
+</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">11</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>                 tempCh <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;B&#39;</span>;
+</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">12</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>                 tempCh <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;C&#39;</span>;
+</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">13</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>                 tempCh <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;D&#39;</span>;
+</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">14</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>                 tempCh <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;E&#39;</span>;
+</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">15</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>                 tempCh <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;F&#39;</span>;
+</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        output[i] <span style="color:#f92672">=</span> tempCh;
+</span></span><span style="display:flex;"><span>        input <span style="color:#f92672">=</span> input <span style="color:#f92672">/</span> <span style="color:#ae81ff">16</span>;
+</span></span><span style="display:flex;"><span>        i<span style="color:#f92672">--</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (j <span style="color:#f92672">=</span> i; j <span style="color:#f92672">&gt;</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; j<span style="color:#f92672">--</span>)
+</span></span><span style="display:flex;"><span>        output[j] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;0&#39;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div> <a class="read-more" href="/csdn/post/c-string-i2h/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-05-07T00:08:08&#43;08:00">
+            7 May 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql-master-slave-replication/">MySQL 主从复制</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><blockquote>
+<p>在进行配置前，请确认已经安装 <a href="https://tdtc-hrb.github.io/csdn/post/mysql57-cenos7/">mysql5.7 - CentOS</a></p></blockquote>
+<h1 id="1-网络配置">1. 网络配置</h1>
+<p>Replication Group 1:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Name</th>
+          <th>IP</th>
+          <th>Memo</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>mysql1</td>
+          <td>192.168.0.160</td>
+          <td>Master</td>
+      </tr>
+      <tr>
+          <td>mysql11</td>
+          <td>192.168.0.161</td>
+          <td>Slave</td>
+      </tr>
+      <tr>
+          <td>mysql12</td>
+          <td>192.168.0.162</td>
+          <td>Slave</td>
+      </tr>
+  </tbody>
+</table>
+<p>Replication Group 2(Maria DB):</p>
+<table>
+  <thead>
+      <tr>
+          <th>Name</th>
+          <th>IP</th>
+          <th>Memo</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>mysql2</td>
+          <td>192.168.0.170</td>
+          <td>Master</td>
+      </tr>
+      <tr>
+          <td>mysql21</td>
+          <td>192.168.0.171</td>
+          <td>Slave</td>
+      </tr>
+      <tr>
+          <td>mysql22</td>
+          <td>192.168.0.172</td>
+          <td>Slave</td>
+      </tr>
+  </tbody>
+</table>
+<h1 id="2-configure-mysql-cluster">2. Configure MySQL cluster</h1>
+<h2 id="1-master-server">1) Master Server</h2>
+<p><a href="https://dev.mysql.com/doc/refman/5.7/en/replication-howto-masterbaseconfig.html">Setting the Replication Master Configuration</a></p>
+<blockquote>
+<p>/etc/my.cnf</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>mysqld<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>log-bin<span style="color:#f92672">=</span>mysql160-bin
+</span></span><span style="display:flex;"><span>server-id<span style="color:#f92672">=</span><span style="color:#ae81ff">160</span>
+</span></span></code></pre></div><h2 id="2-slave-server">2) Slave Server</h2>
+<p><a href="https://dev.mysql.com/doc/refman/5.7/en/replication-setup-slaves.html">Setting the Replication Slave Configuration</a></p>
+<blockquote>
+<p>/etc/my.cnf</p></blockquote>
+<ul>
+<li>Slave 1</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>mysqld<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>server-id<span style="color:#f92672">=</span><span style="color:#ae81ff">161</span>
+</span></span></code></pre></div><ul>
+<li>Slave 2</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>mysqld<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>server-id<span style="color:#f92672">=</span><span style="color:#ae81ff">162</span>
+</span></span></code></pre></div><h1 id="3-replication-user">3. replication user</h1>
+<blockquote>
+<p>Master Server
+<a href="https://dev.mysql.com/doc/refman/5.7/en/replication-howto-repuser.html">Creating a User for Replication</a></p> <a class="read-more" href="/csdn/post/mysql-master-slave-replication/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-04-13T09:38:08&#43;08:00">
+            13 Apr 2022
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_keepalived/">安装配置Keepalived</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><blockquote>
+<p>OS: CentOS7 minimal(VMware)</p></blockquote>
+<h1 id="一安装">一、安装</h1>
+<h2 id="0-prepare-tool">0. prepare tool</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum group list
+</span></span></code></pre></div><h3 id="1-dev-tools">1) dev tools</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum group install <span style="color:#e6db74">&#34;Development Tools&#34;</span>
+</span></span></code></pre></div><h3 id="2-openssl-devel">2) openssl-devel</h3>
+<blockquote>
+<p>update see &ldquo;nginx’s load balancing的安装部分的<a href="https://xiaobin80.gitee.io/csdn/post/ops_nginx/">update OpenSSL</a>&rdquo;</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum install openssl-devel
+</span></span></code></pre></div><h3 id="3-libnl">3) libnl</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum install libnl libnl-devel libnfnetlink-devel
+</span></span></code></pre></div><h2 id="1-keepalived">1. keepalived</h2>
+<blockquote>
+<p>v1.4.5</p></blockquote>
+<h3 id="down-and-unzip">down and unzip</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget http://www.keepalived.org/software/keepalived-1.4.5.tar.gz
+</span></span><span style="display:flex;"><span>$ tar zxvf keepalived-1.4.5.tar.gz
+</span></span></code></pre></div><h3 id="installation">installation</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cd keepalived-1.4.5
+</span></span><span style="display:flex;"><span>$./configure --prefix<span style="color:#f92672">=</span>/usr/local/keepalived
+</span></span><span style="display:flex;"><span>$make
+</span></span></code></pre></div><p>Root permission Required</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$make install
+</span></span></code></pre></div><h3 id="setup">setup</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cp /usr/local/keepalived/sbin/keepalived /usr/sbin/
+</span></span><span style="display:flex;"><span>$mkdir -p /etc/keepalived
+</span></span><span style="display:flex;"><span>$cp /usr/local/keepalived/etc/keepalived/keepalived.conf /etc/keepalived/keepalived.conf
+</span></span><span style="display:flex;"><span>$cp /usr/local/keepalived/etc/sysconfig/keepalived /etc/sysconfig/
+</span></span><span style="display:flex;"><span>$cp /tmp/keepalived-1.4.5/keepalived/etc/init.d/keepalived /etc/init.d/
+</span></span><span style="display:flex;"><span>$chmod <span style="color:#ae81ff">755</span> /etc/init.d/keepalived
+</span></span></code></pre></div><p>edit service config file</p> <a class="read-more" href="/csdn/post/ops_keepalived/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-04-13T08:38:08&#43;08:00">
+            13 Apr 2022
+        </time>
+    </footer>
+</article>
+
+	
+
+	<nav class="pagination" role="navigation">
+	
+	    <a class="newer-posts" href="/csdn/post/page/4/">&larr; Newer Posts</a>
+	
+	<span class="page-number">Page 5 of 12</span>
+	
+	    <a class="older-posts" href="/csdn/post/page/6/">Older Posts &rarr;</a>
+	
+</nav>
+
+</main>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <meta name="referrer" content="no-referrer"/>
+    
+
+
+
+<meta name="twitter:title" content="Posts"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/" />
+
+    
+        
+    
+
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="" />
+    
+
+    <title>Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+        <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+    
+    <meta name="generator" content="Hugo 0.145.0">
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/"
+    },
+    "description":  null 
+}
+  </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/post/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+	<header class="main-header tag-head no-cover">
+
+    <nav class="main-nav overlay clearfix">
+      
+      
+        
+          <a class="menu-button icon-feed" href='/csdn/post/index.xml'>&nbsp;&nbsp;Subscribe</a>
+        
+      
+    </nav>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            <h1 class="page-title">Posts</h1>
+            <h2 class="page-description">
+                
+            </h2>
+        </div>
+    </div>
+</header>
+
+<main class="content" role="main">
+    
+
+	<div class="extra-pagination inner">
+    <nav class="pagination" role="navigation">
+	
+	    <a class="newer-posts" href="/csdn/post/">&larr; Newer Posts</a>
+	
+	<span class="page-number">Page 2 of 12</span>
+	
+	    <a class="older-posts" href="/csdn/post/page/3/">Older Posts &rarr;</a>
+	
+</nav>
+
+	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql57-win/">安装配置MySQL 5.7</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="一配置和安装">一、配置和安装</h1>
+<p>ini配置详见附录</p>
+<h2 id="预配置">预配置</h2>
+<p>需要<a href="https://docs.microsoft.com/en-US/cpp/windows/latest-supported-vc-redist?view=msvc-170#visual-studio-2013-vc-120">vc12 redist</a></p>
+<h3 id="设置环境变量">设置环境变量</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>名称：MYSQL57_HOME
+</span></span><span style="display:flex;"><span>赋值：D:<span style="color:#ae81ff">\p</span>rogFiles<span style="color:#ae81ff">\m</span>ysql-5.7
+</span></span></code></pre></div><h3 id="init-data">init data</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>%MYSQL57_HOME%<span style="color:#ae81ff">\b</span>in<span style="color:#ae81ff">\m</span>ysqld --initialize-insecure --console
+</span></span></code></pre></div><h2 id="注册注销服务">注册/注销服务</h2>
+<h3 id="注册">注册</h3>
+<p>多个版本的MySQL运行：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>%MYSQL57_HOME%<span style="color:#ae81ff">\b</span>in<span style="color:#ae81ff">\m</span>ysqld --install MySQL57 --defaults-file<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;D:\progFiles\mysql-5.7\my.ini&#34;</span>
+</span></span></code></pre></div><h3 id="注销">注销</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sc delete mysql57
+</span></span></code></pre></div><h2 id="warnning-info">warnning info</h2>
+<pre tabindex="0"><code>2024-05-13T16:33:17.643640Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+2024-05-13T16:33:17.644951Z 0 [ERROR] Cannot open Windows EventLog; check privileges, or start server with --log_syslog=0
+2024-05-13T16:33:17.823377Z 0 [Warning] InnoDB: New log files created, LSN=45790
+2024-05-13T16:33:17.859294Z 0 [Warning] InnoDB: Creating foreign key constraint system tables.
+2024-05-13T16:33:17.936952Z 0 [Warning] No existing UUID has been found, so we assume that this is the first time that this server has been started. Generating a new UUID: 80e0a1b1-1146-11ef-a356-00be430eb090.
+2024-05-13T16:33:17.940739Z 0 [Warning] Gtid table is not ready to be used. Table &#39;mysql.gtid_executed&#39; cannot be opened.
+2024-05-13T16:33:18.666030Z 0 [Warning] A deprecated TLS version TLSv1 is enabled. Please use TLSv1.2 or higher.
+2024-05-13T16:33:18.666152Z 0 [Warning] A deprecated TLS version TLSv1.1 is enabled. Please use TLSv1.2 or higher.
+2024-05-13T16:33:18.668880Z 0 [Warning] CA certificate ca.pem is self signed.
+2024-05-13T16:33:18.835389Z 1 [Warning] root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.
+</code></pre><p>注意： 可以忽略如下警告信息：</p> <a class="read-more" href="/csdn/post/mysql57-win/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-05-07T12:08:39&#43;08:00">
+            7 May 2024
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_sudo/">开启sudo</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="new-user">new user</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#useradd tdtc</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#passwd tdtc</span>
+</span></span></code></pre></div><h1 id="append-group">Append group</h1>
+<h2 id="modify-su-file">Modify su file</h2>
+<ul>
+<li>CentOS 6
+v6 and below versions</li>
+</ul>
+<h3 id="open-wheel">Open wheel</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#vi /etc/pam.d/su</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>auth required /lib/security/$ISA/pam_wheel.so use_uid
+</span></span></code></pre></div><h3 id="attachment-of-group-members">Attachment of group members</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#gpasswd -a tdtc wheel</span>
+</span></span></code></pre></div><h2 id="command">Command</h2>
+<ul>
+<li>CentOS 7/8</li>
+<li>Debian <br>
+Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</li>
+</ul>
+<h3 id="centos-78">CentOS 7/8</h3>
+<blockquote>
+<p>CentOS8 needs to be executed locally,
+Unable to execute on ssh network side.</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#usermod –aG wheel tdtc</span>
+</span></span></code></pre></div><h3 id="debian">Debian</h3>
+<pre tabindex="0"><code>adduser tdtc sudo
+</code></pre><h1 id="test">test</h1>
+<p>Query all users with sudo permissions.</p> <a class="read-more" href="/csdn/post/ops_sudo/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-03-20T00:08:08&#43;08:00">
+            20 Mar 2024
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_spark_ubuntu/">安装spark</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
+<blockquote>
+<p>WSL: Ubuntu 18.04.1</p></blockquote>
+<h1 id="prepare">Prepare</h1>
+<blockquote>
+<p>Java 8+, Python 2.7+/3.4+ and R 3.1+</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Spark runs on Java 8+, Python 2.7+/3.4+ and R 3.1+.
+</span></span><span style="display:flex;"><span>For the Scala API, Spark 2.4.1 uses Scala 2.12.
+</span></span><span style="display:flex;"><span>You will need to use a compatible Scala version <span style="color:#f92672">(</span>2.12.x<span style="color:#f92672">)</span>.
+</span></span></code></pre></div><h2 id="1-java">1. java</h2>
+<p><a href="https://xiaobin80.gitee.io/csdn/post/ops_openjdk_ubuntu/">设置OpenJDK - Ubuntu</a></p>
+<h2 id="2-python">2. Python</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install python
+</span></span></code></pre></div><h2 id="3-r-language">3. R language</h2>
+<h3 id="1-add-ppa">1) add ppa</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo add-apt-repository ppa:marutter/rrutter
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span></code></pre></div><h3 id="2-install">2) install</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install r-base r-base-dev
+</span></span></code></pre></div><h1 id="installation">Installation</h1>
+<h2 id="1-unzip">1. unzip</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>~/spark-2.4.1-bin-hadoop2.7
+</span></span></code></pre></div><h2 id="2-test">2. test</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd ~/spark-2.4.1-bin-hadoop2.7
+</span></span></code></pre></div><h3 id="1-pi">1) pi</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./bin/run-example SparkPi <span style="color:#ae81ff">10</span>
+</span></span></code></pre></div><h3 id="2-scala-shell">2) Scala shell</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./bin/spark-shell --master local<span style="color:#f92672">[</span>2<span style="color:#f92672">]</span>
+</span></span></code></pre></div><p>input:</p> <a class="read-more" href="/csdn/post/ops_spark_ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-03-15T08:08:08&#43;08:00">
+            15 Mar 2024
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_openjdk_ubuntu/">设置OpenJDK</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
+<blockquote>
+<p>ubuntu 20.04.2</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wsl1017@DESKTOP-14G6K9S:~$ java -version
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Command <span style="color:#e6db74">&#39;java&#39;</span> not found, but can be installed with:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo apt install default-jre
+</span></span><span style="display:flex;"><span>sudo apt install openjdk-11-jre-headless
+</span></span><span style="display:flex;"><span>sudo apt install openjdk-8-jre-headless
+</span></span></code></pre></div><h1 id="installation">installation</h1>
+<ol>
+<li>install jre</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wsl1017@DESKTOP-14G6K9S:/tmp$ sudo apt-get install openjdk-8-jre-headless
+</span></span></code></pre></div><ol start="2">
+<li>install jdk</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install openjdk-8-jdk-headless
+</span></span></code></pre></div><ol start="3">
+<li>set JAVA home</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/profile
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export JAVA_HOME<span style="color:#f92672">=</span>/usr/lib/jvm/java-8-openjdk-amd64
+</span></span></code></pre></div><h2 id="ubuntu-version"><a href="https://askubuntu.com/a/944260">ubuntu version</a></h2>
+<p>The very short answer is that OpenJDK 8 as of 2017-08-08 is not officially available for Ubuntu 14.04.</p> <a class="read-more" href="/csdn/post/ops_openjdk_ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-03-15T07:08:08&#43;08:00">
+            15 Mar 2024
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_network_adapter_linux/">Linux修改网卡为固定IP</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><ul>
+<li>RHEL</li>
+<li>Diban <br>
+Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</li>
+</ul>
+<h1 id="rhel-like">RHEL-like</h1>
+<ul>
+<li>Alma/Rocky</li>
+<li>CentOS <br>
+Less than RHEL version 8</li>
+</ul>
+<h2 id="view">View</h2>
+<p>net adapter list:</p>
+<pre tabindex="0"><code>$cd /etc/sysconfig/network-scripts
+$ls ifcfg-* -l
+</code></pre><h3 id="ipv4">ipv4</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ip addr
+</span></span></code></pre></div><h3 id="ipv6">ipv6</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ip -6 addr
+</span></span></code></pre></div><h2 id="setup">Setup</h2>
+<p>Start job network adapter:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ONBOOT<span style="color:#f92672">=</span>yes
+</span></span></code></pre></div><h3 id="static">static</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cd /etc/sysconfig/network-scripts
+</span></span><span style="display:flex;"><span>$sudo vi ifcfg-enp0s3
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>BOOTPROTO<span style="color:#f92672">=</span>none
+</span></span><span style="display:flex;"><span>IPADDR<span style="color:#f92672">=</span>192.168.1.186
+</span></span><span style="display:flex;"><span>PREFIX<span style="color:#f92672">=</span><span style="color:#ae81ff">24</span>
+</span></span><span style="display:flex;"><span>GATEWAY<span style="color:#f92672">=</span>192.168.1.1
+</span></span><span style="display:flex;"><span>DNS1<span style="color:#f92672">=</span>211.161.191.235
+</span></span><span style="display:flex;"><span>DNS2<span style="color:#f92672">=</span>211.161.122.197
+</span></span></code></pre></div><h3 id="ipv6-network">IPv6 Network</h3>
+<ul>
+<li>IPV6INIT=yes <br>
+This initializes the interface for IPv6 addressing.</li>
+<li>IPV6_AUTOCONF=yes <br>
+This enables the IPv6 auto-configuration for the interface.</li>
+<li>IPV6_DEFROUTE=yes <br>
+This indicates that the default IPv6 route has been assigned to the interface.</li>
+<li>IPV6_FAILURE_FATAL=no <br>
+indicates that the system won’t fail even when IPv6 fails.</li>
+</ul>
+<h3 id="virtual-machine">virtual machine</h3>
+<p>设置Network Adapter为Bridged</p> <a class="read-more" href="/csdn/post/ops_network_adapter_linux/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-03-12T08:38:08&#43;08:00">
+            12 Mar 2024
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_dc_redis_ubuntu/">安装redis-server</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
+<h1 id="1-安装">1. 安装</h1>
+<p>Prerequisites:</p>
+<pre tabindex="0"><code>sudo apt install lsb-release curl gpg
+</code></pre><p>Add the repository to the apt index:</p>
+<pre tabindex="0"><code>curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
+
+echo &#34;deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main&#34; | sudo tee /etc/apt/sources.list.d/redis.list
+</code></pre><ul>
+<li>install</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install redis-server
+</span></span></code></pre></div><h2 id="launch">Launch</h2>
+<ul>
+<li>local(WSL)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>redis-server
+</span></span></code></pre></div><ul>
+<li>remote(Virtual Box or VM ware etc.)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo redis-server /etc/redis/redis.conf
+</span></span></code></pre></div><h3 id="view-port">View port</h3>
+<p>install netstat:</p> <a class="read-more" href="/csdn/post/ops_dc_redis_ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-03-10T08:08:08&#43;08:00">
+            10 Mar 2024
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/version-ubuntu/">查看版本-Ubuntu</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
+<h1 id="components-version">components version</h1>
+<p>查看内核版本:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#uname -a</span>
+</span></span></code></pre></div><h2 id="查看glibc库版本">查看Glibc库版本</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#apt-cache show libc6</span>
+</span></span></code></pre></div><h2 id="查看binutils版本">查看binutils版本</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#ld -v</span>
+</span></span></code></pre></div><h1 id="查看ubuntu版本号">查看ubuntu版本号</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#cat /etc/issue</span>
+</span></span></code></pre></div><h2 id="查看debian对应版本">查看debian对应版本</h2>
+<pre tabindex="0"><code>#cat /etc/debian_version
+</code></pre><h3 id="debian-code-name"><a href="https://www.debian.org/releases/">debian code name</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>code</th>
+          <th>version</th>
+          <th>status</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>bullseye</td>
+          <td>11</td>
+          <td>statble</td>
+      </tr>
+      <tr>
+          <td>buster</td>
+          <td>10</td>
+          <td>old statble</td>
+      </tr>
+      <tr>
+          <td>stretch</td>
+          <td>9</td>
+          <td>old old statble</td>
+      </tr>
+      <tr>
+          <td>jessie</td>
+          <td>8</td>
+          <td>archived</td>
+      </tr>
+      <tr>
+          <td>wheezy</td>
+          <td>7</td>
+          <td>obsolete</td>
+      </tr>
+      <tr>
+          <td>squeeze</td>
+          <td>6.0</td>
+          <td>obsolete</td>
+      </tr>
+      <tr>
+          <td>lenny</td>
+          <td>5.0</td>
+          <td>obsolete</td>
+      </tr>
+      <tr>
+          <td>etch</td>
+          <td>4.0</td>
+          <td>obsolete</td>
+      </tr>
+      <tr>
+          <td>sarge</td>
+          <td>3.1</td>
+          <td>obsolete</td>
+      </tr>
+      <tr>
+          <td>woody</td>
+          <td>3.0</td>
+          <td>obsolete</td>
+      </tr>
+      <tr>
+          <td>potato</td>
+          <td>2.2</td>
+          <td>obsolete</td>
+      </tr>
+      <tr>
+          <td>slink</td>
+          <td>2.1</td>
+          <td>obsolete</td>
+      </tr>
+      <tr>
+          <td>hamm</td>
+          <td>2.0</td>
+          <td>obsolete</td>
+      </tr>
+  </tbody>
+</table> <a class="read-more" href="/csdn/post/version-ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        on
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/glibc/">#Glibc</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/sh/">#sh</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/binutils/">#binutils</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/system/">#system</a>,
+            
+        
+        <time class="post-date" datetime="2024-03-01T02:12:39&#43;08:00">
+            1 Mar 2024
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/dp-cor-java/">Chain of Command 模式</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>我们知道Chain of Responsibility模式，其实就是Template method + Next。</p>
+<p>在进行多个调用时，按顺序执行；需要调用2个方法。</p>
+<p>此模式，只适合抽象方法！</p>
+<p>在进行设计模式的程序实现中xiaobin使用已编写的SSL程序做演示。</p>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/chain-of-command.png" alt="chain of command"></p>
+<h2 id="chain-of-command">Chain of Command</h2>
+<pre tabindex="0"><code>import com.cartionsoft.xbf.ContentXbf;
+import com.cartionsoft.xbf.LibXbf;
+import com.cartionsoft.xbf.ReadXbf;
+import com.cartionsoft.xbf.XiaobinFile;
+
+public class Demo {
+
+	public static void init() throws Exception {
+		int stationID = 0;
+	    String keyPWD;
+
+		String libPath = &#34;xbfLibR.dll&#34;;
+		String xbfPath = &#34;C://send//dySSL.xbf&#34;;
+
+		ContentXbf contentXbf = new ContentXbf(xbfPath);
+
+        // All checks are linked. Client can build various chains using the same
+        // components.
+        XiaobinFile xiaobinFile = XiaobinFile.link(
+            new LibXbf(libPath),
+            new ReadXbf()
+        );
+
+        // Server gets a chain from client code.
+        contentXbf.setXbf(xiaobinFile);
+        
+        stationID = contentXbf.getStationID(-1);
+        keyPWD = contentXbf.getKeyPWD(-1);
+        
+        System.out.println(keyPWD + &#34; : &#34; + stationID);
+	}
+
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+		init();
+	}
+
+}
+</code></pre><ul>
+<li>template-method(abstract)</li>
+</ul>
+<pre tabindex="0"><code>readRecord()
+</code></pre><ul>
+<li>Next</li>
+</ul>
+<pre tabindex="0"><code>readRecordNext()
+</code></pre><ul>
+<li>traverse</li>
+</ul>
+<pre tabindex="0"><code>link()
+</code></pre><h3 id="next">Next</h3>
+<pre tabindex="0"><code>	/**
+     * Runs readRecord on the next object in chain or ends traversing if we&#39;re in
+     * last object in chain.
+     */
+    protected String readRecordNext(int dimRecord, String filename) {
+        if (next == null) {
+            return &#34;&#34;;
+        }
+        return next.readRecord(dimRecord, filename);
+    }
+</code></pre><h3 id="link">link</h3>
+<pre tabindex="0"><code>    /**
+     * Builds chains of XiaobinFile objects.
+     */
+    public static XiaobinFile link(XiaobinFile first, XiaobinFile... chain) {
+    	XiaobinFile head = first;
+        for (XiaobinFile nextInChain: chain) {
+            head.next = nextInChain;
+            head = nextInChain;
+        }
+        return first;
+    }
+</code></pre> <a class="read-more" href="/csdn/post/dp-cor-java/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-12-22T12:08:08&#43;08:00">
+            22 Dec 2023
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/dp-template-java/">模板方法模式</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>我们知道模板方法模式，其实就是等待被实现的方法。</p>
+<p>在进行多个可选择调用时，可以根据不同的方式；只调用一个方法即可解决不同的实现。</p>
+<p>此模式，只适合抽象方法！</p>
+<p>在进行设计模式的程序实现中xiaobin使用已编写的SSL程序做演示。</p>
+<p><img src="https://github.com/tdtc-hrb/cnblogs/raw/master/images/template-method.png" alt="template method"></p>
+<h2 id="template-method">Template Method</h2>
+<pre tabindex="0"><code>import java.io.*;
+import java.util.*;
+import javax.net.ssl.*;
+
+public abstract class Transmission {
+
+	protected String host;
+	protected int port;
+	protected String keyPath;
+	protected String keyPwd;
+	
+	private SSLSocket socket;
+	
+	protected abstract SSLSocket createSocket() throws Exception;
+	
+	/**
+	 * &lt;p&gt; Receive byte array data &lt;/p&gt;
+	 * @return data
+	 */
+	public byte[] receiveData() throws Exception {
+		// TODO Auto-generated method stub
+		socket = createSocket();
+		
+		InputStream in = new BufferedInputStream(
+				socket.getInputStream());
+		int b;
+		List&lt;Byte&gt; listBuffer = new ArrayList&lt;Byte&gt;();
+		while((b = in.read()) != -1) {
+			listBuffer.add((byte) b);
+		}
+		
+		int i = 0;
+		byte[] data = new byte[listBuffer.size()];
+		for (Byte byte1 : listBuffer) {
+			data[i] = byte1;
+			i++;
+		}
+
+		in.close();
+		
+		return data;
+	}
+	
+	/**
+	 * &lt;p&gt; Send byte array data &lt;/p&gt;
+	 * @param data
+	 */
+	public void sendData(byte[] data) throws Exception {
+		socket = createSocket();
+		OutputStream out = new BufferedOutputStream(
+				socket.getOutputStream());
+		out.write(data);
+		out.flush();
+		out.close();
+	}
+}
+</code></pre><p>template-method(abstract):</p> <a class="read-more" href="/csdn/post/dp-template-java/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-12-08T12:08:08&#43;08:00">
+            8 Dec 2023
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c-automake/">生成makefile</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><ul>
+<li>automake</li>
+<li>manual make</li>
+</ul>
+<h1 id="automake">automake</h1>
+<p>注意: am文件是需要手工创建的!</p>
+<h2 id="ac文件">ac文件</h2>
+<p>生成configure.scan文件, 并重命名为configure.ac</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ autoscan
+</span></span><span style="display:flex;"><span>$ mv configure.scan configure.ac
+</span></span></code></pre></div><h3 id="修改配置">修改配置</h3>
+<p>注意: 所有新修改的值都需要方括号([])</p>
+<ul>
+<li>程序属性</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_INIT<span style="color:#f92672">([</span>hex2int<span style="color:#f92672">]</span>, <span style="color:#f92672">[</span>v0.1<span style="color:#f92672">]</span>, <span style="color:#f92672">[</span>veic_2005@163.com<span style="color:#f92672">])</span>
+</span></span></code></pre></div><ul>
+<li>目录结构
+如果只有本目录, 使用空值</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AM_INIT_AUTOMAKE
+</span></span></code></pre></div><ul>
+<li>检查编译器
+<a href="http://www.adp-gmbh.ch/misc/tools/configure/configure_in.html#ac_prog_cc">C compiler</a>:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_PROG_CC
+</span></span></code></pre></div><p><a href="http://www.adp-gmbh.ch/misc/tools/configure/configure_in.html#ac_prog_cxx">C++ compiler</a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_PROG_CXX
+</span></span></code></pre></div><ul>
+<li><a href="https://www.gnu.org/software/autoconf/manual/autoconf-2.71/html_node/Configuration-Files.html">输出Makefile.in</a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_CONFIG_FILES<span style="color:#f92672">([</span>Makefile<span style="color:#f92672">])</span>
+</span></span></code></pre></div><ul>
+<li>检查system头文件</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_CHECK_HEADERS<span style="color:#f92672">([</span>string.h<span style="color:#f92672">])</span>
+</span></span></code></pre></div><h2 id="生成makefile">生成Makefile</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aclocal
+</span></span><span style="display:flex;"><span>autoconf
+</span></span></code></pre></div><h3 id="自定义宏可选">自定义宏(可选)</h3>
+<p>在ac file中的定义：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_CONFIG_HEADERS<span style="color:#f92672">([</span>config.h<span style="color:#f92672">])</span>
+</span></span></code></pre></div><p>执行：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>autoheader
+</span></span></code></pre></div><h3 id="输出makefile">输出Makefile</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>automake --add-missing
+</span></span></code></pre></div><p>输出Makefile:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./configure
+</span></span></code></pre></div><h2 id="example">Example</h2>
+<p>源代码参见<a href="https://tdtc-hrb.github.io/csdn/post/c-string-h2i/">十六进制转十进制</a></p>
+<ul>
+<li>main.c <br>
+只保留主程序入口</li>
+<li>hex2int.c <br>
+保留整个程序的结构</li>
+<li>hex2int.h <br>
+函数名声明</li>
+</ul>
+<h3 id="makefileam">Makefile.am</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AUTOMAKE_OPTIONS<span style="color:#f92672">=</span>foreign
+</span></span><span style="display:flex;"><span>bin_PROGRAMS<span style="color:#f92672">=</span>hex2int
+</span></span><span style="display:flex;"><span>hex2int_SOURCES<span style="color:#f92672">=</span>main.c hex2int.c
+</span></span><span style="display:flex;"><span>include_HEADERS<span style="color:#f92672">=</span>hex2int.h
+</span></span></code></pre></div><h3 id="configureac">configure.ac</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#                                               -*- Autoconf -*-</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Process this file with autoconf to produce a configure script.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>AC_PREREQ<span style="color:#f92672">([</span>2.71<span style="color:#f92672">])</span>
+</span></span><span style="display:flex;"><span>AC_INIT<span style="color:#f92672">([</span>hex2int<span style="color:#f92672">]</span>, <span style="color:#f92672">[</span>v0.1<span style="color:#f92672">]</span>, <span style="color:#f92672">[</span>veic_2005@163.com<span style="color:#f92672">])</span>
+</span></span><span style="display:flex;"><span>AM_INIT_AUTOMAKE
+</span></span><span style="display:flex;"><span>AC_CONFIG_SRCDIR<span style="color:#f92672">([</span>hex2int.c<span style="color:#f92672">])</span>
+</span></span><span style="display:flex;"><span>AC_CONFIG_HEADERS<span style="color:#f92672">([</span>config.h<span style="color:#f92672">])</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Checks for programs.</span>
+</span></span><span style="display:flex;"><span>AC_PROG_CC
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Checks for libraries.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Checks for header files.</span>
+</span></span><span style="display:flex;"><span>AC_CHECK_HEADERS<span style="color:#f92672">([</span>string.h<span style="color:#f92672">])</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Checks for typedefs, structures, and compiler characteristics.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Checks for library functions.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>AC_CONFIG_FILES<span style="color:#f92672">([</span>Makefile<span style="color:#f92672">])</span>
+</span></span><span style="display:flex;"><span>AC_OUTPUT
+</span></span></code></pre></div><h1 id="手动makefile">手动Makefile</h1>
+<blockquote>
+<p>小项目可以。
+注意：所有的命令前必须为TAB，不能使空格！</p> <a class="read-more" href="/csdn/post/c-automake/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-08-08T02:20:39&#43;08:00">
+            8 Aug 2023
+        </time>
+    </footer>
+</article>
+
+	
+
+	<nav class="pagination" role="navigation">
+	
+	    <a class="newer-posts" href="/csdn/post/">&larr; Newer Posts</a>
+	
+	<span class="page-number">Page 2 of 12</span>
+	
+	    <a class="older-posts" href="/csdn/post/page/3/">Older Posts &rarr;</a>
+	
+</nav>
+
+</main>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>

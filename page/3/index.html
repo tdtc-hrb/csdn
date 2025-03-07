@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <meta name="referrer" content="no-referrer"/>
+    
+
+
+
+<meta name="twitter:title" content="迁移自(blog.csdn.net/xiaobin_HLJ80)"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/" />
+
+    
+        
+    
+
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="" />
+    
+
+    <title>迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+        <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+    
+    <meta name="generator" content="Hugo 0.145.0">
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/"
+    },
+    "description":  null 
+}
+  </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header no-cover">
+
+
+    <nav class="main-nav overlay clearfix">
+        
+        
+            
+              <a class="menu-button icon-feed" href='/csdn/index.xml'>&nbsp;&nbsp;Subscribe</a>
+            
+        
+    </nav>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <h1 class="page-title">迁移自(blog.csdn.net/xiaobin_HLJ80)</h1>
+            <h2 class="page-description"></h2>
+        </div>
+    </div>
+    <a class="scroll-down icon-arrow-left" href="#content"><span class="hidden">Scroll Down</span></a>
+</header>
+
+
+<main id="content" class="content" role="main">
+
+    
+        
+    
+
+    
+
+    
+    
+    
+
+    <div class="extra-pagination inner">
+        <nav class="pagination" role="navigation">
+	
+	    <a class="newer-posts" href="/csdn/page/2/">&larr; Newer Posts</a>
+	
+	<span class="page-number">Page 3 of 12</span>
+	
+	    <a class="older-posts" href="/csdn/page/4/">Older Posts &rarr;</a>
+	
+</nav>
+
+    </div>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/java-grammar/">java的grammar</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><ul>
+<li>JDK8 <br>
+At least May 2026 for Eclipse Adoptium</li>
+<li>JDK17 <br>
+At least Oct 2027 for <a href="https://adoptium.net/support/">Eclipse Adoptium</a></li>
+<li>JDK21</li>
+</ul>
+<h1 id="java">Java</h1>
+<h2 id="project-loom">Project Loom</h2>
+<ul>
+<li><a href="https://spring.io/blog/2023/09/09/all-together-now-spring-boot-3-2-graalvm-native-images-java-21-and-virtual">All together now: Spring Boot 3.2, GraalVM native images, Java 21, and virtual threads with Project Loom,</a></li>
+</ul>
+<h2 id="lambda">lambda</h2>
+<p>我们使用实现Runnable的不同来做对比。</p>
+<h3 id="java-7">java 7</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> my.csdn2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.concurrent.ExecutorService;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.concurrent.Executors;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RunnableThread</span> <span style="color:#66d9ef">implements</span> Runnable {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">mul</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">int</span> result <span style="color:#f92672">=</span> 0;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		result <span style="color:#f92672">=</span> x <span style="color:#f92672">*</span> y;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> result;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span>() {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// TODO Auto-generated method stub</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> 5; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> 0; j <span style="color:#f92672">&lt;</span> 5; j<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>				System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;x: &#34;</span> <span style="color:#f92672">+</span> i <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; y: &#34;</span> <span style="color:#f92672">+</span> j <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; result: &#34;</span>);
+</span></span><span style="display:flex;"><span>				System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(mul(i, j));
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	 * @param args
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	 */</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// TODO Auto-generated method stub</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// way 1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//		Thread rt = new Thread(new RunnableThread());</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//		rt.start();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// way 2</span>
+</span></span><span style="display:flex;"><span>		ExecutorService exec <span style="color:#f92672">=</span> Executors.<span style="color:#a6e22e">newCachedThreadPool</span>();
+</span></span><span style="display:flex;"><span>		exec.<span style="color:#a6e22e">execute</span>(<span style="color:#66d9ef">new</span> RunnableThread());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="java8">java8</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> my.csdn2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.concurrent.ExecutorService;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.concurrent.Executors;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RunnableLambdaExample</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">mul</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">int</span> result <span style="color:#f92672">=</span> 0;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		result <span style="color:#f92672">=</span> x <span style="color:#f92672">*</span> y;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> result;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// TODO Auto-generated method stub</span>
+</span></span><span style="display:flex;"><span>		RunnableLambdaExample rle <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RunnableLambdaExample();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		Runnable task1 <span style="color:#f92672">=</span> () <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> 5; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> 0; j <span style="color:#f92672">&lt;</span> 5; j<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>					System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;x: &#34;</span> <span style="color:#f92672">+</span> i <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; y: &#34;</span> <span style="color:#f92672">+</span> j <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; result: &#34;</span>);
+</span></span><span style="display:flex;"><span>					System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(rle.<span style="color:#a6e22e">mul</span>(i, j));
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// way 1</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//Thread rt = new Thread(task1);</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//rt.start();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// way 2</span>
+</span></span><span style="display:flex;"><span>		ExecutorService exec <span style="color:#f92672">=</span> Executors.<span style="color:#a6e22e">newCachedThreadPool</span>();
+</span></span><span style="display:flex;"><span>		exec.<span style="color:#a6e22e">execute</span>(task1);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="scala">Scala</h1>
+<p>在Scala把类和对象明确的分开了。 <br>
+Class相当于模板；Object是Class的实现。</p> <a class="read-more" href="/csdn/post/java-grammar/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-08-08T02:09:28&#43;08:00">
+            8 Aug 2023
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql-mdb-v104/">安装 MariaDB 10.3/10.4(MySQL 5.7)数据库</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><ul>
+<li>OS <br>
+CentOS v7.9(2009)</li>
+<li><a href="https://mariadb.com/kb/en/mariadb-vs-mysql-compatibility/">MariaDB</a>
+<table>
+  <thead>
+      <tr>
+          <th>MariaDB</th>
+          <th>MySQL</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>v10.2/3/4</td>
+          <td>v5.7</td>
+      </tr>
+      <tr>
+          <td>v10.0/1</td>
+          <td>v5.6</td>
+      </tr>
+      <tr>
+          <td>v5.5</td>
+          <td>v5.5</td>
+      </tr>
+  </tbody>
+</table>
+</li>
+</ul>
+<h1 id="1-准备安装">1. 准备安装</h1>
+<blockquote>
+<p>卸载旧版本Maria</p></blockquote>
+<h2 id="1-查询">1) 查询</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>tdtc@localhost ~<span style="color:#f92672">]</span>$ sudo rpm -qa | grep mariadb
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> password <span style="color:#66d9ef">for</span> tdtc:
+</span></span><span style="display:flex;"><span>mariadb-libs-5.5.68-1.el7.x86_64
+</span></span></code></pre></div><h2 id="2-uninstall">2) uninstall</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum -y remove mariadb*
+</span></span></code></pre></div><h1 id="2-install">2. install</h1>
+<h2 id="step-1-add-mariadb-yum-repositories">Step 1: <a href="https://downloads.mariadb.org/mariadb/repositories">Add MariaDB Yum Repositories</a></h2>
+<p>/etc/yum.repos.d/mariadb.repo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># MariaDB 10.4 CentOS repository list - created 2023-08-26 09:24 UTC</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># https://mariadb.org/download/</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>mariadb<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>name <span style="color:#f92672">=</span> MariaDB
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># rpm.mariadb.org is a dynamic mirror if your preferred mirror goes offline. See https://mariadb.org/mirrorbits/ for details.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># baseurl = https://rpm.mariadb.org/10.4/centos/$releasever/$basearch</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># baseurl = https://mirrors.neusoft.edu.cn/mariadb/yum/10.4/centos/$releasever/$basearch ## neusoft</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## aliyun</span>
+</span></span><span style="display:flex;"><span>baseurl <span style="color:#f92672">=</span> https://mirrors.aliyun.com/mariadb/yum/10.4/centos/$releasever/$basearch
+</span></span><span style="display:flex;"><span>module_hotfixes <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># gpgkey = https://rpm.mariadb.org/RPM-GPG-KEY-MariaDB</span>
+</span></span><span style="display:flex;"><span>gpgkey <span style="color:#f92672">=</span> https://mirrors.aliyun.com/mariadb/yum/RPM-GPG-KEY-MariaDB
+</span></span><span style="display:flex;"><span>gpgcheck <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><h2 id="step-2-install-mariadb-server">Step 2: Install MariaDB Server</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install MariaDB-server MariaDB-client
+</span></span></code></pre></div><ul>
+<li>run</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl start mysql.service
+</span></span></code></pre></div><h2 id="step-3-secure-mariadb-install">Step 3: Secure MariaDB Install</h2>
+<blockquote>
+<p>Default: Enter</p> <a class="read-more" href="/csdn/post/mysql-mdb-v104/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-08-06T01:08:39&#43;08:00">
+            6 Aug 2023
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_grub_ubuntu/">grub救援模式</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
+<p>出现“grub rescue&gt;”提示符；也称grub救援模式。</p>
+<h1 id="1-设置引导">1. 设置引导</h1>
+<blockquote>
+<p>(hd?,?)：安装的引导分区  <br>
+在我的机器是(hd0, msdos3)</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>grub rescue&gt;ls
+</span></span><span style="display:flex;"><span>grub rescue&gt;ls <span style="color:#f92672">(</span>hd?,?<span style="color:#f92672">)</span>/boot/grub
+</span></span><span style="display:flex;"><span>grub rescue&gt;set root<span style="color:#f92672">(</span>hd?,?<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>grub rescue&gt;set prefix<span style="color:#f92672">=(</span>hd?,?<span style="color:#f92672">)</span>/boot/grub
+</span></span></code></pre></div><h2 id="insmod">insmod</h2>
+<p>one:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>insmod /boot/grub/normal.mod
+</span></span><span style="display:flex;"><span>/boot/grub/normal
+</span></span></code></pre></div><p>two:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>insmod normal
+</span></span><span style="display:flex;"><span>normal
+</span></span></code></pre></div><h1 id="2-更新grub">2. 更新grub</h1>
+<p>在终端上执行：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo grub-install /dev/sda
+</span></span><span style="display:flex;"><span>sudo update-grub
+</span></span></code></pre></div> <a class="read-more" href="/csdn/post/ops_grub_ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-03-15T00:19:08&#43;08:00">
+            15 Mar 2023
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/css-bootstrap-grid/">Grid system</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>在V2.3.2中，栅格系统默认是不支持移动设备的；  <br>
+但V3.0版本，已经默认支持移动设备。</p>
+<p>在V4.6.x, 更加细化了移动设备支持。</p>
+<h1 id="v2">v2</h1>
+<p><a href="https://getbootstrap.com/2.3.2/scaffolding.html#gridSystem">Bootstrap(v2)</a> 默认的栅格系统为12列 ，
+形成一个940px宽的容器，默认没有启用 &ldquo;<a href="https://getbootstrap.com/2.3.2/scaffolding.html#responsive">响应式布局特性</a>&rdquo; 。 <br>
+如果加入响应式布局CSS文件，栅格系统会自动根据可视窗口的宽度从724px到1170px进行动态调整。 <br>
+在可视窗口低于767px宽的情况下，列将不再固定并且会在垂直方向堆叠。</p>
+<h2 id="example">example</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;row&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;span4&#34;</span><span style="color:#f92672">&gt;</span>...<span style="color:#f92672">&lt;/div&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;span8&#34;</span><span style="color:#f92672">&gt;</span>...<span style="color:#f92672">&lt;/div&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/div&gt;</span>
+</span></span></code></pre></div><h1 id="v3">v3</h1>
+<blockquote>
+<p>class变化：.span* -〉.col-md-*</p></blockquote>
+<p><a href="https://getbootstrap.com/docs/3.4/css/#grid">Bootstrap(v3)</a> 内置了一套响应式、移动设备优先的流式栅格系统，
+随着屏幕设备或视口（viewport）尺寸的增加，系统会自动分为最多12列。
+它包含了易于使用的<a href="https://getbootstrap.com/docs/3.4/css/#grid-example-basic">预定义classe</a>，
+还有强大的<a href="https://getbootstrap.com/docs/3.4/css/#grid-less">mixin用于生成更具语义的布局</a>。</p>
+<h2 id="grid-options"><a href="https://getbootstrap.com/docs/3.4/css/#grid-options">Grid options</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Name</th>
+          <th>Size</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Extra small devices Phones</td>
+          <td>&lt;768px</td>
+      </tr>
+      <tr>
+          <td>Small devices Tablets</td>
+          <td>≥768px</td>
+      </tr>
+      <tr>
+          <td>Medium devices Desktops</td>
+          <td>≥992px</td>
+      </tr>
+      <tr>
+          <td>Large devices Desktops</td>
+          <td>≥1200px</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="example-1">example</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;row&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;col-md-4&#34;</span><span style="color:#f92672">&gt;</span>...<span style="color:#f92672">&lt;/div&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;col-md-8&#34;</span><span style="color:#f92672">&gt;</span>...<span style="color:#f92672">&lt;/div&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/div&gt;</span>
+</span></span></code></pre></div><h1 id="v4">v4</h1>
+<p><a href="https://getbootstrap.com/docs/4.6/layout/grid/">Bootstrap(v4)</a> 调整了小屏幕的适配。
+Switch from Less to Sass for the source CSS files</p>
+<h2 id="grid-options-1"><a href="https://getbootstrap.com/docs/4.6/layout/grid/#grid-options">Grid options</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Name</th>
+          <th>Size</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Extra small</td>
+          <td>&lt;576px</td>
+      </tr>
+      <tr>
+          <td>Small</td>
+          <td>≥576px</td>
+      </tr>
+      <tr>
+          <td>Medium</td>
+          <td>≥768px</td>
+      </tr>
+      <tr>
+          <td>Large</td>
+          <td>≥992px</td>
+      </tr>
+      <tr>
+          <td>Extra large</td>
+          <td>≥1200px</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="example-2">example</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;row&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;col-lg-4&#34;</span><span style="color:#f92672">&gt;</span>...<span style="color:#f92672">&lt;/div&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;col-lg-8&#34;</span><span style="color:#f92672">&gt;</span>...<span style="color:#f92672">&lt;/div&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/div&gt;</span>
+</span></span></code></pre></div> <a class="read-more" href="/csdn/post/css-bootstrap-grid/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-03-10T14:08:08&#43;08:00">
+            10 Mar 2023
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_vi/">简单使用vi</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>The default editor that comes with the UNIX operating system is called vi (visual editor).</p>
+<p>The UNIX vi editor is a full screen editor and has two modes of operation:</p>
+<ul>
+<li>Command mode commands which cause action to be taken on the file, and</li>
+<li>Insert mode in which entered text is inserted into the file.</li>
+</ul>
+<h1 id="insert-mode">Insert mode</h1>
+<ul>
+<li>正常使用</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ vi myfile
+</span></span></code></pre></div><ul>
+<li>恢复使用</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ vi -r myfile
+</span></span></code></pre></div><p>恢复系统崩溃时正在编辑的文件名</p>
+<p>要进行文字编辑工作, 按“i”即进入</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>i
+</span></span></code></pre></div><h2 id="移动光标">移动光标</h2>
+<p>使用方向键来进行位置的移动。</p> <a class="read-more" href="/csdn/post/ops_vi/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-03-10T09:28:08&#43;08:00">
+            10 Mar 2023
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_data_transmission/">Linux与Windows互传数据</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="一光盘">一、光盘</h1>
+<p>制作ISO: <br>
+打开UltralISO，把需要的文件拖拽过去即可。</p>
+<h2 id="2-linux">2. Linux</h2>
+<h3 id="1-look">1) look</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls -l /dev | grep cdrom
+</span></span></code></pre></div><h3 id="2-load">2) load</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mount /dev/cdrom /mnt/
+</span></span></code></pre></div><h3 id="3-unload">3) unload</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo umount /mnt
+</span></span></code></pre></div><h1 id="二scp">二、scp</h1>
+<p>如果Windows没有SSH服务器，只能进行发送.</p>
+<h2 id="发送">发送</h2>
+<ul>
+<li>Linux</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>scp /home/tdtc/go1.19.7.linux-amd64.tar.gz xiaobin@192.168.211.112:/D:<span style="color:#ae81ff">\w</span>ar
+</span></span></code></pre></div><ul>
+<li>Windows <br>
+Windows的scp包含在putty工具中。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pscp f:<span style="color:#ae81ff">\d</span>ocker-soft<span style="color:#ae81ff">\d</span>ocker-compose-Linux-x86_64 tdtc@192.168.211.131:/home/tdtc/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pscp f:<span style="color:#ae81ff">\d</span>ocker-soft<span style="color:#ae81ff">\p</span>rotobuf-cpp-3.21.12.tar.gz tdtc@192.168.211.131:/home/tdtc/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pscp f:<span style="color:#ae81ff">\d</span>ocker-soft<span style="color:#ae81ff">\g</span>o1.19.7.linux-amd64.tar.gz tdtc@192.168.211.131:/home/tdtc
+</span></span></code></pre></div><h2 id="接收">接收</h2>
+<p>注意：仅适用于win10.</p>
+<ul>
+<li>
+<p>安装OpenSSH
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20200222182445523.png" alt="添加功能">
+开始菜单-》设置-》应用-》管理可选功能</p>
+</li>
+<li>
+<p>开启OpenSSH
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/2020022218283850.png" alt="win info">
+注意：关闭Windows防火墙或允许22端口。</p>
+</li>
+</ul> <a class="read-more" href="/csdn/post/ops_data_transmission/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-02-15T16:08:08&#43;08:00">
+            15 Feb 2023
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c-bsd_socket/">unix网络的client和server</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>使用GNU Compiler Collection(GCC)编译的
+一个简单的客户端和服务器端的程序！</p>
+<h1 id="client-side">Client Side</h1>
+<ul>
+<li>flow chart</li>
+</ul>
+<pre tabindex="0"><code>  getaddrinfo() -&gt; socket() -&gt; connect() -&gt; recv()
+</code></pre><ul>
+<li>src</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;sys/types.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;sys/socket.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;arpa/inet.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;netdb.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define SERVIP   &#34;192.168.56.112&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define SERVPORT &#34;2349&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>argv[])
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">struct</span> addrinfo hints, <span style="color:#f92672">*</span>res;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> status;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> sockfd;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> connSta;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> recvSta;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">char</span> buffer[<span style="color:#ae81ff">1024</span>];
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> len;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">char</span> ipstr[INET_ADDRSTRLEN];
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>addr;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (argc <span style="color:#f92672">!=</span> <span style="color:#ae81ff">3</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fprintf</span>(stderr, <span style="color:#e6db74">&#34;Usage: Not Server IP And Port!&#34;</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">memset</span>(<span style="color:#f92672">&amp;</span>hints, <span style="color:#ae81ff">0</span>, <span style="color:#66d9ef">sizeof</span>(hints));
+</span></span><span style="display:flex;"><span>	hints.ai_family <span style="color:#f92672">=</span> AF_UNSPEC;
+</span></span><span style="display:flex;"><span>	hints.ai_socktype <span style="color:#f92672">=</span> SOCK_STREAM;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	status <span style="color:#f92672">=</span> <span style="color:#a6e22e">getaddrinfo</span>(argv[<span style="color:#ae81ff">1</span>], argv[<span style="color:#ae81ff">2</span>], <span style="color:#f92672">&amp;</span>hints, <span style="color:#f92672">&amp;</span>res);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (status <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fprintf</span>(stderr, <span style="color:#e6db74">&#34;Error, Server IP And Port!&#34;</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	sockfd <span style="color:#f92672">=</span> <span style="color:#a6e22e">socket</span>(res<span style="color:#f92672">-&gt;</span>ai_family, res<span style="color:#f92672">-&gt;</span>ai_socktype, res<span style="color:#f92672">-&gt;</span>ai_protocol);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (sockfd <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fprintf</span>(stderr, <span style="color:#e6db74">&#34;Create, socket fail!&#34;</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	connSta <span style="color:#f92672">=</span> <span style="color:#a6e22e">connect</span>(sockfd, res<span style="color:#f92672">-&gt;</span>ai_addr, res<span style="color:#f92672">-&gt;</span>ai_addrlen);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (connSta <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fprintf</span>(stderr, <span style="color:#e6db74">&#34;Connect, Remote Host fail!&#34;</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">4</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">struct</span> sockaddr_in <span style="color:#f92672">*</span>ipv4 <span style="color:#f92672">=</span> (<span style="color:#66d9ef">struct</span> sockaddr_in <span style="color:#f92672">*</span>)res<span style="color:#f92672">-&gt;</span>ai_addr;
+</span></span><span style="display:flex;"><span>		addr <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>(ipv4<span style="color:#f92672">-&gt;</span>sin_addr);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">inet_ntop</span>(res<span style="color:#f92672">-&gt;</span>ai_family, addr, ipstr, <span style="color:#66d9ef">sizeof</span>(ipstr));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Linked: Host = %s, Port = %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ipstr, <span style="color:#a6e22e">ntohs</span>(ipv4<span style="color:#f92672">-&gt;</span>sin_port));
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	recvSta <span style="color:#f92672">=</span> <span style="color:#a6e22e">recv</span>(sockfd, buffer, <span style="color:#66d9ef">sizeof</span>(buffer), <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, buffer);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">freeaddrinfo</span>(res);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">close</span>(sockfd);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="server-side">Server Side</h1>
+<ul>
+<li>flow chart</li>
+</ul>
+<pre tabindex="0"><code>getaddrinfo() -&gt; socket() -&gt; bind() -&gt; listen() -&gt; accept() -&gt; send()
+</code></pre><ul>
+<li>src</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;sys/types.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;sys/socket.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;netdb.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;arpa/inet.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define SERVPORT &#34;2349&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>argv[])
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">struct</span> addrinfo hints, <span style="color:#f92672">*</span>res;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> status;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> sockfd;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> connFd;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">struct</span> sockaddr_in cliAddr;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> sendSta;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>msg;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (argc <span style="color:#f92672">!=</span> <span style="color:#ae81ff">2</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fprintf</span>(stderr, <span style="color:#e6db74">&#34;Usage: Not found Read File&#34;</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">memset</span>(<span style="color:#f92672">&amp;</span>hints, <span style="color:#ae81ff">0</span>, <span style="color:#66d9ef">sizeof</span>(hints));
+</span></span><span style="display:flex;"><span>	hints.ai_family <span style="color:#f92672">=</span> AF_UNSPEC;
+</span></span><span style="display:flex;"><span>	hints.ai_socktype <span style="color:#f92672">=</span> SOCK_STREAM;
+</span></span><span style="display:flex;"><span>	hints.ai_flags <span style="color:#f92672">=</span> AI_PASSIVE;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	status <span style="color:#f92672">=</span> <span style="color:#a6e22e">getaddrinfo</span>(NULL, SERVPORT, <span style="color:#f92672">&amp;</span>hints, <span style="color:#f92672">&amp;</span>res);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (status <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fprintf</span>(stderr, <span style="color:#e6db74">&#34;getaddrinfo, fail!&#34;</span>);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	sockfd <span style="color:#f92672">=</span> <span style="color:#a6e22e">socket</span>(res<span style="color:#f92672">-&gt;</span>ai_family, res<span style="color:#f92672">-&gt;</span>ai_socktype, res<span style="color:#f92672">-&gt;</span>ai_protocol);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">bind</span>(sockfd, res<span style="color:#f92672">-&gt;</span>ai_addr, res<span style="color:#f92672">-&gt;</span>ai_addrlen);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">listen</span>(sockfd, <span style="color:#ae81ff">5</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;======== Please Wait Client =========</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">while</span>(<span style="color:#ae81ff">1</span>) { <span style="color:#75715e">// loop forever!
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">char</span> ipstr[INET_ADDRSTRLEN];
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>addr;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">int</span> len <span style="color:#f92672">=</span> <span style="color:#66d9ef">sizeof</span>(cliAddr);
+</span></span><span style="display:flex;"><span>		connFd <span style="color:#f92672">=</span> <span style="color:#a6e22e">accept</span>(sockfd, (<span style="color:#66d9ef">struct</span> sockaddr <span style="color:#f92672">*</span>)<span style="color:#f92672">&amp;</span>cliAddr, <span style="color:#f92672">&amp;</span>len);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">/* View Client IP */</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">struct</span> sockaddr_in <span style="color:#f92672">*</span>ipv4 <span style="color:#f92672">=</span> (<span style="color:#66d9ef">struct</span> sockaddr_in <span style="color:#f92672">*</span>)<span style="color:#f92672">&amp;</span>cliAddr;
+</span></span><span style="display:flex;"><span>		addr <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>(ipv4<span style="color:#f92672">-&gt;</span>sin_addr);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">inet_ntop</span>(AF_INET, addr, ipstr, <span style="color:#66d9ef">sizeof</span>(ipstr));
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;client: %s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ipstr);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">/* Copy Data */</span>
+</span></span><span style="display:flex;"><span>		msg <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello world!&#34;</span>;
+</span></span><span style="display:flex;"><span>		sendSta <span style="color:#f92672">=</span> <span style="color:#a6e22e">send</span>(connFd, msg, <span style="color:#a6e22e">strlen</span>(msg), <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">close</span>(connFd);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">close</span>(sockfd);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="ref">Ref</h1>
+<ul>
+<li><a href="https://beej.us/guide/bgnet/html/split/client-server-background.html">Beej’s Guide Network to Programming- chapter 6</a></li>
+</ul> <a class="read-more" href="/csdn/post/c-bsd_socket/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-02-14T00:08:08&#43;08:00">
+            14 Feb 2023
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/pack-file-linux/">打包文件</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><blockquote>
+<p>取消目录所有权限</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod -R <span style="color:#ae81ff">777</span> /tmp/etc
+</span></span></code></pre></div><h1 id="一iso文件">一、ISO文件</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkisofs -r -o etc.iso /tmp/etc
+</span></span></code></pre></div><h1 id="二压缩文件">二、压缩文件</h1>
+<h2 id="1-zip">1. zip</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>zip -r etc.zip /tmp/etc
+</span></span></code></pre></div><h2 id="2-tar">2. tar</h2>
+<blockquote>
+<p>仅打包，不压缩！</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -cvf /tmp/etc.tar /etc
+</span></span></code></pre></div><ul>
+<li>transform</li>
+</ul>
+<pre tabindex="0"><code>--transform s/OLD_NAME/NEW_NAME/
+</code></pre><h3 id="gz">gz</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -zcvf /tmp/etc.tar.gz /etc
+</span></span></code></pre></div><p>transform:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -zcvf /tmp/etc.tar.gz /etc --transform s/etc/myetc/
+</span></span></code></pre></div><h3 id="bz2">bz2</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -jcvf /tmp/etc.tar.bz2 /etc
+</span></span></code></pre></div><p>transform:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -jcvf /tmp/etc.tar.bz2 /etc --transform s/etc/myetc/
+</span></span></code></pre></div><h1 id="faq">FAQ</h1>
+<h2 id="this-does-not-look-like-a-tar-archive">This does not look like a tar archive</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#gzip -d xxxx.tar.gz</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#tar -xf xxxx.tar</span>
+</span></span></code></pre></div><h2 id="gzip-stdin-not-in-gzip-format">gzip: stdin: not in gzip format</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ tar xvf xxxx.tar.gz
+</span></span></code></pre></div><h1 id="参考文章">参考文章</h1>
+<ul>
+<li><a href="https://www.tecmint.com/18-tar-command-examples-in-linux/">18 Tar Command Examples in Linux</a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>c – Creates a new .tar archive file.
+</span></span><span style="display:flex;"><span>v – Verbosely show the .tar file progress.
+</span></span><span style="display:flex;"><span>f – File name type of the archive file.
+</span></span></code></pre></div><ol>
+<li>To create a compressed <strong>gzip</strong> archive file we use the option as <strong style="color: red;">z</strong>.</li>
+<li>To create highly compressed tar file we use option as <strong style="color: red;">j</strong>.</li>
+</ol>
+<ul>
+<li><a href="http://blog.csdn.net/chenjiiinliang/article/details/7288173">Linux下更改目录及其下的子目录和文件的访问权限</a></li>
+<li><a href="http://www.cnblogs.com/lucyjiayou/archive/2011/12/25/2301046.html">linux zip/unzip命令</a></li>
+<li><a href="http://blog.csdn.net/clozxy/article/details/5748539">Linux下制作ISO与刻录ISO</a></li>
+</ul> <a class="read-more" href="/csdn/post/pack-file-linux/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-02-10T02:20:39&#43;08:00">
+            10 Feb 2023
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_vmware_netadapter/">使用物理网卡</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="vmware">VMware</h1>
+<ul>
+<li>Host OS <br>
+Win10(x64)</li>
+</ul>
+<p>-Guest OS <br>
+Ubuntu 14.04(x64)</p>
+<p>目的：Ubuntu独立使用1块网卡与局域网中的设备或主机通讯。</p>
+<p>问题：宿主机器有两个网卡</p>
+<p>（1）无线网卡（2）有线网卡</p>
+<h2 id="vmware-network">VMware Network</h2>
+<p><a href="https://stackoverflow.com/a/54232899">overview</a></p>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th>VM &lt;-&gt; Host</th>
+          <th>VM1 &lt;-&gt; VM2</th>
+          <th>VM -&gt; Internet</th>
+          <th>VM &lt;- Internet</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>HostOnly</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td>Internal</td>
+          <td>No</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td>Bridged</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td>NAT</td>
+          <td>No</td>
+          <td>No</td>
+          <td>Yes</td>
+          <td>Port forward</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="编辑-虚拟网络编辑器">编辑-&gt;虚拟网络编辑器</h3>
+<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20171227034323068.png" alt="vmware ui">
+默认设置</p>
+<p>我们更改桥接模式中“桥接到”，即可。（由自动更改为下图）
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20171227034811154.png" alt="vmware ui"></p>
+<h3 id="网络适配器">网络适配器</h3>
+<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20171227035131591.png" alt="vmware ui"></p>
+<h1 id="nfs">NFS</h1>
+<blockquote>
+<p>AT91SAM9260 in terminal</p></blockquote>
+<p>启动NFS，工作正常。</p>
+<p>输出信息如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>This is the boot programm!鶷his is the boot programm!
+</span></span><span style="display:flex;"><span>Load UBOOT, please wait......
+</span></span><span style="display:flex;"><span>Load UBOOT from 0x10010000 to 0x23f00000 Over
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>U-Boot 1.3.4 <span style="color:#f92672">(</span>Mar <span style="color:#ae81ff">18</span> <span style="color:#ae81ff">2015</span> - 07:00:42<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DRAM:  <span style="color:#ae81ff">64</span> MB
+</span></span><span style="display:flex;"><span>MAN_ID: 0x00bf
+</span></span><span style="display:flex;"><span>PRO_ID: 0x234b
+</span></span><span style="display:flex;"><span>Flash:  <span style="color:#ae81ff">2</span> MB
+</span></span><span style="display:flex;"><span>NAND:  NAND device: Manufacturer ID: 0xec, Chip ID: 0x76 <span style="color:#f92672">(</span>/狺掰掰?NAND <span style="color:#ae81ff">64</span>
+</span></span><span style="display:flex;"><span>MiB 3,3V 8-bit<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">64</span> MiB
+</span></span><span style="display:flex;"><span>DataFlash:AT45DB161
+</span></span><span style="display:flex;"><span>Nb pages:   <span style="color:#ae81ff">4096</span>
+</span></span><span style="display:flex;"><span>Page Size:    <span style="color:#ae81ff">528</span>
+</span></span><span style="display:flex;"><span>Size<span style="color:#f92672">=</span> <span style="color:#ae81ff">2162688</span> bytes
+</span></span><span style="display:flex;"><span>Logical address: 0xD0000000
+</span></span><span style="display:flex;"><span>Area 0: D0000000 to D0003FFF <span style="color:#f92672">(</span>RO<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Area 1: D0004000 to D0007FFF
+</span></span><span style="display:flex;"><span>Area 2: D0008000 to D0037FFF <span style="color:#f92672">(</span>RO<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Area 3: D0038000 to D020FFFF
+</span></span><span style="display:flex;"><span>In:    serial
+</span></span><span style="display:flex;"><span>Out:   serial
+</span></span><span style="display:flex;"><span>Err:   serial
+</span></span><span style="display:flex;"><span>PHY Detected <span style="color:#f92672">(</span>mdio-addr 1, ID 0x0013:0x78e2<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>link up, 100Mbps, full-duplex
+</span></span><span style="display:flex;"><span>Hit any key to stop autoboot:  <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Booting kernel from Legacy Image at 20400000 ...</span>
+</span></span><span style="display:flex;"><span>   Image Name:   Linux-2.6.30
+</span></span><span style="display:flex;"><span>   Image Type:   ARM Linux Kernel Image <span style="color:#f92672">(</span>uncompressed<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>   Data Size:    <span style="color:#ae81ff">1439844</span> Bytes <span style="color:#f92672">=</span>  1.4 MB
+</span></span><span style="display:flex;"><span>   Load Address: <span style="color:#ae81ff">20008000</span>
+</span></span><span style="display:flex;"><span>   Entry Point:  <span style="color:#ae81ff">20008000</span>
+</span></span><span style="display:flex;"><span>   Verifying Checksum ... OK
+</span></span><span style="display:flex;"><span>   Loading Kernel Image ... OK
+</span></span><span style="display:flex;"><span>OK
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Starting kernel ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Uncompressing Linux.............................................................
+</span></span><span style="display:flex;"><span>............................... <span style="color:#66d9ef">done</span>, booting the kernel.
+</span></span><span style="display:flex;"><span>Linux version 2.6.30 <span style="color:#f92672">(</span>root@ubuntu<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>gcc version 4.3.2 <span style="color:#f92672">(</span>crosstool-NG 1.19.0<span style="color:#f92672">)</span> <span style="color:#f92672">)</span> <span style="color:#75715e">#1</span>
+</span></span><span style="display:flex;"><span> Fri Mar <span style="color:#ae81ff">27</span> 07:55:15 PDT <span style="color:#ae81ff">2015</span>
+</span></span><span style="display:flex;"><span>CPU: ARM926EJ-S <span style="color:#f92672">[</span>41069265<span style="color:#f92672">]</span> revision <span style="color:#ae81ff">5</span> <span style="color:#f92672">(</span>ARMv5TEJ<span style="color:#f92672">)</span>, cr<span style="color:#f92672">=</span><span style="color:#ae81ff">00053177</span>
+</span></span><span style="display:flex;"><span>CPU: VIVT data cache, VIVT instruction cache
+</span></span><span style="display:flex;"><span>Machine: Atmel AT91SAM9260-EK
+</span></span><span style="display:flex;"><span>Memory policy: ECC disabled, Data cache writeback
+</span></span><span style="display:flex;"><span>Clocks: CPU <span style="color:#ae81ff">199</span> MHz, master <span style="color:#ae81ff">99</span> MHz, main 18.432 MHz
+</span></span><span style="display:flex;"><span>Built <span style="color:#ae81ff">1</span> zonelists in Zone order, mobility grouping on.  Total pages: <span style="color:#ae81ff">16256</span>
+</span></span><span style="display:flex;"><span>Kernel command line: console<span style="color:#f92672">=</span>ttyS0,115200 ip<span style="color:#f92672">=</span>dhcp root<span style="color:#f92672">=</span>/dev/nfs rw
+</span></span><span style="display:flex;"><span>NR_IRQS:192
+</span></span><span style="display:flex;"><span>AT91: <span style="color:#ae81ff">96</span> gpio irqs in <span style="color:#ae81ff">3</span> banks
+</span></span><span style="display:flex;"><span>PID hash table entries: <span style="color:#ae81ff">256</span> <span style="color:#f92672">(</span>order: 8, <span style="color:#ae81ff">1024</span> bytes<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Console: colour dummy device 80x30
+</span></span><span style="display:flex;"><span>console <span style="color:#f92672">[</span>ttyS0<span style="color:#f92672">]</span> enabled
+</span></span><span style="display:flex;"><span>Dentry cache hash table entries: <span style="color:#ae81ff">8192</span> <span style="color:#f92672">(</span>order: 3, <span style="color:#ae81ff">32768</span> bytes<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Inode-cache hash table entries: <span style="color:#ae81ff">4096</span> <span style="color:#f92672">(</span>order: 2, <span style="color:#ae81ff">16384</span> bytes<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Memory: 64MB <span style="color:#f92672">=</span> 64MB total
+</span></span><span style="display:flex;"><span>Memory: 61956KB available <span style="color:#f92672">(</span>2484K code, 222K data, 120K init, 0K highmem<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Calibrating delay loop... 99.32 BogoMIPS <span style="color:#f92672">(</span>lpj<span style="color:#f92672">=</span>496640<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Mount-cache hash table entries: <span style="color:#ae81ff">512</span>
+</span></span><span style="display:flex;"><span>CPU: Testing write buffer coherency: ok
+</span></span><span style="display:flex;"><span>net_namespace: <span style="color:#ae81ff">296</span> bytes
+</span></span><span style="display:flex;"><span>NET: Registered protocol family <span style="color:#ae81ff">16</span>
+</span></span><span style="display:flex;"><span>AT91: Power Management
+</span></span><span style="display:flex;"><span>AT91: Starting after user reset
+</span></span><span style="display:flex;"><span>bio: create slab &lt;bio-0&gt; at <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>SCSI subsystem initialized
+</span></span><span style="display:flex;"><span>usbcore: registered new interface driver usbfs
+</span></span><span style="display:flex;"><span>usbcore: registered new interface driver hub
+</span></span><span style="display:flex;"><span>usbcore: registered new device driver usb
+</span></span><span style="display:flex;"><span>NET: Registered protocol family <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>IP route cache hash table entries: <span style="color:#ae81ff">1024</span> <span style="color:#f92672">(</span>order: 0, <span style="color:#ae81ff">4096</span> bytes<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>TCP established hash table entries: <span style="color:#ae81ff">2048</span> <span style="color:#f92672">(</span>order: 2, <span style="color:#ae81ff">16384</span> bytes<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>TCP bind hash table entries: <span style="color:#ae81ff">2048</span> <span style="color:#f92672">(</span>order: 1, <span style="color:#ae81ff">8192</span> bytes<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>TCP: Hash tables configured <span style="color:#f92672">(</span>established <span style="color:#ae81ff">2048</span> bind 2048<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>TCP reno registered
+</span></span><span style="display:flex;"><span>NET: Registered protocol family <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>NetWinder Floating Point Emulator V0.97 <span style="color:#f92672">(</span>double precision<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>msgmni has been set to <span style="color:#ae81ff">121</span>
+</span></span><span style="display:flex;"><span>alg: No test <span style="color:#66d9ef">for</span> stdrng <span style="color:#f92672">(</span>krng<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>io scheduler noop registered
+</span></span><span style="display:flex;"><span>io scheduler anticipatory registered <span style="color:#f92672">(</span>default<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>atmel_usart.0: ttyS0 at MMIO 0xfefff200 <span style="color:#f92672">(</span>irq <span style="color:#f92672">=</span> 1<span style="color:#f92672">)</span> is a ATMEL_SERIAL
+</span></span><span style="display:flex;"><span>atmel_usart.1: ttyS1 at MMIO 0xfffb0000 <span style="color:#f92672">(</span>irq <span style="color:#f92672">=</span> 6<span style="color:#f92672">)</span> is a ATMEL_SERIAL
+</span></span><span style="display:flex;"><span>atmel_usart.2: ttyS2 at MMIO 0xfffb4000 <span style="color:#f92672">(</span>irq <span style="color:#f92672">=</span> 7<span style="color:#f92672">)</span> is a ATMEL_SERIAL
+</span></span><span style="display:flex;"><span>brd: module loaded
+</span></span><span style="display:flex;"><span>loop: module loaded
+</span></span><span style="display:flex;"><span>ssc ssc.0: Atmel SSC device at 0xc4820000 <span style="color:#f92672">(</span>irq 14<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Driver <span style="color:#e6db74">&#39;sd&#39;</span> needs updating - please use bus_type methods
+</span></span><span style="display:flex;"><span>MACB_mii_bus: probed
+</span></span><span style="display:flex;"><span>eth0: Atmel MACB at 0xfffc4000 irq <span style="color:#ae81ff">21</span> <span style="color:#f92672">(</span>20:00:00:00:00:00<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>eth0: attached PHY driver <span style="color:#f92672">[</span>LXT971<span style="color:#f92672">]</span> <span style="color:#f92672">(</span>mii_bus:phy_addr<span style="color:#f92672">=</span>ffffffff:01, irq<span style="color:#f92672">=</span>-1<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>NAND device: Manufacturer ID: 0xec, Chip ID: 0x76 <span style="color:#f92672">(</span>Samsung NAND 64MiB 3,3V 8-bit
+</span></span><span style="display:flex;"><span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>AT91 NAND: 8-bit, Software ECC
+</span></span><span style="display:flex;"><span>Scanning device <span style="color:#66d9ef">for</span> bad blocks
+</span></span><span style="display:flex;"><span>Creating <span style="color:#ae81ff">1</span> MTD partitions on <span style="color:#e6db74">&#34;atmel_nand&#34;</span>:
+</span></span><span style="display:flex;"><span>0x000000000000-0x000004000000 : <span style="color:#e6db74">&#34;AT91 NAND my_P1&#34;</span>
+</span></span><span style="display:flex;"><span>ohci_hcd: USB 1.1 <span style="color:#e6db74">&#39;Open&#39;</span> Host Controller <span style="color:#f92672">(</span>OHCI<span style="color:#f92672">)</span> Driver
+</span></span><span style="display:flex;"><span>at91_ohci at91_ohci: AT91 OHCI
+</span></span><span style="display:flex;"><span>at91_ohci at91_ohci: new USB bus registered, assigned bus number <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>at91_ohci at91_ohci: irq 20, io mem 0x00500000
+</span></span><span style="display:flex;"><span>usb usb1: configuration <span style="color:#75715e">#1 chosen from 1 choice</span>
+</span></span><span style="display:flex;"><span>hub 1-0:1.0: USB hub found
+</span></span><span style="display:flex;"><span>hub 1-0:1.0: <span style="color:#ae81ff">2</span> ports detected
+</span></span><span style="display:flex;"><span>Initializing USB Mass Storage driver...
+</span></span><span style="display:flex;"><span>usbcore: registered new interface driver usb-storage
+</span></span><span style="display:flex;"><span>USB Mass Storage support registered.
+</span></span><span style="display:flex;"><span>udc: at91_udc version <span style="color:#ae81ff">3</span> May <span style="color:#ae81ff">2006</span>
+</span></span><span style="display:flex;"><span>mice: PS/2 mouse device common <span style="color:#66d9ef">for</span> all mice
+</span></span><span style="display:flex;"><span>input: gpio-keys as /class/input/input0
+</span></span><span style="display:flex;"><span>rtc-at91sam9 at91_rtt.0: rtc core: registered at91_rtt as rtc0
+</span></span><span style="display:flex;"><span>IRQ 1/rtc0: IRQF_DISABLED is not guaranteed on shared IRQs
+</span></span><span style="display:flex;"><span>rtc-at91sam9 at91_rtt.0: rtc0: SET TIME!
+</span></span><span style="display:flex;"><span>Registered led device: ds5
+</span></span><span style="display:flex;"><span>Registered led device: ds1
+</span></span><span style="display:flex;"><span>TCP cubic registered
+</span></span><span style="display:flex;"><span>NET: Registered protocol family <span style="color:#ae81ff">17</span>
+</span></span><span style="display:flex;"><span>RPC: Registered udp transport module.
+</span></span><span style="display:flex;"><span>RPC: Registered tcp transport module.
+</span></span><span style="display:flex;"><span>rtc-at91sam9 at91_rtt.0: hctosys: unable to read the hardware clock
+</span></span><span style="display:flex;"><span>Sending DHCP requests .&lt;6&gt;eth0: link up <span style="color:#f92672">(</span>100/Full<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>, OK
+</span></span><span style="display:flex;"><span>IP-Config: Got DHCP answer from 192.168.0.135, my address is 192.168.0.251
+</span></span><span style="display:flex;"><span>IP-Config: Complete:
+</span></span><span style="display:flex;"><span>     device<span style="color:#f92672">=</span>eth0, addr<span style="color:#f92672">=</span>192.168.0.251, mask<span style="color:#f92672">=</span>255.255.255.0, gw<span style="color:#f92672">=</span>255.255.255.255,
+</span></span><span style="display:flex;"><span>     host<span style="color:#f92672">=</span>192.168.0.251, domain<span style="color:#f92672">=</span>example.org, nis-domain<span style="color:#f92672">=(</span>none<span style="color:#f92672">)</span>,
+</span></span><span style="display:flex;"><span>     bootserver<span style="color:#f92672">=</span>192.168.0.135, rootserver<span style="color:#f92672">=</span>192.168.0.135, rootpath<span style="color:#f92672">=</span>/opt/tdtc/rfs
+</span></span><span style="display:flex;"><span>Looking up port of RPC 100003/2 on 192.168.0.135
+</span></span><span style="display:flex;"><span>Looking up port of RPC 100005/1 on 192.168.0.135
+</span></span><span style="display:flex;"><span>VFS: Mounted root <span style="color:#f92672">(</span>nfs filesystem<span style="color:#f92672">)</span> on device 0:12.
+</span></span><span style="display:flex;"><span>Freeing init memory: 120K
+</span></span><span style="display:flex;"><span>init started: BusyBox v1.23.2 <span style="color:#f92672">(</span>2015-11-09 22:59:50 EST<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Setting hotplug handler: <span style="color:#f92672">[</span> OK <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Creating device files: <span style="color:#f92672">[</span> OK <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Setting timezone and system clock: <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Starting system logging.
+</span></span><span style="display:flex;"><span>Configuring network interfaces: ifdown: interface lo not configured
+</span></span><span style="display:flex;"><span>ip: RTNETLINK answers: File exists
+</span></span><span style="display:flex;"><span>failed
+</span></span><span style="display:flex;"><span>Generating RSA Key...
+</span></span><span style="display:flex;"><span>Will output <span style="color:#ae81ff">1024</span> bit rsa secret key to <span style="color:#e6db74">&#39;/etc/dropbear/dropbear_rsa_host_key&#39;</span>
+</span></span><span style="display:flex;"><span>Generating key, this may take a <span style="color:#66d9ef">while</span>...
+</span></span><span style="display:flex;"><span>Public key portion is:
+</span></span><span style="display:flex;"><span>ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgwCE5v/Ap3hCcJwDxLtDe3e4E6kQtgyBb1FKdFiJwmXa
+</span></span><span style="display:flex;"><span>FIgbaguUjNyl8uq4yNbU9ewsmyqTHGtKShvxpJAD789cL/vMfHbKNxdBhwJ+dpuvyYtd/wexNcZ3EMPJ
+</span></span><span style="display:flex;"><span>mvqqNXp0K/oTG0GdM1cnHES1AJQe26RYgiH2ew8DaATycT6IugBJ root@at91sam9260_ek
+</span></span><span style="display:flex;"><span>Fingerprint: md5 48:fb:27:a2:8f:fc:0f:68:6a:75:00:98:13:36:c7:28
+</span></span><span style="display:flex;"><span>Generating DSS Key...
+</span></span><span style="display:flex;"><span>Will output <span style="color:#ae81ff">1024</span> bit dss secret key to <span style="color:#e6db74">&#39;/etc/dropbear/dropbear_dss_host_key&#39;</span>
+</span></span><span style="display:flex;"><span>Generating key, this may take a <span style="color:#66d9ef">while</span>...
+</span></span><span style="display:flex;"><span>Public key portion is:
+</span></span><span style="display:flex;"><span>ssh-dss AAAAB3NzaC1kc3MAAACBAP6C7qLaTYM4bGxHSekRnhqUV61kUFCAWv1LyW6fPbMlJlIjpv5B
+</span></span><span style="display:flex;"><span>Q1FRhsucQjY4BKfPEjLUB46veq0BMuTSs5ADVgrOKBXE5GnPu8oT04XZu+UjWO5wgYD6G1MyFVlzuY6m
+</span></span><span style="display:flex;"><span>N5i3jdYpNE3J4YaYfC0xdUNn8WWkJH7cdSaiB3OTAAAAFQCfUA2AFBa9DQ+sUFOlAN3KvvaSywAAAIAs
+</span></span><span style="display:flex;"><span>SOR8U0D+kO3aGWr+R73zH/oR2wqF/2TuRUqxIZQo6tzfuhmqRlvEtQ+2cN+NOac8BWO7PEa4txVI8aKe
+</span></span><span style="display:flex;"><span>GC9AODlknbdorlYWfxqbqD4H05JQlCr/FY43KctjSSgcg81Ezk3Rh50CbkLk12E7EUh7e0khohuWOZhA
+</span></span><span style="display:flex;"><span>AeH9v0xFrQAAAIAucDdk5oGeAKQ67pmgUake69h4oRUCN727lZFjRrGhduTfSYo1IyLZ78/CGXab8sF4
+</span></span><span style="display:flex;"><span>aTSGa2PimN8evxyz2zAxghNqRpw1FVnjuglNjPH4GbbAPcRdVIYut19nFG7J8ULDvIDkIaHQHbdN1M3d
+</span></span><span style="display:flex;"><span>/803WER1YCaJhWxq5BvRYgf10g<span style="color:#f92672">==</span> root@at91sam9260_ek
+</span></span><span style="display:flex;"><span>Fingerprint: md5 b4:f5:28:b4:c4:f2:27:15:32:f6:77:56:44:f5:da:85
+</span></span><span style="display:flex;"><span>Starting dropbear sshd: OK
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>BusyBox v1.23.2 <span style="color:#f92672">(</span>2015-11-09 22:59:50 EST<span style="color:#f92672">)</span> built-in shell <span style="color:#f92672">(</span>ash<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Enter <span style="color:#e6db74">&#39;help&#39;</span> <span style="color:#66d9ef">for</span> a list of built-in commands.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ls</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span>        dev      lib      mnt      root     share    usr
+</span></span><span style="display:flex;"><span>bin      etc      linuxrc  opt      run      sys      var
+</span></span><span style="display:flex;"><span>config   home     media    proc     sbin     tmp
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span></code></pre></div> <a class="read-more" href="/csdn/post/ops_vmware_netadapter/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-01-18T14:08:08&#43;08:00">
+            18 Jan 2023
+        </time>
+    </footer>
+</article>
+
+    
+        <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/c2plus-unmanaged-dll/">调用非托管DLL</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><blockquote>
+<p>IDE: vs2008 Express(sp1)</p></blockquote>
+<h1 id="callxbflibrary">callXBFLibrary</h1>
+<p>我们需要使用API函数来读取INI文件。</p>
+<h1 id="建立pinvoke应用类">建立P/Invoke应用类</h1>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20200514014607.png" alt="vs2008 ui1"></p>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20200514014830.png" alt="vs2008 ui2"></p>
+<p>在<a href="http://pinvoke.net/index.aspx">pinvoke.net</a>中查找Win32 API在C#定义。
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20140303141518625.png" alt="vs2008 ui"></p>
+<h2 id="getprivateprofilestring">GetPrivateProfileString</h2>
+<p>读取Ini文件的API</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>[<span style="color:#a6e22e">DllImport</span>(<span style="color:#e6db74">&#34;kernel32.dll&#34;</span>, CharSet<span style="color:#f92672">=</span>CharSet.Unicode)]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">extern</span> uint <span style="color:#a6e22e">GetPrivateProfileString</span>(
+</span></span><span style="display:flex;"><span>   string lpAppName,
+</span></span><span style="display:flex;"><span>   string lpKeyName,
+</span></span><span style="display:flex;"><span>   string lpDefault,
+</span></span><span style="display:flex;"><span>   StringBuilder lpReturnedString,
+</span></span><span style="display:flex;"><span>   uint nSize,
+</span></span><span style="display:flex;"><span>   string lpFileName);
+</span></span></code></pre></div><blockquote>
+<p>注意：DllImport属性来自using System.Runtime.InteropServices;</p></blockquote>
+<ul>
+<li>lpAppName <br>
+  小节名</li>
+<li>lpKeyName <br>
+键名</li>
+<li>lpDefault <br>
+缺省值</li>
+<li>lpReturnedString  <br>
+返回值</li>
+<li>nSize  <br>
+返回值长度</li>
+<li>lpFileName <br>
+读取文件的名称</li>
+</ul>
+<h3 id="import-class">import class</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>  using System.Runtime.InteropServices;
+</span></span></code></pre></div><h2 id="readinifileval">readIniFileVal</h2>
+<p>建立一个公共方法，以供程序使用。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>public string <span style="color:#a6e22e">readIniFileVal</span>(string iniFileName, string section, string key)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    StringBuilder retStrBuilder <span style="color:#f92672">=</span> new <span style="color:#a6e22e">StringBuilder</span>(<span style="color:#ae81ff">256</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">GetPrivateProfileString</span>(
+</span></span><span style="display:flex;"><span>        section,
+</span></span><span style="display:flex;"><span>        key,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>        retStrBuilder,
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">256</span>,
+</span></span><span style="display:flex;"><span>        iniFileName);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> retStrBuilder.<span style="color:#a6e22e">ToString</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="code">code</h1>
+<blockquote>
+<p>Cwin32API.cs</p> <a class="read-more" href="/csdn/post/c2plus-unmanaged-dll/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-01-03T00:08:08&#43;08:00">
+            3 Jan 2023
+        </time>
+    </footer>
+</article>
+
+    
+
+    <nav class="pagination" role="navigation">
+	
+	    <a class="newer-posts" href="/csdn/page/2/">&larr; Newer Posts</a>
+	
+	<span class="page-number">Page 3 of 12</span>
+	
+	    <a class="older-posts" href="/csdn/page/4/">Older Posts &rarr;</a>
+	
+</nav>
+
+
+
+</main>
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>
+

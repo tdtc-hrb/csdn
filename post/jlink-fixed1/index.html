@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="referrer" content="no-referrer"/>
+    
+
+
+
+<meta name="twitter:title" content="修复山寨版的J-Link"/>
+<meta name="twitter:description" content="J-Link两篇之一"/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="修复山寨版的J-Link &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/jlink-fixed1/" />
+
+    
+        
+    
+
+    
+    <meta property="og:description" content="J-Link两篇之一" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2020-05-05T08:08:08&#43;08:00" />
+
+    
+    
+
+    <title>修复山寨版的J-Link &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="J-Link两篇之一" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.145.0">
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/jlink-fixed1/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null 
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "修复山寨版的J-Link",
+    "name": "修复山寨版的J-Link",
+    "wordCount":  117 ,
+    "timeRequired": "PT1M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/post/jlink-fixed1/",
+    "datePublished": "2020-05-05T08:08Z",
+    "dateModified": "2020-05-05T08:08Z",
+    
+    
+    "description": "J-Link两篇之一",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/post/jlink-fixed1/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button icon-feed" href="/csdn/index.xml" >&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">修复山寨版的J-Link</h1>
+        <small>J-Link两篇之一</small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2020-05-05T08:08:08&#43;08:00">
+            May 5, 2020
+          </time>
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <h1 id="fixed-j-link">Fixed J-Link</h1>
+<h1 id="erase">Erase</h1>
+<ol>
+<li>Power On</li>
+<li>Jump &ldquo;ERASE&rdquo;(JP3)</li>
+<li>Wait for 5s</li>
+<li>Break &ldquo;ERASE&rdquo;(JP3)</li>
+<li>Power Off</li>
+</ol>
+<h1 id="tst">TST</h1>
+<ol>
+<li>Jump &ldquo;TST&rdquo;(JP1)</li>
+<li>Power On</li>
+<li>Wait for 10s</li>
+<li>Power Off</li>
+<li>Break &ldquo;TST&rdquo;(JP1)</li>
+</ol>
+<p>重新上电后，电脑会弹出发现新硬件：“atm6124.Sys ATMEL AT91xxxxx Test Board”。</p>
+<p>Then PC will find the &ldquo;ATMEL AT91xxxxx Test Board&rdquo;, and Led on(&ldquo;ERR&rdquo;)</p>
+<h1 id="sam-prog">SAM-PROG</h1>
+<blockquote>
+<p>注意：必须在x86（32位）下运行！</p></blockquote>
+<h2 id="down">Down</h2>
+<p><a href="http://www.atmel.com/images/Install_AT91-ISP_v1.12.exe">at91 isp V1.12</a></p>
+<h2 id="exec">Exec</h2>
+<blockquote>
+<p>SAM-PROG v2.4</p></blockquote>
+<h3 id="setup">Setup</h3>
+<p>first, click &ldquo;Browse&rdquo; choose &ldquo;J-link_V8.bin&rdquo;</p>
+<p>Second, Select &ldquo;Set Security Bit&rdquo;</p>
+<blockquote>
+<p>Note: J-link_V8.bin is example file, It must be modified to use.</p></blockquote>
+<h3 id="write">Write</h3>
+<p>First, Give this USB device Power On</p>
+<p>Second, Click &ldquo;Wite Flash&rdquo; button</p>
+<p>When burning is complete &ldquo;Status&rdquo; box in the &ldquo;In progress&rdquo; is 0 and &ldquo;Active Connection&rdquo; is 1.
+    Led on(&ldquo;RUN&rdquo;) will light.</p>
+<hr>
+<p>(Chineses)          
+（1）首先找到PCB板子的Erase脚和TST脚</p>
+<p>（2）这两个重要的管脚找到之后，然后通过USB数据线连接J-Link和电脑，
+    给J-Link供电（注意这一步小灯可能不亮，但电源已经加到J-Link板子上了）； </p>
+<p>（3）短接Erase区的两个过孔（即Erase与VDD3.3v）约5s以后，断开该连接，这时擦除完毕，
+    最后断开USB电源，停止给J-Link供电。（注意先后顺序）</p>
+<p>（4）短接TST区的两个过孔（即TST与VDD3.3v），然后再连接USB数据线给J-Link供电（注意顺序），约10s以后，
+    拔掉USB电源，再断开TST区的连接，这时进入编程模式；</p>
+<p>下载地址：http://pan.baidu.com/s/1sj9Q7b3</p>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=%e4%bf%ae%e5%a4%8d%e5%b1%b1%e5%af%a8%e7%89%88%e7%9a%84J-Link&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fjlink-fixed1%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fjlink-fixed1%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fjlink-fixed1%2f&amp;description=%e4%bf%ae%e5%a4%8d%e5%b1%b1%e5%af%a8%e7%89%88%e7%9a%84J-Link"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fjlink-fixed1%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/csdn/post/jlink-fixed2/">
+          <section class="post">
+              <h2>clone问题</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_haproxy/">
+          <section class="post">
+              <h2>安装配置haproxy</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>
+

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="referrer" content="no-referrer"/>
+    
+
+
+
+<meta name="twitter:title" content="mail的使用"/>
+<meta name="twitter:description" content="mail的其他文章：mail的发送、GNU PG"/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="mail的使用 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/ops_mail/" />
+
+    
+        
+    
+
+    
+    <meta property="og:description" content="mail的其他文章：mail的发送、GNU PG" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2020-04-15T23:08:08&#43;08:00" />
+
+    
+    
+
+    <title>mail的使用 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="mail的其他文章：mail的发送、GNU PG" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.145.0">
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_mail/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null 
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "mail的使用",
+    "name": "mail的使用",
+    "wordCount":  90 ,
+    "timeRequired": "PT1M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/post/ops_mail/",
+    "datePublished": "2020-04-15T23:08Z",
+    "dateModified": "2020-04-15T23:08Z",
+    
+    
+    "description": "mail的其他文章：mail的发送、GNU PG",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/post/ops_mail/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button icon-feed" href="/csdn/index.xml" >&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">mail的使用</h1>
+        <small>mail的其他文章：mail的发送、GNU PG</small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2020-04-15T23:08:08&#43;08:00">
+            Apr 15, 2020
+          </time>
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <h1 id="installation">installation</h1>
+<p><a href="http://www.mutt.org/">Mutt</a> is a small but very powerful text-based mail client for Unix operating systems.</p>
+<h2 id="1-install">1) install</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yum install mutt
+</span></span></code></pre></div><h2 id="2-config">2) config</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$vi ~/.muttrc
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>set sendmail<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/usr/local/msmtp/bin/msmtp&#34;</span>
+</span></span><span style="display:flex;"><span>set from <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;user@domain.com&#34;</span>
+</span></span><span style="display:flex;"><span>set realname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Realname of the user&#34;</span>
+</span></span></code></pre></div><p>received mail:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>set pop_host<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pop.163.com&#34;</span>
+</span></span><span style="display:flex;"><span>set pop_user<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;love_shidie&#34;</span>
+</span></span><span style="display:flex;"><span>set pop_pass<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>getpassword email_id<span style="color:#e6db74">`</span>
+</span></span></code></pre></div><h1 id="test">test</h1>
+<h2 id="1-send-mail">1) send mail</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gpg -d ~/.msmtp/love_shidie-passoword.gpg
+</span></span><span style="display:flex;"><span>$mutt -s <span style="color:#e6db74">&#34;test message&#34;</span> -a ~/message121.txt
+</span></span></code></pre></div><h2 id="2-received-mail">2) received mail</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$mutt
+</span></span></code></pre></div><p>Press key: G</p>
+<h1 id="reference">Reference</h1>
+<ul>
+<li><a href="https://www.tecmint.com/send-mail-from-command-line-using-mutt-command/">Mutt – A Command Line Email Client to Send Mails from Terminal</a></li>
+<li><a href="https://unix.stackexchange.com/questions/20570/mutt-how-to-safely-store-password">Mutt: how to safely store password?</a></li>
+<li><a href="https://xiaobin80.gitee.io/csdn/post/ops_mail_msmtp/">mail send</a></li>
+<li><a href="https://xiaobin80.gitee.io/csdn/post/ops_gnupg/">gnupg - xiaobin_HLJ80</a></li>
+</ul>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=mail%e7%9a%84%e4%bd%bf%e7%94%a8&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_mail%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_mail%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_mail%2f&amp;description=mail%e7%9a%84%e4%bd%bf%e7%94%a8"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_mail%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/csdn/post/embeded_ip_nfs/">
+          <section class="post">
+              <h2>设置固定IP</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_mail_msmtp/">
+          <section class="post">
+              <h2>mail的发送</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>
+

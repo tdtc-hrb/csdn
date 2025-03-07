@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="referrer" content="no-referrer"/>
+    
+
+
+
+<meta name="twitter:title" content="Linux修改网卡为固定IP"/>
+<meta name="twitter:description" content="需要net-tools/netplan"/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Linux修改网卡为固定IP &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/" />
+
+    
+        
+    
+
+    
+    <meta property="og:description" content="需要net-tools/netplan" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2024-03-12T08:38:08&#43;08:00" />
+
+    
+    
+
+    <title>Linux修改网卡为固定IP &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="需要net-tools/netplan" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.145.0">
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null 
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "Linux修改网卡为固定IP",
+    "name": "Linux修改网卡为固定IP",
+    "wordCount":  207 ,
+    "timeRequired": "PT1M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/",
+    "datePublished": "2024-03-12T08:38Z",
+    "dateModified": "2024-03-12T08:38Z",
+    
+    
+    "description": "需要net-tools/netplan",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button icon-feed" href="/csdn/index.xml" >&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">Linux修改网卡为固定IP</h1>
+        <small>需要net-tools/netplan</small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2024-03-12T08:38:08&#43;08:00">
+            Mar 12, 2024
+          </time>
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <ul>
+<li>RHEL</li>
+<li>Diban <br>
+Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</li>
+</ul>
+<h1 id="rhel-like">RHEL-like</h1>
+<ul>
+<li>Alma/Rocky</li>
+<li>CentOS <br>
+Less than RHEL version 8</li>
+</ul>
+<h2 id="view">View</h2>
+<p>net adapter list:</p>
+<pre tabindex="0"><code>$cd /etc/sysconfig/network-scripts
+$ls ifcfg-* -l
+</code></pre><h3 id="ipv4">ipv4</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ip addr
+</span></span></code></pre></div><h3 id="ipv6">ipv6</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ip -6 addr
+</span></span></code></pre></div><h2 id="setup">Setup</h2>
+<p>Start job network adapter:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ONBOOT<span style="color:#f92672">=</span>yes
+</span></span></code></pre></div><h3 id="static">static</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cd /etc/sysconfig/network-scripts
+</span></span><span style="display:flex;"><span>$sudo vi ifcfg-enp0s3
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>BOOTPROTO<span style="color:#f92672">=</span>none
+</span></span><span style="display:flex;"><span>IPADDR<span style="color:#f92672">=</span>192.168.1.186
+</span></span><span style="display:flex;"><span>PREFIX<span style="color:#f92672">=</span><span style="color:#ae81ff">24</span>
+</span></span><span style="display:flex;"><span>GATEWAY<span style="color:#f92672">=</span>192.168.1.1
+</span></span><span style="display:flex;"><span>DNS1<span style="color:#f92672">=</span>211.161.191.235
+</span></span><span style="display:flex;"><span>DNS2<span style="color:#f92672">=</span>211.161.122.197
+</span></span></code></pre></div><h3 id="ipv6-network">IPv6 Network</h3>
+<ul>
+<li>IPV6INIT=yes <br>
+This initializes the interface for IPv6 addressing.</li>
+<li>IPV6_AUTOCONF=yes <br>
+This enables the IPv6 auto-configuration for the interface.</li>
+<li>IPV6_DEFROUTE=yes <br>
+This indicates that the default IPv6 route has been assigned to the interface.</li>
+<li>IPV6_FAILURE_FATAL=no <br>
+indicates that the system won’t fail even when IPv6 fails.</li>
+</ul>
+<h3 id="virtual-machine">virtual machine</h3>
+<p>设置Network Adapter为Bridged</p>
+<h4 id="net-adapter">net adapter</h4>
+<ul>
+<li>
+<p>vmware <br>
+default: eth0</p>
+</li>
+<li>
+<p>vbox <br>
+default: enp0s3</p>
+</li>
+</ul>
+<h1 id="debian-like">Debian-like</h1>
+<p>Debian:</p>
+<pre tabindex="0"><code>sudo apt install netplan.io
+</code></pre><h2 id="ubuntu">Ubuntu</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cd /etc/netplan/
+</span></span><span style="display:flex;"><span>$sudo vi 00-installer-config.yaml
+</span></span></code></pre></div><ul>
+<li>Normal</li>
+</ul>
+<blockquote>
+<p>路由器下</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#This is the network config written by &#39;subiquity&#39;</span>
+</span></span><span style="display:flex;"><span>network:
+</span></span><span style="display:flex;"><span>  ethernets:
+</span></span><span style="display:flex;"><span>    enp0s3:
+</span></span><span style="display:flex;"><span>      dhcp4: no
+</span></span><span style="display:flex;"><span>      addresses:
+</span></span><span style="display:flex;"><span>        - 192.168.0.55/24
+</span></span><span style="display:flex;"><span>      gateway4: 192.168.0.1
+</span></span><span style="display:flex;"><span>      nameservers:
+</span></span><span style="display:flex;"><span>              addresses: <span style="color:#f92672">[</span>192.168.0.1, 192.168.1.1<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>  version: <span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><h3 id="nameserver">nameserver</h3>
+<blockquote>
+<p>在热点下</p></blockquote>
+<ul>
+<li>nameserver 1 <br>
+设置Host的IP</li>
+<li>nameserver 2 <br>
+设置Host的DNS</li>
+</ul>
+<p>for example:</p>
+<pre tabindex="0"><code># This is the network config written by &#39;subiquity&#39;
+network:
+  ethernets:
+    ens32:
+      #dhcp4: true
+      dhcp4: no
+      addresses:
+        - 192.168.69.119/24
+      gateway4: 192.168.69.113
+      nameservers:
+        addresses: [192.168.69.113, 192.168.69.218]
+  version: 2
+</code></pre><p>宿主机的IP: 192.168.69.113</p>
+<p>宿主机的DNS: 192.168.69.218</p>
+<h1 id="ref">Ref</h1>
+<ul>
+<li><a href="https://www.tecmint.com/configure-ipv6-network-on-centos-rhel/">How to Configure IPv6 Network on CentOS/RHEL 8</a></li>
+<li><a href="https://techviewleo.com/manage-ubuntu-debian-networking-using-netplan/">How To Manage Ubuntu / Debian Networking using Netplan</a></li>
+</ul>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Linux%e4%bf%ae%e6%94%b9%e7%bd%91%e5%8d%a1%e4%b8%ba%e5%9b%ba%e5%ae%9aIP&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_network_adapter_linux%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_network_adapter_linux%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_network_adapter_linux%2f&amp;description=Linux%e4%bf%ae%e6%94%b9%e7%bd%91%e5%8d%a1%e4%b8%ba%e5%9b%ba%e5%ae%9aIP"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_network_adapter_linux%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_openjdk_ubuntu/">
+          <section class="post">
+              <h2>设置OpenJDK</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_dc_redis_ubuntu/">
+          <section class="post">
+              <h2>安装redis-server</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>
+

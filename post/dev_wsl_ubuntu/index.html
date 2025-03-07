@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="referrer" content="no-referrer"/>
+    
+
+
+
+<meta name="twitter:title" content="使用 WSL 在Windows"/>
+<meta name="twitter:description" content="ubuntu/Debian"/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="使用 WSL 在Windows &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/dev_wsl_ubuntu/" />
+
+    
+        
+    
+
+    
+    <meta property="og:description" content="ubuntu/Debian" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2024-12-12T18:08:08&#43;08:00" />
+
+    
+    
+
+    <title>使用 WSL 在Windows &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="ubuntu/Debian" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.145.0">
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/dev_wsl_ubuntu/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null 
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "使用 WSL 在Windows",
+    "name": "使用 WSL 在Windows",
+    "wordCount":  340 ,
+    "timeRequired": "PT2M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/post/dev_wsl_ubuntu/",
+    "datePublished": "2024-12-12T18:08Z",
+    "dateModified": "2024-12-12T18:08Z",
+    
+    
+    "description": "ubuntu/Debian",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/post/dev_wsl_ubuntu/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button icon-feed" href="/csdn/index.xml" >&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">使用 WSL 在Windows</h1>
+        <small>ubuntu/Debian</small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2024-12-12T18:08:08&#43;08:00">
+            Dec 12, 2024
+          </time>
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
+<ul>
+<li>Windows 10 1809+ <br>
+缺省为WSL1</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps" data-lang="ps"><span style="display:flex;"><span><span style="color:#a6e22e">wsl</span> <span style="color:#a6e22e">-l</span> <span style="color:#a6e22e">-v</span>
+</span></span></code></pre></div><blockquote>
+<p>在powerShell的管理员模式下运行命令!</p></blockquote>
+<h1 id="安装卸载">安装/卸载</h1>
+<p>ON:</p>
+<pre tabindex="0"><code>Control Panel -&gt; Uninstall a program -&gt; Turn Windows features on or off, 
+勾选“Windows Subsystem for Linux”
+</code></pre><h2 id="ubuntu">Ubuntu</h2>
+<ul>
+<li>
+<p><a href="https://aka.ms/wslubuntu2004">Ubuntu 2004</a></p>
+<p>从AppxBundle提取appx.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Add-AppxPackage .\Ubuntu_2004.xxx.appx
+</span></span></code></pre></div><h3 id="卸载">卸载</h3>
+<p>如果“普通”方式不工作，请使用“命令行”。</p>
+<ul>
+<li>
+<p>普通
+右击“Ubuntu xxx” 图标，选择“Uninstall”即可。</p>
+</li>
+<li>
+<p><a href="https://docs.microsoft.com/zh-cn/windows/wsl/reference">命令行</a></p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wslconfig /u
+</span></span></code></pre></div><h2 id="debian">Debian</h2>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/windows/wsl/install-manual#downloading-distributions">down appx - debian v11</a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Add-AppxPackage .\DistroLauncher-Appx_1.12.2.0_x64.appx
+</span></span></code></pre></div><h3 id="wsl2">WSL2</h3>
+<ul>
+<li>Enable Virtual Machine feature</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>dism.exe /online /enable-feature /featurename<span style="color:#960050;background-color:#1e0010">:</span>VirtualMachinePlatform /all /norestart
+</span></span></code></pre></div><p>Reboot your Windows 10 host</p>
+<ul>
+<li>WSL Linux kernel update package</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>wsl --update
+</span></span></code></pre></div><ul>
+<li>Install
+Click the &ldquo;Debian&rdquo; icon to install Debian.
+This takes some time.</li>
+</ul>
+<p>Set a username and password for your Debian GNU/Linux installation when prompted</p>
+<p>You are now logged in to your Debian system in command line mode</p>
+<h3 id="exec">exec</h3>
+<p>enter wsl:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>wsl --shutdown
+</span></span><span style="display:flex;"><span>wsl -u root
+</span></span></code></pre></div><h4 id="sources-list"><a href="https://mirrors.163.com/.help/debian.html">sources list</a></h4>
+<ul>
+<li>network
+<a href="https://serverfault.com/a/1131182">temporary failure resolving</a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;nameserver 8.8.8.8
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">nameserver 8.8.4.4&#34;</span> | sudo tee /etc/resolv.conf &gt; /dev/null
+</span></span></code></pre></div><ul>
+<li>update</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;deb http://mirrors.163.com/debian/ bookworm main non-free contrib
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">deb http://mirrors.163.com/debian/ bookworm-updates main non-free contrib
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">deb-src http://mirrors.163.com/debian/ bookworm main non-free contrib
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">deb-src http://mirrors.163.com/debian/ bookworm-updates main non-free contrib
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">deb http://mirrors.163.com/debian-security/ bookworm-security main non-free contrib
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">deb-src http://mirrors.163.com/debian-security/ bookworm-security main non-free contrib&#34;</span> &gt; /etc/apt/sources.list &amp;&amp; \
+</span></span><span style="display:flex;"><span>apt update -y
+</span></span></code></pre></div><h4 id="usrmerge">usrmerge</h4>
+<ul>
+<li>install</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>apt install usrmerge
+</span></span></code></pre></div><h5 id="umount-lib">umount lib</h5>
+<p>If the following error message is displayed, it means v1 is mounting &ldquo;/lib/modules&rdquo;.</p>
+<pre tabindex="0"><code>FATAL ERROR:
+
+/lib/modules/ is a mount point.
+Probably this system is using User Mode Linux or some variant of Xen.
+
+To continue the conversion please unmount /lib/modules/ (try the command
+&#39;umount -l /lib/modules/&#39;) and then try again.
+Do not forget to reboot after the conversion is complete to have it
+mounted again.
+</code></pre><p>umount it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>umount -l /lib/modules
+</span></span></code></pre></div><h4 id="upgrade-debian-11-to-12">Upgrade Debian 11 to 12</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>apt upgrade -y
+</span></span><span style="display:flex;"><span>apt dist-upgrade -y
+</span></span><span style="display:flex;"><span>apt autoremove -y
+</span></span></code></pre></div><h1 id="使用">使用</h1>
+<p>更改源列表:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/apt/sources.list
+</span></span></code></pre></div><pre tabindex="0"><code>http://archive.ubuntu.com -&gt; https://mirrors.aliyun.com/ubuntu/
+</code></pre><h2 id="文件互访">文件互访</h2>
+<p>首先，使用windows记事本，建立一个testTxtFile.txt； <br>
+然后，在WSL查看文件内容。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /mnt/c/Users/tdtc/
+</span></span><span style="display:flex;"><span>vi testTxtFile.txt
+</span></span></code></pre></div><p>最后，用WSL重命名文件名:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mv testTxtFile.txt testFile.txt
+</span></span></code></pre></div><p>在windows就可以看到重命名的testFile.txt。</p>
+<h2 id="访问wsl服务">访问WSL服务</h2>
+<blockquote>
+<p>WSL与windows 10共有端口，所以Windows 10已使用的端口，不要再分配给WSL</p></blockquote>
+<p>首先，在wsl中启动nginx；</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo service nginx start
+</span></span></code></pre></div><p>然后访问(回环地址)：127.0.0.1:90
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20171216052918750.png" alt="nginx info"></p>
+<h1 id="ref">Ref</h1>
+<ul>
+<li><a href="https://linuxize.com/post/how-to-configure-static-ip-address-on-ubuntu-20-04/">How to Configure Static IP Address on Ubuntu 20.04</a></li>
+<li><a href="https://wiki.debian.org/InstallingDebianOn/Microsoft/Windows/SubsystemForLinux">Installing Debian On Microsoft Windows Subsystem For Linux</a></li>
+<li><a href="https://gist.github.com/bramtechs/50d724a33d37278d7ca003c6119c8fea">Upgrade Debian 9 (current WSL) to Debian 12 (bookworm testing)</a></li>
+</ul>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=%e4%bd%bf%e7%94%a8%20WSL%20%e5%9c%a8Windows&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fdev_wsl_ubuntu%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fdev_wsl_ubuntu%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fdev_wsl_ubuntu%2f&amp;description=%e4%bd%bf%e7%94%a8%20WSL%20%e5%9c%a8Windows"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fdev_wsl_ubuntu%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/csdn/post/nodejs-ubuntu/">
+          <section class="post">
+              <h2>在Ubuntu下安装NodeJS</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_memcached_ubuntu/">
+          <section class="post">
+              <h2>安装memcached</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>
+

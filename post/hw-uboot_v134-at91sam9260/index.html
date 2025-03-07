@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="referrer" content="no-referrer"/>
+    
+
+
+
+<meta name="twitter:title" content="U-boot V1.3.4"/>
+<meta name="twitter:description" content="U-boot V1.3.4移植到at91sam9260ek"/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="U-boot V1.3.4 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/hw-uboot_v134-at91sam9260/" />
+
+    
+        
+    
+
+    
+    <meta property="og:description" content="U-boot V1.3.4移植到at91sam9260ek" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2020-05-16T01:58:08&#43;08:00" />
+
+    
+    
+
+    <title>U-boot V1.3.4 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="U-boot V1.3.4移植到at91sam9260ek" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.145.0">
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/hw-uboot_v134-at91sam9260/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null 
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "U-boot V1.3.4",
+    "name": "U-boot V1.3.4",
+    "wordCount":  334 ,
+    "timeRequired": "PT2M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/post/hw-uboot_v134-at91sam9260/",
+    "datePublished": "2020-05-16T01:58Z",
+    "dateModified": "2020-05-16T01:58Z",
+    
+    
+    "description": "U-boot V1.3.4移植到at91sam9260ek",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/post/hw-uboot_v134-at91sam9260/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button icon-feed" href="/csdn/index.xml" >&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">U-boot V1.3.4</h1>
+        <small>U-boot V1.3.4移植到at91sam9260ek</small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2020-05-16T01:58:08&#43;08:00">
+            May 16, 2020
+          </time>
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <p>关于移植在U-boot文档中这样介绍：
+README</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>If the system board that you have is not listed, then you will need
+</span></span><span style="display:flex;"><span>to port U-Boot to your hardware platform. To do this, follow these
+</span></span><span style="display:flex;"><span>steps:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>1.  Add a new configuration option for your board to the toplevel
+</span></span><span style="display:flex;"><span>    &#34;Makefile&#34; and to the &#34;MAKEALL&#34; script, using the existing
+</span></span><span style="display:flex;"><span>    entries as examples. Note that here and at many other places
+</span></span><span style="display:flex;"><span>    boards and other names are listed in alphabetical sort order. Please
+</span></span><span style="display:flex;"><span>    keep this order.
+</span></span><span style="display:flex;"><span>2.  Create a new directory to hold your board specific code. Add any
+</span></span><span style="display:flex;"><span>    files you need. In your board directory, you will need at least
+</span></span><span style="display:flex;"><span>    the &#34;Makefile&#34;, a &#34;&lt;board&gt;.c&#34;, &#34;flash.c&#34; and &#34;u-boot.lds&#34;.
+</span></span><span style="display:flex;"><span>3.  Create a new configuration file &#34;include/configs/&lt;board&gt;.h&#34; for
+</span></span><span style="display:flex;"><span>    your board
+</span></span><span style="display:flex;"><span>3.  If you&#39;re porting U-Boot to a new CPU, then also create a new
+</span></span><span style="display:flex;"><span>    directory to hold your CPU specific code. Add any files you need.
+</span></span><span style="display:flex;"><span>4.  Run &#34;make &lt;board&gt;_config&#34; with your new name.
+</span></span><span style="display:flex;"><span>5.  Type &#34;make&#34;, and you should get a working &#34;u-boot.srec&#34; file
+</span></span><span style="display:flex;"><span>    to be installed on your target system.
+</span></span><span style="display:flex;"><span>6.  Debug and solve any problems that might arise.
+</span></span><span style="display:flex;"><span>    [Of course, this last step is much harder than it sounds.]
+</span></span></code></pre></div><h1 id="0-准备工作">0. 准备工作</h1>
+<h2 id="1-下载">1) 下载</h2>
+<p><a href="ftp://ftp.denx.de/pub/u-boot/u-boot-1.3.4.tar.bz2">V1.3.4</a></p>
+<p><a href="ftp://www.at91.com/pub/uboot/u-boot-1.3.4-exp.5/u-boot-1.3.4-exp.5.diff">补丁</a></p>
+<h2 id="2-安装">2) 安装</h2>
+<p>u-boot安装此处省略</p>
+<h3 id="补丁安装">补丁安装</h3>
+<p>拷贝u-boot-1.3.4-exp.5.diff到u-boot-1.3.4</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat u-boot-1.3.4-exp.5.diff |patch -p1
+</span></span></code></pre></div><h1 id="1-添加开发板">1. 添加开发板</h1>
+<h2 id="1-makeall">1) MAKEALL</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mak" data-lang="mak"><span style="display:flex;"><span><span style="color:#75715e">#########################################################################
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## ARM9 Systems
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#########################################################################
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>LIST_ARM9<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;                    \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  at91sam9260ek      at91sam9261ek      at91sam9263ek                 \
+</span></span></span></code></pre></div><h2 id="2-makefile">2) Makefile</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mak" data-lang="mak"><span style="display:flex;"><span><span style="color:#75715e">#########################################################################
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## ARM926EJS Systems
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#########################################################################
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">at91sam9260ek_config </span><span style="color:#f92672">:</span> unconfig
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  @<span style="color:#66d9ef">$(</span>MKCONFIG<span style="color:#66d9ef">)$(</span>@:_config<span style="color:#f92672">=</span><span style="color:#66d9ef">)</span> arm arm926ejs at91sam9260ek atmel at91sam926x
+</span></span></code></pre></div><ul>
+<li>arm:           CPU架构</li>
+<li>arm926ejs:     CPU型号</li>
+<li>at91sam9260ek: 开发板名称</li>
+<li>atmel:         所属厂商</li>
+<li>at91sam926x:   SoC</li>
+</ul>
+<h1 id="2-文件构成">2. 文件构成</h1>
+<h2 id="架构">架构</h2>
+<p>  arch-at91sam926x文件夹(u-boot-x.x.x/../include/asm/)</p>
+<h2 id="cpu">CPU</h2>
+<p>at91sam926x文件夹(u-boot-x.x.x/../cpu/arm926ejs/)</p>
+<h3 id="删除lcd和usb支持">删除LCD和USB支持</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>lcd.c、lcd_lut.h、usb_ohci.c、usb_ohci.h
+</span></span></code></pre></div><h3 id="删除dm9000物理网卡支持">删除DM9000物理网卡支持</h3>
+<p>ether.c</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>Ln25: #ifndef CONFIG_DRIVER_DM9000 /*SAM9261EK uses DM9000 Phy */
+</span></span><span style="display:flex;"><span>Ln30: #include &lt;dm9161.h&gt;
+</span></span><span style="display:flex;"><span>Ln457: #endif  /*CONFIG_DRIVER_DM9000 */
+</span></span></code></pre></div><h2 id="开发板">开发板</h2>
+<p>at91sam9260ek文件夹(u-boot-x.x.x/../board/)</p>
+<h3 id="删除dm9000物理网卡">删除DM9000物理网卡</h3>
+<p>dm9161a.c</p>
+<h2 id="开发板配置">开发板配置</h2>
+<blockquote>
+<p>at91sam9260ek.h(u-boot-x.x.x/../include/configs/)</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;cmd_confdefs.h&gt;</span><span style="color:#75715e">
+</span></span></span></code></pre></div><p>变更为：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt; config_cmd_default.h&gt;</span><span style="color:#75715e">
+</span></span></span></code></pre></div><h2 id="ethernet部分">Ethernet部分</h2>
+<p>拷贝at91_net.h到：u-boot-x.x.x/include/</p>
+<p>各文件介绍：</p>
+<h3 id="mii物理寄存器定义">MII物理寄存器定义:</h3>
+<p>  ../include/miipyh.h</p>
+<h3 id="函数头文件">函数头文件:</h3>
+<p>../include/at91_net.h</p>
+<h3 id="函数实现">函数实现:</h3>
+<p>../cpu/arm926ejs/at91sam926x/ether.c</p>
+<h2 id="flash部分">flash部分</h2>
+<p>  覆盖dataflash.h到：u-boot-1.3.4/include/ <br>
+  覆盖dataflash.c到：u-boot-1.3.4/drivers/mtd/</p>
+<h2 id="nand部分">nand部分</h2>
+<h3 id="1-nand文件夹">1) nand文件夹</h3>
+<p>拷贝位置：../drivers/mtd/nand <br>
+并修改函数名： <br>
+    DEBUG 变更为： MTDDEBUG</p>
+<h3 id="2-cmd_nandc">2) cmd_nand.c</h3>
+<p>拷贝至：../common/</p>
+<p>并注释掉：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">//print_image_hdr(hdr);
+</span></span></span></code></pre></div><h2 id="中断部分">中断部分</h2>
+<p>删除../cpu/arm926ejs/下的interrupts.c，否则会出现多重定义的问题！</p>
+<h1 id="3-宏修改">3. 宏修改</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span> CFG_<span style="color:#f92672">*</span>_<span style="color:#f92672">*</span> <span style="color:#f92672">--</span><span style="color:#960050;background-color:#1e0010">〉</span> CONFIG_<span style="color:#f92672">*</span>_<span style="color:#f92672">*</span>
+</span></span></code></pre></div><h2 id="1-net">1) net</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>   <span style="color:#75715e">#if(CONFIG_COMMANDS &amp; CFG_CMD_NET)
+</span></span></span></code></pre></div><p>   &ndash;〉</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>  <span style="color:#75715e">#if defined(CONFIG_CMD_NET)
+</span></span></span></code></pre></div><h2 id="2-nand">2) nand</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>  <span style="color:#75715e">#if(CONFIG_COMMANDS &amp; CFG_CMD_NAND)
+</span></span></span></code></pre></div><p>  &ndash;〉</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>  <span style="color:#75715e">#ifdefined(CONFIG _CMD_NAND)
+</span></span></span></code></pre></div><h3 id="nand命令">Nand命令</h3>
+<p>  config_cmd_default.h：添加宏定义CONFIG_CMD_NAND；</p>
+<p>  宏定义来源：config_cmd_all.h</p>
+<h1 id="resource">resource</h1>
+<p>适合特定AT91sam9260EK开发板的<a href="http://pan.baidu.com/s/1dEnbzt3">U-boot V1.3.4</a></p>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=U-boot%20V1.3.4&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fhw-uboot_v134-at91sam9260%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fhw-uboot_v134-at91sam9260%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fhw-uboot_v134-at91sam9260%2f&amp;description=U-boot%20V1.3.4"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fhw-uboot_v134-at91sam9260%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/csdn/post/rose-uml/">
+          <section class="post">
+              <h2>UML工具Rose</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/css-bootstrap-breadcrumbs/">
+          <section class="post">
+              <h2>面包屑（breadcrumbs）</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>
+

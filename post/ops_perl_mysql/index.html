@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="referrer" content="no-referrer"/>
+    
+
+
+
+<meta name="twitter:title" content="数据库的查询"/>
+<meta name="twitter:description" content="Perl实现"/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="数据库的查询 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/ops_perl_mysql/" />
+
+    
+        
+    
+
+    
+    <meta property="og:description" content="Perl实现" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2020-05-08T16:08:08&#43;08:00" />
+
+    
+    
+
+    <title>数据库的查询 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="Perl实现" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.145.0">
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_perl_mysql/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null 
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "数据库的查询",
+    "name": "数据库的查询",
+    "wordCount":  66 ,
+    "timeRequired": "PT1M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/post/ops_perl_mysql/",
+    "datePublished": "2020-05-08T16:08Z",
+    "dateModified": "2020-05-08T16:08Z",
+    
+    
+    "description": "Perl实现",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/post/ops_perl_mysql/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button icon-feed" href="/csdn/index.xml" >&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">数据库的查询</h1>
+        <small>Perl实现</small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2020-05-08T16:08:08&#43;08:00">
+            May 8, 2020
+          </time>
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <p>Perl操作数据库与其他的语言操作数据库没有什么区别。</p>
+<ul>
+<li>
+<p>首先，要连接数据库。</p>
+</li>
+<li>
+<p>然后，执行SQL语句。</p>
+</li>
+<li>
+<p>最后，关闭连接。</p>
+</li>
+</ul>
+<h1 id="code">code</h1>
+<p>循环中为使用游标读取每行数据。</p>
+<p>test.pl</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span><span style="color:#75715e">#! /usr/bin/perl</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># test DBI and DBD::mysql</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> DBI;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$dsn <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;DBI:mysql:database=carnumber;host=localhost;port=3306&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">my</span> $dbh <span style="color:#f92672">=</span> DBI<span style="color:#f92672">-&gt;</span>connect($dsn, <span style="color:#e6db74">&#34;root&#34;</span>, <span style="color:#e6db74">&#34;qazxsw&#34;</span>, {<span style="color:#e6db74">&#39;RaiseError&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">my</span> $strSQL <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;select train_number, seriary_number, car_number,&#34;</span><span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34; car_marque, past_time from trainOrder where train_number &lt; 100&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">my</span> $sth <span style="color:#f92672">=</span> $dbh<span style="color:#f92672">-&gt;</span>prepare($strSQL);
+</span></span><span style="display:flex;"><span>$sth<span style="color:#f92672">-&gt;</span>execute();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;TN\tSN\tNumber\tMarque\tPastTime\n&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> (<span style="color:#66d9ef">my</span> $ref <span style="color:#f92672">=</span> $sth<span style="color:#f92672">-&gt;</span>fetchrow_hashref()) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;$ref-&gt;{&#39;train_number&#39;}\t&#34;</span><span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>	    <span style="color:#e6db74">&#34;$ref-&gt;{&#39;seriary_number&#39;}\t&#34;</span><span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>	    <span style="color:#e6db74">&#34;$ref-&gt;{&#39;car_number&#39;}\t&#34;</span><span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>	    <span style="color:#e6db74">&#34;$ref-&gt;{&#39;car_marque&#39;}\t&#34;</span><span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>	    <span style="color:#e6db74">&#34;$ref-&gt;{&#39;past_time&#39;}\n&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$sth<span style="color:#f92672">-&gt;</span>finish();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$dbh<span style="color:#f92672">-&gt;</span>disconnect();
+</span></span></code></pre></div>
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=%e6%95%b0%e6%8d%ae%e5%ba%93%e7%9a%84%e6%9f%a5%e8%af%a2&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_perl_mysql%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_perl_mysql%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_perl_mysql%2f&amp;description=%e6%95%b0%e6%8d%ae%e5%ba%93%e7%9a%84%e6%9f%a5%e8%af%a2"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_perl_mysql%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_perl_excel/">
+          <section class="post">
+              <h2>对Excel进行处理</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/dp-singleton-java/">
+          <section class="post">
+              <h2>单例模式</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>
+

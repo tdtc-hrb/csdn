@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="referrer" content="no-referrer"/>
+    
+
+
+
+<meta name="twitter:title" content="设置HikariCP"/>
+<meta name="twitter:description" content="使用HikariCP替换dbcp2"/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="设置HikariCP &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/java-tomcat-pool-hikaricp/" />
+
+    
+        
+    
+
+    
+    <meta property="og:description" content="使用HikariCP替换dbcp2" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2020-04-10T12:26:39&#43;08:00" />
+
+    
+    
+
+    <title>设置HikariCP &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="使用HikariCP替换dbcp2" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.145.0">
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/java-tomcat-pool-hikaricp/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null 
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "设置HikariCP",
+    "name": "设置HikariCP",
+    "wordCount":  393 ,
+    "timeRequired": "PT2M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/post/java-tomcat-pool-hikaricp/",
+    "datePublished": "2020-04-10T12:26Z",
+    "dateModified": "2020-04-10T12:26Z",
+    
+    
+    "description": "使用HikariCP替换dbcp2",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/post/java-tomcat-pool-hikaricp/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button icon-feed" href="/csdn/index.xml" >&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">设置HikariCP</h1>
+        <small>使用HikariCP替换dbcp2</small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2020-04-10T12:26:39&#43;08:00">
+            Apr 10, 2020
+          </time>
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <h1 id="1-contextxml">1. context.xml</h1>
+<blockquote>
+<p>tomcat</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  Licensed to the Apache Software Foundation (ASF) under one or more
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  contributor license agreements.  See the NOTICE file distributed with
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  this work for additional information regarding copyright ownership.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  The ASF licenses this file to You under the Apache License, Version 2.0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  (the &#34;License&#34;); you may not use this file except in compliance with
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  the License.  You may obtain a copy of the License at
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">      http://www.apache.org/licenses/LICENSE-2.0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  Unless required by applicable law or agreed to in writing, software
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  distributed under the License is distributed on an &#34;AS IS&#34; BASIS,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  See the License for the specific language governing permissions and
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  limitations under the License.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">--&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- The contents of this file will be loaded for each web application --&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;Context&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- Default set of monitored resources. If one of these changes, the    --&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- web application will be reloaded.                                   --&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;WatchedResource&gt;</span>WEB-INF/web.xml<span style="color:#f92672">&lt;/WatchedResource&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;WatchedResource&gt;</span>WEB-INF/tomcat-web.xml<span style="color:#f92672">&lt;/WatchedResource&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;WatchedResource&gt;</span>${catalina.base}/conf/web.xml<span style="color:#f92672">&lt;/WatchedResource&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- Uncomment this to disable session persistence across Tomcat restarts --&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!--
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    &lt;Manager pathname=&#34;&#34; /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    --&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;Resource</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;jdbc/mysqlds&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">auth=</span><span style="color:#e6db74">&#34;Container&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;com.zaxxer.hikari.HikariDataSource&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">username=</span><span style="color:#e6db74">&#34;DBAdmin&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">password=</span><span style="color:#e6db74">&#34;xbfirst&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">maximumPoolSize=</span><span style="color:#e6db74">&#34;100&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">idleTimeout=</span><span style="color:#e6db74">&#34;10000&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">maxLifetime=</span><span style="color:#e6db74">&#34;30000&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">minimumIdle=</span><span style="color:#e6db74">&#34;5&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">connectionTimeout=</span><span style="color:#e6db74">&#34;10000&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">driverClassName=</span><span style="color:#e6db74">&#34;com.mysql.jdbc.Driver&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">dataSourceClassName=</span><span style="color:#e6db74">&#34;jdbc:mysql://127.0.0.1:3306/carnumber&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/Context&gt;</span>
+</span></span></code></pre></div><h1 id="2-webxml">2. web.xml</h1>
+<blockquote>
+<p><a href="https://github.com/xiaobin80/SpringMVC-Spring-Mybatis/commit/7adb63e00e61b6c919d18e2546e1d4c2865feead">github</a></p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;web-app</span> <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://java.sun.com/xml/ns/javaee&#34;</span> <span style="color:#a6e22e">xsi:schemaLocation=</span><span style="color:#e6db74">&#34;http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;WebApp_ID&#34;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#34;2.5&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;display-name&gt;</span>car number JSP<span style="color:#f92672">&lt;/display-name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;description&gt;</span>Spring 4.0<span style="color:#f92672">&lt;/description&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!--
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        - Location of the XML file that defines the root application context.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        - Applied by ContextLoaderServlet.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        -
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        - Can include &#34;/WEB-INF/dataAccessContext-local.xml&#34; for a single-database
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        - context, or &#34;/WEB-INF/dataAccessContext-jta.xml&#34; for a two-database context.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    --&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;context-param&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;param-name&gt;</span>contextConfigLocation<span style="color:#f92672">&lt;/param-name&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;param-value&gt;</span>/WEB-INF/dataAccessContext-local.xml /WEB-INF/applicationContext.xml /WEB-INF/spring-security.xml<span style="color:#f92672">&lt;/param-value&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!--
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        &lt;param-value&gt;/WEB-INF/dataAccessContext-jta.xml  /WEB-INF/applicationContext.xml&lt;/param-value&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        --&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/context-param&gt;</span>    
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!--
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        - Loads the root application context of this web app at startup,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        - by default from &#34;/WEB-INF/applicationContext.xml&#34;.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        - Note that you need to fall back to Spring&#39;s ContextLoaderServlet for
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        - J2EE servers that do not follow the Servlet 2.4 initialization order.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        -
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        - Use WebApplicationContextUtils.getWebApplicationContext(servletContext)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        - to access it anywhere in the web application, outside of the framework.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        -
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        - The root context is the parent of all servlet-specific contexts.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        - This means that its beans are automatically available in these child contexts,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        - both for getBean(name) calls and (external) bean references.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    --&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;listener&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;listener-class&gt;</span>org.springframework.web.context.ContextLoaderListener<span style="color:#f92672">&lt;/listener-class&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/listener&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;servlet&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;servlet-name&gt;</span>carnumberJSP2<span style="color:#f92672">&lt;/servlet-name&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;servlet-class&gt;</span>org.springframework.web.servlet.DispatcherServlet<span style="color:#f92672">&lt;/servlet-class&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;load-on-startup&gt;</span>2<span style="color:#f92672">&lt;/load-on-startup&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/servlet&gt;</span>    
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- Spring Security: Begin --&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;filter&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;filter-name&gt;</span>springSecurityFilterChain<span style="color:#f92672">&lt;/filter-name&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;filter-class&gt;</span>org.springframework.web.filter.DelegatingFilterProxy<span style="color:#f92672">&lt;/filter-class&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/filter&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;filter-mapping&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;filter-name&gt;</span>springSecurityFilterChain<span style="color:#f92672">&lt;/filter-name&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;url-pattern&gt;</span>/*<span style="color:#f92672">&lt;/url-pattern&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/filter-mapping&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- Spring Security: End --&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;servlet-mapping&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;servlet-name&gt;</span>carnumberJSP2<span style="color:#f92672">&lt;/servlet-name&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!--
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        &lt;servlet-name&gt;action&lt;/servlet-name&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        &lt;url-pattern&gt;*.do&lt;/url-pattern&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        --&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;url-pattern&gt;</span>/<span style="color:#f92672">&lt;/url-pattern&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/servlet-mapping&gt;</span>    
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;welcome-file-list&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;welcome-file&gt;</span>index.html<span style="color:#f92672">&lt;/welcome-file&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/welcome-file-list&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;resource-ref&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;description&gt;</span>DB Connection<span style="color:#f92672">&lt;/description&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;res-ref-name&gt;</span>dbc/mysqlds<span style="color:#f92672">&lt;/res-ref-name&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;res-type&gt;</span>com.zaxxer.hikari.HikariDataSource<span style="color:#f92672">&lt;/res-type&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;res-auth&gt;</span>Container<span style="color:#f92672">&lt;/res-auth&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;res-sharing-scope&gt;</span>Shareable<span style="color:#f92672">&lt;/res-sharing-scope&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/resource-ref&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/web-app&gt;</span>
+</span></span></code></pre></div><h1 id="reference">Reference</h1>
+<ul>
+<li><a href="https://www.cnblogs.com/limeiky/p/5714294.html">Tomcat数据库连接池的配置方法总结</a></li>
+</ul>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=%e8%ae%be%e7%bd%aeHikariCP&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fjava-tomcat-pool-hikaricp%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fjava-tomcat-pool-hikaricp%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fjava-tomcat-pool-hikaricp%2f&amp;description=%e8%ae%be%e7%bd%aeHikariCP"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fjava-tomcat-pool-hikaricp%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/csdn/post/java-string-redis-template/">
+          <section class="post">
+              <h2>StringRedisTemplate - redis-cli</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/java-spring-security/">
+          <section class="post">
+              <h2>关于Spring Security 4例子的补充</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>
+

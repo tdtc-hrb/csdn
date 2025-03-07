@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="referrer" content="no-referrer"/>
+    
+
+
+
+<meta name="twitter:title" content="主备切换 - MySQL&#43;MHA"/>
+<meta name="twitter:description" content="本系列包括MySQL 主从复制"/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="主备切换 - MySQL&#43;MHA &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/mysql-mha/" />
+
+    
+        
+    
+
+    
+    <meta property="og:description" content="本系列包括MySQL 主从复制" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2022-09-27T00:38:08&#43;08:00" />
+
+    
+    
+
+    <title>主备切换 - MySQL&#43;MHA &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="本系列包括MySQL 主从复制" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.145.0">
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/mysql-mha/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null 
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "主备切换 - MySQL+MHA",
+    "name": "主备切换 - MySQL+MHA",
+    "wordCount":  1277 ,
+    "timeRequired": "PT6M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/post/mysql-mha/",
+    "datePublished": "2022-09-27T00:38Z",
+    "dateModified": "2022-09-27T00:38Z",
+    
+    
+    "description": "本系列包括MySQL 主从复制",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/post/mysql-mha/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button icon-feed" href="/csdn/index.xml" >&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">主备切换 - MySQL&#43;MHA</h1>
+        <small>本系列包括MySQL 主从复制</small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2022-09-27T00:38:08&#43;08:00">
+            Sep 27, 2022
+          </time>
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <blockquote>
+<p>在进行安装配置前，请确认已经完成了 <a href="https://tdtc-hrb.github.io/csdn/post/mysql-master-slave-replication/">MySQL 主从复制</a></p></blockquote>
+<ul>
+<li>MHA</li>
+</ul>
+<blockquote>
+<p>(V0.58)</p></blockquote>
+<ol>
+<li><a href="https://github.com/yoshinorim/mha4mysql-manager">Manager</a></li>
+<li><a href="https://github.com/yoshinorim/mha4mysql-node">Node</a></li>
+</ol>
+<blockquote>
+<blockquote>
+<p>baidu yun - backup</p></blockquote></blockquote>
+<ol>
+<li><a href="https://pan.baidu.com/s/1FBX1yI4HncdI9UZCdzdcHQ">Mha manager</a></li>
+<li><a href="https://pan.baidu.com/s/1wA5NOUgjnDDJxQTL0U-1DA">Mha node</a></li>
+</ol>
+<blockquote>
+<p>安装前准备 <a href="https://tdtc-hrb.github.io/csdn/post/ops_ssh_without_password/">ssh相互免密</a></p></blockquote>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/wuhan2017120193.png" alt="sql status"></p>
+<h1 id="一安装">一、安装</h1>
+<table>
+  <thead>
+      <tr>
+          <th>Name</th>
+          <th>IP</th>
+          <th>Memo</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>mha1</td>
+          <td>192.168.0.151</td>
+          <td>Monitor host</td>
+      </tr>
+  </tbody>
+</table>
+<p>使用pscp上传文件请参考 <a href="https://tdtc-hrb.github.io/csdn/post/mysql-master-slave-replication/">MySQL 主从复制</a> - 5. test data</p>
+<h2 id="1-mha-node">1. MHA Node</h2>
+<blockquote>
+<p>所有MySQL服务器（mysql1、mysql11、mysql12）和MHA 管理机（MHA）都要安装。</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum localinstall mha4mysql-node-0.58-0.el7.centos.noarch.rpm
+</span></span></code></pre></div><h2 id="2-mha-manager">2. MHA Manager</h2>
+<blockquote>
+<p>CentOS源有perl-Config-Tiny。</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install perl-Config-Tiny
+</span></span></code></pre></div><blockquote>
+<p>安装<a href="https://fedoraproject.org/wiki/EPEL">epel</a>，
+可以找到<a href="https://github.com/yoshinorim/mha4mysql-manager/wiki/Installation#installing-mha-manager">perl-Log-Dispatch、perl-Parallel-ForkManager</a>。</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+</span></span><span style="display:flex;"><span>sudo yum install perl-Log-Dispatch perl-Parallel-ForkManager -y
+</span></span></code></pre></div><blockquote>
+<p>安装manager</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum localinstall mha4mysql-manager-0.58-0.el7.centos.noarch.rpm
+</span></span></code></pre></div><h2 id="3-mysql主从配置">3. MySQL主从配置</h2>
+<blockquote>
+<p>（补充部分）</p></blockquote>
+<h3 id="1-repl-user">1) repl user</h3>
+<blockquote>
+<blockquote>
+<p>Slave Server（mysql11, mysql12）</p></blockquote></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;repl&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;192.168.0.%&#39;</span> IDENTIFIED <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;qaz1!Xsw2@&#39;</span>;
+</span></span><span style="display:flex;"><span>mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">GRANT</span> REPLICATION SLAVE <span style="color:#66d9ef">ON</span> <span style="color:#f92672">*</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;repl&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;192.168.0.%&#39;</span>;
+</span></span></code></pre></div><h3 id="2-add-log-bin">2) add log-bin</h3>
+<blockquote>
+<p>/etc/my.cnf</p></blockquote>
+<blockquote>
+<blockquote>
+<p>Slave Server(mysql11,mysql12)</p></blockquote></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>log-bin<span style="color:#f92672">=</span>mysql161-bin
+</span></span></code></pre></div><h1 id="二配置">二、配置</h1>
+<h2 id="1-manager">1. Manager</h2>
+<h3 id="1-check_repl_delay">1) check_repl_delay</h3>
+<blockquote>
+<p>设置复制延时为0和candidate_master=1，会强制切换master。</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>check_repl_delay<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><h3 id="2binlog">2）binlog</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>master_binlog_dir<span style="color:#f92672">=</span>/var/lib/mysql/
+</span></span><span style="display:flex;"><span>remote_workdir<span style="color:#f92672">=</span>/tmp
+</span></span></code></pre></div><h3 id="3发通知">3）发通知</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>report_script<span style="color:#f92672">=</span>/usr/bin/send_report
+</span></span></code></pre></div><h2 id="2-node">2. Node</h2>
+<h3 id="1-add-user">1) add user</h3>
+<blockquote>
+<p>(all mysql)</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;manager&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;192.168.0.%&#39;</span> identified <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;qaz1!Xsw2@&#39;</span>;
+</span></span><span style="display:flex;"><span>mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">grant</span> <span style="color:#66d9ef">all</span> <span style="color:#66d9ef">privileges</span> <span style="color:#66d9ef">on</span> <span style="color:#f92672">*</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">to</span> <span style="color:#e6db74">&#39;manager&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;192.168.0.%&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mysql<span style="color:#f92672">&gt;</span> flush  <span style="color:#66d9ef">privileges</span>;
+</span></span></code></pre></div><h1 id="三test">三、Test</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo masterha_check_repl --conf<span style="color:#f92672">=</span>/etc/masterha/app1.cnf
+</span></span></code></pre></div><blockquote>
+<p>Info:</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>tdtc@mha1 ~<span style="color:#f92672">]</span>$ sudo masterha_check_repl --conf<span style="color:#f92672">=</span>/etc/masterha/app1.cnf
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:36 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>warning<span style="color:#f92672">]</span> Global configuration file /etc/masterha_default.cnf not found. Skipping.
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:36 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span> Reading application default configuration from /etc/masterha/app1.cnf..
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:36 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span> Reading server configuration from /etc/masterha/app1.cnf..
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:36 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span> MHA::MasterMonitor version 0.58.
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:37 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span> GTID failover mode <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:37 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span> Dead Servers:
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:37 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span> Alive Servers:
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:37 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span>   192.168.0.160<span style="color:#f92672">(</span>192.168.0.160:3306<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:37 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span>   192.168.0.161<span style="color:#f92672">(</span>192.168.0.161:3306<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:37 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span>   192.168.0.162<span style="color:#f92672">(</span>192.168.0.162:3306<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:37 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span> Alive Slaves:
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:37 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span>   192.168.0.161<span style="color:#f92672">(</span>192.168.0.161:3306<span style="color:#f92672">)</span>  Version<span style="color:#f92672">=</span>5.7.25-log <span style="color:#f92672">(</span>oldest major version between slaves<span style="color:#f92672">)</span> log-bin:enabled
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:37 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span>     Replicating from 192.168.0.160<span style="color:#f92672">(</span>192.168.0.160:3306<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:37 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span>     Primary candidate <span style="color:#66d9ef">for</span> the new Master <span style="color:#f92672">(</span>candidate_master is set<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:37 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span>   192.168.0.162<span style="color:#f92672">(</span>192.168.0.162:3306<span style="color:#f92672">)</span>  Version<span style="color:#f92672">=</span>5.7.25-log <span style="color:#f92672">(</span>oldest major version between slaves<span style="color:#f92672">)</span> log-bin:enabled
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:37 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span>     Replicating from 192.168.0.160<span style="color:#f92672">(</span>192.168.0.160:3306<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:37 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span>     Not candidate <span style="color:#66d9ef">for</span> the new Master <span style="color:#f92672">(</span>no_master is set<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:37 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span> Current Alive Master: 192.168.0.160<span style="color:#f92672">(</span>192.168.0.160:3306<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:37 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span> Checking slave configurations..
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:37 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span>  read_only<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> is not set on slave 192.168.0.161<span style="color:#f92672">(</span>192.168.0.161:3306<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:37 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>warning<span style="color:#f92672">]</span>  relay_log_purge<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> is not set on slave 192.168.0.161<span style="color:#f92672">(</span>192.168.0.161:3306<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:37 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span>  read_only<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> is not set on slave 192.168.0.162<span style="color:#f92672">(</span>192.168.0.162:3306<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:37 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>warning<span style="color:#f92672">]</span>  relay_log_purge<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> is not set on slave 192.168.0.162<span style="color:#f92672">(</span>192.168.0.162:3306<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:37 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span> Checking replication filtering settings..
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:37 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span>  binlog_do_db<span style="color:#f92672">=</span> , binlog_ignore_db<span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:37 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span>  Replication filtering check ok.
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:37 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span> GTID <span style="color:#f92672">(</span>with auto-pos<span style="color:#f92672">)</span> is not supported
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:37 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span> Starting SSH connection tests..
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:41 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span> All SSH connection tests passed successfully.
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:41 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span> Checking MHA Node version..
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:42 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span>  Version check ok.
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:42 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span> Checking SSH publickey authentication settings on the current master..
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:42 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span> HealthCheck: SSH to 192.168.0.160 is reachable.
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:42 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span> Master MHA Node version is 0.58.
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:42 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span> Checking recovery script configurations on 192.168.0.160<span style="color:#f92672">(</span>192.168.0.160:3306<span style="color:#f92672">)</span>..
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:42 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span>   Executing command: save_binary_logs --command<span style="color:#f92672">=</span>test --start_pos<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span> --binlog_dir<span style="color:#f92672">=</span>/var/lib/mysql/ --output_file<span style="color:#f92672">=</span>/tmp/save_binary_logs_test --manager_version<span style="color:#f92672">=</span>0.58 --start_file<span style="color:#f92672">=</span>mysql160-bin.000003
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:42 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span>   Connecting to root@192.168.0.160<span style="color:#f92672">(</span>192.168.0.160:22<span style="color:#f92672">)</span>..
+</span></span><span style="display:flex;"><span>  Creating /tmp <span style="color:#66d9ef">if</span> not exists..    ok.
+</span></span><span style="display:flex;"><span>  Checking output directory is accessible or not..
+</span></span><span style="display:flex;"><span>   ok.
+</span></span><span style="display:flex;"><span>  Binlog found at /var/lib/mysql/, up to mysql160-bin.000003
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:43 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span> Binlog setting check <span style="color:#66d9ef">done</span>.
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:43 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span> Checking SSH publickey authentication and checking recovery script configurations on all alive slave servers..
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:43 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span>   Executing command : apply_diff_relay_logs --command<span style="color:#f92672">=</span>test --slave_user<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;manager&#39;</span> --slave_host<span style="color:#f92672">=</span>192.168.0.161 --slave_ip<span style="color:#f92672">=</span>192.168.0.161 --slave_port<span style="color:#f92672">=</span><span style="color:#ae81ff">3306</span> --workdir<span style="color:#f92672">=</span>/tmp --target_version<span style="color:#f92672">=</span>5.7.25-log --manager_version<span style="color:#f92672">=</span>0.58 --relay_log_info<span style="color:#f92672">=</span>/var/lib/mysql/relay-log.info  --relay_dir<span style="color:#f92672">=</span>/var/lib/mysql/  --slave_pass<span style="color:#f92672">=</span>xxx
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:43 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span>   Connecting to root@192.168.0.161<span style="color:#f92672">(</span>192.168.0.161:22<span style="color:#f92672">)</span>..
+</span></span><span style="display:flex;"><span>  Checking slave recovery environment settings..
+</span></span><span style="display:flex;"><span>    Opening /var/lib/mysql/relay-log.info ... ok.
+</span></span><span style="display:flex;"><span>    Relay log found at /var/lib/mysql, up to mysql11-relay-bin.000002
+</span></span><span style="display:flex;"><span>    Temporary relay log file is /var/lib/mysql/mysql11-relay-bin.000002
+</span></span><span style="display:flex;"><span>    Checking <span style="color:#66d9ef">if</span> super_read_only is defined and turned on.. not present or turned off, ignoring.
+</span></span><span style="display:flex;"><span>    Testing mysql connection and privileges..
+</span></span><span style="display:flex;"><span>mysql: <span style="color:#f92672">[</span>Warning<span style="color:#f92672">]</span> Using a password on the command line interface can be insecure.
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">done</span>.
+</span></span><span style="display:flex;"><span>    Testing mysqlbinlog output.. <span style="color:#66d9ef">done</span>.
+</span></span><span style="display:flex;"><span>    Cleaning up test file<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span>.. <span style="color:#66d9ef">done</span>.
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:43 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span>   Executing command : apply_diff_relay_logs --command<span style="color:#f92672">=</span>test --slave_user<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;manager&#39;</span> --slave_host<span style="color:#f92672">=</span>192.168.0.162 --slave_ip<span style="color:#f92672">=</span>192.168.0.162 --slave_port<span style="color:#f92672">=</span><span style="color:#ae81ff">3306</span> --workdir<span style="color:#f92672">=</span>/tmp --target_version<span style="color:#f92672">=</span>5.7.25-log --manager_version<span style="color:#f92672">=</span>0.58 --relay_log_info<span style="color:#f92672">=</span>/var/lib/mysql/relay-log.info  --relay_dir<span style="color:#f92672">=</span>/var/lib/mysql/  --slave_pass<span style="color:#f92672">=</span>xxx
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:43 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span>   Connecting to root@192.168.0.162<span style="color:#f92672">(</span>192.168.0.162:22<span style="color:#f92672">)</span>..
+</span></span><span style="display:flex;"><span>  Checking slave recovery environment settings..
+</span></span><span style="display:flex;"><span>    Opening /var/lib/mysql/relay-log.info ... ok.
+</span></span><span style="display:flex;"><span>    Relay log found at /var/lib/mysql, up to mysql12-relay-bin.000002
+</span></span><span style="display:flex;"><span>    Temporary relay log file is /var/lib/mysql/mysql12-relay-bin.000002
+</span></span><span style="display:flex;"><span>    Checking <span style="color:#66d9ef">if</span> super_read_only is defined and turned on.. not present or turned off, ignoring.
+</span></span><span style="display:flex;"><span>    Testing mysql connection and privileges..
+</span></span><span style="display:flex;"><span>mysql: <span style="color:#f92672">[</span>Warning<span style="color:#f92672">]</span> Using a password on the command line interface can be insecure.
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">done</span>.
+</span></span><span style="display:flex;"><span>    Testing mysqlbinlog output.. <span style="color:#66d9ef">done</span>.
+</span></span><span style="display:flex;"><span>    Cleaning up test file<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span>.. <span style="color:#66d9ef">done</span>.
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:44 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span> Slaves settings check <span style="color:#66d9ef">done</span>.
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:44 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>192.168.0.160<span style="color:#f92672">(</span>192.168.0.160:3306<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>current master<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span> +--192.168.0.161<span style="color:#f92672">(</span>192.168.0.161:3306<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span> +--192.168.0.162<span style="color:#f92672">(</span>192.168.0.162:3306<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:44 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span> Checking replication health on 192.168.0.161..
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:44 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span>  ok.
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:44 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span> Checking replication health on 192.168.0.162..
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:44 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span>  ok.
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:44 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>warning<span style="color:#f92672">]</span> master_ip_failover_script is not defined.
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:44 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>warning<span style="color:#f92672">]</span> shutdown_script is not defined.
+</span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:44 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span> Got exit code <span style="color:#ae81ff">0</span> <span style="color:#f92672">(</span>Not master dead<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>MySQL Replication Health is OK.
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>tdtc@mha1 ~<span style="color:#f92672">]</span>$
+</span></span></code></pre></div><h1 id="附件">附件</h1>
+<h2 id="1-send_report">1. send_report</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/perl
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  Copyright (C) 2011 DeNA Co.,Ltd.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  This program is free software; you can redistribute it and/or modify</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  it under the terms of the GNU General Public License as published by</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  the Free Software Foundation; either version 2 of the License, or</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  (at your option) any later version.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  This program is distributed in the hope that it will be useful,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  GNU General Public License for more details.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  You should have received a copy of the GNU General Public License</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   along with this program; if not, write to the Free Software</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  Foundation, Inc.,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Note: This is a sample script and is not complete. Modify the script based on your environment.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>use strict;
+</span></span><span style="display:flex;"><span>use warnings FATAL <span style="color:#f92672">=</span>&gt; <span style="color:#e6db74">&#39;all&#39;</span>;
+</span></span><span style="display:flex;"><span>use Mail::Sender;
+</span></span><span style="display:flex;"><span>use Getopt::Long;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#new_master_host and new_slave_hosts are set only when recovering master succeeded</span>
+</span></span><span style="display:flex;"><span>my <span style="color:#f92672">(</span> $dead_master_host, $new_master_host, $new_slave_hosts, $subject, $body <span style="color:#f92672">)</span>;
+</span></span><span style="display:flex;"><span>my $smtp<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;smtp.163.com&#39;</span>;
+</span></span><span style="display:flex;"><span>my $mail_from<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;love_shidie@163.com&#39;</span>;
+</span></span><span style="display:flex;"><span>my $mail_user<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;love_shidie&#39;</span>;
+</span></span><span style="display:flex;"><span>my $mail_pass<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;xxxxx&#39;</span>;
+</span></span><span style="display:flex;"><span>my $mail_to<span style="color:#f92672">=[</span><span style="color:#e6db74">&#39;veic_2005@163.com&#39;</span>,<span style="color:#e6db74">&#39;sjzligb@126.com&#39;</span><span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span>GetOptions<span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;orig_master_host=s&#39;</span> <span style="color:#f92672">=</span>&gt; <span style="color:#ae81ff">\$</span>dead_master_host,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;new_master_host=s&#39;</span>  <span style="color:#f92672">=</span>&gt; <span style="color:#ae81ff">\$</span>new_master_host,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;new_slave_hosts=s&#39;</span>  <span style="color:#f92672">=</span>&gt; <span style="color:#ae81ff">\$</span>new_slave_hosts,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;subject=s&#39;</span>          <span style="color:#f92672">=</span>&gt; <span style="color:#ae81ff">\$</span>subject,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;body=s&#39;</span>             <span style="color:#f92672">=</span>&gt; <span style="color:#ae81ff">\$</span>body,
+</span></span><span style="display:flex;"><span><span style="color:#f92672">)</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mailToContacts<span style="color:#f92672">(</span>$smtp,$mail_from,$mail_user,$mail_pass,$mail_to,$subject,$body<span style="color:#f92672">)</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sub mailToContacts <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    my <span style="color:#f92672">(</span> $smtp, $mail_from, $user, $passwd, $mail_to, $subject, $msg <span style="color:#f92672">)</span> <span style="color:#f92672">=</span> @_;
+</span></span><span style="display:flex;"><span>    open my $DEBUG, <span style="color:#e6db74">&#34;&gt; /tmp/monitormail.log&#34;</span>
+</span></span><span style="display:flex;"><span>        or die <span style="color:#e6db74">&#34;Can&#39;t open the debug      file:</span>$!<span style="color:#e6db74">\n&#34;</span>;
+</span></span><span style="display:flex;"><span>    my $sender <span style="color:#f92672">=</span> new Mail::Sender <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        ctype       <span style="color:#f92672">=</span>&gt; <span style="color:#e6db74">&#39;text/plain; charset=utf-8&#39;</span>,
+</span></span><span style="display:flex;"><span>        encoding    <span style="color:#f92672">=</span>&gt; <span style="color:#e6db74">&#39;utf-8&#39;</span>,
+</span></span><span style="display:flex;"><span>        smtp        <span style="color:#f92672">=</span>&gt; $smtp,
+</span></span><span style="display:flex;"><span>        from        <span style="color:#f92672">=</span>&gt; $mail_from,
+</span></span><span style="display:flex;"><span>        auth        <span style="color:#f92672">=</span>&gt; <span style="color:#e6db74">&#39;LOGIN&#39;</span>,
+</span></span><span style="display:flex;"><span>        TLS_allowed <span style="color:#f92672">=</span>&gt; <span style="color:#e6db74">&#39;0&#39;</span>,
+</span></span><span style="display:flex;"><span>        authid      <span style="color:#f92672">=</span>&gt; $user,
+</span></span><span style="display:flex;"><span>        authpwd     <span style="color:#f92672">=</span>&gt; $passwd,
+</span></span><span style="display:flex;"><span>        to          <span style="color:#f92672">=</span>&gt; $mail_to,
+</span></span><span style="display:flex;"><span>        subject     <span style="color:#f92672">=</span>&gt; $subject,
+</span></span><span style="display:flex;"><span>        debug       <span style="color:#f92672">=</span>&gt; $DEBUG
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    $sender-&gt;MailMsg<span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">{</span>   msg   <span style="color:#f92672">=</span>&gt; $msg,
+</span></span><span style="display:flex;"><span>            debug <span style="color:#f92672">=</span>&gt; $DEBUG
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">)</span> or print $Mail::Sender::Error;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> 1;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Do whatever you want here</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>exit 0;
+</span></span></code></pre></div><h2 id="2-app1cnf">2. <a href="https://pan.baidu.com/s/13dWV0oH1coGxtUYD8wcDmA">app1.cnf</a></h2>
+<blockquote>
+<p>/etc/masterha/app1.cnf</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>server default<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>user<span style="color:#f92672">=</span>manager
+</span></span><span style="display:flex;"><span>password<span style="color:#f92672">=</span>qaz1!Xsw2@
+</span></span><span style="display:flex;"><span>ssh_user<span style="color:#f92672">=</span>root
+</span></span><span style="display:flex;"><span>manager_workdir<span style="color:#f92672">=</span>/var/log/masterha/app1
+</span></span><span style="display:flex;"><span>manager_log<span style="color:#f92672">=</span>/var/log/masterha/app1/manager.log
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>check_repl_delay<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>master_binlog_dir<span style="color:#f92672">=</span>/var/lib/mysql/
+</span></span><span style="display:flex;"><span>remote_workdir<span style="color:#f92672">=</span>/tmp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#master_ip_failover_script= /usr/bin/master_ip_failover</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#master_ip_online_change_script= /usr/bin/master_ip_online_change</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>repl_password<span style="color:#f92672">=</span>qaz1!Xsw2@
+</span></span><span style="display:flex;"><span>repl_user<span style="color:#f92672">=</span>repl
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>report_script<span style="color:#f92672">=</span>/usr/bin/send_report
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>server1<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>hostname<span style="color:#f92672">=</span>192.168.0.160
+</span></span><span style="display:flex;"><span>port<span style="color:#f92672">=</span><span style="color:#ae81ff">3306</span>
+</span></span><span style="display:flex;"><span>candidate_master<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>server2<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>hostname<span style="color:#f92672">=</span>192.168.0.161
+</span></span><span style="display:flex;"><span>port<span style="color:#f92672">=</span><span style="color:#ae81ff">3306</span>
+</span></span><span style="display:flex;"><span>candidate_master<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>check_repl_delay<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>server3<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>hostname<span style="color:#f92672">=</span>192.168.0.162
+</span></span><span style="display:flex;"><span>port<span style="color:#f92672">=</span><span style="color:#ae81ff">3306</span>
+</span></span><span style="display:flex;"><span>no_master<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span></code></pre></div>
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=%e4%b8%bb%e5%a4%87%e5%88%87%e6%8d%a2%20-%20MySQL%2bMHA&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fmysql-mha%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fmysql-mha%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fmysql-mha%2f&amp;description=%e4%b8%bb%e5%a4%87%e5%88%87%e6%8d%a2%20-%20MySQL%2bMHA"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fmysql-mha%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_nginx/">
+          <section class="post">
+              <h2>前端（Web）负载均衡</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_gnupg/">
+          <section class="post">
+              <h2>GNU PG的使用</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>
+

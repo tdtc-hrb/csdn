@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="referrer" content="no-referrer"/>
+    
+
+
+
+<meta name="twitter:title" content="Hadoop - cluster"/>
+<meta name="twitter:description" content="Hadoop cluster共4篇，其余Hadoop配置 - base、Hadoop配置 - hdfs、Hadoop - yarn"/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Hadoop - cluster &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/ops_hadoop_cluster/" />
+
+    
+        
+    
+
+    
+    <meta property="og:description" content="Hadoop cluster共4篇，其余Hadoop配置 - base、Hadoop配置 - hdfs、Hadoop - yarn" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2022-10-11T00:08:08&#43;08:00" />
+
+    
+    
+
+    <title>Hadoop - cluster &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="Hadoop cluster共4篇，其余Hadoop配置 - base、Hadoop配置 - hdfs、Hadoop - yarn" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.145.0">
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_hadoop_cluster/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null 
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "Hadoop - cluster",
+    "name": "Hadoop - cluster",
+    "wordCount":  266 ,
+    "timeRequired": "PT2M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/post/ops_hadoop_cluster/",
+    "datePublished": "2022-10-11T00:08Z",
+    "dateModified": "2022-10-11T00:08Z",
+    
+    
+    "description": "Hadoop cluster共4篇，其余Hadoop配置 - base、Hadoop配置 - hdfs、Hadoop - yarn",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/post/ops_hadoop_cluster/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button icon-feed" href="/csdn/index.xml" >&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">Hadoop - cluster</h1>
+        <small>Hadoop cluster共4篇，其余Hadoop配置 - base、Hadoop配置 - hdfs、Hadoop - yarn</small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2022-10-11T00:08:08&#43;08:00">
+            Oct 11, 2022
+          </time>
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <h1 id="prepare">Prepare</h1>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th>server1</th>
+          <th>server2</th>
+          <th>server3</th>
+          <th>server4</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>NameNode</td>
+          <td>y</td>
+          <td>y</td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>DataNode</td>
+          <td> </td>
+          <td>y</td>
+          <td>y</td>
+          <td>y</td>
+      </tr>
+      <tr>
+          <td>ResourceManager</td>
+          <td> </td>
+          <td> </td>
+          <td>y</td>
+          <td>y</td>
+      </tr>
+      <tr>
+          <td>NodeManager</td>
+          <td>y</td>
+          <td>y</td>
+          <td>y</td>
+          <td>y</td>
+      </tr>
+      <tr>
+          <td>Zookeeper</td>
+          <td>y</td>
+          <td>y</td>
+          <td>y</td>
+          <td>y</td>
+      </tr>
+      <tr>
+          <td>JournalNode</td>
+          <td>y</td>
+          <td>y</td>
+          <td>y</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>ZK-FC</td>
+          <td>y</td>
+          <td>y</td>
+          <td> </td>
+          <td> </td>
+      </tr>
+      <tr>
+          <td>JobHistor</td>
+          <td>y</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<table>
+  <thead>
+      <tr>
+          <th>Server Name</th>
+          <th>IP</th>
+          <th>Host Name</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>server1</td>
+          <td>192.168.42.107</td>
+          <td>tdtc201</td>
+      </tr>
+      <tr>
+          <td>server2</td>
+          <td>192.168.42.108</td>
+          <td>tdtc202</td>
+      </tr>
+      <tr>
+          <td>server3</td>
+          <td>192.168.42.109</td>
+          <td>tdtc203</td>
+      </tr>
+      <tr>
+          <td>server4</td>
+          <td>192.168.42.110</td>
+          <td>tdtc204</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="1-zk">1. zk</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>zkServer.sh start
+</span></span></code></pre></div><p>安装详见《<a href="https://tdtc-hrb.github.io/csdn/post/ops_zookeeper/">ZooKeeper multi-server install</a>》</p>
+<h2 id="2-open-firewall">2. Open <a href="https://tdtc-hrb.github.io/csdn/post/ops_firewall/">firewall</a></h2>
+<h1 id="stage-i-installation">Stage I: Installation</h1>
+<h2 id="1-unzip">1. Unzip</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/home/$USER/app/hadoop/$version
+</span></span></code></pre></div><blockquote>
+<p>路径参考<a href="https://www.tecmint.com/oracle-database-11g-release-2-installation-in-linux/">Oracle11g</a></p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p ~/app/hadoop
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar zxvf hadoop-2.7.7.tar.gz -C ~/app/hadoop/
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mv ~/app/hadoop/hadoop-2.7.7 ~/app/hadoop/2.7.7
+</span></span></code></pre></div><h2 id="2-set-up">2. set up</h2>
+<blockquote>
+<p>详见Reference[1][2][3]。</p></blockquote>
+<h3 id="1-再显式地重新声明一遍java_home">1) 再显式地重新声明一遍JAVA_HOME</h3>
+<blockquote>
+<p><a href="https://www.cnblogs.com/codeOfLife/p/5940642.html">hadoop-env.sh</a></p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export JAVA_HOME<span style="color:#f92672">=</span>/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.345.b01-1.el7_9.x86_64
+</span></span></code></pre></div><h3 id="2-set-slaves">2) set slaves</h3>
+<p>这个设置文件决定有几个DN(data node)!!!</p>
+<blockquote>
+<p>slaves</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tdtc202
+</span></span><span style="display:flex;"><span>tdtc203
+</span></span><span style="display:flex;"><span>tdtc204
+</span></span></code></pre></div><h2 id="3-set-hadoop-home">3. set Hadoop Home</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vi ~/.bashrc
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export HADOOP_HOME<span style="color:#f92672">=</span>/home/tdtc/app/hadoop/2.7.7
+</span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span>$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+</span></span></code></pre></div><ul>
+<li>test</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>tdtc@tdtc201 ~<span style="color:#f92672">]</span>$ hadoop version
+</span></span><span style="display:flex;"><span>Hadoop 2.7.7
+</span></span><span style="display:flex;"><span>Subversion Unknown -r c1aad84bd27cd79c3d1a7dd58202a8c3ee1ed3ac
+</span></span><span style="display:flex;"><span>Compiled by stevel on 2018-07-18T22:47Z
+</span></span><span style="display:flex;"><span>Compiled with protoc 2.5.0
+</span></span><span style="display:flex;"><span>From source with checksum 792e15d20b12c74bd6f19a1fb886490
+</span></span><span style="display:flex;"><span>This command was run using /home/tdtc/app/hadoop/2.7.7/share/hadoop/common/hadoop-common-2.7.7.jar
+</span></span></code></pre></div><h1 id="stage-ii-init">Stage II: Init</h1>
+<ul>
+<li>查看信息 <br>
+<a href="https://blog.csdn.net/fwch1982/article/details/7947451">jps介绍</a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#jps</span>
+</span></span></code></pre></div><h2 id="1-run-journalnode">1. run journalnode</h2>
+<blockquote>
+<p>（server1,2,3）</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hadoop-daemon.sh start journalnode
+</span></span></code></pre></div><h2 id="2-format-nn">2. format nn</h2>
+<blockquote>
+<p>(server1 or 2)</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hadoop namenode -format
+</span></span></code></pre></div><h3 id="1-copy-file">1) copy file</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd ~/app/hadoop
+</span></span><span style="display:flex;"><span>scp -r tmp/ tdtc201:$PWD
+</span></span></code></pre></div><h3 id="2-format-zk-fc">2) format zk-fc</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hdfs zkfc -formatZK
+</span></span></code></pre></div><h1 id="stage-iii-run">Stage III: Run</h1>
+<h2 id="1-hdfs">1. HDFS</h2>
+<blockquote>
+<p>server1 or 2</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>start-dfs.sh
+</span></span></code></pre></div><blockquote>
+<p>stop cmd:</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>stop-dfs.sh
+</span></span></code></pre></div><h3 id="1-check">1) check</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hdfs haadmin -getServiceState nn1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>hdfs haadmin -getServiceState nn2
+</span></span></code></pre></div><h2 id="2-yarn">2. YARN</h2>
+<blockquote>
+<p>server3 or 4</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>start-yarn.sh
+</span></span></code></pre></div><h3 id="1-backup-site">1) backup site</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yarn-daemon.sh start resourcemanager
+</span></span></code></pre></div><h3 id="2-check">2) check</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yarn rmadmin -getServiceState rm1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>yarn rmadmin -getServiceState rm2
+</span></span></code></pre></div><h2 id="3-mapreduce">3. Mapreduce</h2>
+<blockquote>
+<p>server1</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mr-jobhistory-daemon.sh start historyserver
+</span></span></code></pre></div><p>web:
+http://192.168.42.107:50070/dfshealth.html <br>
+or <br>
+http://192.168.42.108:50070/dfshealth.html</p>
+<h1 id="stage-iv-stop">Stage IV: Stop</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$HADOOP_HOME/sbin/stop-all.sh
+</span></span></code></pre></div><h2 id="1-mapreduce">1. Mapreduce</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mr-jobhistory-daemon.sh stop historyserver
+</span></span></code></pre></div><h1 id="faq">FAQ</h1>
+<h2 id="ip地址变更">IP地址变更</h2>
+<p>Q: 我的IP地址变更了，怎么办？ <br>
+A:</p>
+<ol>
+<li>
+<p>改变系统的IP</p>
+<ol>
+<li>/etc/hosts</li>
+<li>/etc/sysconfig/network-scripts/ifcfg-xxx</li>
+</ol>
+</li>
+<li>
+<p>删除hadoop目录
+仅限NN（name node）
+$rm -rf ~/app/hadoop</p>
+</li>
+<li>
+<p>重新安装NN
+本例子为：Server1和Server2</p>
+</li>
+</ol>
+<h1 id="reference">Reference</h1>
+<ul>
+<li><a href="https://tdtc-hrb.github.io/csdn/post/ops_hadoop_cluster_base/">Hadoop配置 - base</a></li>
+<li><a href="https://tdtc-hrb.github.io/csdn/post/ops_hadoop_cluster_hdfs/">Hadoop配置 - HDFS</a></li>
+<li><a href="https://tdtc-hrb.github.io/csdn/post/ops_hadoop_cluster_yarn/">Hadoop配置 - YARN</a></li>
+<li><a href="https://www.cnblogs.com/qingyunzong/p/8634335.html">ZooKeeper学习之路 （九）利用ZooKeeper搭建Hadoop的HA集群</a></li>
+</ul>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Hadoop%20-%20cluster&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_hadoop_cluster%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_hadoop_cluster%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_hadoop_cluster%2f&amp;description=Hadoop%20-%20cluster"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_hadoop_cluster%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/csdn/post/demo-tdtc/">
+          <section class="post">
+              <h2>TDTC Demo</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_real_keepalived/">
+          <section class="post">
+              <h2>架设Real Server和Keepalived Server</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>
+

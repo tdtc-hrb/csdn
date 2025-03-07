@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <meta name="referrer" content="no-referrer"/>
+    
+
+
+
+<meta name="twitter:title" content="Posts"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/" />
+
+    
+        
+    
+
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="" />
+    
+
+    <title>Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+        <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+    
+    <meta name="generator" content="Hugo 0.145.0">
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/"
+    },
+    "description":  null 
+}
+  </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/post/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+	<header class="main-header tag-head no-cover">
+
+    <nav class="main-nav overlay clearfix">
+      
+      
+        
+          <a class="menu-button icon-feed" href='/csdn/post/index.xml'>&nbsp;&nbsp;Subscribe</a>
+        
+      
+    </nav>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            <h1 class="page-title">Posts</h1>
+            <h2 class="page-description">
+                
+            </h2>
+        </div>
+    </div>
+</header>
+
+<main class="content" role="main">
+    
+
+	<div class="extra-pagination inner">
+    <nav class="pagination" role="navigation">
+	
+	    <a class="newer-posts" href="/csdn/post/page/9/">&larr; Newer Posts</a>
+	
+	<span class="page-number">Page 10 of 12</span>
+	
+	    <a class="older-posts" href="/csdn/post/page/11/">Older Posts &rarr;</a>
+	
+</nav>
+
+	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_mail/">mail的使用</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="installation">installation</h1>
+<p><a href="http://www.mutt.org/">Mutt</a> is a small but very powerful text-based mail client for Unix operating systems.</p>
+<h2 id="1-install">1) install</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yum install mutt
+</span></span></code></pre></div><h2 id="2-config">2) config</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$vi ~/.muttrc
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>set sendmail<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/usr/local/msmtp/bin/msmtp&#34;</span>
+</span></span><span style="display:flex;"><span>set from <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;user@domain.com&#34;</span>
+</span></span><span style="display:flex;"><span>set realname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Realname of the user&#34;</span>
+</span></span></code></pre></div><p>received mail:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>set pop_host<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pop.163.com&#34;</span>
+</span></span><span style="display:flex;"><span>set pop_user<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;love_shidie&#34;</span>
+</span></span><span style="display:flex;"><span>set pop_pass<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>getpassword email_id<span style="color:#e6db74">`</span>
+</span></span></code></pre></div><h1 id="test">test</h1>
+<h2 id="1-send-mail">1) send mail</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gpg -d ~/.msmtp/love_shidie-passoword.gpg
+</span></span><span style="display:flex;"><span>$mutt -s <span style="color:#e6db74">&#34;test message&#34;</span> -a ~/message121.txt
+</span></span></code></pre></div><h2 id="2-received-mail">2) received mail</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$mutt
+</span></span></code></pre></div><p>Press key: G</p>
+<h1 id="reference">Reference</h1>
+<ul>
+<li><a href="https://www.tecmint.com/send-mail-from-command-line-using-mutt-command/">Mutt – A Command Line Email Client to Send Mails from Terminal</a></li>
+<li><a href="https://unix.stackexchange.com/questions/20570/mutt-how-to-safely-store-password">Mutt: how to safely store password?</a></li>
+<li><a href="https://xiaobin80.gitee.io/csdn/post/ops_mail_msmtp/">mail send</a></li>
+<li><a href="https://xiaobin80.gitee.io/csdn/post/ops_gnupg/">gnupg - xiaobin_HLJ80</a></li>
+</ul> <a class="read-more" href="/csdn/post/ops_mail/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-15T23:08:08&#43;08:00">
+            15 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_mail_msmtp/">mail的发送</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="使用msmtp实现">使用msmtp实现</h1>
+<h1 id="installation">installation</h1>
+<h2 id="down">down</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://marlam.de/msmtp/releases/msmtp-1.6.8.tar.xz
+</span></span></code></pre></div><h2 id="install">install</h2>
+<pre tabindex="0"><code>$xz -d msmtp-1.6.8.tar.xz
+$tar xvf msmtp-1.6.8.tar
+$cd msmtp-1.6.8
+$./configure --prefix=/user/local/msmtp
+$make
+</code></pre><p>Then install using root</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$make install
+</span></span></code></pre></div><h1 id="configuration">configuration</h1>
+<blockquote>
+<p>需要在user的根目录建立一个新文件：.msmtprc</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cd ~
+</span></span><span style="display:flex;"><span>$vi .msmtprc
+</span></span><span style="display:flex;"><span>$chmod <span style="color:#ae81ff">600</span> .msmtprc
+</span></span></code></pre></div><blockquote>
+<blockquote>
+<p>.msmtprc</p></blockquote></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>defaults
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>logfile ~/.msmtp/msmtp.log
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># The SMTP server of the provider.</span>
+</span></span><span style="display:flex;"><span>account love_shidie
+</span></span><span style="display:flex;"><span>host smtp.163.com
+</span></span><span style="display:flex;"><span>from love_shidie@163.com
+</span></span><span style="display:flex;"><span>auth login
+</span></span><span style="display:flex;"><span>user love_shidie@163.com
+</span></span><span style="display:flex;"><span>passwordeval gpg  --no-tty -q -d ~/.msmtp/love_shidie-password.gpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set a default account</span>
+</span></span><span style="display:flex;"><span>account default: love_shidie
+</span></span></code></pre></div><h2 id="rw">r+w</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$chmod <span style="color:#ae81ff">600</span> .msmtprc
+</span></span></code></pre></div><h1 id="reference">Reference</h1>
+<ul>
+<li><a href="https://xiaobin80.gitee.io/csdn/post/ops_gnupg/">gnupg - xiaobin_HLJ80</a></li>
+</ul> <a class="read-more" href="/csdn/post/ops_mail_msmtp/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-15T21:08:08&#43;08:00">
+            15 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_spark_cluster/">spark cluster</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><blockquote>
+<p>OS: CentOS7</p></blockquote>
+<h1 id="prepare">Prepare</h1>
+<ol>
+<li>已经安装了《<a href="https://xiaobin80.gitee.io/csdn/post/ops_zookeeper/">ZooKeeper multi-server install</a>》</li>
+<li>已经安装了《<a href="https://xiaobin80.gitee.io/csdn/post/ops_hadoop_cluster/">hadoop - cluster</a>》</li>
+</ol>
+<h1 id="stage-i-installation">Stage I: Installation</h1>
+<ol>
+<li><a href="https://xiaobin80.gitee.io/csdn/post/ops_spark_centos/">spark安装 - CentOS</a></li>
+<li>Firewall设置请参见《<a href="https://xiaobin80.gitee.io/csdn/post/ops_firewall/">firewall-soft list(port)</a>》</li>
+<li>设置OpenJDK请参见《<a href="https://xiaobin80.gitee.io/csdn/post/ops_openjdk_centos/">设置OpenJDK - CentOS</a>》</li>
+<li>set up</li>
+</ol>
+<blockquote>
+<p>详见Reference[4]</p></blockquote>
+<h1 id="stage-ii-run">Stage II: Run</h1>
+<h2 id="1-zk">1. ZK</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>zkServer.sh start
+</span></span></code></pre></div><h2 id="2-hadoop">2. Hadoop</h2>
+<h3 id="1-hdfs">1) HDFS</h3>
+<p>see 《<a href="https://xiaobin80.gitee.io/csdn/post/ops_hadoop_cluster/">hadoop - cluster</a> - 3.1 HDFS》</p>
+<h3 id="2-yarn">2) YARN</h3>
+<p>see 《<a href="https://xiaobin80.gitee.io/csdn/post/ops_hadoop_cluster/">hadoop - cluster</a> - 3.2 YARN》</p>
+<h2 id="3-spark">3. Spark</h2>
+<blockquote>
+<p>（server3，4）</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$SPARK_HOME/sbin/start-all.sh
+</span></span></code></pre></div><h3 id="1-other-site">1) other site</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$SPARK_HOME/sbin/start-master.sh
+</span></span></code></pre></div><p>Web:
+http://192.168.42.109:8082/</p>
+<p>http://192.168.42.110:8082/</p>
+<p>or
+http://192.168.42.109:8081/</p>
+<p>http://192.168.42.110:8081/</p>
+<h1 id="stage-iii-stop">Stage III: Stop</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$SPARK_HOME/sbin/stop-all.sh
+</span></span></code></pre></div><h1 id="reference">Reference</h1>
+<ol>
+<li><a href="http://spark.apache.org/docs/latest/running-on-yarn.html">Running Spark on YARN</a></li>
+<li><a href="https://xiaobin80.gitee.io/csdn/post/ops_hadoop_cluster/">hadoop - cluster</a></li>
+<li>《<a href="https://www.cnblogs.com/qingyunzong/p/8888080.html">Spark学习之路 （二）Spark2.3 HA集群的分布式安装</a>》</li>
+<li>《<a href="https://xiaobin80.gitee.io/csdn/post/ops_spark_config/">spark配置</a>》</li>
+</ol> <a class="read-more" href="/csdn/post/ops_spark_cluster/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-15T02:08:08&#43;08:00">
+            15 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_spark_config/">spark配置</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="1-spark-env">1. spark env</h1>
+<blockquote>
+<p>spark-env.sh</p></blockquote>
+<h2 id="1-hadoop-path">1) hadoop path</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export HADOOP_HOME<span style="color:#f92672">=</span>/home/tdtc/app/hadoop/2.7.7
+</span></span><span style="display:flex;"><span>export HADOOP_CONF_DIR<span style="color:#f92672">=</span>$HADOOP_HOME/etc/hadoop
+</span></span></code></pre></div><h2 id="2-spark-worker">2) spark worker</h2>
+<p>使用的内存和cpu core数</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export SPARK_WORKER_MEMORY<span style="color:#f92672">=</span>128m
+</span></span><span style="display:flex;"><span>export SPARK_WORKER_CORES<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><h2 id="3-recoveryzookeeper">3) recovery(zookeeper)</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export SPARK_DAEMON_JAVA_OPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-Dspark.deploy.recoveryMode=ZOOKEEPER -Dspark.deploy.zookeeper.url=tdtc201:2181,tdtc202:2181,tdtc203:2181,tdtc204:2181 -Dspark.deploy.zookeeper.dir=/spark2&#34;</span>
+</span></span></code></pre></div><h3 id="recoverymode">recoveryMode</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>spark.deploy.recoveryMode<span style="color:#f92672">=</span>ZOOKEEPER
+</span></span></code></pre></div><h3 id="url">url</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>spark.deploy.zookeeper.url<span style="color:#f92672">=</span>tdtc201:2181,tdtc202:2181,tdtc203:2181,tdtc204:2181
+</span></span></code></pre></div><h3 id="directory">directory</h3>
+<p>储存在zk中的位置</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>spark.deploy.zookeeper.dir<span style="color:#f92672">=</span>/spark2
+</span></span></code></pre></div><h1 id="2-slaves">2. slaves</h1>
+<blockquote>
+<p>注意：有几个YARN，就设置几个slaves！！！</p>
+<blockquote>
+<p>../conf/slaves</p></blockquote></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tdtc203
+</span></span><span style="display:flex;"><span>tdtc204
+</span></span></code></pre></div><h1 id="reference">Reference</h1>
+<ul>
+<li><a href="https://stackoverflow.com/questions/24183904/how-to-set-up-spark-with-zookeeper-for-ha">how-to-set-up-spark-with-zookeeper-for-ha</a></li>
+</ul> <a class="read-more" href="/csdn/post/ops_spark_config/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-15T01:08:08&#43;08:00">
+            15 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_selinux/">SELinux的开启/关闭</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><blockquote>
+<p>(root权限)</p></blockquote>
+<p>SELinux(Security-Enhanced Linux) 是美国国家安全局（NSA）对于强制访问控制的实现，是 Linux历史上最杰出的新安全子系统。</p>
+<h1 id="1-临时">1. 临时</h1>
+<blockquote>
+<p>临时的意思就是宽容模式(0)强制模式(1)与的切换
+默认是：强制模式</p></blockquote>
+<ul>
+<li>强制模式</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$setenforce <span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><ul>
+<li>宽容模式
+临时关闭</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$setenforce <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><h1 id="2-永久">2. 永久</h1>
+<blockquote>
+<p>/etc/selinux/config</p></blockquote>
+<ul>
+<li>开启</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>SELINUX<span style="color:#f92672">=</span>enforcing
+</span></span></code></pre></div><ul>
+<li>关闭</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>SELINUX<span style="color:#f92672">=</span>disabled
+</span></span></code></pre></div><h1 id="3-查看selinux的工作模式">3. 查看SELinux的工作模式</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>getenforce
+</span></span></code></pre></div> <a class="read-more" href="/csdn/post/ops_selinux/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-15T00:20:08&#43;08:00">
+            15 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_useradd_centos/">增加用户</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><blockquote>
+<p>ali云服务器</p></blockquote>
+<h1 id="1-user-add-and-set-password">1. User Add and Set password</h1>
+<h2 id="1-add-user">1) add user</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>useradd	site_user
+</span></span></code></pre></div><h1 id="2-set-passwd">2) set passwd</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>passwd -x <span style="color:#ae81ff">180</span> site_user
+</span></span></code></pre></div><h1 id="3-set-home_dir">3) set home_dir</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>usermod -d /home/fdn site_user
+</span></span></code></pre></div><h1 id="2-assigning-permissions">2. assigning permissions</h1>
+<blockquote>
+<p>如果多个目录需要设置，则多次重复&quot;(2)设置&quot;即可。</p></blockquote>
+<blockquote>
+<p>文件系统是否支持acl</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>df -T | awk <span style="color:#e6db74">&#39;{print $1,$2,$NF}&#39;</span> | grep <span style="color:#e6db74">&#34;^/dev&#34;</span>
+</span></span><span style="display:flex;"><span>grep -i acl /boot/config*
+</span></span></code></pre></div><blockquote>
+<p>分区是否支持acl</p>
+<blockquote>
+<p>注意：在ali服务器上是vda1。</p></blockquote></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tune2fs -l /dev/vda1 | grep acl
+</span></span></code></pre></div><h2 id="1-查看">1) 查看</h2>
+<blockquote>
+<p>目录的acl设置情况。</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>getfacl	/home/fdn
+</span></span></code></pre></div><h2 id="2-设置">2) 设置</h2>
+<blockquote>
+<p>设置指定目录的acl。</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>setfacl -m user:site_user:rwx /home/fdn
+</span></span></code></pre></div><h1 id="参考文章">参考文章</h1>
+<ul>
+<li>《<a href="https://linux.cn/article-8487-1.html">在 Linux 上给用户赋予指定目录的读写权限</a>》</li>
+<li>《<a href="http://man.linuxde.net/setfacl">setfacl命令</a>》</li>
+<li><a href="http://www.spiration.co.uk/post/1294/Unix%20/%20Linux%20change%20a%20user%27s%20home%20directory%20-%20usermod">Unix / Linux change a user&rsquo;s home directory - usermod</a></li>
+<li><a href="https://www.tecmint.com/give-read-write-access-to-directory-in-linux/">give read write access to directory in linux</a></li>
+</ul> <a class="read-more" href="/csdn/post/ops_useradd_centos/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-15T00:18:08&#43;08:00">
+            15 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_spark_centos/">spark安装</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><blockquote>
+<p>Spark：v2.4</p></blockquote>
+<h1 id="一基础软件">一、基础软件</h1>
+<h2 id="1-r-lang">1. R-lang</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum -y install epel-release
+</span></span><span style="display:flex;"><span>sudo yum install R
+</span></span></code></pre></div><blockquote>
+<p>注意：如果Java没有安装，会附带着安装OpenJDK。</p></blockquote>
+<h2 id="2-scala">2. Scala</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://downloads.lightbend.com/scala/2.12.8/scala-2.12.8.tgz
+</span></span><span style="display:flex;"><span>tar xvf scala-2.12.8.tgz
+</span></span><span style="display:flex;"><span>sudo mv scala-2.12.8 /usr/lib
+</span></span><span style="display:flex;"><span>sudo ln -s /usr/lib/scala-2.12.8 /usr/lib/scala
+</span></span></code></pre></div><h3 id="1-add-path">1) add path</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$vi ~/.bashrc
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>PATH<span style="color:#f92672">=</span>$PATH:/usr/lib/scala/bin
+</span></span></code></pre></div><h1 id="二spark">二、Spark</h1>
+<h2 id="1-down--unzip">1. down &amp; unzip</h2>
+<blockquote>
+<p><a href="https://archive.apache.org/dist/spark/spark-2.4.1/spark-2.4.1-bin-hadoop2.7.tgz">v2.4.1</a></p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p ~/app/spark
+</span></span><span style="display:flex;"><span>tar zxvf spark-2.4.1-bin-hadoop2.7.tgz -C ~/app/spark
+</span></span><span style="display:flex;"><span>mv ~/app/spark/spark-2.4.1-bin-hadoop2.7 ~/app/spark/2.4.1
+</span></span></code></pre></div><h2 id="2-test">2. test</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./bin/spark-shell --master local<span style="color:#f92672">[</span>2<span style="color:#f92672">]</span>
+</span></span></code></pre></div><p>input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>i &lt;- <span style="color:#ae81ff">1</span> to 3; j &lt;- <span style="color:#ae81ff">1</span> to <span style="color:#ae81ff">3</span> <span style="color:#66d9ef">if</span> i !<span style="color:#f92672">=</span> j<span style="color:#f92672">)</span> print<span style="color:#f92672">(</span><span style="color:#ae81ff">10</span> * i + j + <span style="color:#e6db74">&#34;\t&#34;</span><span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>input:(exit)</p> <a class="read-more" href="/csdn/post/ops_spark_centos/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-15T00:08:08&#43;08:00">
+            15 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_hadoop_cluster_yarn/">Hadoop配置 - yarn</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><blockquote>
+<p>(../etc/hadoop/yarn-site.xml)</p></blockquote>
+<h1 id="1-resourcemanager-ha">1. ResourceManager HA</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.ha.enabled<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>true<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.cluster-id<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>cluster1<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.ha.rm-ids<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>rm1,rm2<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.hostname.rm1<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>tdtc203<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.hostname.rm2<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>tdtc204<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.webapp.address.rm1<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>tdtc203:8088<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.webapp.address.rm2<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>tdtc204:8088<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.zk-address<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>tdtc201:2181,tdtc202:2181,tdtc203:2181<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span></code></pre></div><h1 id="2-resource-manager-restart">2. Resource Manager Restart</h1>
+<blockquote>
+<p>see Reference[3]</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.recovery.enabled<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;value&gt;</span>true<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span></code></pre></div><h2 id="1-zookeeper">1) zookeeper</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.store.class<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;value&gt;</span>org.apache.hadoop.yarn.server.resourcemanager.recovery.ZKRMStateStore<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span></code></pre></div><h1 id="3-aux-serviceauxiliary-service">3. Aux Service（Auxiliary Service）</h1>
+<h2 id="1-base">1) base</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;name&gt;</span>yarn.nodemanager.aux-services<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;value&gt;</span>mapreduce_shuffle<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span></code></pre></div><h2 id="2-spark">2) spark</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;name&gt;</span>yarn.nodemanager.aux-services<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;value&gt;</span>spark_shuffle,mapreduce_shuffle<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span></code></pre></div><h1 id="4-log-aggregation">4. log aggregation</h1>
+<ol>
+<li><a href="https://hadoop.apache.org/docs/r2.7.7/hadoop-yarn/hadoop-yarn-common/yarn-default.xml">yarn-default.xml</a></li>
+<li><a href="https://hadoop.apache.org/docs/r2.7.7/hadoop-yarn/hadoop-yarn-site/ResourceManagerHA.html">Resource Manager HA</a></li>
+<li><a href="https://hadoop.apache.org/docs/r2.7.7/hadoop-yarn/hadoop-yarn-site/ResourceManagerRestart.html">Resource Manager Restart</a></li>
+</ol> <a class="read-more" href="/csdn/post/ops_hadoop_cluster_yarn/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-14T10:08:08&#43;08:00">
+            14 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_hadoop_cluster_hdfs/">Hadoop配置 - hdfs</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><blockquote>
+<p>(../etc/hadoop/hdfs-site.xml)</p></blockquote>
+<h1 id="1-name-services">1. name services</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.nameservices<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>mycluster<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span></code></pre></div><h2 id="1-name-node">1) name node</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.ha.namenodes.mycluster<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>nn1,nn2<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span></code></pre></div><h2 id="2-rpcname-node">2) RPC(name node)</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.namenode.rpc-address.mycluster.nn1<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>tdtc201:8020<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.namenode.rpc-address.mycluster.nn2<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>tdtc202:8020<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span></code></pre></div><h2 id="3-httpname-node">3) Http(name node)</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.namenode.http-address.mycluster.nn1<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>tdtc201:50070<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.namenode.http-address.mycluster.nn2<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>tdtc202:50070<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span></code></pre></div><h1 id="2-journalnode">2. JournalNode</h1>
+<h2 id="1-quorum-journal-manager">1) quorum journal manager</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- Journal Node(QJM) --&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.namenode.shared.edits.dir<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>qjournal://tdtc201:8485;tdtc202:8485;tdtc203:8485/mycluster<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span></code></pre></div><h3 id="local">local</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.journalnode.edits.dir<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>/home/tdtc/app/hadoop/data/journaldata<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span></code></pre></div><h1 id="3-failover">3. failover</h1>
+<h2 id="1-support-class">1) support class</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- the Java class that HDFS clients use to contact the Active NameNode --&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.client.failover.proxy.provider.mycluster<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span></code></pre></div><h2 id="auto-switch">auto switch</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.ha.automatic-failover.enabled<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>true<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span></code></pre></div><h1 id="4-sshfence">4. sshfence</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- sshfence - SSH to the Active NameNode and kill the process --&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.ha.fencing.methods<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>sshfence<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.ha.fencing.ssh.private-key-files<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>/home/tdtc/.ssh/id_rsa<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span></code></pre></div><h2 id="1-timeout">1) timeout</h2>
+<blockquote>
+<p>default: 30s</p> <a class="read-more" href="/csdn/post/ops_hadoop_cluster_hdfs/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-14T09:08:08&#43;08:00">
+            14 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_hadoop_cluster_base/">Hadoop配置 - base</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><blockquote>
+<p>(../etc/hadoop)</p></blockquote>
+<h1 id="1-core-sitexml">1. core-site.xml</h1>
+<h2 id="1-hdfs">1) HDFS</h2>
+<blockquote>
+<p>the default path prefix used by the Hadoop FS client when none is given
+Optionally, you may now configure the default path for Hadoop clients to use the new HA-enabled logical URI.
+If you used “mycluster” as the nameservice ID earlier, this will be the value of the authority portion of all of your HDFS paths.
+This may be configured like so, in your core-site.xml file:</p> <a class="read-more" href="/csdn/post/ops_hadoop_cluster_base/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-14T08:08:08&#43;08:00">
+            14 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+
+	<nav class="pagination" role="navigation">
+	
+	    <a class="newer-posts" href="/csdn/post/page/9/">&larr; Newer Posts</a>
+	
+	<span class="page-number">Page 10 of 12</span>
+	
+	    <a class="older-posts" href="/csdn/post/page/11/">Older Posts &rarr;</a>
+	
+</nav>
+
+</main>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>

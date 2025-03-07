@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <meta name="referrer" content="no-referrer"/>
+    
+
+
+
+<meta name="twitter:title" content="Posts"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/" />
+
+    
+        
+    
+
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="" />
+    
+
+    <title>Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+        <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+    
+    <meta name="generator" content="Hugo 0.145.0">
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/"
+    },
+    "description":  null 
+}
+  </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/post/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+	<header class="main-header tag-head no-cover">
+
+    <nav class="main-nav overlay clearfix">
+      
+      
+        
+          <a class="menu-button icon-feed" href='/csdn/post/index.xml'>&nbsp;&nbsp;Subscribe</a>
+        
+      
+    </nav>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            <h1 class="page-title">Posts</h1>
+            <h2 class="page-description">
+                
+            </h2>
+        </div>
+    </div>
+</header>
+
+<main class="content" role="main">
+    
+
+	<div class="extra-pagination inner">
+    <nav class="pagination" role="navigation">
+	
+	    <a class="newer-posts" href="/csdn/post/page/10/">&larr; Newer Posts</a>
+	
+	<span class="page-number">Page 11 of 12</span>
+	
+	    <a class="older-posts" href="/csdn/post/page/12/">Older Posts &rarr;</a>
+	
+</nav>
+
+	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_hadoop_abbr1/">hadoop名词解释</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="qjm-and-shuffle">QJM and shuffle</h1>
+<h1 id="1-qjm">1. QJM</h1>
+<h2 id="11-背景">1.1 背景</h2>
+<p>自从hadoop2版本开始，社区引入了NameNode高可用方案。NameNode主从节点间需要同步操作日志来达到主从节点元数据一致。最初业界均通过NFS来实现日志同步，大家之所以选择NFS，一方面因为可以很方便地实现数据共享，另外一方面因为NFS已经发展20多年，已经相对稳定成熟。</p>
+<p>虽然如此，NFS也有缺点不能满足HDFS的在线存储业务：网络单点及其存储节点单点。业界提供了数据共享的一些高可用解决方案，但均不能很好地满足目前HDFS的应用场景。</p>
+<table>
+  <thead>
+      <tr>
+          <th>方案</th>
+          <th>网络单点</th>
+          <th>存储单点</th>
+          <th>备注</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Mysql</td>
+          <td>HA</td>
+          <td>无</td>
+          <td>无</td>
+      </tr>
+      <tr>
+          <td>Drbd+heartbeat+NFS</td>
+          <td>无</td>
+          <td>无</td>
+          <td>脑裂；数据有丢失风险</td>
+      </tr>
+      <tr>
+          <td>Keepalive+NFS</td>
+          <td>无</td>
+          <td>有</td>
+          <td>数据有丢失风险</td>
+      </tr>
+  </tbody>
+</table>
+<p>为了满足共享日志的高可用性，社区引入QJM。QJM由cloudera开发，实现了读写高可用性，使HDFS达到真正的高可用性成为可能。</p>
+<h2 id="12-术语和定义">1.2 术语和定义</h2>
+<table>
+  <thead>
+      <tr>
+          <th>术语和定义</th>
+          <th>解释</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Epoch</td>
+          <td>由主节点在启动及其切换为主的时候分配，每次操作JN节点均会检查该值,类似zookeeper中的zxid，此时主NameNode类似zookeeper中的leader，JN节点类似ZK中的Follower</td>
+      </tr>
+      <tr>
+          <td>JournalNode</td>
+          <td>QJM存储段进程，提供日志读写，存储，修复等服务</td>
+      </tr>
+      <tr>
+          <td>QJM</td>
+          <td>Qurom Journal Manager</td>
+      </tr>
+      <tr>
+          <td>startLogSegment</td>
+          <td>开始一个新的日志段,该日志段状态为接收写入日志的状态</td>
+      </tr>
+      <tr>
+          <td>finalizeLogSegment</td>
+          <td>将文件由正在写入日志的状态转化为不接收写日志的状态</td>
+      </tr>
+      <tr>
+          <td>recoverUnfinalizedSegments</td>
+          <td>主从切换等情况下，恢复没有转换为finalized状态的日志</td>
+      </tr>
+      <tr>
+          <td>journalId</td>
+          <td>日志ID，由配置指定，如qjournal://g42:8485;g35:8485;uhp9:8485/geminifs，则其中的geminifs即为journalId</td>
+      </tr>
+  </tbody>
+</table>
+<h1 id="2shuffle">2. shuffle</h1>
+<p>作者：Lijie Xu
+链接：https://www.zhihu.com/question/27643595/answer/127473409
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<ol>
+<li>
+<p>从逻辑角度来讲，Shuffle 过程就是一个 GroupByKey 的过程，两者没有本质区别。
+只是 MapReduce 为了方便 GroupBy 存在于不同 partition 中的 key/value records，就提前对 key 进行排序。Spark 认为很多应用不需要对 key 排序，就默认没有在 GroupBy 的过程中对 key 排序。</p> <a class="read-more" href="/csdn/post/ops_hadoop_abbr1/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        on
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/qjm/">#QJM</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/shuffle/">#shuffle</a>,
+            
+        
+        <time class="post-date" datetime="2020-04-14T03:08:08&#43;08:00">
+            14 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_firewall/">soft-list(port)</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="i-soft-list">I. Soft List</h1>
+<h2 id="1-zk">1. zk</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>2181/tcp
+</span></span><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>2888/tcp
+</span></span><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>3888/tcp
+</span></span></code></pre></div><h2 id="2-hadoop">2. Hadoop</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>10020/tcp
+</span></span><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>19888/tcp
+</span></span><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>8020/tcp
+</span></span><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>50070/tcp
+</span></span><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>8485/tcp
+</span></span><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>8088/tcp
+</span></span><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>8033/tcp
+</span></span></code></pre></div><h2 id="3-spark">3. Spark</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>6066/tcp
+</span></span><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>7077/tcp
+</span></span><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>8080-8088/tcp
+</span></span></code></pre></div><blockquote>
+<p>立即生效：</p> <a class="read-more" href="/csdn/post/ops_firewall/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-14T02:08:08&#43;08:00">
+            14 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_ssh_without_password/">ssh相互免密</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><blockquote>
+<p>OS: CentOS 7</p></blockquote>
+<table>
+  <thead>
+      <tr>
+          <th>Ip</th>
+          <th>/etc/hostname</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>192.168.0.110</td>
+          <td>host1</td>
+      </tr>
+      <tr>
+          <td>192.168.0.111</td>
+          <td>host2</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p>Note:</p>
+<blockquote>
+<p>On every host, run following commands, Use xiaobin112(user) to do all following.</p></blockquote></blockquote>
+<h1 id="prepare">Prepare</h1>
+<p>Establish Directory &ldquo;.ssh&rdquo;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$mkdir ~/.ssh
+</span></span><span style="display:flex;"><span>$chmod <span style="color:#ae81ff">700</span> ~/.ssh
+</span></span></code></pre></div><h1 id="stage-i">Stage I</h1>
+<h2 id="1-config">1. config</h2>
+<blockquote>
+<p>另外一种方式为：把所有机器的IP和hostname放在/etc/hosts里，在此不再赘述, 请参见《<a href="https://xiaobin80.gitee.io/csdn/post/ops_zookeeper/">ZooKeeper multi-server install</a> - 3.FQDN》。</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$vi ~/.ssh/config
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Host host1
+</span></span><span style="display:flex;"><span>        HostName 192.168.0.110
+</span></span><span style="display:flex;"><span>        Port <span style="color:#ae81ff">22</span>
+</span></span><span style="display:flex;"><span>        User xiaobin112
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Host host2
+</span></span><span style="display:flex;"><span>        HostName 192.168.0.111
+</span></span><span style="display:flex;"><span>        Port <span style="color:#ae81ff">22</span>
+</span></span><span style="display:flex;"><span>        User xiaobin112
+</span></span></code></pre></div><h2 id="2-rw">2. r+w</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$chmod <span style="color:#ae81ff">600</span> ~/.ssh/config
+</span></span></code></pre></div><h1 id="stage-ii">Stage II</h1>
+<h2 id="1-gen">1. gen</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">(</span>Just press ENTER <span style="color:#66d9ef">for</span> all input values<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>ssh-keygen -t rsa -P <span style="color:#e6db74">&#39;&#39;</span>
+</span></span></code></pre></div><h2 id="2-file-copy">2. file copy</h2>
+<blockquote>
+<p>host1 and host2:</p> <a class="read-more" href="/csdn/post/ops_ssh_without_password/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-13T11:38:08&#43;08:00">
+            13 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_department_vsftp/">架设VSFTP服务器</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><blockquote>
+<p>Ubuntu版本：14.04
+参考Ubuntu14.04的<a href="https://help.ubuntu.com/14.04/serverguide/ftp-server.html">FTP Server文档</a></p></blockquote>
+<h1 id="安装vsftpd">安装vsftpd</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>root@tdtc010-Vostro-270:~# apt-get install vsftpd
+</span></span></code></pre></div><h1 id="配置">配置</h1>
+<h2 id="允许上传">允许上传</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>local_enable<span style="color:#f92672">=</span>YES;
+</span></span><span style="display:flex;"><span>write_enable<span style="color:#f92672">=</span>YES;
+</span></span></code></pre></div><h2 id="允许匿名上传">允许匿名上传</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>anon_upload_enable<span style="color:#f92672">=</span>YES;
+</span></span></code></pre></div><h1 id="faq">FAQ</h1>
+<h2 id="553-could-not-create-file">553 Could not create file</h2>
+<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/1366383847_4148.png" alt="2013-04-19 23:13:47">
+执行“快速连接”;提示错误信息：553 Could not create file</p>
+<h3 id="新建一个目录">新建一个目录</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>root@tdtc010-Vostro-270:/srv/ftp# mkdir upload_xp
+</span></span></code></pre></div><h3 id="更改目录权限">更改目录权限</h3>
+<p>默认权限（FileZilla右击文件属性）
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20170902112233231.png" alt="2013-04-19 23:13:47">
+更改为可读写：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>root@tdtc010-Vostro-270:/srv/ftp# chmod <span style="color:#ae81ff">777</span> upload_xp
+</span></span></code></pre></div><p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20170902112934299.png" alt="2013-04-19 23:13:47"></p>
+<h2 id="550-failed-to-open-file">550 Failed to open file</h2>
+<p>解决办法： 开启公共权限（读）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod <span style="color:#ae81ff">644</span> myfile.iso
+</span></span></code></pre></div><h2 id="显示ftp目录信息">显示ftp目录信息</h2>
+<p>在目录下建立一个.message文件即可。  <br>
+/srv/ftp/upload_xp/.message <br>
+文件内容：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>欢迎使用VSFTPD，这个是upload_xp目录
+</span></span></code></pre></div><p>再次，在FileZilla执行上传，显示成功：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>状态:	已连接
+</span></span><span style="display:flex;"><span>状态:	开始上传 D:<span style="color:#ae81ff">\3</span>60Downloads<span style="color:#ae81ff">\p</span>erl-5.16.3.tar.gz
+</span></span><span style="display:flex;"><span>命令:	CWD /upload_xp
+</span></span><span style="display:flex;"><span>响应:	<span style="color:#ae81ff">250</span> Directory successfully changed.
+</span></span><span style="display:flex;"><span>命令:	TYPE I
+</span></span><span style="display:flex;"><span>响应:	<span style="color:#ae81ff">200</span> Switching to Binary mode.
+</span></span><span style="display:flex;"><span>命令:	PASV
+</span></span><span style="display:flex;"><span>响应:	<span style="color:#ae81ff">227</span> Entering Passive Mode <span style="color:#f92672">(</span>192,168,1,101,232,175<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>命令:	STOR perl-5.16.3.tar.gz
+</span></span><span style="display:flex;"><span>响应:	<span style="color:#ae81ff">150</span> Ok to send data.
+</span></span><span style="display:flex;"><span>响应:	<span style="color:#ae81ff">226</span> Transfer complete.
+</span></span><span style="display:flex;"><span>状态:	文件传输成功，传输了 16,930,885 字节 <span style="color:#f92672">(</span>用时58 秒<span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>全文完。</p> <a class="read-more" href="/csdn/post/ops_department_vsftp/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-13T03:08:08&#43;08:00">
+            13 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_department_psi/">使用psi</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="服务器的搭建">服务器的搭建</h1>
+<p>请参考<a href="http://goran-subotic.github.io/chat/2015/07/31/how_to_install_tigase_on_ubuntu.html">How to install Tigase XMPP server 7.0.2 on Ubuntu 14.04.2</a></p>
+<h1 id="客户端">客户端</h1>
+<p>我们使用PSI（V1.2）进行服务器的测试。</p>
+<h2 id="1-注册">1. 注册</h2>
+<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20170906165632098.png" alt="2017-09-06 16:56"></p>
+<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20170906165704195.png" alt="2017-09-06 16:57"></p>
+<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20170906165754877.png" alt="2017-09-06 16:57"></p>
+<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20170906165817874.png" alt="2017-09-06 16:58"></p>
+<h2 id="2-增加好友">2. 增加好友</h2>
+<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20170906165853604.png" alt="2017-09-06 16:58"></p>
+<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20170906165909998.png" alt="2017-09-06 16:59"></p>
+<h2 id="3-重连">3. 重连</h2>
+<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20170906172839287.png" alt="2017-09-06 17:28"></p>
+<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20170906172900665.png" alt="2017-09-06 17:29"></p> <a class="read-more" href="/csdn/post/ops_department_psi/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-13T02:08:08&#43;08:00">
+            13 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_cloud_httpd/">在阿里云上部署httpd</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><blockquote>
+<p>Server：ali云服务器ECS <br>
+OS: CentOS 6/7 (x64)
+httpd路径: /opt/httpd</p></blockquote>
+<h1 id="两种不同的init系统部署方式">两种不同的init系统部署方式</h1>
+<h1 id="一sysvinit">一、SysVinit</h1>
+<p>SysVinit是CentOS6的默认1号进程。</p>
+<h2 id="1-copy-script">1. Copy script</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># cp /opt/httpd/bin/apachectl /etc/rc.d/init.d/httpd</span>
+</span></span></code></pre></div><h2 id="2-edit-script">2. Edit script</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># cd /etc/rc.d/init.d</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># vi httpd</span>
+</span></span></code></pre></div><p>The original file(apachectl)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Licensed to the Apache Software Foundation (ASF) under one or more</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># contributor license agreements.  See the NOTICE file distributed with</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># this work for additional information regarding copyright ownership.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># The ASF licenses this file to You under the Apache License, Version 2.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># (the &#34;License&#34;); you may not use this file except in compliance with</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># the License.  You may obtain a copy of the License at</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#     http://www.apache.org/licenses/LICENSE-2.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Unless required by applicable law or agreed to in writing, software</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># distributed under the License is distributed on an &#34;AS IS&#34; BASIS,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># See the License for the specific language governing permissions and</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># limitations under the License.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Apache control script designed to allow an easy command line interface</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># to controlling Apache.  Written by Marc Slemko, 1997/08/23</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># The exit codes returned are:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   XXX this doc is no longer correct now that the interesting</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   XXX functions are handled by httpd</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#	0 - operation completed successfully</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#	1 -</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#	2 - usage error</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#	3 - httpd could not be started</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#	4 - httpd could not be stopped</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#	5 - httpd could not be started during a restart</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#	6 - httpd could not be restarted during a restart</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#	7 - httpd could not be restarted during a graceful restart</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#	8 - configuration syntax error</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># When multiple arguments are given, only the error from the _last_</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># one is reported.  Run &#34;apachectl help&#34; for usage info</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span>ARGV<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># |||||||||||||||||||| START CONFIGURATION SECTION  ||||||||||||||||||||</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># --------------------                              --------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># the path to your httpd binary, including options if necessary</span>
+</span></span><span style="display:flex;"><span>HTTPD<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;/opt/httpd/bin/httpd&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># pick up any necessary environment variables</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> test -f /opt/httpd/bin/envvars; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  . /opt/httpd/bin/envvars
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># a command that outputs a formatted text version of the HTML at the</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># url given on the command line.  Designed for lynx, however other</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># programs may work.  </span>
+</span></span><span style="display:flex;"><span>LYNX<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;lynx -dump&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># the URL to your server&#39;s mod_status status page.  If you do not</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># have one, then status and fullstatus will not work.</span>
+</span></span><span style="display:flex;"><span>STATUSURL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://localhost:80/server-status&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set this variable to a command that increases the maximum</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># number of file descriptors allowed per child process. This is</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># critical for configurations that use many file descriptors,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># such as mass vhosting, or a multithreaded server.</span>
+</span></span><span style="display:flex;"><span>ULIMIT_MAX_FILES<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ulimit -S -n `ulimit -H -n`&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># --------------------                              --------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ||||||||||||||||||||   END CONFIGURATION SECTION  ||||||||||||||||||||</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set the maximum number of file descriptors allowed per child process.</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;x</span>$ULIMIT_MAX_FILES<span style="color:#e6db74">&#34;</span> !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;x&#34;</span> <span style="color:#f92672">]</span> ; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    $ULIMIT_MAX_FILES
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ERROR<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;x</span>$ARGV<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;x&#34;</span> <span style="color:#f92672">]</span> ; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    ARGV<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-h&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">case</span> $ARGV in
+</span></span><span style="display:flex;"><span>start|stop|restart|graceful|graceful-stop<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    $HTTPD -k $ARGV
+</span></span><span style="display:flex;"><span>    ERROR<span style="color:#f92672">=</span>$?
+</span></span><span style="display:flex;"><span>    ;;
+</span></span><span style="display:flex;"><span>startssl|sslstart|start-SSL<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    echo The startssl option is no longer supported.
+</span></span><span style="display:flex;"><span>    echo Please edit httpd.conf to include the SSL configuration settings
+</span></span><span style="display:flex;"><span>    echo and <span style="color:#66d9ef">then</span> use <span style="color:#e6db74">&#34;apachectl start&#34;</span>.
+</span></span><span style="display:flex;"><span>    ERROR<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>    ;;
+</span></span><span style="display:flex;"><span>configtest<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    $HTTPD -t
+</span></span><span style="display:flex;"><span>    ERROR<span style="color:#f92672">=</span>$?
+</span></span><span style="display:flex;"><span>    ;;
+</span></span><span style="display:flex;"><span>status<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    $LYNX $STATUSURL | awk <span style="color:#e6db74">&#39; /process$/ { print; exit } { print } &#39;</span>
+</span></span><span style="display:flex;"><span>    ;;
+</span></span><span style="display:flex;"><span>fullstatus<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    $LYNX $STATUSURL
+</span></span><span style="display:flex;"><span>    ;;
+</span></span><span style="display:flex;"><span>*<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    $HTTPD $ARGV
+</span></span><span style="display:flex;"><span>    ERROR<span style="color:#f92672">=</span>$?
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">esac</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>exit $ERROR
+</span></span></code></pre></div><p>Add the following section to the file:(File header)</p> <a class="read-more" href="/csdn/post/ops_cloud_httpd/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-13T01:08:08&#43;08:00">
+            13 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_cloud_pure-ftpd/">在阿里云上部署pure-ftpd</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><blockquote>
+<p>Server：ali云服务器ECS <br>
+OS: CentOS 7.2 x64</p></blockquote>
+<h1 id="1-管理防火墙">1. 管理防火墙</h1>
+<p>增加ftp端口 <br>
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20171011171838468.png" alt="2017-10-11 17:18"></p>
+<h1 id="2-其他系统管理">2. 其他系统管理</h1>
+<h2 id="1-设置sellinux">1) 设置SeLlinux</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># setsebool -P ftp_home_dir on</span>
+</span></span></code></pre></div><h2 id="2-设置user">2) 设置user</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># useradd -m fdn -s /sbin/nologin</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># passwd fdn</span>
+</span></span></code></pre></div><h1 id="3-安装pure-ftpd">3. 安装pure-ftpd</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># yum install pure-ftpd</span>
+</span></span></code></pre></div><h2 id="1-setup">1) Setup</h2>
+<p>使用root简单设置pure-ftpd.conf</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># vi /etc/pure-ftpd/pure-ftpd.conf</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># If you want simple Unix (/etc/passwd) authentication, uncomment this</span>
+</span></span><span style="display:flex;"><span>UnixAuthentication            yes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Cage in every user in his home directory</span>
+</span></span><span style="display:flex;"><span>ChrootEveryone              yes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># If you want to log all client commands, set this to &#34;yes&#34;.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># This directive can be duplicated to also log server responses.</span>
+</span></span><span style="display:flex;"><span>VerboseLog                  yes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Disallow anonymous connections. Only allow authenticated users.</span>
+</span></span><span style="display:flex;"><span>NoAnonymous                 yes
+</span></span></code></pre></div><h2 id="2-run">2) run</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># chkconfig pure-ftpd on</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># service pure-ftpd start</span>
+</span></span></code></pre></div><h1 id="参考文档">参考文档</h1>
+<ul>
+<li><a href="http://www.lifelinux.com/how-to-install-pure-ftpd-on-centos-6-via-yum/">How To Install Pure-FTPd on CentOS 6 Via Yum</a></li>
+<li><a href="http://www.krizna.com/centos/setup-ftp-server-centos-7-vsftp/">Setup FTP server on centos 7</a></li>
+</ul> <a class="read-more" href="/csdn/post/ops_cloud_pure-ftpd/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-13T00:08:08&#43;08:00">
+            13 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/memcached-spy/">使用spymemcached操作memcached</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p><a href="https://github.com/ragnor/simple-spring-memcached/wiki/Getting-Started">offical site</a></p>
+<h1 id="pom">pom</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;groupId&gt;</span>com.google.code.simple-spring-memcached<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;artifactId&gt;</span>spymemcached-provider<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;version&gt;</span>4.1.3<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><h1 id="app-config">app config</h1>
+<blockquote>
+<p>applicationContext.xml</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;import</span> <span style="color:#a6e22e">resource=</span><span style="color:#e6db74">&#34;simplesm-context.xml&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;aop:aspectj-autoproxy</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;defaultMemcachedClient&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.google.code.ssm.CacheFactory&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;cacheClientFactory&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;cacheClientFactory&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.google.code.ssm.providers.spymemcached.MemcacheClientFactoryImpl&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;addressProvider&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.google.code.ssm.config.DefaultAddressProvider&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;address&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;127.0.0.1:11211&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;/bean&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;configuration&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.google.code.ssm.providers.CacheConfiguration&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;consistentHashing&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;/bean&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/bean&gt;</span>
+</span></span></code></pre></div><h1 id="code">code</h1>
+<blockquote>
+<p>service layer</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@ReadThroughSingleCache</span>(namespace <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;carnum&#34;</span>, expiration <span style="color:#f92672">=</span> 300)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>TrainOrder<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getCarList</span>(String year, String month, <span style="color:#a6e22e">@ParameterValueKeyProvider</span> <span style="color:#66d9ef">int</span> trainNumber) {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// TODO Auto-generated method stub</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> trainOrderDao.<span style="color:#a6e22e">getCarnumberList</span>(year, month, trainNumber);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div> <a class="read-more" href="/csdn/post/memcached-spy/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-11T21:08:39&#43;08:00">
+            11 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/java-string-redis-template/">StringRedisTemplate - redis-cli</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="1-autowired">1. autowired</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Autowired</span>
+</span></span><span style="display:flex;"><span>StringRedisTemplate stringRedisTemplate;
+</span></span></code></pre></div><h1 id="2-getset">2. get/set</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">redisCliTest</span>() {
+</span></span><span style="display:flex;"><span>      String cliVal <span style="color:#f92672">=</span> stringRedisTemplate.<span style="color:#a6e22e">opsForValue</span>().<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;mykey2&#34;</span>);
+</span></span><span style="display:flex;"><span>      System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;redis-cli value: &#34;</span> <span style="color:#f92672">+</span> cliVal);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="code">code</h1>
+<blockquote>
+<p>UserController.java</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.demo.controller;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.beans.factory.annotation.Autowired;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.data.redis.core.StringRedisTemplate;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.stereotype.Controller;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.ui.Model;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.web.bind.annotation.RequestMapping;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.web.bind.annotation.RequestMethod;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.example.demo.model.UserDetails;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.example.demo.service.UserDetailsService;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Controller</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@RequestMapping</span>(<span style="color:#e6db74">&#34;/user&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserController</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Autowired</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> UserDetailsService userService;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Autowired</span>
+</span></span><span style="display:flex;"><span>	StringRedisTemplate stringRedisTemplate;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@RequestMapping</span>(value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/listPage&#34;</span>, method <span style="color:#f92672">=</span> RequestMethod.<span style="color:#a6e22e">GET</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">findAll</span>(Model model) {
+</span></span><span style="display:flex;"><span>		List<span style="color:#f92672">&lt;</span>UserDetails<span style="color:#f92672">&gt;</span> users <span style="color:#f92672">=</span> userService.<span style="color:#a6e22e">getUsers</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		model.<span style="color:#a6e22e">addAttribute</span>(<span style="color:#e6db74">&#34;users&#34;</span>, users);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span>(UserDetails user : users) {
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(user.<span style="color:#a6e22e">getEmail</span>() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> user.<span style="color:#a6e22e">getName</span>());
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		redisCliTest();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;userList&#34;</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">redisCliTest</span>() {
+</span></span><span style="display:flex;"><span>        String cliVal <span style="color:#f92672">=</span> stringRedisTemplate.<span style="color:#a6e22e">opsForValue</span>().<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;mykey2&#34;</span>);
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;redis-cli value: &#34;</span> <span style="color:#f92672">+</span> cliVal);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="run">run</h2>
+<p>http://localhost:8080/user/listPage <br>
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20180921092240670.png" alt="browser info"></p> <a class="read-more" href="/csdn/post/java-string-redis-template/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-10T13:26:39&#43;08:00">
+            10 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/java-tomcat-pool-hikaricp/">设置HikariCP</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="1-contextxml">1. context.xml</h1>
+<blockquote>
+<p>tomcat</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  Licensed to the Apache Software Foundation (ASF) under one or more
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  contributor license agreements.  See the NOTICE file distributed with
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  this work for additional information regarding copyright ownership.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  The ASF licenses this file to You under the Apache License, Version 2.0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  (the &#34;License&#34;); you may not use this file except in compliance with
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  the License.  You may obtain a copy of the License at
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">      http://www.apache.org/licenses/LICENSE-2.0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  Unless required by applicable law or agreed to in writing, software
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  distributed under the License is distributed on an &#34;AS IS&#34; BASIS,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  See the License for the specific language governing permissions and
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  limitations under the License.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">--&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- The contents of this file will be loaded for each web application --&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;Context&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- Default set of monitored resources. If one of these changes, the    --&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- web application will be reloaded.                                   --&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;WatchedResource&gt;</span>WEB-INF/web.xml<span style="color:#f92672">&lt;/WatchedResource&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;WatchedResource&gt;</span>WEB-INF/tomcat-web.xml<span style="color:#f92672">&lt;/WatchedResource&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;WatchedResource&gt;</span>${catalina.base}/conf/web.xml<span style="color:#f92672">&lt;/WatchedResource&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- Uncomment this to disable session persistence across Tomcat restarts --&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!--
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    &lt;Manager pathname=&#34;&#34; /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    --&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;Resource</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;jdbc/mysqlds&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">auth=</span><span style="color:#e6db74">&#34;Container&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;com.zaxxer.hikari.HikariDataSource&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">username=</span><span style="color:#e6db74">&#34;DBAdmin&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">password=</span><span style="color:#e6db74">&#34;xbfirst&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">maximumPoolSize=</span><span style="color:#e6db74">&#34;100&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">idleTimeout=</span><span style="color:#e6db74">&#34;10000&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">maxLifetime=</span><span style="color:#e6db74">&#34;30000&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">minimumIdle=</span><span style="color:#e6db74">&#34;5&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">connectionTimeout=</span><span style="color:#e6db74">&#34;10000&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">driverClassName=</span><span style="color:#e6db74">&#34;com.mysql.jdbc.Driver&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">dataSourceClassName=</span><span style="color:#e6db74">&#34;jdbc:mysql://127.0.0.1:3306/carnumber&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/Context&gt;</span>
+</span></span></code></pre></div><h1 id="2-webxml">2. web.xml</h1>
+<blockquote>
+<p><a href="https://github.com/xiaobin80/SpringMVC-Spring-Mybatis/commit/7adb63e00e61b6c919d18e2546e1d4c2865feead">github</a></p> <a class="read-more" href="/csdn/post/java-tomcat-pool-hikaricp/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-10T12:26:39&#43;08:00">
+            10 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+
+	<nav class="pagination" role="navigation">
+	
+	    <a class="newer-posts" href="/csdn/post/page/10/">&larr; Newer Posts</a>
+	
+	<span class="page-number">Page 11 of 12</span>
+	
+	    <a class="older-posts" href="/csdn/post/page/12/">Older Posts &rarr;</a>
+	
+</nav>
+
+</main>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>

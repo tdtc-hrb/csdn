@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="referrer" content="no-referrer"/>
+    
+
+
+
+<meta name="twitter:title" content="StringRedisTemplate - redis-cli"/>
+<meta name="twitter:description" content="使用StringRedisTemplate读取redis-cli输入的数据"/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="StringRedisTemplate - redis-cli &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/java-string-redis-template/" />
+
+    
+        
+    
+
+    
+    <meta property="og:description" content="使用StringRedisTemplate读取redis-cli输入的数据" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2020-04-10T13:26:39&#43;08:00" />
+
+    
+    
+
+    <title>StringRedisTemplate - redis-cli &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="使用StringRedisTemplate读取redis-cli输入的数据" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.145.0">
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/java-string-redis-template/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null 
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "StringRedisTemplate - redis-cli",
+    "name": "StringRedisTemplate - redis-cli",
+    "wordCount":  312 ,
+    "timeRequired": "PT2M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/post/java-string-redis-template/",
+    "datePublished": "2020-04-10T13:26Z",
+    "dateModified": "2020-04-10T13:26Z",
+    
+    
+    "description": "使用StringRedisTemplate读取redis-cli输入的数据",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/post/java-string-redis-template/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button icon-feed" href="/csdn/index.xml" >&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">StringRedisTemplate - redis-cli</h1>
+        <small>使用StringRedisTemplate读取redis-cli输入的数据</small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2020-04-10T13:26:39&#43;08:00">
+            Apr 10, 2020
+          </time>
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <h1 id="1-autowired">1. autowired</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Autowired</span>
+</span></span><span style="display:flex;"><span>StringRedisTemplate stringRedisTemplate;
+</span></span></code></pre></div><h1 id="2-getset">2. get/set</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">redisCliTest</span>() {
+</span></span><span style="display:flex;"><span>      String cliVal <span style="color:#f92672">=</span> stringRedisTemplate.<span style="color:#a6e22e">opsForValue</span>().<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;mykey2&#34;</span>);
+</span></span><span style="display:flex;"><span>      System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;redis-cli value: &#34;</span> <span style="color:#f92672">+</span> cliVal);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="code">code</h1>
+<blockquote>
+<p>UserController.java</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.demo.controller;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.beans.factory.annotation.Autowired;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.data.redis.core.StringRedisTemplate;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.stereotype.Controller;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.ui.Model;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.web.bind.annotation.RequestMapping;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.web.bind.annotation.RequestMethod;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.example.demo.model.UserDetails;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.example.demo.service.UserDetailsService;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Controller</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@RequestMapping</span>(<span style="color:#e6db74">&#34;/user&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserController</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Autowired</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> UserDetailsService userService;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Autowired</span>
+</span></span><span style="display:flex;"><span>	StringRedisTemplate stringRedisTemplate;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@RequestMapping</span>(value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/listPage&#34;</span>, method <span style="color:#f92672">=</span> RequestMethod.<span style="color:#a6e22e">GET</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">findAll</span>(Model model) {
+</span></span><span style="display:flex;"><span>		List<span style="color:#f92672">&lt;</span>UserDetails<span style="color:#f92672">&gt;</span> users <span style="color:#f92672">=</span> userService.<span style="color:#a6e22e">getUsers</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		model.<span style="color:#a6e22e">addAttribute</span>(<span style="color:#e6db74">&#34;users&#34;</span>, users);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span>(UserDetails user : users) {
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(user.<span style="color:#a6e22e">getEmail</span>() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> user.<span style="color:#a6e22e">getName</span>());
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		redisCliTest();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;userList&#34;</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">redisCliTest</span>() {
+</span></span><span style="display:flex;"><span>        String cliVal <span style="color:#f92672">=</span> stringRedisTemplate.<span style="color:#a6e22e">opsForValue</span>().<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;mykey2&#34;</span>);
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;redis-cli value: &#34;</span> <span style="color:#f92672">+</span> cliVal);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="run">run</h2>
+<p>http://localhost:8080/user/listPage <br>
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20180921092240670.png" alt="browser info"></p>
+<h2 id="redis-cli">redis-cli</h2>
+<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20180921092553827.png" alt="cmd info"></p>
+<h2 id="console-info">console info</h2>
+<blockquote>
+<p>spring boot(v2.0.5)</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>2018-09-21 09:17:38.284  INFO <span style="color:#ae81ff">9992</span> --- <span style="color:#f92672">[</span>nio-8080-exec-1<span style="color:#f92672">]</span> o.a.c.c.C.<span style="color:#f92672">[</span>Tomcat<span style="color:#f92672">]</span>.<span style="color:#f92672">[</span>localhost<span style="color:#f92672">]</span>.<span style="color:#f92672">[</span>/<span style="color:#f92672">]</span>       : Initializing Spring FrameworkServlet <span style="color:#e6db74">&#39;dispatcherServlet&#39;</span>
+</span></span><span style="display:flex;"><span>2018-09-21 09:17:38.284  INFO <span style="color:#ae81ff">9992</span> --- <span style="color:#f92672">[</span>nio-8080-exec-1<span style="color:#f92672">]</span> o.s.web.servlet.DispatcherServlet        : FrameworkServlet <span style="color:#e6db74">&#39;dispatcherServlet&#39;</span>: initialization started
+</span></span><span style="display:flex;"><span>2018-09-21 09:17:38.295  INFO <span style="color:#ae81ff">9992</span> --- <span style="color:#f92672">[</span>nio-8080-exec-1<span style="color:#f92672">]</span> o.s.web.servlet.DispatcherServlet        : FrameworkServlet <span style="color:#e6db74">&#39;dispatcherServlet&#39;</span>: initialization completed in <span style="color:#ae81ff">10</span> ms
+</span></span><span style="display:flex;"><span>2018-09-21 09:17:38.317  INFO <span style="color:#ae81ff">9992</span> --- <span style="color:#f92672">[</span>nio-8080-exec-1<span style="color:#f92672">]</span> o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+</span></span><span style="display:flex;"><span>2018-09-21 09:17:38.327 DEBUG <span style="color:#ae81ff">9992</span> --- <span style="color:#f92672">[</span>nio-8080-exec-1<span style="color:#f92672">]</span> org.hibernate.SQL                        :
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">select</span>
+</span></span><span style="display:flex;"><span>        userdetail0_.id as id1_0_,
+</span></span><span style="display:flex;"><span>        userdetail0_.address as address2_0_,
+</span></span><span style="display:flex;"><span>        userdetail0_.email as email3_0_,
+</span></span><span style="display:flex;"><span>        userdetail0_.name as name4_0_,
+</span></span><span style="display:flex;"><span>        userdetail0_.password as password5_0_,
+</span></span><span style="display:flex;"><span>        userdetail0_.username as username6_0_
+</span></span><span style="display:flex;"><span>    from
+</span></span><span style="display:flex;"><span>        user_details userdetail0_
+</span></span><span style="display:flex;"><span>    order by
+</span></span><span style="display:flex;"><span>        userdetail0_.id DESC
+</span></span><span style="display:flex;"><span>2018-09-21 09:17:38.333  INFO <span style="color:#ae81ff">9992</span> --- <span style="color:#f92672">[</span>nio-8080-exec-1<span style="color:#f92672">]</span> com.example.demo.dao.UserDetailsImpl     : test
+</span></span><span style="display:flex;"><span>2018-09-21 09:17:38.333  INFO <span style="color:#ae81ff">9992</span> --- <span style="color:#f92672">[</span>nio-8080-exec-1<span style="color:#f92672">]</span> com.example.demo.dao.UserDetailsImpl     : test
+</span></span><span style="display:flex;"><span>2018-09-21 09:17:38.333  INFO <span style="color:#ae81ff">9992</span> --- <span style="color:#f92672">[</span>nio-8080-exec-1<span style="color:#f92672">]</span> com.example.demo.dao.UserDetailsImpl     : test
+</span></span><span style="display:flex;"><span>2018-09-21 09:17:38.333  INFO <span style="color:#ae81ff">9992</span> --- <span style="color:#f92672">[</span>nio-8080-exec-1<span style="color:#f92672">]</span> com.example.demo.dao.UserDetailsImpl     : test
+</span></span><span style="display:flex;"><span>2018-09-21 09:17:38.333  INFO <span style="color:#ae81ff">9992</span> --- <span style="color:#f92672">[</span>nio-8080-exec-1<span style="color:#f92672">]</span> com.example.demo.dao.UserDetailsImpl     : test
+</span></span><span style="display:flex;"><span>2018-09-21 09:17:38.333  INFO <span style="color:#ae81ff">9992</span> --- <span style="color:#f92672">[</span>nio-8080-exec-1<span style="color:#f92672">]</span> com.example.demo.dao.UserDetailsImpl     : test
+</span></span><span style="display:flex;"><span>2018-09-21 09:17:38.333  INFO <span style="color:#ae81ff">9992</span> --- <span style="color:#f92672">[</span>nio-8080-exec-1<span style="color:#f92672">]</span> com.example.demo.dao.UserDetailsImpl     : test
+</span></span><span style="display:flex;"><span>2018-09-21 09:17:38.334  INFO <span style="color:#ae81ff">9992</span> --- <span style="color:#f92672">[</span>nio-8080-exec-1<span style="color:#f92672">]</span> com.example.demo.dao.UserDetailsImpl     : test
+</span></span><span style="display:flex;"><span>2018-09-21 09:17:38.334  INFO <span style="color:#ae81ff">9992</span> --- <span style="color:#f92672">[</span>nio-8080-exec-1<span style="color:#f92672">]</span> com.example.demo.dao.UserDetailsImpl     : test
+</span></span><span style="display:flex;"><span>test4@163.com test
+</span></span><span style="display:flex;"><span>test4@163.com test
+</span></span><span style="display:flex;"><span>test4@163.com test
+</span></span><span style="display:flex;"><span>test3@163.com test
+</span></span><span style="display:flex;"><span>test2@163.com test
+</span></span><span style="display:flex;"><span>test1@163.com test
+</span></span><span style="display:flex;"><span>test4@163.com test
+</span></span><span style="display:flex;"><span>test4@163.com test
+</span></span><span style="display:flex;"><span>test4@163.com test
+</span></span><span style="display:flex;"><span>redis-cli value: this is test message2.
+</span></span></code></pre></div><h1 id="reference">Reference</h1>
+<ul>
+<li><a href="https://stackoverflow.com/questions/34736265/using-redistemplate-set-a-value-but-get-nil-from-terminal-redis-cli">Using RedisTemplate set a value but get Nil from Terminal Redis-CLI</a></li>
+</ul>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=StringRedisTemplate%20-%20redis-cli&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fjava-string-redis-template%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fjava-string-redis-template%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fjava-string-redis-template%2f&amp;description=StringRedisTemplate%20-%20redis-cli"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fjava-string-redis-template%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/csdn/post/memcached-spy/">
+          <section class="post">
+              <h2>使用spymemcached操作memcached</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/java-tomcat-pool-hikaricp/">
+          <section class="post">
+              <h2>设置HikariCP</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>
+

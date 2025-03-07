@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <meta name="referrer" content="no-referrer"/>
+    
+
+
+
+<meta name="twitter:title" content="Redis"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Redis &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/tags/redis/" />
+
+    
+        
+    
+
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="" />
+    
+
+    <title>Redis &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+        <link href='/csdn/tags/redis/index.xml' rel="alternate" type="application/rss+xml" title="Redis &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+    
+    <meta name="generator" content="Hugo 0.145.0">
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/tags/redis/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/"
+    },
+    "description":  null 
+}
+  </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/tags/redis/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+	<header class="main-header tag-head no-cover">
+
+    <nav class="main-nav overlay clearfix">
+      
+      
+        
+          <a class="menu-button icon-feed" href='/csdn/tags/redis/index.xml'>&nbsp;&nbsp;Subscribe</a>
+        
+      
+    </nav>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            <h1 class="page-title">Redis</h1>
+            <h2 class="page-description">
+                
+            </h2>
+        </div>
+    </div>
+</header>
+
+<main class="content" role="main">
+    
+
+	<div class="extra-pagination inner">
+    <nav class="pagination" role="navigation">
+	
+	<span class="page-number">Page 1 of 1</span>
+	
+</nav>
+
+	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/redis-centos7/">在RHEL/CentOS安装Redis</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="0-preinstall">0. preinstall</h1>
+<ul>
+<li>User set</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ useradd tdtc
+</span></span><span style="display:flex;"><span>$ passwd tdtc
+</span></span></code></pre></div><ul>
+<li><a href="https://tdtc-hrb.github.io/csdn/post/ops_rhel_repo/">Yum Repo</a></li>
+</ul>
+<h2 id="1-yum-install">1) yum install</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum groupinstall <span style="color:#e6db74">&#34;Development Tools&#34;</span>
+</span></span><span style="display:flex;"><span>$sudo yum install tcl wget
+</span></span></code></pre></div><h3 id="v6">v6+</h3>
+<p>Just to clarify: there is no way this issue will be fixed, Redis &gt;= 6 will require a C11 compiler.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install centos-release-scl
+</span></span><span style="display:flex;"><span>sudo yum install devtoolset-8
+</span></span><span style="display:flex;"><span>scl enable devtoolset-8 bash
+</span></span></code></pre></div><h2 id="2-verification">2) verification</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$gcc -v
+</span></span><span style="display:flex;"><span>$make -v
+</span></span><span style="display:flex;"><span>$echo <span style="color:#e6db74">&#39;puts [info patchlevel];exit 0&#39;</span> | tclsh
+</span></span></code></pre></div><h1 id="1-installation">1. installation</h1>
+<h2 id="1-install">1) install</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://download.redis.io/releases/redis-6.0.16.tar.gz
+</span></span><span style="display:flex;"><span>$tar xzvf redis-6.0.16.tar.gz
+</span></span><span style="display:flex;"><span>$cd redis-6.0.16
+</span></span><span style="display:flex;"><span>$make
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Single Core</span>
+</span></span><span style="display:flex;"><span>$taskset -c <span style="color:#ae81ff">0</span> make test
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## sudo</span>
+</span></span><span style="display:flex;"><span>$sudo make install
+</span></span></code></pre></div><h2 id="2-config">2) config</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo mkdir /etc/redis
+</span></span><span style="display:flex;"><span>$sudo mkdir -p /var/redis
+</span></span><span style="display:flex;"><span>$sudo cp /home/tdtc/redis-6.0.16/redis.conf /etc/redis
+</span></span></code></pre></div><h3 id="redisconf">redis.conf</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>port  6379				         <span style="color:#75715e">#default port is already 6379.</span>
+</span></span><span style="display:flex;"><span>daemonize yes			         <span style="color:#75715e">#run as a daemon</span>
+</span></span><span style="display:flex;"><span>supervised systemd			     <span style="color:#75715e">#signal systemd</span>
+</span></span><span style="display:flex;"><span>pidfile /var/run/redis_6379.pid  <span style="color:#75715e">#specify pid file</span>
+</span></span><span style="display:flex;"><span>loglevel notice			         <span style="color:#75715e">#server verbosity level</span>
+</span></span><span style="display:flex;"><span>logfile /var/log/redis.log		 <span style="color:#75715e">#log file name</span>
+</span></span><span style="display:flex;"><span>dir  /var/redis/		         <span style="color:#75715e">#redis directory</span>
+</span></span></code></pre></div><h1 id="2-command">2. command</h1>
+<p>You do not need to execute the following commands when you are not maintaining it, only the first time.</p> <a class="read-more" href="/csdn/post/redis-centos7/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        on
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/redis/">#Redis</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/centos7/">#CentOS7</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/development-tools/">#Development Tools</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/wget/">#wget</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/rhel/">#RHEL</a>,
+            
+        
+        <time class="post-date" datetime="2022-06-11T04:58:39&#43;08:00">
+            11 Jun 2022
+        </time>
+    </footer>
+</article>
+
+	
+
+	<nav class="pagination" role="navigation">
+	
+	<span class="page-number">Page 1 of 1</span>
+	
+</nav>
+
+</main>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <meta name="referrer" content="no-referrer"/>
+    
+
+
+
+<meta name="twitter:title" content="Posts"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/" />
+
+    
+        
+    
+
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="" />
+    
+
+    <title>Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+        <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+    
+    <meta name="generator" content="Hugo 0.141.0">
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/"
+    },
+    "description":  null 
+}
+  </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/post/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+	<header class="main-header tag-head no-cover">
+
+    <nav class="main-nav overlay clearfix">
+      
+      
+        
+          <a class="menu-button icon-feed" href='/csdn/post/index.xml'>&nbsp;&nbsp;Subscribe</a>
+        
+      
+    </nav>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            <h1 class="page-title">Posts</h1>
+            <h2 class="page-description">
+                
+            </h2>
+        </div>
+    </div>
+</header>
+
+<main class="content" role="main">
+    
+
+	<div class="extra-pagination inner">
+    <nav class="pagination" role="navigation">
+	
+	    <a class="newer-posts" href="/csdn/post/page/12/">&larr; Newer Posts</a>
+	
+	<span class="page-number">Page 13 of 13</span>
+	
+</nav>
+
+	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/java-spring-security/">关于Spring Security 4例子的补充</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p><a href="http://websystique.com/spring-security/spring-security-4-password-encoder-bcrypt-example-with-hibernate">Spring Security 4 Hibernate Password Encoder Bcrypt Example</a></p>
+<h1 id="1-数据表">1. 数据表</h1>
+<p>资料来源于<a href="https://www.mkyong.com/spring-security/spring-security-remember-me-example/">spring-security-remember-me-example</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">`</span>persistent_logins<span style="color:#f92672">`</span> (
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">`</span>series<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">64</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">`</span>username<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">64</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">`</span>token<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">64</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">`</span>last_used<span style="color:#f92672">`</span> datetime <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>
+</span></span><span style="display:flex;"><span>    ) ENGINE<span style="color:#f92672">=</span>InnoDB <span style="color:#66d9ef">DEFAULT</span> CHARSET<span style="color:#f92672">=</span>utf8;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">`</span>persistent_logins<span style="color:#f92672">`</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span> (<span style="color:#f92672">`</span>series<span style="color:#f92672">`</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">COMMIT</span>;
+</span></span></code></pre></div><h1 id="2-pojo">2. pojo</h1>
+<blockquote>
+<p>User.java</p>
+</blockquote>
+<p>其中的缺省值：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#f92672">@</span><span style="color:#66d9ef">Column</span>(name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;state&#34;</span>, <span style="color:#66d9ef">nullable</span><span style="color:#f92672">=</span><span style="color:#66d9ef">true</span>)
+</span></span><span style="display:flex;"><span>private String <span style="color:#66d9ef">state</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Inactive&#34;</span>;
+</span></span></code></pre></div><h1 id="3-依赖库">3. 依赖库</h1>
+<blockquote>
+<p>pom.xml</p>
+</blockquote>
+<ul>
+<li>springframework.version <br>
+v4.3.14.RELEASE</li>
+<li>springsecurity.version  <br>
+v4.2.4.RELEASE</li>
+<li>hibernate.version <br>
+v5.1.13.Final</li>
+<li>mysql.connector.version <br>
+v5.1.46</li>
+<li>validation api <br>
+V2.0.1</li>
+<li>hibernate validator <br>
+v5.4.2</li>
+<li>Logback <br>
+V1.2.3</li>
+<li>maven compiler plugin <br>
+V3.7.0</li>
+<li>maven war plugin <br>
+V3.2.0</li>
+</ul> <a class="read-more" href="/csdn/post/java-spring-security/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-10T11:26:39&#43;08:00">
+            10 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/java-struts-spring-jpa/">Struts2 &#43; Spring &#43; JPA</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="part-i-struts2">PART I: Struts2</h1>
+<blockquote>
+<p>Refence: <a href="https://struts.apache.org/getting-started/how-to-create-a-struts2-web-application.html">《how to create a struts2 web application》</a></p>
+</blockquote>
+<h2 id="1-pomxml">1. pom.xml</h2>
+<h2 id="1-struts2">1) Struts2</h2>
+<blockquote>
+<p>struts2-spring-plugin</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;groupId&gt;</span>org.apache.struts<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;artifactId&gt;</span>struts2-spring-plugin<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;version&gt;</span>${struts2.version}<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><h2 id="2-jsp">2) jsp</h2>
+<h3 id="servlet">servlet</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;groupId&gt;</span>javax.servlet<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;artifactId&gt;</span>javax.servlet-api<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;version&gt;</span>3.1.0<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><h3 id="jstl">jstl</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl --&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>javax.servlet.jsp.jstl<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>jstl<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>1.2<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><h2 id="2-webxml">2. web.xml</h2>
+<ul>
+<li>filter</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;filter&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;filter-name&gt;</span>struts2<span style="color:#f92672">&lt;/filter-name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;filter-class&gt;</span>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter<span style="color:#f92672">&lt;/filter-class&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/filter&gt;</span>
+</span></span></code></pre></div><h2 id="3-strutsxml">3. struts.xml</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE struts PUBLIC
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    &#34;-//Apache Software Foundation//DTD Struts Configuration 2.5//EN&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    &#34;http://struts.apache.org/dtds/struts-2.5.dtd&#34;&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;struts&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;constant</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;struts.devMode&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;package</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;basicstruts2&#34;</span> <span style="color:#a6e22e">extends=</span><span style="color:#e6db74">&#34;struts-default&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    	<span style="color:#f92672">&lt;action</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;index&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;result&gt;</span>/index.html<span style="color:#f92672">&lt;/result&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/action&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/package&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/struts&gt;</span>
+</span></span></code></pre></div><h2 id="4-homeaction-extends-actionsupport">4. HomeAction extends ActionSupport</h2>
+<p><a href="https://struts.apache.org/getting-started/coding-actions.html">https://struts.apache.org/getting-started/coding-actions.html</a></p> <a class="read-more" href="/csdn/post/java-struts-spring-jpa/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-10T10:26:39&#43;08:00">
+            10 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/js-redux-update/">update redux</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="1-initial-state">1. initial state</h1>
+<p>db.json</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">initialState</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;recipes&#34;</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Omelette&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Waffle&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  ],
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;ingredients&#34;</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Eggs&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;quantity&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;measure&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;large&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;recipe&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Omelette&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Eggs&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;quantity&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;measure&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;large&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;recipe&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Waffle&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Milk&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;quantity&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;measure&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;cups&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;recipe&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Waffle&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Sugar&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;quantity&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;measure&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;tbsp&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;recipe&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Waffle&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="2-reducer">2. reducer</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">reducer</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">action</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">type</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;ADD_RECIPE&#39;</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> Object.<span style="color:#a6e22e">assign</span>(
+</span></span><span style="display:flex;"><span>                {}, <span style="color:#a6e22e">state</span>, {
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">recipes</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">recipes</span>.<span style="color:#a6e22e">concat</span>({<span style="color:#a6e22e">name</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">name</span>})
+</span></span><span style="display:flex;"><span>            });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="3-action">3. action</h1>
+<h2 id="1-declare">1) declare</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">addRecipe_action</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">name</span>) =&gt; ({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;ADD_RECIPE&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span>
+</span></span><span style="display:flex;"><span>})
+</span></span></code></pre></div><h2 id="2-dispatch">2) dispatch</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#a6e22e">addRecipe_action</span>(<span style="color:#e6db74">&#39;Xiaobin&#39;</span>));
+</span></span></code></pre></div><h1 id="完整代码">完整代码</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">createStore</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;redux&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">reducer</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">action</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">type</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;ADD_RECIPE&#39;</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> Object.<span style="color:#a6e22e">assign</span>(
+</span></span><span style="display:flex;"><span>                {}, <span style="color:#a6e22e">state</span>, {
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">recipes</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">recipes</span>.<span style="color:#a6e22e">concat</span>({<span style="color:#a6e22e">name</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">name</span>})
+</span></span><span style="display:flex;"><span>            });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;ADD_INGREDIENT&#39;</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> Object.<span style="color:#a6e22e">assign</span>(
+</span></span><span style="display:flex;"><span>                {}, <span style="color:#a6e22e">state</span>, {
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">ingredients</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">ingredients</span>.<span style="color:#a6e22e">concat</span>({
+</span></span><span style="display:flex;"><span>                        <span style="color:#a6e22e">name</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">name</span>,
+</span></span><span style="display:flex;"><span>                        <span style="color:#a6e22e">quantity</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">quantity</span>,
+</span></span><span style="display:flex;"><span>                        <span style="color:#a6e22e">measure</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">measure</span>,
+</span></span><span style="display:flex;"><span>                        <span style="color:#a6e22e">recipe</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">recipe</span>
+</span></span><span style="display:flex;"><span>                        })
+</span></span><span style="display:flex;"><span>            });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// https://s3.amazonaws.com/500tech-shared/db.json
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">initialState</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;recipes&#34;</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Omelette&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Waffle&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  ],
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;ingredients&#34;</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Eggs&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;quantity&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;measure&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;large&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;recipe&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Omelette&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Eggs&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;quantity&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;measure&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;large&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;recipe&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Waffle&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Milk&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;quantity&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;measure&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;cups&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;recipe&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Waffle&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Sugar&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;quantity&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;measure&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;tbsp&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;recipe&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Waffle&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  ]
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">addRecipe_action</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">name</span>) =&gt; ({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;ADD_RECIPE&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span>
+</span></span><span style="display:flex;"><span>})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">store</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">createStore</span>(<span style="color:#a6e22e">reducer</span>, <span style="color:#a6e22e">initialState</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">store</span>.<span style="color:#a6e22e">getState</span>());
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//store.subscribe(()=&gt;(console.log(&#34;store change&#34;)));
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#a6e22e">addRecipe_action</span>(<span style="color:#e6db74">&#39;Xiaobin&#39;</span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">store</span>.<span style="color:#a6e22e">dispatch</span>({<span style="color:#a6e22e">type</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;ADD_INGREDIENT&#39;</span>, <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Eggs&#39;</span>, <span style="color:#a6e22e">quantity</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">measure</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;large&#39;</span>, <span style="color:#a6e22e">recipe</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;xiaobin&#39;</span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">store</span>.<span style="color:#a6e22e">getState</span>());
+</span></span></code></pre></div> <a class="read-more" href="/csdn/post/js-redux-update/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-10T09:26:39&#43;08:00">
+            10 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/js-es6-spreed-operator/">ES6 展开运算符</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="multiple-return-values">Multiple return values</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">configStore</span> <span style="color:#f92672">=</span> () =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">sagaMiddleware</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">createSagaMiddleware</span>()
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> {
+</span></span><span style="display:flex;"><span>    ...<span style="color:#a6e22e">createStore</span>(<span style="color:#a6e22e">rootReducer</span>, <span style="color:#a6e22e">applyMiddleware</span>(<span style="color:#a6e22e">sagaMiddleware</span>)),
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">runSaga</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">sagaMiddleware</span>.<span style="color:#a6e22e">run</span>,
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="reference">Reference</h1>
+<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Spread_syntax">Spread syntax</a></li>
+</ul> <a class="read-more" href="/csdn/post/js-es6-spreed-operator/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-10T08:26:39&#43;08:00">
+            10 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/js-redux-root/">rootredux</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="1-split">1. split</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">reducer</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">action</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">type</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;ADD_RECIPE&#39;</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> Object.<span style="color:#a6e22e">assign</span>(
+</span></span><span style="display:flex;"><span>                {}, <span style="color:#a6e22e">state</span>, {
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">recipes</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">recipes</span>.<span style="color:#a6e22e">concat</span>({<span style="color:#a6e22e">name</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">name</span>})
+</span></span><span style="display:flex;"><span>            });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;ADD_INGREDIENT&#39;</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">myIngredients</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>                        <span style="color:#a6e22e">name</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">name</span>,
+</span></span><span style="display:flex;"><span>                        <span style="color:#a6e22e">quantity</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">quantity</span>,
+</span></span><span style="display:flex;"><span>                        <span style="color:#a6e22e">measure</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">measure</span>,
+</span></span><span style="display:flex;"><span>                        <span style="color:#a6e22e">recipe</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">recipe</span>
+</span></span><span style="display:flex;"><span>                        };
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> Object.<span style="color:#a6e22e">assign</span>(
+</span></span><span style="display:flex;"><span>                {}, <span style="color:#a6e22e">state</span>, {
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">ingredients</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">ingredients</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#a6e22e">myIngredients</span>)
+</span></span><span style="display:flex;"><span>            });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="recipereducer">recipeReducer</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">recipeReducer</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">stat</span>, <span style="color:#a6e22e">action</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">type</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;ADD_RECIPE&#39;</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>Object.<span style="color:#a6e22e">assign</span>(
+</span></span><span style="display:flex;"><span>                {}, <span style="color:#a6e22e">state</span>, {
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">ingredients</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">ingredients</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#a6e22e">myIngredients</span>)
+</span></span><span style="display:flex;"><span>            });
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">recipes</span>; }
+</span></span></code></pre></div><h2 id="ingredientreducer">ingredientReducer</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ingredientReducer</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">action</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">type</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;ADD_INGREDIENT&#39;</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">myIngredients</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>                        <span style="color:#a6e22e">name</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">name</span>,
+</span></span><span style="display:flex;"><span>                        <span style="color:#a6e22e">quantity</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">quantity</span>,
+</span></span><span style="display:flex;"><span>                        <span style="color:#a6e22e">measure</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">measure</span>,
+</span></span><span style="display:flex;"><span>                        <span style="color:#a6e22e">recipe</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">recipe</span>
+</span></span><span style="display:flex;"><span>                        };
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> Object.<span style="color:#a6e22e">assign</span>(
+</span></span><span style="display:flex;"><span>                {}, <span style="color:#a6e22e">state</span>, {
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">ingredients</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">ingredients</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#a6e22e">myIngredients</span>)
+</span></span><span style="display:flex;"><span>            });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div> <a class="read-more" href="/csdn/post/js-redux-root/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-10T08:26:39&#43;08:00">
+            10 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/gitlab-install-shell/"> 使用脚本安装gitlab</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="一安装">一、安装</h1>
+<h2 id="1-depend">1. depend</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo apt-get update
+</span></span><span style="display:flex;"><span>$sudo apt-get install ca-certificates curl openssh-server postfix vim
+</span></span></code></pre></div><h2 id="2-down-script">2. down script</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$curl -LO https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh
+</span></span></code></pre></div><h2 id="3-exec-script">3. exec script</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo bash ~/script.deb.sh
+</span></span></code></pre></div><h2 id="4-install">4. install</h2>
+<p>If it is &ldquo;qiang&rdquo;, please see 《代理set - ubuntu》</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo apt-get install gitlab-ce
+</span></span></code></pre></div><h2 id="5-config">5. config</h2>
+<h3 id="1-ufw">1) ufw</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo ufw allow http
+</span></span><span style="display:flex;"><span>$sudo ufw allow https
+</span></span><span style="display:flex;"><span>$sudo ufw allow OpenSSH
+</span></span></code></pre></div><h3 id="2-gitlabrb">2) gitlab.rb</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo vim /etc/gitlab/gitlab.rb
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># If your GitLab server does not have a domain name, you will need to use an IP</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># address instead of a domain and keep the protocol as `http`.</span>
+</span></span><span style="display:flex;"><span>external_url <span style="color:#e6db74">&#39;http://localhost&#39;</span>
+</span></span></code></pre></div><h3 id="3-exec-gitlab-ctl">3) exec gitlab-ctl</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo gitlab-ctl reconfigure
+</span></span></code></pre></div><h2 id="6-run">6. run</h2>
+<p>http://your_ip</p> <a class="read-more" href="/csdn/post/gitlab-install-shell/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-10T02:15:39&#43;08:00">
+            10 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/js-lambda/">JS的lambda表达式</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="before-rewriting">Before rewriting</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">selectedReddit</span>(<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;user/8&#39;</span>, <span style="color:#a6e22e">action</span>){
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">type</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">SELECT_REDDIT</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">reddit</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="after-rewriting">After rewriting</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">selectedReddit</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;user/8&#39;</span>, <span style="color:#a6e22e">action</span>) =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">type</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">SELECT_REDDIT</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">reddit</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="参考">参考</h1>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">《Arrow functions》</a></p> <a class="read-more" href="/csdn/post/js-lambda/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-10T02:14:39&#43;08:00">
+            10 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+
+	<nav class="pagination" role="navigation">
+	
+	    <a class="newer-posts" href="/csdn/post/page/12/">&larr; Newer Posts</a>
+	
+	<span class="page-number">Page 13 of 13</span>
+	
+</nav>
+
+</main>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>

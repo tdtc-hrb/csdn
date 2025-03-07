@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="referrer" content="no-referrer"/>
+    
+
+
+
+<meta name="twitter:title" content="c#调用COM"/>
+<meta name="twitter:description" content="callXBFLibrary"/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="c#调用COM &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/c2plus-com-dll/" />
+
+    
+        
+    
+
+    
+    <meta property="og:description" content="callXBFLibrary" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2025-01-19T18:08:08&#43;08:00" />
+
+    
+    
+
+    <title>c#调用COM &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="callXBFLibrary" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.145.0">
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/c2plus-com-dll/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null 
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "c#调用COM",
+    "name": "c#调用COM",
+    "wordCount":  453 ,
+    "timeRequired": "PT3M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/post/c2plus-com-dll/",
+    "datePublished": "2025-01-19T18:08Z",
+    "dateModified": "2025-01-19T18:08Z",
+    
+    
+    "description": "callXBFLibrary",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/post/c2plus-com-dll/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button icon-feed" href="/csdn/index.xml" >&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">c#调用COM</h1>
+        <small>callXBFLibrary</small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2025-01-19T18:08:08&#43;08:00">
+            Jan 19, 2025
+          </time>
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <p>!!! 除了IE的ActiveX项目，不推荐ATL !!! <br>
+!!! ATL is not recommended except for IE ActiveX projects. !!!</p>
+<h2 id="add-reference">Add Reference</h2>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20200514021327.png" alt="vs2008 ui1"></p>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20200514021444.png" alt="vs2008 ui2"></p>
+<p>COM选项卡
+<img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20200514021640.png" alt="vs2008 ui3">
+添加完成时</p>
+<h1 id="添加事件">添加事件</h1>
+<ul>
+<li>import class</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>using System.IO;
+</span></span><span style="display:flex;"><span>using xbfInfoLib;
+</span></span></code></pre></div><h2 id="写xbf文件">写xbf文件</h2>
+<ul>
+<li>读Ini文件配置</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>Boolean flagMSSQL <span style="color:#f92672">=</span> false;
+</span></span><span style="display:flex;"><span>Boolean flagSecu <span style="color:#f92672">=</span> false;
+</span></span><span style="display:flex;"><span>string sectionName <span style="color:#f92672">=</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(<span style="color:#e6db74">&#34;config&#34;</span>, <span style="color:#e6db74">&#34;type&#34;</span>);
+</span></span><span style="display:flex;"><span>string strSrv <span style="color:#f92672">=</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Server&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">Equals</span>(strSrv, <span style="color:#e6db74">&#34;&#34;</span>))
+</span></span><span style="display:flex;"><span>    flagMSSQL <span style="color:#f92672">=</span> true;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (flagMSSQL)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    strConn <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Provider=SQLOLEDB.1;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Password=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Pwd&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Persist Security Info=True;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;User ID=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;User&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Initial Catalog=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;DB&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Data Source=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Server&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span> <span style="color:#75715e">// MS Access
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{
+</span></span><span style="display:flex;"><span>    string strPWD <span style="color:#f92672">=</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Pwd&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">Equals</span>(strPWD, <span style="color:#e6db74">&#34;&#34;</span>))
+</span></span><span style="display:flex;"><span>        flagSecu <span style="color:#f92672">=</span> true;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (flagSecu)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        strConn <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Provider=Microsoft.Jet.OLEDB.4.0;&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Data Source=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;DB&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Persist Security Info=False;&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Jet OLEDB:Database Password=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Pwd&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        strConn <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Provider=Microsoft.Jet.OLEDB.4.0;&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Data Source=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;DB&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Persist Security Info=True&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li>调用COM接口</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>xbfInfoLib.FormatClass xbf <span style="color:#f92672">=</span> new <span style="color:#a6e22e">FormatClass</span>();
+</span></span><span style="display:flex;"><span>xbf.<span style="color:#a6e22e">setFileInfo</span>(strConn);
+</span></span></code></pre></div><h2 id="读xbf文件">读xbf文件</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>xbfInfoLib.FormatClass xbf <span style="color:#f92672">=</span> new <span style="color:#a6e22e">FormatClass</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>string filePath <span style="color:#f92672">=</span> currDir <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#f92672">+</span> edtFileName.Text;
+</span></span><span style="display:flex;"><span>string strRet <span style="color:#f92672">=</span> xbf.<span style="color:#a6e22e">getFileInfo</span>(filePath);
+</span></span><span style="display:flex;"><span>MessageBox.<span style="color:#a6e22e">Show</span>(strRet);
+</span></span></code></pre></div><h1 id="code">code</h1>
+<blockquote>
+<p>Form1.cs</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>using System;
+</span></span><span style="display:flex;"><span>using System.Collections.Generic;
+</span></span><span style="display:flex;"><span>using System.ComponentModel;
+</span></span><span style="display:flex;"><span>using System.Data;
+</span></span><span style="display:flex;"><span>using System.Drawing;
+</span></span><span style="display:flex;"><span>using System.Linq;
+</span></span><span style="display:flex;"><span>using System.Text;
+</span></span><span style="display:flex;"><span>using System.Windows.Forms;
+</span></span><span style="display:flex;"><span>using System.IO;
+</span></span><span style="display:flex;"><span>using xbfInfoLib;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>namespace callXBFLibrary
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    public partial class frmCall_XBF : Form
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        private Cwin32API ini;
+</span></span><span style="display:flex;"><span>        private string strConn;
+</span></span><span style="display:flex;"><span>        private string currDir;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        public <span style="color:#a6e22e">frmCall_XBF</span>()
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">InitializeComponent</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            currDir <span style="color:#f92672">=</span> Directory.<span style="color:#a6e22e">GetCurrentDirectory</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            ini <span style="color:#f92672">=</span> new <span style="color:#a6e22e">Cwin32API</span>(currDir <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/xbfConfig.ini&#34;</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        private <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">btnWriteXBF_Click</span>(object sender, EventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            Boolean flagSQL <span style="color:#f92672">=</span> false;
+</span></span><span style="display:flex;"><span>            Boolean flagMSSQL <span style="color:#f92672">=</span> false;
+</span></span><span style="display:flex;"><span>            Boolean flagSecu <span style="color:#f92672">=</span> false;
+</span></span><span style="display:flex;"><span>            string sectionName <span style="color:#f92672">=</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(<span style="color:#e6db74">&#34;config&#34;</span>, <span style="color:#e6db74">&#34;type&#34;</span>);
+</span></span><span style="display:flex;"><span>            string strSrv <span style="color:#f92672">=</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Server&#34;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">Equals</span>(strSrv, <span style="color:#e6db74">&#34;&#34;</span>))
+</span></span><span style="display:flex;"><span>                flagSQL <span style="color:#f92672">=</span> true;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (flagSQL)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">Equals</span>(sectionName, <span style="color:#e6db74">&#34;MSSQL&#34;</span>))
+</span></span><span style="display:flex;"><span>                    flagMSSQL <span style="color:#f92672">=</span> true;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (flagMSSQL)
+</span></span><span style="display:flex;"><span>                    strConn <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;dbType=0;&#34;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Password=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Pwd&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Persist Security Info=True;&#34;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;User ID=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;User&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Initial Catalog=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;DB&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Data Source=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Server&#34;</span>);
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>                    strConn <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;dbType=2;&#34;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Data Source=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Server&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;User Id=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;User&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Password=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Pwd&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Database=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;DB&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Convert Zero Datetime=True&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span> <span style="color:#75715e">// MS Access
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            {
+</span></span><span style="display:flex;"><span>                string strPWD <span style="color:#f92672">=</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Pwd&#34;</span>);
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">Equals</span>(strPWD, <span style="color:#e6db74">&#34;&#34;</span>))
+</span></span><span style="display:flex;"><span>                    flagSecu <span style="color:#f92672">=</span> true;
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (flagSecu)
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    strConn <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;dbType=1;&#34;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Data Source=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;DB&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Persist Security Info=False;&#34;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Jet OLEDB:Database Password=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Pwd&#34;</span>);
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    strConn <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                         <span style="color:#e6db74">&#34;dbType=1;&#34;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Data Source=&#34;</span> <span style="color:#f92672">+</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;DB&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;;&#34;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Persist Security Info=True&#34;</span>;
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            MessageBox.<span style="color:#a6e22e">Show</span>(strConn);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            xbfInfoLib.FormatClass xbf <span style="color:#f92672">=</span> new <span style="color:#a6e22e">FormatClass</span>();
+</span></span><span style="display:flex;"><span>            xbf.<span style="color:#a6e22e">setFileInfo</span>(strConn);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        private <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">btnReadXBF_Click</span>(object sender, EventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            xbfInfoLib.FormatClass xbf <span style="color:#f92672">=</span> new <span style="color:#a6e22e">FormatClass</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            string filePath <span style="color:#f92672">=</span> currDir <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#f92672">+</span> edtFileName.Text;
+</span></span><span style="display:flex;"><span>            string strRet <span style="color:#f92672">=</span> xbf.<span style="color:#a6e22e">getFileInfo</span>(filePath);
+</span></span><span style="display:flex;"><span>            MessageBox.<span style="color:#a6e22e">Show</span>(strRet);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="部署winforms">部署WinForms</h1>
+<blockquote>
+<p>只保留x86/x64两种编译平台。</p></blockquote>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20200514033325.png" alt="vs2008 ui4"></p>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=c%23%e8%b0%83%e7%94%a8COM&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fc2plus-com-dll%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fc2plus-com-dll%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fc2plus-com-dll%2f&amp;description=c%23%e8%b0%83%e7%94%a8COM"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fc2plus-com-dll%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/c-console_app/">
+          <section class="post">
+              <h2>计算圆的面积和周长</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>
+

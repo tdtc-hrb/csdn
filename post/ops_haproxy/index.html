@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="referrer" content="no-referrer"/>
+    
+
+
+
+<meta name="twitter:title" content="安装配置haproxy"/>
+<meta name="twitter:description" content="OS: CentOS7"/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="安装配置haproxy &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/ops_haproxy/" />
+
+    
+        
+    
+
+    
+    <meta property="og:description" content="OS: CentOS7" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2020-05-04T18:08:08&#43;08:00" />
+
+    
+    
+
+    <title>安装配置haproxy &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="OS: CentOS7" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.145.0">
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_haproxy/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null 
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "安装配置haproxy",
+    "name": "安装配置haproxy",
+    "wordCount":  305 ,
+    "timeRequired": "PT2M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/post/ops_haproxy/",
+    "datePublished": "2020-05-04T18:08Z",
+    "dateModified": "2020-05-04T18:08Z",
+    
+    
+    "description": "OS: CentOS7",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/post/ops_haproxy/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button icon-feed" href="/csdn/index.xml" >&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">安装配置haproxy</h1>
+        <small>OS: CentOS7</small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2020-05-04T18:08:08&#43;08:00">
+            May 4, 2020
+          </time>
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <h1 id="系统设置">系统设置</h1>
+<h2 id="新增用户">新增用户</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$useradd haproxy
+</span></span><span style="display:flex;"><span>$passwd haproxy
+</span></span></code></pre></div><h2 id="sysctl">sysctl</h2>
+<blockquote>
+<p>/etc/sysctl.conf</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>net.ipv4.tcp_tw_reuse <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>net.ipv4.ip_local_port_range <span style="color:#f92672">=</span> <span style="color:#ae81ff">1024</span> <span style="color:#ae81ff">65023</span>
+</span></span><span style="display:flex;"><span>net.ipv4.tcp_max_syn_backlog <span style="color:#f92672">=</span> <span style="color:#ae81ff">10240</span>
+</span></span><span style="display:flex;"><span>net.ipv4.tcp_max_tw_buckets <span style="color:#f92672">=</span> <span style="color:#ae81ff">400000</span>
+</span></span><span style="display:flex;"><span>net.ipv4.tcp_max_orphans <span style="color:#f92672">=</span> <span style="color:#ae81ff">60000</span>
+</span></span><span style="display:flex;"><span>net.ipv4.tcp_synack_retries <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>net.core.somaxconn <span style="color:#f92672">=</span> <span style="color:#ae81ff">10000</span>
+</span></span></code></pre></div><h2 id="firewall">firewall</h2>
+<h3 id="1-l7">1) L7</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-service<span style="color:#f92672">=</span>http
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>6080/tcp
+</span></span></code></pre></div><h3 id="2-l4">2) L4</h3>
+<blockquote>
+<p>mysql</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>13306/tcp
+</span></span></code></pre></div><p>生效</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$firewall-cmd --reload
+</span></span></code></pre></div><h1 id="rsyslog的安装">rsyslog的安装</h1>
+<h2 id="install">install</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum install rsyslog
+</span></span></code></pre></div><h2 id="config">config</h2>
+<h3 id="1-rsyslog">1) rsyslog</h3>
+<blockquote>
+<p>/etc/rsyslog.d/haproxy.conf</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ModLoad imudp
+</span></span><span style="display:flex;"><span>$UDPServerRun <span style="color:#ae81ff">514</span>
+</span></span><span style="display:flex;"><span>$template Haproxy,”%msg%<span style="color:#ae81ff">\n</span>”
+</span></span><span style="display:flex;"><span>local2.<span style="color:#f92672">=</span>info -/var/log/haproxy.log;Haproxy
+</span></span><span style="display:flex;"><span>local2.notice -/var/log/haproxy-status.log;Haproxy
+</span></span><span style="display:flex;"><span><span style="color:#75715e">### keep logs in localhost ##</span>
+</span></span><span style="display:flex;"><span>local2.* ~
+</span></span></code></pre></div><h3 id="2-rotated-log">2) rotated log</h3>
+<blockquote>
+<p>/etc/logrotate.d/haproxy</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/var/log/haproxy.log <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>missingok
+</span></span><span style="display:flex;"><span>notifempty
+</span></span><span style="display:flex;"><span>sharedscripts
+</span></span><span style="display:flex;"><span>rotate <span style="color:#ae81ff">120</span>
+</span></span><span style="display:flex;"><span>daily
+</span></span><span style="display:flex;"><span>compress
+</span></span><span style="display:flex;"><span>postrotate
+</span></span><span style="display:flex;"><span>reload rsyslog &gt;/dev/null 2&gt;&amp;<span style="color:#ae81ff">1</span> <span style="color:#f92672">||</span> true
+</span></span><span style="display:flex;"><span>endscript
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="exec">exec</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$systemctl restart rsyslog.service
+</span></span></code></pre></div><h1 id="安装haproxy">安装haproxy</h1>
+<h2 id="install-1">install</h2>
+<p><a href="https://pan.baidu.com/s/1KVqOvHMl65m0BO3wOcUabw">haproxy-1.8.13.tar.gz</a></p>
+<h3 id="1-depend">1) depend</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum install pcre* openssl-devel
+</span></span></code></pre></div><h3 id="2-make-install">2) make install</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$tar xzvf haproxy-1.8.13.tar.gz
+</span></span><span style="display:flex;"><span>$cd haproxy-1.8.13
+</span></span><span style="display:flex;"><span>$make TARGET<span style="color:#f92672">=</span>linux2628 USE_STATIC_PCRE<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><blockquote>
+<p>about TARGET:</p>
+<blockquote>
+</blockquote></blockquote>
+<pre tabindex="0"><code>https://github.com/haproxy/haproxy/blob/master/README
+TARGET variable :
+  - linux2628   for Linux 2.6.28, 3.x, and above (enables splice and tproxy)
+  - generic     for any other OS or version.
+</code></pre><p>Install the HAproxy as user root,</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$make install
+</span></span></code></pre></div><h3 id="3-setup">3) setup</h3>
+<h4 id="oper-fs">oper fs</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$mkdir -p /etc/haproxy
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$mkdir -p /var/lib/haproxy
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$touch /var/lib/haproxy/stats
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ln -s /usr/local/sbin/haproxy /usr/sbin/haproxy
+</span></span></code></pre></div><h4 id="run-automatically">Run automatically</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cp /home/haproxy/haproxy-1.8.13/examples/haproxy.init /etc/init.d/haproxy
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$chmod <span style="color:#ae81ff">755</span> /etc/init.d/haproxy
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$systemctl daemon-reload
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$chkconfig haproxy on
+</span></span></code></pre></div><h2 id="config-file">config file</h2>
+<blockquote>
+<p>/etc/haproxy/haproxy.cfg</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>global
+</span></span><span style="display:flex;"><span>    log         127.0.0.1 local2
+</span></span><span style="display:flex;"><span>    chroot      /var/lib/haproxy
+</span></span><span style="display:flex;"><span>    pidfile     /var/run/haproxy.pid
+</span></span><span style="display:flex;"><span>    maxconn     <span style="color:#ae81ff">4000</span>
+</span></span><span style="display:flex;"><span>    user        haproxy
+</span></span><span style="display:flex;"><span>    group       haproxy
+</span></span><span style="display:flex;"><span>    daemon
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    stats socket /var/lib/haproxy/stats
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>defaults
+</span></span><span style="display:flex;"><span>    mode                    tcp
+</span></span><span style="display:flex;"><span>    log                     global
+</span></span><span style="display:flex;"><span>    retries                 <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>    timeout queue           1m
+</span></span><span style="display:flex;"><span>    timeout connect         10s
+</span></span><span style="display:flex;"><span>    timeout client          1m
+</span></span><span style="display:flex;"><span>    timeout server          1m
+</span></span><span style="display:flex;"><span>    timeout check           5s
+</span></span><span style="display:flex;"><span>    maxconn                 <span style="color:#ae81ff">3000</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>listen mysql
+</span></span><span style="display:flex;"><span>    bind 0.0.0.0:13306
+</span></span><span style="display:flex;"><span>    mode tcp
+</span></span><span style="display:flex;"><span>    balance leastconn
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    server mysql1 192.168.0.110:3306 check inter <span style="color:#ae81ff">3000</span>
+</span></span><span style="display:flex;"><span>    server mysql2 192.168.0.111:3306 check inter <span style="color:#ae81ff">3000</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>listen stats
+</span></span><span style="display:flex;"><span>    bind 0.0.0.0:6080
+</span></span><span style="display:flex;"><span>    mode            http
+</span></span><span style="display:flex;"><span>    log             global
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    maxconn <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    timeout client  100s
+</span></span><span style="display:flex;"><span>    timeout server  100s
+</span></span><span style="display:flex;"><span>    timeout connect 100s
+</span></span><span style="display:flex;"><span>    timeout queue   100s
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    stats enable
+</span></span><span style="display:flex;"><span>    stats hide-version
+</span></span><span style="display:flex;"><span>    stats refresh 30s
+</span></span><span style="display:flex;"><span>    stats uri /stats
+</span></span><span style="display:flex;"><span>    stats show-node
+</span></span></code></pre></div><h2 id="test">test</h2>
+<p>http://192.168.0.105:6080/stats</p>
+<h1 id="reference">Reference</h1>
+<ul>
+<li><a href="http://sharadchhetri.com/2013/10/16/how-to-enable-logging-of-haproxy-in-rsyslog/">How to enable logging of haproxy in rsyslog</a></li>
+<li><a href="https://www.upcloud.com/support/haproxy-load-balancer-centos/">How to Install HAProxy Load Balancer on CentOS</a></li>
+</ul>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=%e5%ae%89%e8%a3%85%e9%85%8d%e7%bd%aehaproxy&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_haproxy%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_haproxy%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_haproxy%2f&amp;description=%e5%ae%89%e8%a3%85%e9%85%8d%e7%bd%aehaproxy"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_haproxy%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/csdn/post/jlink-fixed1/">
+          <section class="post">
+              <h2>修复山寨版的J-Link</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/c-string-search/">
+          <section class="post">
+              <h2>查找字符串</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>
+

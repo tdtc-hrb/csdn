@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="referrer" content="no-referrer"/>
+    
+
+
+
+<meta name="twitter:title" content="mysql的1067错误"/>
+<meta name="twitter:description" content="mysql v5.0/5.1"/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="mysql的1067错误 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/ops_mysql_error1067/" />
+
+    
+        
+    
+
+    
+    <meta property="og:description" content="mysql v5.0/5.1" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2020-05-15T06:08:08&#43;08:00" />
+
+    
+    
+
+    <title>mysql的1067错误 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="mysql v5.0/5.1" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.145.0">
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_mysql_error1067/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null 
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "mysql的1067错误",
+    "name": "mysql的1067错误",
+    "wordCount":  353 ,
+    "timeRequired": "PT2M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/post/ops_mysql_error1067/",
+    "datePublished": "2020-05-15T06:08Z",
+    "dateModified": "2020-05-15T06:08Z",
+    
+    
+    "description": "mysql v5.0/5.1",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/post/ops_mysql_error1067/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button icon-feed" href="/csdn/index.xml" >&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">mysql的1067错误</h1>
+        <small>mysql v5.0/5.1</small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2020-05-15T06:08:08&#43;08:00">
+            May 15, 2020
+          </time>
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <h1 id="日志文件问题">日志文件问题</h1>
+<p>由于使用时间比较长积累了很多的日志文件（\data目录下），所以删除之！</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql-bin.000001
+</span></span><span style="display:flex;"><span>... ...
+</span></span><span style="display:flex;"><span>mysql-bin.000278
+</span></span></code></pre></div><p>原来删除都留最后一个编号的日志，这次太过彻底~~都删了!</p>
+<p>执行net start mysql：
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/2020051514104614.png" alt="cmd info">
+出现了mysql 1067错误！ <br>
+查看，主机名.err文件（lenovo-7c8f808d.err）：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ae81ff">130416</span>  9:59:23  InnoDB: Started; log sequence number <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">43655</span>
+</span></span><span style="display:flex;"><span>MySQL: File <span style="color:#e6db74">&#39;.\mysql-bin.000278&#39;</span> not found <span style="color:#f92672">(</span>Errcode: 2<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">130416</span>  9:59:23 <span style="color:#f92672">[</span>ERROR<span style="color:#f92672">]</span> Failed to open log <span style="color:#f92672">(</span>file <span style="color:#e6db74">&#39;.\mysql-bin.000278&#39;</span>, errno 2<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">130416</span>  9:59:23 <span style="color:#f92672">[</span>ERROR<span style="color:#f92672">]</span> Could not open log file
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">130416</span>  9:59:23 <span style="color:#f92672">[</span>ERROR<span style="color:#f92672">]</span> Can<span style="color:#960050;background-color:#1e0010">&#39;</span>t init tc log
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">130416</span>  9:59:23 <span style="color:#f92672">[</span>ERROR<span style="color:#f92672">]</span> Aborting
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">130416</span>  9:59:23  InnoDB: Starting shutdown...
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">130416</span>  9:59:24  InnoDB: Shutdown completed; log sequence number <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">43655</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">130416</span>  9:59:24 <span style="color:#f92672">[</span>Note<span style="color:#f92672">]</span> MySQL: Shutdown complete
+</span></span></code></pre></div><p>告诉我们找不到mysql-bin.000278文件！ <br>
+既然找不到，我们新弄一个日志文件： <br>
+打开my.ini文件
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/2020051514154614.png" alt="cmd info"></p>
+<p>重新启动mysql服务：
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/2020051514164614.png" alt="cmd info">
+正常启动mysql了！</p>
+<h1 id="系统表问题">系统表问题</h1>
+<p>由于要升级MySQL到V5.6，所以拷贝my.ini和数据文件到新的系统上。 <br>
+在启动服务时，又出现1067错误！ <br>
+查看，主机名.err文件（xiaobin-PC.err）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>2013-12-02 20:23:22 <span style="color:#ae81ff">3684</span> <span style="color:#f92672">[</span>Note<span style="color:#f92672">]</span> Plugin <span style="color:#e6db74">&#39;FEDERATED&#39;</span> is disabled.
+</span></span><span style="display:flex;"><span>2013-12-02 20:23:22 171c InnoDB: Warning: Using innodb_additional_mem_pool_size is DEPRECATED. This option may be removed in future releases, together with the option innodb_use_sys_malloc and with the InnoDB<span style="color:#e6db74">&#39;s internal memory allocator.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">2013-12-02 20:23:22 3684 [Note] InnoDB: The InnoDB memory heap is disabled
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">2013-12-02 20:23:22 3684 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">2013-12-02 20:23:22 3684 [Note] InnoDB: Compressed tables use zlib 1.2.3
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">2013-12-02 20:23:22 3684 [Note] InnoDB: Not using CPU crc32 instructions
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">2013-12-02 20:23:22 3684 [Note] InnoDB: Initializing buffer pool, size = 47.0M
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">2013-12-02 20:23:22 3684 [Note] InnoDB: Completed initialization of buffer pool
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">2013-12-02 20:23:22 3684 [Note] InnoDB: Highest supported file format is Barracuda.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">2013-12-02 20:23:23 3684 [Warning] InnoDB: Resizing redo log from 2*3072 to 2*1536 pages, LSN=1625977
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">2013-12-02 20:23:23 3684 [Warning] InnoDB: Starting to delete and rewrite log files.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">2013-12-02 20:23:23 3684 [Note] InnoDB: Setting log file .\ib_logfile101 size to 24 MB
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">2013-12-02 20:23:23 3684 [Note] InnoDB: Setting log file .\ib_logfile1 size to 24 MB
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">2013-12-02 20:23:24 3684 [Note] InnoDB: Renaming log file .\ib_logfile101 to .\ib_logfile0
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">2013-12-02 20:23:24 3684 [Warning] InnoDB: New log files created, LSN=1625977
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">2013-12-02 20:23:24 3684 [Note] InnoDB: 128 rollback segment(s) are active.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">2013-12-02 20:23:24 3684 [Note] InnoDB: Waiting for purge to start
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">2013-12-02 20:23:24 3684 [Note] InnoDB: 5.6.14 started; log sequence number 1625977
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">2013-12-02 20:23:24 3684 [ERROR] mysql56: unknown variable &#39;</span>table_cache<span style="color:#f92672">=</span>256<span style="color:#960050;background-color:#1e0010">&#39;</span>
+</span></span><span style="display:flex;"><span>2013-12-02 20:23:24 <span style="color:#ae81ff">3684</span> <span style="color:#f92672">[</span>ERROR<span style="color:#f92672">]</span> Aborting
+</span></span></code></pre></div><p>从err文件中可以看到错误主要是“未知变量‘table_cache=256’”。</p>
+<p>在&quot;<a href="https://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html">系统变量</a>&ldquo;中我们找到三个以“table”开头的全局变量：</p>
+<ul>
+<li>table_definition_cache  <br>
+系统缺省设置；</li>
+<li>table_open_cache
+出错部分的变量</li>
+<li>table_open_cache_instances <br>
+系统缺省实例数；</li>
+</ul>
+<p>在mysql 5.1文档里找到了答案：
+从v5.1.3版本开始已经移除了table_cache!</p>
+<table>
+  <thead>
+      <tr>
+          <th>Deprecated</th>
+          <th style="text-align: right">5.1.3, by table_open_cache</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Removed</td>
+          <td style="text-align: right">5.1.3</td>
+      </tr>
+  </tbody>
+</table>
+<p>This is the old name of table_open_cache before MySQL 5.1.3. From 5.1.3 on, use table_open_cache instead.</p>
+<ul>
+<li>解决办法：
+把ini中的table_cache替换为table_open_cache。</li>
+</ul>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=mysql%e7%9a%841067%e9%94%99%e8%af%af&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_mysql_error1067%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_mysql_error1067%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_mysql_error1067%2f&amp;description=mysql%e7%9a%841067%e9%94%99%e8%af%af"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_mysql_error1067%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/csdn/post/hw-can-uart-key/">
+          <section class="post">
+              <h2>CAN数据转发</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_mysql_devel/">
+          <section class="post">
+              <h2>无mysql-dev导致的错误</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>
+
