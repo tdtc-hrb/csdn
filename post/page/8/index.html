@@ -164,574 +164,6 @@
 	
 	   <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/hw-can-uart-key/">CAN数据转发</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><h1 id="完结篇">完结篇</h1>
-<p>《<a href="https://blog.csdn.net/xiaobin_HLJ80/article/details/44890423">CAN转COM或CAN-1</a>》介绍了CAN，本篇其余部分。</p>
-<ul>
-<li>
-<p>开发板：英蓓特MCB2300（LPC2368）</p>
-</li>
-<li>
-<p>开发工具：MDK3.8a</p>
-</li>
-<li>
-<p>开发主机：Windows XP SP3 中文专业版</p>
-</li>
-</ul>
-<h1 id="uart">UART</h1>
-<p>因为我们使用UART主要是进行发送的，所以关闭接收可以更加快速的进行发送处理。</p>
-<p>控制接收缓存寄存（Receiver Buffer Register）即可达到此目的。</p>
-<h2 id="禁止rbr">禁止RBR</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">preUARTInitRBR</span>( <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">char</span> i )
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">switch</span> (i) {
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">case</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>			U0IER <span style="color:#f92672">=</span> IER_THRE <span style="color:#f92672">|</span> IER_RLS;			<span style="color:#75715e">/* Disable RBR */</span>
-</span></span><span style="display:flex;"><span>	  		<span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>			U1IER <span style="color:#f92672">=</span> IER_THRE <span style="color:#f92672">|</span> IER_RLS;			<span style="color:#75715e">/* Disable RBR */</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>	}   
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h2 id="允许rbr">允许RBR</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">postUARTInitRBR</span>( <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">char</span> i )
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">switch</span> (i) {
-</span></span><span style="display:flex;"><span>	  	<span style="color:#66d9ef">case</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>			U0IER <span style="color:#f92672">=</span> IER_THRE <span style="color:#f92672">|</span> IER_RLS <span style="color:#f92672">|</span> IER_RBR;	<span style="color:#75715e">/* Re-enable RBR */</span>
-</span></span><span style="display:flex;"><span>	  	  	<span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>			U1IER <span style="color:#f92672">=</span> IER_THRE <span style="color:#f92672">|</span> IER_RLS <span style="color:#f92672">|</span> IER_RBR;	<span style="color:#75715e">/* Re-enable RBR */</span>
-</span></span><span style="display:flex;"><span>	  		<span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>	}  
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h2 id="完成后的uart">完成后的UART</h2>
-<blockquote>
-<p>NXP的官方例程UART加入RBR后的code</p> <a class="read-more" href="/csdn/post/hw-can-uart-key/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-15T23:08:08&#43;08:00">
-            15 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_mysql_error1067/">mysql的1067错误</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><h1 id="日志文件问题">日志文件问题</h1>
-<p>由于使用时间比较长积累了很多的日志文件（\data目录下），所以删除之！</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql-bin.000001
-</span></span><span style="display:flex;"><span>... ...
-</span></span><span style="display:flex;"><span>mysql-bin.000278
-</span></span></code></pre></div><p>原来删除都留最后一个编号的日志，这次太过彻底~~都删了!</p>
-<p>执行net start mysql：
-<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/2020051514104614.png" alt="cmd info">
-出现了mysql 1067错误！ <br>
-查看，主机名.err文件（lenovo-7c8f808d.err）：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ae81ff">130416</span>  9:59:23  InnoDB: Started; log sequence number <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">43655</span>
-</span></span><span style="display:flex;"><span>MySQL: File <span style="color:#e6db74">&#39;.\mysql-bin.000278&#39;</span> not found <span style="color:#f92672">(</span>Errcode: 2<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">130416</span>  9:59:23 <span style="color:#f92672">[</span>ERROR<span style="color:#f92672">]</span> Failed to open log <span style="color:#f92672">(</span>file <span style="color:#e6db74">&#39;.\mysql-bin.000278&#39;</span>, errno 2<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">130416</span>  9:59:23 <span style="color:#f92672">[</span>ERROR<span style="color:#f92672">]</span> Could not open log file
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">130416</span>  9:59:23 <span style="color:#f92672">[</span>ERROR<span style="color:#f92672">]</span> Can<span style="color:#960050;background-color:#1e0010">&#39;</span>t init tc log
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">130416</span>  9:59:23 <span style="color:#f92672">[</span>ERROR<span style="color:#f92672">]</span> Aborting
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">130416</span>  9:59:23  InnoDB: Starting shutdown...
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">130416</span>  9:59:24  InnoDB: Shutdown completed; log sequence number <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">43655</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">130416</span>  9:59:24 <span style="color:#f92672">[</span>Note<span style="color:#f92672">]</span> MySQL: Shutdown complete
-</span></span></code></pre></div><p>告诉我们找不到mysql-bin.000278文件！ <br>
-既然找不到，我们新弄一个日志文件： <br>
-打开my.ini文件
-<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/2020051514154614.png" alt="cmd info"></p> <a class="read-more" href="/csdn/post/ops_mysql_error1067/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-15T06:08:08&#43;08:00">
-            15 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_mysql_devel/">无mysql-dev导致的错误</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><blockquote>
-<p>应用程序要访问mysql必须安装mysql-dev，因为它是各种语言与mysql的接口。</p></blockquote>
-<h1 id="error-info">error info</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>root@localhost DBD-mysql-4.022<span style="color:#f92672">]</span><span style="color:#75715e"># make</span>
-</span></span><span style="display:flex;"><span>cp lib/DBD/mysql.pm blib/lib/DBD/mysql.pm
-</span></span><span style="display:flex;"><span>cp lib/DBD/mysql/GetInfo.pm blib/lib/DBD/mysql/GetInfo.pm
-</span></span><span style="display:flex;"><span>cp lib/DBD/mysql/INSTALL.pod blib/lib/DBD/mysql/INSTALL.pod
-</span></span><span style="display:flex;"><span>cp lib/Bundle/DBD/mysql.pm blib/lib/Bundle/DBD/mysql.pm
-</span></span><span style="display:flex;"><span>cc -c  -I/usr/local/perl/lib/site_perl/5.16.2/i686-linux/auto/DBI -I/usr/include/mysql  -g -pipe -Wp,-D_FORTIFY_SOURCE<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> -fexceptions -fstack-protector --param<span style="color:#f92672">=</span>ssp-buffer-size<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span> -m32 -fasynchronous-unwind-tables -D_GNU_SOURCE -D_FILE_OFFSET_BITS<span style="color:#f92672">=</span><span style="color:#ae81ff">64</span> -D_LARGEFILE_SOURCE -fno-strict-aliasing -fwrapv -DDBD_MYSQL_WITH_SSL -DDBD_MYSQL_INSERT_ID_IS_GOOD -g  -fno-strict-aliasing -pipe -fstack-protector -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS<span style="color:#f92672">=</span><span style="color:#ae81ff">64</span> -O2   -DVERSION<span style="color:#f92672">=</span><span style="color:#ae81ff">\&#34;</span>4.022<span style="color:#ae81ff">\&#34;</span> -DXS_VERSION<span style="color:#f92672">=</span><span style="color:#ae81ff">\&#34;</span>4.022<span style="color:#ae81ff">\&#34;</span> -fPIC <span style="color:#e6db74">&#34;-I/usr/local/perl/lib/5.16.2/i686-linux/CORE&#34;</span>   dbdimp.c
-</span></span><span style="display:flex;"><span>In file included from dbdimp.c:20:
-</span></span><span style="display:flex;"><span>dbdimp.h:23:49: error: mysql.h: No such file or directory
-</span></span><span style="display:flex;"><span>dbdimp.h:24:45: error: mysqld_error.h: No such file or directory
-</span></span><span style="display:flex;"><span>dbdimp.h:26:49: error: errmsg.h: No such file or directory
-</span></span><span style="display:flex;"><span>In file included from dbdimp.c:20:
-</span></span><span style="display:flex;"><span>dbdimp.h:159: error: expected specifier-qualifier-list before ‘MYSQL’
-</span></span><span style="display:flex;"><span>dbdimp.h:257: error: expected specifier-qualifier-list before ‘MYSQL_RES’
-</span></span><span style="display:flex;"><span>In file included from dbdimp.c:20:
-</span></span><span style="display:flex;"><span>dbdimp.h:318: error: expected ‘<span style="color:#f92672">)</span>’ before ‘*’ token
-</span></span><span style="display:flex;"><span>dbdimp.h:321: error: expected ‘<span style="color:#f92672">=</span>’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘mysql_st_internal_execute’
-</span></span><span style="display:flex;"><span>dbdimp.h:357: error: expected ‘<span style="color:#f92672">=</span>’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘*’ token
-</span></span><span style="display:flex;"><span>dbdimp.h:363: error: expected declaration specifiers or ‘...’ before ‘MYSQL_RES’
-</span></span><span style="display:flex;"><span>dbdimp.c:519: error: expected declaration specifiers or ‘...’ before ‘MYSQL’
-</span></span><span style="display:flex;"><span>dbdimp.c: In <span style="color:#66d9ef">function</span> ‘parse_params’:
-</span></span><span style="display:flex;"><span>dbdimp.c:767: error: ‘sock’ undeclared <span style="color:#f92672">(</span>first use in this <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:767: error: <span style="color:#f92672">(</span>Each undeclared identifier is reported only once
-</span></span><span style="display:flex;"><span>dbdimp.c:767: error: <span style="color:#66d9ef">for</span> each <span style="color:#66d9ef">function</span> it appears in.<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c: At top level:
-</span></span><span style="display:flex;"><span>dbdimp.c:822: error: ‘FIELD_TYPE_VAR_STRING’ undeclared here <span style="color:#f92672">(</span>not in a <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:832: error: ‘FIELD_TYPE_DECIMAL’ undeclared here <span style="color:#f92672">(</span>not in a <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:842: error: ‘FIELD_TYPE_TINY’ undeclared here <span style="color:#f92672">(</span>not in a <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:852: error: ‘FIELD_TYPE_SHORT’ undeclared here <span style="color:#f92672">(</span>not in a <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:862: error: ‘FIELD_TYPE_LONG’ undeclared here <span style="color:#f92672">(</span>not in a <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:872: error: ‘FIELD_TYPE_FLOAT’ undeclared here <span style="color:#f92672">(</span>not in a <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:882: error: ‘FIELD_TYPE_DOUBLE’ undeclared here <span style="color:#f92672">(</span>not in a <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:905: error: ‘FIELD_TYPE_TIMESTAMP’ undeclared here <span style="color:#f92672">(</span>not in a <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:915: error: ‘FIELD_TYPE_LONGLONG’ undeclared here <span style="color:#f92672">(</span>not in a <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:925: error: ‘FIELD_TYPE_INT24’ undeclared here <span style="color:#f92672">(</span>not in a <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:935: error: ‘FIELD_TYPE_DATE’ undeclared here <span style="color:#f92672">(</span>not in a <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:945: error: ‘FIELD_TYPE_TIME’ undeclared here <span style="color:#f92672">(</span>not in a <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:955: error: ‘FIELD_TYPE_DATETIME’ undeclared here <span style="color:#f92672">(</span>not in a <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:965: error: ‘FIELD_TYPE_YEAR’ undeclared here <span style="color:#f92672">(</span>not in a <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:975: error: ‘FIELD_TYPE_NEWDATE’ undeclared here <span style="color:#f92672">(</span>not in a <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:985: error: ‘FIELD_TYPE_ENUM’ undeclared here <span style="color:#f92672">(</span>not in a <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:995: error: ‘FIELD_TYPE_SET’ undeclared here <span style="color:#f92672">(</span>not in a <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:1005: error: ‘FIELD_TYPE_BLOB’ undeclared here <span style="color:#f92672">(</span>not in a <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:1015: error: ‘FIELD_TYPE_TINY_BLOB’ undeclared here <span style="color:#f92672">(</span>not in a <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:1025: error: ‘FIELD_TYPE_MEDIUM_BLOB’ undeclared here <span style="color:#f92672">(</span>not in a <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:1035: error: ‘FIELD_TYPE_LONG_BLOB’ undeclared here <span style="color:#f92672">(</span>not in a <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:1045: error: ‘FIELD_TYPE_STRING’ undeclared here <span style="color:#f92672">(</span>not in a <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:1515: error: expected ‘<span style="color:#f92672">=</span>’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘*’ token
-</span></span><span style="display:flex;"><span>dbdimp.c: In <span style="color:#66d9ef">function</span> ‘my_login’:
-</span></span><span style="display:flex;"><span>dbdimp.c:2001: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:2002: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:2002: error: ‘MYSQL’ undeclared <span style="color:#f92672">(</span>first use in this <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:2002: warning: comparison between pointer and integer
-</span></span><span style="display:flex;"><span>dbdimp.c:2002: error: invalid operands to binary /
-</span></span><span style="display:flex;"><span>dbdimp.c:2002: error: invalid operands to binary &gt;
-</span></span><span style="display:flex;"><span>dbdimp.c:2002: error: expected expression before ‘<span style="color:#f92672">)</span>’ token
-</span></span><span style="display:flex;"><span>dbdimp.c:2002: error: invalid operands to binary *
-</span></span><span style="display:flex;"><span>dbdimp.c:2002: warning: passing argument <span style="color:#ae81ff">2</span> of ‘Perl_safesyscalloc’ makes integer from pointer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:2002: error: called object ‘&lt;erroneous-expression&gt;’ is not a <span style="color:#66d9ef">function</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:2004: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c: In <span style="color:#66d9ef">function</span> ‘mysql_db_login’:
-</span></span><span style="display:flex;"><span>dbdimp.c:2042: error: ‘imp_dbh_t’ has no member named ‘stats’
-</span></span><span style="display:flex;"><span>dbdimp.c:2042: error: request <span style="color:#66d9ef">for</span> member ‘auto_reconnects_ok’ in something not a structure or union
-</span></span><span style="display:flex;"><span>dbdimp.c:2043: error: ‘imp_dbh_t’ has no member named ‘stats’
-</span></span><span style="display:flex;"><span>dbdimp.c:2043: error: request <span style="color:#66d9ef">for</span> member ‘auto_reconnects_failed’ in something not a structure or union
-</span></span><span style="display:flex;"><span>dbdimp.c:2044: error: ‘imp_dbh_t’ has no member named ‘bind_type_guessing’
-</span></span><span style="display:flex;"><span>dbdimp.c:2045: error: ‘imp_dbh_t’ has no member named ‘bind_comment_placeholders’
-</span></span><span style="display:flex;"><span>dbdimp.c:2046: error: ‘imp_dbh_t’ has no member named ‘has_transactions’
-</span></span><span style="display:flex;"><span>dbdimp.c:2048: error: ‘imp_dbh_t’ has no member named ‘auto_reconnect’
-</span></span><span style="display:flex;"><span>dbdimp.c:2057: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:2058: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:2058: warning: passing argument <span style="color:#ae81ff">3</span> of ‘mysql_dr_error’ makes pointer from integer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c: In <span style="color:#66d9ef">function</span> ‘mysql_db_commit’:
-</span></span><span style="display:flex;"><span>dbdimp.c:2095: error: ‘imp_dbh_t’ has no member named ‘async_query_in_flight’
-</span></span><span style="display:flex;"><span>dbdimp.c:2097: error: ‘imp_dbh_t’ has no member named ‘has_transactions’
-</span></span><span style="display:flex;"><span>dbdimp.c:2100: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:2105: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:2105: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:2106: warning: passing argument <span style="color:#ae81ff">3</span> of ‘mysql_dr_error’ makes pointer from integer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c: In <span style="color:#66d9ef">function</span> ‘mysql_db_rollback’:
-</span></span><span style="display:flex;"><span>dbdimp.c:2125: error: ‘imp_dbh_t’ has no member named ‘async_query_in_flight’
-</span></span><span style="display:flex;"><span>dbdimp.c:2127: error: ‘imp_dbh_t’ has no member named ‘has_transactions’
-</span></span><span style="display:flex;"><span>dbdimp.c:2130: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:2135: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:2136: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:2136: warning: passing argument <span style="color:#ae81ff">3</span> of ‘mysql_dr_error’ makes pointer from integer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c: In <span style="color:#66d9ef">function</span> ‘mysql_db_disconnect’:
-</span></span><span style="display:flex;"><span>dbdimp.c:2174: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:2175: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c: In <span style="color:#66d9ef">function</span> ‘mysql_db_destroy’:
-</span></span><span style="display:flex;"><span>dbdimp.c:2263: error: ‘imp_dbh_t’ has no member named ‘has_transactions’
-</span></span><span style="display:flex;"><span>dbdimp.c:2267: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:2275: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c: In <span style="color:#66d9ef">function</span> ‘mysql_db_STORE_attrib’:
-</span></span><span style="display:flex;"><span>dbdimp.c:2314: error: ‘imp_dbh_t’ has no member named ‘has_transactions’
-</span></span><span style="display:flex;"><span>dbdimp.c:2322: error: ‘imp_dbh_t’ has no member named ‘no_autocommit_cmd’
-</span></span><span style="display:flex;"><span>dbdimp.c:2328: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:2359: error: ‘imp_dbh_t’ has no member named ‘use_mysql_use_result’
-</span></span><span style="display:flex;"><span>dbdimp.c:2361: error: ‘imp_dbh_t’ has no member named ‘auto_reconnect’
-</span></span><span style="display:flex;"><span>dbdimp.c:2363: error: ‘imp_dbh_t’ has no member named ‘use_server_side_prepare’
-</span></span><span style="display:flex;"><span>dbdimp.c:2365: error: ‘imp_dbh_t’ has no member named ‘no_autocommit_cmd’
-</span></span><span style="display:flex;"><span>dbdimp.c:2367: error: ‘imp_dbh_t’ has no member named ‘bind_type_guessing’
-</span></span><span style="display:flex;"><span>dbdimp.c:2369: error: ‘imp_dbh_t’ has no member named ‘bind_type_guessing’
-</span></span><span style="display:flex;"><span>dbdimp.c: At top level:
-</span></span><span style="display:flex;"><span>dbdimp.c:2398: error: expected ‘<span style="color:#f92672">)</span>’ before ‘val’
-</span></span><span style="display:flex;"><span>dbdimp.c: In <span style="color:#66d9ef">function</span> ‘mysql_db_FETCH_attrib’:
-</span></span><span style="display:flex;"><span>dbdimp.c:2428: error: ‘imp_dbh_t’ has no member named ‘has_transactions’
-</span></span><span style="display:flex;"><span>dbdimp.c:2445: error: ‘imp_dbh_t’ has no member named ‘auto_reconnect’
-</span></span><span style="display:flex;"><span>dbdimp.c:2445: warning: passing argument <span style="color:#ae81ff">1</span> of ‘Perl_newSViv’ makes integer from pointer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:2451: error: ‘imp_dbh_t’ has no member named ‘bind_type_guessing’
-</span></span><span style="display:flex;"><span>dbdimp.c:2451: warning: passing argument <span style="color:#ae81ff">1</span> of ‘Perl_newSViv’ makes integer from pointer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:2456: error: ‘imp_dbh_t’ has no member named ‘bind_comment_placeholders’
-</span></span><span style="display:flex;"><span>dbdimp.c:2456: warning: passing argument <span style="color:#ae81ff">1</span> of ‘Perl_newSViv’ makes integer from pointer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:2462: warning: initialization makes pointer from integer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:2468: warning: passing argument <span style="color:#ae81ff">1</span> of ‘Perl_sv_2mortal’ makes pointer from integer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:2473: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:2477: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:2477: warning: initialization makes pointer from integer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:2491: error: ‘imp_dbh_t’ has no member named ‘stats’
-</span></span><span style="display:flex;"><span>dbdimp.c:2491: error: request <span style="color:#66d9ef">for</span> member ‘auto_reconnects_ok’ in something not a structure or union
-</span></span><span style="display:flex;"><span>dbdimp.c:2491: warning: passing argument <span style="color:#ae81ff">1</span> of ‘Perl_newSViv’ makes integer from pointer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:2498: error: ‘imp_dbh_t’ has no member named ‘stats’
-</span></span><span style="display:flex;"><span>dbdimp.c:2498: error: request <span style="color:#66d9ef">for</span> member ‘auto_reconnects_failed’ in something not a structure or union
-</span></span><span style="display:flex;"><span>dbdimp.c:2498: warning: passing argument <span style="color:#ae81ff">1</span> of ‘Perl_newSViv’ makes integer from pointer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:2512: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:2512: warning: initialization makes pointer from integer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:2521: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:2521: warning: initialization makes pointer from integer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:2526: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:2526: warning: passing argument <span style="color:#ae81ff">1</span> of ‘Perl_sv_2mortal’ makes pointer from integer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:2531: error: ‘imp_dbh_t’ has no member named ‘no_autocommit_cmd’
-</span></span><span style="display:flex;"><span>dbdimp.c:2531: warning: passing argument <span style="color:#ae81ff">1</span> of ‘Perl_newSViv’ makes integer from pointer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:2536: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:2542: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:2542: warning: initialization makes pointer from integer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:2547: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:2547: warning: passing argument <span style="color:#ae81ff">1</span> of ‘Perl_sv_2mortal’ makes pointer from integer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:2549: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:2551: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:2551: error: ‘sql_type_info_t’ has no member named ‘net’
-</span></span><span style="display:flex;"><span>dbdimp.c:2551: error: request <span style="color:#66d9ef">for</span> member ‘fd’ in something not a structure or union
-</span></span><span style="display:flex;"><span>dbdimp.c:2554: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:2554: warning: initialization makes pointer from integer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:2561: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:2561: warning: initialization makes pointer from integer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:2566: error: ‘imp_dbh_t’ has no member named ‘use_server_side_prepare’
-</span></span><span style="display:flex;"><span>dbdimp.c:2571: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c: In <span style="color:#66d9ef">function</span> ‘mysql_st_prepare’:
-</span></span><span style="display:flex;"><span>dbdimp.c:2621: error: ‘MYSQL_VERSION_ID’ undeclared <span style="color:#f92672">(</span>first use in this <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:2649: error: ‘imp_sth_t’ has no member named ‘done_desc’
-</span></span><span style="display:flex;"><span>dbdimp.c:2650: error: ‘imp_sth_t’ has no member named ‘result’
-</span></span><span style="display:flex;"><span>dbdimp.c:2651: error: ‘imp_sth_t’ has no member named ‘currow’
-</span></span><span style="display:flex;"><span>dbdimp.c:2655: error: ‘imp_sth_t’ has no member named ‘use_mysql_use_result’
-</span></span><span style="display:flex;"><span>dbdimp.c:2656: error: ‘imp_dbh_t’ has no member named ‘use_mysql_use_result’
-</span></span><span style="display:flex;"><span>dbdimp.c:2656: warning: pointer/integer type mismatch in conditional expression
-</span></span><span style="display:flex;"><span>dbdimp.c:2659: error: ‘imp_sth_t’ has no member named ‘av_attr’
-</span></span><span style="display:flex;"><span>dbdimp.c:2659: error: assignment of read-only location
-</span></span><span style="display:flex;"><span>dbdimp.c:2846: error: ‘imp_dbh_t’ has no member named ‘bind_comment_placeholders’
-</span></span><span style="display:flex;"><span>dbdimp.c:2850: error: ‘imp_sth_t’ has no member named ‘params’
-</span></span><span style="display:flex;"><span>dbdimp.c: In <span style="color:#66d9ef">function</span> ‘mysql_st_free_result_sets’:
-</span></span><span style="display:flex;"><span>dbdimp.c:2921: error: ‘imp_sth_t’ has no member named ‘result’
-</span></span><span style="display:flex;"><span>dbdimp.c:2923: error: ‘imp_sth_t’ has no member named ‘result’
-</span></span><span style="display:flex;"><span>dbdimp.c:2924: error: ‘imp_sth_t’ has no member named ‘result’
-</span></span><span style="display:flex;"><span>dbdimp.c: At top level:
-</span></span><span style="display:flex;"><span>dbdimp.c:3089: error: expected ‘<span style="color:#f92672">=</span>’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘mysql_st_internal_execute’
-</span></span><span style="display:flex;"><span>dbdimp.c: In <span style="color:#66d9ef">function</span> ‘mysql_st_execute’:
-</span></span><span style="display:flex;"><span>dbdimp.c:3431: error: ‘imp_dbh_t’ has no member named ‘async_query_in_flight’
-</span></span><span style="display:flex;"><span>dbdimp.c:3443: error: ‘imp_sth_t’ has no member named ‘av_attr’
-</span></span><span style="display:flex;"><span>dbdimp.c:3443: error: used struct type value where scalar is required
-</span></span><span style="display:flex;"><span>dbdimp.c:3444: error: ‘imp_sth_t’ has no member named ‘av_attr’
-</span></span><span style="display:flex;"><span>dbdimp.c:3444: error: incompatible types in initialization
-</span></span><span style="display:flex;"><span>dbdimp.c:3446: error: ‘imp_sth_t’ has no member named ‘av_attr’
-</span></span><span style="display:flex;"><span>dbdimp.c:3446: error: assignment of read-only location
-</span></span><span style="display:flex;"><span>dbdimp.c:3472: error: ‘imp_sth_t’ has no member named ‘row_num’
-</span></span><span style="display:flex;"><span>dbdimp.c:3477: error: ‘imp_sth_t’ has no member named ‘params’
-</span></span><span style="display:flex;"><span>dbdimp.c:3478: error: ‘imp_sth_t’ has no member named ‘result’
-</span></span><span style="display:flex;"><span>dbdimp.c:3479: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:3480: error: ‘imp_sth_t’ has no member named ‘use_mysql_use_result’
-</span></span><span style="display:flex;"><span>dbdimp.c:3483: error: ‘imp_dbh_t’ has no member named ‘async_query_in_flight’
-</span></span><span style="display:flex;"><span>dbdimp.c: At top level:
-</span></span><span style="display:flex;"><span>dbdimp.c:3490: error: expected identifier or ‘<span style="color:#f92672">(</span>’ before ‘if’
-</span></span><span style="display:flex;"><span>dbdimp.c:3510: error: expected ‘<span style="color:#f92672">=</span>’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘-&gt;’ token
-</span></span><span style="display:flex;"><span>dbdimp.c:3512: error: expected identifier or ‘<span style="color:#f92672">(</span>’ before ‘if’
-</span></span><span style="display:flex;"><span>dbdimp.c:3524: error: expected identifier or ‘<span style="color:#f92672">(</span>’ before ‘return’
-</span></span><span style="display:flex;"><span>dbdimp.c:3525: error: expected identifier or ‘<span style="color:#f92672">(</span>’ before ‘<span style="color:#f92672">}</span>’ token
-</span></span><span style="display:flex;"><span>dbdimp.c: In <span style="color:#66d9ef">function</span> ‘mysql_describe’:
-</span></span><span style="display:flex;"><span>dbdimp.c:3648: error: ‘imp_sth_t’ has no member named ‘done_desc’
-</span></span><span style="display:flex;"><span>dbdimp.c: In <span style="color:#66d9ef">function</span> ‘mysql_st_fetch’:
-</span></span><span style="display:flex;"><span>dbdimp.c:3678: error: ‘MYSQL_ROW’ undeclared <span style="color:#f92672">(</span>first use in this <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:3678: error: expected ‘;’ before ‘cols’
-</span></span><span style="display:flex;"><span>dbdimp.c:3680: error: ‘MYSQL’ undeclared <span style="color:#f92672">(</span>first use in this <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:3680: error: ‘svsock’ undeclared <span style="color:#f92672">(</span>first use in this <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:3680: error: invalid operands to binary *
-</span></span><span style="display:flex;"><span>dbdimp.c:3680: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:3686: error: ‘MYSQL_FIELD’ undeclared <span style="color:#f92672">(</span>first use in this <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:3686: error: ‘fields’ undeclared <span style="color:#f92672">(</span>first use in this <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:3686: error: invalid operands to binary *
-</span></span><span style="display:flex;"><span>dbdimp.c:3691: error: ‘imp_dbh_t’ has no member named ‘async_query_in_flight’
-</span></span><span style="display:flex;"><span>dbdimp.c:3692: error: ‘imp_sth_t’ has no member named ‘result’
-</span></span><span style="display:flex;"><span>dbdimp.c:3692: error: too many arguments to <span style="color:#66d9ef">function</span> ‘mysql_db_async_result’
-</span></span><span style="display:flex;"><span>dbdimp.c:3732: error: ‘imp_sth_t’ has no member named ‘result’
-</span></span><span style="display:flex;"><span>dbdimp.c:3739: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:3739: error: ‘sql_type_info_t’ has no member named ‘net’
-</span></span><span style="display:flex;"><span>dbdimp.c:3739: error: request <span style="color:#66d9ef">for</span> member ‘last_errno’ in something not a structure or union
-</span></span><span style="display:flex;"><span>dbdimp.c:3889: error: ‘imp_sth_t’ has no member named ‘currow’
-</span></span><span style="display:flex;"><span>dbdimp.c:3889: error: invalid lvalue in increment
-</span></span><span style="display:flex;"><span>dbdimp.c:3894: error: ‘imp_sth_t’ has no member named ‘result’
-</span></span><span style="display:flex;"><span>dbdimp.c:3896: error: ‘imp_sth_t’ has no member named ‘result’
-</span></span><span style="display:flex;"><span>dbdimp.c:3898: error: ‘imp_sth_t’ has no member named ‘result’
-</span></span><span style="display:flex;"><span>dbdimp.c:3900: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:3902: error: ‘imp_sth_t’ has no member named ‘currow’
-</span></span><span style="display:flex;"><span>dbdimp.c:3905: error: ‘cols’ undeclared <span style="color:#f92672">(</span>first use in this <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:3905: error: ‘imp_sth_t’ has no member named ‘result’
-</span></span><span style="display:flex;"><span>dbdimp.c:3911: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:3912: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:3913: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:3914: warning: passing argument <span style="color:#ae81ff">3</span> of ‘mysql_dr_error’ makes pointer from integer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:3924: error: ‘imp_sth_t’ has no member named ‘result’
-</span></span><span style="display:flex;"><span>dbdimp.c:3925: error: ‘imp_sth_t’ has no member named ‘result’
-</span></span><span style="display:flex;"><span>dbdimp.c:3926: error: ‘imp_sth_t’ has no member named ‘result’
-</span></span><span style="display:flex;"><span>dbdimp.c:3926: warning: assignment makes pointer from integer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:3966: error: incompatible types in initialization
-</span></span><span style="display:flex;"><span>dbdimp.c: In <span style="color:#66d9ef">function</span> ‘mysql_st_finish’:
-</span></span><span style="display:flex;"><span>dbdimp.c:4047: error: ‘imp_dbh_t’ has no member named ‘async_query_in_flight’
-</span></span><span style="display:flex;"><span>dbdimp.c:4048: error: ‘imp_sth_t’ has no member named ‘result’
-</span></span><span style="display:flex;"><span>dbdimp.c:4048: error: too many arguments to <span style="color:#66d9ef">function</span> ‘mysql_db_async_result’
-</span></span><span style="display:flex;"><span>dbdimp.c: In <span style="color:#66d9ef">function</span> ‘mysql_st_destroy’:
-</span></span><span style="display:flex;"><span>dbdimp.c:4163: error: ‘imp_sth_t’ has no member named ‘params’
-</span></span><span style="display:flex;"><span>dbdimp.c:4165: error: ‘imp_sth_t’ has no member named ‘params’
-</span></span><span style="display:flex;"><span>dbdimp.c:4165: warning: passing argument <span style="color:#ae81ff">1</span> of ‘free_param’ from incompatible pointer type
-</span></span><span style="display:flex;"><span>dbdimp.c:4166: error: ‘imp_sth_t’ has no member named ‘params’
-</span></span><span style="display:flex;"><span>dbdimp.c:4172: error: ‘imp_sth_t’ has no member named ‘av_attr’
-</span></span><span style="display:flex;"><span>dbdimp.c:4172: error: used struct type value where scalar is required
-</span></span><span style="display:flex;"><span>dbdimp.c:4173: error: ‘imp_sth_t’ has no member named ‘av_attr’
-</span></span><span style="display:flex;"><span>dbdimp.c:4173: error: incompatible types in initialization
-</span></span><span style="display:flex;"><span>dbdimp.c:4174: error: ‘imp_sth_t’ has no member named ‘av_attr’
-</span></span><span style="display:flex;"><span>dbdimp.c:4174: error: assignment of read-only location
-</span></span><span style="display:flex;"><span>dbdimp.c: In <span style="color:#66d9ef">function</span> ‘mysql_st_STORE_attrib’:
-</span></span><span style="display:flex;"><span>dbdimp.c:4219: error: ‘imp_sth_t’ has no member named ‘use_mysql_use_result’
-</span></span><span style="display:flex;"><span>dbdimp.c: At top level:
-</span></span><span style="display:flex;"><span>dbdimp.c:4267: error: expected declaration specifiers or ‘...’ before ‘MYSQL_RES’
-</span></span><span style="display:flex;"><span>dbdimp.c: In <span style="color:#66d9ef">function</span> ‘mysql_st_FETCH_internal’:
-</span></span><span style="display:flex;"><span>dbdimp.c:4274: error: ‘MYSQL_FIELD’ undeclared <span style="color:#f92672">(</span>first use in this <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:4274: error: ‘curField’ undeclared <span style="color:#f92672">(</span>first use in this <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:4274: error: invalid operands to binary *
-</span></span><span style="display:flex;"><span>dbdimp.c:4281: error: ‘imp_sth_t’ has no member named ‘av_attr’
-</span></span><span style="display:flex;"><span>dbdimp.c:4281: error: invalid operands to binary <span style="color:#f92672">&amp;&amp;</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:4282: error: ‘imp_sth_t’ has no member named ‘av_attr’
-</span></span><span style="display:flex;"><span>dbdimp.c:4282: error: incompatible types in assignment
-</span></span><span style="display:flex;"><span>dbdimp.c:4285: error: ‘res’ undeclared <span style="color:#f92672">(</span>first use in this <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:4299: error: ‘sql_type_info_t’ has no member named ‘name’
-</span></span><span style="display:flex;"><span>dbdimp.c:4299: error: ‘sql_type_info_t’ has no member named ‘name’
-</span></span><span style="display:flex;"><span>dbdimp.c:4299: warning: passing argument <span style="color:#ae81ff">1</span> of ‘strlen’ from incompatible pointer type
-</span></span><span style="display:flex;"><span>dbdimp.c:4299: warning: passing argument <span style="color:#ae81ff">1</span> of ‘Perl_newSVpv’ from incompatible pointer type
-</span></span><span style="display:flex;"><span>dbdimp.c:4303: error: ‘sql_type_info_t’ has no member named ‘table’
-</span></span><span style="display:flex;"><span>dbdimp.c:4303: error: ‘sql_type_info_t’ has no member named ‘table’
-</span></span><span style="display:flex;"><span>dbdimp.c:4303: warning: passing argument <span style="color:#ae81ff">1</span> of ‘strlen’ from incompatible pointer type
-</span></span><span style="display:flex;"><span>dbdimp.c:4303: warning: passing argument <span style="color:#ae81ff">1</span> of ‘Perl_newSVpv’ from incompatible pointer type
-</span></span><span style="display:flex;"><span>dbdimp.c:4307: error: ‘sql_type_info_t’ has no member named ‘type’
-</span></span><span style="display:flex;"><span>dbdimp.c:4311: error: ‘sql_type_info_t’ has no member named ‘type’
-</span></span><span style="display:flex;"><span>dbdimp.c:4311: warning: passing argument <span style="color:#ae81ff">1</span> of ‘native2sql’ makes integer from pointer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:4314: error: ‘sql_type_info_t’ has no member named ‘flags’
-</span></span><span style="display:flex;"><span>dbdimp.c:4318: error: ‘sql_type_info_t’ has no member named ‘flags’
-</span></span><span style="display:flex;"><span>dbdimp.c:4322: error: ‘sql_type_info_t’ has no member named ‘flags’
-</span></span><span style="display:flex;"><span>dbdimp.c:4326: error: ‘sql_type_info_t’ has no member named ‘length’
-</span></span><span style="display:flex;"><span>dbdimp.c:4330: error: ‘sql_type_info_t’ has no member named ‘type’
-</span></span><span style="display:flex;"><span>dbdimp.c:4330: warning: passing argument <span style="color:#ae81ff">1</span> of ‘native2sql’ makes integer from pointer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:4334: error: ‘sql_type_info_t’ has no member named ‘type’
-</span></span><span style="display:flex;"><span>dbdimp.c:4334: warning: passing argument <span style="color:#ae81ff">1</span> of ‘native2sql’ makes integer from pointer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:4338: error: ‘sql_type_info_t’ has no member named ‘max_length’
-</span></span><span style="display:flex;"><span>dbdimp.c:4350: error: ‘sql_type_info_t’ has no member named ‘flags’
-</span></span><span style="display:flex;"><span>dbdimp.c:4350: error: ‘PRI_KEY_FLAG’ undeclared <span style="color:#f92672">(</span>first use in this <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:4350: error: ‘UNIQUE_KEY_FLAG’ undeclared <span style="color:#f92672">(</span>first use in this <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:4350: error: invalid operands to binary |
-</span></span><span style="display:flex;"><span>dbdimp.c:4350: error: ‘MULTIPLE_KEY_FLAG’ undeclared <span style="color:#f92672">(</span>first use in this <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:4350: error: invalid operands to binary |
-</span></span><span style="display:flex;"><span>dbdimp.c:4350: error: invalid operands to binary &amp;
-</span></span><span style="display:flex;"><span>dbdimp.c:4354: error: ‘sql_type_info_t’ has no member named ‘flags’
-</span></span><span style="display:flex;"><span>dbdimp.c:4358: error: ‘sql_type_info_t’ has no member named ‘decimals’
-</span></span><span style="display:flex;"><span>dbdimp.c:4362: error: ‘sql_type_info_t’ has no member named ‘length’
-</span></span><span style="display:flex;"><span>dbdimp.c:4362: error: ‘sql_type_info_t’ has no member named ‘max_length’
-</span></span><span style="display:flex;"><span>dbdimp.c:4362: error: ‘sql_type_info_t’ has no member named ‘length’
-</span></span><span style="display:flex;"><span>dbdimp.c:4362: error: ‘sql_type_info_t’ has no member named ‘max_length’
-</span></span><span style="display:flex;"><span>dbdimp.c:4362: warning: passing argument <span style="color:#ae81ff">1</span> of ‘Perl_newSViv’ makes integer from pointer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:4377: error: ‘imp_sth_t’ has no member named ‘av_attr’
-</span></span><span style="display:flex;"><span>dbdimp.c:4377: error: assignment of read-only location
-</span></span><span style="display:flex;"><span>dbdimp.c: In <span style="color:#66d9ef">function</span> ‘mysql_st_FETCH_attrib’:
-</span></span><span style="display:flex;"><span>dbdimp.c:4429: error: ‘imp_sth_t’ has no member named ‘result’
-</span></span><span style="display:flex;"><span>dbdimp.c:4429: warning: passing argument <span style="color:#ae81ff">3</span> of ‘mysql_st_FETCH_internal’ makes integer from pointer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:4429: error: too many arguments to <span style="color:#66d9ef">function</span> ‘mysql_st_FETCH_internal’
-</span></span><span style="display:flex;"><span>dbdimp.c:4431: error: ‘imp_sth_t’ has no member named ‘result’
-</span></span><span style="display:flex;"><span>dbdimp.c:4431: warning: passing argument <span style="color:#ae81ff">3</span> of ‘mysql_st_FETCH_internal’ makes integer from pointer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:4431: error: too many arguments to <span style="color:#66d9ef">function</span> ‘mysql_st_FETCH_internal’
-</span></span><span style="display:flex;"><span>dbdimp.c:4435: error: ‘imp_sth_t’ has no member named ‘result’
-</span></span><span style="display:flex;"><span>dbdimp.c:4435: warning: passing argument <span style="color:#ae81ff">3</span> of ‘mysql_st_FETCH_internal’ makes integer from pointer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:4435: error: too many arguments to <span style="color:#66d9ef">function</span> ‘mysql_st_FETCH_internal’
-</span></span><span style="display:flex;"><span>dbdimp.c:4447: error: ‘imp_sth_t’ has no member named ‘params’
-</span></span><span style="display:flex;"><span>dbdimp.c:4447: error: ‘struct sql_type_info_s’ has no member named ‘value’
-</span></span><span style="display:flex;"><span>dbdimp.c:4447: warning: passing argument <span style="color:#ae81ff">1</span> of ‘Perl_newSVsv’ from incompatible pointer type
-</span></span><span style="display:flex;"><span>dbdimp.c:4456: error: ‘imp_sth_t’ has no member named ‘result’
-</span></span><span style="display:flex;"><span>dbdimp.c:4456: warning: passing argument <span style="color:#ae81ff">3</span> of ‘mysql_st_FETCH_internal’ makes integer from pointer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:4456: error: too many arguments to <span style="color:#66d9ef">function</span> ‘mysql_st_FETCH_internal’
-</span></span><span style="display:flex;"><span>dbdimp.c:4460: error: ‘imp_sth_t’ has no member named ‘result’
-</span></span><span style="display:flex;"><span>dbdimp.c:4460: warning: passing argument <span style="color:#ae81ff">3</span> of ‘mysql_st_FETCH_internal’ makes integer from pointer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:4460: error: too many arguments to <span style="color:#66d9ef">function</span> ‘mysql_st_FETCH_internal’
-</span></span><span style="display:flex;"><span>dbdimp.c:4466: error: ‘imp_sth_t’ has no member named ‘result’
-</span></span><span style="display:flex;"><span>dbdimp.c:4466: warning: passing argument <span style="color:#ae81ff">3</span> of ‘mysql_st_FETCH_internal’ makes integer from pointer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:4466: error: too many arguments to <span style="color:#66d9ef">function</span> ‘mysql_st_FETCH_internal’
-</span></span><span style="display:flex;"><span>dbdimp.c:4470: error: ‘imp_sth_t’ has no member named ‘result’
-</span></span><span style="display:flex;"><span>dbdimp.c:4470: warning: passing argument <span style="color:#ae81ff">3</span> of ‘mysql_st_FETCH_internal’ makes integer from pointer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:4470: error: too many arguments to <span style="color:#66d9ef">function</span> ‘mysql_st_FETCH_internal’
-</span></span><span style="display:flex;"><span>dbdimp.c:4474: error: ‘imp_sth_t’ has no member named ‘result’
-</span></span><span style="display:flex;"><span>dbdimp.c:4474: warning: passing argument <span style="color:#ae81ff">3</span> of ‘mysql_st_FETCH_internal’ makes integer from pointer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:4474: error: too many arguments to <span style="color:#66d9ef">function</span> ‘mysql_st_FETCH_internal’
-</span></span><span style="display:flex;"><span>dbdimp.c:4476: error: ‘imp_sth_t’ has no member named ‘result’
-</span></span><span style="display:flex;"><span>dbdimp.c:4476: warning: passing argument <span style="color:#ae81ff">3</span> of ‘mysql_st_FETCH_internal’ makes integer from pointer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:4476: error: too many arguments to <span style="color:#66d9ef">function</span> ‘mysql_st_FETCH_internal’
-</span></span><span style="display:flex;"><span>dbdimp.c:4478: error: ‘imp_sth_t’ has no member named ‘result’
-</span></span><span style="display:flex;"><span>dbdimp.c:4478: warning: passing argument <span style="color:#ae81ff">3</span> of ‘mysql_st_FETCH_internal’ makes integer from pointer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:4478: error: too many arguments to <span style="color:#66d9ef">function</span> ‘mysql_st_FETCH_internal’
-</span></span><span style="display:flex;"><span>dbdimp.c:4480: error: ‘imp_sth_t’ has no member named ‘result’
-</span></span><span style="display:flex;"><span>dbdimp.c:4484: error: ‘imp_sth_t’ has no member named ‘result’
-</span></span><span style="display:flex;"><span>dbdimp.c:4484: warning: passing argument <span style="color:#ae81ff">3</span> of ‘mysql_st_FETCH_internal’ makes integer from pointer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:4484: error: too many arguments to <span style="color:#66d9ef">function</span> ‘mysql_st_FETCH_internal’
-</span></span><span style="display:flex;"><span>dbdimp.c:4491: error: ‘imp_sth_t’ has no member named ‘insertid’
-</span></span><span style="display:flex;"><span>dbdimp.c:4493: error: ‘imp_sth_t’ has no member named ‘insertid’
-</span></span><span style="display:flex;"><span>dbdimp.c:4493: warning: passing argument <span style="color:#ae81ff">1</span> of ‘Perl_sv_2mortal’ makes pointer from integer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:4498: error: ‘imp_sth_t’ has no member named ‘result’
-</span></span><span style="display:flex;"><span>dbdimp.c:4498: warning: passing argument <span style="color:#ae81ff">3</span> of ‘mysql_st_FETCH_internal’ makes integer from pointer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:4498: error: too many arguments to <span style="color:#66d9ef">function</span> ‘mysql_st_FETCH_internal’
-</span></span><span style="display:flex;"><span>dbdimp.c:4502: error: ‘imp_sth_t’ has no member named ‘result’
-</span></span><span style="display:flex;"><span>dbdimp.c:4502: warning: passing argument <span style="color:#ae81ff">3</span> of ‘mysql_st_FETCH_internal’ makes integer from pointer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:4502: error: too many arguments to <span style="color:#66d9ef">function</span> ‘mysql_st_FETCH_internal’
-</span></span><span style="display:flex;"><span>dbdimp.c:4504: error: ‘imp_sth_t’ has no member named ‘result’
-</span></span><span style="display:flex;"><span>dbdimp.c:4504: warning: passing argument <span style="color:#ae81ff">3</span> of ‘mysql_st_FETCH_internal’ makes integer from pointer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:4504: error: too many arguments to <span style="color:#66d9ef">function</span> ‘mysql_st_FETCH_internal’
-</span></span><span style="display:flex;"><span>dbdimp.c:4506: error: ‘imp_sth_t’ has no member named ‘use_mysql_use_result’
-</span></span><span style="display:flex;"><span>dbdimp.c:4510: error: ‘imp_sth_t’ has no member named ‘warning_count’
-</span></span><span style="display:flex;"><span>dbdimp.c:4522: error: ‘imp_sth_t’ has no member named ‘result’
-</span></span><span style="display:flex;"><span>dbdimp.c:4522: warning: passing argument <span style="color:#ae81ff">3</span> of ‘mysql_st_FETCH_internal’ makes integer from pointer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:4522: error: too many arguments to <span style="color:#66d9ef">function</span> ‘mysql_st_FETCH_internal’
-</span></span><span style="display:flex;"><span>dbdimp.c: In <span style="color:#66d9ef">function</span> ‘mysql_bind_ph’:
-</span></span><span style="display:flex;"><span>dbdimp.c:4612: error: ‘imp_dbh_t’ has no member named ‘async_query_in_flight’
-</span></span><span style="display:flex;"><span>dbdimp.c:4655: error: ‘imp_sth_t’ has no member named ‘params’
-</span></span><span style="display:flex;"><span>dbdimp.c:4655: warning: passing argument <span style="color:#ae81ff">1</span> of ‘bind_param’ from incompatible pointer type
-</span></span><span style="display:flex;"><span>dbdimp.c: In <span style="color:#66d9ef">function</span> ‘mysql_db_reconnect’:
-</span></span><span style="display:flex;"><span>dbdimp.c:4801: error: ‘MYSQL’ undeclared <span style="color:#f92672">(</span>first use in this <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:4801: error: expected ‘;’ before ‘save_socket’
-</span></span><span style="display:flex;"><span>dbdimp.c:4811: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:4811: error: ‘CR_SERVER_GONE_ERROR’ undeclared <span style="color:#f92672">(</span>first use in this <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:4811: warning: comparison between pointer and integer
-</span></span><span style="display:flex;"><span>dbdimp.c:4815: error: ‘imp_dbh_t’ has no member named ‘auto_reconnect’
-</span></span><span style="display:flex;"><span>dbdimp.c:4829: error: ‘save_socket’ undeclared <span style="color:#f92672">(</span>first use in this <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:4829: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:4830: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:4830: warning: passing argument <span style="color:#ae81ff">3</span> of ‘__builtin___memcpy_chk’ makes integer from pointer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:4830: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:4830: warning: passing argument <span style="color:#ae81ff">3</span> of ‘__memcpy_ichk’ makes integer from pointer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:4831: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:4831: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:4831: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:4831: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:4831: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:4831: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:4831: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:4831: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:4831: warning: passing argument <span style="color:#ae81ff">1</span> of ‘__builtin___memset_chk’ discards qualifiers from pointer target type
-</span></span><span style="display:flex;"><span>dbdimp.c:4831: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:4831: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:4831: warning: passing argument <span style="color:#ae81ff">1</span> of ‘__memset_ichk’ discards qualifiers from pointer target type
-</span></span><span style="display:flex;"><span>dbdimp.c:4839: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:4839: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:4840: warning: passing argument <span style="color:#ae81ff">3</span> of ‘mysql_dr_error’ makes pointer from integer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:4841: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:4841: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:4841: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:4841: warning: passing argument <span style="color:#ae81ff">1</span> of ‘__builtin___memcpy_chk’ discards qualifiers from pointer target type
-</span></span><span style="display:flex;"><span>dbdimp.c:4841: warning: passing argument <span style="color:#ae81ff">3</span> of ‘__builtin___memcpy_chk’ makes integer from pointer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:4841: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:4841: warning: passing argument <span style="color:#ae81ff">1</span> of ‘__memcpy_ichk’ discards qualifiers from pointer target type
-</span></span><span style="display:flex;"><span>dbdimp.c:4841: warning: passing argument <span style="color:#ae81ff">3</span> of ‘__memcpy_ichk’ makes integer from pointer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:4842: error: ‘imp_dbh_t’ has no member named ‘stats’
-</span></span><span style="display:flex;"><span>dbdimp.c:4842: error: request <span style="color:#66d9ef">for</span> member ‘auto_reconnects_failed’ in something not a structure or union
-</span></span><span style="display:flex;"><span>dbdimp.c:4842: error: invalid lvalue in increment
-</span></span><span style="display:flex;"><span>dbdimp.c:4851: error: ‘imp_dbh_t’ has no member named ‘stats’
-</span></span><span style="display:flex;"><span>dbdimp.c:4851: error: request <span style="color:#66d9ef">for</span> member ‘auto_reconnects_ok’ in something not a structure or union
-</span></span><span style="display:flex;"><span>dbdimp.c:4851: error: invalid lvalue in increment
-</span></span><span style="display:flex;"><span>dbdimp.c: In <span style="color:#66d9ef">function</span> ‘mysql_db_quote’:
-</span></span><span style="display:flex;"><span>dbdimp.c:5013: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c: In <span style="color:#66d9ef">function</span> ‘mysql_db_last_insert_id’:
-</span></span><span style="display:flex;"><span>dbdimp.c:5038: error: ‘imp_dbh_t’ has no member named ‘async_query_in_flight’
-</span></span><span style="display:flex;"><span>dbdimp.c:5039: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:5039: warning: passing argument <span style="color:#ae81ff">1</span> of ‘Perl_sv_2mortal’ makes pointer from integer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c: At top level:
-</span></span><span style="display:flex;"><span>dbdimp.c:5044: error: expected declaration specifiers or ‘...’ before ‘MYSQL_RES’
-</span></span><span style="display:flex;"><span>dbdimp.c: In <span style="color:#66d9ef">function</span> ‘mysql_db_async_result’:
-</span></span><span style="display:flex;"><span>dbdimp.c:5049: error: ‘MYSQL’ undeclared <span style="color:#f92672">(</span>first use in this <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:5049: error: ‘svsock’ undeclared <span style="color:#f92672">(</span>first use in this <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:5049: error: invalid operands to binary *
-</span></span><span style="display:flex;"><span>dbdimp.c:5050: error: ‘MYSQL_RES’ undeclared <span style="color:#f92672">(</span>first use in this <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:5050: error: ‘_res’ undeclared <span style="color:#f92672">(</span>first use in this <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:5050: error: invalid operands to binary *
-</span></span><span style="display:flex;"><span>dbdimp.c:5054: error: ‘resp’ undeclared <span style="color:#f92672">(</span>first use in this <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:5069: error: ‘imp_dbh_t’ has no member named ‘async_query_in_flight’
-</span></span><span style="display:flex;"><span>dbdimp.c:5073: error: ‘imp_dbh_t’ has no member named ‘async_query_in_flight’
-</span></span><span style="display:flex;"><span>dbdimp.c:5073: warning: comparison of distinct pointer types lacks a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:5077: error: ‘imp_dbh_t’ has no member named ‘async_query_in_flight’
-</span></span><span style="display:flex;"><span>dbdimp.c:5079: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:5082: error: assignment of read-only location
-</span></span><span style="display:flex;"><span>dbdimp.c:5085: warning: passing argument <span style="color:#ae81ff">3</span> of ‘mysql_dr_error’ makes pointer from integer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:5086: error: wrong type argument to unary exclamation mark
-</span></span><span style="display:flex;"><span>dbdimp.c:5090: warning: comparison of distinct pointer types lacks a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:5098: error: ‘my_ulonglong’ undeclared <span style="color:#f92672">(</span>first use in this <span style="color:#66d9ef">function</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>dbdimp.c:5098: warning: comparison between pointer and integer
-</span></span><span style="display:flex;"><span>dbdimp.c:5099: error: wrong type argument to unary exclamation mark
-</span></span><span style="display:flex;"><span>dbdimp.c:5100: error: ‘imp_sth_t’ has no member named ‘insertid’
-</span></span><span style="display:flex;"><span>dbdimp.c:5106: error: ‘imp_sth_t’ has no member named ‘result’
-</span></span><span style="display:flex;"><span>dbdimp.c:5107: error: ‘imp_sth_t’ has no member named ‘done_desc’
-</span></span><span style="display:flex;"><span>dbdimp.c:5108: error: ‘imp_sth_t’ has no member named ‘fetch_done’
-</span></span><span style="display:flex;"><span>dbdimp.c:5111: error: ‘imp_sth_t’ has no member named ‘warning_count’
-</span></span><span style="display:flex;"><span>dbdimp.c:5115: warning: passing argument <span style="color:#ae81ff">3</span> of ‘mysql_dr_error’ makes pointer from integer without a cast
-</span></span><span style="display:flex;"><span>dbdimp.c: In <span style="color:#66d9ef">function</span> ‘mysql_db_async_ready’:
-</span></span><span style="display:flex;"><span>dbdimp.c:5139: error: ‘imp_dbh_t’ has no member named ‘async_query_in_flight’
-</span></span><span style="display:flex;"><span>dbdimp.c:5140: error: ‘imp_dbh_t’ has no member named ‘async_query_in_flight’
-</span></span><span style="display:flex;"><span>dbdimp.c:5140: warning: comparison of distinct pointer types lacks a cast
-</span></span><span style="display:flex;"><span>dbdimp.c:5144: error: ‘imp_dbh_t’ has no member named ‘pmysql’
-</span></span><span style="display:flex;"><span>dbdimp.c:5144: error: ‘sql_type_info_t’ has no member named ‘net’
-</span></span><span style="display:flex;"><span>dbdimp.c:5144: error: request <span style="color:#66d9ef">for</span> member ‘fd’ in something not a structure or union
-</span></span><span style="display:flex;"><span>dbdimp.c:5144: warning: assignment makes integer from pointer without a cast
-</span></span><span style="display:flex;"><span>make: *** <span style="color:#f92672">[</span>dbdimp.o<span style="color:#f92672">]</span> Error <span style="color:#ae81ff">1</span>
-</span></span></code></pre></div><h1 id="mysql-devel-xxx与-mysql-devel-community-xxx">mysql-devel-xxx与 mysql-devel-community-xxx</h1>
-<p>区别： <br>
-  前者为redhat加工过mysql，     
-而后者为oracle没有针对特定os（CentOS）加工的mysql。</p> <a class="read-more" href="/csdn/post/ops_mysql_devel/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-15T05:08:08&#43;08:00">
-            15 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_department_gitlab_man/">GitLab使用</a></h2>
     </header>
     <section class="post-excerpt">
@@ -1145,6 +577,143 @@ sub check2Sex {
 
         
         <time class="post-date" datetime="2020-05-08T16:08:08&#43;08:00">
+            8 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_perl_mysql/">数据库的查询</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>Perl操作数据库与其他的语言操作数据库没有什么区别。</p>
+<ul>
+<li>
+<p>首先，要连接数据库。</p>
+</li>
+<li>
+<p>然后，执行SQL语句。</p>
+</li>
+<li>
+<p>最后，关闭连接。</p>
+</li>
+</ul>
+<h1 id="code">code</h1>
+<p>循环中为使用游标读取每行数据。</p>
+<p>test.pl</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span><span style="color:#75715e">#! /usr/bin/perl</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># test DBI and DBD::mysql</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> DBI;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$dsn <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;DBI:mysql:database=carnumber;host=localhost;port=3306&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">my</span> $dbh <span style="color:#f92672">=</span> DBI<span style="color:#f92672">-&gt;</span>connect($dsn, <span style="color:#e6db74">&#34;root&#34;</span>, <span style="color:#e6db74">&#34;qazxsw&#34;</span>, {<span style="color:#e6db74">&#39;RaiseError&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">my</span> $strSQL <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;select train_number, seriary_number, car_number,&#34;</span><span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34; car_marque, past_time from trainOrder where train_number &lt; 100&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">my</span> $sth <span style="color:#f92672">=</span> $dbh<span style="color:#f92672">-&gt;</span>prepare($strSQL);
+</span></span><span style="display:flex;"><span>$sth<span style="color:#f92672">-&gt;</span>execute();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;TN\tSN\tNumber\tMarque\tPastTime\n&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> (<span style="color:#66d9ef">my</span> $ref <span style="color:#f92672">=</span> $sth<span style="color:#f92672">-&gt;</span>fetchrow_hashref()) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;$ref-&gt;{&#39;train_number&#39;}\t&#34;</span><span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>	    <span style="color:#e6db74">&#34;$ref-&gt;{&#39;seriary_number&#39;}\t&#34;</span><span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>	    <span style="color:#e6db74">&#34;$ref-&gt;{&#39;car_number&#39;}\t&#34;</span><span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>	    <span style="color:#e6db74">&#34;$ref-&gt;{&#39;car_marque&#39;}\t&#34;</span><span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>	    <span style="color:#e6db74">&#34;$ref-&gt;{&#39;past_time&#39;}\n&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$sth<span style="color:#f92672">-&gt;</span>finish();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$dbh<span style="color:#f92672">-&gt;</span>disconnect();
+</span></span></code></pre></div> <a class="read-more" href="/csdn/post/ops_perl_mysql/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-08T16:08:08&#43;08:00">
+            8 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/dp-singleton-java/">单例模式</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>我们知道单例模式，其实就是返回一个被调用类的实例。</p>
+<p>在频繁的进行实例（Instance）创建过程，难免过多的进行new InstanceName()；我们可以只通过调用一个方法解决。</p>
+<p>在进行设计模式的程序实现中xiaobin使用已编写的SSL程序做演示。</p>
+<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20130626154448328.png" alt="ea ui"></p> <a class="read-more" href="/csdn/post/dp-singleton-java/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-08T12:08:08&#43;08:00">
+            8 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/dp-factory-java/">工厂模式</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>09年5月CSDN一网友提出如下问题：</p>
+<p>设计一个用于管理银行客户的类BankCustomer：
+仅描述客户的几个重要方面：
+帐号、身份证号、姓名、联系方式、密码、账户余额。
+所有的成员变量均用private访问控制，因此每一个成员变量就要有相应的存取器
+（getter和setter，即获取和设置其值的相应的成员方法。需要setter还是getter，还是两者都要，视情况而定）</p>
+<pre><code>成员方法：
+开户（开户时必须要有身份证号），系统自动生成帐号，帐号使用系统时间（格式：&quot;yyyyMMddHHmmss&quot;14位），初始密码为“666666”。
+注意开户和构造方法之间的关系。
+存钱、取钱、显示账户信息、修改密码（密码最短要六位）
+怎样在main中使用这个类，自行安排，要表现出你设计的类的各个方面，并在main中用英语加以注释
+</code></pre>
+<p>类图如下：（使用Enterprise Architect绘制） <br>
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20130711014414609.png" alt="ea ui"></p>
+<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20130707190101296.png" alt="ea ui"></p>
+<p>&mdash;&mdash;&mdash;&mdash;factory部分&mdash;&mdash;&mdash;&mdash;-</p>
+<p> Customer：        抽象类（factory祖先类）</p>
+<p>  BankCustomer：继承类（factory类）</p>
+<p> 
+  〉〉〉〉〉〉〉〉〉〉扩展部分</p>
+<p>  ContactWay：联系方式（factory引用类）</p>
+<p>  IM        ：实时消息（ContactWay引用类）</p>
+<p>&mdash;&mdash;&mdash;&mdash;product部分&mdash;&mdash;&mdash;&mdash;-  </p>
+<p>  Bank：       接口（product接口）</p>
+<p>  Account：    实现类（concrete product类）</p> <a class="read-more" href="/csdn/post/dp-factory-java/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-08T10:08:08&#43;08:00">
             8 May 2020
         </time>
     </footer>

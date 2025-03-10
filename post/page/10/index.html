@@ -164,184 +164,6 @@
 	
 	   <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/embeded_ip_nfs/">设置固定IP</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><blockquote>
-<p>开发板访问NFS 服务器IP地址是固定的。</p></blockquote>
-<h1 id="一u16及以下">一、U16及以下</h1>
-<blockquote>
-<p>（Ubuntu16.04-） <br>
-使用root权限更改interfaces文件。</p></blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#gedit /etc/network/interfaces</span>
-</span></span></code></pre></div><p>完整例子：</p>
-<blockquote>
-<p>/etc/network/interfaces</p></blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>auto lo
-</span></span><span style="display:flex;"><span>iface lo inet loopback
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>auto eth0
-</span></span><span style="display:flex;"><span>iface eth0 inet static
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>address 192.168.0.111
-</span></span><span style="display:flex;"><span>netmask 255.255.255.0
-</span></span><span style="display:flex;"><span>gateway 192.168.0.1
-</span></span></code></pre></div><h1 id="二u18及以上">二、U18及以上</h1>
-<blockquote>
-<p>（Ubuntu18.04+）</p></blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#vi /etc/netplan/50-cloud-init.yaml</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>network:
-</span></span><span style="display:flex;"><span>    ethernets:
-</span></span><span style="display:flex;"><span>        ens32:
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">#dhcp4: true</span>
-</span></span><span style="display:flex;"><span>            addresses:
-</span></span><span style="display:flex;"><span>            - 192.168.0.124/24
-</span></span><span style="display:flex;"><span>            gateway4: 192.168.0.1
-</span></span><span style="display:flex;"><span>            nameservers:
-</span></span><span style="display:flex;"><span>                addresses: <span style="color:#f92672">[</span>192.168.0.1, 219.146.3.226, 219.146.3.230, 219.146.3.238<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>            optional: true
-</span></span><span style="display:flex;"><span>    version: <span style="color:#ae81ff">2</span>
-</span></span></code></pre></div><blockquote>
-<p>ens32：你的网卡，根据实际情况设置
-dhcp4，gateway4：IPv4协议下的。</p></blockquote>
-<ul>
-<li>apply</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#netplan apply</span>
-</span></span></code></pre></div><h1 id="reference">Reference</h1>
-<ul>
-<li><a href="http://manpages.ubuntu.com/manpages/saucy/en/man5/interfaces.5.html">network interface configuration</a></li>
-<li><a href="https://help.ubuntu.com/lts/serverguide/network-configuration.html">网络配置 - ubuntu</a></li>
-<li><a href="https://blog.csdn.net/zhengchaooo/article/details/80146185">Ubuntu 18.04修改IP地址 - zhengchaooo</a></li>
-</ul> <a class="read-more" href="/csdn/post/embeded_ip_nfs/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-16T00:08:08&#43;08:00">
-            16 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_mail/">mail的使用</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><h1 id="installation">installation</h1>
-<p><a href="http://www.mutt.org/">Mutt</a> is a small but very powerful text-based mail client for Unix operating systems.</p>
-<h2 id="1-install">1) install</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yum install mutt
-</span></span></code></pre></div><h2 id="2-config">2) config</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$vi ~/.muttrc
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>set sendmail<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/usr/local/msmtp/bin/msmtp&#34;</span>
-</span></span><span style="display:flex;"><span>set from <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;user@domain.com&#34;</span>
-</span></span><span style="display:flex;"><span>set realname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Realname of the user&#34;</span>
-</span></span></code></pre></div><p>received mail:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>set pop_host<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pop.163.com&#34;</span>
-</span></span><span style="display:flex;"><span>set pop_user<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;love_shidie&#34;</span>
-</span></span><span style="display:flex;"><span>set pop_pass<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>getpassword email_id<span style="color:#e6db74">`</span>
-</span></span></code></pre></div><h1 id="test">test</h1>
-<h2 id="1-send-mail">1) send mail</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gpg -d ~/.msmtp/love_shidie-passoword.gpg
-</span></span><span style="display:flex;"><span>$mutt -s <span style="color:#e6db74">&#34;test message&#34;</span> -a ~/message121.txt
-</span></span></code></pre></div><h2 id="2-received-mail">2) received mail</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$mutt
-</span></span></code></pre></div><p>Press key: G</p>
-<h1 id="reference">Reference</h1>
-<ul>
-<li><a href="https://www.tecmint.com/send-mail-from-command-line-using-mutt-command/">Mutt – A Command Line Email Client to Send Mails from Terminal</a></li>
-<li><a href="https://unix.stackexchange.com/questions/20570/mutt-how-to-safely-store-password">Mutt: how to safely store password?</a></li>
-<li><a href="https://xiaobin80.gitee.io/csdn/post/ops_mail_msmtp/">mail send</a></li>
-<li><a href="https://xiaobin80.gitee.io/csdn/post/ops_gnupg/">gnupg - xiaobin_HLJ80</a></li>
-</ul> <a class="read-more" href="/csdn/post/ops_mail/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-15T23:08:08&#43;08:00">
-            15 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_mail_msmtp/">mail的发送</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><h1 id="使用msmtp实现">使用msmtp实现</h1>
-<h1 id="installation">installation</h1>
-<h2 id="down">down</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://marlam.de/msmtp/releases/msmtp-1.6.8.tar.xz
-</span></span></code></pre></div><h2 id="install">install</h2>
-<pre tabindex="0"><code>$xz -d msmtp-1.6.8.tar.xz
-$tar xvf msmtp-1.6.8.tar
-$cd msmtp-1.6.8
-$./configure --prefix=/user/local/msmtp
-$make
-</code></pre><p>Then install using root</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$make install
-</span></span></code></pre></div><h1 id="configuration">configuration</h1>
-<blockquote>
-<p>需要在user的根目录建立一个新文件：.msmtprc</p></blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cd ~
-</span></span><span style="display:flex;"><span>$vi .msmtprc
-</span></span><span style="display:flex;"><span>$chmod <span style="color:#ae81ff">600</span> .msmtprc
-</span></span></code></pre></div><blockquote>
-<blockquote>
-<p>.msmtprc</p></blockquote></blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>defaults
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>logfile ~/.msmtp/msmtp.log
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># The SMTP server of the provider.</span>
-</span></span><span style="display:flex;"><span>account love_shidie
-</span></span><span style="display:flex;"><span>host smtp.163.com
-</span></span><span style="display:flex;"><span>from love_shidie@163.com
-</span></span><span style="display:flex;"><span>auth login
-</span></span><span style="display:flex;"><span>user love_shidie@163.com
-</span></span><span style="display:flex;"><span>passwordeval gpg  --no-tty -q -d ~/.msmtp/love_shidie-password.gpg
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set a default account</span>
-</span></span><span style="display:flex;"><span>account default: love_shidie
-</span></span></code></pre></div><h2 id="rw">r+w</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$chmod <span style="color:#ae81ff">600</span> .msmtprc
-</span></span></code></pre></div><h1 id="reference">Reference</h1>
-<ul>
-<li><a href="https://xiaobin80.gitee.io/csdn/post/ops_gnupg/">gnupg - xiaobin_HLJ80</a></li>
-</ul> <a class="read-more" href="/csdn/post/ops_mail_msmtp/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-15T21:08:08&#43;08:00">
-            15 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_spark_cluster/">spark cluster</a></h2>
     </header>
     <section class="post-excerpt">
@@ -781,6 +603,187 @@ http://192.168.42.109:8081/</p>
 
         
         <time class="post-date" datetime="2020-04-14T09:08:08&#43;08:00">
+            14 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_hadoop_cluster_base/">Hadoop配置 - base</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><blockquote>
+<p>(../etc/hadoop)</p></blockquote>
+<h1 id="1-core-sitexml">1. core-site.xml</h1>
+<h2 id="1-hdfs">1) HDFS</h2>
+<blockquote>
+<p>the default path prefix used by the Hadoop FS client when none is given
+Optionally, you may now configure the default path for Hadoop clients to use the new HA-enabled logical URI.
+If you used “mycluster” as the nameservice ID earlier, this will be the value of the authority portion of all of your HDFS paths.
+This may be configured like so, in your core-site.xml file:</p> <a class="read-more" href="/csdn/post/ops_hadoop_cluster_base/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-14T08:08:08&#43;08:00">
+            14 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_hadoop_abbr1/">hadoop名词解释</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="qjm-and-shuffle">QJM and shuffle</h1>
+<h1 id="1-qjm">1. QJM</h1>
+<h2 id="11-背景">1.1 背景</h2>
+<p>自从hadoop2版本开始，社区引入了NameNode高可用方案。NameNode主从节点间需要同步操作日志来达到主从节点元数据一致。最初业界均通过NFS来实现日志同步，大家之所以选择NFS，一方面因为可以很方便地实现数据共享，另外一方面因为NFS已经发展20多年，已经相对稳定成熟。</p>
+<p>虽然如此，NFS也有缺点不能满足HDFS的在线存储业务：网络单点及其存储节点单点。业界提供了数据共享的一些高可用解决方案，但均不能很好地满足目前HDFS的应用场景。</p>
+<table>
+  <thead>
+      <tr>
+          <th>方案</th>
+          <th>网络单点</th>
+          <th>存储单点</th>
+          <th>备注</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Mysql</td>
+          <td>HA</td>
+          <td>无</td>
+          <td>无</td>
+      </tr>
+      <tr>
+          <td>Drbd+heartbeat+NFS</td>
+          <td>无</td>
+          <td>无</td>
+          <td>脑裂；数据有丢失风险</td>
+      </tr>
+      <tr>
+          <td>Keepalive+NFS</td>
+          <td>无</td>
+          <td>有</td>
+          <td>数据有丢失风险</td>
+      </tr>
+  </tbody>
+</table>
+<p>为了满足共享日志的高可用性，社区引入QJM。QJM由cloudera开发，实现了读写高可用性，使HDFS达到真正的高可用性成为可能。</p>
+<h2 id="12-术语和定义">1.2 术语和定义</h2>
+<table>
+  <thead>
+      <tr>
+          <th>术语和定义</th>
+          <th>解释</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Epoch</td>
+          <td>由主节点在启动及其切换为主的时候分配，每次操作JN节点均会检查该值,类似zookeeper中的zxid，此时主NameNode类似zookeeper中的leader，JN节点类似ZK中的Follower</td>
+      </tr>
+      <tr>
+          <td>JournalNode</td>
+          <td>QJM存储段进程，提供日志读写，存储，修复等服务</td>
+      </tr>
+      <tr>
+          <td>QJM</td>
+          <td>Qurom Journal Manager</td>
+      </tr>
+      <tr>
+          <td>startLogSegment</td>
+          <td>开始一个新的日志段,该日志段状态为接收写入日志的状态</td>
+      </tr>
+      <tr>
+          <td>finalizeLogSegment</td>
+          <td>将文件由正在写入日志的状态转化为不接收写日志的状态</td>
+      </tr>
+      <tr>
+          <td>recoverUnfinalizedSegments</td>
+          <td>主从切换等情况下，恢复没有转换为finalized状态的日志</td>
+      </tr>
+      <tr>
+          <td>journalId</td>
+          <td>日志ID，由配置指定，如qjournal://g42:8485;g35:8485;uhp9:8485/geminifs，则其中的geminifs即为journalId</td>
+      </tr>
+  </tbody>
+</table>
+<h1 id="2shuffle">2. shuffle</h1>
+<p>作者：Lijie Xu
+链接：https://www.zhihu.com/question/27643595/answer/127473409
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<ol>
+<li>
+<p>从逻辑角度来讲，Shuffle 过程就是一个 GroupByKey 的过程，两者没有本质区别。
+只是 MapReduce 为了方便 GroupBy 存在于不同 partition 中的 key/value records，就提前对 key 进行排序。Spark 认为很多应用不需要对 key 排序，就默认没有在 GroupBy 的过程中对 key 排序。</p> <a class="read-more" href="/csdn/post/ops_hadoop_abbr1/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        on
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/qjm/">#QJM</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/shuffle/">#shuffle</a>,
+            
+        
+        <time class="post-date" datetime="2020-04-14T03:08:08&#43;08:00">
+            14 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_firewall/">soft-list(port)</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="i-soft-list">I. Soft List</h1>
+<h2 id="1-zk">1. zk</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>2181/tcp
+</span></span><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>2888/tcp
+</span></span><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>3888/tcp
+</span></span></code></pre></div><h2 id="2-hadoop">2. Hadoop</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>10020/tcp
+</span></span><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>19888/tcp
+</span></span><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>8020/tcp
+</span></span><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>50070/tcp
+</span></span><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>8485/tcp
+</span></span><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>8088/tcp
+</span></span><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>8033/tcp
+</span></span></code></pre></div><h2 id="3-spark">3. Spark</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>6066/tcp
+</span></span><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>7077/tcp
+</span></span><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>8080-8088/tcp
+</span></span></code></pre></div><blockquote>
+<p>立即生效：</p> <a class="read-more" href="/csdn/post/ops_firewall/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-14T02:08:08&#43;08:00">
             14 Apr 2020
         </time>
     </footer>
