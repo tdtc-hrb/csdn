@@ -13,7 +13,7 @@
 
 
 <meta name="twitter:title" content="git操作 部分2"/>
-<meta name="twitter:description" content="删除github all commit history"/>
+<meta name="twitter:description" content="删除github all commit history; working with submodules"/>
 <meta name="twitter:site" content="@"/>
 
 
@@ -27,9 +27,9 @@
     
 
     
-    <meta property="og:description" content="删除github all commit history" />
+    <meta property="og:description" content="删除github all commit history; working with submodules" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2025-02-02T01:38:08&#43;08:00" />
+    <meta property="article:published_time" content="2025-03-26T01:38:08&#43;08:00" />
 
     
     
@@ -37,7 +37,7 @@
     <title>git操作 部分2 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
 
     
-    <meta name="description" content="删除github all commit history" />
+    <meta name="description" content="删除github all commit history; working with submodules" />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -92,18 +92,18 @@
     },
     "headline": "git操作 部分2",
     "name": "git操作 部分2",
-    "wordCount":  110 ,
+    "wordCount":  152 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/ops_git_oper2/",
-    "datePublished": "2025-02-02T01:38Z",
-    "dateModified": "2025-02-02T01:38Z",
+    "datePublished": "2025-03-26T01:38Z",
+    "dateModified": "2025-03-26T01:38Z",
     
     
-    "description": "删除github all commit history",
+    "description": "删除github all commit history; working with submodules",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://tdtc-hrb.github.io/csdn/post/ops_git_oper2/"
@@ -164,12 +164,12 @@
 
     <header class="post-header">
         <h1 class="post-title">git操作 部分2</h1>
-        <small>删除github all commit history</small>
+        <small>删除github all commit history; working with submodules</small>
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2025-02-02T01:38:08&#43;08:00">
-            Feb 2, 2025
+          <time class="post-date" datetime="2025-03-26T01:38:08&#43;08:00">
+            Mar 26, 2025
           </time>
         
          
@@ -177,7 +177,7 @@
     </header>
 
     <section class="post-content">
-      <h1 id="how-to-delete-all-commit-history-in-github"><a href="https://stackoverflow.com/questions/13716658/how-to-delete-all-commit-history-in-github">how to delete all commit history in github?</a></h1>
+      <h2 id="how-to-delete-all-commit-history-in-github"><a href="https://stackoverflow.com/questions/13716658/how-to-delete-all-commit-history-in-github">how to delete all commit history in github?</a></h2>
 <ul>
 <li>Checkout/create orphan branch (this branch won&rsquo;t show in git branch command):</li>
 </ul>
@@ -203,6 +203,16 @@
 </ul>
 <pre tabindex="0"><code>git push -f origin master
 </code></pre><p>PS: This will not keep your old commit history around. Now you should only see your new commit in the history of your git repository.</p>
+<h2 id="how-to-link-folder-from-a-git-repo-to-another-repo"><a href="https://github.blog/open-source/git/working-with-submodules">How to link folder from a git repo to another repo?</a></h2>
+<pre tabindex="0"><code>git submodule add &lt;URL_to_Git_repo&gt; [optional_directory_rename]
+</code></pre><h3 id="specify-a-branch">Specify a branch</h3>
+<pre tabindex="0"><code>git submodule add -b branch_name URL_to_Git_repo optional_directory_rename
+
+git submodule update --remote
+</code></pre><h2 id="ref">Ref</h2>
+<ul>
+<li><a href="https://stackoverflow.com/questions/1777854/how-can-i-specify-a-branch-tag-when-adding-a-git-submodule">How can I specify a branch/tag when adding a Git submodule?</a></li>
+</ul>
 
     </section>
 
