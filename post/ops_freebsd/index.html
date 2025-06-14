@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="referrer" content="no-referrer"/>
+    
+
+
+
+<meta name="twitter:title" content="FreeBSD Help"/>
+<meta name="twitter:description" content="Freebsd operation related"/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="FreeBSD Help &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/ops_freebsd/" />
+
+    
+        
+    
+
+    
+    <meta property="og:description" content="Freebsd operation related" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2025-06-14T08:38:08&#43;08:00" />
+
+    
+    
+
+    <title>FreeBSD Help &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+
+    
+    <meta name="description" content="Freebsd operation related" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/csdn/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/csdn/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/csdn/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/csdn/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/csdn/index.xml" rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.147.8">
+
+    <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_freebsd/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null 
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "FreeBSD Help",
+    "name": "FreeBSD Help",
+    "wordCount":  187 ,
+    "timeRequired": "PT1M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://tdtc-hrb.github.io/csdn/post/ops_freebsd/",
+    "datePublished": "2025-06-14T08:38Z",
+    "dateModified": "2025-06-14T08:38Z",
+    
+    
+    "description": "Freebsd operation related",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tdtc-hrb.github.io/csdn/post/ops_freebsd/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/csdn/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button icon-feed" href="/csdn/index.xml" >&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">FreeBSD Help</h1>
+        <small>Freebsd operation related</small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2025-06-14T08:38:08&#43;08:00">
+            Jun 14, 2025
+          </time>
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <h2 id="os">OS</h2>
+<p>Down FreeBSD-14.3-RELEASE-i386.vhd.xz <br>
+from <a href="https://mirrors.ustc.edu.cn/freebsd/releases/VM-IMAGES/14.3-RELEASE/i386/Latest/">VM-IMAGES</a></p>
+<h3 id="supported-freebsd-releases"><a href="https://www.freebsd.org/security/#sup">Supported FreeBSD releases</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Branch</th>
+          <th>Expected EoL</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>stable/14</td>
+          <td>November 30, 2028</td>
+      </tr>
+      <tr>
+          <td>stable/13</td>
+          <td>April 30, 2026</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li><a href="https://www.freebsd.org/security/unsupported/">old</a></li>
+</ul>
+<blockquote>
+<p>12.4-RELEAS December 31, 2023</p></blockquote>
+<h3 id="import-to-vbox">import to vbox</h3>
+<p>New -&gt; VM</p>
+<pre tabindex="0"><code>Name: FreeBSD32
+</code></pre><p>In the VHD step, select &ldquo;Use an Existing Virtual Hard Disk File&rdquo;. <br>
+Hard Disk Selector: <br>
+Click the &ldquo;Add&rdquo; button, and then select &ldquo;FreeBSD-14.3-RELEASE-i386.vhd&rdquo; in the file dialog box。</p>
+<h3 id="shutdown">shutdown</h3>
+<pre tabindex="0"><code># shutdown -p now
+</code></pre><h2 id="pkg">pkg</h2>
+<ul>
+<li>search</li>
+</ul>
+<pre tabindex="0"><code>$ sudo pkg search SOFTNAME | more
+</code></pre><ul>
+<li>clean</li>
+</ul>
+<pre tabindex="0"><code>pkg clean # cleans /var/cache/pkg/
+rm -rf /var/cache/pkg/* # just remove it all
+pkg update -f # forces update  of repository catalog
+rm /var/db/pkg/repo-*.sqlite # removes all remote repository catalogs
+pkg bootstrap -f # forces reinstall of pkg
+</code></pre><h3 id="source">source</h3>
+<pre tabindex="0"><code># ee /etc/pkg/FreeBSD.conf
+</code></pre><p>url:</p>
+<ul>
+<li>bjtu</li>
+</ul>
+<pre tabindex="0"><code>url: &#34;pkg+http://mirror.bjtu.edu.cn/reverse/freebsd-pkg/${ABI}/quarterly&#34;,
+</code></pre><ul>
+<li>china freebsd</li>
+</ul>
+<pre tabindex="0"><code>url: &#34;pkg+http://pkg.freebsd.cn//${ABI}/quarterly&#34;,
+</code></pre><p>update:</p>
+<pre tabindex="0"><code># pkg update -f
+</code></pre><h3 id="gcc">gcc</h3>
+<p>current version:</p>
+<pre tabindex="0"><code># pkg install lang/gcc
+</code></pre><p>specified version:</p>
+<pre tabindex="0"><code>pkg install lang/gcc8
+</code></pre><h3 id="gnu-make">gnu make</h3>
+<pre tabindex="0"><code># pkg install gmake
+</code></pre><h3 id="gdb">gdb</h3>
+<pre tabindex="0"><code># pkg install gdb
+</code></pre><h3 id="git">git</h3>
+<pre tabindex="0"><code># pkg install git
+</code></pre><h1 id="ref">Ref</h1>
+<ul>
+<li><a href="https://forums.freebsd.org/threads/gcc-how-to-install.76851/">gcc: How to install?</a></li>
+<li><a href="https://forums.freebsd.org/threads/difference-make-and-gmake.83390/">Difference make and gmake.</a></li>
+<li><a href="https://unix.stackexchange.com/a/127955">How to install GNU make on FreeBSD 10?</a></li>
+<li><a href="https://docs.freebsd.org/en/books/developers-handbook/tools/">Programming Tools - FreeBSD offical</a></li>
+<li><a href="https://mirror.bjtu.edu.cn/help/freebsd/">FreeBSD 镜像使用帮助 - bjtu</a></li>
+<li><a href="https://www.chinafreebsd.cn/article/59da3fa39561e">使用单一源(推荐此方案) - chinafreebsd</a></li>
+</ul>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=FreeBSD%20Help&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_freebsd%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_freebsd%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_freebsd%2f&amp;description=FreeBSD%20Help"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fops_freebsd%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_network_proxy/">
+          <section class="post">
+              <h2>设置proxy</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">迁移自(blog.csdn.net/xiaobin_HLJ80)</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/csdn/js/jquery.js"></script>
+    <script type="text/javascript" src="/csdn/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/csdn/js/index.js"></script>
+    
+</body>
+</html>
+

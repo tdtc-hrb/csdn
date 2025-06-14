@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.147.1">
+    <meta name="generator" content="Hugo 0.147.8">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -160,6 +160,107 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/dp-cor-java/">Chain of Command 模式</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>我们知道Chain of Responsibility模式，其实就是Template method + Next。</p>
+<p>在进行多个调用时，按顺序执行；需要调用2个方法。</p>
+<p>此模式，只适合抽象方法！</p>
+<p>在进行设计模式的程序实现中xiaobin使用已编写的SSL程序做演示。</p>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/chain-of-command.png" alt="chain of command"></p>
+<h2 id="chain-of-command">Chain of Command</h2>
+<pre tabindex="0"><code>import com.cartionsoft.xbf.ContentXbf;
+import com.cartionsoft.xbf.LibXbf;
+import com.cartionsoft.xbf.ReadXbf;
+import com.cartionsoft.xbf.XiaobinFile;
+
+public class Demo {
+
+	public static void init() throws Exception {
+		int stationID = 0;
+	    String keyPWD;
+
+		String libPath = &#34;xbfLibR.dll&#34;;
+		String xbfPath = &#34;C://send//dySSL.xbf&#34;;
+
+		ContentXbf contentXbf = new ContentXbf(xbfPath);
+
+        // All checks are linked. Client can build various chains using the same
+        // components.
+        XiaobinFile xiaobinFile = XiaobinFile.link(
+            new LibXbf(libPath),
+            new ReadXbf()
+        );
+
+        // Server gets a chain from client code.
+        contentXbf.setXbf(xiaobinFile);
+        
+        stationID = contentXbf.getStationID(-1);
+        keyPWD = contentXbf.getKeyPWD(-1);
+        
+        System.out.println(keyPWD + &#34; : &#34; + stationID);
+	}
+
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+		init();
+	}
+
+}
+</code></pre><ul>
+<li>template-method(abstract)</li>
+</ul>
+<pre tabindex="0"><code>readRecord()
+</code></pre><ul>
+<li>Next</li>
+</ul>
+<pre tabindex="0"><code>readRecordNext()
+</code></pre><ul>
+<li>traverse</li>
+</ul>
+<pre tabindex="0"><code>link()
+</code></pre><h3 id="next">Next</h3>
+<pre tabindex="0"><code>	/**
+     * Runs readRecord on the next object in chain or ends traversing if we&#39;re in
+     * last object in chain.
+     */
+    protected String readRecordNext(int dimRecord, String filename) {
+        if (next == null) {
+            return &#34;&#34;;
+        }
+        return next.readRecord(dimRecord, filename);
+    }
+</code></pre><h3 id="link">link</h3>
+<pre tabindex="0"><code>    /**
+     * Builds chains of XiaobinFile objects.
+     */
+    public static XiaobinFile link(XiaobinFile first, XiaobinFile... chain) {
+    	XiaobinFile head = first;
+        for (XiaobinFile nextInChain: chain) {
+            head.next = nextInChain;
+            head = nextInChain;
+        }
+        return first;
+    }
+</code></pre> <a class="read-more" href="/csdn/post/dp-cor-java/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2023-12-22T12:08:08&#43;08:00">
+            22 Dec 2023
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -952,268 +1053,6 @@ Windows的scp包含在putty工具中。</li>
         
         <time class="post-date" datetime="2023-02-10T02:20:39&#43;08:00">
             10 Feb 2023
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_vmware_netadapter/">使用物理网卡</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><h1 id="vmware">VMware</h1>
-<ul>
-<li>Host OS <br>
-Win10(x64)</li>
-</ul>
-<p>-Guest OS <br>
-Ubuntu 14.04(x64)</p>
-<p>目的：Ubuntu独立使用1块网卡与局域网中的设备或主机通讯。</p>
-<p>问题：宿主机器有两个网卡</p>
-<p>（1）无线网卡（2）有线网卡</p>
-<h2 id="vmware-network">VMware Network</h2>
-<p><a href="https://stackoverflow.com/a/54232899">overview</a></p>
-<table>
-  <thead>
-      <tr>
-          <th></th>
-          <th>VM &lt;-&gt; Host</th>
-          <th>VM1 &lt;-&gt; VM2</th>
-          <th>VM -&gt; Internet</th>
-          <th>VM &lt;- Internet</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>HostOnly</td>
-          <td>Yes</td>
-          <td>Yes</td>
-          <td>No</td>
-          <td>No</td>
-      </tr>
-      <tr>
-          <td>Internal</td>
-          <td>No</td>
-          <td>Yes</td>
-          <td>No</td>
-          <td>No</td>
-      </tr>
-      <tr>
-          <td>Bridged</td>
-          <td>Yes</td>
-          <td>Yes</td>
-          <td>Yes</td>
-          <td>Yes</td>
-      </tr>
-      <tr>
-          <td>NAT</td>
-          <td>No</td>
-          <td>No</td>
-          <td>Yes</td>
-          <td>Port forward</td>
-      </tr>
-  </tbody>
-</table>
-<h3 id="编辑-虚拟网络编辑器">编辑-&gt;虚拟网络编辑器</h3>
-<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20171227034323068.png" alt="vmware ui">
-默认设置</p>
-<p>我们更改桥接模式中“桥接到”，即可。（由自动更改为下图）
-<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20171227034811154.png" alt="vmware ui"></p>
-<h3 id="网络适配器">网络适配器</h3>
-<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20171227035131591.png" alt="vmware ui"></p>
-<h1 id="nfs">NFS</h1>
-<blockquote>
-<p>AT91SAM9260 in terminal</p></blockquote>
-<p>启动NFS，工作正常。</p>
-<p>输出信息如下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>This is the boot programm!鶷his is the boot programm!
-</span></span><span style="display:flex;"><span>Load UBOOT, please wait......
-</span></span><span style="display:flex;"><span>Load UBOOT from 0x10010000 to 0x23f00000 Over
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>U-Boot 1.3.4 <span style="color:#f92672">(</span>Mar <span style="color:#ae81ff">18</span> <span style="color:#ae81ff">2015</span> - 07:00:42<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>DRAM:  <span style="color:#ae81ff">64</span> MB
-</span></span><span style="display:flex;"><span>MAN_ID: 0x00bf
-</span></span><span style="display:flex;"><span>PRO_ID: 0x234b
-</span></span><span style="display:flex;"><span>Flash:  <span style="color:#ae81ff">2</span> MB
-</span></span><span style="display:flex;"><span>NAND:  NAND device: Manufacturer ID: 0xec, Chip ID: 0x76 <span style="color:#f92672">(</span>/狺掰掰?NAND <span style="color:#ae81ff">64</span>
-</span></span><span style="display:flex;"><span>MiB 3,3V 8-bit<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">64</span> MiB
-</span></span><span style="display:flex;"><span>DataFlash:AT45DB161
-</span></span><span style="display:flex;"><span>Nb pages:   <span style="color:#ae81ff">4096</span>
-</span></span><span style="display:flex;"><span>Page Size:    <span style="color:#ae81ff">528</span>
-</span></span><span style="display:flex;"><span>Size<span style="color:#f92672">=</span> <span style="color:#ae81ff">2162688</span> bytes
-</span></span><span style="display:flex;"><span>Logical address: 0xD0000000
-</span></span><span style="display:flex;"><span>Area 0: D0000000 to D0003FFF <span style="color:#f92672">(</span>RO<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>Area 1: D0004000 to D0007FFF
-</span></span><span style="display:flex;"><span>Area 2: D0008000 to D0037FFF <span style="color:#f92672">(</span>RO<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>Area 3: D0038000 to D020FFFF
-</span></span><span style="display:flex;"><span>In:    serial
-</span></span><span style="display:flex;"><span>Out:   serial
-</span></span><span style="display:flex;"><span>Err:   serial
-</span></span><span style="display:flex;"><span>PHY Detected <span style="color:#f92672">(</span>mdio-addr 1, ID 0x0013:0x78e2<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>link up, 100Mbps, full-duplex
-</span></span><span style="display:flex;"><span>Hit any key to stop autoboot:  <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## Booting kernel from Legacy Image at 20400000 ...</span>
-</span></span><span style="display:flex;"><span>   Image Name:   Linux-2.6.30
-</span></span><span style="display:flex;"><span>   Image Type:   ARM Linux Kernel Image <span style="color:#f92672">(</span>uncompressed<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>   Data Size:    <span style="color:#ae81ff">1439844</span> Bytes <span style="color:#f92672">=</span>  1.4 MB
-</span></span><span style="display:flex;"><span>   Load Address: <span style="color:#ae81ff">20008000</span>
-</span></span><span style="display:flex;"><span>   Entry Point:  <span style="color:#ae81ff">20008000</span>
-</span></span><span style="display:flex;"><span>   Verifying Checksum ... OK
-</span></span><span style="display:flex;"><span>   Loading Kernel Image ... OK
-</span></span><span style="display:flex;"><span>OK
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Starting kernel ...
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Uncompressing Linux.............................................................
-</span></span><span style="display:flex;"><span>............................... <span style="color:#66d9ef">done</span>, booting the kernel.
-</span></span><span style="display:flex;"><span>Linux version 2.6.30 <span style="color:#f92672">(</span>root@ubuntu<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>gcc version 4.3.2 <span style="color:#f92672">(</span>crosstool-NG 1.19.0<span style="color:#f92672">)</span> <span style="color:#f92672">)</span> <span style="color:#75715e">#1</span>
-</span></span><span style="display:flex;"><span> Fri Mar <span style="color:#ae81ff">27</span> 07:55:15 PDT <span style="color:#ae81ff">2015</span>
-</span></span><span style="display:flex;"><span>CPU: ARM926EJ-S <span style="color:#f92672">[</span>41069265<span style="color:#f92672">]</span> revision <span style="color:#ae81ff">5</span> <span style="color:#f92672">(</span>ARMv5TEJ<span style="color:#f92672">)</span>, cr<span style="color:#f92672">=</span><span style="color:#ae81ff">00053177</span>
-</span></span><span style="display:flex;"><span>CPU: VIVT data cache, VIVT instruction cache
-</span></span><span style="display:flex;"><span>Machine: Atmel AT91SAM9260-EK
-</span></span><span style="display:flex;"><span>Memory policy: ECC disabled, Data cache writeback
-</span></span><span style="display:flex;"><span>Clocks: CPU <span style="color:#ae81ff">199</span> MHz, master <span style="color:#ae81ff">99</span> MHz, main 18.432 MHz
-</span></span><span style="display:flex;"><span>Built <span style="color:#ae81ff">1</span> zonelists in Zone order, mobility grouping on.  Total pages: <span style="color:#ae81ff">16256</span>
-</span></span><span style="display:flex;"><span>Kernel command line: console<span style="color:#f92672">=</span>ttyS0,115200 ip<span style="color:#f92672">=</span>dhcp root<span style="color:#f92672">=</span>/dev/nfs rw
-</span></span><span style="display:flex;"><span>NR_IRQS:192
-</span></span><span style="display:flex;"><span>AT91: <span style="color:#ae81ff">96</span> gpio irqs in <span style="color:#ae81ff">3</span> banks
-</span></span><span style="display:flex;"><span>PID hash table entries: <span style="color:#ae81ff">256</span> <span style="color:#f92672">(</span>order: 8, <span style="color:#ae81ff">1024</span> bytes<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>Console: colour dummy device 80x30
-</span></span><span style="display:flex;"><span>console <span style="color:#f92672">[</span>ttyS0<span style="color:#f92672">]</span> enabled
-</span></span><span style="display:flex;"><span>Dentry cache hash table entries: <span style="color:#ae81ff">8192</span> <span style="color:#f92672">(</span>order: 3, <span style="color:#ae81ff">32768</span> bytes<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>Inode-cache hash table entries: <span style="color:#ae81ff">4096</span> <span style="color:#f92672">(</span>order: 2, <span style="color:#ae81ff">16384</span> bytes<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>Memory: 64MB <span style="color:#f92672">=</span> 64MB total
-</span></span><span style="display:flex;"><span>Memory: 61956KB available <span style="color:#f92672">(</span>2484K code, 222K data, 120K init, 0K highmem<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>Calibrating delay loop... 99.32 BogoMIPS <span style="color:#f92672">(</span>lpj<span style="color:#f92672">=</span>496640<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>Mount-cache hash table entries: <span style="color:#ae81ff">512</span>
-</span></span><span style="display:flex;"><span>CPU: Testing write buffer coherency: ok
-</span></span><span style="display:flex;"><span>net_namespace: <span style="color:#ae81ff">296</span> bytes
-</span></span><span style="display:flex;"><span>NET: Registered protocol family <span style="color:#ae81ff">16</span>
-</span></span><span style="display:flex;"><span>AT91: Power Management
-</span></span><span style="display:flex;"><span>AT91: Starting after user reset
-</span></span><span style="display:flex;"><span>bio: create slab &lt;bio-0&gt; at <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>SCSI subsystem initialized
-</span></span><span style="display:flex;"><span>usbcore: registered new interface driver usbfs
-</span></span><span style="display:flex;"><span>usbcore: registered new interface driver hub
-</span></span><span style="display:flex;"><span>usbcore: registered new device driver usb
-</span></span><span style="display:flex;"><span>NET: Registered protocol family <span style="color:#ae81ff">2</span>
-</span></span><span style="display:flex;"><span>IP route cache hash table entries: <span style="color:#ae81ff">1024</span> <span style="color:#f92672">(</span>order: 0, <span style="color:#ae81ff">4096</span> bytes<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>TCP established hash table entries: <span style="color:#ae81ff">2048</span> <span style="color:#f92672">(</span>order: 2, <span style="color:#ae81ff">16384</span> bytes<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>TCP bind hash table entries: <span style="color:#ae81ff">2048</span> <span style="color:#f92672">(</span>order: 1, <span style="color:#ae81ff">8192</span> bytes<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>TCP: Hash tables configured <span style="color:#f92672">(</span>established <span style="color:#ae81ff">2048</span> bind 2048<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>TCP reno registered
-</span></span><span style="display:flex;"><span>NET: Registered protocol family <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>NetWinder Floating Point Emulator V0.97 <span style="color:#f92672">(</span>double precision<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>msgmni has been set to <span style="color:#ae81ff">121</span>
-</span></span><span style="display:flex;"><span>alg: No test <span style="color:#66d9ef">for</span> stdrng <span style="color:#f92672">(</span>krng<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>io scheduler noop registered
-</span></span><span style="display:flex;"><span>io scheduler anticipatory registered <span style="color:#f92672">(</span>default<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>atmel_usart.0: ttyS0 at MMIO 0xfefff200 <span style="color:#f92672">(</span>irq <span style="color:#f92672">=</span> 1<span style="color:#f92672">)</span> is a ATMEL_SERIAL
-</span></span><span style="display:flex;"><span>atmel_usart.1: ttyS1 at MMIO 0xfffb0000 <span style="color:#f92672">(</span>irq <span style="color:#f92672">=</span> 6<span style="color:#f92672">)</span> is a ATMEL_SERIAL
-</span></span><span style="display:flex;"><span>atmel_usart.2: ttyS2 at MMIO 0xfffb4000 <span style="color:#f92672">(</span>irq <span style="color:#f92672">=</span> 7<span style="color:#f92672">)</span> is a ATMEL_SERIAL
-</span></span><span style="display:flex;"><span>brd: module loaded
-</span></span><span style="display:flex;"><span>loop: module loaded
-</span></span><span style="display:flex;"><span>ssc ssc.0: Atmel SSC device at 0xc4820000 <span style="color:#f92672">(</span>irq 14<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>Driver <span style="color:#e6db74">&#39;sd&#39;</span> needs updating - please use bus_type methods
-</span></span><span style="display:flex;"><span>MACB_mii_bus: probed
-</span></span><span style="display:flex;"><span>eth0: Atmel MACB at 0xfffc4000 irq <span style="color:#ae81ff">21</span> <span style="color:#f92672">(</span>20:00:00:00:00:00<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>eth0: attached PHY driver <span style="color:#f92672">[</span>LXT971<span style="color:#f92672">]</span> <span style="color:#f92672">(</span>mii_bus:phy_addr<span style="color:#f92672">=</span>ffffffff:01, irq<span style="color:#f92672">=</span>-1<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>NAND device: Manufacturer ID: 0xec, Chip ID: 0x76 <span style="color:#f92672">(</span>Samsung NAND 64MiB 3,3V 8-bit
-</span></span><span style="display:flex;"><span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>AT91 NAND: 8-bit, Software ECC
-</span></span><span style="display:flex;"><span>Scanning device <span style="color:#66d9ef">for</span> bad blocks
-</span></span><span style="display:flex;"><span>Creating <span style="color:#ae81ff">1</span> MTD partitions on <span style="color:#e6db74">&#34;atmel_nand&#34;</span>:
-</span></span><span style="display:flex;"><span>0x000000000000-0x000004000000 : <span style="color:#e6db74">&#34;AT91 NAND my_P1&#34;</span>
-</span></span><span style="display:flex;"><span>ohci_hcd: USB 1.1 <span style="color:#e6db74">&#39;Open&#39;</span> Host Controller <span style="color:#f92672">(</span>OHCI<span style="color:#f92672">)</span> Driver
-</span></span><span style="display:flex;"><span>at91_ohci at91_ohci: AT91 OHCI
-</span></span><span style="display:flex;"><span>at91_ohci at91_ohci: new USB bus registered, assigned bus number <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>at91_ohci at91_ohci: irq 20, io mem 0x00500000
-</span></span><span style="display:flex;"><span>usb usb1: configuration <span style="color:#75715e">#1 chosen from 1 choice</span>
-</span></span><span style="display:flex;"><span>hub 1-0:1.0: USB hub found
-</span></span><span style="display:flex;"><span>hub 1-0:1.0: <span style="color:#ae81ff">2</span> ports detected
-</span></span><span style="display:flex;"><span>Initializing USB Mass Storage driver...
-</span></span><span style="display:flex;"><span>usbcore: registered new interface driver usb-storage
-</span></span><span style="display:flex;"><span>USB Mass Storage support registered.
-</span></span><span style="display:flex;"><span>udc: at91_udc version <span style="color:#ae81ff">3</span> May <span style="color:#ae81ff">2006</span>
-</span></span><span style="display:flex;"><span>mice: PS/2 mouse device common <span style="color:#66d9ef">for</span> all mice
-</span></span><span style="display:flex;"><span>input: gpio-keys as /class/input/input0
-</span></span><span style="display:flex;"><span>rtc-at91sam9 at91_rtt.0: rtc core: registered at91_rtt as rtc0
-</span></span><span style="display:flex;"><span>IRQ 1/rtc0: IRQF_DISABLED is not guaranteed on shared IRQs
-</span></span><span style="display:flex;"><span>rtc-at91sam9 at91_rtt.0: rtc0: SET TIME!
-</span></span><span style="display:flex;"><span>Registered led device: ds5
-</span></span><span style="display:flex;"><span>Registered led device: ds1
-</span></span><span style="display:flex;"><span>TCP cubic registered
-</span></span><span style="display:flex;"><span>NET: Registered protocol family <span style="color:#ae81ff">17</span>
-</span></span><span style="display:flex;"><span>RPC: Registered udp transport module.
-</span></span><span style="display:flex;"><span>RPC: Registered tcp transport module.
-</span></span><span style="display:flex;"><span>rtc-at91sam9 at91_rtt.0: hctosys: unable to read the hardware clock
-</span></span><span style="display:flex;"><span>Sending DHCP requests .&lt;6&gt;eth0: link up <span style="color:#f92672">(</span>100/Full<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>, OK
-</span></span><span style="display:flex;"><span>IP-Config: Got DHCP answer from 192.168.0.135, my address is 192.168.0.251
-</span></span><span style="display:flex;"><span>IP-Config: Complete:
-</span></span><span style="display:flex;"><span>     device<span style="color:#f92672">=</span>eth0, addr<span style="color:#f92672">=</span>192.168.0.251, mask<span style="color:#f92672">=</span>255.255.255.0, gw<span style="color:#f92672">=</span>255.255.255.255,
-</span></span><span style="display:flex;"><span>     host<span style="color:#f92672">=</span>192.168.0.251, domain<span style="color:#f92672">=</span>example.org, nis-domain<span style="color:#f92672">=(</span>none<span style="color:#f92672">)</span>,
-</span></span><span style="display:flex;"><span>     bootserver<span style="color:#f92672">=</span>192.168.0.135, rootserver<span style="color:#f92672">=</span>192.168.0.135, rootpath<span style="color:#f92672">=</span>/opt/tdtc/rfs
-</span></span><span style="display:flex;"><span>Looking up port of RPC 100003/2 on 192.168.0.135
-</span></span><span style="display:flex;"><span>Looking up port of RPC 100005/1 on 192.168.0.135
-</span></span><span style="display:flex;"><span>VFS: Mounted root <span style="color:#f92672">(</span>nfs filesystem<span style="color:#f92672">)</span> on device 0:12.
-</span></span><span style="display:flex;"><span>Freeing init memory: 120K
-</span></span><span style="display:flex;"><span>init started: BusyBox v1.23.2 <span style="color:#f92672">(</span>2015-11-09 22:59:50 EST<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>Setting hotplug handler: <span style="color:#f92672">[</span> OK <span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>Creating device files: <span style="color:#f92672">[</span> OK <span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>Setting timezone and system clock: <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>Starting system logging.
-</span></span><span style="display:flex;"><span>Configuring network interfaces: ifdown: interface lo not configured
-</span></span><span style="display:flex;"><span>ip: RTNETLINK answers: File exists
-</span></span><span style="display:flex;"><span>failed
-</span></span><span style="display:flex;"><span>Generating RSA Key...
-</span></span><span style="display:flex;"><span>Will output <span style="color:#ae81ff">1024</span> bit rsa secret key to <span style="color:#e6db74">&#39;/etc/dropbear/dropbear_rsa_host_key&#39;</span>
-</span></span><span style="display:flex;"><span>Generating key, this may take a <span style="color:#66d9ef">while</span>...
-</span></span><span style="display:flex;"><span>Public key portion is:
-</span></span><span style="display:flex;"><span>ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgwCE5v/Ap3hCcJwDxLtDe3e4E6kQtgyBb1FKdFiJwmXa
-</span></span><span style="display:flex;"><span>FIgbaguUjNyl8uq4yNbU9ewsmyqTHGtKShvxpJAD789cL/vMfHbKNxdBhwJ+dpuvyYtd/wexNcZ3EMPJ
-</span></span><span style="display:flex;"><span>mvqqNXp0K/oTG0GdM1cnHES1AJQe26RYgiH2ew8DaATycT6IugBJ root@at91sam9260_ek
-</span></span><span style="display:flex;"><span>Fingerprint: md5 48:fb:27:a2:8f:fc:0f:68:6a:75:00:98:13:36:c7:28
-</span></span><span style="display:flex;"><span>Generating DSS Key...
-</span></span><span style="display:flex;"><span>Will output <span style="color:#ae81ff">1024</span> bit dss secret key to <span style="color:#e6db74">&#39;/etc/dropbear/dropbear_dss_host_key&#39;</span>
-</span></span><span style="display:flex;"><span>Generating key, this may take a <span style="color:#66d9ef">while</span>...
-</span></span><span style="display:flex;"><span>Public key portion is:
-</span></span><span style="display:flex;"><span>ssh-dss AAAAB3NzaC1kc3MAAACBAP6C7qLaTYM4bGxHSekRnhqUV61kUFCAWv1LyW6fPbMlJlIjpv5B
-</span></span><span style="display:flex;"><span>Q1FRhsucQjY4BKfPEjLUB46veq0BMuTSs5ADVgrOKBXE5GnPu8oT04XZu+UjWO5wgYD6G1MyFVlzuY6m
-</span></span><span style="display:flex;"><span>N5i3jdYpNE3J4YaYfC0xdUNn8WWkJH7cdSaiB3OTAAAAFQCfUA2AFBa9DQ+sUFOlAN3KvvaSywAAAIAs
-</span></span><span style="display:flex;"><span>SOR8U0D+kO3aGWr+R73zH/oR2wqF/2TuRUqxIZQo6tzfuhmqRlvEtQ+2cN+NOac8BWO7PEa4txVI8aKe
-</span></span><span style="display:flex;"><span>GC9AODlknbdorlYWfxqbqD4H05JQlCr/FY43KctjSSgcg81Ezk3Rh50CbkLk12E7EUh7e0khohuWOZhA
-</span></span><span style="display:flex;"><span>AeH9v0xFrQAAAIAucDdk5oGeAKQ67pmgUake69h4oRUCN727lZFjRrGhduTfSYo1IyLZ78/CGXab8sF4
-</span></span><span style="display:flex;"><span>aTSGa2PimN8evxyz2zAxghNqRpw1FVnjuglNjPH4GbbAPcRdVIYut19nFG7J8ULDvIDkIaHQHbdN1M3d
-</span></span><span style="display:flex;"><span>/803WER1YCaJhWxq5BvRYgf10g<span style="color:#f92672">==</span> root@at91sam9260_ek
-</span></span><span style="display:flex;"><span>Fingerprint: md5 b4:f5:28:b4:c4:f2:27:15:32:f6:77:56:44:f5:da:85
-</span></span><span style="display:flex;"><span>Starting dropbear sshd: OK
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>BusyBox v1.23.2 <span style="color:#f92672">(</span>2015-11-09 22:59:50 EST<span style="color:#f92672">)</span> built-in shell <span style="color:#f92672">(</span>ash<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>Enter <span style="color:#e6db74">&#39;help&#39;</span> <span style="color:#66d9ef">for</span> a list of built-in commands.
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># ls</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span>        dev      lib      mnt      root     share    usr
-</span></span><span style="display:flex;"><span>bin      etc      linuxrc  opt      run      sys      var
-</span></span><span style="display:flex;"><span>config   home     media    proc     sbin     tmp
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
-</span></span></code></pre></div> <a class="read-more" href="/csdn/post/ops_vmware_netadapter/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-01-18T14:08:08&#43;08:00">
-            18 Jan 2023
         </time>
     </footer>
 </article>

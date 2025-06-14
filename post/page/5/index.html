@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.147.1">
+    <meta name="generator" content="Hugo 0.147.8">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,6 +160,47 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_openjdk_centos/">设置OpenJDK</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="1-install">1. install</h1>
+<blockquote>
+<p>jre</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum install java -y
+</span></span></code></pre></div><h2 id="jdk">jdk</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum install java-1.8.0-openjdk-devel
+</span></span></code></pre></div><h1 id="2-set-path">2. set path</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo vi /etc/profile
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export JAVA_HOME<span style="color:#f92672">=</span>/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.345.b01-1.el7_9.x86_64
+</span></span><span style="display:flex;"><span>export CLASSPATH<span style="color:#f92672">=</span>.:$JAVA_HOME/jre/lib/:.
+</span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span>$PATH:$JAVA_HOME/bin
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$su - root 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#source /etc/profile</span>
+</span></span></code></pre></div><h2 id="about-path">About path</h2>
+<p><a href="https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/6/html/installation_guide/install_openjdk_on_red_hat_enterprise_linux">3.3. INSTALL OPENJDK ON RED HAT ENTERPRISE LINUX</a> - 2.Optional: Set the JAVA_HOME environment variable</p>
+<h1 id="reference">Reference</h1>
+<ul>
+<li><a href="https://linuxize.com/post/install-java-on-centos-7/">How to install Java on CentOS 7</a></li>
+<li><a href="https://wiki.openjdk.java.net/display/jdk8u/Main">OpenJDK Version Info</a> - Releases</li>
+</ul> <a class="read-more" href="/csdn/post/ops_openjdk_centos/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-09-15T08:08:08-08:00">
+            15 Sep 2022
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -1089,110 +1130,6 @@ systemctl status mysqld
         
         <time class="post-date" datetime="2022-05-07T00:08:08&#43;08:00">
             7 May 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/mysql-master-slave-replication/">MySQL 主从复制</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><blockquote>
-<p>在进行配置前，请确认已经安装 <a href="https://tdtc-hrb.github.io/csdn/post/mysql57-cenos7/">mysql5.7 - CentOS</a></p></blockquote>
-<h1 id="1-网络配置">1. 网络配置</h1>
-<p>Replication Group 1:</p>
-<table>
-  <thead>
-      <tr>
-          <th>Name</th>
-          <th>IP</th>
-          <th>Memo</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>mysql1</td>
-          <td>192.168.0.160</td>
-          <td>Master</td>
-      </tr>
-      <tr>
-          <td>mysql11</td>
-          <td>192.168.0.161</td>
-          <td>Slave</td>
-      </tr>
-      <tr>
-          <td>mysql12</td>
-          <td>192.168.0.162</td>
-          <td>Slave</td>
-      </tr>
-  </tbody>
-</table>
-<p>Replication Group 2(Maria DB):</p>
-<table>
-  <thead>
-      <tr>
-          <th>Name</th>
-          <th>IP</th>
-          <th>Memo</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>mysql2</td>
-          <td>192.168.0.170</td>
-          <td>Master</td>
-      </tr>
-      <tr>
-          <td>mysql21</td>
-          <td>192.168.0.171</td>
-          <td>Slave</td>
-      </tr>
-      <tr>
-          <td>mysql22</td>
-          <td>192.168.0.172</td>
-          <td>Slave</td>
-      </tr>
-  </tbody>
-</table>
-<h1 id="2-configure-mysql-cluster">2. Configure MySQL cluster</h1>
-<h2 id="1-master-server">1) Master Server</h2>
-<p><a href="https://dev.mysql.com/doc/refman/5.7/en/replication-howto-masterbaseconfig.html">Setting the Replication Master Configuration</a></p>
-<blockquote>
-<p>/etc/my.cnf</p></blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>mysqld<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>log-bin<span style="color:#f92672">=</span>mysql160-bin
-</span></span><span style="display:flex;"><span>server-id<span style="color:#f92672">=</span><span style="color:#ae81ff">160</span>
-</span></span></code></pre></div><h2 id="2-slave-server">2) Slave Server</h2>
-<p><a href="https://dev.mysql.com/doc/refman/5.7/en/replication-setup-slaves.html">Setting the Replication Slave Configuration</a></p>
-<blockquote>
-<p>/etc/my.cnf</p></blockquote>
-<ul>
-<li>Slave 1</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>mysqld<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>server-id<span style="color:#f92672">=</span><span style="color:#ae81ff">161</span>
-</span></span></code></pre></div><ul>
-<li>Slave 2</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>mysqld<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>server-id<span style="color:#f92672">=</span><span style="color:#ae81ff">162</span>
-</span></span></code></pre></div><h1 id="3-replication-user">3. replication user</h1>
-<blockquote>
-<p>Master Server
-<a href="https://dev.mysql.com/doc/refman/5.7/en/replication-howto-repuser.html">Creating a User for Replication</a></p> <a class="read-more" href="/csdn/post/mysql-master-slave-replication/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-04-13T09:38:08&#43;08:00">
-            13 Apr 2022
         </time>
     </footer>
 </article>

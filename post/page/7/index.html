@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.147.1">
+    <meta name="generator" content="Hugo 0.147.8">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,6 +160,67 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/js-webpack/">webpack的使用</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="安装webpack">安装webpack</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install -g webpack-dev-server
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install --save webpack-cli
+</span></span></code></pre></div><h1 id="pack-info">pack info</h1>
+<blockquote>
+<p>package.json</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;redux-book-started&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;version&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;1.0.0&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Sample Redux Application&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;main&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;app.js&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;start&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;webpack-dev-server --hot --progress  --port 8181&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;author&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Boris Dinkevich &amp; Ilya Gelman&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;license&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;MIT&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;dependencies&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;jquery&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;3.6.0&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;redux&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;4.1.2&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;devDependencies&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;webpack&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;5.64.1&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;webpack-cli&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;^4.9.1&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;webpack-dev-server&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;4.5.0&#34;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="config-info">config info</h2>
+<blockquote>
+<p>webpack.config.js</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">mode</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;development&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">entry</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;./app.js&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">output</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">filename</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;./app.js&#39;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h2 id="run">run</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">npm</span> <span style="color:#a6e22e">install</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">npm</span> <span style="color:#a6e22e">start</span>
+</span></span></code></pre></div><p>code on <a href="https://github.com/tdtc-hrb/starter">Github</a></p> <a class="read-more" href="/csdn/post/js-webpack/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2021-11-08T15:26:39&#43;08:00">
+            8 Nov 2021
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -766,51 +827,6 @@ README</p>
 
         
         <time class="post-date" datetime="2020-05-15T23:08:08&#43;08:00">
-            15 May 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_mysql_error1067/">mysql的1067错误</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><h1 id="日志文件问题">日志文件问题</h1>
-<p>由于使用时间比较长积累了很多的日志文件（\data目录下），所以删除之！</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql-bin.000001
-</span></span><span style="display:flex;"><span>... ...
-</span></span><span style="display:flex;"><span>mysql-bin.000278
-</span></span></code></pre></div><p>原来删除都留最后一个编号的日志，这次太过彻底~~都删了!</p>
-<p>执行net start mysql：
-<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/2020051514104614.png" alt="cmd info">
-出现了mysql 1067错误！ <br>
-查看，主机名.err文件（lenovo-7c8f808d.err）：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ae81ff">130416</span>  9:59:23  InnoDB: Started; log sequence number <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">43655</span>
-</span></span><span style="display:flex;"><span>MySQL: File <span style="color:#e6db74">&#39;.\mysql-bin.000278&#39;</span> not found <span style="color:#f92672">(</span>Errcode: 2<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">130416</span>  9:59:23 <span style="color:#f92672">[</span>ERROR<span style="color:#f92672">]</span> Failed to open log <span style="color:#f92672">(</span>file <span style="color:#e6db74">&#39;.\mysql-bin.000278&#39;</span>, errno 2<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">130416</span>  9:59:23 <span style="color:#f92672">[</span>ERROR<span style="color:#f92672">]</span> Could not open log file
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">130416</span>  9:59:23 <span style="color:#f92672">[</span>ERROR<span style="color:#f92672">]</span> Can<span style="color:#960050;background-color:#1e0010">&#39;</span>t init tc log
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">130416</span>  9:59:23 <span style="color:#f92672">[</span>ERROR<span style="color:#f92672">]</span> Aborting
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">130416</span>  9:59:23  InnoDB: Starting shutdown...
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">130416</span>  9:59:24  InnoDB: Shutdown completed; log sequence number <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">43655</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">130416</span>  9:59:24 <span style="color:#f92672">[</span>Note<span style="color:#f92672">]</span> MySQL: Shutdown complete
-</span></span></code></pre></div><p>告诉我们找不到mysql-bin.000278文件！ <br>
-既然找不到，我们新弄一个日志文件： <br>
-打开my.ini文件
-<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/2020051514154614.png" alt="cmd info"></p> <a class="read-more" href="/csdn/post/ops_mysql_error1067/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-05-15T06:08:08&#43;08:00">
             15 May 2020
         </time>
     </footer>

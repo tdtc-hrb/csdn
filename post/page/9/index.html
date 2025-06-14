@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.147.1">
+    <meta name="generator" content="Hugo 0.147.8">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,6 +160,31 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/dp-singleton-java/">单例模式</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>我们知道单例模式，其实就是返回一个被调用类的实例。</p>
+<p>在频繁的进行实例（Instance）创建过程，难免过多的进行new InstanceName()；我们可以只通过调用一个方法解决。</p>
+<p>在进行设计模式的程序实现中xiaobin使用已编写的SSL程序做演示。</p>
+<p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20130626154448328.png" alt="ea ui"></p> <a class="read-more" href="/csdn/post/dp-singleton-java/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-08T12:08:08&#43;08:00">
+            8 May 2020
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -689,54 +714,6 @@ dhcp4，gateway4：IPv4协议下的。</p></blockquote>
         
         <time class="post-date" datetime="2020-04-16T00:08:08&#43;08:00">
             16 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_mail/">mail的使用</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><h1 id="installation">installation</h1>
-<p><a href="http://www.mutt.org/">Mutt</a> is a small but very powerful text-based mail client for Unix operating systems.</p>
-<h2 id="1-install">1) install</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yum install mutt
-</span></span></code></pre></div><h2 id="2-config">2) config</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$vi ~/.muttrc
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>set sendmail<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/usr/local/msmtp/bin/msmtp&#34;</span>
-</span></span><span style="display:flex;"><span>set from <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;user@domain.com&#34;</span>
-</span></span><span style="display:flex;"><span>set realname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Realname of the user&#34;</span>
-</span></span></code></pre></div><p>received mail:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>set pop_host<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pop.163.com&#34;</span>
-</span></span><span style="display:flex;"><span>set pop_user<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;love_shidie&#34;</span>
-</span></span><span style="display:flex;"><span>set pop_pass<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>getpassword email_id<span style="color:#e6db74">`</span>
-</span></span></code></pre></div><h1 id="test">test</h1>
-<h2 id="1-send-mail">1) send mail</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gpg -d ~/.msmtp/love_shidie-passoword.gpg
-</span></span><span style="display:flex;"><span>$mutt -s <span style="color:#e6db74">&#34;test message&#34;</span> -a ~/message121.txt
-</span></span></code></pre></div><h2 id="2-received-mail">2) received mail</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$mutt
-</span></span></code></pre></div><p>Press key: G</p>
-<h1 id="reference">Reference</h1>
-<ul>
-<li><a href="https://www.tecmint.com/send-mail-from-command-line-using-mutt-command/">Mutt – A Command Line Email Client to Send Mails from Terminal</a></li>
-<li><a href="https://unix.stackexchange.com/questions/20570/mutt-how-to-safely-store-password">Mutt: how to safely store password?</a></li>
-<li><a href="https://xiaobin80.gitee.io/csdn/post/ops_mail_msmtp/">mail send</a></li>
-<li><a href="https://xiaobin80.gitee.io/csdn/post/ops_gnupg/">gnupg - xiaobin_HLJ80</a></li>
-</ul> <a class="read-more" href="/csdn/post/ops_mail/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-15T23:08:08&#43;08:00">
-            15 Apr 2020
         </time>
     </footer>
 </article>

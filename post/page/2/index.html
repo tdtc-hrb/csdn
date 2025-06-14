@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.147.1">
+    <meta name="generator" content="Hugo 0.147.8">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,6 +160,63 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_memcached_ubuntu/">安装memcached</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
+<blockquote>
+<p>VMware: Ubuntu 20.04.2</p></blockquote>
+<h1 id="install-and-update">Install and update</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#sudo apt-get install memcached [0]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#sudo apt-get install build-essential</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#sudo apt-get install libevent-dev*</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#wget http://memcached.org/files/memcached-1.6.33.tar.gz</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#tar -zxvf memcached-1.6.33.tar.gz</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#cd memcached-1.6.33</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#./configure &amp;&amp; make &amp;&amp; sudo make install</span>
+</span></span></code></pre></div><h1 id="start">Start</h1>
+<h2 id="allow-port">allow port</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ufw allow <span style="color:#ae81ff">11211</span>
+</span></span></code></pre></div><h2 id="config">config</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/memcached.conf
+</span></span></code></pre></div><p>修改为服务器的IP:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Specify which IP address to listen on. The default is to listen on all IP addresses</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># This parameter is one of the only security measures that memcached has, so make sure</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># it&#39;s listening on a firewalled interface.</span>
+</span></span><span style="display:flex;"><span>-l 192.168.0.103
+</span></span></code></pre></div><h2 id="run">run</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo service memcached start
+</span></span></code></pre></div><h3 id="view">view</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ps -ef|grep memcached
+</span></span></code></pre></div><h1 id="reference">Reference</h1>
+<ul>
+<li>
+<ol start="0">
+<li>default version</li>
+</ol>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ memcached -V
+</span></span><span style="display:flex;"><span>memcached 1.5.22
+</span></span></code></pre></div> <a class="read-more" href="/csdn/post/ops_memcached_ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-12-11T09:08:08&#43;08:00">
+            11 Dec 2024
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -780,107 +837,6 @@ echo &#34;deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://
         
         <time class="post-date" datetime="2024-03-01T02:12:39&#43;08:00">
             1 Mar 2024
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/dp-cor-java/">Chain of Command 模式</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><p>我们知道Chain of Responsibility模式，其实就是Template method + Next。</p>
-<p>在进行多个调用时，按顺序执行；需要调用2个方法。</p>
-<p>此模式，只适合抽象方法！</p>
-<p>在进行设计模式的程序实现中xiaobin使用已编写的SSL程序做演示。</p>
-<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/chain-of-command.png" alt="chain of command"></p>
-<h2 id="chain-of-command">Chain of Command</h2>
-<pre tabindex="0"><code>import com.cartionsoft.xbf.ContentXbf;
-import com.cartionsoft.xbf.LibXbf;
-import com.cartionsoft.xbf.ReadXbf;
-import com.cartionsoft.xbf.XiaobinFile;
-
-public class Demo {
-
-	public static void init() throws Exception {
-		int stationID = 0;
-	    String keyPWD;
-
-		String libPath = &#34;xbfLibR.dll&#34;;
-		String xbfPath = &#34;C://send//dySSL.xbf&#34;;
-
-		ContentXbf contentXbf = new ContentXbf(xbfPath);
-
-        // All checks are linked. Client can build various chains using the same
-        // components.
-        XiaobinFile xiaobinFile = XiaobinFile.link(
-            new LibXbf(libPath),
-            new ReadXbf()
-        );
-
-        // Server gets a chain from client code.
-        contentXbf.setXbf(xiaobinFile);
-        
-        stationID = contentXbf.getStationID(-1);
-        keyPWD = contentXbf.getKeyPWD(-1);
-        
-        System.out.println(keyPWD + &#34; : &#34; + stationID);
-	}
-
-	public static void main(String[] args) throws Exception {
-		// TODO Auto-generated method stub
-		init();
-	}
-
-}
-</code></pre><ul>
-<li>template-method(abstract)</li>
-</ul>
-<pre tabindex="0"><code>readRecord()
-</code></pre><ul>
-<li>Next</li>
-</ul>
-<pre tabindex="0"><code>readRecordNext()
-</code></pre><ul>
-<li>traverse</li>
-</ul>
-<pre tabindex="0"><code>link()
-</code></pre><h3 id="next">Next</h3>
-<pre tabindex="0"><code>	/**
-     * Runs readRecord on the next object in chain or ends traversing if we&#39;re in
-     * last object in chain.
-     */
-    protected String readRecordNext(int dimRecord, String filename) {
-        if (next == null) {
-            return &#34;&#34;;
-        }
-        return next.readRecord(dimRecord, filename);
-    }
-</code></pre><h3 id="link">link</h3>
-<pre tabindex="0"><code>    /**
-     * Builds chains of XiaobinFile objects.
-     */
-    public static XiaobinFile link(XiaobinFile first, XiaobinFile... chain) {
-    	XiaobinFile head = first;
-        for (XiaobinFile nextInChain: chain) {
-            head.next = nextInChain;
-            head = nextInChain;
-        }
-        return first;
-    }
-</code></pre> <a class="read-more" href="/csdn/post/dp-cor-java/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-12-22T12:08:08&#43;08:00">
-            22 Dec 2023
         </time>
     </footer>
 </article>

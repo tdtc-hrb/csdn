@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.147.1">
+    <meta name="generator" content="Hugo 0.147.8">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -158,6 +158,78 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_freebsd/">FreeBSD Help</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h2 id="os">OS</h2>
+<p>Down FreeBSD-14.3-RELEASE-i386.vhd.xz <br>
+from <a href="https://mirrors.ustc.edu.cn/freebsd/releases/VM-IMAGES/14.3-RELEASE/i386/Latest/">VM-IMAGES</a></p>
+<h3 id="supported-freebsd-releases"><a href="https://www.freebsd.org/security/#sup">Supported FreeBSD releases</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Branch</th>
+          <th>Expected EoL</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>stable/14</td>
+          <td>November 30, 2028</td>
+      </tr>
+      <tr>
+          <td>stable/13</td>
+          <td>April 30, 2026</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li><a href="https://www.freebsd.org/security/unsupported/">old</a></li>
+</ul>
+<blockquote>
+<p>12.4-RELEAS December 31, 2023</p></blockquote>
+<h3 id="import-to-vbox">import to vbox</h3>
+<p>New -&gt; VM</p>
+<pre tabindex="0"><code>Name: FreeBSD32
+</code></pre><p>In the VHD step, select &ldquo;Use an Existing Virtual Hard Disk File&rdquo;. <br>
+Hard Disk Selector: <br>
+Click the &ldquo;Add&rdquo; button, and then select &ldquo;FreeBSD-14.3-RELEASE-i386.vhd&rdquo; in the file dialog box。</p>
+<h3 id="shutdown">shutdown</h3>
+<pre tabindex="0"><code># shutdown -p now
+</code></pre><h2 id="pkg">pkg</h2>
+<ul>
+<li>search</li>
+</ul>
+<pre tabindex="0"><code>$ sudo pkg search SOFTNAME | more
+</code></pre><ul>
+<li>clean</li>
+</ul>
+<pre tabindex="0"><code>pkg clean # cleans /var/cache/pkg/
+rm -rf /var/cache/pkg/* # just remove it all
+pkg update -f # forces update  of repository catalog
+rm /var/db/pkg/repo-*.sqlite # removes all remote repository catalogs
+pkg bootstrap -f # forces reinstall of pkg
+</code></pre><h3 id="source">source</h3>
+<pre tabindex="0"><code># ee /etc/pkg/FreeBSD.conf
+</code></pre><p>url:</p> <a class="read-more" href="/csdn/post/ops_freebsd/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2025-06-14T08:38:08&#43;08:00">
+            14 Jun 2025
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -776,63 +848,6 @@ Beginning with MySQL 8.4.0, the deprecated mysql_native_password authentication 
         
         <time class="post-date" datetime="2024-12-12T18:08:08&#43;08:00">
             12 Dec 2024
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_memcached_ubuntu/">安装memcached</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
-<blockquote>
-<p>VMware: Ubuntu 20.04.2</p></blockquote>
-<h1 id="install-and-update">Install and update</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#sudo apt-get install memcached [0]</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#sudo apt-get install build-essential</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#sudo apt-get install libevent-dev*</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#wget http://memcached.org/files/memcached-1.6.33.tar.gz</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#tar -zxvf memcached-1.6.33.tar.gz</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#cd memcached-1.6.33</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#./configure &amp;&amp; make &amp;&amp; sudo make install</span>
-</span></span></code></pre></div><h1 id="start">Start</h1>
-<h2 id="allow-port">allow port</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ufw allow <span style="color:#ae81ff">11211</span>
-</span></span></code></pre></div><h2 id="config">config</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/memcached.conf
-</span></span></code></pre></div><p>修改为服务器的IP:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Specify which IP address to listen on. The default is to listen on all IP addresses</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># This parameter is one of the only security measures that memcached has, so make sure</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># it&#39;s listening on a firewalled interface.</span>
-</span></span><span style="display:flex;"><span>-l 192.168.0.103
-</span></span></code></pre></div><h2 id="run">run</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo service memcached start
-</span></span></code></pre></div><h3 id="view">view</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ps -ef|grep memcached
-</span></span></code></pre></div><h1 id="reference">Reference</h1>
-<ul>
-<li>
-<ol start="0">
-<li>default version</li>
-</ol>
-</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ memcached -V
-</span></span><span style="display:flex;"><span>memcached 1.5.22
-</span></span></code></pre></div> <a class="read-more" href="/csdn/post/ops_memcached_ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2024-12-11T09:08:08&#43;08:00">
-            11 Dec 2024
         </time>
     </footer>
 </article>
