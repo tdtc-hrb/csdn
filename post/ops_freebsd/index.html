@@ -92,7 +92,7 @@
     },
     "headline": "FreeBSD Help",
     "name": "FreeBSD Help",
-    "wordCount":  187 ,
+    "wordCount":  195 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
@@ -226,17 +226,18 @@ pkg update -f # forces update  of repository catalog
 rm /var/db/pkg/repo-*.sqlite # removes all remote repository catalogs
 pkg bootstrap -f # forces reinstall of pkg
 </code></pre><h3 id="source">source</h3>
-<pre tabindex="0"><code># ee /etc/pkg/FreeBSD.conf
-</code></pre><p>url:</p>
 <ul>
-<li>bjtu</li>
+<li>custom repo</li>
 </ul>
-<pre tabindex="0"><code>url: &#34;pkg+http://mirror.bjtu.edu.cn/reverse/freebsd-pkg/${ABI}/quarterly&#34;,
+<pre tabindex="0"><code># mkdir -p /usr/local/etc/pkg/repos/FreeBSD.conf
+# echo &#34;FreeBSD: { enabled: no }&#34; &gt; /usr/local/etc/pkg/repos/FreeBSD.conf
 </code></pre><ul>
-<li>china freebsd</li>
+<li>see</li>
 </ul>
-<pre tabindex="0"><code>url: &#34;pkg+http://pkg.freebsd.cn//${ABI}/quarterly&#34;,
-</code></pre><p>update:</p>
+<pre tabindex="0"><code># ee /usr/local/etc/pkg/repos/FreeBSD.conf
+</code></pre><ul>
+<li>update</li>
+</ul>
 <pre tabindex="0"><code># pkg update -f
 </code></pre><h3 id="gcc">gcc</h3>
 <p>current version:</p>

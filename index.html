@@ -215,8 +215,21 @@ pkg update -f # forces update  of repository catalog
 rm /var/db/pkg/repo-*.sqlite # removes all remote repository catalogs
 pkg bootstrap -f # forces reinstall of pkg
 </code></pre><h3 id="source">source</h3>
-<pre tabindex="0"><code># ee /etc/pkg/FreeBSD.conf
-</code></pre><p>url:</p> <a class="read-more" href="/csdn/post/ops_freebsd/">&raquo;</a></p>
+<ul>
+<li>custom repo</li>
+</ul>
+<pre tabindex="0"><code># mkdir -p /usr/local/etc/pkg/repos/FreeBSD.conf
+# echo &#34;FreeBSD: { enabled: no }&#34; &gt; /usr/local/etc/pkg/repos/FreeBSD.conf
+</code></pre><ul>
+<li>see</li>
+</ul>
+<pre tabindex="0"><code># ee /usr/local/etc/pkg/repos/FreeBSD.conf
+</code></pre><ul>
+<li>update</li>
+</ul>
+<pre tabindex="0"><code># pkg update -f
+</code></pre><h3 id="gcc">gcc</h3>
+<p>current version:</p> <a class="read-more" href="/csdn/post/ops_freebsd/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
