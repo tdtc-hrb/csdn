@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.152.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_dc_redis_ubuntu/" />
 
@@ -210,7 +210,8 @@ echo &#34;deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://
 </span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; SET mykey3 <span style="color:#e6db74">&#34;This is mykey3&#34;</span>
 </span></span></code></pre></div><h3 id="有数据">有数据</h3>
 <blockquote>
-<p><a href="https://stackoverflow.com/questions/5252099/redis-command-to-get-all-available-keys">redis-command-to-get-all-available-keys</a></p></blockquote>
+<p><a href="https://stackoverflow.com/questions/5252099/redis-command-to-get-all-available-keys">redis-command-to-get-all-available-keys</a></p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wsl-1130@DESKTOP-14G6K9S:~$ redis-cli
 </span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; KEYS *
 </span></span><span style="display:flex;"><span>1<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;mykey3&#34;</span>
@@ -218,7 +219,8 @@ echo &#34;deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://
 </span></span><span style="display:flex;"><span>127.0.0.1:6379&gt;
 </span></span></code></pre></div><h1 id="2-配置">2. 配置</h1>
 <blockquote>
-<p>/etc/redis/redis.conf</p></blockquote>
+<p>/etc/redis/redis.conf</p>
+</blockquote>
 <pre tabindex="0"><code>DENIED Redis is running in protected mode because protected mode is enabled, 
 no bind address was specified, no authentication password is requested to clients. 
 In this mode connections are only accepted from the loopback interface. 

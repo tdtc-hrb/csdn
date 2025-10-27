@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.152.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -614,7 +614,8 @@ CentOS v7.9(2009)</li>
 </ul>
 <h1 id="1-准备安装">1. 准备安装</h1>
 <blockquote>
-<p>卸载旧版本Maria</p></blockquote>
+<p>卸载旧版本Maria</p>
+</blockquote>
 <h2 id="1-查询">1) 查询</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>tdtc@localhost ~<span style="color:#f92672">]</span>$ sudo rpm -qa | grep mariadb
 </span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> password <span style="color:#66d9ef">for</span> tdtc:
@@ -672,7 +673,8 @@ CentOS v7.9(2009)</li>
 <h1 id="1-设置引导">1. 设置引导</h1>
 <blockquote>
 <p>(hd?,?)：安装的引导分区  <br>
-在我的机器是(hd0, msdos3)</p></blockquote>
+在我的机器是(hd0, msdos3)</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>grub rescue&gt;ls
 </span></span><span style="display:flex;"><span>grub rescue&gt;ls <span style="color:#f92672">(</span>hd?,?<span style="color:#f92672">)</span>/boot/grub
 </span></span><span style="display:flex;"><span>grub rescue&gt;set root<span style="color:#f92672">(</span>hd?,?<span style="color:#f92672">)</span>
@@ -998,7 +1000,8 @@ Windows的scp包含在putty工具中。</li>
     <section class="post-excerpt">
         
             <p><blockquote>
-<p>取消目录所有权限</p></blockquote>
+<p>取消目录所有权限</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod -R <span style="color:#ae81ff">777</span> /tmp/etc
 </span></span></code></pre></div><h1 id="一iso文件">一、ISO文件</h1>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkisofs -r -o etc.iso /tmp/etc
@@ -1007,7 +1010,8 @@ Windows的scp包含在putty工具中。</li>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>zip -r etc.zip /tmp/etc
 </span></span></code></pre></div><h2 id="2-tar">2. tar</h2>
 <blockquote>
-<p>仅打包，不压缩！</p></blockquote>
+<p>仅打包，不压缩！</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -cvf /tmp/etc.tar /etc
 </span></span></code></pre></div><ul>
 <li>transform</li>

@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.152.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_nginx/" />
 
@@ -184,13 +184,15 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum -y install gcc gcc-c++ automake pcre pcre-devel zlib zlib-devel openssl openssl-devel
 </span></span></code></pre></div><h3 id="1-update-openssl">1) update OpenSSL</h3>
 <blockquote>
-<p>default directory: /usr/ssl</p></blockquote>
+<p>default directory: /usr/ssl</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://www.openssl.org/source/openssl-1.1.1q.tar.gz --no-check-certificate
 </span></span></code></pre></div><h3 id="2-setup">2) setup</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$./config --prefix<span style="color:#f92672">=</span>/usr --shared
 </span></span><span style="display:flex;"><span>$make
 </span></span></code></pre></div><blockquote>
-<p>Root permission Required</p></blockquote>
+<p>Root permission Required</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo make install
 </span></span></code></pre></div><h2 id="1-installation">1. installation</h2>
 <p>First, install Nginx of centos repo; <br>
@@ -260,7 +262,8 @@ Note: The replaced program file version must be the same as the repo!</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo cp objs/*.so /usr/lib64/nginx/modules/
 </span></span></code></pre></div><h2 id="2-fw">2. fw</h2>
 <blockquote>
-<p>port 80</p></blockquote>
+<p>port 80</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>80/tcp
 </span></span></code></pre></div><h2 id="3-run">3. run</h2>
 <ul>
@@ -275,7 +278,8 @@ Note: The replaced program file version must be the same as the repo!</p>
 <h2 id="0-load-lib">0. load lib</h2>
 <blockquote>
 <p>/etc/nginx/nginx.conf
-add add below in the main context:</p></blockquote>
+add add below in the main context:</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>load_module <span style="color:#e6db74">&#34;modules/ngx_http_geoip_module.so&#34;</span>;
 </span></span><span style="display:flex;"><span>load_module <span style="color:#e6db74">&#34;modules/ngx_http_image_filter_module.so&#34;</span>;
 </span></span><span style="display:flex;"><span>load_module <span style="color:#e6db74">&#34;modules/ngx_http_xslt_filter_module.so&#34;</span>;
@@ -304,7 +308,8 @@ add add below in the main context:</p></blockquote>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
 </span></span></code></pre></div><h3 id="alter">alter</h3>
 <blockquote>
-<p>Our own configuration</p></blockquote>
+<p>Our own configuration</p>
+</blockquote>
 <ul>
 <li>/etc/nginx/nginx.conf</li>
 </ul>
@@ -344,7 +349,8 @@ add add below in the main context:</p></blockquote>
 </span></span><span style="display:flex;"><span>listen <span style="color:#f92672">[</span>::<span style="color:#f92672">]</span>:81 default_server;
 </span></span></code></pre></div><h3 id="2只使用一种协议">2）只使用一种协议</h3>
 <blockquote>
-<p>参考 <a href="https://stackoverflow.com/a/15101745">nginx-nginx-emerg-bind-to-80-failed-98-address-already-in-use</a></p></blockquote>
+<p>参考 <a href="https://stackoverflow.com/a/15101745">nginx-nginx-emerg-bind-to-80-failed-98-address-already-in-use</a></p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>listen 0.0.0.0:80 default_server;
 </span></span><span style="display:flex;"><span>listen <span style="color:#f92672">[</span>::<span style="color:#f92672">]</span>:80 ipv6only<span style="color:#f92672">=</span>on default_server;
 </span></span></code></pre></div><p>我的解决办法，不使用IPv6。</p>

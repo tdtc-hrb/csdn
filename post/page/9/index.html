@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.152.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -244,7 +244,8 @@
 <img src="https://gitee.com/xiaobin80/csdn/raw/master/images/132134001292220.png" alt="error info"></p>
 <h1 id="修改固件">修改固件</h1>
 <blockquote>
-<p>使用UltraEdit打开J-link_V8.bin</p></blockquote>
+<p>使用UltraEdit打开J-link_V8.bin</p>
+</blockquote>
 <ol>
 <li>修改FF00h行</li>
 </ol>
@@ -306,12 +307,14 @@
 <p>Then PC will find the &ldquo;ATMEL AT91xxxxx Test Board&rdquo;, and Led on(&ldquo;ERR&rdquo;)</p>
 <h1 id="sam-prog">SAM-PROG</h1>
 <blockquote>
-<p>注意：必须在x86（32位）下运行！</p></blockquote>
+<p>注意：必须在x86（32位）下运行！</p>
+</blockquote>
 <h2 id="down">Down</h2>
 <p><a href="http://www.atmel.com/images/Install_AT91-ISP_v1.12.exe">at91 isp V1.12</a></p>
 <h2 id="exec">Exec</h2>
 <blockquote>
-<p>SAM-PROG v2.4</p></blockquote>
+<p>SAM-PROG v2.4</p>
+</blockquote>
 <h3 id="setup">Setup</h3>
 <p>first, click &ldquo;Browse&rdquo; choose &ldquo;J-link_V8.bin&rdquo;</p>
 <p>Second, Select &ldquo;Set Security Bit&rdquo;</p>
@@ -344,7 +347,8 @@
 </span></span><span style="display:flex;"><span>$passwd haproxy
 </span></span></code></pre></div><h2 id="sysctl">sysctl</h2>
 <blockquote>
-<p>/etc/sysctl.conf</p></blockquote>
+<p>/etc/sysctl.conf</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>net.ipv4.tcp_tw_reuse <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span>net.ipv4.ip_local_port_range <span style="color:#f92672">=</span> <span style="color:#ae81ff">1024</span> <span style="color:#ae81ff">65023</span>
 </span></span><span style="display:flex;"><span>net.ipv4.tcp_max_syn_backlog <span style="color:#f92672">=</span> <span style="color:#ae81ff">10240</span>
@@ -359,7 +363,8 @@
 </span></span><span style="display:flex;"><span>$firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>6080/tcp
 </span></span></code></pre></div><h3 id="2-l4">2) L4</h3>
 <blockquote>
-<p>mysql</p></blockquote>
+<p>mysql</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>13306/tcp
 </span></span></code></pre></div><p>生效</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$firewall-cmd --reload
@@ -369,7 +374,8 @@
 </span></span></code></pre></div><h2 id="config">config</h2>
 <h3 id="1-rsyslog">1) rsyslog</h3>
 <blockquote>
-<p>/etc/rsyslog.d/haproxy.conf</p></blockquote>
+<p>/etc/rsyslog.d/haproxy.conf</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ModLoad imudp
 </span></span><span style="display:flex;"><span>$UDPServerRun <span style="color:#ae81ff">514</span>
 </span></span><span style="display:flex;"><span>$template Haproxy,”%msg%<span style="color:#ae81ff">\n</span>”
@@ -379,7 +385,24 @@
 </span></span><span style="display:flex;"><span>local2.* ~
 </span></span></code></pre></div><h3 id="2-rotated-log">2) rotated log</h3>
 <blockquote>
-<p>/etc/logrotate.d/haproxy</p> <a class="read-more" href="/csdn/post/ops_haproxy/">&raquo;</a></p>
+<p>/etc/logrotate.d/haproxy</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/var/log/haproxy.log <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>missingok
+</span></span><span style="display:flex;"><span>notifempty
+</span></span><span style="display:flex;"><span>sharedscripts
+</span></span><span style="display:flex;"><span>rotate <span style="color:#ae81ff">120</span>
+</span></span><span style="display:flex;"><span>daily
+</span></span><span style="display:flex;"><span>compress
+</span></span><span style="display:flex;"><span>postrotate
+</span></span><span style="display:flex;"><span>reload rsyslog &gt;/dev/null 2&gt;&amp;<span style="color:#ae81ff">1</span> <span style="color:#f92672">||</span> true
+</span></span><span style="display:flex;"><span>endscript
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="exec">exec</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$systemctl restart rsyslog.service
+</span></span></code></pre></div><h1 id="安装haproxy">安装haproxy</h1>
+<h2 id="install-1">install</h2>
+<p><a href="https://pan.baidu.com/s/1KVqOvHMl65m0BO3wOcUabw">haproxy-1.8.13.tar.gz</a></p> <a class="read-more" href="/csdn/post/ops_haproxy/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -658,15 +681,18 @@
     <section class="post-excerpt">
         
             <p><blockquote>
-<p>开发板访问NFS 服务器IP地址是固定的。</p></blockquote>
+<p>开发板访问NFS 服务器IP地址是固定的。</p>
+</blockquote>
 <h1 id="一u16及以下">一、U16及以下</h1>
 <blockquote>
 <p>（Ubuntu16.04-） <br>
-使用root权限更改interfaces文件。</p></blockquote>
+使用root权限更改interfaces文件。</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#gedit /etc/network/interfaces</span>
 </span></span></code></pre></div><p>完整例子：</p>
 <blockquote>
-<p>/etc/network/interfaces</p></blockquote>
+<p>/etc/network/interfaces</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>auto lo
 </span></span><span style="display:flex;"><span>iface lo inet loopback
 </span></span><span style="display:flex;"><span>
@@ -678,7 +704,8 @@
 </span></span><span style="display:flex;"><span>gateway 192.168.0.1
 </span></span></code></pre></div><h1 id="二u18及以上">二、U18及以上</h1>
 <blockquote>
-<p>（Ubuntu18.04+）</p></blockquote>
+<p>（Ubuntu18.04+）</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#vi /etc/netplan/50-cloud-init.yaml</span>
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>network:
 </span></span><span style="display:flex;"><span>    ethernets:
@@ -693,7 +720,8 @@
 </span></span><span style="display:flex;"><span>    version: <span style="color:#ae81ff">2</span>
 </span></span></code></pre></div><blockquote>
 <p>ens32：你的网卡，根据实际情况设置
-dhcp4，gateway4：IPv4协议下的。</p></blockquote>
+dhcp4，gateway4：IPv4协议下的。</p>
+</blockquote>
 <ul>
 <li>apply</li>
 </ul>

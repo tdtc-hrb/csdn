@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.152.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_selinux/" />
 
@@ -178,12 +178,14 @@
 
     <section class="post-content">
       <blockquote>
-<p>(root权限)</p></blockquote>
+<p>(root权限)</p>
+</blockquote>
 <p>SELinux(Security-Enhanced Linux) 是美国国家安全局（NSA）对于强制访问控制的实现，是 Linux历史上最杰出的新安全子系统。</p>
 <h1 id="1-临时">1. 临时</h1>
 <blockquote>
 <p>临时的意思就是宽容模式(0)强制模式(1)与的切换
-默认是：强制模式</p></blockquote>
+默认是：强制模式</p>
+</blockquote>
 <ul>
 <li>强制模式</li>
 </ul>
@@ -195,7 +197,8 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$setenforce <span style="color:#ae81ff">0</span>
 </span></span></code></pre></div><h1 id="2-永久">2. 永久</h1>
 <blockquote>
-<p>/etc/selinux/config</p></blockquote>
+<p>/etc/selinux/config</p>
+</blockquote>
 <ul>
 <li>开启</li>
 </ul>

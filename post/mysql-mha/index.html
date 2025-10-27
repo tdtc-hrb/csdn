@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.152.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/mysql-mha/" />
 
@@ -178,25 +178,30 @@
 
     <section class="post-content">
       <blockquote>
-<p>在进行安装配置前，请确认已经完成了 <a href="https://tdtc-hrb.github.io/csdn/post/mysql-master-slave-replication/">MySQL 主从复制</a></p></blockquote>
+<p>在进行安装配置前，请确认已经完成了 <a href="https://tdtc-hrb.github.io/csdn/post/mysql-master-slave-replication/">MySQL 主从复制</a></p>
+</blockquote>
 <ul>
 <li>MHA</li>
 </ul>
 <blockquote>
-<p>(V0.58)</p></blockquote>
+<p>(V0.58)</p>
+</blockquote>
 <ol>
 <li><a href="https://github.com/yoshinorim/mha4mysql-manager">Manager</a></li>
 <li><a href="https://github.com/yoshinorim/mha4mysql-node">Node</a></li>
 </ol>
 <blockquote>
 <blockquote>
-<p>baidu yun - backup</p></blockquote></blockquote>
+<p>baidu yun - backup</p>
+</blockquote>
+</blockquote>
 <ol>
 <li><a href="https://pan.baidu.com/s/1FBX1yI4HncdI9UZCdzdcHQ">Mha manager</a></li>
 <li><a href="https://pan.baidu.com/s/1wA5NOUgjnDDJxQTL0U-1DA">Mha node</a></li>
 </ol>
 <blockquote>
-<p>安装前准备 <a href="https://tdtc-hrb.github.io/csdn/post/ops_ssh_without_password/">ssh相互免密</a></p></blockquote>
+<p>安装前准备 <a href="https://tdtc-hrb.github.io/csdn/post/ops_ssh_without_password/">ssh相互免密</a></p>
+</blockquote>
 <p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/wuhan2017120193.png" alt="sql status"></p>
 <h1 id="一安装">一、安装</h1>
 <table>
@@ -218,41 +223,52 @@
 <p>使用pscp上传文件请参考 <a href="https://tdtc-hrb.github.io/csdn/post/mysql-master-slave-replication/">MySQL 主从复制</a> - 5. test data</p>
 <h2 id="1-mha-node">1. MHA Node</h2>
 <blockquote>
-<p>所有MySQL服务器（mysql1、mysql11、mysql12）和MHA 管理机（MHA）都要安装。</p></blockquote>
+<p>所有MySQL服务器（mysql1、mysql11、mysql12）和MHA 管理机（MHA）都要安装。</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum localinstall mha4mysql-node-0.58-0.el7.centos.noarch.rpm
 </span></span></code></pre></div><h2 id="2-mha-manager">2. MHA Manager</h2>
 <blockquote>
-<p>CentOS源有perl-Config-Tiny。</p></blockquote>
+<p>CentOS源有perl-Config-Tiny。</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install perl-Config-Tiny
 </span></span></code></pre></div><blockquote>
 <p>安装<a href="https://fedoraproject.org/wiki/EPEL">epel</a>，
-可以找到<a href="https://github.com/yoshinorim/mha4mysql-manager/wiki/Installation#installing-mha-manager">perl-Log-Dispatch、perl-Parallel-ForkManager</a>。</p></blockquote>
+可以找到<a href="https://github.com/yoshinorim/mha4mysql-manager/wiki/Installation#installing-mha-manager">perl-Log-Dispatch、perl-Parallel-ForkManager</a>。</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 </span></span><span style="display:flex;"><span>sudo yum install perl-Log-Dispatch perl-Parallel-ForkManager -y
 </span></span></code></pre></div><blockquote>
-<p>安装manager</p></blockquote>
+<p>安装manager</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum localinstall mha4mysql-manager-0.58-0.el7.centos.noarch.rpm
 </span></span></code></pre></div><h2 id="3-mysql主从配置">3. MySQL主从配置</h2>
 <blockquote>
-<p>（补充部分）</p></blockquote>
+<p>（补充部分）</p>
+</blockquote>
 <h3 id="1-repl-user">1) repl user</h3>
 <blockquote>
 <blockquote>
-<p>Slave Server（mysql11, mysql12）</p></blockquote></blockquote>
+<p>Slave Server（mysql11, mysql12）</p>
+</blockquote>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;repl&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;192.168.0.%&#39;</span> IDENTIFIED <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;qaz1!Xsw2@&#39;</span>;
 </span></span><span style="display:flex;"><span>mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">GRANT</span> REPLICATION SLAVE <span style="color:#66d9ef">ON</span> <span style="color:#f92672">*</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;repl&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;192.168.0.%&#39;</span>;
 </span></span></code></pre></div><h3 id="2-add-log-bin">2) add log-bin</h3>
 <blockquote>
-<p>/etc/my.cnf</p></blockquote>
+<p>/etc/my.cnf</p>
+</blockquote>
 <blockquote>
 <blockquote>
-<p>Slave Server(mysql11,mysql12)</p></blockquote></blockquote>
+<p>Slave Server(mysql11,mysql12)</p>
+</blockquote>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>log-bin<span style="color:#f92672">=</span>mysql161-bin
 </span></span></code></pre></div><h1 id="二配置">二、配置</h1>
 <h2 id="1-manager">1. Manager</h2>
 <h3 id="1-check_repl_delay">1) check_repl_delay</h3>
 <blockquote>
-<p>设置复制延时为0和candidate_master=1，会强制切换master。</p></blockquote>
+<p>设置复制延时为0和candidate_master=1，会强制切换master。</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>check_repl_delay<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
 </span></span></code></pre></div><h3 id="2binlog">2）binlog</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>master_binlog_dir<span style="color:#f92672">=</span>/var/lib/mysql/
@@ -262,7 +278,8 @@
 </span></span></code></pre></div><h2 id="2-node">2. Node</h2>
 <h3 id="1-add-user">1) add user</h3>
 <blockquote>
-<p>(all mysql)</p></blockquote>
+<p>(all mysql)</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;manager&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;192.168.0.%&#39;</span> identified <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;qaz1!Xsw2@&#39;</span>;
 </span></span><span style="display:flex;"><span>mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">grant</span> <span style="color:#66d9ef">all</span> <span style="color:#66d9ef">privileges</span> <span style="color:#66d9ef">on</span> <span style="color:#f92672">*</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">to</span> <span style="color:#e6db74">&#39;manager&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;192.168.0.%&#39;</span>;
 </span></span><span style="display:flex;"><span>
@@ -270,7 +287,8 @@
 </span></span></code></pre></div><h1 id="三test">三、Test</h1>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo masterha_check_repl --conf<span style="color:#f92672">=</span>/etc/masterha/app1.cnf
 </span></span></code></pre></div><blockquote>
-<p>Info:</p></blockquote>
+<p>Info:</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>tdtc@mha1 ~<span style="color:#f92672">]</span>$ sudo masterha_check_repl --conf<span style="color:#f92672">=</span>/etc/masterha/app1.cnf
 </span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:36 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>warning<span style="color:#f92672">]</span> Global configuration file /etc/masterha_default.cnf not found. Skipping.
 </span></span><span style="display:flex;"><span>Wed Feb <span style="color:#ae81ff">27</span> 12:42:36 <span style="color:#ae81ff">2019</span> - <span style="color:#f92672">[</span>info<span style="color:#f92672">]</span> Reading application default configuration from /etc/masterha/app1.cnf..
@@ -433,7 +451,8 @@
 </span></span><span style="display:flex;"><span>exit 0;
 </span></span></code></pre></div><h2 id="2-app1cnf">2. <a href="https://pan.baidu.com/s/13dWV0oH1coGxtUYD8wcDmA">app1.cnf</a></h2>
 <blockquote>
-<p>/etc/masterha/app1.cnf</p></blockquote>
+<p>/etc/masterha/app1.cnf</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>server default<span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>user<span style="color:#f92672">=</span>manager
 </span></span><span style="display:flex;"><span>password<span style="color:#f92672">=</span>qaz1!Xsw2@

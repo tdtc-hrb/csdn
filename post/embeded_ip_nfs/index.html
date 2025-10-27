@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.152.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/embeded_ip_nfs/" />
 
@@ -178,15 +178,18 @@
 
     <section class="post-content">
       <blockquote>
-<p>开发板访问NFS 服务器IP地址是固定的。</p></blockquote>
+<p>开发板访问NFS 服务器IP地址是固定的。</p>
+</blockquote>
 <h1 id="一u16及以下">一、U16及以下</h1>
 <blockquote>
 <p>（Ubuntu16.04-） <br>
-使用root权限更改interfaces文件。</p></blockquote>
+使用root权限更改interfaces文件。</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#gedit /etc/network/interfaces</span>
 </span></span></code></pre></div><p>完整例子：</p>
 <blockquote>
-<p>/etc/network/interfaces</p></blockquote>
+<p>/etc/network/interfaces</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>auto lo
 </span></span><span style="display:flex;"><span>iface lo inet loopback
 </span></span><span style="display:flex;"><span>
@@ -198,7 +201,8 @@
 </span></span><span style="display:flex;"><span>gateway 192.168.0.1
 </span></span></code></pre></div><h1 id="二u18及以上">二、U18及以上</h1>
 <blockquote>
-<p>（Ubuntu18.04+）</p></blockquote>
+<p>（Ubuntu18.04+）</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#vi /etc/netplan/50-cloud-init.yaml</span>
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>network:
 </span></span><span style="display:flex;"><span>    ethernets:
@@ -213,7 +217,8 @@
 </span></span><span style="display:flex;"><span>    version: <span style="color:#ae81ff">2</span>
 </span></span></code></pre></div><blockquote>
 <p>ens32：你的网卡，根据实际情况设置
-dhcp4，gateway4：IPv4协议下的。</p></blockquote>
+dhcp4，gateway4：IPv4协议下的。</p>
+</blockquote>
 <ul>
 <li>apply</li>
 </ul>

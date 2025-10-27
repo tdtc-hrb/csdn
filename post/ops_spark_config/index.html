@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.152.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_spark_config/" />
 
@@ -179,7 +179,8 @@
     <section class="post-content">
       <h1 id="1-spark-env">1. spark env</h1>
 <blockquote>
-<p>spark-env.sh</p></blockquote>
+<p>spark-env.sh</p>
+</blockquote>
 <h2 id="1-hadoop-path">1) hadoop path</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export HADOOP_HOME<span style="color:#f92672">=</span>/home/tdtc/app/hadoop/2.7.7
 </span></span><span style="display:flex;"><span>export HADOOP_CONF_DIR<span style="color:#f92672">=</span>$HADOOP_HOME/etc/hadoop
@@ -200,7 +201,9 @@
 <blockquote>
 <p>注意：有几个YARN，就设置几个slaves！！！</p>
 <blockquote>
-<p>../conf/slaves</p></blockquote></blockquote>
+<p>../conf/slaves</p>
+</blockquote>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tdtc203
 </span></span><span style="display:flex;"><span>tdtc204
 </span></span></code></pre></div><h1 id="reference">Reference</h1>

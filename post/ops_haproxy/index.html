@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.152.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_haproxy/" />
 
@@ -183,7 +183,8 @@
 </span></span><span style="display:flex;"><span>$passwd haproxy
 </span></span></code></pre></div><h2 id="sysctl">sysctl</h2>
 <blockquote>
-<p>/etc/sysctl.conf</p></blockquote>
+<p>/etc/sysctl.conf</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>net.ipv4.tcp_tw_reuse <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span>net.ipv4.ip_local_port_range <span style="color:#f92672">=</span> <span style="color:#ae81ff">1024</span> <span style="color:#ae81ff">65023</span>
 </span></span><span style="display:flex;"><span>net.ipv4.tcp_max_syn_backlog <span style="color:#f92672">=</span> <span style="color:#ae81ff">10240</span>
@@ -198,7 +199,8 @@
 </span></span><span style="display:flex;"><span>$firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>6080/tcp
 </span></span></code></pre></div><h3 id="2-l4">2) L4</h3>
 <blockquote>
-<p>mysql</p></blockquote>
+<p>mysql</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>13306/tcp
 </span></span></code></pre></div><p>生效</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$firewall-cmd --reload
@@ -208,7 +210,8 @@
 </span></span></code></pre></div><h2 id="config">config</h2>
 <h3 id="1-rsyslog">1) rsyslog</h3>
 <blockquote>
-<p>/etc/rsyslog.d/haproxy.conf</p></blockquote>
+<p>/etc/rsyslog.d/haproxy.conf</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ModLoad imudp
 </span></span><span style="display:flex;"><span>$UDPServerRun <span style="color:#ae81ff">514</span>
 </span></span><span style="display:flex;"><span>$template Haproxy,”%msg%<span style="color:#ae81ff">\n</span>”
@@ -218,7 +221,8 @@
 </span></span><span style="display:flex;"><span>local2.* ~
 </span></span></code></pre></div><h3 id="2-rotated-log">2) rotated log</h3>
 <blockquote>
-<p>/etc/logrotate.d/haproxy</p></blockquote>
+<p>/etc/logrotate.d/haproxy</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/var/log/haproxy.log <span style="color:#f92672">{</span>
 </span></span><span style="display:flex;"><span>missingok
 </span></span><span style="display:flex;"><span>notifempty
@@ -244,7 +248,8 @@
 </span></span></code></pre></div><blockquote>
 <p>about TARGET:</p>
 <blockquote>
-</blockquote></blockquote>
+</blockquote>
+</blockquote>
 <pre tabindex="0"><code>https://github.com/haproxy/haproxy/blob/master/README
 TARGET variable :
   - linux2628   for Linux 2.6.28, 3.x, and above (enables splice and tproxy)
@@ -269,7 +274,8 @@ TARGET variable :
 </span></span><span style="display:flex;"><span>$chkconfig haproxy on
 </span></span></code></pre></div><h2 id="config-file">config file</h2>
 <blockquote>
-<p>/etc/haproxy/haproxy.cfg</p></blockquote>
+<p>/etc/haproxy/haproxy.cfg</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>global
 </span></span><span style="display:flex;"><span>    log         127.0.0.1 local2
 </span></span><span style="display:flex;"><span>    chroot      /var/lib/haproxy

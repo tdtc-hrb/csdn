@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.152.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -173,7 +173,8 @@
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install --save webpack-cli
 </span></span></code></pre></div><h1 id="pack-info">pack info</h1>
 <blockquote>
-<p>package.json</p></blockquote>
+<p>package.json</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;redux-book-started&#34;</span>,
 </span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;version&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;1.0.0&#34;</span>,
@@ -196,7 +197,8 @@
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h2 id="config-info">config info</h2>
 <blockquote>
-<p>webpack.config.js</p></blockquote>
+<p>webpack.config.js</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">mode</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;development&#39;</span>,
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">entry</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;./app.js&#39;</span>,
@@ -233,7 +235,8 @@
 <blockquote>
 <p><a href="http://www.bejson.com/go.html?u=http://bejson.com/aboutJSON.html">JSON</a></p>
 <blockquote>
-</blockquote></blockquote>
+</blockquote>
+</blockquote>
 <pre tabindex="0"><code>JSON是一种取代XML的数据结构,和xml相比,它更小巧但描述能力却不差,由于它的小巧所以网络传输数据将减少更多流量从而加快速度,
 
 那么,JSON到底是什么?
@@ -308,7 +311,8 @@ JSON就是一串字符串 只不过元素会使用特定的符号标注。
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">iDay</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">months</span>[<span style="color:#a6e22e">i</span>];
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><blockquote>
-<p>其中months为数组</p></blockquote>
+<p>其中months为数组</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">months</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array(<span style="color:#ae81ff">31</span>, <span style="color:#a6e22e">day2</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">31</span>);
 </span></span></code></pre></div><p>day2如果是闰年赋值29，否则28。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">IsLeapYear</span>(<span style="color:#a6e22e">iYear</span>)) {
@@ -318,7 +322,8 @@ JSON就是一串字符串 只不过元素会使用特定的符号标注。
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h1 id="js-code">js code</h1>
 <blockquote>
-<p>tsc calDay.ts</p></blockquote>
+<p>tsc calDay.ts</p>
+</blockquote>
 <h2 id="caldayts">calDay.ts</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MY</span> {
 </span></span><span style="display:flex;"><span>
@@ -454,7 +459,8 @@ JSON就是一串字符串 只不过元素会使用特定的符号标注。
         
             <p><p>工作原理：</p>
 <blockquote>
-<p>　16进制数 * 16<sup>n</sup> 之和就是10进制数。</p></blockquote>
+<p>　16进制数 * 16<sup>n</sup> 之和就是10进制数。</p>
+</blockquote>
 <h1 id="手算">手算</h1>
 <p>16进制: 0x61E</p>
 <p>0位：  E * 16<sup>0</sup> = 14  <br>
@@ -559,7 +565,8 @@ JSON就是一串字符串 只不过元素会使用特定的符号标注。
     <section class="post-excerpt">
         
             <p><blockquote>
-<p>JDK install see <a href="https://tdtc-hrb.github.io/csdn/post/ops_openjdk_centos/">设置OpenJDK</a></p></blockquote>
+<p>JDK install see <a href="https://tdtc-hrb.github.io/csdn/post/ops_openjdk_centos/">设置OpenJDK</a></p>
+</blockquote>
 <h1 id="stage-i">Stage I</h1>
 <h2 id="1-sudo---centos">1. 《<a href="https://tdtc-hrb.github.io/csdn/post/ops_sudo/">sudo - CentOS</a>》</h2>
 <h2 id="2-fqdn">2. FQDN</h2>
@@ -718,7 +725,8 @@ README</p>
     <section class="post-excerpt">
         
             <p><blockquote>
-<p>Portel DXP 2004</p></blockquote>
+<p>Portel DXP 2004</p>
+</blockquote>
 <p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20140501003738375.png" alt="rational rose1"></p>
 <p><a href="https://pan.baidu.com/s/1JpUJduEgk-1_qa6yBPL_3A">CTM1050.7z</a> 提取码: pcah</p> <a class="read-more" href="/csdn/post/hw-schematic_diagram-ctm1050/">&raquo;</a></p>
         
@@ -743,7 +751,8 @@ README</p>
     <section class="post-excerpt">
         
             <p><blockquote>
-<p>tool: Rational Rose</p></blockquote>
+<p>tool: Rational Rose</p>
+</blockquote>
 <p>功能简介： <br>
 当主程序收到CAN口的数据后；根据按键的不同来选择是使用CAN口发送，还是使用UART口发送。</p>
 <p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20140427133600421.png" alt="rational rose1">

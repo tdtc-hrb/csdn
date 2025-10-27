@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.152.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -170,7 +170,8 @@
         
             <p><h1 id="1-install">1. install</h1>
 <blockquote>
-<p>jre</p></blockquote>
+<p>jre</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum install java -y
 </span></span></code></pre></div><h2 id="jdk">jdk</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum install java-1.8.0-openjdk-devel
@@ -210,7 +211,8 @@
     <section class="post-excerpt">
         
             <p><blockquote>
-<p>使用版本：v16.1</p></blockquote>
+<p>使用版本：v16.1</p>
+</blockquote>
 <h1 id="一连接数据库">一、连接数据库</h1>
 <h2 id="1-新建pdm">1. 新建pdm</h2>
 <p>File-》New Model <br>
@@ -218,7 +220,8 @@ model types -&gt; physical data model
 <img src="https://github.com/tdtc-hrb/csdn/raw/master/images/2019082714153526.png" alt="new project"></p>
 <blockquote>
 <p>model name: newmodel-phy <br>
-dbms: mysql5.0</p></blockquote>
+dbms: mysql5.0</p>
+</blockquote>
 <h2 id="2-config-connect-profile">2. config connect profile</h2>
 <p>DataBase -&gt; Configure connections <br>
 Connection profile
@@ -249,7 +252,9 @@ URL=jdbc:mysql://106.14.141.40:3306/crm
 其他数据库全部反选： <br>
 例如： <br>
 <img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20190827153501155.png" alt="Reverse Engineer 4">
-最后，点击ok生成phy图。</p> <a class="read-more" href="/csdn/post/pd-db-phy/">&raquo;</a></p>
+最后，点击ok生成phy图。</p>
+<blockquote>
+<p>Tips：如果想从pdm生成CDM，Tools -&gt; Generate Conceptual Data Model</p> <a class="read-more" href="/csdn/post/pd-db-phy/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -291,7 +296,8 @@ URL=jdbc:mysql://106.14.141.40:3306/crm
 <pre tabindex="0"><code>mysql&gt;SOURCE /home/xiaobin/dbName.sql;
 </code></pre><h2 id="upload">upload</h2>
 <blockquote>
-<p>win10</p></blockquote>
+<p>win10</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>scp D:\progFiles\carnumber.sql tdtc@192.168.0.151:/home/tdtc/
 </span></span></code></pre></div><h2 id="create-user">create user</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql&gt; CREATE USER <span style="color:#e6db74">&#39;DBAdmin&#39;</span>@<span style="color:#e6db74">&#39;localhost&#39;</span> IDENTIFIED BY <span style="color:#e6db74">&#39;xbfirst&#39;</span>;
@@ -464,15 +470,18 @@ systemctl status mysqld
 <p>Copy the examples/async/src from the redux-saga to your async/src.</p>
 <h1 id="2-rename-mainjs">2. rename main.js</h1>
 <blockquote>
-<p>async/src</p></blockquote>
+<p>async/src</p>
+</blockquote>
 <p>Rename main.js to index.js</p>
 <h1 id="3-move-files">3. move files</h1>
 <blockquote>
-<p>async/src</p></blockquote>
+<p>async/src</p>
+</blockquote>
 <p>App.css &amp;&amp; logo.svg
 -&gt;</p>
 <blockquote>
-<p>async/src/containers</p></blockquote>
+<p>async/src/containers</p>
+</blockquote>
 <p>App.css &amp;&amp; logo.svg</p>
 <h1 id="4-modify-containersappjs">4. modify containers/App.js</h1>
 <p>Add the following two blocks of code.</p>
@@ -510,13 +519,16 @@ systemctl status mysqld
     <section class="post-excerpt">
         
             <p><blockquote>
-<p>GNU Compiler Collection(GCC)</p></blockquote>
+<p>GNU Compiler Collection(GCC)</p>
+</blockquote>
 <p>在“<a href="https://tdtc-hrb.github.io/csdn/post/c-bsd_socket/">Socket服务器端程序</a>”基础上增加子进程。</p>
 <h1 id="beejs-guide-network-to-programming"><a href="https://blog.csdn.net/xiaobin_hlj80/category_6092337.html">Beej’s Guide Network to Programming</a></h1>
 <blockquote>
 <p>关于Unix/Linux子进程：</p>
 <blockquote>
-<p>相当于Windows的线程</p></blockquote></blockquote>
+<p>相当于Windows的线程</p>
+</blockquote>
+</blockquote>
 <p>调用fork()即可增加子进程。</p>
 <p>要使用fork必须调用waitpid() ！</p>
 <h1 id="waitpid">waitpid()</h1>
@@ -542,7 +554,8 @@ systemctl status mysqld
 </ul>
 <h1 id="sigaction">sigaction()</h1>
 <blockquote>
-<p>sigaction()是waitpid()的开关</p></blockquote>
+<p>sigaction()是waitpid()的开关</p>
+</blockquote>
 <p>只有给waitpid()信号时，才开启它(waitpid)！
 这时，需要sigaction()。</p>
 <p>sigaction函数原型：</p>
@@ -855,7 +868,8 @@ systemctl status mysqld
 </span></span><span style="display:flex;"><span>no main manifest attribute, in cliDemo-0.0.1-SNAPSHOT.jar
 </span></span></code></pre></div><p>A:</p>
 <blockquote>
-<p>for win:</p></blockquote>
+<p>for win:</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>java -cp cliDemo-0.0.1-SNAPSHOT.jar;C:<span style="color:#ae81ff">\U</span>sers<span style="color:#ae81ff">\x</span>iaobin<span style="color:#ae81ff">\.</span>m2<span style="color:#ae81ff">\r</span>epository<span style="color:#ae81ff">\c</span>ommons-cli<span style="color:#ae81ff">\c</span>ommons-cli<span style="color:#ae81ff">\1</span>.4<span style="color:#ae81ff">\c</span>ommons-cli-1.4.jar my.csdn9.ConsoleLauncher --help
 </span></span></code></pre></div><h2 id="reference-1">Reference</h2>
 <ul>
@@ -1006,7 +1020,8 @@ systemctl status mysqld
 <blockquote>
 <p>规则是从低位到高位
 被除数，除以16, 直到商小于16。  <br>
-将余数加上余商，就是16进制数。</p></blockquote>
+将余数加上余商，就是16进制数。</p>
+</blockquote>
 <ul>
 <li>被除数</li>
 </ul>

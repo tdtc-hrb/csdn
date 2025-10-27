@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.152.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -230,13 +230,16 @@ $make
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$make install
 </span></span></code></pre></div><h1 id="configuration">configuration</h1>
 <blockquote>
-<p>需要在user的根目录建立一个新文件：.msmtprc</p></blockquote>
+<p>需要在user的根目录建立一个新文件：.msmtprc</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cd ~
 </span></span><span style="display:flex;"><span>$vi .msmtprc
 </span></span><span style="display:flex;"><span>$chmod <span style="color:#ae81ff">600</span> .msmtprc
 </span></span></code></pre></div><blockquote>
 <blockquote>
-<p>.msmtprc</p></blockquote></blockquote>
+<p>.msmtprc</p>
+</blockquote>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>defaults
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>logfile ~/.msmtp/msmtp.log
@@ -279,7 +282,8 @@ $make
     <section class="post-excerpt">
         
             <p><blockquote>
-<p>OS: CentOS7</p></blockquote>
+<p>OS: CentOS7</p>
+</blockquote>
 <h1 id="prepare">Prepare</h1>
 <ol>
 <li>已经安装了《<a href="https://xiaobin80.gitee.io/csdn/post/ops_zookeeper/">ZooKeeper multi-server install</a>》</li>
@@ -293,7 +297,8 @@ $make
 <li>set up</li>
 </ol>
 <blockquote>
-<p>详见Reference[4]</p></blockquote>
+<p>详见Reference[4]</p>
+</blockquote>
 <h1 id="stage-ii-run">Stage II: Run</h1>
 <h2 id="1-zk">1. ZK</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>zkServer.sh start
@@ -304,7 +309,8 @@ $make
 <p>see 《<a href="https://xiaobin80.gitee.io/csdn/post/ops_hadoop_cluster/">hadoop - cluster</a> - 3.2 YARN》</p>
 <h2 id="3-spark">3. Spark</h2>
 <blockquote>
-<p>（server3，4）</p></blockquote>
+<p>（server3，4）</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$SPARK_HOME/sbin/start-all.sh
 </span></span></code></pre></div><h3 id="1-other-site">1) other site</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$SPARK_HOME/sbin/start-master.sh
@@ -346,7 +352,8 @@ http://192.168.42.109:8081/</p>
         
             <p><h1 id="1-spark-env">1. spark env</h1>
 <blockquote>
-<p>spark-env.sh</p></blockquote>
+<p>spark-env.sh</p>
+</blockquote>
 <h2 id="1-hadoop-path">1) hadoop path</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export HADOOP_HOME<span style="color:#f92672">=</span>/home/tdtc/app/hadoop/2.7.7
 </span></span><span style="display:flex;"><span>export HADOOP_CONF_DIR<span style="color:#f92672">=</span>$HADOOP_HOME/etc/hadoop
@@ -367,7 +374,9 @@ http://192.168.42.109:8081/</p>
 <blockquote>
 <p>注意：有几个YARN，就设置几个slaves！！！</p>
 <blockquote>
-<p>../conf/slaves</p></blockquote></blockquote>
+<p>../conf/slaves</p>
+</blockquote>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tdtc203
 </span></span><span style="display:flex;"><span>tdtc204
 </span></span></code></pre></div><h1 id="reference">Reference</h1>
@@ -396,12 +405,14 @@ http://192.168.42.109:8081/</p>
     <section class="post-excerpt">
         
             <p><blockquote>
-<p>(root权限)</p></blockquote>
+<p>(root权限)</p>
+</blockquote>
 <p>SELinux(Security-Enhanced Linux) 是美国国家安全局（NSA）对于强制访问控制的实现，是 Linux历史上最杰出的新安全子系统。</p>
 <h1 id="1-临时">1. 临时</h1>
 <blockquote>
 <p>临时的意思就是宽容模式(0)强制模式(1)与的切换
-默认是：强制模式</p></blockquote>
+默认是：强制模式</p>
+</blockquote>
 <ul>
 <li>强制模式</li>
 </ul>
@@ -413,7 +424,8 @@ http://192.168.42.109:8081/</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$setenforce <span style="color:#ae81ff">0</span>
 </span></span></code></pre></div><h1 id="2-永久">2. 永久</h1>
 <blockquote>
-<p>/etc/selinux/config</p></blockquote>
+<p>/etc/selinux/config</p>
+</blockquote>
 <ul>
 <li>开启</li>
 </ul>
@@ -447,7 +459,8 @@ http://192.168.42.109:8081/</p>
     <section class="post-excerpt">
         
             <p><blockquote>
-<p>ali云服务器</p></blockquote>
+<p>ali云服务器</p>
+</blockquote>
 <h1 id="1-user-add-and-set-password">1. User Add and Set password</h1>
 <h2 id="1-add-user">1) add user</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>useradd	site_user
@@ -457,23 +470,29 @@ http://192.168.42.109:8081/</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>usermod -d /home/fdn site_user
 </span></span></code></pre></div><h1 id="2-assigning-permissions">2. assigning permissions</h1>
 <blockquote>
-<p>如果多个目录需要设置，则多次重复&quot;(2)设置&quot;即可。</p></blockquote>
+<p>如果多个目录需要设置，则多次重复&quot;(2)设置&quot;即可。</p>
+</blockquote>
 <blockquote>
-<p>文件系统是否支持acl</p></blockquote>
+<p>文件系统是否支持acl</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>df -T | awk <span style="color:#e6db74">&#39;{print $1,$2,$NF}&#39;</span> | grep <span style="color:#e6db74">&#34;^/dev&#34;</span>
 </span></span><span style="display:flex;"><span>grep -i acl /boot/config*
 </span></span></code></pre></div><blockquote>
 <p>分区是否支持acl</p>
 <blockquote>
-<p>注意：在ali服务器上是vda1。</p></blockquote></blockquote>
+<p>注意：在ali服务器上是vda1。</p>
+</blockquote>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tune2fs -l /dev/vda1 | grep acl
 </span></span></code></pre></div><h2 id="1-查看">1) 查看</h2>
 <blockquote>
-<p>目录的acl设置情况。</p></blockquote>
+<p>目录的acl设置情况。</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>getfacl	/home/fdn
 </span></span></code></pre></div><h2 id="2-设置">2) 设置</h2>
 <blockquote>
-<p>设置指定目录的acl。</p></blockquote>
+<p>设置指定目录的acl。</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>setfacl -m user:site_user:rwx /home/fdn
 </span></span></code></pre></div><h1 id="参考文章">参考文章</h1>
 <ul>
@@ -504,13 +523,15 @@ http://192.168.42.109:8081/</p>
     <section class="post-excerpt">
         
             <p><blockquote>
-<p>Spark：v2.4</p></blockquote>
+<p>Spark：v2.4</p>
+</blockquote>
 <h1 id="一基础软件">一、基础软件</h1>
 <h2 id="1-r-lang">1. R-lang</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum -y install epel-release
 </span></span><span style="display:flex;"><span>sudo yum install R
 </span></span></code></pre></div><blockquote>
-<p>注意：如果Java没有安装，会附带着安装OpenJDK。</p></blockquote>
+<p>注意：如果Java没有安装，会附带着安装OpenJDK。</p>
+</blockquote>
 <h2 id="2-scala">2. Scala</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://downloads.lightbend.com/scala/2.12.8/scala-2.12.8.tgz
 </span></span><span style="display:flex;"><span>tar xvf scala-2.12.8.tgz
@@ -522,7 +543,8 @@ http://192.168.42.109:8081/</p>
 </span></span></code></pre></div><h1 id="二spark">二、Spark</h1>
 <h2 id="1-down--unzip">1. down &amp; unzip</h2>
 <blockquote>
-<p><a href="https://archive.apache.org/dist/spark/spark-2.4.1/spark-2.4.1-bin-hadoop2.7.tgz">v2.4.1</a></p></blockquote>
+<p><a href="https://archive.apache.org/dist/spark/spark-2.4.1/spark-2.4.1-bin-hadoop2.7.tgz">v2.4.1</a></p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p ~/app/spark
 </span></span><span style="display:flex;"><span>tar zxvf spark-2.4.1-bin-hadoop2.7.tgz -C ~/app/spark
 </span></span><span style="display:flex;"><span>mv ~/app/spark/spark-2.4.1-bin-hadoop2.7 ~/app/spark/2.4.1
@@ -553,7 +575,8 @@ http://192.168.42.109:8081/</p>
     <section class="post-excerpt">
         
             <p><blockquote>
-<p>(../etc/hadoop/yarn-site.xml)</p></blockquote>
+<p>(../etc/hadoop/yarn-site.xml)</p>
+</blockquote>
 <h1 id="1-resourcemanager-ha">1. ResourceManager HA</h1>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.ha.enabled<span style="color:#f92672">&lt;/name&gt;</span>
@@ -589,7 +612,8 @@ http://192.168.42.109:8081/</p>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
 </span></span></code></pre></div><h1 id="2-resource-manager-restart">2. Resource Manager Restart</h1>
 <blockquote>
-<p>see Reference[3]</p></blockquote>
+<p>see Reference[3]</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.recovery.enabled<span style="color:#f92672">&lt;/name&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;value&gt;</span>true<span style="color:#f92672">&lt;/value&gt;</span>
@@ -638,7 +662,8 @@ http://192.168.42.109:8081/</p>
     <section class="post-excerpt">
         
             <p><blockquote>
-<p>(../etc/hadoop/hdfs-site.xml)</p></blockquote>
+<p>(../etc/hadoop/hdfs-site.xml)</p>
+</blockquote>
 <h1 id="1-name-services">1. name services</h1>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.nameservices<span style="color:#f92672">&lt;/name&gt;</span>
@@ -726,7 +751,8 @@ http://192.168.42.109:8081/</p>
     <section class="post-excerpt">
         
             <p><blockquote>
-<p>(../etc/hadoop)</p></blockquote>
+<p>(../etc/hadoop)</p>
+</blockquote>
 <h1 id="1-core-sitexml">1. core-site.xml</h1>
 <h2 id="1-hdfs">1) HDFS</h2>
 <blockquote>

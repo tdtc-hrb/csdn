@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.152.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_zookeeper/" />
 
@@ -178,7 +178,8 @@
 
     <section class="post-content">
       <blockquote>
-<p>JDK install see <a href="https://tdtc-hrb.github.io/csdn/post/ops_openjdk_centos/">设置OpenJDK</a></p></blockquote>
+<p>JDK install see <a href="https://tdtc-hrb.github.io/csdn/post/ops_openjdk_centos/">设置OpenJDK</a></p>
+</blockquote>
 <h1 id="stage-i">Stage I</h1>
 <h2 id="1-sudo---centos">1. 《<a href="https://tdtc-hrb.github.io/csdn/post/ops_sudo/">sudo - CentOS</a>》</h2>
 <h2 id="2-fqdn">2. FQDN</h2>
@@ -209,13 +210,15 @@
 </span></span><span style="display:flex;"><span>server.3<span style="color:#f92672">=</span>tdtc103:2888:3888
 </span></span></code></pre></div><h3 id="upload">upload</h3>
 <blockquote>
-<p>Note: Windows CMD</p></blockquote>
+<p>Note: Windows CMD</p>
+</blockquote>
 <pre tabindex="0"><code class="language-CMD" data-lang="CMD">pscp d:\zk-clu\zoo.cfg tdtc@192.168.0.107:/home/tdtc/app/zookeeper/3.6.3/conf
 pscp d:\zk-clu\zoo.cfg tdtc@192.168.0.108:/home/tdtc/app/zookeeper/3.6.3/conf
 pscp d:\zk-clu\zoo.cfg tdtc@192.168.0.109:/home/tdtc/app/zookeeper/3.6.3/conf
 </code></pre><h2 id="2-zk-id">2. zk id</h2>
 <blockquote>
-<p>create a file named myid under the data directory</p></blockquote>
+<p>create a file named myid under the data directory</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cd /home/tdtc/app/zookeeper/data
 </span></span></code></pre></div><ul>
 <li>tdtc101</li>

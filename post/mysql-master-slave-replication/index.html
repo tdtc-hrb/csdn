@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.152.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/mysql-master-slave-replication/" />
 
@@ -178,7 +178,8 @@
 
     <section class="post-content">
       <blockquote>
-<p>在进行配置前，请确认已经安装 <a href="https://tdtc-hrb.github.io/csdn/post/mysql57-cenos7/">mysql5.7 - CentOS</a></p></blockquote>
+<p>在进行配置前，请确认已经安装 <a href="https://tdtc-hrb.github.io/csdn/post/mysql57-cenos7/">mysql5.7 - CentOS</a></p>
+</blockquote>
 <h1 id="1-网络配置">1. 网络配置</h1>
 <p>Replication Group 1:</p>
 <table>
@@ -238,14 +239,16 @@
 <h2 id="1-master-server">1) Master Server</h2>
 <p><a href="https://dev.mysql.com/doc/refman/5.7/en/replication-howto-masterbaseconfig.html">Setting the Replication Master Configuration</a></p>
 <blockquote>
-<p>/etc/my.cnf</p></blockquote>
+<p>/etc/my.cnf</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>mysqld<span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>log-bin<span style="color:#f92672">=</span>mysql160-bin
 </span></span><span style="display:flex;"><span>server-id<span style="color:#f92672">=</span><span style="color:#ae81ff">160</span>
 </span></span></code></pre></div><h2 id="2-slave-server">2) Slave Server</h2>
 <p><a href="https://dev.mysql.com/doc/refman/5.7/en/replication-setup-slaves.html">Setting the Replication Slave Configuration</a></p>
 <blockquote>
-<p>/etc/my.cnf</p></blockquote>
+<p>/etc/my.cnf</p>
+</blockquote>
 <ul>
 <li>Slave 1</li>
 </ul>
@@ -259,12 +262,14 @@
 </span></span></code></pre></div><h1 id="3-replication-user">3. replication user</h1>
 <blockquote>
 <p>Master Server
-<a href="https://dev.mysql.com/doc/refman/5.7/en/replication-howto-repuser.html">Creating a User for Replication</a></p></blockquote>
+<a href="https://dev.mysql.com/doc/refman/5.7/en/replication-howto-repuser.html">Creating a User for Replication</a></p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;repl&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;192.168.0.%&#39;</span> IDENTIFIED <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;qaz1!Xsw2@&#39;</span>;
 </span></span><span style="display:flex;"><span>mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">GRANT</span> REPLICATION SLAVE <span style="color:#66d9ef">ON</span> <span style="color:#f92672">*</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;repl&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;192.168.0.%&#39;</span>;
 </span></span></code></pre></div><h1 id="4-通信">4. 通信</h1>
 <blockquote>
-<p>Slave server</p></blockquote>
+<p>Slave server</p>
+</blockquote>
 <h2 id="1-replication-threat-参数">1) replication threat 参数</h2>
 <p><a href="https://dev.mysql.com/doc/refman/5.7/en/replication-setup-slaves.html">Setting the Master Configuration on the Slave</a></p>
 <h3 id="master-ip">Master IP</h3>
@@ -275,7 +280,8 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>qaz1!Xsw2@
 </span></span></code></pre></div><h3 id="log-info">log info</h3>
 <blockquote>
-<p>Master Server</p></blockquote>
+<p>Master Server</p>
+</blockquote>
 <p><a href="https://dev.mysql.com/doc/refman/5.7/en/replication-howto-masterstatus.html">Obtaining the Replication Master Binary Log Coordinates</a></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>mysql <span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">SHOW</span> MASTER STATUS;
 </span></span></code></pre></div><p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20190227204027156.png" alt="sql status"></p>

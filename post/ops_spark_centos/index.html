@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.152.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_spark_centos/" />
 
@@ -178,13 +178,15 @@
 
     <section class="post-content">
       <blockquote>
-<p>Spark：v2.4</p></blockquote>
+<p>Spark：v2.4</p>
+</blockquote>
 <h1 id="一基础软件">一、基础软件</h1>
 <h2 id="1-r-lang">1. R-lang</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum -y install epel-release
 </span></span><span style="display:flex;"><span>sudo yum install R
 </span></span></code></pre></div><blockquote>
-<p>注意：如果Java没有安装，会附带着安装OpenJDK。</p></blockquote>
+<p>注意：如果Java没有安装，会附带着安装OpenJDK。</p>
+</blockquote>
 <h2 id="2-scala">2. Scala</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://downloads.lightbend.com/scala/2.12.8/scala-2.12.8.tgz
 </span></span><span style="display:flex;"><span>tar xvf scala-2.12.8.tgz
@@ -196,7 +198,8 @@
 </span></span></code></pre></div><h1 id="二spark">二、Spark</h1>
 <h2 id="1-down--unzip">1. down &amp; unzip</h2>
 <blockquote>
-<p><a href="https://archive.apache.org/dist/spark/spark-2.4.1/spark-2.4.1-bin-hadoop2.7.tgz">v2.4.1</a></p></blockquote>
+<p><a href="https://archive.apache.org/dist/spark/spark-2.4.1/spark-2.4.1-bin-hadoop2.7.tgz">v2.4.1</a></p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p ~/app/spark
 </span></span><span style="display:flex;"><span>tar zxvf spark-2.4.1-bin-hadoop2.7.tgz -C ~/app/spark
 </span></span><span style="display:flex;"><span>mv ~/app/spark/spark-2.4.1-bin-hadoop2.7 ~/app/spark/2.4.1

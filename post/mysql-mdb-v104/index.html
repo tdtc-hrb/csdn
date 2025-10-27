@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.152.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/mysql-mdb-v104/" />
 
@@ -207,7 +207,8 @@ CentOS v7.9(2009)</li>
 </ul>
 <h1 id="1-准备安装">1. 准备安装</h1>
 <blockquote>
-<p>卸载旧版本Maria</p></blockquote>
+<p>卸载旧版本Maria</p>
+</blockquote>
 <h2 id="1-查询">1) 查询</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>tdtc@localhost ~<span style="color:#f92672">]</span>$ sudo rpm -qa | grep mariadb
 </span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> password <span style="color:#66d9ef">for</span> tdtc:
@@ -238,7 +239,8 @@ CentOS v7.9(2009)</li>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl start mysql.service
 </span></span></code></pre></div><h2 id="step-3-secure-mariadb-install">Step 3: Secure MariaDB Install</h2>
 <blockquote>
-<p>Default: Enter</p></blockquote>
+<p>Default: Enter</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>tdtc@localhost ~<span style="color:#f92672">]</span>$ sudo /usr/bin/mysql_secure_installation
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB

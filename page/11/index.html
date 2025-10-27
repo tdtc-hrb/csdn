@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.152.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -320,7 +320,8 @@
     <section class="post-excerpt">
         
             <p><blockquote>
-<p>OS: CentOS 7</p></blockquote>
+<p>OS: CentOS 7</p>
+</blockquote>
 <table>
   <thead>
       <tr>
@@ -342,7 +343,9 @@
 <blockquote>
 <p>Note:</p>
 <blockquote>
-<p>On every host, run following commands, Use xiaobin112(user) to do all following.</p></blockquote></blockquote>
+<p>On every host, run following commands, Use xiaobin112(user) to do all following.</p>
+</blockquote>
+</blockquote>
 <h1 id="prepare">Prepare</h1>
 <p>Establish Directory &ldquo;.ssh&rdquo;</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$mkdir ~/.ssh
@@ -350,7 +353,8 @@
 </span></span></code></pre></div><h1 id="stage-i">Stage I</h1>
 <h2 id="1-config">1. config</h2>
 <blockquote>
-<p>另外一种方式为：把所有机器的IP和hostname放在/etc/hosts里，在此不再赘述, 请参见《<a href="https://xiaobin80.gitee.io/csdn/post/ops_zookeeper/">ZooKeeper multi-server install</a> - 3.FQDN》。</p></blockquote>
+<p>另外一种方式为：把所有机器的IP和hostname放在/etc/hosts里，在此不再赘述, 请参见《<a href="https://xiaobin80.gitee.io/csdn/post/ops_zookeeper/">ZooKeeper multi-server install</a> - 3.FQDN》。</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$vi ~/.ssh/config
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Host host1
 </span></span><span style="display:flex;"><span>        HostName 192.168.0.110
@@ -393,7 +397,8 @@
         
             <p><blockquote>
 <p>Ubuntu版本：14.04
-参考Ubuntu14.04的<a href="https://help.ubuntu.com/14.04/serverguide/ftp-server.html">FTP Server文档</a></p></blockquote>
+参考Ubuntu14.04的<a href="https://help.ubuntu.com/14.04/serverguide/ftp-server.html">FTP Server文档</a></p>
+</blockquote>
 <h1 id="安装vsftpd">安装vsftpd</h1>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>root@tdtc010-Vostro-270:~# apt-get install vsftpd
 </span></span></code></pre></div><h1 id="配置">配置</h1>
@@ -496,7 +501,8 @@
             <p><blockquote>
 <p>Server：ali云服务器ECS <br>
 OS: CentOS 6/7 (x64)
-httpd路径: /opt/httpd</p></blockquote>
+httpd路径: /opt/httpd</p>
+</blockquote>
 <h1 id="两种不同的init系统部署方式">两种不同的init系统部署方式</h1>
 <h1 id="一sysvinit">一、SysVinit</h1>
 <p>SysVinit是CentOS6的默认1号进程。</p>
@@ -634,7 +640,8 @@ httpd路径: /opt/httpd</p></blockquote>
         
             <p><blockquote>
 <p>Server：ali云服务器ECS <br>
-OS: CentOS 7.2 x64</p></blockquote>
+OS: CentOS 7.2 x64</p>
+</blockquote>
 <h1 id="1-管理防火墙">1. 管理防火墙</h1>
 <p>增加ftp端口 <br>
 <img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20171011171838468.png" alt="2017-10-11 17:18"></p>
@@ -699,7 +706,8 @@ OS: CentOS 7.2 x64</p></blockquote>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
 </span></span></code></pre></div><h1 id="app-config">app config</h1>
 <blockquote>
-<p>applicationContext.xml</p></blockquote>
+<p>applicationContext.xml</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;import</span> <span style="color:#a6e22e">resource=</span><span style="color:#e6db74">&#34;simplesm-context.xml&#34;</span> <span style="color:#f92672">/&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;aop:aspectj-autoproxy</span> <span style="color:#f92672">/&gt;</span>
 </span></span><span style="display:flex;"><span>
@@ -720,7 +728,8 @@ OS: CentOS 7.2 x64</p></blockquote>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/bean&gt;</span>
 </span></span></code></pre></div><h1 id="code">code</h1>
 <blockquote>
-<p>service layer</p></blockquote>
+<p>service layer</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Override</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">@ReadThroughSingleCache</span>(namespace <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;carnum&#34;</span>, expiration <span style="color:#f92672">=</span> 300)
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>TrainOrder<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getCarList</span>(String year, String month, <span style="color:#a6e22e">@ParameterValueKeyProvider</span> <span style="color:#66d9ef">int</span> trainNumber) {
@@ -759,7 +768,8 @@ OS: CentOS 7.2 x64</p></blockquote>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h1 id="code">code</h1>
 <blockquote>
-<p>UserController.java</p></blockquote>
+<p>UserController.java</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.demo.controller;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List;
@@ -830,7 +840,8 @@ OS: CentOS 7.2 x64</p></blockquote>
         
             <p><h1 id="1-contextxml">1. context.xml</h1>
 <blockquote>
-<p>tomcat</p></blockquote>
+<p>tomcat</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">  Licensed to the Apache Software Foundation (ASF) under one or more

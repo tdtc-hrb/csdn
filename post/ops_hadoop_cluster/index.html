@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.152.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_hadoop_cluster/" />
 
@@ -286,21 +286,25 @@
 <h2 id="1-unzip">1. Unzip</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/home/$USER/app/hadoop/$version
 </span></span></code></pre></div><blockquote>
-<p>路径参考<a href="https://www.tecmint.com/oracle-database-11g-release-2-installation-in-linux/">Oracle11g</a></p></blockquote>
+<p>路径参考<a href="https://www.tecmint.com/oracle-database-11g-release-2-installation-in-linux/">Oracle11g</a></p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p ~/app/hadoop
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar zxvf hadoop-2.7.7.tar.gz -C ~/app/hadoop/
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mv ~/app/hadoop/hadoop-2.7.7 ~/app/hadoop/2.7.7
 </span></span></code></pre></div><h2 id="2-set-up">2. set up</h2>
 <blockquote>
-<p>详见Reference[1][2][3]。</p></blockquote>
+<p>详见Reference[1][2][3]。</p>
+</blockquote>
 <h3 id="1-再显式地重新声明一遍java_home">1) 再显式地重新声明一遍JAVA_HOME</h3>
 <blockquote>
-<p><a href="https://www.cnblogs.com/codeOfLife/p/5940642.html">hadoop-env.sh</a></p></blockquote>
+<p><a href="https://www.cnblogs.com/codeOfLife/p/5940642.html">hadoop-env.sh</a></p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export JAVA_HOME<span style="color:#f92672">=</span>/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.345.b01-1.el7_9.x86_64
 </span></span></code></pre></div><h3 id="2-set-slaves">2) set slaves</h3>
 <p>这个设置文件决定有几个DN(data node)!!!</p>
 <blockquote>
-<p>slaves</p></blockquote>
+<p>slaves</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tdtc202
 </span></span><span style="display:flex;"><span>tdtc203
 </span></span><span style="display:flex;"><span>tdtc204
@@ -326,11 +330,13 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#jps</span>
 </span></span></code></pre></div><h2 id="1-run-journalnode">1. run journalnode</h2>
 <blockquote>
-<p>（server1,2,3）</p></blockquote>
+<p>（server1,2,3）</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hadoop-daemon.sh start journalnode
 </span></span></code></pre></div><h2 id="2-format-nn">2. format nn</h2>
 <blockquote>
-<p>(server1 or 2)</p></blockquote>
+<p>(server1 or 2)</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hadoop namenode -format
 </span></span></code></pre></div><h3 id="1-copy-file">1) copy file</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd ~/app/hadoop
@@ -340,10 +346,12 @@
 </span></span></code></pre></div><h1 id="stage-iii-run">Stage III: Run</h1>
 <h2 id="1-hdfs">1. HDFS</h2>
 <blockquote>
-<p>server1 or 2</p></blockquote>
+<p>server1 or 2</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>start-dfs.sh
 </span></span></code></pre></div><blockquote>
-<p>stop cmd:</p></blockquote>
+<p>stop cmd:</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>stop-dfs.sh
 </span></span></code></pre></div><h3 id="1-check">1) check</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hdfs haadmin -getServiceState nn1
@@ -351,7 +359,8 @@
 </span></span><span style="display:flex;"><span>hdfs haadmin -getServiceState nn2
 </span></span></code></pre></div><h2 id="2-yarn">2. YARN</h2>
 <blockquote>
-<p>server3 or 4</p></blockquote>
+<p>server3 or 4</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>start-yarn.sh
 </span></span></code></pre></div><h3 id="1-backup-site">1) backup site</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yarn-daemon.sh start resourcemanager
@@ -361,7 +370,8 @@
 </span></span><span style="display:flex;"><span>yarn rmadmin -getServiceState rm2
 </span></span></code></pre></div><h2 id="3-mapreduce">3. Mapreduce</h2>
 <blockquote>
-<p>server1</p></blockquote>
+<p>server1</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mr-jobhistory-daemon.sh start historyserver
 </span></span></code></pre></div><p>web:
 http://192.168.42.107:50070/dfshealth.html <br>

@@ -61,7 +61,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.152.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/memcached-spy/" />
 
@@ -188,7 +188,8 @@
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
 </span></span></code></pre></div><h1 id="app-config">app config</h1>
 <blockquote>
-<p>applicationContext.xml</p></blockquote>
+<p>applicationContext.xml</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;import</span> <span style="color:#a6e22e">resource=</span><span style="color:#e6db74">&#34;simplesm-context.xml&#34;</span> <span style="color:#f92672">/&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;aop:aspectj-autoproxy</span> <span style="color:#f92672">/&gt;</span>
 </span></span><span style="display:flex;"><span>
@@ -209,7 +210,8 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/bean&gt;</span>
 </span></span></code></pre></div><h1 id="code">code</h1>
 <blockquote>
-<p>service layer</p></blockquote>
+<p>service layer</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Override</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">@ReadThroughSingleCache</span>(namespace <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;carnum&#34;</span>, expiration <span style="color:#f92672">=</span> 300)
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>TrainOrder<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getCarList</span>(String year, String month, <span style="color:#a6e22e">@ParameterValueKeyProvider</span> <span style="color:#66d9ef">int</span> trainNumber) {

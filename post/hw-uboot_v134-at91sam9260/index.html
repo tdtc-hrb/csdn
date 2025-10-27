@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.152.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/hw-uboot_v134-at91sam9260/" />
 
@@ -256,7 +256,8 @@ README</p>
 <p>dm9161a.c</p>
 <h2 id="开发板配置">开发板配置</h2>
 <blockquote>
-<p>at91sam9260ek.h(u-boot-x.x.x/../include/configs/)</p></blockquote>
+<p>at91sam9260ek.h(u-boot-x.x.x/../include/configs/)</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;cmd_confdefs.h&gt;</span><span style="color:#75715e">
 </span></span></span></code></pre></div><p>变更为：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt; config_cmd_default.h&gt;</span><span style="color:#75715e">

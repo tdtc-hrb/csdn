@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.152.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_network_proxy/" />
 
@@ -202,7 +202,8 @@ Check &ldquo;Run xxx as Server(listens 0.0.0.0)&rdquo;</p>
 </span></span><span style="display:flex;"><span>export https_proxy<span style="color:#f92672">=</span>http://USERNAME:PASSWORD@192.168.1.108:8580/
 </span></span></code></pre></div><h2 id="freebsd"><a href="https://nanxiao.gitbooks.io/freebsd-101-hacks/content/posts/configure-proxy.html">FreeBSD</a></h2>
 <blockquote>
-<p>v12.4</p></blockquote>
+<p>v12.4</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csh" data-lang="csh"><span style="display:flex;"><span>setenv HTTP_PROXY http://web-proxy.xxxxxx.com:8080
 </span></span><span style="display:flex;"><span>setenv HTTPS_PROXY https://web-proxy.xxxxxx.com:8080
 </span></span></code></pre></div><h1 id="software">software</h1>
@@ -246,7 +247,8 @@ NAT</p>
 $ wine fg798p.exe
 </code></pre><h2 id="git">git</h2>
 <blockquote>
-<p>.gitconfig</p></blockquote>
+<p>.gitconfig</p>
+</blockquote>
 <pre tabindex="0"><code>[http]
 	proxy = http://192.168.43.16:9910
 [https]
@@ -260,7 +262,8 @@ $ wine fg798p.exe
 </span></span><span style="display:flex;"><span>git config --global --unset https.proxy
 </span></span></code></pre></div><h2 id="node-js">node-js</h2>
 <blockquote>
-<p><a href="https://github.com/yarnpkg/yarn/issues/3227#issuecomment-389596918">.npmrc</a></p></blockquote>
+<p><a href="https://github.com/yarnpkg/yarn/issues/3227#issuecomment-389596918">.npmrc</a></p>
+</blockquote>
 <h3 id="npm">npm</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm config delete https-proxy
 </span></span><span style="display:flex;"><span>npm config set proxy http://host:port
@@ -299,7 +302,8 @@ $ wine fg798p.exe
 </span></span><span style="display:flex;"><span>npm config set disturl https://npm.taobao.org/dist
 </span></span></code></pre></div><h2 id="maven"><a href="https://maven.apache.org/guides/mini/guide-proxies.html">maven</a></h2>
 <blockquote>
-<p>conf/settings.xml</p></blockquote>
+<p>conf/settings.xml</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>  <span style="color:#f92672">&lt;proxies&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;proxy&gt;</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;id&gt;</span>optional<span style="color:#f92672">&lt;/id&gt;</span>

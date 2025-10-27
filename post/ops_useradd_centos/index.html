@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.152.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_useradd_centos/" />
 
@@ -178,7 +178,8 @@
 
     <section class="post-content">
       <blockquote>
-<p>ali云服务器</p></blockquote>
+<p>ali云服务器</p>
+</blockquote>
 <h1 id="1-user-add-and-set-password">1. User Add and Set password</h1>
 <h2 id="1-add-user">1) add user</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>useradd	site_user
@@ -188,23 +189,29 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>usermod -d /home/fdn site_user
 </span></span></code></pre></div><h1 id="2-assigning-permissions">2. assigning permissions</h1>
 <blockquote>
-<p>如果多个目录需要设置，则多次重复&quot;(2)设置&quot;即可。</p></blockquote>
+<p>如果多个目录需要设置，则多次重复&quot;(2)设置&quot;即可。</p>
+</blockquote>
 <blockquote>
-<p>文件系统是否支持acl</p></blockquote>
+<p>文件系统是否支持acl</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>df -T | awk <span style="color:#e6db74">&#39;{print $1,$2,$NF}&#39;</span> | grep <span style="color:#e6db74">&#34;^/dev&#34;</span>
 </span></span><span style="display:flex;"><span>grep -i acl /boot/config*
 </span></span></code></pre></div><blockquote>
 <p>分区是否支持acl</p>
 <blockquote>
-<p>注意：在ali服务器上是vda1。</p></blockquote></blockquote>
+<p>注意：在ali服务器上是vda1。</p>
+</blockquote>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tune2fs -l /dev/vda1 | grep acl
 </span></span></code></pre></div><h2 id="1-查看">1) 查看</h2>
 <blockquote>
-<p>目录的acl设置情况。</p></blockquote>
+<p>目录的acl设置情况。</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>getfacl	/home/fdn
 </span></span></code></pre></div><h2 id="2-设置">2) 设置</h2>
 <blockquote>
-<p>设置指定目录的acl。</p></blockquote>
+<p>设置指定目录的acl。</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>setfacl -m user:site_user:rwx /home/fdn
 </span></span></code></pre></div><h1 id="参考文章">参考文章</h1>
 <ul>

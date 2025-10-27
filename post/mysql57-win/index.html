@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.152.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/mysql57-win/" />
 
@@ -220,16 +220,19 @@ ssl_key=server-key.pem
 </code></pre><h1 id="二使用mysqladmin和mysql">二、使用mysqladmin和mysql</h1>
 <h2 id="1修改密码">1．修改密码</h2>
 <blockquote>
-<p>格式：mysqladmin -u用户名 -p旧密码 password 新密码</p></blockquote>
+<p>格式：mysqladmin -u用户名 -p旧密码 password 新密码</p>
+</blockquote>
 <h3 id="1-空密码">1) 空密码</h3>
 <blockquote>
-<p>注：如果root没有密码，-p旧密码, 可以省略</p></blockquote>
+<p>注：如果root没有密码，-p旧密码, 可以省略</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>%MYSQL57_HOME%<span style="color:#ae81ff">\b</span>in<span style="color:#ae81ff">\m</span>ysqladmin -uroot password qazxsw
 </span></span></code></pre></div><h3 id="2-有密码">2) 有密码</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>%MYSQL57_HOME%<span style="color:#ae81ff">\b</span>in<span style="color:#ae81ff">\m</span>ysqladmin -uroot -pqazxsw password mypassword123456
 </span></span></code></pre></div><h2 id="2-连接mysql">2. 连接mysql</h2>
 <blockquote>
-<p>格式： mysql -h主机地址 -u用户名 －p用户密码</p></blockquote>
+<p>格式： mysql -h主机地址 -u用户名 －p用户密码</p>
+</blockquote>
 <h3 id="1-本机">1) 本机</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>%MYSQL57_HOME%<span style="color:#ae81ff">\b</span>in<span style="color:#ae81ff">\m</span>ysql -uroot -p
 </span></span></code></pre></div><h3 id="2-远程主机">2) 远程主机</h3>

@@ -12,13 +12,13 @@
 
 
 
-<meta name="twitter:title" content="使用 WSL 在Windows"/>
-<meta name="twitter:description" content="ubuntu/Debian"/>
+<meta name="twitter:title" content="WSL部署local服务"/>
+<meta name="twitter:description" content="Ubuntu/Debian"/>
 <meta name="twitter:site" content="@"/>
 
 
 
-  	<meta property="og:title" content="使用 WSL 在Windows &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
+  	<meta property="og:title" content="WSL部署local服务 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
   	<meta property="og:site_name" content="迁移自(blog.csdn.net/xiaobin_HLJ80)" />
   	<meta property="og:url" content="https://tdtc-hrb.github.io/csdn/post/dev_wsl_ubuntu/" />
 
@@ -27,17 +27,17 @@
     
 
     
-    <meta property="og:description" content="ubuntu/Debian" />
+    <meta property="og:description" content="Ubuntu/Debian" />
   	<meta property="og:type" content="article" />
     <meta property="article:published_time" content="2024-12-12T18:08:08&#43;08:00" />
 
     
     
 
-    <title>使用 WSL 在Windows &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
+    <title>WSL部署local服务 &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)</title>
 
     
-    <meta name="description" content="ubuntu/Debian" />
+    <meta name="description" content="Ubuntu/Debian" />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.152.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/dev_wsl_ubuntu/" />
 
@@ -90,8 +90,8 @@
             
         ]
     },
-    "headline": "使用 WSL 在Windows",
-    "name": "使用 WSL 在Windows",
+    "headline": "WSL部署local服务",
+    "name": "WSL部署local服务",
     "wordCount":  340 ,
     "timeRequired": "PT2M",
     "inLanguage": {
@@ -103,7 +103,7 @@
     "dateModified": "2024-12-12T18:08Z",
     
     
-    "description": "ubuntu/Debian",
+    "description": "Ubuntu/Debian",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://tdtc-hrb.github.io/csdn/post/dev_wsl_ubuntu/"
@@ -163,8 +163,8 @@
   <article class="post post">
 
     <header class="post-header">
-        <h1 class="post-title">使用 WSL 在Windows</h1>
-        <small>ubuntu/Debian</small>
+        <h1 class="post-title">WSL部署local服务</h1>
+        <small>Ubuntu/Debian</small>
 
         <section class="post-meta">
         
@@ -184,7 +184,8 @@
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps" data-lang="ps"><span style="display:flex;"><span><span style="color:#a6e22e">wsl</span> <span style="color:#a6e22e">-l</span> <span style="color:#a6e22e">-v</span>
 </span></span></code></pre></div><blockquote>
-<p>在powerShell的管理员模式下运行命令!</p></blockquote>
+<p>在powerShell的管理员模式下运行命令!</p>
+</blockquote>
 <h1 id="安装卸载">安装/卸载</h1>
 <p>ON:</p>
 <pre tabindex="0"><code>Control Panel -&gt; Uninstall a program -&gt; Turn Windows features on or off, 
@@ -288,7 +289,8 @@ mounted again.
 </span></span></code></pre></div><p>在windows就可以看到重命名的testFile.txt。</p>
 <h2 id="访问wsl服务">访问WSL服务</h2>
 <blockquote>
-<p>WSL与windows 10共有端口，所以Windows 10已使用的端口，不要再分配给WSL</p></blockquote>
+<p>WSL与windows 10共有端口，所以Windows 10已使用的端口，不要再分配给WSL</p>
+</blockquote>
 <p>首先，在wsl中启动nginx；</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo service nginx start
 </span></span></code></pre></div><p>然后访问(回环地址)：127.0.0.1:90
@@ -314,7 +316,7 @@ mounted again.
     
 <section class="share">
   <h4>Share this post</h4>
-  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=%e4%bd%bf%e7%94%a8%20WSL%20%e5%9c%a8Windows&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fdev_wsl_ubuntu%2f"
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=WSL%e9%83%a8%e7%bd%b2local%e6%9c%8d%e5%8a%a1&nbsp;-&nbsp;%e8%bf%81%e7%a7%bb%e8%87%aa%28blog.csdn.net%2fxiaobin_HLJ80%29&amp;url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fdev_wsl_ubuntu%2f"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="hidden">Twitter</span>
   </a>
@@ -322,7 +324,7 @@ mounted again.
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="hidden">Facebook</span>
   </a>
-  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fdev_wsl_ubuntu%2f&amp;description=%e4%bd%bf%e7%94%a8%20WSL%20%e5%9c%a8Windows"
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ftdtc-hrb.github.io%2fcsdn%2fpost%2fdev_wsl_ubuntu%2f&amp;description=WSL%e9%83%a8%e7%bd%b2local%e6%9c%8d%e5%8a%a1"
       onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
       <span class="hidden">Pinterest</span>
   </a>

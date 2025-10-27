@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.152.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_keepalived/" />
 
@@ -178,7 +178,8 @@
 
     <section class="post-content">
       <blockquote>
-<p>OS: CentOS7 minimal(VMware)</p></blockquote>
+<p>OS: CentOS7 minimal(VMware)</p>
+</blockquote>
 <h1 id="一安装">一、安装</h1>
 <h2 id="0-prepare-tool">0. prepare tool</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum group list
@@ -186,13 +187,15 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum group install <span style="color:#e6db74">&#34;Development Tools&#34;</span>
 </span></span></code></pre></div><h3 id="2-openssl-devel">2) openssl-devel</h3>
 <blockquote>
-<p>update see &ldquo;nginx’s load balancing的安装部分的<a href="https://xiaobin80.gitee.io/csdn/post/ops_nginx/">update OpenSSL</a>&rdquo;</p></blockquote>
+<p>update see &ldquo;nginx’s load balancing的安装部分的<a href="https://xiaobin80.gitee.io/csdn/post/ops_nginx/">update OpenSSL</a>&rdquo;</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum install openssl-devel
 </span></span></code></pre></div><h3 id="3-libnl">3) libnl</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum install libnl libnl-devel libnfnetlink-devel
 </span></span></code></pre></div><h2 id="1-keepalived">1. keepalived</h2>
 <blockquote>
-<p>v1.4.5</p></blockquote>
+<p>v1.4.5</p>
+</blockquote>
 <h3 id="down-and-unzip">down and unzip</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget http://www.keepalived.org/software/keepalived-1.4.5.tar.gz
 </span></span><span style="display:flex;"><span>$ tar zxvf keepalived-1.4.5.tar.gz
@@ -212,7 +215,8 @@
 </span></span></code></pre></div><p>edit service config file</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$vi /lib/systemd/system/keepalived.service
 </span></span></code></pre></div><blockquote>
-<p>vi command mode:</p></blockquote>
+<p>vi command mode:</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>%s/<span style="color:#ae81ff">\/</span>usr<span style="color:#ae81ff">\/</span>local<span style="color:#ae81ff">\/</span>keepalived//g
 </span></span></code></pre></div><ul>
 <li>test</li>
@@ -224,24 +228,29 @@
 </span></span></code></pre></div><p>更改enforcing为disabled</p>
 <blockquote>
 <blockquote>
-<p>enforcing -&gt; disabled</p></blockquote></blockquote>
+<p>enforcing -&gt; disabled</p>
+</blockquote>
+</blockquote>
 <h3 id="2-fw">2) fw</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$systemctl stop firewalld.service
 </span></span><span style="display:flex;"><span>$systemctl disable firewalld.service
 </span></span></code></pre></div><h1 id="二配置">二、配置</h1>
 <blockquote>
-<p>(/etc/keepalived/keepalived.conf)</p></blockquote>
+<p>(/etc/keepalived/keepalived.conf)</p>
+</blockquote>
 <h2 id="master">master</h2>
 <h3 id="1-global_defs">1) global_defs</h3>
 <blockquote>
-<p>router_id</p></blockquote>
+<p>router_id</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>router_id LVS_MASTER
 </span></span></code></pre></div><h3 id="2-vi-1">2) VI-1</h3>
 <h4 id="interface">interface</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>interface ens32
 </span></span></code></pre></div><h4 id="priority">priority</h4>
 <blockquote>
-<p>default</p></blockquote>
+<p>default</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>priority <span style="color:#ae81ff">100</span>
 </span></span></code></pre></div><h3 id="3-v-ip">3) v-ip</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>virtual_ipaddress <span style="color:#f92672">{</span>
@@ -256,7 +265,8 @@
 基于局部性的最少链接（Locality-Based Least Connections）、 <br>
 带复制的基于局部性最少链接（Locality-Based Least Connections with Replication）、 <br>
 目标地址散列（Destination Hashing）、 <br>
-源地址散列（Source Hashing）</p></blockquote>
+源地址散列（Source Hashing）</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lb_algo wrr
 </span></span></code></pre></div><h3 id="5-lb-kind">5) lb kind</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lb_kind DR
@@ -272,10 +282,12 @@
 </span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
 </span></span></code></pre></div><h2 id="slave">Slave</h2>
 <blockquote>
-<p>Different from master::</p></blockquote>
+<p>Different from master::</p>
+</blockquote>
 <h3 id="1-global_defs-1">1) global_defs</h3>
 <blockquote>
-<p>router_id</p></blockquote>
+<p>router_id</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>router_id LVS_SLAVE
 </span></span></code></pre></div><h3 id="2-vi-1-1">2) VI-1</h3>
 <h4 id="state">state</h4>
@@ -284,7 +296,8 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>priority <span style="color:#ae81ff">70</span>
 </span></span></code></pre></div><h1 id="example">example</h1>
 <blockquote>
-<p>keepalived.conf(Master)</p></blockquote>
+<p>keepalived.conf(Master)</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>! Configuration File <span style="color:#66d9ef">for</span> keepalived
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>global_defs <span style="color:#f92672">{</span>

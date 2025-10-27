@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.152.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_hadoop_cluster_yarn/" />
 
@@ -178,7 +178,8 @@
 
     <section class="post-content">
       <blockquote>
-<p>(../etc/hadoop/yarn-site.xml)</p></blockquote>
+<p>(../etc/hadoop/yarn-site.xml)</p>
+</blockquote>
 <h1 id="1-resourcemanager-ha">1. ResourceManager HA</h1>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.ha.enabled<span style="color:#f92672">&lt;/name&gt;</span>
@@ -214,7 +215,8 @@
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
 </span></span></code></pre></div><h1 id="2-resource-manager-restart">2. Resource Manager Restart</h1>
 <blockquote>
-<p>see Reference[3]</p></blockquote>
+<p>see Reference[3]</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.recovery.enabled<span style="color:#f92672">&lt;/name&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;value&gt;</span>true<span style="color:#f92672">&lt;/value&gt;</span>

@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.152.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -162,6 +162,163 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_tomcat/">Tomcat安装</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><table>
+  <thead>
+      <tr>
+          <th>Servlet Spec</th>
+          <th>JSP Spec</th>
+          <th>EL Spec</th>
+          <th>WebSocket Spec</th>
+          <th>Authentication (JASIC) Spec</th>
+          <th>Apache Tomcat Version</th>
+          <th>Latest Released Version</th>
+          <th>Supported Java Versions</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>6.1</td>
+          <td>4.0</td>
+          <td>6.0</td>
+          <td>2.2</td>
+          <td>3.1</td>
+          <td>11.0.x</td>
+          <td>11.0.0</td>
+          <td>17 and later</td>
+      </tr>
+      <tr>
+          <td>3.1</td>
+          <td>2.3</td>
+          <td>3.0</td>
+          <td>1.1</td>
+          <td>1.1</td>
+          <td>8.5.x</td>
+          <td><a href="https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.100/bin/apache-tomcat-8.5.100.zip">8.5.100</a></td>
+          <td>7 and later</td>
+      </tr>
+      <tr>
+          <td>2.5</td>
+          <td>2.1</td>
+          <td>2.1</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>6.0.x</td>
+          <td><a href="https://archive.apache.org/dist/tomcat/tomcat-6/v6.0.53/bin/apache-tomcat-6.0.53.zip">6.0.53</a></td>
+          <td>5 and later</td>
+      </tr>
+      <tr>
+          <td>2.4</td>
+          <td>2.0</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>5.5.x</td>
+          <td><a href="https://archive.apache.org/dist/tomcat/tomcat-5/v5.5.36/bin/apache-tomcat-5.5.36.zip">5.5.36</a></td>
+          <td>1.4 and later</td>
+      </tr>
+  </tbody>
+</table>
+<h1 id="installation">installation</h1>
+<table>
+  <thead>
+      <tr>
+          <th>Platform version</th>
+          <th>Released</th>
+          <th>Specification</th>
+          <th>Java SE Support</th>
+          <th>Important Changes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Jakarta EE 10</td>
+          <td>2022-03-31</td>
+          <td>10</td>
+          <td>Java SE 17/Java SE 11</td>
+          <td>Removal of deprecated items in Servlet, Faces, CDI and EJB (Entity Beans and Embeddable Container). CDI-Build Time.</td>
+      </tr>
+      <tr>
+          <td>Jakarta EE 9.1</td>
+          <td>2021-05-25</td>
+          <td>9.1</td>
+          <td>Java SE 11/Java SE 8</td>
+          <td>JDK 11 support</td>
+      </tr>
+      <tr>
+          <td>Jakarta EE 9</td>
+          <td>2020-12-08</td>
+          <td>9</td>
+          <td>Java SE 8</td>
+          <td>API namespace move from javax to jakarta</td>
+      </tr>
+      <tr>
+          <td>Jakarta EE 8</td>
+          <td>2019-09-10</td>
+          <td>8</td>
+          <td>Java SE 8</td>
+          <td>Full compatiblity with Java EE 8</td>
+      </tr>
+      <tr>
+          <td>Java EE 8</td>
+          <td>2017-08-31</td>
+          <td>JSR 366</td>
+          <td>Java SE 8</td>
+          <td>HTTP/2 and CDI based Security</td>
+      </tr>
+      <tr>
+          <td>Java EE 7</td>
+          <td>2013-05-28</td>
+          <td>JSR 342</td>
+          <td>Java SE 7</td>
+          <td>WebSocket, JSON and HTML5 support</td>
+      </tr>
+      <tr>
+          <td>Java EE 6</td>
+          <td>2009-12-10</td>
+          <td>JSR 316</td>
+          <td>Java SE 6</td>
+          <td>CDI managed Beans and REST</td>
+      </tr>
+      <tr>
+          <td>Java EE 5</td>
+          <td>2006-05-11</td>
+          <td>JSR 244</td>
+          <td>Java SE 5</td>
+          <td>Java annotations</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="安装jdk">安装JDK</h2>
+<ul>
+<li>RHEL Community <br>
+参见 <a href="https://tdtc-hrb.github.io/cnblogs/post/ops_openjdk_rhel/">设置OpenJDK - RHEL</a></li>
+<li>Ubuntu <br>
+参见 <a href="https://tdtc-hrb.github.io/csdn/post/ops_openjdk_ubuntu/">设置OpenJDK - Ubuntu</a></li>
+</ul>
+<h2 id="安装tomcat">安装Tomcat</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo dnf install wget tar
+</span></span></code></pre></div><p>下载(choose one):</p> <a class="read-more" href="/csdn/post/ops_tomcat/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2025-08-12T12:38:08&#43;08:00">
+            12 Aug 2025
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/csdn/post/ops_freebsd/">FreeBSD Help</a></h2>
     </header>
     <section class="post-excerpt">
@@ -192,7 +349,8 @@ from <a href="https://mirrors.ustc.edu.cn/freebsd/releases/VM-IMAGES/14.3-RELEAS
 <li><a href="https://www.freebsd.org/security/unsupported/">old</a></li>
 </ul>
 <blockquote>
-<p>12.4-RELEAS December 31, 2023</p></blockquote>
+<p>12.4-RELEAS December 31, 2023</p>
+</blockquote>
 <h3 id="import-to-vbox">import to vbox</h3>
 <p>New -&gt; VM</p>
 <pre tabindex="0"><code>Name: FreeBSD32
@@ -276,7 +434,8 @@ Check &ldquo;Run xxx as Server(listens 0.0.0.0)&rdquo;</p>
 </span></span><span style="display:flex;"><span>export https_proxy<span style="color:#f92672">=</span>http://USERNAME:PASSWORD@192.168.1.108:8580/
 </span></span></code></pre></div><h2 id="freebsd"><a href="https://nanxiao.gitbooks.io/freebsd-101-hacks/content/posts/configure-proxy.html">FreeBSD</a></h2>
 <blockquote>
-<p>v12.4</p></blockquote>
+<p>v12.4</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csh" data-lang="csh"><span style="display:flex;"><span>setenv HTTP_PROXY http://web-proxy.xxxxxx.com:8080
 </span></span><span style="display:flex;"><span>setenv HTTPS_PROXY https://web-proxy.xxxxxx.com:8080
 </span></span></code></pre></div><h1 id="software">software</h1>
@@ -796,70 +955,6 @@ Beginning with MySQL 8.4.0, the deprecated mysql_native_password authentication 
 
         
         <time class="post-date" datetime="2024-12-12T23:08:39&#43;08:00">
-            12 Dec 2024
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/dev_wsl_ubuntu/">使用 WSL 在Windows</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
-<ul>
-<li>Windows 10 1809+ <br>
-缺省为WSL1</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps" data-lang="ps"><span style="display:flex;"><span><span style="color:#a6e22e">wsl</span> <span style="color:#a6e22e">-l</span> <span style="color:#a6e22e">-v</span>
-</span></span></code></pre></div><blockquote>
-<p>在powerShell的管理员模式下运行命令!</p></blockquote>
-<h1 id="安装卸载">安装/卸载</h1>
-<p>ON:</p>
-<pre tabindex="0"><code>Control Panel -&gt; Uninstall a program -&gt; Turn Windows features on or off, 
-勾选“Windows Subsystem for Linux”
-</code></pre><h2 id="ubuntu">Ubuntu</h2>
-<ul>
-<li>
-<p><a href="https://aka.ms/wslubuntu2004">Ubuntu 2004</a></p>
-<p>从AppxBundle提取appx.</p>
-</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Add-AppxPackage .\Ubuntu_2004.xxx.appx
-</span></span></code></pre></div><h3 id="卸载">卸载</h3>
-<p>如果“普通”方式不工作，请使用“命令行”。</p>
-<ul>
-<li>
-<p>普通
-右击“Ubuntu xxx” 图标，选择“Uninstall”即可。</p>
-</li>
-<li>
-<p><a href="https://docs.microsoft.com/zh-cn/windows/wsl/reference">命令行</a></p>
-</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wslconfig /u
-</span></span></code></pre></div><h2 id="debian">Debian</h2>
-<ul>
-<li><a href="https://learn.microsoft.com/en-us/windows/wsl/install-manual#downloading-distributions">down appx - debian v11</a></li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Add-AppxPackage .\DistroLauncher-Appx_1.12.2.0_x64.appx
-</span></span></code></pre></div><h3 id="wsl2">WSL2</h3>
-<ul>
-<li>Enable Virtual Machine feature</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>dism.exe /online /enable-feature /featurename<span style="color:#960050;background-color:#1e0010">:</span>VirtualMachinePlatform /all /norestart
-</span></span></code></pre></div><p>Reboot your Windows 10 host</p> <a class="read-more" href="/csdn/post/dev_wsl_ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2024-12-12T18:08:08&#43;08:00">
             12 Dec 2024
         </time>
     </footer>

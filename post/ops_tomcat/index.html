@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="Linux下tomcat的配置" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2024-10-12T12:38:08&#43;08:00" />
+    <meta property="article:published_time" content="2025-08-12T12:38:08&#43;08:00" />
 
     
     
@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.152.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_tomcat/" />
 
@@ -99,8 +99,8 @@
       "alternateName": "en"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/ops_tomcat/",
-    "datePublished": "2024-10-12T12:38Z",
-    "dateModified": "2024-10-12T12:38Z",
+    "datePublished": "2025-08-12T12:38Z",
+    "dateModified": "2025-08-12T12:38Z",
     
     
     "description": "Linux下tomcat的配置",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2024-10-12T12:38:08&#43;08:00">
-            Oct 12, 2024
+          <time class="post-date" datetime="2025-08-12T12:38:08&#43;08:00">
+            Aug 12, 2025
           </time>
         
          
@@ -316,16 +316,16 @@
 <ul>
 <li>v9.0</li>
 </ul>
-<pre tabindex="0"><code>$wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-9/v9.0.96/bin/apache-tomcat-9.0.96.tar.gz --no-check-certificate
+<pre tabindex="0"><code>$wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-9/v9.0.108/bin/apache-tomcat-9.0.108.tar.gz --no-check-certificate
 </code></pre><ul>
 <li>v11.0</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-11/v11.0.0/bin/apache-tomcat-11.0.0.tar.gz --no-check-certificate
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-11/v11.0.9/bin/apache-tomcat-11.0.9.tar.gz --no-check-certificate
 </span></span></code></pre></div><p>Example of extracting v9.0:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$tar -zxvf apache-tomcat-9.0.96.tar.gz
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$tar -zxvf apache-tomcat-9.0.108.tar.gz
 </span></span></code></pre></div><h3 id="移动文件夹">移动文件夹</h3>
 <p>拷贝并重命名为tomcat</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo cp -R apache-tomcat-9.0.96 /usr/local/tomcat
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo cp -R apache-tomcat-9.0.108 /usr/local/tomcat
 </span></span></code></pre></div><h1 id="执行tomcat">执行Tomcat</h1>
 <p>allow fw:</p>
 <ul>
@@ -404,17 +404,10 @@
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_memcached_ubuntu/">
-          <section class="post">
-              <h2>安装memcached</h2>
-              
-          </section>
-      </a>
   
-  
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/apt-oper-ubuntu/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_freebsd/">
           <section class="post">
-              <h2>apt的安装问题</h2>
+              <h2>FreeBSD Help</h2>
           </section>
       </a>
   

@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.152.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/js-json-table/" />
 
@@ -181,7 +181,8 @@
 <blockquote>
 <p><a href="http://www.bejson.com/go.html?u=http://bejson.com/aboutJSON.html">JSON</a></p>
 <blockquote>
-</blockquote></blockquote>
+</blockquote>
+</blockquote>
 <pre tabindex="0"><code>JSON是一种取代XML的数据结构,和xml相比,它更小巧但描述能力却不差,由于它的小巧所以网络传输数据将减少更多流量从而加快速度,
 
 那么,JSON到底是什么?
@@ -218,10 +219,12 @@ JSON就是一串字符串 只不过元素会使用特定的符号标注。
 </span></span><span style="display:flex;"><span>];
 </span></span></code></pre></div><h1 id="二函数设计">二、函数设计</h1>
 <blockquote>
-<p>所谓的动态就是使用删表和写表的操作。</p></blockquote>
+<p>所谓的动态就是使用删表和写表的操作。</p>
+</blockquote>
 <h2 id="1-删除表格">1. 删除表格</h2>
 <blockquote>
-<p>删除除了表头之外的数据。</p></blockquote>
+<p>删除除了表头之外的数据。</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">CourseInf</span>.<span style="color:#a6e22e">deleteTable</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">table</span>) {
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">mBody</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">table</span>.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#39;tbody&#39;</span>);
 </span></span><span style="display:flex;"><span>
@@ -312,7 +315,8 @@ JSON就是一串字符串 只不过元素会使用特定的符号标注。
 </span></span></code></pre></div><blockquote>
 <p>obj[array[i]] = true;  <br>
 也许这么看就容易懂了  <br>
-obj[key] = true;</p></blockquote>
+obj[key] = true;</p>
+</blockquote>
 <h1 id="附">附</h1>
 <h2 id="dynamictablehtml">dynamicTable.html</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE HTML PUBLIC &#34;-//W3C//DTD HTML 4.01 Transitional//EN&#34; &#34;http://www.w3.org/TR/html4/loose.dtd&#34;&gt;</span>
@@ -376,7 +380,8 @@ obj[key] = true;</p></blockquote>
 </span></span><span style="display:flex;"><span>	&lt;/<span style="color:#f92672">body</span>&gt;
 </span></span></code></pre></div><h2 id="js">js</h2>
 <blockquote>
-<p>tsc dynamicTable.ts</p></blockquote>
+<p>tsc dynamicTable.ts</p>
+</blockquote>
 <ul>
 <li>dynamicTable.ts</li>
 </ul>

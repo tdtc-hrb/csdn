@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.152.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_ssh_without_password/" />
 
@@ -178,7 +178,8 @@
 
     <section class="post-content">
       <blockquote>
-<p>OS: CentOS 7</p></blockquote>
+<p>OS: CentOS 7</p>
+</blockquote>
 <table>
   <thead>
       <tr>
@@ -200,7 +201,9 @@
 <blockquote>
 <p>Note:</p>
 <blockquote>
-<p>On every host, run following commands, Use xiaobin112(user) to do all following.</p></blockquote></blockquote>
+<p>On every host, run following commands, Use xiaobin112(user) to do all following.</p>
+</blockquote>
+</blockquote>
 <h1 id="prepare">Prepare</h1>
 <p>Establish Directory &ldquo;.ssh&rdquo;</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$mkdir ~/.ssh
@@ -208,7 +211,8 @@
 </span></span></code></pre></div><h1 id="stage-i">Stage I</h1>
 <h2 id="1-config">1. config</h2>
 <blockquote>
-<p>另外一种方式为：把所有机器的IP和hostname放在/etc/hosts里，在此不再赘述, 请参见《<a href="https://xiaobin80.gitee.io/csdn/post/ops_zookeeper/">ZooKeeper multi-server install</a> - 3.FQDN》。</p></blockquote>
+<p>另外一种方式为：把所有机器的IP和hostname放在/etc/hosts里，在此不再赘述, 请参见《<a href="https://xiaobin80.gitee.io/csdn/post/ops_zookeeper/">ZooKeeper multi-server install</a> - 3.FQDN》。</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$vi ~/.ssh/config
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Host host1
 </span></span><span style="display:flex;"><span>        HostName 192.168.0.110
@@ -227,7 +231,8 @@
 </span></span><span style="display:flex;"><span>ssh-keygen -t rsa -P <span style="color:#e6db74">&#39;&#39;</span>
 </span></span></code></pre></div><h2 id="2-file-copy">2. file copy</h2>
 <blockquote>
-<p>host1 and host2:</p></blockquote>
+<p>host1 and host2:</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-copy-id -i ~/.ssh/id_rsa.pub xiaobin112@host1
 </span></span><span style="display:flex;"><span>ssh-copy-id -i ~/.ssh/id_rsa.pub xiaobin112@host2
 </span></span></code></pre></div><h1 id="stage-iii">Stage III</h1>

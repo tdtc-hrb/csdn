@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.152.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/c-bsd_socket-server/" />
 
@@ -178,13 +178,16 @@
 
     <section class="post-content">
       <blockquote>
-<p>GNU Compiler Collection(GCC)</p></blockquote>
+<p>GNU Compiler Collection(GCC)</p>
+</blockquote>
 <p>在“<a href="https://tdtc-hrb.github.io/csdn/post/c-bsd_socket/">Socket服务器端程序</a>”基础上增加子进程。</p>
 <h1 id="beejs-guide-network-to-programming"><a href="https://blog.csdn.net/xiaobin_hlj80/category_6092337.html">Beej’s Guide Network to Programming</a></h1>
 <blockquote>
 <p>关于Unix/Linux子进程：</p>
 <blockquote>
-<p>相当于Windows的线程</p></blockquote></blockquote>
+<p>相当于Windows的线程</p>
+</blockquote>
+</blockquote>
 <p>调用fork()即可增加子进程。</p>
 <p>要使用fork必须调用waitpid() ！</p>
 <h1 id="waitpid">waitpid()</h1>
@@ -210,7 +213,8 @@
 </ul>
 <h1 id="sigaction">sigaction()</h1>
 <blockquote>
-<p>sigaction()是waitpid()的开关</p></blockquote>
+<p>sigaction()是waitpid()的开关</p>
+</blockquote>
 <p>只有给waitpid()信号时，才开启它(waitpid)！
 这时，需要sigaction()。</p>
 <p>sigaction函数原型：</p>

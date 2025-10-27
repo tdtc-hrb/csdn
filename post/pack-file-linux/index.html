@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.152.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/pack-file-linux/" />
 
@@ -178,7 +178,8 @@
 
     <section class="post-content">
       <blockquote>
-<p>取消目录所有权限</p></blockquote>
+<p>取消目录所有权限</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod -R <span style="color:#ae81ff">777</span> /tmp/etc
 </span></span></code></pre></div><h1 id="一iso文件">一、ISO文件</h1>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkisofs -r -o etc.iso /tmp/etc
@@ -187,7 +188,8 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>zip -r etc.zip /tmp/etc
 </span></span></code></pre></div><h2 id="2-tar">2. tar</h2>
 <blockquote>
-<p>仅打包，不压缩！</p></blockquote>
+<p>仅打包，不压缩！</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -cvf /tmp/etc.tar /etc
 </span></span></code></pre></div><ul>
 <li>transform</li>

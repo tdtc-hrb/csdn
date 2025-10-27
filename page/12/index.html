@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.152.2">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -182,13 +182,15 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">COMMIT</span>;
 </span></span></code></pre></div><h1 id="2-pojo">2. pojo</h1>
 <blockquote>
-<p>User.java</p></blockquote>
+<p>User.java</p>
+</blockquote>
 <p>其中的缺省值：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#f92672">@</span><span style="color:#66d9ef">Column</span>(name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;state&#34;</span>, <span style="color:#66d9ef">nullable</span><span style="color:#f92672">=</span><span style="color:#66d9ef">true</span>)
 </span></span><span style="display:flex;"><span>private String <span style="color:#66d9ef">state</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Inactive&#34;</span>;
 </span></span></code></pre></div><h1 id="3-依赖库">3. 依赖库</h1>
 <blockquote>
-<p>pom.xml</p></blockquote>
+<p>pom.xml</p>
+</blockquote>
 <ul>
 <li>springframework.version <br>
 v4.3.14.RELEASE</li>
@@ -232,11 +234,13 @@ V3.2.0</li>
         
             <p><h1 id="part-i-struts2">PART I: Struts2</h1>
 <blockquote>
-<p>Refence: <a href="https://struts.apache.org/getting-started/how-to-create-a-struts2-web-application.html">《how to create a struts2 web application》</a></p></blockquote>
+<p>Refence: <a href="https://struts.apache.org/getting-started/how-to-create-a-struts2-web-application.html">《how to create a struts2 web application》</a></p>
+</blockquote>
 <h2 id="1-pomxml">1. pom.xml</h2>
 <h2 id="1-struts2">1) Struts2</h2>
 <blockquote>
-<p>struts2-spring-plugin</p></blockquote>
+<p>struts2-spring-plugin</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;groupId&gt;</span>org.apache.struts<span style="color:#f92672">&lt;/groupId&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;artifactId&gt;</span>struts2-spring-plugin<span style="color:#f92672">&lt;/artifactId&gt;</span>
