@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.152.2">
+    <meta name="generator" content="Hugo 0.154.3">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/c-string-inverted/" />
 
@@ -191,7 +191,7 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> argv[])
 </span></span><span style="display:flex;"><span>{
@@ -201,18 +201,18 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>dest <span style="color:#f92672">=</span> NULL;
 </span></span><span style="display:flex;"><span>    dest <span style="color:#f92672">=</span> (<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>)<span style="color:#a6e22e">malloc</span>(len <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>);
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// dest = (char *)malloc(len + 1); // standard: 要为&#39;\0&#39;分配一个空间
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>d <span style="color:#f92672">=</span> dest;
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// char *s = &amp;src[len - 1];        // standard: 指向最后一个字符
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">/* One way */</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (len<span style="color:#f92672">--</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>) {
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">*</span>d<span style="color:#f92672">++</span> <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>(src <span style="color:#f92672">+</span> len);           <span style="color:#75715e">// one way
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">//*d++ = *s--;                 // standard:
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span></span><span style="display:flex;"><span>        <span style="color:#75715e">//*d++ = *s--;                 // standard:
+</span></span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">*</span>d <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;                            <span style="color:#75715e">// standard: 尾部要加0
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">/* Two way */</span>
+</span></span></span><span style="display:flex;"><span>    <span style="color:#75715e">/* Two way */</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">/*
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">    int i = 0;
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">    while (len-- != 0) {
@@ -223,7 +223,7 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, dest);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">free</span>(dest);                        <span style="color:#75715e">// standard:  使用完，应当释放空间，以免造成内存汇泄露
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div>

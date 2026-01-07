@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.152.2">
+    <meta name="generator" content="Hugo 0.154.3">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/js-redux-update/" />
 
@@ -261,7 +261,7 @@
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// https://s3.amazonaws.com/500tech-shared/db.json
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">initialState</span> <span style="color:#f92672">=</span> {
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">initialState</span> <span style="color:#f92672">=</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;recipes&#34;</span><span style="color:#f92672">:</span> [
 </span></span><span style="display:flex;"><span>    {
 </span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Omelette&#34;</span>
@@ -307,7 +307,7 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">store</span>.<span style="color:#a6e22e">getState</span>());
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//store.subscribe(()=&gt;(console.log(&#34;store change&#34;)));
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#a6e22e">addRecipe_action</span>(<span style="color:#e6db74">&#39;Xiaobin&#39;</span>));
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">store</span>.<span style="color:#a6e22e">dispatch</span>({<span style="color:#a6e22e">type</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;ADD_INGREDIENT&#39;</span>, <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Eggs&#39;</span>, <span style="color:#a6e22e">quantity</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">measure</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;large&#39;</span>, <span style="color:#a6e22e">recipe</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;xiaobin&#39;</span>});

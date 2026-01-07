@@ -60,7 +60,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.152.2">
+    <meta name="generator" content="Hugo 0.154.3">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/js-thousand-separator/" />
 
@@ -189,9 +189,9 @@
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">regex</span>;
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (parseInt(<span style="color:#a6e22e">expStr</span>) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>)  <span style="color:#75715e">// 数字
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#a6e22e">regex</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RegExp(<span style="color:#a6e22e">expStr</span>, <span style="color:#e6db74">&#34;g&#34;</span>);
+</span></span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">regex</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RegExp(<span style="color:#a6e22e">expStr</span>, <span style="color:#e6db74">&#34;g&#34;</span>);
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">else</span>			<span style="color:#75715e">// 非数字
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#a6e22e">regex</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RegExp(<span style="color:#e6db74">&#34;\\&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">expStr</span>, <span style="color:#e6db74">&#34;g&#34;</span>);
+</span></span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">regex</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RegExp(<span style="color:#e6db74">&#34;\\&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">expStr</span>, <span style="color:#e6db74">&#34;g&#34;</span>);
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">string</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#a6e22e">regex</span>, <span style="color:#a6e22e">repStr</span>);
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">result</span>;
 </span></span><span style="display:flex;"><span>}

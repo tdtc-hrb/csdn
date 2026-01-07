@@ -3,12 +3,15 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://tdtc-hrb.github.io/csdn/post/</loc>
-    <lastmod>2025-11-03T12:38:08+08:00</lastmod>
+    <lastmod>2026-01-06T23:08:39+08:00</lastmod>
   </url><url>
-    <loc>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</loc>
-    <lastmod>2025-11-03T12:38:08+08:00</lastmod>
+    <loc>https://tdtc-hrb.github.io/csdn/post/nodejs-debian/</loc>
+    <lastmod>2026-01-06T23:08:39+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/</loc>
+    <lastmod>2026-01-06T23:08:39+08:00</lastmod>
+  </url><url>
+    <loc>https://tdtc-hrb.github.io/csdn/post/ops_tomcat/</loc>
     <lastmod>2025-11-03T12:38:08+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/ops_freebsd/</loc>
@@ -236,6 +239,9 @@
     <loc>https://tdtc-hrb.github.io/csdn/post/js-calday/</loc>
     <lastmod>2021-10-01T02:16:39+08:00</lastmod>
   </url><url>
+    <loc>https://tdtc-hrb.github.io/csdn/post/mysql-mdb-v103/</loc>
+    <lastmod>2021-05-02T01:08:39+08:00</lastmod>
+  </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/c-string-h2i/</loc>
     <lastmod>2021-05-01T05:08:08+08:00</lastmod>
   </url><url>
@@ -403,6 +409,9 @@
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/post/js-lambda/</loc>
     <lastmod>2020-04-10T02:14:39+08:00</lastmod>
+  </url><url>
+    <loc>https://tdtc-hrb.github.io/csdn/post/small-site/</loc>
+    <lastmod>2020-04-10T02:11:39+08:00</lastmod>
   </url><url>
     <loc>https://tdtc-hrb.github.io/csdn/categories/</loc>
   </url>

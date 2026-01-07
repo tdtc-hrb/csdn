@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.152.2">
+    <meta name="generator" content="Hugo 0.154.3">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/js-json-table/" />
 
@@ -486,7 +486,7 @@ obj[key] = true;</p>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;className&#34;</span>) <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">any</span>;
 </span></span><span style="display:flex;"><span>    
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e">// json 中键值为&#34;cName&#34;的value值放到数组中
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
 </span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">array</span>[<span style="color:#a6e22e">i</span>]) {
 </span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">j</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;cName&#34;</span>)
 </span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">array</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">j</span>]);			
@@ -520,10 +520,10 @@ obj[key] = true;</p>
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>    
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 删除重复项
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">vals</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">_uniq</span>(<span style="color:#a6e22e">data</span>);
+</span></span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">vals</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">_uniq</span>(<span style="color:#a6e22e">data</span>);
 </span></span><span style="display:flex;"><span>    
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Traverse Array
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">vals</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">vals</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
 </span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">options</span>.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Option</span>(<span style="color:#a6e22e">vals</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">vals</span>[<span style="color:#a6e22e">i</span>]));
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>    
@@ -634,7 +634,7 @@ obj[key] = true;</p>
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;className&#34;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#75715e">// json 中键值为&#34;cName&#34;的value值放到数组中
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
 </span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">array</span>[<span style="color:#a6e22e">i</span>]) {
 </span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">j</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;cName&#34;</span>)
 </span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">array</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">j</span>]);			
@@ -668,10 +668,10 @@ obj[key] = true;</p>
 </span></span><span style="display:flex;"><span>	};
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 删除重复项
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">vals</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">_uniq</span>(<span style="color:#a6e22e">data</span>);
+</span></span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">vals</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">_uniq</span>(<span style="color:#a6e22e">data</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Traverse Array
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">vals</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">vals</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
 </span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">options</span>.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Option</span>(<span style="color:#a6e22e">vals</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">vals</span>[<span style="color:#a6e22e">i</span>]));
 </span></span><span style="display:flex;"><span>	};
 </span></span><span style="display:flex;"><span>

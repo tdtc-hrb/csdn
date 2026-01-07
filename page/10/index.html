@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.152.2">
+    <meta name="generator" content="Hugo 0.154.3">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -160,6 +160,125 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mdk-ak100-driver/">AK100驱动过时问题</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><ul>
+<li>IDE：MDKV4.0 - V4.74</li>
+<li>AK100驱动：<a href="http://www.zlgmcu.com/download/downs.asp?ID=6405">V6.0</a></li>
+</ul>
+<p>现象：&quot;..\TKScope\UL2ARM_TKSCP_DRV_ARM_for_AGDI.dll - Driver is outdated !&quot;
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20140519181217156.png" alt="mdk info"></p>
+<p>解决办法：</p>
+<ol>
+<li>
+<p>删除工程目录中的“TKScope.cfg”</p>
+</li>
+<li>
+<p>重新设置调试器 <br>
+&ldquo;Target Options&rdquo; -&gt; &ldquo;Debug&rdquo;
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20140519181639937.png" alt="mdk info">
+选择TKScope
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20140519181750765.png" alt="mdk info">
+硬件选择（调试器与MCU）
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20140519181831203.png" alt="mdk info">
+选择调试器
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20140519181900625.png" alt="mdk info">
+选择MCU对应的调试器</p>
+</li>
+</ol>
+<p>其他设置（主要设置、附加设置、TAP设置、程序烧写、初始化宏、硬件自检）请参考“<a href="http://www.zlg.cn/sitecn/down.aspx?id=64">用户手册</a>”。</p> <a class="read-more" href="/csdn/post/mdk-ak100-driver/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-05-04T10:08:08&#43;08:00">
+            4 May 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/embeded_ip_nfs/">设置固定IP</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><blockquote>
+<p>开发板访问NFS 服务器IP地址是固定的。</p>
+</blockquote>
+<h1 id="一u16及以下">一、U16及以下</h1>
+<blockquote>
+<p>（Ubuntu16.04-） <br>
+使用root权限更改interfaces文件。</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#gedit /etc/network/interfaces</span>
+</span></span></code></pre></div><p>完整例子：</p>
+<blockquote>
+<p>/etc/network/interfaces</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>auto lo
+</span></span><span style="display:flex;"><span>iface lo inet loopback
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>auto eth0
+</span></span><span style="display:flex;"><span>iface eth0 inet static
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>address 192.168.0.111
+</span></span><span style="display:flex;"><span>netmask 255.255.255.0
+</span></span><span style="display:flex;"><span>gateway 192.168.0.1
+</span></span></code></pre></div><h1 id="二u18及以上">二、U18及以上</h1>
+<blockquote>
+<p>（Ubuntu18.04+）</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#vi /etc/netplan/50-cloud-init.yaml</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>network:
+</span></span><span style="display:flex;"><span>    ethernets:
+</span></span><span style="display:flex;"><span>        ens32:
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">#dhcp4: true</span>
+</span></span><span style="display:flex;"><span>            addresses:
+</span></span><span style="display:flex;"><span>            - 192.168.0.124/24
+</span></span><span style="display:flex;"><span>            gateway4: 192.168.0.1
+</span></span><span style="display:flex;"><span>            nameservers:
+</span></span><span style="display:flex;"><span>                addresses: <span style="color:#f92672">[</span>192.168.0.1, 219.146.3.226, 219.146.3.230, 219.146.3.238<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>            optional: true
+</span></span><span style="display:flex;"><span>    version: <span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><blockquote>
+<p>ens32：你的网卡，根据实际情况设置
+dhcp4，gateway4：IPv4协议下的。</p>
+</blockquote>
+<ul>
+<li>apply</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#netplan apply</span>
+</span></span></code></pre></div><h1 id="reference">Reference</h1>
+<ul>
+<li><a href="http://manpages.ubuntu.com/manpages/saucy/en/man5/interfaces.5.html">network interface configuration</a></li>
+<li><a href="https://help.ubuntu.com/lts/serverguide/network-configuration.html">网络配置 - ubuntu</a></li>
+<li><a href="https://blog.csdn.net/zhengchaooo/article/details/80146185">Ubuntu 18.04修改IP地址 - zhengchaooo</a></li>
+</ul> <a class="read-more" href="/csdn/post/embeded_ip_nfs/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-16T00:08:08&#43;08:00">
+            16 Apr 2020
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -649,126 +768,6 @@ http://192.168.42.109:8081/</p>
 
         
         <time class="post-date" datetime="2020-04-14T10:08:08&#43;08:00">
-            14 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_hadoop_cluster_hdfs/">Hadoop配置 - hdfs</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><blockquote>
-<p>(../etc/hadoop/hdfs-site.xml)</p>
-</blockquote>
-<h1 id="1-name-services">1. name services</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.nameservices<span style="color:#f92672">&lt;/name&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>mycluster<span style="color:#f92672">&lt;/value&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
-</span></span></code></pre></div><h2 id="1-name-node">1) name node</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.ha.namenodes.mycluster<span style="color:#f92672">&lt;/name&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>nn1,nn2<span style="color:#f92672">&lt;/value&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
-</span></span></code></pre></div><h2 id="2-rpcname-node">2) RPC(name node)</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.namenode.rpc-address.mycluster.nn1<span style="color:#f92672">&lt;/name&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>tdtc201:8020<span style="color:#f92672">&lt;/value&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.namenode.rpc-address.mycluster.nn2<span style="color:#f92672">&lt;/name&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>tdtc202:8020<span style="color:#f92672">&lt;/value&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
-</span></span></code></pre></div><h2 id="3-httpname-node">3) Http(name node)</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.namenode.http-address.mycluster.nn1<span style="color:#f92672">&lt;/name&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>tdtc201:50070<span style="color:#f92672">&lt;/value&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.namenode.http-address.mycluster.nn2<span style="color:#f92672">&lt;/name&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>tdtc202:50070<span style="color:#f92672">&lt;/value&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
-</span></span></code></pre></div><h1 id="2-journalnode">2. JournalNode</h1>
-<h2 id="1-quorum-journal-manager">1) quorum journal manager</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- Journal Node(QJM) --&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.namenode.shared.edits.dir<span style="color:#f92672">&lt;/name&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>qjournal://tdtc201:8485;tdtc202:8485;tdtc203:8485/mycluster<span style="color:#f92672">&lt;/value&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
-</span></span></code></pre></div><h3 id="local">local</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.journalnode.edits.dir<span style="color:#f92672">&lt;/name&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>/home/tdtc/app/hadoop/data/journaldata<span style="color:#f92672">&lt;/value&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
-</span></span></code></pre></div><h1 id="3-failover">3. failover</h1>
-<h2 id="1-support-class">1) support class</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- the Java class that HDFS clients use to contact the Active NameNode --&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.client.failover.proxy.provider.mycluster<span style="color:#f92672">&lt;/name&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider<span style="color:#f92672">&lt;/value&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
-</span></span></code></pre></div><h2 id="auto-switch">auto switch</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.ha.automatic-failover.enabled<span style="color:#f92672">&lt;/name&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>true<span style="color:#f92672">&lt;/value&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
-</span></span></code></pre></div><h1 id="4-sshfence">4. sshfence</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- sshfence - SSH to the Active NameNode and kill the process --&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.ha.fencing.methods<span style="color:#f92672">&lt;/name&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>sshfence<span style="color:#f92672">&lt;/value&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.ha.fencing.ssh.private-key-files<span style="color:#f92672">&lt;/name&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>/home/tdtc/.ssh/id_rsa<span style="color:#f92672">&lt;/value&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
-</span></span></code></pre></div><h2 id="1-timeout">1) timeout</h2>
-<blockquote>
-<p>default: 30s</p> <a class="read-more" href="/csdn/post/ops_hadoop_cluster_hdfs/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-14T09:08:08&#43;08:00">
-            14 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_hadoop_cluster_base/">Hadoop配置 - base</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><blockquote>
-<p>(../etc/hadoop)</p>
-</blockquote>
-<h1 id="1-core-sitexml">1. core-site.xml</h1>
-<h2 id="1-hdfs">1) HDFS</h2>
-<blockquote>
-<p>the default path prefix used by the Hadoop FS client when none is given
-Optionally, you may now configure the default path for Hadoop clients to use the new HA-enabled logical URI.
-If you used “mycluster” as the nameservice ID earlier, this will be the value of the authority portion of all of your HDFS paths.
-This may be configured like so, in your core-site.xml file:</p> <a class="read-more" href="/csdn/post/ops_hadoop_cluster_base/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-14T08:08:08&#43;08:00">
             14 Apr 2020
         </time>
     </footer>

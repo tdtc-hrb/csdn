@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.152.2">
+    <meta name="generator" content="Hugo 0.154.3">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/c-string-h2i/" />
 
@@ -276,7 +276,7 @@
 <h2 id="hex2inth">hex2int.h</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#ifndef _HEX2INT_H
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define _HEX2INT_H
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">long</span> <span style="color:#a6e22e">power</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b);
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">toLower</span>(<span style="color:#66d9ef">int</span> c);
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">long</span> <span style="color:#a6e22e">htoi</span>(<span style="color:#66d9ef">char</span> s[]);
@@ -284,9 +284,9 @@
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#endif
 </span></span></span></code></pre></div><h2 id="mainc">main.c</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;hex2int.h&#34;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/* int max is 32767 */</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/* &#34;%d&#34; only print int */</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/* long max is 2147483647 */</span>
@@ -295,7 +295,7 @@
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/* &#34;%lu&#34; can print unsigned long type */</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#define MB 0x0100000UL
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> argv[])
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(argc <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>)
@@ -313,8 +313,8 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/* #include &lt;math.h&gt; */</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">//#include &lt;ctype.h&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//#include &lt;ctype.h&gt;
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">long</span> <span style="color:#a6e22e">power</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> i;
@@ -495,9 +495,9 @@
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/js-calday/">
+      <a class="read-next-story" style="no-cover" href="/csdn/post/mysql-mdb-v103/">
           <section class="post">
-              <h2> 使用Ts/Js计算天数</h2>
+              <h2>安装 MariaDB 10.3数据库</h2>
               
           </section>
       </a>

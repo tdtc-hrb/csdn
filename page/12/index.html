@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.152.2">
+    <meta name="generator" content="Hugo 0.154.3">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -158,6 +158,155 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/java-string-redis-template/">StringRedisTemplate - redis-cli</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="1-autowired">1. autowired</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Autowired</span>
+</span></span><span style="display:flex;"><span>StringRedisTemplate stringRedisTemplate;
+</span></span></code></pre></div><h1 id="2-getset">2. get/set</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">redisCliTest</span>() {
+</span></span><span style="display:flex;"><span>      String cliVal <span style="color:#f92672">=</span> stringRedisTemplate.<span style="color:#a6e22e">opsForValue</span>().<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;mykey2&#34;</span>);
+</span></span><span style="display:flex;"><span>      System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;redis-cli value: &#34;</span> <span style="color:#f92672">+</span> cliVal);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="code">code</h1>
+<blockquote>
+<p>UserController.java</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.demo.controller;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.beans.factory.annotation.Autowired;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.data.redis.core.StringRedisTemplate;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.stereotype.Controller;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.ui.Model;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.web.bind.annotation.RequestMapping;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.web.bind.annotation.RequestMethod;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.example.demo.model.UserDetails;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.example.demo.service.UserDetailsService;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Controller</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@RequestMapping</span>(<span style="color:#e6db74">&#34;/user&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserController</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Autowired</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> UserDetailsService userService;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Autowired</span>
+</span></span><span style="display:flex;"><span>	StringRedisTemplate stringRedisTemplate;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@RequestMapping</span>(value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/listPage&#34;</span>, method <span style="color:#f92672">=</span> RequestMethod.<span style="color:#a6e22e">GET</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">findAll</span>(Model model) {
+</span></span><span style="display:flex;"><span>		List<span style="color:#f92672">&lt;</span>UserDetails<span style="color:#f92672">&gt;</span> users <span style="color:#f92672">=</span> userService.<span style="color:#a6e22e">getUsers</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		model.<span style="color:#a6e22e">addAttribute</span>(<span style="color:#e6db74">&#34;users&#34;</span>, users);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span>(UserDetails user : users) {
+</span></span><span style="display:flex;"><span>			System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(user.<span style="color:#a6e22e">getEmail</span>() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> user.<span style="color:#a6e22e">getName</span>());
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		redisCliTest();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;userList&#34;</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">redisCliTest</span>() {
+</span></span><span style="display:flex;"><span>        String cliVal <span style="color:#f92672">=</span> stringRedisTemplate.<span style="color:#a6e22e">opsForValue</span>().<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;mykey2&#34;</span>);
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;redis-cli value: &#34;</span> <span style="color:#f92672">+</span> cliVal);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="run">run</h2>
+<p>http://localhost:8080/user/listPage <br>
+<img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20180921092240670.png" alt="browser info"></p> <a class="read-more" href="/csdn/post/java-string-redis-template/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-10T13:26:39&#43;08:00">
+            10 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/java-tomcat-pool-hikaricp/">设置HikariCP</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="1-contextxml">1. context.xml</h1>
+<blockquote>
+<p>tomcat</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  Licensed to the Apache Software Foundation (ASF) under one or more
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  contributor license agreements.  See the NOTICE file distributed with
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  this work for additional information regarding copyright ownership.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  The ASF licenses this file to You under the Apache License, Version 2.0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  (the &#34;License&#34;); you may not use this file except in compliance with
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  the License.  You may obtain a copy of the License at
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">      http://www.apache.org/licenses/LICENSE-2.0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  Unless required by applicable law or agreed to in writing, software
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  distributed under the License is distributed on an &#34;AS IS&#34; BASIS,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  See the License for the specific language governing permissions and
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  limitations under the License.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">--&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- The contents of this file will be loaded for each web application --&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;Context&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- Default set of monitored resources. If one of these changes, the    --&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- web application will be reloaded.                                   --&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;WatchedResource&gt;</span>WEB-INF/web.xml<span style="color:#f92672">&lt;/WatchedResource&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;WatchedResource&gt;</span>WEB-INF/tomcat-web.xml<span style="color:#f92672">&lt;/WatchedResource&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;WatchedResource&gt;</span>${catalina.base}/conf/web.xml<span style="color:#f92672">&lt;/WatchedResource&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- Uncomment this to disable session persistence across Tomcat restarts --&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!--
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    &lt;Manager pathname=&#34;&#34; /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    --&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;Resource</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;jdbc/mysqlds&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">auth=</span><span style="color:#e6db74">&#34;Container&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;com.zaxxer.hikari.HikariDataSource&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">username=</span><span style="color:#e6db74">&#34;DBAdmin&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">password=</span><span style="color:#e6db74">&#34;xbfirst&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">maximumPoolSize=</span><span style="color:#e6db74">&#34;100&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">idleTimeout=</span><span style="color:#e6db74">&#34;10000&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">maxLifetime=</span><span style="color:#e6db74">&#34;30000&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">minimumIdle=</span><span style="color:#e6db74">&#34;5&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">connectionTimeout=</span><span style="color:#e6db74">&#34;10000&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">driverClassName=</span><span style="color:#e6db74">&#34;com.mysql.jdbc.Driver&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">dataSourceClassName=</span><span style="color:#e6db74">&#34;jdbc:mysql://127.0.0.1:3306/carnumber&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/Context&gt;</span>
+</span></span></code></pre></div><h1 id="2-webxml">2. web.xml</h1>
+<blockquote>
+<p><a href="https://github.com/xiaobin80/SpringMVC-Spring-Mybatis/commit/7adb63e00e61b6c919d18e2546e1d4c2865feead">github</a></p> <a class="read-more" href="/csdn/post/java-tomcat-pool-hikaricp/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-10T12:26:39&#43;08:00">
+            10 Apr 2020
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -392,7 +541,7 @@ V3.2.0</li>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// https://s3.amazonaws.com/500tech-shared/db.json
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">initialState</span> <span style="color:#f92672">=</span> {
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">initialState</span> <span style="color:#f92672">=</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;recipes&#34;</span><span style="color:#f92672">:</span> [
 </span></span><span style="display:flex;"><span>    {
 </span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Omelette&#34;</span>
@@ -438,7 +587,7 @@ V3.2.0</li>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">store</span>.<span style="color:#a6e22e">getState</span>());
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//store.subscribe(()=&gt;(console.log(&#34;store change&#34;)));
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">store</span>.<span style="color:#a6e22e">dispatch</span>(<span style="color:#a6e22e">addRecipe_action</span>(<span style="color:#e6db74">&#39;Xiaobin&#39;</span>));
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">store</span>.<span style="color:#a6e22e">dispatch</span>({<span style="color:#a6e22e">type</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;ADD_INGREDIENT&#39;</span>, <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Eggs&#39;</span>, <span style="color:#a6e22e">quantity</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">measure</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;large&#39;</span>, <span style="color:#a6e22e">recipe</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;xiaobin&#39;</span>});
@@ -648,6 +797,56 @@ V3.2.0</li>
 
         
         <time class="post-date" datetime="2020-04-10T02:14:39&#43;08:00">
+            10 Apr 2020
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/small-site/">微信小程序简介</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><ul>
+<li><a href="https://www.jianshu.com/p/1eb4885a4cc1">注册及其他说明</a></li>
+<li>基于<a href="https://nwjs.io/">NW.js</a>的<a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html">开发工具</a></li>
+</ul>
+<h1 id="微信基本文件">微信基本文件</h1>
+<ul>
+<li>.wxss
+等同css文件</li>
+<li>.wxml
+布局文件</li>
+<li>.json
+管理文件</li>
+<li>.js
+主逻辑文件</li>
+</ul>
+<h1 id="文件说明">文件说明</h1>
+<blockquote>
+<p>以下基于JS，而不是TypeScript！</p>
+</blockquote>
+<h2 id="一pages">一、pages</h2>
+<h3 id="首页">首页</h3>
+<p>index目录</p>
+<h2 id="二项目文件">二、项目文件</h2>
+<h3 id="app">app</h3>
+<p>除了布局文件外，包括微信小程序的3个基本文件。</p>
+<h3 id="project">project</h3>
+<p>项目配置</p>
+<h3 id="sitemap">sitemap</h3>
+<p>站点设置</p> <a class="read-more" href="/csdn/post/small-site/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-10T02:11:39&#43;08:00">
             10 Apr 2020
         </time>
     </footer>

@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.152.2">
+    <meta name="generator" content="Hugo 0.154.3">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -158,6 +158,69 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/nodejs-debian/">在Debian下安装NodeJS</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><ul>
+<li>12 (Bookworm)</li>
+<li>13 (Trixie)</li>
+</ul>
+<blockquote>
+<p>Official website support: Page not updated.</p>
+</blockquote>
+<h1 id="1nodejs">1.node.js</h1>
+<p><a href="https://github.com/nodesource/distributions">v24/v22.x/20.x/18.x/16.x</a></p>
+<ul>
+<li>v24.x</li>
+</ul>
+<pre tabindex="0"><code>sudo apt install -y curl
+curl -fsSL https://deb.nodesource.com/setup_24.x | sudo -E bash -
+</code></pre><ul>
+<li>v22.x</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
+</span></span></code></pre></div><ul>
+<li>v20.x</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+</span></span></code></pre></div><h2 id="install">install</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install -y nodejs
+</span></span></code></pre></div><h2 id="update">update</h2>
+<p>first remove:</p>
+<pre tabindex="0"><code>sudo apt remove nodejs
+</code></pre><p>and then, remove <a href="https://unix.stackexchange.com/a/722477">libnode72</a>:</p>
+<pre tabindex="0"><code>sudo dpkg --remove --force-remove-reinstreq libnode72:amd64
+</code></pre><p>last install:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install -y nodejs
+</span></span></code></pre></div><h1 id="2-yarn-js">2. yarn js</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl --silent --show-error https://dl.yarnpkg.com/debian/pubkey.gpg | sudo gpg --dearmor -o /usr/share/keyrings/pubkey-archive-keyring.gpg
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;deb [signed-by=/usr/share/keyrings/pubkey-archive-keyring.gpg] \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">https://dl.yarnpkg.com/debian/ stable main&#34;</span> | sudo tee /etc/apt/sources.list.d/yarn.list
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install yarn
+</span></span></code></pre></div><h1 id="ref">Ref</h1>
+<ul>
+<li><a href="https://phoenixnap.com/kb/how-to-install-yarn-ubuntu">How to Install Yarn on Ubuntu 18.04</a></li>
+<li><a href="https://community.learnlinux.tv/t/how-to-apt-key-is-deprecated-heres-how-to-fix-it/489">How To: ‘apt-key’ is deprecated, here’s how to fix it</a></li>
+</ul> <a class="read-more" href="/csdn/post/nodejs-debian/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2026-01-06T23:08:39&#43;08:00">
+            6 Jan 2026
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -436,7 +499,7 @@ NAT</p>
 </span></span><span style="display:flex;"><span>            dhcp4: no
 </span></span></code></pre></div><h2 id="wine">Wine</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>sudo dpkg --add-architecture i386
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>sudo curl -O https://dl.winehq.org/wine-builds/winehq.key
@@ -633,7 +696,7 @@ $ wine fg798p.exe
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span> <span style="color:#75715e">// MS Access
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{
+</span></span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    string strPWD <span style="color:#f92672">=</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Pwd&#34;</span>);
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">Equals</span>(strPWD, <span style="color:#e6db74">&#34;&#34;</span>))
 </span></span><span style="display:flex;"><span>        flagSecu <span style="color:#f92672">=</span> true;
@@ -696,7 +759,7 @@ $ wine fg798p.exe
 <li>Circular.h</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#pragma once
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Circular</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Circular</span>
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>    Circular(<span style="color:#66d9ef">double</span> pi);
@@ -712,7 +775,7 @@ $ wine fg798p.exe
 <li>Circular.cpp</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;Circular.h&#34;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Circular<span style="color:#f92672">::</span>Circular(<span style="color:#66d9ef">double</span> pi)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    PI <span style="color:#f92672">=</span> pi;
@@ -763,7 +826,7 @@ $ wine fg798p.exe
 <pre tabindex="0"><code>bind-address=0.0.0.0
 </code></pre><h2 id="utf8">utf8</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>[MY<span style="color:#f92672">-</span><span style="color:#ae81ff">013242</span>] [Server] <span style="color:#75715e">--character-set-server: &#39;utf8&#39; is currently an alias for the character set UTF8MB3,
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>but will be an <span style="color:#66d9ef">alias</span> <span style="color:#66d9ef">for</span> UTF8MB4 <span style="color:#66d9ef">in</span> a future release. Please consider <span style="color:#66d9ef">using</span> UTF8MB4 <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">to</span> be unambiguous.
+</span></span></span><span style="display:flex;"><span>but will be an <span style="color:#66d9ef">alias</span> <span style="color:#66d9ef">for</span> UTF8MB4 <span style="color:#66d9ef">in</span> a future release. Please consider <span style="color:#66d9ef">using</span> UTF8MB4 <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">to</span> be unambiguous.
 </span></span></code></pre></div><ul>
 <li>mysql5</li>
 </ul>
@@ -874,60 +937,6 @@ Beginning with MySQL 8.4.0, the deprecated mysql_native_password authentication 
         
         <time class="post-date" datetime="2024-12-26T00:08:39&#43;08:00">
             26 Dec 2024
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/nodejs-ubuntu/">在Ubuntu下安装NodeJS</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
-<h1 id="1nodejs">1.node.js</h1>
-<p><a href="https://github.com/nodesource/distributions">v22.x/20.x/18.x/16.x</a></p>
-<ul>
-<li>v22.x</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
-</span></span></code></pre></div><ul>
-<li>v20.x</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-</span></span></code></pre></div><ul>
-<li>v18.x</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-</span></span></code></pre></div><h2 id="install">install</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install -y nodejs
-</span></span></code></pre></div><h2 id="update">update</h2>
-<p>first remove:</p>
-<pre tabindex="0"><code>sudo apt remove nodejs
-</code></pre><p>and then, remove <a href="https://unix.stackexchange.com/a/722477">libnode72</a>:</p>
-<pre tabindex="0"><code>sudo dpkg --remove --force-remove-reinstreq libnode72:amd64
-</code></pre><p>last install:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install -y nodejs
-</span></span></code></pre></div><h1 id="2-yarn-js">2. yarn js</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl --silent --show-error https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;deb https://dl.yarnpkg.com/debian/ stable main&#34;</span> | sudo tee /etc/apt/sources.list.d/yarn.list
-</span></span><span style="display:flex;"><span>sudo apt-get update
-</span></span><span style="display:flex;"><span>sudo apt-get install yarn
-</span></span></code></pre></div><h1 id="ref">Ref</h1>
-<ul>
-<li><a href="https://phoenixnap.com/kb/how-to-install-yarn-ubuntu">How to Install Yarn on Ubuntu 18.04</a></li>
-</ul> <a class="read-more" href="/csdn/post/nodejs-ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2024-12-12T23:08:39&#43;08:00">
-            12 Dec 2024
         </time>
     </footer>
 </article>

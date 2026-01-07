@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.152.2">
+    <meta name="generator" content="Hugo 0.154.3">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_nginx/" />
 
@@ -220,39 +220,39 @@ Note: The replaced program file version must be the same as the repo!</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>--with-http_geoip_module<span style="color:#f92672">=</span>dynamic
 </span></span></code></pre></div><h4 id="param-list">param list</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ./configure --prefix<span style="color:#f92672">=</span>/etc/nginx <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --sbin-path<span style="color:#f92672">=</span>/usr/sbin/nginx <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --modules-path<span style="color:#f92672">=</span>/usr/lib64/nginx/modules <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --conf-path<span style="color:#f92672">=</span>/etc/nginx/nginx.conf <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --error-log-path<span style="color:#f92672">=</span>/var/log/nginx/error.log <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --http-log-path<span style="color:#f92672">=</span>/var/log/nginx/access.log <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --pid-path<span style="color:#f92672">=</span>/var/run/nginx.pid --lock-path<span style="color:#f92672">=</span>/var/run/nginx.lock <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --http-client-body-temp-path<span style="color:#f92672">=</span>/var/cache/nginx/client_temp <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --http-proxy-temp-path<span style="color:#f92672">=</span>/var/cache/nginx/proxy_temp <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --http-fastcgi-temp-path<span style="color:#f92672">=</span>/var/cache/nginx/fastcgi_temp <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --http-uwsgi-temp-path<span style="color:#f92672">=</span>/var/cache/nginx/uwsgi_temp <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --http-scgi-temp-path<span style="color:#f92672">=</span>/var/cache/nginx/scgi_temp <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --user<span style="color:#f92672">=</span>nginx <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --group<span style="color:#f92672">=</span>nginx <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --with-compat <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --with-file-aio <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --with-threads <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --with-http_addition_module <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --with-http_auth_request_module <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --with-http_dav_module <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --with-http_flv_module <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --with-http_gunzip_module <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --with-http_gzip_static_module <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --with-http_mp4_module <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --with-http_random_index_module <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --with-http_realip_module <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --with-http_secure_link_module <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --with-http_slice_module <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --with-http_ssl_module <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --with-http_stub_status_module <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --with-http_sub_module <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --with-http_v2_module <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --with-mail <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> --with-mail_ssl_module --with-stream --with-stream_realip_module --with-stream_ssl_module --with-stream_ssl_preread_module --with-http_image_filter_module<span style="color:#f92672">=</span>dynamic --with-http_xslt_module<span style="color:#f92672">=</span>dynamic --with-http_geoip_module<span style="color:#f92672">=</span>dynamic --with-cc-opt<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic -fPIC&#39;</span> --with-ld-opt<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;-Wl,-z,relro -Wl,-z,now -pie&#39;</span>
+</span></span></span><span style="display:flex;"><span> --sbin-path<span style="color:#f92672">=</span>/usr/sbin/nginx <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span> --modules-path<span style="color:#f92672">=</span>/usr/lib64/nginx/modules <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span> --conf-path<span style="color:#f92672">=</span>/etc/nginx/nginx.conf <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span> --error-log-path<span style="color:#f92672">=</span>/var/log/nginx/error.log <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span> --http-log-path<span style="color:#f92672">=</span>/var/log/nginx/access.log <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span> --pid-path<span style="color:#f92672">=</span>/var/run/nginx.pid --lock-path<span style="color:#f92672">=</span>/var/run/nginx.lock <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span> --http-client-body-temp-path<span style="color:#f92672">=</span>/var/cache/nginx/client_temp <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span> --http-proxy-temp-path<span style="color:#f92672">=</span>/var/cache/nginx/proxy_temp <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span> --http-fastcgi-temp-path<span style="color:#f92672">=</span>/var/cache/nginx/fastcgi_temp <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span> --http-uwsgi-temp-path<span style="color:#f92672">=</span>/var/cache/nginx/uwsgi_temp <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span> --http-scgi-temp-path<span style="color:#f92672">=</span>/var/cache/nginx/scgi_temp <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span> --user<span style="color:#f92672">=</span>nginx <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span> --group<span style="color:#f92672">=</span>nginx <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span> --with-compat <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span> --with-file-aio <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span> --with-threads <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span> --with-http_addition_module <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span> --with-http_auth_request_module <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span> --with-http_dav_module <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span> --with-http_flv_module <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span> --with-http_gunzip_module <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span> --with-http_gzip_static_module <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span> --with-http_mp4_module <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span> --with-http_random_index_module <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span> --with-http_realip_module <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span> --with-http_secure_link_module <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span> --with-http_slice_module <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span> --with-http_ssl_module <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span> --with-http_stub_status_module <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span> --with-http_sub_module <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span> --with-http_v2_module <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span> --with-mail <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span> --with-mail_ssl_module --with-stream --with-stream_realip_module --with-stream_ssl_module --with-stream_ssl_preread_module --with-http_image_filter_module<span style="color:#f92672">=</span>dynamic --with-http_xslt_module<span style="color:#f92672">=</span>dynamic --with-http_geoip_module<span style="color:#f92672">=</span>dynamic --with-cc-opt<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic -fPIC&#39;</span> --with-ld-opt<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;-Wl,-z,relro -Wl,-z,now -pie&#39;</span>
 </span></span></code></pre></div><h3 id="3-gen-program">3) Gen program</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$make
 </span></span></code></pre></div><p>Copy nginx and all .so files in the objs folder.</p>

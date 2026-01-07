@@ -61,7 +61,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.152.2">
+    <meta name="generator" content="Hugo 0.154.3">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/java-springboot-jpa/" />
 
@@ -281,7 +281,7 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">-- Generation Time: Apr 22, 2018 at 02:15 AM
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">-- Server version: 5.5.59-MariaDB
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">-- PHP Version: 5.6.35
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> SQL_MODE <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;NO_AUTO_VALUE_ON_ZERO&#34;</span>;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> AUTOCOMMIT <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">START</span> <span style="color:#66d9ef">TRANSACTION</span>;
@@ -296,13 +296,13 @@
 </span></span><span style="display:flex;"><span><span style="color:#75715e">--
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">-- Database: `test`
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">--
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">-- --------------------------------------------------------
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">--
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">-- Table structure for table `user_details`
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">--
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">`</span>user_details<span style="color:#f92672">`</span> (
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>id<span style="color:#f92672">`</span> int(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>username<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">30</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
@@ -315,7 +315,7 @@
 </span></span><span style="display:flex;"><span><span style="color:#75715e">--
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">-- Dumping data for table `user_details`
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">--
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>user_details<span style="color:#f92672">`</span> (<span style="color:#f92672">`</span>id<span style="color:#f92672">`</span>, <span style="color:#f92672">`</span>username<span style="color:#f92672">`</span>, <span style="color:#f92672">`</span>name<span style="color:#f92672">`</span>, <span style="color:#f92672">`</span>email<span style="color:#f92672">`</span>, <span style="color:#f92672">`</span>password<span style="color:#f92672">`</span>, <span style="color:#f92672">`</span>address<span style="color:#f92672">`</span>) <span style="color:#66d9ef">VALUES</span>
 </span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;test1&#39;</span>, <span style="color:#e6db74">&#39;test&#39;</span>, <span style="color:#e6db74">&#39;test1@163.com&#39;</span>, <span style="color:#e6db74">&#39;$2a$04$HcffZJMrgN0.lmEFpC4KTeeQhitLYzrH0uTCpGRJRBw4o03ms.qWa&#39;</span>, <span style="color:#e6db74">&#39;wuhan-wuchang&#39;</span>),
 </span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;test2&#39;</span>, <span style="color:#e6db74">&#39;test&#39;</span>, <span style="color:#e6db74">&#39;test2@163.com&#39;</span>, <span style="color:#e6db74">&#39;$2a$04$HcffZJMrgN0.lmEFpC4KTeeQhitLYzrH0uTCpGRJRBw4o03ms.qWa&#39;</span>, <span style="color:#e6db74">&#39;wuhan-hankou&#39;</span>),
@@ -324,11 +324,11 @@
 </span></span><span style="display:flex;"><span><span style="color:#75715e">--
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">-- Indexes for dumped tables
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">--
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">--
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">-- Indexes for table `user_details`
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">--
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">`</span>user_details<span style="color:#f92672">`</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">`</span>user_details<span style="color:#f92672">`</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span> (<span style="color:#f92672">`</span>id<span style="color:#f92672">`</span>);
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">COMMIT</span>;
 </span></span><span style="display:flex;"><span>

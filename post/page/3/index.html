@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.152.2">
+    <meta name="generator" content="Hugo 0.154.3">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,6 +160,126 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/version-ubuntu/">查看版本-Ubuntu</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
+<h1 id="components-version">components version</h1>
+<p>查看内核版本:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#uname -a</span>
+</span></span></code></pre></div><h2 id="查看glibc库版本">查看Glibc库版本</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#apt-cache show libc6</span>
+</span></span></code></pre></div><h2 id="查看binutils版本">查看binutils版本</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#ld -v</span>
+</span></span></code></pre></div><h1 id="查看ubuntu版本号">查看ubuntu版本号</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#cat /etc/issue</span>
+</span></span></code></pre></div><h2 id="查看debian对应版本">查看debian对应版本</h2>
+<pre tabindex="0"><code>#cat /etc/debian_version
+</code></pre><h3 id="debian-code-name"><a href="https://www.debian.org/releases/">debian code name</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>code</th>
+          <th>version</th>
+          <th>status</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>bullseye</td>
+          <td>11</td>
+          <td>statble</td>
+      </tr>
+      <tr>
+          <td>buster</td>
+          <td>10</td>
+          <td>old statble</td>
+      </tr>
+      <tr>
+          <td>stretch</td>
+          <td>9</td>
+          <td>old old statble</td>
+      </tr>
+      <tr>
+          <td>jessie</td>
+          <td>8</td>
+          <td>archived</td>
+      </tr>
+      <tr>
+          <td>wheezy</td>
+          <td>7</td>
+          <td>obsolete</td>
+      </tr>
+      <tr>
+          <td>squeeze</td>
+          <td>6.0</td>
+          <td>obsolete</td>
+      </tr>
+      <tr>
+          <td>lenny</td>
+          <td>5.0</td>
+          <td>obsolete</td>
+      </tr>
+      <tr>
+          <td>etch</td>
+          <td>4.0</td>
+          <td>obsolete</td>
+      </tr>
+      <tr>
+          <td>sarge</td>
+          <td>3.1</td>
+          <td>obsolete</td>
+      </tr>
+      <tr>
+          <td>woody</td>
+          <td>3.0</td>
+          <td>obsolete</td>
+      </tr>
+      <tr>
+          <td>potato</td>
+          <td>2.2</td>
+          <td>obsolete</td>
+      </tr>
+      <tr>
+          <td>slink</td>
+          <td>2.1</td>
+          <td>obsolete</td>
+      </tr>
+      <tr>
+          <td>hamm</td>
+          <td>2.0</td>
+          <td>obsolete</td>
+      </tr>
+  </tbody>
+</table> <a class="read-more" href="/csdn/post/version-ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        on
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/glibc/">#Glibc</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/sh/">#sh</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/binutils/">#binutils</a>,
+            
+                <a href="https://tdtc-hrb.github.io/csdn//tags/system/">#system</a>,
+            
+        
+        <time class="post-date" datetime="2024-03-01T02:12:39&#43;08:00">
+            1 Mar 2024
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -830,10 +950,10 @@ Windows的scp包含在putty工具中。</li>
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;sys/socket.h&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;arpa/inet.h&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;netdb.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#define SERVIP   &#34;192.168.56.112&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define SERVPORT &#34;2349&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>argv[])
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">struct</span> addrinfo hints, <span style="color:#f92672">*</span>res;
@@ -910,9 +1030,9 @@ Windows的scp包含在putty工具中。</li>
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;sys/socket.h&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;netdb.h&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;arpa/inet.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#define SERVPORT &#34;2349&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>argv[])
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">struct</span> addrinfo hints, <span style="color:#f92672">*</span>res;
@@ -951,7 +1071,7 @@ Windows的scp包含在putty工具中。</li>
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;======== Please Wait Client =========</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">while</span>(<span style="color:#ae81ff">1</span>) { <span style="color:#75715e">// loop forever!
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">char</span> ipstr[INET_ADDRSTRLEN];
+</span></span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">char</span> ipstr[INET_ADDRSTRLEN];
 </span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>addr;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">int</span> len <span style="color:#f92672">=</span> <span style="color:#66d9ef">sizeof</span>(cliAddr);
@@ -988,75 +1108,6 @@ Windows的scp包含在putty工具中。</li>
         
         <time class="post-date" datetime="2023-02-14T00:08:08&#43;08:00">
             14 Feb 2023
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/pack-file-linux/">打包文件</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><blockquote>
-<p>取消目录所有权限</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod -R <span style="color:#ae81ff">777</span> /tmp/etc
-</span></span></code></pre></div><h1 id="一iso文件">一、ISO文件</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkisofs -r -o etc.iso /tmp/etc
-</span></span></code></pre></div><h1 id="二压缩文件">二、压缩文件</h1>
-<h2 id="1-zip">1. zip</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>zip -r etc.zip /tmp/etc
-</span></span></code></pre></div><h2 id="2-tar">2. tar</h2>
-<blockquote>
-<p>仅打包，不压缩！</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -cvf /tmp/etc.tar /etc
-</span></span></code></pre></div><ul>
-<li>transform</li>
-</ul>
-<pre tabindex="0"><code>--transform s/OLD_NAME/NEW_NAME/
-</code></pre><h3 id="gz">gz</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -zcvf /tmp/etc.tar.gz /etc
-</span></span></code></pre></div><p>transform:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -zcvf /tmp/etc.tar.gz /etc --transform s/etc/myetc/
-</span></span></code></pre></div><h3 id="bz2">bz2</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -jcvf /tmp/etc.tar.bz2 /etc
-</span></span></code></pre></div><p>transform:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -jcvf /tmp/etc.tar.bz2 /etc --transform s/etc/myetc/
-</span></span></code></pre></div><h1 id="faq">FAQ</h1>
-<h2 id="this-does-not-look-like-a-tar-archive">This does not look like a tar archive</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#gzip -d xxxx.tar.gz</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#tar -xf xxxx.tar</span>
-</span></span></code></pre></div><h2 id="gzip-stdin-not-in-gzip-format">gzip: stdin: not in gzip format</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ tar xvf xxxx.tar.gz
-</span></span></code></pre></div><h1 id="参考文章">参考文章</h1>
-<ul>
-<li><a href="https://www.tecmint.com/18-tar-command-examples-in-linux/">18 Tar Command Examples in Linux</a></li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>c – Creates a new .tar archive file.
-</span></span><span style="display:flex;"><span>v – Verbosely show the .tar file progress.
-</span></span><span style="display:flex;"><span>f – File name type of the archive file.
-</span></span></code></pre></div><ol>
-<li>To create a compressed <strong>gzip</strong> archive file we use the option as <strong style="color: red;">z</strong>.</li>
-<li>To create highly compressed tar file we use option as <strong style="color: red;">j</strong>.</li>
-</ol>
-<ul>
-<li><a href="http://blog.csdn.net/chenjiiinliang/article/details/7288173">Linux下更改目录及其下的子目录和文件的访问权限</a></li>
-<li><a href="http://www.cnblogs.com/lucyjiayou/archive/2011/12/25/2301046.html">linux zip/unzip命令</a></li>
-<li><a href="http://blog.csdn.net/clozxy/article/details/5748539">Linux下制作ISO与刻录ISO</a></li>
-</ul> <a class="read-more" href="/csdn/post/pack-file-linux/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2023-02-10T02:20:39&#43;08:00">
-            10 Feb 2023
         </time>
     </footer>
 </article>

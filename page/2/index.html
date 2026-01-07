@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.152.2">
+    <meta name="generator" content="Hugo 0.154.3">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -160,6 +160,60 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/nodejs-ubuntu/">在Ubuntu下安装NodeJS</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
+<h1 id="1nodejs">1.node.js</h1>
+<p><a href="https://github.com/nodesource/distributions">v22.x/20.x/18.x/16.x</a></p>
+<ul>
+<li>v22.x</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
+</span></span></code></pre></div><ul>
+<li>v20.x</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+</span></span></code></pre></div><ul>
+<li>v18.x</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+</span></span></code></pre></div><h2 id="install">install</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install -y nodejs
+</span></span></code></pre></div><h2 id="update">update</h2>
+<p>first remove:</p>
+<pre tabindex="0"><code>sudo apt remove nodejs
+</code></pre><p>and then, remove <a href="https://unix.stackexchange.com/a/722477">libnode72</a>:</p>
+<pre tabindex="0"><code>sudo dpkg --remove --force-remove-reinstreq libnode72:amd64
+</code></pre><p>last install:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install -y nodejs
+</span></span></code></pre></div><h1 id="2-yarn-js">2. yarn js</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl --silent --show-error https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;deb https://dl.yarnpkg.com/debian/ stable main&#34;</span> | sudo tee /etc/apt/sources.list.d/yarn.list
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install yarn
+</span></span></code></pre></div><h1 id="ref">Ref</h1>
+<ul>
+<li><a href="https://phoenixnap.com/kb/how-to-install-yarn-ubuntu">How to Install Yarn on Ubuntu 18.04</a></li>
+</ul> <a class="read-more" href="/csdn/post/nodejs-ubuntu/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-12-12T23:08:39&#43;08:00">
+            12 Dec 2024
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -301,7 +355,8 @@
 </span></span></code></pre></div><h2 id="列出版本">列出版本</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-cache madison &lt;&lt;package name&gt;&gt;
 </span></span></code></pre></div><h1 id="debian">DebIan</h1>
-<h2 id="sudo">sudo</h2>
+<pre tabindex="0"><code>sudo sed -i &#39;s/deb.debian.org/mirrors.aliyun.com/g&#39; /etc/apt/sources.list
+</code></pre><h2 id="sudo">sudo</h2>
 <p>sudo.d(directory):</p>
 <pre tabindex="0"><code>Note also, that becasuse sudoers contents can vary widely, no attempt is made to add this 
 directive to existing sudoers files on upgrade. Feel free to add the above directive to the 
@@ -630,126 +685,6 @@ echo &#34;deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://
         
         <time class="post-date" datetime="2024-03-10T08:08:08&#43;08:00">
             10 Mar 2024
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/version-ubuntu/">查看版本-Ubuntu</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
-<h1 id="components-version">components version</h1>
-<p>查看内核版本:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#uname -a</span>
-</span></span></code></pre></div><h2 id="查看glibc库版本">查看Glibc库版本</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#apt-cache show libc6</span>
-</span></span></code></pre></div><h2 id="查看binutils版本">查看binutils版本</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#ld -v</span>
-</span></span></code></pre></div><h1 id="查看ubuntu版本号">查看ubuntu版本号</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#cat /etc/issue</span>
-</span></span></code></pre></div><h2 id="查看debian对应版本">查看debian对应版本</h2>
-<pre tabindex="0"><code>#cat /etc/debian_version
-</code></pre><h3 id="debian-code-name"><a href="https://www.debian.org/releases/">debian code name</a></h3>
-<table>
-  <thead>
-      <tr>
-          <th>code</th>
-          <th>version</th>
-          <th>status</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>bullseye</td>
-          <td>11</td>
-          <td>statble</td>
-      </tr>
-      <tr>
-          <td>buster</td>
-          <td>10</td>
-          <td>old statble</td>
-      </tr>
-      <tr>
-          <td>stretch</td>
-          <td>9</td>
-          <td>old old statble</td>
-      </tr>
-      <tr>
-          <td>jessie</td>
-          <td>8</td>
-          <td>archived</td>
-      </tr>
-      <tr>
-          <td>wheezy</td>
-          <td>7</td>
-          <td>obsolete</td>
-      </tr>
-      <tr>
-          <td>squeeze</td>
-          <td>6.0</td>
-          <td>obsolete</td>
-      </tr>
-      <tr>
-          <td>lenny</td>
-          <td>5.0</td>
-          <td>obsolete</td>
-      </tr>
-      <tr>
-          <td>etch</td>
-          <td>4.0</td>
-          <td>obsolete</td>
-      </tr>
-      <tr>
-          <td>sarge</td>
-          <td>3.1</td>
-          <td>obsolete</td>
-      </tr>
-      <tr>
-          <td>woody</td>
-          <td>3.0</td>
-          <td>obsolete</td>
-      </tr>
-      <tr>
-          <td>potato</td>
-          <td>2.2</td>
-          <td>obsolete</td>
-      </tr>
-      <tr>
-          <td>slink</td>
-          <td>2.1</td>
-          <td>obsolete</td>
-      </tr>
-      <tr>
-          <td>hamm</td>
-          <td>2.0</td>
-          <td>obsolete</td>
-      </tr>
-  </tbody>
-</table> <a class="read-more" href="/csdn/post/version-ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        on
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/glibc/">#Glibc</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/sh/">#sh</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/binutils/">#binutils</a>,
-            
-                <a href="https://tdtc-hrb.github.io/csdn//tags/system/">#system</a>,
-            
-        
-        <time class="post-date" datetime="2024-03-01T02:12:39&#43;08:00">
-            1 Mar 2024
         </time>
     </footer>
 </article>

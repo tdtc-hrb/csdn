@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.152.2">
+    <meta name="generator" content="Hugo 0.154.3">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/apt-oper-ubuntu/" />
 
@@ -92,7 +92,7 @@
     },
     "headline": "apt的安装问题",
     "name": "apt的安装问题",
-    "wordCount":  175 ,
+    "wordCount":  180 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
@@ -187,7 +187,8 @@
 </span></span></code></pre></div><h2 id="列出版本">列出版本</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-cache madison &lt;&lt;package name&gt;&gt;
 </span></span></code></pre></div><h1 id="debian">DebIan</h1>
-<h2 id="sudo">sudo</h2>
+<pre tabindex="0"><code>sudo sed -i &#39;s/deb.debian.org/mirrors.aliyun.com/g&#39; /etc/apt/sources.list
+</code></pre><h2 id="sudo">sudo</h2>
 <p>sudo.d(directory):</p>
 <pre tabindex="0"><code>Note also, that becasuse sudoers contents can vary widely, no attempt is made to add this 
 directive to existing sudoers files on upgrade. Feel free to add the above directive to the 

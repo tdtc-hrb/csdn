@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.152.2">
+    <meta name="generator" content="Hugo 0.154.3">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_cloud_httpd/" />
 
@@ -192,7 +192,7 @@ httpd路径: /opt/httpd</p>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># vi httpd</span>
 </span></span></code></pre></div><p>The original file(apachectl)</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Licensed to the Apache Software Foundation (ASF) under one or more</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># contributor license agreements.  See the NOTICE file distributed with</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># this work for additional information regarding copyright ownership.</span>
@@ -297,7 +297,7 @@ httpd路径: /opt/httpd</p>
 </span></span><span style="display:flex;"><span>exit $ERROR
 </span></span></code></pre></div><p>Add the following section to the file:(File header)</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Startup script for the Apache Web Server</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># chkconfig: 345 85 15</span>

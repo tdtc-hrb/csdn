@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.152.2">
+    <meta name="generator" content="Hugo 0.154.3">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -160,6 +160,51 @@
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql57-cenos7/">CentOS7/8安装mysql5.7</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><blockquote>
+<p>本安装大部分同<a href="https://tdtc-hrb.github.io/csdn/post/mysql-mdb-v103/">&ldquo;安装 MariaDB 10.3数据库&rdquo;</a></p>
+</blockquote>
+<h1 id="installation">Installation</h1>
+<h2 id="1-add-repo">1. add repo</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install http://repo.mysql.com/mysql57-community-release-el7.rpm
+</span></span></code></pre></div><h2 id="2-install">2. install</h2>
+<p>import GPG:</p>
+<pre tabindex="0"><code>sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
+</code></pre><h2 id="centos7">CentOS7</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install mysql-community-server
+</span></span></code></pre></div><h2 id="centos8">CentOS8</h2>
+<p>Install after doing the following(disable default repo, config-manager, close gpgcheck):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf install mysql-community-server
+</span></span></code></pre></div><h3 id="disable-default-repo">disable default repo</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf remove @mysql
+</span></span><span style="display:flex;"><span>sudo dnf module reset mysql
+</span></span><span style="display:flex;"><span>sudo dnf module disable mysql
+</span></span></code></pre></div><h3 id="config-manager">config-manager</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf config-manager --disable mysql80-community
+</span></span><span style="display:flex;"><span>sudo dnf config-manager --enable mysql57-community
+</span></span></code></pre></div><h3 id="close-gpgcheck">close gpgcheck</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/yum.repos.d/mysql-community.repo
+</span></span></code></pre></div><p>mysql-community.repo:</p> <a class="read-more" href="/csdn/post/mysql57-cenos7/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-09-24T06:21:39&#43;08:00">
+            24 Sep 2022
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -535,7 +580,7 @@ systemctl status mysqld
 <p>waitpid函数原型：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;sys/types.h&gt;   /* 提供类型pid_t的定义 */</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;sys/wait.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">pid_t</span> <span style="color:#a6e22e">waitpid</span>(<span style="color:#66d9ef">pid_t</span> pid, <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>status, <span style="color:#66d9ef">int</span> options);
 </span></span></code></pre></div><ul>
 <li>
@@ -560,7 +605,7 @@ systemctl status mysqld
 这时，需要sigaction()。</p>
 <p>sigaction函数原型：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;signal.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">sigaction</span>(<span style="color:#66d9ef">int</span> signum, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> sigaction <span style="color:#f92672">*</span>act, <span style="color:#66d9ef">struct</span> sigaction <span style="color:#f92672">*</span>oldact);
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">sigaction</span>(<span style="color:#66d9ef">int</span> signum, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> sigaction <span style="color:#f92672">*</span>act, <span style="color:#66d9ef">struct</span> sigaction <span style="color:#f92672">*</span>oldact);
 </span></span></code></pre></div><ul>
 <li>
 <p>signum <br>
@@ -594,9 +639,9 @@ systemctl status mysqld
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;sys/wait.h&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;		/* exit declare */</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;unistd.h&gt;		/* fork declare */</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#define SERVPORT &#34;2349&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sigchild_handler</span>()
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">waitpid</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, NULL, WNOHANG) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>);
@@ -661,7 +706,7 @@ systemctl status mysqld
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">while</span>(<span style="color:#ae81ff">1</span>) { <span style="color:#75715e">// loop forever!
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">char</span> ipstr[INET_ADDRSTRLEN];
+</span></span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">char</span> ipstr[INET_ADDRSTRLEN];
 </span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>addr;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">int</span> len <span style="color:#f92672">=</span> <span style="color:#66d9ef">sizeof</span>(clientAddr);
@@ -726,9 +771,9 @@ systemctl status mysqld
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;sys/wait.h&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">		</span><span style="color:#75715e">/* exit declare */</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;unistd.h&gt;</span><span style="color:#75715e">		</span><span style="color:#75715e">/* fork declare */</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#define SERVPORT &#34;3293&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sigchild_handler</span>()
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">while</span> (waitpid(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, NULL, WNOHANG) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>);	
@@ -797,7 +842,7 @@ systemctl status mysqld
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>	
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">while</span>(<span style="color:#ae81ff">1</span>) { <span style="color:#75715e">// loop forever!
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">char</span> ipstr[INET_ADDRSTRLEN];
+</span></span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">char</span> ipstr[INET_ADDRSTRLEN];
 </span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>addr;
 </span></span><span style="display:flex;"><span>		
 </span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">int</span> len <span style="color:#f92672">=</span> <span style="color:#66d9ef">sizeof</span>(clientAddr);
@@ -1005,146 +1050,6 @@ systemctl status mysqld
         
         <time class="post-date" datetime="2022-05-10T10:26:39&#43;08:00">
             10 May 2022
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/c-string-i2h/">十进制转十六进制</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><p>工作原理：</p>
-<blockquote>
-<p>规则是从低位到高位
-被除数，除以16, 直到商小于16。  <br>
-将余数加上余商，就是16进制数。</p>
-</blockquote>
-<ul>
-<li>被除数</li>
-</ul>
-<ol>
-<li>等于转换数</li>
-<li>等于商 <br>
-如果商大于16，就是被除数。</li>
-</ol>
-<h1 id="手算">手算</h1>
-<p>10进制：1566</p>
-<p>  (1) 1566 ÷ 16 = 97    余数为14 <br>
-  (2) 97   ÷ 16 = 6     余数为1</p>
-<p>16进制：第1个余数(14) + 第2个余数(1) + 余商(6)  = 0x61E</p>
-<h1 id="code">code</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">/*
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Int2hex.c
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *  Created on: 2010-07-20
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *      Author: xiaobin
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">int2hex</span>(<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> input, <span style="color:#66d9ef">char</span> output[]);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> argv[])
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> iDigit <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>; <span style="color:#75715e">// 2205071409 // date: 2022.5.7 14:09
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">char</span> out[<span style="color:#ae81ff">10</span>];
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> k;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> input <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (argc <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>)
-</span></span><span style="display:flex;"><span>        input <span style="color:#f92672">=</span> <span style="color:#a6e22e">atoll</span>(argv[<span style="color:#ae81ff">1</span>]);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">int2hex</span>(input, out);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s%llu%s&#34;</span>, <span style="color:#e6db74">&#34;Integer: &#34;</span>, input, <span style="color:#e6db74">&#34; Hex: 0x&#34;</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (k <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; k <span style="color:#f92672">&lt;</span> iDigit; k<span style="color:#f92672">++</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">char</span> ch <span style="color:#f92672">=</span> out[k];
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%c&#34;</span>, ch);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">int2hex</span>(<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> input, <span style="color:#66d9ef">char</span> output[]) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">9</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> j;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (((input <span style="color:#f92672">%</span> <span style="color:#ae81ff">16</span>) <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">||</span> (input <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">15</span>)) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">char</span> tempCh;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">switch</span> (input <span style="color:#f92672">%</span> <span style="color:#ae81ff">16</span>) {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>                 tempCh <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;0&#39;</span>;
-</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>                 tempCh <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;1&#39;</span>;
-</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>                 tempCh <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;2&#39;</span>;
-</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>                 tempCh <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;3&#39;</span>;
-</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">4</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>                 tempCh <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;4&#39;</span>;
-</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">5</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>                 tempCh <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;5&#39;</span>;
-</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">6</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>                 tempCh <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;6&#39;</span>;
-</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">7</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>                 tempCh <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;7&#39;</span>;
-</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">8</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>                 tempCh <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;8&#39;</span>;
-</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">9</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>                 tempCh <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;9&#39;</span>;
-</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">10</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>                 tempCh <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;A&#39;</span>;
-</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">11</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>                 tempCh <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;B&#39;</span>;
-</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">12</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>                 tempCh <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;C&#39;</span>;
-</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">13</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>                 tempCh <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;D&#39;</span>;
-</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">14</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>                 tempCh <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;E&#39;</span>;
-</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">15</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>                 tempCh <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;F&#39;</span>;
-</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        output[i] <span style="color:#f92672">=</span> tempCh;
-</span></span><span style="display:flex;"><span>        input <span style="color:#f92672">=</span> input <span style="color:#f92672">/</span> <span style="color:#ae81ff">16</span>;
-</span></span><span style="display:flex;"><span>        i<span style="color:#f92672">--</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (j <span style="color:#f92672">=</span> i; j <span style="color:#f92672">&gt;</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; j<span style="color:#f92672">--</span>)
-</span></span><span style="display:flex;"><span>        output[j] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;0&#39;</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div> <a class="read-more" href="/csdn/post/c-string-i2h/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2022-05-07T00:08:08&#43;08:00">
-            7 May 2022
         </time>
     </footer>
 </article>

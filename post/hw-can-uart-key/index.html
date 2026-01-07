@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.152.2">
+    <meta name="generator" content="Hugo 0.154.3">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/hw-can-uart-key/" />
 
@@ -239,7 +239,7 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;../common/target.h&#34;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;../common/irq.h&#34;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;uart.h&#34;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">volatile</span> DWORD UART0Status, UART1Status;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">volatile</span> BYTE UART0TxEmpty <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, UART1TxEmpty <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">volatile</span> BYTE UART0Buffer[BUFSIZE], UART1Buffer[BUFSIZE];
@@ -443,12 +443,12 @@
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( PortNum <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> )
 </span></span><span style="display:flex;"><span>  {
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#if EA_BOARD_LPC24XX
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	PINSEL7 <span style="color:#f92672">|=</span> <span style="color:#ae81ff">0x0000000F</span>;	<span style="color:#75715e">/* P3.16 TXD1, P3.17 RXD1 */</span>
+</span></span></span><span style="display:flex;"><span>	PINSEL7 <span style="color:#f92672">|=</span> <span style="color:#ae81ff">0x0000000F</span>;	<span style="color:#75715e">/* P3.16 TXD1, P3.17 RXD1 */</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#else						</span><span style="color:#75715e">/* Default is Keil MCB2300 board */</span><span style="color:#75715e">							
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	PINSEL0 <span style="color:#f92672">|=</span> <span style="color:#ae81ff">0x40000000</span>;	<span style="color:#75715e">/* Enable TxD1 P0.15 */</span>
+</span></span></span><span style="display:flex;"><span>	PINSEL0 <span style="color:#f92672">|=</span> <span style="color:#ae81ff">0x40000000</span>;	<span style="color:#75715e">/* Enable TxD1 P0.15 */</span>
 </span></span><span style="display:flex;"><span>	PINSEL1 <span style="color:#f92672">|=</span> <span style="color:#ae81ff">0x00000001</span>;	<span style="color:#75715e">/* Enable RxD1 P0.16 */</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#endif
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    U1LCR <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x83</span>;		<span style="color:#75715e">/* 8 bits, no Parity, 1 Stop bit */</span>
+</span></span></span><span style="display:flex;"><span>    U1LCR <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x83</span>;		<span style="color:#75715e">/* 8 bits, no Parity, 1 Stop bit */</span>
 </span></span><span style="display:flex;"><span>    Fdiv <span style="color:#f92672">=</span> ( Fpclk <span style="color:#f92672">/</span> <span style="color:#ae81ff">16</span> ) <span style="color:#f92672">/</span> baudrate ;	<span style="color:#75715e">/*baud rate */</span>
 </span></span><span style="display:flex;"><span>    U1DLM <span style="color:#f92672">=</span> Fdiv <span style="color:#f92672">/</span> <span style="color:#ae81ff">256</span>;							
 </span></span><span style="display:flex;"><span>    U1DLL <span style="color:#f92672">=</span> Fdiv <span style="color:#f92672">%</span> <span style="color:#ae81ff">256</span>;
@@ -557,17 +557,17 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">******************************************************************************/</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#ifndef __UART_H
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define __UART_H
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#define IER_RBR		0x01
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define IER_THRE	0x02
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define IER_RLS		0x04
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#define IIR_PEND	0x01
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define IIR_RLS		0x03
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define IIR_RDA		0x02
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define IIR_CTI		0x06
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define IIR_THRE	0x01
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#define LSR_RDR		0x01
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define LSR_OE		0x02
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define LSR_PE		0x04
@@ -576,10 +576,10 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define LSR_THRE	0x20
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define LSR_TEMT	0x40
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define LSR_RXFE	0x80
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/* #define BUFSIZE		0x40 */</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#define BUFSIZE     0x08
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>DWORD <span style="color:#a6e22e">UARTInit</span>( DWORD portNum, DWORD Baudrate );
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">preUARTInitRBR</span>( <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">char</span> i );
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">postUARTInitRBR</span>( <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">char</span> i );
@@ -591,7 +591,7 @@
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">myDelay</span>(<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">long</span> ulTime);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#endif </span><span style="color:#75715e">/* end __UART_H */</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">/*****************************************************************************
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">/*****************************************************************************
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">**                            End Of File
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">******************************************************************************/</span>
 </span></span></code></pre></div><h1 id="key">Key</h1>
@@ -605,17 +605,17 @@
 <p>choiceKey.c</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;LPC23XX.h&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;choiceKey.h&#34;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">KeyInit</span>(<span style="color:#66d9ef">void</span>)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>	PINSEL3  <span style="color:#f92672">=</span> (PINSEL3<span style="color:#f92672">&amp;</span><span style="color:#ae81ff">0xF0FFFFFF</span>)<span style="color:#f92672">|</span><span style="color:#ae81ff">0x00000000</span>;	    
 </span></span><span style="display:flex;"><span>	PINSEL10 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x00000000</span>;		                            <span style="color:#75715e">//禁止ETM
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	IODIR1   <span style="color:#f92672">=</span> (IODIR1<span style="color:#f92672">&amp;</span><span style="color:#ae81ff">0xF0FFFFFF</span>)<span style="color:#f92672">|</span><span style="color:#ae81ff">0x00000000</span>;	    
+</span></span></span><span style="display:flex;"><span>	IODIR1   <span style="color:#f92672">=</span> (IODIR1<span style="color:#f92672">&amp;</span><span style="color:#ae81ff">0xF0FFFFFF</span>)<span style="color:#f92672">|</span><span style="color:#ae81ff">0x00000000</span>;	    
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>choiceKey.h</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#ifndef _CHOICEKEY_H_
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define _CHOICEKEY_H_
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">extern</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">KeyInit</span>(<span style="color:#66d9ef">void</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#endif
@@ -645,27 +645,27 @@
 <p>此功能点分为2部分：接收信息和错误处理</p>
 <h4 id="接收信息">接收信息</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (CAN1GSR <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">0x01</span>)							<span style="color:#75715e">// CAN0 接收到信息
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{
+</span></span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">CANRCVANDSEND</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">3</span>);             <span style="color:#75715e">// 参数分别为：（ CAN通道号，选择缓冲区（1、2、3））
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>recFlag1 <span style="color:#f92672">=</span> TRUE;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> (CAN1GSR <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">0x01</span>)					<span style="color:#75715e">// RBS为1 接收缓冲区满
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{
+</span></span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>  mes  <span style="color:#f92672">=</span> CAN1CMR;
 </span></span><span style="display:flex;"><span>  mes <span style="color:#f92672">|=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">2</span>);					   <span style="color:#75715e">// 释放接收缓冲区
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  CAN1CMR <span style="color:#f92672">=</span> mes;
+</span></span></span><span style="display:flex;"><span>  CAN1CMR <span style="color:#f92672">=</span> mes;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>  CAN1CMR <span style="color:#f92672">&amp;=</span> <span style="color:#f92672">~</span>(<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">2</span>);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h4 id="错误处理">错误处理</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (CAN1GSR <span style="color:#f92672">&amp;</span> (<span style="color:#ae81ff">0x01</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">6</span>))					<span style="color:#75715e">// CAN0错误计数器是否超过错误报警限制
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{
+</span></span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Enter_SWRst</span>(<span style="color:#ae81ff">1</span>);
 </span></span><span style="display:flex;"><span>  regaddr <span style="color:#f92672">=</span> (<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">long</span>)(<span style="color:#f92672">&amp;</span>CAN1GSR);		
 </span></span><span style="display:flex;"><span>  mes     <span style="color:#f92672">=</span> <span style="color:#a6e22e">RGE</span>(regaddr);
 </span></span><span style="display:flex;"><span>  mes    <span style="color:#f92672">&amp;=</span> <span style="color:#ae81ff">0x00ff</span>;												
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">RGE</span>(regaddr) <span style="color:#f92672">=</span> mes;	    				<span style="color:#75715e">// 总线错误清除处理
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">Quit_SWRst</span>(<span style="color:#ae81ff">1</span>);
+</span></span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Quit_SWRst</span>(<span style="color:#ae81ff">1</span>);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h3 id="2-检测按键并执行">2) 检测按键并执行</h3>
 <blockquote>
@@ -676,12 +676,12 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">if</span>( <span style="color:#a6e22e">KEY</span>(<span style="color:#ae81ff">24</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">while</span>(<span style="color:#a6e22e">KEY</span>(<span style="color:#ae81ff">24</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> ) {
 </span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 执行CAN发送
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	} <span style="color:#75715e">// key24 while end
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( <span style="color:#a6e22e">KEY</span>(<span style="color:#ae81ff">25</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> ) {
+</span></span></span><span style="display:flex;"><span>	} <span style="color:#75715e">// key24 while end
+</span></span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( <span style="color:#a6e22e">KEY</span>(<span style="color:#ae81ff">25</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> ) {
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">KEY</span>(<span style="color:#ae81ff">25</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
 </span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 执行UART发送
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	} <span style="color:#75715e">// key25 while end
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>	} <span style="color:#75715e">// key25 while end
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">KEY</span>(<span style="color:#ae81ff">26</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {  
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">while</span>(<span style="color:#a6e22e">KEY</span>(<span style="color:#ae81ff">26</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> );
 </span></span><span style="display:flex;"><span>
@@ -711,8 +711,8 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>                  <span style="color:#a6e22e">CANSend</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>);
 </span></span><span style="display:flex;"><span>        } <span style="color:#75715e">// send end
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      } <span style="color:#75715e">// key24 while end
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>      } <span style="color:#75715e">// key24 while end
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>      } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( <span style="color:#a6e22e">KEY</span>(<span style="color:#ae81ff">25</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> ) {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">KEY</span>(<span style="color:#ae81ff">25</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
@@ -724,11 +724,11 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">preUARTInitRBR</span>(<span style="color:#ae81ff">1</span>);
 </span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">UARTSend</span>( <span style="color:#ae81ff">1</span>, (BYTE <span style="color:#f92672">*</span>)UART1Buffer, <span style="color:#ae81ff">8</span> );       <span style="color:#75715e">// channel:1
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>              <span style="color:#a6e22e">postUARTInitRBR</span>(<span style="color:#ae81ff">1</span>); 		
+</span></span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">postUARTInitRBR</span>(<span style="color:#ae81ff">1</span>); 		
 </span></span><span style="display:flex;"><span>        } <span style="color:#75715e">// send end
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    } <span style="color:#75715e">// key25 while end
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>      } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">KEY</span>(<span style="color:#ae81ff">26</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {  	
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span>(<span style="color:#a6e22e">KEY</span>(<span style="color:#ae81ff">26</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> );
@@ -750,13 +750,13 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;../common/target.h&#34;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;../can/LPC2300CAN.h&#34;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;../common/key/choiceKey.h&#34;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#define KEY(i)  ((IOPIN1&amp;1&lt;&lt;i)&gt;&gt;i)
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define key1    ((IOPIN1&amp;1&lt;&lt;24)&gt;&gt;24)
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define key2    ((IOPIN1&amp;1&lt;&lt;25)&gt;&gt;25)
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define key3    ((IOPIN1&amp;1&lt;&lt;26)&gt;&gt;26)
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define key4    ((IOPIN1&amp;1&lt;&lt;27)&gt;&gt;27)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">extern</span> <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">char</span> dataAB[<span style="color:#ae81ff">8</span>];
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">extern</span> <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">long</span> dataRID;
 </span></span><span style="display:flex;"><span>
@@ -777,10 +777,10 @@
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">KeyInit</span>();
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">CAN_Init</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0x140002</span>);						        <span style="color:#75715e">//channel:0 Baud speed:1M
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// CAN_Init(1,0x140002);						    //channel:1 Baud speed:1M
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>    <span style="color:#75715e">// CAN_Init(1,0x140002);						    //channel:1 Baud speed:1M
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#75715e">// UARTInit(0, 9600);	                            /* baud rate setting */
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">UARTInit</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">9600</span>);	                                <span style="color:#75715e">/* baud rate setting */</span>
+</span></span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">UARTInit</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">9600</span>);	                                <span style="color:#75715e">/* baud rate setting */</span>
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">while</span> (<span style="color:#ae81ff">1</span>)
 </span></span><span style="display:flex;"><span>	{
 </span></span><span style="display:flex;"><span>		<span style="color:#75715e">/* key in - begin */</span>
@@ -795,8 +795,8 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">CANSend</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>);
 </span></span><span style="display:flex;"><span>			    } <span style="color:#75715e">// send end
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		    } <span style="color:#75715e">// key24 while end
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>		    } <span style="color:#75715e">// key24 while end
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( <span style="color:#a6e22e">KEY</span>(<span style="color:#ae81ff">25</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> ) {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">KEY</span>(<span style="color:#ae81ff">25</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
@@ -808,11 +808,11 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>		            <span style="color:#a6e22e">preUARTInitRBR</span>(<span style="color:#ae81ff">1</span>);
 </span></span><span style="display:flex;"><span>		            <span style="color:#a6e22e">UARTSend</span>( <span style="color:#ae81ff">1</span>, (BYTE <span style="color:#f92672">*</span>)UART1Buffer, <span style="color:#ae81ff">8</span> );       <span style="color:#75715e">// channel:1
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		            <span style="color:#a6e22e">postUARTInitRBR</span>(<span style="color:#ae81ff">1</span>); 		
+</span></span></span><span style="display:flex;"><span>		            <span style="color:#a6e22e">postUARTInitRBR</span>(<span style="color:#ae81ff">1</span>); 		
 </span></span><span style="display:flex;"><span>			    } <span style="color:#75715e">// send end
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>			} <span style="color:#75715e">// key25 while end
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">KEY</span>(<span style="color:#ae81ff">26</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {  	
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	        <span style="color:#66d9ef">while</span>(<span style="color:#a6e22e">KEY</span>(<span style="color:#ae81ff">26</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> );
@@ -832,27 +832,27 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> regaddr, mes;
 </span></span><span style="display:flex;"><span>    BOOL recFlag1 <span style="color:#f92672">=</span> FALSE;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (CAN1GSR <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">0x01</span>)							<span style="color:#75715e">// CAN0 接收到信息
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    {
+</span></span></span><span style="display:flex;"><span>    {
 </span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">CANRCVANDSEND</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">3</span>);                     <span style="color:#75715e">// 参数分别为：（ CAN通道号，选择缓冲区（1、2、3））
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>		recFlag1 <span style="color:#f92672">=</span> TRUE;
 </span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">while</span> (CAN1GSR <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">0x01</span>)					<span style="color:#75715e">// RBS为1 接收缓冲区满
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		{
+</span></span></span><span style="display:flex;"><span>		{
 </span></span><span style="display:flex;"><span>			mes  <span style="color:#f92672">=</span> CAN1CMR;
 </span></span><span style="display:flex;"><span>			mes <span style="color:#f92672">|=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">2</span>);					<span style="color:#75715e">// 释放接收缓冲区
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			CAN1CMR <span style="color:#f92672">=</span> mes;
+</span></span></span><span style="display:flex;"><span>			CAN1CMR <span style="color:#f92672">=</span> mes;
 </span></span><span style="display:flex;"><span>		}
 </span></span><span style="display:flex;"><span>			CAN1CMR <span style="color:#f92672">&amp;=</span> <span style="color:#f92672">~</span>(<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">2</span>);
 </span></span><span style="display:flex;"><span>	}		
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (CAN1GSR <span style="color:#f92672">&amp;</span> (<span style="color:#ae81ff">0x01</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">6</span>))					<span style="color:#75715e">// CAN0错误计数器是否超过错误报警限制
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	{
+</span></span></span><span style="display:flex;"><span>	{
 </span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">Enter_SWRst</span>(<span style="color:#ae81ff">1</span>);
 </span></span><span style="display:flex;"><span>		regaddr <span style="color:#f92672">=</span> (<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">long</span>)(<span style="color:#f92672">&amp;</span>CAN1GSR);		
 </span></span><span style="display:flex;"><span>		mes     <span style="color:#f92672">=</span> <span style="color:#a6e22e">RGE</span>(regaddr);
 </span></span><span style="display:flex;"><span>		mes    <span style="color:#f92672">&amp;=</span> <span style="color:#ae81ff">0x00ff</span>;												
 </span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">RGE</span>(regaddr) <span style="color:#f92672">=</span> mes;	    				<span style="color:#75715e">// 总线错误清除处理
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#a6e22e">Quit_SWRst</span>(<span style="color:#ae81ff">1</span>);
+</span></span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">Quit_SWRst</span>(<span style="color:#ae81ff">1</span>);
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> (recFlag1);		
