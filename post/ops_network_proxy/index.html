@@ -92,7 +92,7 @@
     },
     "headline": "设置proxy",
     "name": "设置proxy",
-    "wordCount":  265 ,
+    "wordCount":  262 ,
     "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
@@ -178,6 +178,11 @@
 
     <section class="post-content">
       <h1 id="os">OS</h1>
+<ul>
+<li>Windows</li>
+<li>Dibian/Ubuntu</li>
+<li>FreeBSD</li>
+</ul>
 <h2 id="windows">Windows</h2>
 <ul>
 <li>cmd</li>
@@ -267,13 +272,11 @@ $ wine fg798p.exe
 <h3 id="npm">npm</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm config delete https-proxy
 </span></span><span style="display:flex;"><span>npm config set proxy http://host:port
-</span></span><span style="display:flex;"><span>npm config set http-proxy http://host:port
 </span></span><span style="display:flex;"><span>npm config set https-proxy http://host:port
 </span></span><span style="display:flex;"><span>npm config set strict-ssl false
 </span></span></code></pre></div><h4 id="file">file</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>registry<span style="color:#f92672">=</span>https://registry.npmjs.org/
 </span></span><span style="display:flex;"><span>proxy<span style="color:#f92672">=</span>http://127.0.0.1:8580/
-</span></span><span style="display:flex;"><span>http-proxy<span style="color:#f92672">=</span>http://127.0.0.1:8580
 </span></span><span style="display:flex;"><span>https-proxy<span style="color:#f92672">=</span>http://127.0.0.1:8580
 </span></span><span style="display:flex;"><span>strict-ssl<span style="color:#f92672">=</span>false
 </span></span></code></pre></div><h3 id="yarn">yarn</h3>
