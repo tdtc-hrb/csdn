@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.157.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_ssh_without_password/" />
 
@@ -206,15 +206,15 @@
 </blockquote>
 <h1 id="prepare">Prepare</h1>
 <p>Establish Directory &ldquo;.ssh&rdquo;</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$mkdir ~/.ssh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$mkdir ~/.ssh
 </span></span><span style="display:flex;"><span>$chmod <span style="color:#ae81ff">700</span> ~/.ssh
 </span></span></code></pre></div><h1 id="stage-i">Stage I</h1>
 <h2 id="1-config">1. config</h2>
 <blockquote>
 <p>另外一种方式为：把所有机器的IP和hostname放在/etc/hosts里，在此不再赘述, 请参见《<a href="https://xiaobin80.gitee.io/csdn/post/ops_zookeeper/">ZooKeeper multi-server install</a> - 3.FQDN》。</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$vi ~/.ssh/config
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Host host1
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$vi ~/.ssh/config
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Host host1
 </span></span><span style="display:flex;"><span>        HostName 192.168.0.110
 </span></span><span style="display:flex;"><span>        Port <span style="color:#ae81ff">22</span>
 </span></span><span style="display:flex;"><span>        User xiaobin112
@@ -224,20 +224,20 @@
 </span></span><span style="display:flex;"><span>        Port <span style="color:#ae81ff">22</span>
 </span></span><span style="display:flex;"><span>        User xiaobin112
 </span></span></code></pre></div><h2 id="2-rw">2. r+w</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$chmod <span style="color:#ae81ff">600</span> ~/.ssh/config
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$chmod <span style="color:#ae81ff">600</span> ~/.ssh/config
 </span></span></code></pre></div><h1 id="stage-ii">Stage II</h1>
 <h2 id="1-gen">1. gen</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">(</span>Just press ENTER <span style="color:#66d9ef">for</span> all input values<span style="color:#f92672">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">(</span>Just press ENTER <span style="color:#66d9ef">for</span> all input values<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>ssh-keygen -t rsa -P <span style="color:#e6db74">&#39;&#39;</span>
 </span></span></code></pre></div><h2 id="2-file-copy">2. file copy</h2>
 <blockquote>
 <p>host1 and host2:</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-copy-id -i ~/.ssh/id_rsa.pub xiaobin112@host1
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-copy-id -i ~/.ssh/id_rsa.pub xiaobin112@host1
 </span></span><span style="display:flex;"><span>ssh-copy-id -i ~/.ssh/id_rsa.pub xiaobin112@host2
 </span></span></code></pre></div><h1 id="stage-iii">Stage III</h1>
 <h2 id="1-test">1. test</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ssh xiaobin112@host1
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ssh xiaobin112@host1
 </span></span><span style="display:flex;"><span>$ssh xiaobin112@host2
 </span></span></code></pre></div>
     </section>

@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.157.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -173,24 +173,24 @@
 </blockquote>
 <h1 id="installation">Installation</h1>
 <h2 id="1-add-repo">1. add repo</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install http://repo.mysql.com/mysql57-community-release-el7.rpm
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install http://repo.mysql.com/mysql57-community-release-el7.rpm
 </span></span></code></pre></div><h2 id="2-install">2. install</h2>
 <p>import GPG:</p>
 <pre tabindex="0"><code>sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
 </code></pre><h2 id="centos7">CentOS7</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install mysql-community-server
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install mysql-community-server
 </span></span></code></pre></div><h2 id="centos8">CentOS8</h2>
 <p>Install after doing the following(disable default repo, config-manager, close gpgcheck):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf install mysql-community-server
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf install mysql-community-server
 </span></span></code></pre></div><h3 id="disable-default-repo">disable default repo</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf remove @mysql
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf remove @mysql
 </span></span><span style="display:flex;"><span>sudo dnf module reset mysql
 </span></span><span style="display:flex;"><span>sudo dnf module disable mysql
 </span></span></code></pre></div><h3 id="config-manager">config-manager</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf config-manager --disable mysql80-community
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf config-manager --disable mysql80-community
 </span></span><span style="display:flex;"><span>sudo dnf config-manager --enable mysql57-community
 </span></span></code></pre></div><h3 id="close-gpgcheck">close gpgcheck</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/yum.repos.d/mysql-community.repo
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/yum.repos.d/mysql-community.repo
 </span></span></code></pre></div><p>mysql-community.repo:</p> <a class="read-more" href="/csdn/post/mysql57-cenos7/">&raquo;</a></p>
         
     </section>
@@ -217,15 +217,15 @@
 <blockquote>
 <p>jre</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum install java -y
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum install java -y
 </span></span></code></pre></div><h2 id="jdk">jdk</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum install java-1.8.0-openjdk-devel
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum install java-1.8.0-openjdk-devel
 </span></span></code></pre></div><h1 id="2-set-path">2. set path</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo vi /etc/profile
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export JAVA_HOME<span style="color:#f92672">=</span>/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.345.b01-1.el7_9.x86_64
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo vi /etc/profile
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export JAVA_HOME<span style="color:#f92672">=</span>/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.345.b01-1.el7_9.x86_64
 </span></span><span style="display:flex;"><span>export CLASSPATH<span style="color:#f92672">=</span>.:$JAVA_HOME/jre/lib/:.
 </span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span>$PATH:$JAVA_HOME/bin
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$su - root 
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$su - root 
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#source /etc/profile</span>
 </span></span></code></pre></div><h2 id="about-path">About path</h2>
 <p><a href="https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/6/html/installation_guide/install_openjdk_on_red_hat_enterprise_linux">3.3. INSTALL OPENJDK ON RED HAT ENTERPRISE LINUX</a> - 2.Optional: Set the JAVA_HOME environment variable</p>
@@ -322,19 +322,19 @@ URL=jdbc:mysql://106.14.141.40:3306/crm
     <section class="post-excerpt">
         
             <p><h1 id="导出数据库">导出数据库</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$mysqldump dbName &gt; dbName.sql -u user -p
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$mysqldump dbName &gt; dbName.sql -u user -p
 </span></span></code></pre></div><ul>
 <li>v5.6/5.7</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$mysqldump --no-defaults dbName &gt; dbName.sql -u user -p
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$mysqldump --no-defaults dbName &gt; dbName.sql -u user -p
 </span></span></code></pre></div><h1 id="导入数据库">导入数据库</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql&gt;CREATE DATABASE <span style="color:#e6db74">`</span>dbName<span style="color:#e6db74">`</span> CHARACTER SET utf8 COLLATE utf8_general_ci;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql&gt;CREATE DATABASE <span style="color:#e6db74">`</span>dbName<span style="color:#e6db74">`</span> CHARACTER SET utf8 COLLATE utf8_general_ci;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>mysql&gt;USE dbName;
 </span></span></code></pre></div><ul>
 <li>win</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>mysql&gt;SOURCE C:/Users/xiaobin/dbName.sql;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>mysql&gt;SOURCE C:/Users/xiaobin/dbName.sql;
 </span></span></code></pre></div><ul>
 <li>Linux</li>
 </ul>
@@ -343,10 +343,10 @@ URL=jdbc:mysql://106.14.141.40:3306/crm
 <blockquote>
 <p>win10</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>scp D:\progFiles\carnumber.sql tdtc@192.168.0.151:/home/tdtc/
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>scp D:\progFiles\carnumber.sql tdtc@192.168.0.151:/home/tdtc/
 </span></span></code></pre></div><h2 id="create-user">create user</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql&gt; CREATE USER <span style="color:#e6db74">&#39;DBAdmin&#39;</span>@<span style="color:#e6db74">&#39;localhost&#39;</span> IDENTIFIED BY <span style="color:#e6db74">&#39;xbfirst&#39;</span>;
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql&gt; GRANT ALL PRIVILEGES ON *.* TO <span style="color:#e6db74">&#39;DBAdmin&#39;</span>@<span style="color:#e6db74">&#39;localhost&#39;</span> WITH GRANT OPTION;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql&gt; CREATE USER <span style="color:#e6db74">&#39;DBAdmin&#39;</span>@<span style="color:#e6db74">&#39;localhost&#39;</span> IDENTIFIED BY <span style="color:#e6db74">&#39;xbfirst&#39;</span>;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql&gt; GRANT ALL PRIVILEGES ON *.* TO <span style="color:#e6db74">&#39;DBAdmin&#39;</span>@<span style="color:#e6db74">&#39;localhost&#39;</span> WITH GRANT OPTION;
 </span></span><span style="display:flex;"><span>mysql&gt; flush privileges;
 </span></span></code></pre></div><h1 id="reference">Reference</h1>
 <ul>
@@ -383,14 +383,14 @@ URL=jdbc:mysql://106.14.141.40:3306/crm
 <pre tabindex="0"><code>systemctl start mysqld
 systemctl status mysqld
 </code></pre><h2 id="change-password">change password</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo grep <span style="color:#e6db74">&#34;temporary password&#34;</span> /var/log/mysqld.log
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql -uroot -p
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo grep <span style="color:#e6db74">&#34;temporary password&#34;</span> /var/log/mysqld.log
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql -uroot -p
 </span></span></code></pre></div><p>Change default password：</p>
 <pre tabindex="0"><code>ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;qaz1!Xsw2@&#39;;
 </code></pre><h3 id="weak-password">Weak password</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql&gt; set global validate_password.policy<span style="color:#f92672">=</span>0;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql&gt; set global validate_password.policy<span style="color:#f92672">=</span>0;
 </span></span></code></pre></div><h3 id="set-password">set password</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ALTER USER <span style="color:#e6db74">&#39;root&#39;</span>@<span style="color:#e6db74">&#39;localhost&#39;</span> IDENTIFIED BY <span style="color:#e6db74">&#39;xbfirst80&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ALTER USER <span style="color:#e6db74">&#39;root&#39;</span>@<span style="color:#e6db74">&#39;localhost&#39;</span> IDENTIFIED BY <span style="color:#e6db74">&#39;xbfirst80&#39;</span>;
 </span></span></code></pre></div><h1 id="ref">Ref</h1>
 <ul>
 <li><a href="https://www.percona.com/blog/installing-percona-server-for-mysql-on-rocky-linux-8/">Installing Percona Server for MySQL on Rocky Linux 8</a></li>
@@ -429,26 +429,26 @@ systemctl status mysqld
 <ul>
 <li>User set</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ useradd tdtc
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ useradd tdtc
 </span></span><span style="display:flex;"><span>$ passwd tdtc
 </span></span></code></pre></div><ul>
 <li><a href="https://tdtc-hrb.github.io/csdn/post/ops_rhel_repo/">Yum Repo</a></li>
 </ul>
 <h2 id="1-yum-install">1) yum install</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum groupinstall <span style="color:#e6db74">&#34;Development Tools&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum groupinstall <span style="color:#e6db74">&#34;Development Tools&#34;</span>
 </span></span><span style="display:flex;"><span>$sudo yum install tcl wget
 </span></span></code></pre></div><h3 id="v6">v6+</h3>
 <p>Just to clarify: there is no way this issue will be fixed, Redis &gt;= 6 will require a C11 compiler.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install centos-release-scl
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install centos-release-scl
 </span></span><span style="display:flex;"><span>sudo yum install devtoolset-8
 </span></span><span style="display:flex;"><span>scl enable devtoolset-8 bash
 </span></span></code></pre></div><h2 id="2-verification">2) verification</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$gcc -v
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$gcc -v
 </span></span><span style="display:flex;"><span>$make -v
 </span></span><span style="display:flex;"><span>$echo <span style="color:#e6db74">&#39;puts [info patchlevel];exit 0&#39;</span> | tclsh
 </span></span></code></pre></div><h1 id="1-installation">1. installation</h1>
 <h2 id="1-install">1) install</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://download.redis.io/releases/redis-6.0.16.tar.gz
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://download.redis.io/releases/redis-6.0.16.tar.gz
 </span></span><span style="display:flex;"><span>$tar xzvf redis-6.0.16.tar.gz
 </span></span><span style="display:flex;"><span>$cd redis-6.0.16
 </span></span><span style="display:flex;"><span>$make
@@ -457,11 +457,11 @@ systemctl status mysqld
 </span></span><span style="display:flex;"><span><span style="color:#75715e">## sudo</span>
 </span></span><span style="display:flex;"><span>$sudo make install
 </span></span></code></pre></div><h2 id="2-config">2) config</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo mkdir /etc/redis
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo mkdir /etc/redis
 </span></span><span style="display:flex;"><span>$sudo mkdir -p /var/redis
 </span></span><span style="display:flex;"><span>$sudo cp /home/tdtc/redis-6.0.16/redis.conf /etc/redis
 </span></span></code></pre></div><h3 id="redisconf">redis.conf</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>port  6379				         <span style="color:#75715e">#default port is already 6379.</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>port  6379				         <span style="color:#75715e">#default port is already 6379.</span>
 </span></span><span style="display:flex;"><span>daemonize yes			         <span style="color:#75715e">#run as a daemon</span>
 </span></span><span style="display:flex;"><span>supervised systemd			     <span style="color:#75715e">#signal systemd</span>
 </span></span><span style="display:flex;"><span>pidfile /var/run/redis_6379.pid  <span style="color:#75715e">#specify pid file</span>
@@ -505,7 +505,7 @@ systemctl status mysqld
         
             <p><h1 id="0-pre">0. pre</h1>
 <h2 id="生成基本框">生成基本框</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install -g create-react-app
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install -g create-react-app
 </span></span><span style="display:flex;"><span>create-react-app async
 </span></span></code></pre></div><h2 id="clone-repo">clone repo</h2>
 <p><a href="https://github.com/redux-saga/redux-saga.git">https://github.com/redux-saga/redux-saga.git</a></p>
@@ -530,9 +530,9 @@ systemctl status mysqld
 <p>App.css &amp;&amp; logo.svg</p>
 <h1 id="4-modify-containersappjs">4. modify containers/App.js</h1>
 <p>Add the following two blocks of code.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">logo</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./logo.svg&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">logo</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./logo.svg&#39;</span>;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;./App.css&#39;</span>;
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;App&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;App&#34;</span><span style="color:#f92672">&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">header</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;App-header&#34;</span><span style="color:#f92672">&gt;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">logo</span>} <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;App-logo&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;logo&#34;</span> <span style="color:#f92672">/&gt;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;App-title&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Welcome</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">React</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;</span>
@@ -578,7 +578,7 @@ systemctl status mysqld
 <p>要使用fork必须调用waitpid() ！</p>
 <h1 id="waitpid">waitpid()</h1>
 <p>waitpid函数原型：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;sys/types.h&gt;   /* 提供类型pid_t的定义 */</span><span style="color:#75715e">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;sys/types.h&gt;   /* 提供类型pid_t的定义 */</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;sys/wait.h&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">pid_t</span> <span style="color:#a6e22e">waitpid</span>(<span style="color:#66d9ef">pid_t</span> pid, <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>status, <span style="color:#66d9ef">int</span> options);
@@ -604,7 +604,7 @@ systemctl status mysqld
 <p>只有给waitpid()信号时，才开启它(waitpid)！
 这时，需要sigaction()。</p>
 <p>sigaction函数原型：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;signal.h&gt;</span><span style="color:#75715e">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;signal.h&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">sigaction</span>(<span style="color:#66d9ef">int</span> signum, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> sigaction <span style="color:#f92672">*</span>act, <span style="color:#66d9ef">struct</span> sigaction <span style="color:#f92672">*</span>oldact);
 </span></span></code></pre></div><ul>
 <li>
@@ -622,7 +622,7 @@ systemctl status mysqld
 </ul>
 <p>我们主要设置结构sigaction的sa_handler、sa_mask和sa_flags三个成员变量即可！</p>
 <h1 id="code">code</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">/**
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">/**
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Version: 0.2
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Description: Add signal
@@ -741,7 +741,7 @@ systemctl status mysqld
 <li>Server : WSL (Windows 1809 LTSC) - Ubuntu 18.04.1</li>
 <li><a href="https://tdtc-hrb.github.io/csdn/post/vc-bsd_socket/">Client code</a></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">/**
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">/**
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Version: 0.2
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Description: Add signal
@@ -900,29 +900,29 @@ systemctl status mysqld
         
             <p><h1 id="1-orgeclipsem2emaven2_classpath_container">1. org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER</h1>
 <p>Q:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Classpath entry org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER will not be exported or published. Runtime ClassNotFoundExceptions may result.  
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Classpath entry org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER will not be exported or published. Runtime ClassNotFoundExceptions may result.  
 </span></span></code></pre></div><p>A:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$mvn eclipse:clean
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$mvn eclipse:clean
 </span></span></code></pre></div><h2 id="reference">reference</h2>
 <ul>
 <li><a href="https://stackoverflow.com/questions/37624859/what-is-org-eclipse-m2e-maven2-classpath-container-and-how-do-i-make-it-work-in">what-is-org-eclipse-m2e-maven2-classpath-container-and-how-do-i-make-it-work-in</a></li>
 </ul>
 <h1 id="2-no-main-manifest-attribute-java-jar">2. no main manifest attribute java jar</h1>
 <p>Q:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$java -jar cliDemo-0.0.1-SNAPSHOT.jar
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$java -jar cliDemo-0.0.1-SNAPSHOT.jar
 </span></span><span style="display:flex;"><span>no main manifest attribute, in cliDemo-0.0.1-SNAPSHOT.jar
 </span></span></code></pre></div><p>A:</p>
 <blockquote>
 <p>for win:</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>java -cp cliDemo-0.0.1-SNAPSHOT.jar;C:<span style="color:#ae81ff">\U</span>sers<span style="color:#ae81ff">\x</span>iaobin<span style="color:#ae81ff">\.</span>m2<span style="color:#ae81ff">\r</span>epository<span style="color:#ae81ff">\c</span>ommons-cli<span style="color:#ae81ff">\c</span>ommons-cli<span style="color:#ae81ff">\1</span>.4<span style="color:#ae81ff">\c</span>ommons-cli-1.4.jar my.csdn9.ConsoleLauncher --help
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>java -cp cliDemo-0.0.1-SNAPSHOT.jar;C:<span style="color:#ae81ff">\U</span>sers<span style="color:#ae81ff">\x</span>iaobin<span style="color:#ae81ff">\.</span>m2<span style="color:#ae81ff">\r</span>epository<span style="color:#ae81ff">\c</span>ommons-cli<span style="color:#ae81ff">\c</span>ommons-cli<span style="color:#ae81ff">\1</span>.4<span style="color:#ae81ff">\c</span>ommons-cli-1.4.jar my.csdn9.ConsoleLauncher --help
 </span></span></code></pre></div><h2 id="reference-1">Reference</h2>
 <ul>
 <li><a href="https://stackoverflow.com/questions/41035499/how-to-run-jar-files-depend-on-jar-files">how-to-run-jar-files-depend-on-jar-files</a></li>
 </ul>
 <h1 id="3-coreexception-could-not-calculate-build-plan-plugin-orgapachemavenpluginsmaven-compiler-plugin">3. CoreException: Could not calculate build plan: Plugin org.apache.maven.plugins:maven-compiler-plugin</h1>
 <p>Q:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>CoreException: Could not calculate build plan: Plugin org.apache.maven.plugins:maven-compiler-plugin:3.1 or one of its dependencies could not be resolved: Failure to find org.apache.maven.plugins:maven-compiler-plugin:jar:3.1 in http://repository.jboss.org/nexus/content/groups/public was cached in the local repository, resolution will not be reattempted <span style="color:#66d9ef">until</span> the update interval of jboss-public-repository-group has elapsed or updates are forced
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>CoreException: Could not calculate build plan: Plugin org.apache.maven.plugins:maven-compiler-plugin:3.1 or one of its dependencies could not be resolved: Failure to find org.apache.maven.plugins:maven-compiler-plugin:jar:3.1 in http://repository.jboss.org/nexus/content/groups/public was cached in the local repository, resolution will not be reattempted <span style="color:#66d9ef">until</span> the update interval of jboss-public-repository-group has elapsed or updates are forced
 </span></span></code></pre></div><p>A:
 找到maven库目录，进入：~.m2\repository\org\apache\maven\plugins\maven-compiler-plugin   <br>
 删除3.1文件夹</p> <a class="read-more" href="/csdn/post/java-maven-qa1/">&raquo;</a></p>
@@ -951,7 +951,7 @@ systemctl status mysqld
 <h2 id="1-boot向导">1) <a href="https://start.spring.io/">boot向导</a></h2>
 <p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/springboot-dep.png" alt="project wizzard"></p>
 <h2 id="2-pom依赖">2) pom依赖</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;project</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">xsi:schemaLocation=</span><span style="color:#e6db74">&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span style="color:#f92672">&gt;</span>
 </span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;modelVersion&gt;</span>4.0.0<span style="color:#f92672">&lt;/modelVersion&gt;</span>
@@ -1022,7 +1022,7 @@ systemctl status mysqld
 </span></span></code></pre></div><h1 id="2-dml">2. DML</h1>
 <h2 id="1-db">1) DB</h2>
 <h3 id="applicationproperties">application.properties</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.driverClassName</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">com.mysql.jdbc.Driver</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.driverClassName</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">com.mysql.jdbc.Driver</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.url</span><span style="color:#f92672">=</span><span style="color:#e6db74">jdbc:mysql://localhost:3306/test</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.username</span><span style="color:#f92672">=</span><span style="color:#e6db74">DBAdmin</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.password</span><span style="color:#f92672">=</span><span style="color:#e6db74">xbfirst</span>

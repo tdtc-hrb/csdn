@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.157.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/hw-can-uart-key/" />
 
@@ -194,7 +194,7 @@
 <p>因为我们使用UART主要是进行发送的，所以关闭接收可以更加快速的进行发送处理。</p>
 <p>控制接收缓存寄存（Receiver Buffer Register）即可达到此目的。</p>
 <h2 id="禁止rbr">禁止RBR</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">preUARTInitRBR</span>( <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">char</span> i )
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">preUARTInitRBR</span>( <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">char</span> i )
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">switch</span> (i) {
 </span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">case</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span>
@@ -207,7 +207,7 @@
 </span></span><span style="display:flex;"><span>	}   
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h2 id="允许rbr">允许RBR</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">postUARTInitRBR</span>( <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">char</span> i )
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">postUARTInitRBR</span>( <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">char</span> i )
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">switch</span> (i) {
 </span></span><span style="display:flex;"><span>	  	<span style="color:#66d9ef">case</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span>
@@ -224,7 +224,7 @@
 <p>NXP的官方例程UART加入RBR后的code</p>
 </blockquote>
 <p>uart.c</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">/*****************************************************************************
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">/*****************************************************************************
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *   uart.c:  UART API file for NXP LPC23xx/24xx Family Microprocessors
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *   Copyright(C) 2006, NXP Semiconductor
@@ -545,7 +545,7 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">**                            End Of File
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">******************************************************************************/</span>
 </span></span></code></pre></div><p>uart.h</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">/*****************************************************************************
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">/*****************************************************************************
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *   uart.h:  Header file for NXP LPC23xx Family Microprocessors
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *   Copyright(C) 2006, NXP Semiconductor
@@ -603,7 +603,7 @@
 <img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20150325120822589.png" alt="nxp man2"></p>
 <h2 id="源代码">源代码</h2>
 <p>choiceKey.c</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;LPC23XX.h&gt;</span><span style="color:#75715e">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;LPC23XX.h&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;choiceKey.h&#34;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">KeyInit</span>(<span style="color:#66d9ef">void</span>)
@@ -613,7 +613,7 @@
 </span></span></span><span style="display:flex;"><span>	IODIR1   <span style="color:#f92672">=</span> (IODIR1<span style="color:#f92672">&amp;</span><span style="color:#ae81ff">0xF0FFFFFF</span>)<span style="color:#f92672">|</span><span style="color:#ae81ff">0x00000000</span>;	    
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>choiceKey.h</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#ifndef _CHOICEKEY_H_
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#ifndef _CHOICEKEY_H_
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define _CHOICEKEY_H_
 </span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">extern</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">KeyInit</span>(<span style="color:#66d9ef">void</span>);
@@ -644,7 +644,7 @@
 <h3 id="1检查can信息">1）检查CAN信息</h3>
 <p>此功能点分为2部分：接收信息和错误处理</p>
 <h4 id="接收信息">接收信息</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (CAN1GSR <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">0x01</span>)							<span style="color:#75715e">// CAN0 接收到信息
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (CAN1GSR <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">0x01</span>)							<span style="color:#75715e">// CAN0 接收到信息
 </span></span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">CANRCVANDSEND</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">3</span>);             <span style="color:#75715e">// 参数分别为：（ CAN通道号，选择缓冲区（1、2、3））
 </span></span></span><span style="display:flex;"><span>
@@ -658,7 +658,7 @@
 </span></span><span style="display:flex;"><span>  CAN1CMR <span style="color:#f92672">&amp;=</span> <span style="color:#f92672">~</span>(<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">2</span>);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h4 id="错误处理">错误处理</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (CAN1GSR <span style="color:#f92672">&amp;</span> (<span style="color:#ae81ff">0x01</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">6</span>))					<span style="color:#75715e">// CAN0错误计数器是否超过错误报警限制
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (CAN1GSR <span style="color:#f92672">&amp;</span> (<span style="color:#ae81ff">0x01</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">6</span>))					<span style="color:#75715e">// CAN0错误计数器是否超过错误报警限制
 </span></span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Enter_SWRst</span>(<span style="color:#ae81ff">1</span>);
 </span></span><span style="display:flex;"><span>  regaddr <span style="color:#f92672">=</span> (<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">long</span>)(<span style="color:#f92672">&amp;</span>CAN1GSR);		
@@ -671,9 +671,9 @@
 <blockquote>
 <p>定义KEY宏</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#define KEY(i)  ((IOPIN1&amp;1&lt;&lt;i)&gt;&gt;i)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#define KEY(i)  ((IOPIN1&amp;1&lt;&lt;i)&gt;&gt;i)
 </span></span></span></code></pre></div><p>主体代码:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">if</span>( <span style="color:#a6e22e">KEY</span>(<span style="color:#ae81ff">24</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">if</span>( <span style="color:#a6e22e">KEY</span>(<span style="color:#ae81ff">24</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">while</span>(<span style="color:#a6e22e">KEY</span>(<span style="color:#ae81ff">24</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> ) {
 </span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 执行CAN发送
 </span></span></span><span style="display:flex;"><span>	} <span style="color:#75715e">// key24 while end
@@ -691,13 +691,13 @@
 </span></span></code></pre></div><h2 id="3-程序流程">3. 程序流程</h2>
 <h3 id="1-初始化">1) 初始化</h3>
 <h4 id="按键初始化">按键初始化</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">KeyInit</span>();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">KeyInit</span>();
 </span></span></code></pre></div><h4 id="can初始化">CAN初始化</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">CAN_Init</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0x140002</span>);						        <span style="color:#75715e">//channel:0 Baud speed:1M
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">CAN_Init</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0x140002</span>);						        <span style="color:#75715e">//channel:0 Baud speed:1M
 </span></span></span></code></pre></div><h4 id="uart初始化">UART初始化</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">UARTInit</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">9600</span>);	                                <span style="color:#75715e">/* baud rate setting */</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">UARTInit</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">9600</span>);	                                <span style="color:#75715e">/* baud rate setting */</span>
 </span></span></code></pre></div><h3 id="2-监测按键">2) 监测按键</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">while</span> (<span style="color:#ae81ff">1</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">while</span> (<span style="color:#ae81ff">1</span>)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>  <span style="color:#75715e">/* key in - begin */</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span>( <span style="color:#a6e22e">KEY</span>(<span style="color:#ae81ff">24</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {								 	
@@ -743,7 +743,7 @@
 </span></span></code></pre></div><h2 id="附录">附录</h2>
 <h3 id="1-主函数">1. 主函数</h3>
 <p>main.c</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;LPC23xx.h&#34;</span><span style="color:#75715e">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;LPC23xx.h&#34;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;../common/type.h&#34;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;../common/irq.h&#34;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;../uart/uart.h&#34;</span><span style="color:#75715e">

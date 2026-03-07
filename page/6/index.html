@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.157.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -188,7 +188,7 @@
   (2) 97   ÷ 16 = 6     余数为1</p>
 <p>16进制：第1个余数(14) + 第2个余数(1) + 余商(6)  = 0x61E</p>
 <h1 id="code">code</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">/*
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">/*
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Int2hex.c
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *  Created on: 2010-07-20
@@ -372,7 +372,7 @@
 <blockquote>
 <p>/etc/my.cnf</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>mysqld<span style="color:#f92672">]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>mysqld<span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>log-bin<span style="color:#f92672">=</span>mysql160-bin
 </span></span><span style="display:flex;"><span>server-id<span style="color:#f92672">=</span><span style="color:#ae81ff">160</span>
 </span></span></code></pre></div><h2 id="2-slave-server">2) Slave Server</h2>
@@ -383,12 +383,12 @@
 <ul>
 <li>Slave 1</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>mysqld<span style="color:#f92672">]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>mysqld<span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>server-id<span style="color:#f92672">=</span><span style="color:#ae81ff">161</span>
 </span></span></code></pre></div><ul>
 <li>Slave 2</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>mysqld<span style="color:#f92672">]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>mysqld<span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>server-id<span style="color:#f92672">=</span><span style="color:#ae81ff">162</span>
 </span></span></code></pre></div><h1 id="3-replication-user">3. replication user</h1>
 <blockquote>
@@ -420,31 +420,31 @@
 </blockquote>
 <h1 id="一安装">一、安装</h1>
 <h2 id="0-prepare-tool">0. prepare tool</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum group list
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum group list
 </span></span></code></pre></div><h3 id="1-dev-tools">1) dev tools</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum group install <span style="color:#e6db74">&#34;Development Tools&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum group install <span style="color:#e6db74">&#34;Development Tools&#34;</span>
 </span></span></code></pre></div><h3 id="2-openssl-devel">2) openssl-devel</h3>
 <blockquote>
 <p>update see &ldquo;nginx’s load balancing的安装部分的<a href="https://xiaobin80.gitee.io/csdn/post/ops_nginx/">update OpenSSL</a>&rdquo;</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum install openssl-devel
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum install openssl-devel
 </span></span></code></pre></div><h3 id="3-libnl">3) libnl</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum install libnl libnl-devel libnfnetlink-devel
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum install libnl libnl-devel libnfnetlink-devel
 </span></span></code></pre></div><h2 id="1-keepalived">1. keepalived</h2>
 <blockquote>
 <p>v1.4.5</p>
 </blockquote>
 <h3 id="down-and-unzip">down and unzip</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget http://www.keepalived.org/software/keepalived-1.4.5.tar.gz
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget http://www.keepalived.org/software/keepalived-1.4.5.tar.gz
 </span></span><span style="display:flex;"><span>$ tar zxvf keepalived-1.4.5.tar.gz
 </span></span></code></pre></div><h3 id="installation">installation</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cd keepalived-1.4.5
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cd keepalived-1.4.5
 </span></span><span style="display:flex;"><span>$./configure --prefix<span style="color:#f92672">=</span>/usr/local/keepalived
 </span></span><span style="display:flex;"><span>$make
 </span></span></code></pre></div><p>Root permission Required</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$make install
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$make install
 </span></span></code></pre></div><h3 id="setup">setup</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cp /usr/local/keepalived/sbin/keepalived /usr/sbin/
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cp /usr/local/keepalived/sbin/keepalived /usr/sbin/
 </span></span><span style="display:flex;"><span>$mkdir -p /etc/keepalived
 </span></span><span style="display:flex;"><span>$cp /usr/local/keepalived/etc/keepalived/keepalived.conf /etc/keepalived/keepalived.conf
 </span></span><span style="display:flex;"><span>$cp /usr/local/keepalived/etc/sysconfig/keepalived /etc/sysconfig/
@@ -477,7 +477,7 @@
 <blockquote>
 <p>Ubuntu</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#apt-get install cups</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#apt-get install cups</span>
 </span></span></code></pre></div><p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/1366695534_9598.png" alt="2013-04-23 13:46:39">
 <img src="https://github.com/tdtc-hrb/csdn/raw/master/images/1366695567_8889.png" alt="2013-04-23 13:46:39"></p>
 <h1 id="客户端设置">客户端设置</h1>
@@ -530,7 +530,7 @@
 </blockquote>
 <p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/redux-unidir-ui-arch.png" alt="Event-sourcing"></p>
 <h2 id="1-install">1) Install</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install --save redux-saga
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install --save redux-saga
 </span></span></code></pre></div><p><a href="https://github.com/redux-saga/redux-saga/tree/master/examples">examples</a></p>
 <h1 id="reference">Reference</h1>
 <ul>
@@ -564,18 +564,18 @@
 <p>app.js</p>
 </blockquote>
 <h2 id="include-createstore">include createStore</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">createStore</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;redux&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">createStore</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;redux&#39;</span>
 </span></span></code></pre></div><h2 id="establish-reducer">Establish reducer</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">reducerName</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">action</span>) =&gt; {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">reducerName</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">action</span>) =&gt; {
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">state</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h2 id="invoke-createstore">invoke createStore()</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">store</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">createStore</span>(<span style="color:#a6e22e">reducerName</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">store</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">createStore</span>(<span style="color:#a6e22e">reducerName</span>);
 </span></span></code></pre></div><h1 id="html">html</h1>
 <blockquote>
 <p>public/index.html</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;html&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;head&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;title&gt;</span>The Complete Redux Book - Example Application<span style="color:#f92672">&lt;/title&gt;</span>
@@ -612,17 +612,17 @@
     <section class="post-excerpt">
         
             <p><h1 id="install">Install</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dpkg -i debName.deb
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dpkg -i debName.deb
 </span></span></code></pre></div><h1 id="issues">issues</h1>
 <h2 id="info问题">info问题</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>E: Sub-process /usr/bin/dpkg returned an error code <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>E: Sub-process /usr/bin/dpkg returned an error code <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span>
 </span></span></code></pre></div><p>解决办法：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /var/lib/dpkg
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /var/lib/dpkg
 </span></span><span style="display:flex;"><span>sudo mv info info.bak
 </span></span><span style="display:flex;"><span>sudo mkdir info
 </span></span></code></pre></div><h2 id="文件系统只读问题">文件系统只读问题</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>W: Problem unlinking the file /var/cache/apt/pkgcache.bin - RemoveCaches <span style="color:#f92672">(</span>30: Read-only file system<span style="color:#f92672">)</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo fsck -Af
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>W: Problem unlinking the file /var/cache/apt/pkgcache.bin - RemoveCaches <span style="color:#f92672">(</span>30: Read-only file system<span style="color:#f92672">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo fsck -Af
 </span></span><span style="display:flex;"><span>sudo reboot
 </span></span></code></pre></div> <a class="read-more" href="/csdn/post/dpkg-issues/">&raquo;</a></p>
         
@@ -647,15 +647,15 @@
     <section class="post-excerpt">
         
             <p><h1 id="安装">安装</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ go get -u github.com/go-bindata/go-bindata/...
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ go get -u github.com/go-bindata/go-bindata/...
 </span></span></code></pre></div><h1 id="generation-bindatago">generation bindata.go</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cd ~/go/src/github.com/xiaobin80/go-micro-services/
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cd ~/go/src/github.com/xiaobin80/go-micro-services/
 </span></span><span style="display:flex;"><span>$ go-bindata data/...
 </span></span><span style="display:flex;"><span>$ mv bindata.go ./data/
 </span></span></code></pre></div><h1 id="修改包名">修改包名</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 </span></span></code></pre></div><p>&mdash;》</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">xxx</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">xxx</span>
 </span></span></code></pre></div><blockquote>
 <p>此例xxx为data。</p>
 </blockquote>
@@ -687,23 +687,23 @@
         
             <p><h1 id="一远程仓库回滚">一、远程仓库回滚</h1>
 <h2 id="1-硬性">1. 硬性</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git reset --hard HEAD~1
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git reset --hard HEAD~1
 </span></span></code></pre></div><ul>
 <li>&ldquo;~1&quot;表示向前回滚1个提交。</li>
 <li>&ldquo;~2&quot;表示向前回滚2个提交，以此类推。</li>
 </ul>
 <h2 id="2-强制推送">2. 强制推送</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git push -f --set-upstream origin master
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git push -f --set-upstream origin master
 </span></span></code></pre></div><h1 id="二删除github发布">二、删除github发布</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git tag -d <span style="color:#f92672">[</span>tag<span style="color:#f92672">]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git tag -d <span style="color:#f92672">[</span>tag<span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>git push origin :<span style="color:#f92672">[</span>tag<span style="color:#f92672">]</span>
 </span></span></code></pre></div><p>例如：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git tag -d v0.3.1
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git tag -d v0.3.1
 </span></span><span style="display:flex;"><span>git push origin :v0.3.1
 </span></span></code></pre></div><h1 id="三修改commit信息">三、修改commit信息</h1>
 <p>可以修改最后一次提交的信息.</p>
 <p>进入git-cmd或git-bash：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git commit --amend
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git commit --amend
 </span></span></code></pre></div><p>About：</p>
 <blockquote>
 <p>git-bash和git-cmd的区别</p>
@@ -721,13 +721,13 @@ cmd是windows风格的命令行，可以使用windows命令；</p>
 </blockquote>
 <h1 id="四合并分支">四、合并分支</h1>
 <h2 id="1-checkout">1. checkout</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git checkout dev
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git checkout dev
 </span></span><span style="display:flex;"><span>git checkout master
 </span></span></code></pre></div><h2 id="2-merge">2. merge</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git merge origin/dev
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git merge origin/dev
 </span></span></code></pre></div><h1 id="五设置user">五、设置user</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git init
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config user.name <span style="color:#e6db74">&#34;xiaobin80&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git init
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config user.name <span style="color:#e6db74">&#34;xiaobin80&#34;</span>
 </span></span><span style="display:flex;"><span>git config user.email <span style="color:#e6db74">&#34;veic_2005@163.com&#34;</span>
 </span></span></code></pre></div><h1 id="issues">Issues</h1>
 <p>Git-2.39.1-64-bit + TortoiseGit-2.14.0.0-64bit</p> <a class="read-more" href="/csdn/post/ops_git_oper1/">&raquo;</a></p>
@@ -753,7 +753,7 @@ cmd是windows风格的命令行，可以使用windows命令；</p>
     <section class="post-excerpt">
         
             <p><h1 id="1-字符串替换">1. 字符串替换</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">/**
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">/**
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * 字符串替换函数 - js
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * expStr:  查找的字符串
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * string:  整个字符串
@@ -772,7 +772,7 @@ cmd是windows风格的命令行，可以使用windows命令；</p>
 </span></span></code></pre></div><h1 id="2-千分符">2. 千分符</h1>
 <p>例如，货币7867321.55，怎样使用js来分割他呢？</p>
 <h2 id="0-分离小数和整数">0. 分离小数和整数</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">strCny</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#e6db74">&#34;.&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">strCny</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#e6db74">&#34;.&#34;</span>);
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ( <span style="color:#a6e22e">index</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">strNum</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">strCny</span>.<span style="color:#a6e22e">substring</span>(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">index</span>);
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">strDec</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">strCny</span>.<span style="color:#a6e22e">substr</span>(<span style="color:#a6e22e">index</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">iLenCny</span>);
@@ -780,9 +780,9 @@ cmd是windows风格的命令行，可以使用windows命令；</p>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">strCny</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">strNum</span>;
 </span></span><span style="display:flex;"><span>} 
 </span></span></code></pre></div><h2 id="1-转换为string">1. 转换为string</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">strCny</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">cny</span>.<span style="color:#a6e22e">toString</span>();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">strCny</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">cny</span>.<span style="color:#a6e22e">toString</span>();
 </span></span></code></pre></div><h2 id="2-转化为数组">2. 转化为数组</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">strCny</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">strCny</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;&#34;</span>);
 </span></span></code></pre></div><h2 id="3-循环数组">3. 循环数组</h2>
 <ol>
 <li>由个位开始</li>
@@ -794,9 +794,9 @@ cmd是windows风格的命令行，可以使用windows命令；</p>
 每增加个逗号，长度（len）+1</p>
 </blockquote>
 <h2 id="4-转换string">4. 转换string</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#34;&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#34;&#34;</span>);
 </span></span></code></pre></div><p>并输出</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">result</span>);  
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">result</span>);  
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//alert(result);
 </span></span></span></code></pre></div><h1 id="完整代码">完整代码</h1>
 <p>money.html</p> <a class="read-more" href="/csdn/post/js-thousand-separator/">&raquo;</a></p>

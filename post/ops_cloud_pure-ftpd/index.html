@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.157.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_cloud_pure-ftpd/" />
 
@@ -186,16 +186,16 @@ OS: CentOS 7.2 x64</p>
 <img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20171011171838468.png" alt="2017-10-11 17:18"></p>
 <h1 id="2-其他系统管理">2. 其他系统管理</h1>
 <h2 id="1-设置sellinux">1) 设置SeLlinux</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># setsebool -P ftp_home_dir on</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># setsebool -P ftp_home_dir on</span>
 </span></span></code></pre></div><h2 id="2-设置user">2) 设置user</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># useradd -m fdn -s /sbin/nologin</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># useradd -m fdn -s /sbin/nologin</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># passwd fdn</span>
 </span></span></code></pre></div><h1 id="3-安装pure-ftpd">3. 安装pure-ftpd</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># yum install pure-ftpd</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># yum install pure-ftpd</span>
 </span></span></code></pre></div><h2 id="1-setup">1) Setup</h2>
 <p>使用root简单设置pure-ftpd.conf</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># vi /etc/pure-ftpd/pure-ftpd.conf</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># If you want simple Unix (/etc/passwd) authentication, uncomment this</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># vi /etc/pure-ftpd/pure-ftpd.conf</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># If you want simple Unix (/etc/passwd) authentication, uncomment this</span>
 </span></span><span style="display:flex;"><span>UnixAuthentication            yes
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Cage in every user in his home directory</span>
@@ -208,7 +208,7 @@ OS: CentOS 7.2 x64</p>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Disallow anonymous connections. Only allow authenticated users.</span>
 </span></span><span style="display:flex;"><span>NoAnonymous                 yes
 </span></span></code></pre></div><h2 id="2-run">2) run</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># chkconfig pure-ftpd on</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># chkconfig pure-ftpd on</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># service pure-ftpd start</span>
 </span></span></code></pre></div><h1 id="参考文档">参考文档</h1>
 <ul>

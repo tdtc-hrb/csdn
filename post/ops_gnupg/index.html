@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.157.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_gnupg/" />
 
@@ -179,10 +179,10 @@
     <section class="post-content">
       <p>The GNU Privacy Guard</p>
 <h1 id="1-install">1. install</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum install gnupg
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum install rng-tools
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum install gnupg
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum install rng-tools
 </span></span></code></pre></div><h1 id="2-gen-key">2. gen key</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$gpg --gen-key
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$gpg --gen-key
 </span></span></code></pre></div><p>Decompose 20180804215500757.png step:
 <img src="https://github.com/tdtc-hrb/csdn/raw/master/images/gpg1key-1.png" alt="gen 1 key 1">
 Press Key: enter
@@ -193,7 +193,7 @@ Press Key: enter
 <img src="https://github.com/tdtc-hrb/csdn/raw/master/images/gpg1key-4.png" alt="gen 1 key 4">
 Press Key: y
 <img src="https://github.com/tdtc-hrb/csdn/raw/master/images/gpg1key-5.png" alt="gen 1 key 5"></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Real name: xiaobin
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Real name: xiaobin
 </span></span><span style="display:flex;"><span>Email address: veic_2005@163
 </span></span><span style="display:flex;"><span>Comment: enter<span style="color:#f92672">(</span>press key<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>Press Key: O
@@ -210,7 +210,7 @@ Open a new terminal:</p>
 </code></pre><p>The old terminal shows the result：
 <img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20180804220815965.png" alt="gen key 6"></p>
 <h1 id="3-gen-revoke">3. gen revoke</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$gpg gen-revoke 7209DBAD
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$gpg gen-revoke 7209DBAD
 </span></span></code></pre></div><p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/2018080422175625.png" alt="gen revoke 1">
 Press Key: y
 <img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20180804221854384.png" alt="gen revoke 2"></p>
@@ -218,16 +218,16 @@ Press Key: y
 <p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20180804222142625.png" alt="gen revoke 4"></p>
 <h1 id="4-encrypt-filepassword">4. encrypt file(password)</h1>
 <h2 id="1-password-file">1) password-file</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$vi love_shidie-password
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$vi love_shidie-password
 </span></span></code></pre></div><blockquote>
 <p>密码文件(明文密码)</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>thisispassword
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>thisispassword
 </span></span></code></pre></div><h2 id="2-gen-gpg-file">2) gen gpg file</h2>
 <blockquote>
 <p>Gen file: love_shidie-password.gpg</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$gpg -e -r veic_2005@163.com love_shidie-password
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$gpg -e -r veic_2005@163.com love_shidie-password
 </span></span></code></pre></div><h1 id="reference">Reference</h1>
 <ul>
 <li><a href="http://xmodulo.com/mutt-email-client-encrypted-passwords.html">How to use Mutt email client with encrypted passwords</a></li>

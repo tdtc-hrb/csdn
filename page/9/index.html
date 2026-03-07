@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.157.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -408,7 +408,7 @@ sub check2Sex {
 <h1 id="code">code</h1>
 <p>循环中为使用游标读取每行数据。</p>
 <p>test.pl</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span><span style="color:#75715e">#! /usr/bin/perl</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span><span style="color:#75715e">#! /usr/bin/perl</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># test DBI and DBD::mysql</span>
 </span></span><span style="display:flex;"><span>
@@ -634,13 +634,13 @@ sub check2Sex {
         
             <p><h1 id="系统设置">系统设置</h1>
 <h2 id="新增用户">新增用户</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$useradd haproxy
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$useradd haproxy
 </span></span><span style="display:flex;"><span>$passwd haproxy
 </span></span></code></pre></div><h2 id="sysctl">sysctl</h2>
 <blockquote>
 <p>/etc/sysctl.conf</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>net.ipv4.tcp_tw_reuse <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>net.ipv4.tcp_tw_reuse <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span>net.ipv4.ip_local_port_range <span style="color:#f92672">=</span> <span style="color:#ae81ff">1024</span> <span style="color:#ae81ff">65023</span>
 </span></span><span style="display:flex;"><span>net.ipv4.tcp_max_syn_backlog <span style="color:#f92672">=</span> <span style="color:#ae81ff">10240</span>
 </span></span><span style="display:flex;"><span>net.ipv4.tcp_max_tw_buckets <span style="color:#f92672">=</span> <span style="color:#ae81ff">400000</span>
@@ -649,25 +649,25 @@ sub check2Sex {
 </span></span><span style="display:flex;"><span>net.core.somaxconn <span style="color:#f92672">=</span> <span style="color:#ae81ff">10000</span>
 </span></span></code></pre></div><h2 id="firewall">firewall</h2>
 <h3 id="1-l7">1) L7</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-service<span style="color:#f92672">=</span>http
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-service<span style="color:#f92672">=</span>http
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>$firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>6080/tcp
 </span></span></code></pre></div><h3 id="2-l4">2) L4</h3>
 <blockquote>
 <p>mysql</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>13306/tcp
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>13306/tcp
 </span></span></code></pre></div><p>生效</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$firewall-cmd --reload
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$firewall-cmd --reload
 </span></span></code></pre></div><h1 id="rsyslog的安装">rsyslog的安装</h1>
 <h2 id="install">install</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum install rsyslog
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum install rsyslog
 </span></span></code></pre></div><h2 id="config">config</h2>
 <h3 id="1-rsyslog">1) rsyslog</h3>
 <blockquote>
 <p>/etc/rsyslog.d/haproxy.conf</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ModLoad imudp
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ModLoad imudp
 </span></span><span style="display:flex;"><span>$UDPServerRun <span style="color:#ae81ff">514</span>
 </span></span><span style="display:flex;"><span>$template Haproxy,”%msg%<span style="color:#ae81ff">\n</span>”
 </span></span><span style="display:flex;"><span>local2.<span style="color:#f92672">=</span>info -/var/log/haproxy.log;Haproxy
@@ -678,7 +678,7 @@ sub check2Sex {
 <blockquote>
 <p>/etc/logrotate.d/haproxy</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/var/log/haproxy.log <span style="color:#f92672">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/var/log/haproxy.log <span style="color:#f92672">{</span>
 </span></span><span style="display:flex;"><span>missingok
 </span></span><span style="display:flex;"><span>notifempty
 </span></span><span style="display:flex;"><span>sharedscripts
@@ -690,7 +690,7 @@ sub check2Sex {
 </span></span><span style="display:flex;"><span>endscript
 </span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
 </span></span></code></pre></div><h2 id="exec">exec</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$systemctl restart rsyslog.service
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$systemctl restart rsyslog.service
 </span></span></code></pre></div><h1 id="安装haproxy">安装haproxy</h1>
 <h2 id="install-1">install</h2>
 <p><a href="https://pan.baidu.com/s/1KVqOvHMl65m0BO3wOcUabw">haproxy-1.8.13.tar.gz</a></p> <a class="read-more" href="/csdn/post/ops_haproxy/">&raquo;</a></p>
@@ -718,7 +718,7 @@ sub check2Sex {
             <p><p>我们经常要用到查找某个字符串的功能，使用C++或者其他高级语言实现起来很简单；但是使用C语言实现就不那么easy了。</p>
 <h1 id="切割字符串">切割字符串</h1>
 <p>strtok函数</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">strtok_s</span>(
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">strtok_s</span>(
 </span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>strToken,
 </span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>strDelimit,
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">char</span> <span style="color:#f92672">**</span>context
@@ -733,7 +733,7 @@ sub check2Sex {
 </ul>
 <h1 id="匹配字符串">匹配字符串</h1>
 <p>strstr函数</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">strstr</span>(
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">strstr</span>(
 </span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>str,
 </span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>strSearch
 </span></span><span style="display:flex;"><span>); <span style="color:#75715e">// C only
@@ -744,7 +744,7 @@ sub check2Sex {
 要搜索的字符串</li>
 </ul>
 <h1 id="函数getstrval_s">函数getStrVal_s</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">getStrVal_s</span>(<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>str, <span style="color:#66d9ef">char</span> key[])
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">getStrVal_s</span>(<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>str, <span style="color:#66d9ef">char</span> key[])
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> strDelimit <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;;&#34;</span>;
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>strSeq <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
@@ -765,7 +765,7 @@ sub check2Sex {
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> strSeq;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h2 id="主程序">主程序</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">_tmain</span>(<span style="color:#66d9ef">int</span> argc, _TCHAR<span style="color:#f92672">*</span> argv[])
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">_tmain</span>(<span style="color:#66d9ef">int</span> argc, _TCHAR<span style="color:#f92672">*</span> argv[])
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> string[] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;True democracy demands that citizens cannot be thrown in jail because of what they believe;and that businesses can be opened without paying a bribe;It depends on the freedom of citizens to speak their minds and assemble without fear;and on the rule of law and due process that guarantees the rights of all people&#34;</span>;
@@ -808,7 +808,7 @@ sub check2Sex {
 介绍省略。</li>
 </ul>
 <p>代码如下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span>
@@ -870,7 +870,7 @@ sub check2Sex {
         
             <p><p>我们在编写C程序时常常与预处理器打交道。</p>
 <p>比如下列华氏转摄氏程序</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">/*
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">/*
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * celsius.c
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *  Created on: 2012-11-14
@@ -898,7 +898,7 @@ sub check2Sex {
 指令总是在第一个换行符处结束，除非明确地指明要继续。</li>
 </ol>
 <p>如果想在下一行继续指令，我们必须在当前行的末尾使用\字符。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#define FREEZING_PT 16.0 *	\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#define FREEZING_PT 16.0 *	\
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">				2
 </span></span></span></code></pre></div><ol start="2">
 <li>

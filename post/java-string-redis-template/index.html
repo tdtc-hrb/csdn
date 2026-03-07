@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.157.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/java-string-redis-template/" />
 
@@ -178,10 +178,10 @@
 
     <section class="post-content">
       <h1 id="1-autowired">1. autowired</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Autowired</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Autowired</span>
 </span></span><span style="display:flex;"><span>StringRedisTemplate stringRedisTemplate;
 </span></span></code></pre></div><h1 id="2-getset">2. get/set</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">redisCliTest</span>() {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">redisCliTest</span>() {
 </span></span><span style="display:flex;"><span>      String cliVal <span style="color:#f92672">=</span> stringRedisTemplate.<span style="color:#a6e22e">opsForValue</span>().<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;mykey2&#34;</span>);
 </span></span><span style="display:flex;"><span>      System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;redis-cli value: &#34;</span> <span style="color:#f92672">+</span> cliVal);
 </span></span><span style="display:flex;"><span>}
@@ -189,7 +189,7 @@
 <blockquote>
 <p>UserController.java</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.demo.controller;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.demo.controller;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List;
 </span></span><span style="display:flex;"><span>
@@ -242,7 +242,7 @@
 <blockquote>
 <p>spring boot(v2.0.5)</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>2018-09-21 09:17:38.284  INFO <span style="color:#ae81ff">9992</span> --- <span style="color:#f92672">[</span>nio-8080-exec-1<span style="color:#f92672">]</span> o.a.c.c.C.<span style="color:#f92672">[</span>Tomcat<span style="color:#f92672">]</span>.<span style="color:#f92672">[</span>localhost<span style="color:#f92672">]</span>.<span style="color:#f92672">[</span>/<span style="color:#f92672">]</span>       : Initializing Spring FrameworkServlet <span style="color:#e6db74">&#39;dispatcherServlet&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>2018-09-21 09:17:38.284  INFO <span style="color:#ae81ff">9992</span> --- <span style="color:#f92672">[</span>nio-8080-exec-1<span style="color:#f92672">]</span> o.a.c.c.C.<span style="color:#f92672">[</span>Tomcat<span style="color:#f92672">]</span>.<span style="color:#f92672">[</span>localhost<span style="color:#f92672">]</span>.<span style="color:#f92672">[</span>/<span style="color:#f92672">]</span>       : Initializing Spring FrameworkServlet <span style="color:#e6db74">&#39;dispatcherServlet&#39;</span>
 </span></span><span style="display:flex;"><span>2018-09-21 09:17:38.284  INFO <span style="color:#ae81ff">9992</span> --- <span style="color:#f92672">[</span>nio-8080-exec-1<span style="color:#f92672">]</span> o.s.web.servlet.DispatcherServlet        : FrameworkServlet <span style="color:#e6db74">&#39;dispatcherServlet&#39;</span>: initialization started
 </span></span><span style="display:flex;"><span>2018-09-21 09:17:38.295  INFO <span style="color:#ae81ff">9992</span> --- <span style="color:#f92672">[</span>nio-8080-exec-1<span style="color:#f92672">]</span> o.s.web.servlet.DispatcherServlet        : FrameworkServlet <span style="color:#e6db74">&#39;dispatcherServlet&#39;</span>: initialization completed in <span style="color:#ae81ff">10</span> ms
 </span></span><span style="display:flex;"><span>2018-09-21 09:17:38.317  INFO <span style="color:#ae81ff">9992</span> --- <span style="color:#f92672">[</span>nio-8080-exec-1<span style="color:#f92672">]</span> o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory

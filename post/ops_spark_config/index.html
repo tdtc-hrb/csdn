@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.157.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_spark_config/" />
 
@@ -182,21 +182,21 @@
 <p>spark-env.sh</p>
 </blockquote>
 <h2 id="1-hadoop-path">1) hadoop path</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export HADOOP_HOME<span style="color:#f92672">=</span>/home/tdtc/app/hadoop/2.7.7
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export HADOOP_HOME<span style="color:#f92672">=</span>/home/tdtc/app/hadoop/2.7.7
 </span></span><span style="display:flex;"><span>export HADOOP_CONF_DIR<span style="color:#f92672">=</span>$HADOOP_HOME/etc/hadoop
 </span></span></code></pre></div><h2 id="2-spark-worker">2) spark worker</h2>
 <p>使用的内存和cpu core数</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export SPARK_WORKER_MEMORY<span style="color:#f92672">=</span>128m
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export SPARK_WORKER_MEMORY<span style="color:#f92672">=</span>128m
 </span></span><span style="display:flex;"><span>export SPARK_WORKER_CORES<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
 </span></span></code></pre></div><h2 id="3-recoveryzookeeper">3) recovery(zookeeper)</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export SPARK_DAEMON_JAVA_OPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-Dspark.deploy.recoveryMode=ZOOKEEPER -Dspark.deploy.zookeeper.url=tdtc201:2181,tdtc202:2181,tdtc203:2181,tdtc204:2181 -Dspark.deploy.zookeeper.dir=/spark2&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export SPARK_DAEMON_JAVA_OPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-Dspark.deploy.recoveryMode=ZOOKEEPER -Dspark.deploy.zookeeper.url=tdtc201:2181,tdtc202:2181,tdtc203:2181,tdtc204:2181 -Dspark.deploy.zookeeper.dir=/spark2&#34;</span>
 </span></span></code></pre></div><h3 id="recoverymode">recoveryMode</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>spark.deploy.recoveryMode<span style="color:#f92672">=</span>ZOOKEEPER
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>spark.deploy.recoveryMode<span style="color:#f92672">=</span>ZOOKEEPER
 </span></span></code></pre></div><h3 id="url">url</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>spark.deploy.zookeeper.url<span style="color:#f92672">=</span>tdtc201:2181,tdtc202:2181,tdtc203:2181,tdtc204:2181
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>spark.deploy.zookeeper.url<span style="color:#f92672">=</span>tdtc201:2181,tdtc202:2181,tdtc203:2181,tdtc204:2181
 </span></span></code></pre></div><h3 id="directory">directory</h3>
 <p>储存在zk中的位置</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>spark.deploy.zookeeper.dir<span style="color:#f92672">=</span>/spark2
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>spark.deploy.zookeeper.dir<span style="color:#f92672">=</span>/spark2
 </span></span></code></pre></div><h1 id="2-slaves">2. slaves</h1>
 <blockquote>
 <p>注意：有几个YARN，就设置几个slaves！！！</p>
@@ -204,7 +204,7 @@
 <p>../conf/slaves</p>
 </blockquote>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tdtc203
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tdtc203
 </span></span><span style="display:flex;"><span>tdtc204
 </span></span></code></pre></div><h1 id="reference">Reference</h1>
 <ul>

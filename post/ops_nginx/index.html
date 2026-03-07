@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.157.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_nginx/" />
 
@@ -181,45 +181,45 @@
 <h1 id="一安装">一、安装</h1>
 <p>OS: CentOS7 minimal（安装时的选项）</p>
 <h2 id="0-prepare">0. prepare</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum -y install gcc gcc-c++ automake pcre pcre-devel zlib zlib-devel openssl openssl-devel
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum -y install gcc gcc-c++ automake pcre pcre-devel zlib zlib-devel openssl openssl-devel
 </span></span></code></pre></div><h3 id="1-update-openssl">1) update OpenSSL</h3>
 <blockquote>
 <p>default directory: /usr/ssl</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://www.openssl.org/source/openssl-1.1.1q.tar.gz --no-check-certificate
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://www.openssl.org/source/openssl-1.1.1q.tar.gz --no-check-certificate
 </span></span></code></pre></div><h3 id="2-setup">2) setup</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$./config --prefix<span style="color:#f92672">=</span>/usr --shared
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$./config --prefix<span style="color:#f92672">=</span>/usr --shared
 </span></span><span style="display:flex;"><span>$make
 </span></span></code></pre></div><blockquote>
 <p>Root permission Required</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo make install
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo make install
 </span></span></code></pre></div><h2 id="1-installation">1. installation</h2>
 <p>First, install Nginx of centos repo; <br>
 Then, replace the nginx program file. <br>
 Note: The replaced program file version must be the same as the repo!</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
 </span></span><span style="display:flex;"><span>$sudo yum install -y nginx
 </span></span></code></pre></div><h3 id="1-down">1) down</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$curl --progress https://nginx.org/download/nginx-1.22.0.tar.gz | tar xz
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$curl --progress https://nginx.org/download/nginx-1.22.0.tar.gz | tar xz
 </span></span></code></pre></div><h3 id="2-setup-module">2) setup module</h3>
 <p>see arguments:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$nginx -V
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$nginx -V
 </span></span></code></pre></div><h4 id="gd-lib">GD lib</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum install gd-devel
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum install gd-devel
 </span></span></code></pre></div><p>add param(config):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>--with-http_image_filter_module<span style="color:#f92672">=</span>dynamic
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>--with-http_image_filter_module<span style="color:#f92672">=</span>dynamic
 </span></span></code></pre></div><h4 id="libxml2libxslt">libxml2/libxslt</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum install libxml2-devel
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum install libxml2-devel
 </span></span><span style="display:flex;"><span>$sudo yum install libxslt-devel
 </span></span></code></pre></div><p>add param(config):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>--with-http_xslt_module<span style="color:#f92672">=</span>dynamic
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>--with-http_xslt_module<span style="color:#f92672">=</span>dynamic
 </span></span></code></pre></div><h4 id="geoip-library">GeoIP library</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum install geoip-devel
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum install geoip-devel
 </span></span></code></pre></div><p>add param(config):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>--with-http_geoip_module<span style="color:#f92672">=</span>dynamic
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>--with-http_geoip_module<span style="color:#f92672">=</span>dynamic
 </span></span></code></pre></div><h4 id="param-list">param list</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ./configure --prefix<span style="color:#f92672">=</span>/etc/nginx <span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ./configure --prefix<span style="color:#f92672">=</span>/etc/nginx <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span> --sbin-path<span style="color:#f92672">=</span>/usr/sbin/nginx <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span> --modules-path<span style="color:#f92672">=</span>/usr/lib64/nginx/modules <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span> --conf-path<span style="color:#f92672">=</span>/etc/nginx/nginx.conf <span style="color:#ae81ff">\
@@ -254,33 +254,33 @@ Note: The replaced program file version must be the same as the repo!</p>
 </span></span></span><span style="display:flex;"><span> --with-mail <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span> --with-mail_ssl_module --with-stream --with-stream_realip_module --with-stream_ssl_module --with-stream_ssl_preread_module --with-http_image_filter_module<span style="color:#f92672">=</span>dynamic --with-http_xslt_module<span style="color:#f92672">=</span>dynamic --with-http_geoip_module<span style="color:#f92672">=</span>dynamic --with-cc-opt<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic -fPIC&#39;</span> --with-ld-opt<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;-Wl,-z,relro -Wl,-z,now -pie&#39;</span>
 </span></span></code></pre></div><h3 id="3-gen-program">3) Gen program</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$make
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$make
 </span></span></code></pre></div><p>Copy nginx and all .so files in the objs folder.</p>
 <h4 id="nginx">nginx</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo cp -rfp objs/nginx /usr/sbin/
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo cp -rfp objs/nginx /usr/sbin/
 </span></span></code></pre></div><h4 id="so">*.so</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo cp objs/*.so /usr/lib64/nginx/modules/
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo cp objs/*.so /usr/lib64/nginx/modules/
 </span></span></code></pre></div><h2 id="2-fw">2. fw</h2>
 <blockquote>
 <p>port 80</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>80/tcp
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>80/tcp
 </span></span></code></pre></div><h2 id="3-run">3. run</h2>
 <ul>
 <li>start</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo /usr/sbin/nginx
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo /usr/sbin/nginx
 </span></span></code></pre></div><ul>
 <li>restart</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo /usr/sbin/nginx -s reload
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo /usr/sbin/nginx -s reload
 </span></span></code></pre></div><h1 id="二配置">二、配置</h1>
 <h2 id="0-load-lib">0. load lib</h2>
 <blockquote>
 <p>/etc/nginx/nginx.conf
 add add below in the main context:</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>load_module <span style="color:#e6db74">&#34;modules/ngx_http_geoip_module.so&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>load_module <span style="color:#e6db74">&#34;modules/ngx_http_geoip_module.so&#34;</span>;
 </span></span><span style="display:flex;"><span>load_module <span style="color:#e6db74">&#34;modules/ngx_http_image_filter_module.so&#34;</span>;
 </span></span><span style="display:flex;"><span>load_module <span style="color:#e6db74">&#34;modules/ngx_http_xslt_filter_module.so&#34;</span>;
 </span></span></code></pre></div><h2 id="1-load-balancing">1. load balancing</h2>
@@ -289,7 +289,7 @@ add add below in the main context:</p>
 <ul>
 <li>/etc/nginx/nginx.conf</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>http <span style="color:#f92672">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>http <span style="color:#f92672">{</span>
 </span></span><span style="display:flex;"><span>    upstream myapp1 <span style="color:#f92672">{</span>
 </span></span><span style="display:flex;"><span>        server srv1.example.com;
 </span></span><span style="display:flex;"><span>        server srv2.example.com;
@@ -299,7 +299,7 @@ add add below in the main context:</p>
 </span></span></code></pre></div><ul>
 <li>/etc/nginx/conf.d/default.conf</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>server <span style="color:#f92672">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>server <span style="color:#f92672">{</span>
 </span></span><span style="display:flex;"><span>    listen 80;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    location / <span style="color:#f92672">{</span>
@@ -313,7 +313,7 @@ add add below in the main context:</p>
 <ul>
 <li>/etc/nginx/nginx.conf</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>http <span style="color:#f92672">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>http <span style="color:#f92672">{</span>
 </span></span><span style="display:flex;"><span>    upstream localhost <span style="color:#f92672">{</span>
 </span></span><span style="display:flex;"><span>        server 192.168.0.122:8080 weight<span style="color:#f92672">=</span>6; <span style="color:#75715e">## local</span>
 </span></span><span style="display:flex;"><span>        server 192.168.0.127:8080 weight<span style="color:#f92672">=</span>3;
@@ -322,7 +322,7 @@ add add below in the main context:</p>
 </span></span></code></pre></div><ul>
 <li>/etc/nginx/conf.d/default.conf</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>server <span style="color:#f92672">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>server <span style="color:#f92672">{</span>
 </span></span><span style="display:flex;"><span>    listen 80;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    location / <span style="color:#f92672">{</span>
@@ -345,16 +345,16 @@ add add below in the main context:</p>
 <p>在配置文件中ipv4与ipv6都使用80端口</p>
 <p>解决办法：</p>
 <h3 id="1更改端口">1）更改端口</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>listen 0.0.0.0:80 default_server;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>listen 0.0.0.0:80 default_server;
 </span></span><span style="display:flex;"><span>listen <span style="color:#f92672">[</span>::<span style="color:#f92672">]</span>:81 default_server;
 </span></span></code></pre></div><h3 id="2只使用一种协议">2）只使用一种协议</h3>
 <blockquote>
 <p>参考 <a href="https://stackoverflow.com/a/15101745">nginx-nginx-emerg-bind-to-80-failed-98-address-already-in-use</a></p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>listen 0.0.0.0:80 default_server;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>listen 0.0.0.0:80 default_server;
 </span></span><span style="display:flex;"><span>listen <span style="color:#f92672">[</span>::<span style="color:#f92672">]</span>:80 ipv6only<span style="color:#f92672">=</span>on default_server;
 </span></span></code></pre></div><p>我的解决办法，不使用IPv6。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>listen 0.0.0.0:80 default_server;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>listen 0.0.0.0:80 default_server;
 </span></span><span style="display:flex;"><span><span style="color:#75715e">## listen [::]:80 default_server;</span>
 </span></span></code></pre></div>
     </section>

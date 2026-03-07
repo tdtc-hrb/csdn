@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.157.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/js-json-table/" />
 
@@ -205,7 +205,7 @@ JSON就是一串字符串 只不过元素会使用特定的符号标注。
 </code></pre><p>详细介绍请参见<a href="http://www.w3school.com.cn/json/">W3SCHOOL</a>
 <a href="http://www.ecma-international.org/ecma-262/5.1/">JSON规范</a></p>
 <h2 id="1-students">1. students</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">students</span> <span style="color:#f92672">=</span> [
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">students</span> <span style="color:#f92672">=</span> [
 </span></span><span style="display:flex;"><span>  {<span style="color:#e6db74">&#34;cName&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;class 1&#34;</span>, <span style="color:#e6db74">&#34;ID&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;1001&#34;</span>, <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;李X&#34;</span>, <span style="color:#e6db74">&#34;course&#34;</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;英语&#34;</span>, <span style="color:#e6db74">&#34;高数&#34;</span>], <span style="color:#e6db74">&#34;elective&#34;</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;政治经济学&#34;</span>, <span style="color:#e6db74">&#34;哲学&#34;</span>]},
 </span></span><span style="display:flex;"><span>  {<span style="color:#e6db74">&#34;cName&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;class 1&#34;</span>, <span style="color:#e6db74">&#34;ID&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;1002&#34;</span>, <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;张X威&#34;</span>, <span style="color:#e6db74">&#34;course&#34;</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;英语&#34;</span>, <span style="color:#e6db74">&#34;高数&#34;</span>], <span style="color:#e6db74">&#34;elective&#34;</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;政治经济学&#34;</span>, <span style="color:#e6db74">&#34;哲学&#34;</span>]},
 </span></span><span style="display:flex;"><span>  {<span style="color:#e6db74">&#34;cName&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;class 1&#34;</span>, <span style="color:#e6db74">&#34;ID&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;1003&#34;</span>, <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;于X洋&#34;</span>, <span style="color:#e6db74">&#34;course&#34;</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;英语&#34;</span>, <span style="color:#e6db74">&#34;高数&#34;</span>], <span style="color:#e6db74">&#34;elective&#34;</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;政治经济学&#34;</span>, <span style="color:#e6db74">&#34;哲学&#34;</span>]},
@@ -225,7 +225,7 @@ JSON就是一串字符串 只不过元素会使用特定的符号标注。
 <blockquote>
 <p>删除除了表头之外的数据。</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">CourseInf</span>.<span style="color:#a6e22e">deleteTable</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">table</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">CourseInf</span>.<span style="color:#a6e22e">deleteTable</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">table</span>) {
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">mBody</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">table</span>.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#39;tbody&#39;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">len</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">table</span>.<span style="color:#a6e22e">rows</span>.<span style="color:#a6e22e">length</span>;
@@ -235,7 +235,7 @@ JSON就是一串字符串 只不过元素会使用特定的符号标注。
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>};
 </span></span></code></pre></div><h2 id="2-写表格">2. 写表格</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">CourseInf</span>.<span style="color:#a6e22e">writeTable</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">obj</span>, <span style="color:#a6e22e">table</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">CourseInf</span>.<span style="color:#a6e22e">writeTable</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">obj</span>, <span style="color:#a6e22e">table</span>) {
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [];
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">className</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">value</span>;
 </span></span><span style="display:flex;"><span>
@@ -277,7 +277,7 @@ JSON就是一串字符串 只不过元素会使用特定的符号标注。
 </span></span><span style="display:flex;"><span>};
 </span></span></code></pre></div><p>如果数组中某个键值（cName）等于className则执行：标志为真；并且行数+1操作。
 否则，判断标志是否为真？为真读取数据。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">CourseInf</span>.<span style="color:#a6e22e">gradeArrays</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">key</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">className</span>){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">CourseInf</span>.<span style="color:#a6e22e">gradeArrays</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">key</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">className</span>){
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">CourseInf</span>.<span style="color:#a6e22e">flag</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">rowNum</span><span style="color:#f92672">++</span>;
 </span></span><span style="display:flex;"><span>}
@@ -287,7 +287,7 @@ JSON就是一串字符串 只不过元素会使用特定的符号标注。
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>行数不等于0时，插入表格数据</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">CourseInf</span>.<span style="color:#a6e22e">insertTable</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">colNum</span>, <span style="color:#a6e22e">rowNum</span>, <span style="color:#a6e22e">array</span>, <span style="color:#a6e22e">table</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">CourseInf</span>.<span style="color:#a6e22e">insertTable</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">colNum</span>, <span style="color:#a6e22e">rowNum</span>, <span style="color:#a6e22e">array</span>, <span style="color:#a6e22e">table</span>) {
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">mBody</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#34;tbody&#34;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">rowNum</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
@@ -309,7 +309,7 @@ JSON就是一串字符串 只不过元素会使用特定的符号标注。
 </span></span></code></pre></div><h2 id="3-删除重复项">3. 删除重复项</h2>
 <p>我们在读取班级列表的时候，希望一个班级只能出现一次。
 所以，我们要处理多个“class 1”和“class 5”的问题。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">array</span>[<span style="color:#a6e22e">i</span>]] <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><blockquote>
@@ -319,7 +319,7 @@ obj[key] = true;</p>
 </blockquote>
 <h1 id="附">附</h1>
 <h2 id="dynamictablehtml">dynamicTable.html</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE HTML PUBLIC &#34;-//W3C//DTD HTML 4.01 Transitional//EN&#34; &#34;http://www.w3.org/TR/html4/loose.dtd&#34;&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE HTML PUBLIC &#34;-//W3C//DTD HTML 4.01 Transitional//EN&#34; &#34;http://www.w3.org/TR/html4/loose.dtd&#34;&gt;</span>
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
 </span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">head</span>&gt;
 </span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Content-Type&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/html; charset=gb2312&#34;</span>&gt;
@@ -347,7 +347,7 @@ obj[key] = true;</p>
 </span></span></code></pre></div><ul>
 <li>js version</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>	&lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">onLoad</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;CourseInf.loadData(students)&#34;</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>	&lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">onLoad</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;CourseInf.loadData(students)&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>		&lt;<span style="color:#f92672">select</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;className&#34;</span> <span style="color:#a6e22e">onChange</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;CourseInf.readClasses(this)&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>		&lt;/<span style="color:#f92672">select</span>&gt;
 </span></span><span style="display:flex;"><span>		&lt;<span style="color:#f92672">br</span>&gt;     
@@ -364,7 +364,7 @@ obj[key] = true;</p>
 </span></span></code></pre></div><ul>
 <li>ts version</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>	&lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">onLoad</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;CourseInf.prototype.loadData(students)&#34;</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>	&lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">onLoad</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;CourseInf.prototype.loadData(students)&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>		&lt;<span style="color:#f92672">select</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;className&#34;</span> <span style="color:#a6e22e">onChange</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;CourseInf.prototype.readClasses(this)&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>		&lt;/<span style="color:#f92672">select</span>&gt;
 </span></span><span style="display:flex;"><span>		&lt;<span style="color:#f92672">br</span>&gt;     
@@ -385,7 +385,7 @@ obj[key] = true;</p>
 <ul>
 <li>dynamicTable.ts</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CourseInf</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CourseInf</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">gradeArrays</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">any</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#a6e22e">classArrays</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">any</span> <span style="color:#f92672">=</span>	[];
 </span></span><span style="display:flex;"><span>
@@ -533,7 +533,7 @@ obj[key] = true;</p>
 </span></span></code></pre></div><ul>
 <li>dynamicTable.js</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">/*
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">/*
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * 课程信息
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @author xiaobin
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>

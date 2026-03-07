@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.157.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -171,40 +171,40 @@
             <p><blockquote>
 <p>取消目录所有权限</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod -R <span style="color:#ae81ff">777</span> /tmp/etc
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod -R <span style="color:#ae81ff">777</span> /tmp/etc
 </span></span></code></pre></div><h1 id="一iso文件">一、ISO文件</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkisofs -r -o etc.iso /tmp/etc
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkisofs -r -o etc.iso /tmp/etc
 </span></span></code></pre></div><h1 id="二压缩文件">二、压缩文件</h1>
 <h2 id="1-zip">1. zip</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>zip -r etc.zip /tmp/etc
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>zip -r etc.zip /tmp/etc
 </span></span></code></pre></div><h2 id="2-tar">2. tar</h2>
 <blockquote>
 <p>仅打包，不压缩！</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -cvf /tmp/etc.tar /etc
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -cvf /tmp/etc.tar /etc
 </span></span></code></pre></div><ul>
 <li>transform</li>
 </ul>
 <pre tabindex="0"><code>--transform s/OLD_NAME/NEW_NAME/
 </code></pre><h3 id="gz">gz</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -zcvf /tmp/etc.tar.gz /etc
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -zcvf /tmp/etc.tar.gz /etc
 </span></span></code></pre></div><p>transform:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -zcvf /tmp/etc.tar.gz /etc --transform s/etc/myetc/
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -zcvf /tmp/etc.tar.gz /etc --transform s/etc/myetc/
 </span></span></code></pre></div><h3 id="bz2">bz2</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -jcvf /tmp/etc.tar.bz2 /etc
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -jcvf /tmp/etc.tar.bz2 /etc
 </span></span></code></pre></div><p>transform:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -jcvf /tmp/etc.tar.bz2 /etc --transform s/etc/myetc/
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -jcvf /tmp/etc.tar.bz2 /etc --transform s/etc/myetc/
 </span></span></code></pre></div><h1 id="faq">FAQ</h1>
 <h2 id="this-does-not-look-like-a-tar-archive">This does not look like a tar archive</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#gzip -d xxxx.tar.gz</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#gzip -d xxxx.tar.gz</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#tar -xf xxxx.tar</span>
 </span></span></code></pre></div><h2 id="gzip-stdin-not-in-gzip-format">gzip: stdin: not in gzip format</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ tar xvf xxxx.tar.gz
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ tar xvf xxxx.tar.gz
 </span></span></code></pre></div><h1 id="参考文章">参考文章</h1>
 <ul>
 <li><a href="https://www.tecmint.com/18-tar-command-examples-in-linux/">18 Tar Command Examples in Linux</a></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>c – Creates a new .tar archive file.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>c – Creates a new .tar archive file.
 </span></span><span style="display:flex;"><span>v – Verbosely show the .tar file progress.
 </span></span><span style="display:flex;"><span>f – File name type of the archive file.
 </span></span></code></pre></div><ol>
@@ -303,7 +303,7 @@ Ubuntu 14.04(x64)</p>
 </blockquote>
 <p>启动NFS，工作正常。</p>
 <p>输出信息如下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>This is the boot programm!鶷his is the boot programm!
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>This is the boot programm!鶷his is the boot programm!
 </span></span><span style="display:flex;"><span>Load UBOOT, please wait......
 </span></span><span style="display:flex;"><span>Load UBOOT from 0x10010000 to 0x23f00000 Over
 </span></span><span style="display:flex;"><span>
@@ -512,7 +512,7 @@ Ubuntu 14.04(x64)</p>
 <img src="https://github.com/tdtc-hrb/csdn/raw/master/images/20140303141518625.png" alt="vs2008 ui"></p>
 <h2 id="getprivateprofilestring">GetPrivateProfileString</h2>
 <p>读取Ini文件的API</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>[<span style="color:#a6e22e">DllImport</span>(<span style="color:#e6db74">&#34;kernel32.dll&#34;</span>, CharSet<span style="color:#f92672">=</span>CharSet.Unicode)]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>[<span style="color:#a6e22e">DllImport</span>(<span style="color:#e6db74">&#34;kernel32.dll&#34;</span>, CharSet<span style="color:#f92672">=</span>CharSet.Unicode)]
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">extern</span> uint <span style="color:#a6e22e">GetPrivateProfileString</span>(
 </span></span><span style="display:flex;"><span>   string lpAppName,
 </span></span><span style="display:flex;"><span>   string lpKeyName,
@@ -538,10 +538,10 @@ Ubuntu 14.04(x64)</p>
 读取文件的名称</li>
 </ul>
 <h3 id="import-class">import class</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>  using System.Runtime.InteropServices;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>  using System.Runtime.InteropServices;
 </span></span></code></pre></div><h2 id="readinifileval">readIniFileVal</h2>
 <p>建立一个公共方法，以供程序使用。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>public string <span style="color:#a6e22e">readIniFileVal</span>(string iniFileName, string section, string key)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>public string <span style="color:#a6e22e">readIniFileVal</span>(string iniFileName, string section, string key)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    StringBuilder retStrBuilder <span style="color:#f92672">=</span> new <span style="color:#a6e22e">StringBuilder</span>(<span style="color:#ae81ff">256</span>);
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">GetPrivateProfileString</span>(
@@ -603,7 +603,7 @@ repoInfo.dll
 <blockquote>
 <p>xbfConfig.ini</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>config<span style="color:#f92672">]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>config<span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>type <span style="color:#f92672">=</span> MySQL
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>MS-Access<span style="color:#f92672">]</span>
@@ -766,12 +766,12 @@ repoInfo.dll
   </tbody>
 </table>
 <h2 id="1-zk">1. zk</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>zkServer.sh start
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>zkServer.sh start
 </span></span></code></pre></div><p>安装详见《<a href="https://tdtc-hrb.github.io/csdn/post/ops_zookeeper/">ZooKeeper multi-server install</a>》</p>
 <h2 id="2-open-firewall">2. Open <a href="https://tdtc-hrb.github.io/csdn/post/ops_firewall/">firewall</a></h2>
 <h1 id="stage-i-installation">Stage I: Installation</h1>
 <h2 id="1-unzip">1. Unzip</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/home/$USER/app/hadoop/$version
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/home/$USER/app/hadoop/$version
 </span></span></code></pre></div><blockquote>
 <p>路径参考<a href="https://www.tecmint.com/oracle-database-11g-release-2-installation-in-linux/">Oracle11g</a></p> <a class="read-more" href="/csdn/post/ops_hadoop_cluster/">&raquo;</a></p>
         
@@ -849,11 +849,11 @@ repoInfo.dll
 </ul>
 <h2 id="config-arp">config ARP</h2>
 <p>ifconfig:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum install net-tools
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum install net-tools
 </span></span></code></pre></div><h3 id="service">Service</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#vi /etc/init.d/realserver</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#vi /etc/init.d/realserver</span>
 </span></span></code></pre></div><p>/etc/init.d/realserver:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
 </span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>SNS_VIP<span style="color:#f92672">=</span>192.168.0.220
 </span></span><span style="display:flex;"><span>
@@ -883,22 +883,22 @@ repoInfo.dll
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">esac</span>
 </span></span><span style="display:flex;"><span>exit <span style="color:#ae81ff">0</span>
 </span></span></code></pre></div><h2 id="exec">exec</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo chmod <span style="color:#ae81ff">755</span> /etc/init.d/realserver
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo chmod <span style="color:#ae81ff">755</span> /etc/init.d/realserver
 </span></span><span style="display:flex;"><span>$sudo service realserver start
 </span></span></code></pre></div><ul>
 <li>tomcat</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/usr/local/tomcat/bin/startup.sh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/usr/local/tomcat/bin/startup.sh
 </span></span></code></pre></div><ul>
 <li>nginx</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo /usr/sbin/nginx
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo /usr/sbin/nginx
 </span></span></code></pre></div><h1 id="二keepalived-server">二、Keepalived Server</h1>
 <ul>
 <li><a href="https://tdtc-hrb.github.io/csdn/post/ops_keepalived/">v1</a></li>
 <li><a href="https://tdtc-hrb.github.io/cnblogs/post/ops_keepalived_v2/">v2</a></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#systemctl start keepalived</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#systemctl start keepalived</span>
 </span></span></code></pre></div><h2 id="see-state">see state</h2>
 <p>virtual IP show:</p> <a class="read-more" href="/csdn/post/ops_real_keepalived/">&raquo;</a></p>
         
@@ -937,11 +937,11 @@ promiscuous mode:</li>
 <pre tabindex="0"><code>Allow All
 </code></pre><h1 id="一安装">一、安装</h1>
 <p>prepare tool:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#yum install gcc make autoconf automake openssl-devel libnl3-devel \</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#yum install gcc make autoconf automake openssl-devel libnl3-devel \</span>
 </span></span><span style="display:flex;"><span>    iptables-devel ipset-devel net-snmp-devel libnfnetlink-devel file-devel <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span>    glib2-devel pcre2-revel libnftnl-devel libmnl-devel systemd-devel kmod-devel
 </span></span></code></pre></div><p>LVS manager:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yum install ipvsadm
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yum install ipvsadm
 </span></span></code></pre></div><h2 id="installation">installation</h2>
 <ul>
 <li>MASTER <br>
@@ -950,14 +950,14 @@ Node 1</li>
 Node 2</li>
 </ul>
 <h3 id="down-and-unzip">down and unzip</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$git clone https://github.com/acassen/keepalived.git
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$git clone https://github.com/acassen/keepalived.git
 </span></span></code></pre></div><p>for me:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$git clone https://gitee.com/xiaobin80/keepalived
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$git clone https://gitee.com/xiaobin80/keepalived
 </span></span></code></pre></div><h3 id="installation-1">installation</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cd keepalived
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cd keepalived
 </span></span><span style="display:flex;"><span>$./autogen.sh
 </span></span></code></pre></div><p>configure:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$./configure --prefix<span style="color:#f92672">=</span>/usr
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$./configure --prefix<span style="color:#f92672">=</span>/usr
 </span></span></code></pre></div><p>make:</p> <a class="read-more" href="/csdn/post/ops_keepalived-v2/">&raquo;</a></p>
         
     </section>
@@ -984,19 +984,19 @@ Node 2</li>
 <h1 id="一安装">一、安装</h1>
 <p>OS: CentOS7 minimal（安装时的选项）</p>
 <h2 id="0-prepare">0. prepare</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum -y install gcc gcc-c++ automake pcre pcre-devel zlib zlib-devel openssl openssl-devel
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum -y install gcc gcc-c++ automake pcre pcre-devel zlib zlib-devel openssl openssl-devel
 </span></span></code></pre></div><h3 id="1-update-openssl">1) update OpenSSL</h3>
 <blockquote>
 <p>default directory: /usr/ssl</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://www.openssl.org/source/openssl-1.1.1q.tar.gz --no-check-certificate
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://www.openssl.org/source/openssl-1.1.1q.tar.gz --no-check-certificate
 </span></span></code></pre></div><h3 id="2-setup">2) setup</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$./config --prefix<span style="color:#f92672">=</span>/usr --shared
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$./config --prefix<span style="color:#f92672">=</span>/usr --shared
 </span></span><span style="display:flex;"><span>$make
 </span></span></code></pre></div><blockquote>
 <p>Root permission Required</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo make install
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo make install
 </span></span></code></pre></div><h2 id="1-installation">1. installation</h2>
 <p>First, install Nginx of centos repo; <br>
 Then, replace the nginx program file. <br>
@@ -1070,22 +1070,22 @@ Note: The replaced program file version must be the same as the repo!</p> <a cla
 <blockquote>
 <p>所有MySQL服务器（mysql1、mysql11、mysql12）和MHA 管理机（MHA）都要安装。</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum localinstall mha4mysql-node-0.58-0.el7.centos.noarch.rpm
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum localinstall mha4mysql-node-0.58-0.el7.centos.noarch.rpm
 </span></span></code></pre></div><h2 id="2-mha-manager">2. MHA Manager</h2>
 <blockquote>
 <p>CentOS源有perl-Config-Tiny。</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install perl-Config-Tiny
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install perl-Config-Tiny
 </span></span></code></pre></div><blockquote>
 <p>安装<a href="https://fedoraproject.org/wiki/EPEL">epel</a>，
 可以找到<a href="https://github.com/yoshinorim/mha4mysql-manager/wiki/Installation#installing-mha-manager">perl-Log-Dispatch、perl-Parallel-ForkManager</a>。</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 </span></span><span style="display:flex;"><span>sudo yum install perl-Log-Dispatch perl-Parallel-ForkManager -y
 </span></span></code></pre></div><blockquote>
 <p>安装manager</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum localinstall mha4mysql-manager-0.58-0.el7.centos.noarch.rpm
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum localinstall mha4mysql-manager-0.58-0.el7.centos.noarch.rpm
 </span></span></code></pre></div><h2 id="3-mysql主从配置">3. MySQL主从配置</h2>
 <blockquote>
 <p>（补充部分）</p> <a class="read-more" href="/csdn/post/mysql-mha/">&raquo;</a></p>
@@ -1112,10 +1112,10 @@ Note: The replaced program file version must be the same as the repo!</p> <a cla
         
             <p><p>The GNU Privacy Guard</p>
 <h1 id="1-install">1. install</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum install gnupg
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum install rng-tools
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum install gnupg
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$yum install rng-tools
 </span></span></code></pre></div><h1 id="2-gen-key">2. gen key</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$gpg --gen-key
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$gpg --gen-key
 </span></span></code></pre></div><p>Decompose 20180804215500757.png step:
 <img src="https://github.com/tdtc-hrb/csdn/raw/master/images/gpg1key-1.png" alt="gen 1 key 1">
 Press Key: enter
@@ -1126,7 +1126,7 @@ Press Key: enter
 <img src="https://github.com/tdtc-hrb/csdn/raw/master/images/gpg1key-4.png" alt="gen 1 key 4">
 Press Key: y
 <img src="https://github.com/tdtc-hrb/csdn/raw/master/images/gpg1key-5.png" alt="gen 1 key 5"></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Real name: xiaobin
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Real name: xiaobin
 </span></span><span style="display:flex;"><span>Email address: veic_2005@163
 </span></span><span style="display:flex;"><span>Comment: enter<span style="color:#f92672">(</span>press key<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>Press Key: O

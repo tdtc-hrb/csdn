@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.157.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/" />
 
@@ -193,16 +193,16 @@ Less than RHEL version 8</li>
 <pre tabindex="0"><code>$cd /etc/sysconfig/network-scripts
 $ls ifcfg-* -l
 </code></pre><h3 id="ipv4">ipv4</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ip addr
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ip addr
 </span></span></code></pre></div><h3 id="ipv6">ipv6</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ip -6 addr
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ip -6 addr
 </span></span></code></pre></div><h2 id="setup">Setup</h2>
 <p>Start job network adapter:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ONBOOT<span style="color:#f92672">=</span>yes
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ONBOOT<span style="color:#f92672">=</span>yes
 </span></span></code></pre></div><h3 id="static">static</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cd /etc/sysconfig/network-scripts
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cd /etc/sysconfig/network-scripts
 </span></span><span style="display:flex;"><span>$sudo vi ifcfg-enp0s3
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>BOOTPROTO<span style="color:#f92672">=</span>none
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>BOOTPROTO<span style="color:#f92672">=</span>none
 </span></span><span style="display:flex;"><span>IPADDR<span style="color:#f92672">=</span>192.168.1.186
 </span></span><span style="display:flex;"><span>PREFIX<span style="color:#f92672">=</span><span style="color:#ae81ff">24</span>
 </span></span><span style="display:flex;"><span>GATEWAY<span style="color:#f92672">=</span>192.168.1.1
@@ -236,7 +236,7 @@ default: enp0s3</p>
 <p>Debian:</p>
 <pre tabindex="0"><code>sudo apt install netplan.io
 </code></pre><h2 id="ubuntu">Ubuntu</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cd /etc/netplan/
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cd /etc/netplan/
 </span></span><span style="display:flex;"><span>$sudo vi 00-installer-config.yaml
 </span></span></code></pre></div><ul>
 <li>Normal</li>
@@ -244,7 +244,7 @@ default: enp0s3</p>
 <blockquote>
 <p>路由器下</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#This is the network config written by &#39;subiquity&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#This is the network config written by &#39;subiquity&#39;</span>
 </span></span><span style="display:flex;"><span>network:
 </span></span><span style="display:flex;"><span>  ethernets:
 </span></span><span style="display:flex;"><span>    enp0s3:

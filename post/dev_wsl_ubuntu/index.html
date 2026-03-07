@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.157.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/dev_wsl_ubuntu/" />
 
@@ -182,7 +182,7 @@
 <li>Windows 10 1809+ <br>
 缺省为WSL1</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps" data-lang="ps"><span style="display:flex;"><span><span style="color:#a6e22e">wsl</span> <span style="color:#a6e22e">-l</span> <span style="color:#a6e22e">-v</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-ps" data-lang="ps"><span style="display:flex;"><span><span style="color:#a6e22e">wsl</span> <span style="color:#a6e22e">-l</span> <span style="color:#a6e22e">-v</span>
 </span></span></code></pre></div><blockquote>
 <p>在powerShell的管理员模式下运行命令!</p>
 </blockquote>
@@ -197,7 +197,7 @@
 <p>从AppxBundle提取appx.</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Add-AppxPackage .\Ubuntu_2004.xxx.appx
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Add-AppxPackage .\Ubuntu_2004.xxx.appx
 </span></span></code></pre></div><h3 id="卸载">卸载</h3>
 <p>如果“普通”方式不工作，请使用“命令行”。</p>
 <ul>
@@ -209,22 +209,22 @@
 <p><a href="https://docs.microsoft.com/zh-cn/windows/wsl/reference">命令行</a></p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wslconfig /u
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wslconfig /u
 </span></span></code></pre></div><h2 id="debian">Debian</h2>
 <ul>
 <li><a href="https://learn.microsoft.com/en-us/windows/wsl/install-manual#downloading-distributions">down appx - debian v11</a></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Add-AppxPackage .\DistroLauncher-Appx_1.12.2.0_x64.appx
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Add-AppxPackage .\DistroLauncher-Appx_1.12.2.0_x64.appx
 </span></span></code></pre></div><h3 id="wsl2">WSL2</h3>
 <ul>
 <li>Enable Virtual Machine feature</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>dism.exe /online /enable-feature /featurename<span style="color:#960050;background-color:#1e0010">:</span>VirtualMachinePlatform /all /norestart
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>dism.exe /online /enable-feature /featurename<span style="color:#960050;background-color:#1e0010">:</span>VirtualMachinePlatform /all /norestart
 </span></span></code></pre></div><p>Reboot your Windows 10 host</p>
 <ul>
 <li>WSL Linux kernel update package</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>wsl --update
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>wsl --update
 </span></span></code></pre></div><ul>
 <li>Install
 Click the &ldquo;Debian&rdquo; icon to install Debian.
@@ -234,19 +234,19 @@ This takes some time.</li>
 <p>You are now logged in to your Debian system in command line mode</p>
 <h3 id="exec">exec</h3>
 <p>enter wsl:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>wsl --shutdown
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>wsl --shutdown
 </span></span><span style="display:flex;"><span>wsl -u root
 </span></span></code></pre></div><h4 id="sources-list"><a href="https://mirrors.163.com/.help/debian.html">sources list</a></h4>
 <ul>
 <li>network
 <a href="https://serverfault.com/a/1131182">temporary failure resolving</a></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;nameserver 8.8.8.8
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;nameserver 8.8.8.8
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">nameserver 8.8.4.4&#34;</span> | sudo tee /etc/resolv.conf &gt; /dev/null
 </span></span></code></pre></div><ul>
 <li>update</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;deb http://mirrors.163.com/debian/ bookworm main non-free contrib
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;deb http://mirrors.163.com/debian/ bookworm main non-free contrib
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">deb http://mirrors.163.com/debian/ bookworm-updates main non-free contrib
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">deb-src http://mirrors.163.com/debian/ bookworm main non-free contrib
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">deb-src http://mirrors.163.com/debian/ bookworm-updates main non-free contrib
@@ -257,7 +257,7 @@ This takes some time.</li>
 <ul>
 <li>install</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>apt install usrmerge
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>apt install usrmerge
 </span></span></code></pre></div><h5 id="umount-lib">umount lib</h5>
 <p>If the following error message is displayed, it means v1 is mounting &ldquo;/lib/modules&rdquo;.</p>
 <pre tabindex="0"><code>FATAL ERROR:
@@ -270,29 +270,29 @@ To continue the conversion please unmount /lib/modules/ (try the command
 Do not forget to reboot after the conversion is complete to have it
 mounted again.
 </code></pre><p>umount it:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>umount -l /lib/modules
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>umount -l /lib/modules
 </span></span></code></pre></div><h4 id="upgrade-debian-11-to-12">Upgrade Debian 11 to 12</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>apt upgrade -y
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>apt upgrade -y
 </span></span><span style="display:flex;"><span>apt dist-upgrade -y
 </span></span><span style="display:flex;"><span>apt autoremove -y
 </span></span></code></pre></div><h1 id="使用">使用</h1>
 <p>更改源列表:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/apt/sources.list
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/apt/sources.list
 </span></span></code></pre></div><pre tabindex="0"><code>http://archive.ubuntu.com -&gt; https://mirrors.aliyun.com/ubuntu/
 </code></pre><h2 id="文件互访">文件互访</h2>
 <p>首先，使用windows记事本，建立一个testTxtFile.txt； <br>
 然后，在WSL查看文件内容。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /mnt/c/Users/tdtc/
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /mnt/c/Users/tdtc/
 </span></span><span style="display:flex;"><span>vi testTxtFile.txt
 </span></span></code></pre></div><p>最后，用WSL重命名文件名:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mv testTxtFile.txt testFile.txt
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mv testTxtFile.txt testFile.txt
 </span></span></code></pre></div><p>在windows就可以看到重命名的testFile.txt。</p>
 <h2 id="访问wsl服务">访问WSL服务</h2>
 <blockquote>
 <p>WSL与windows 10共有端口，所以Windows 10已使用的端口，不要再分配给WSL</p>
 </blockquote>
 <p>首先，在wsl中启动nginx；</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo service nginx start
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo service nginx start
 </span></span></code></pre></div><p>然后访问(回环地址)：127.0.0.1:90
 <img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20171216052918750.png" alt="nginx info"></p>
 <h1 id="ref">Ref</h1>

@@ -61,7 +61,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.157.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/gitlab-install-shell/" />
 
@@ -181,27 +181,27 @@
     <section class="post-content">
       <h1 id="一安装">一、安装</h1>
 <h2 id="1-depend">1. depend</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo apt-get update
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo apt-get update
 </span></span><span style="display:flex;"><span>$sudo apt-get install ca-certificates curl openssh-server postfix vim
 </span></span></code></pre></div><h2 id="2-down-script">2. down script</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$curl -LO https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$curl -LO https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh
 </span></span></code></pre></div><h2 id="3-exec-script">3. exec script</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo bash ~/script.deb.sh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo bash ~/script.deb.sh
 </span></span></code></pre></div><h2 id="4-install">4. install</h2>
 <p>If it is &ldquo;qiang&rdquo;, please see 《代理set - ubuntu》</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo apt-get install gitlab-ce
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo apt-get install gitlab-ce
 </span></span></code></pre></div><h2 id="5-config">5. config</h2>
 <h3 id="1-ufw">1) ufw</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo ufw allow http
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo ufw allow http
 </span></span><span style="display:flex;"><span>$sudo ufw allow https
 </span></span><span style="display:flex;"><span>$sudo ufw allow OpenSSH
 </span></span></code></pre></div><h3 id="2-gitlabrb">2) gitlab.rb</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo vim /etc/gitlab/gitlab.rb
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># If your GitLab server does not have a domain name, you will need to use an IP</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo vim /etc/gitlab/gitlab.rb
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># If your GitLab server does not have a domain name, you will need to use an IP</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># address instead of a domain and keep the protocol as `http`.</span>
 </span></span><span style="display:flex;"><span>external_url <span style="color:#e6db74">&#39;http://localhost&#39;</span>
 </span></span></code></pre></div><h3 id="3-exec-gitlab-ctl">3) exec gitlab-ctl</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo gitlab-ctl reconfigure
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo gitlab-ctl reconfigure
 </span></span></code></pre></div><h2 id="6-run">6. run</h2>
 <p>http://your_ip</p>
 <ul>
@@ -215,22 +215,22 @@
 <h1 id="二管理">二、管理</h1>
 <h2 id="1-控制">1. 控制</h2>
 <h3 id="1查看">1）查看</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo gitlab-ctl status
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo gitlab-ctl status
 </span></span></code></pre></div><h3 id="2开始停止和重启">2）开始、停止和重启</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo gitlab-ctl start
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo gitlab-ctl start
 </span></span><span style="display:flex;"><span>sudo gitlab-ctl stop
 </span></span><span style="display:flex;"><span>sudo gitlab-ctl restart
 </span></span></code></pre></div><h2 id="2-备份恢复">2. 备份/恢复</h2>
 <p>default path:  <br>
 /var/opt/gitlab/backups</p>
 <h3 id="1备份">1）备份</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo gitlab-rake gitlab:backup:create
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo gitlab-rake gitlab:backup:create
 </span></span></code></pre></div><h3 id="2恢复">2）恢复</h3>
 <h4 id="1停止数据服务">（1）停止数据服务</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo gitlab-ctl stop unicorn
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo gitlab-ctl stop unicorn
 </span></span><span style="display:flex;"><span>sudo gitlab-ctl stop sidekiq
 </span></span></code></pre></div><h3 id="2恢复指定">（2）恢复指定</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo gitlab-rake gitlab:backup:restore BACKUP<span style="color:#f92672">=</span>1568533129_2019_09_15_12.2.5
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo gitlab-rake gitlab:backup:restore BACKUP<span style="color:#f92672">=</span>1568533129_2019_09_15_12.2.5
 </span></span></code></pre></div><h1 id="reference">Reference</h1>
 <ul>
 <li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-16-04">《How To Install and Configure GitLab on Ubuntu 16.04》</a></li>

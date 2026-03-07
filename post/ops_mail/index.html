@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.157.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_mail/" />
 
@@ -180,22 +180,22 @@
       <h1 id="installation">installation</h1>
 <p><a href="http://www.mutt.org/">Mutt</a> is a small but very powerful text-based mail client for Unix operating systems.</p>
 <h2 id="1-install">1) install</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yum install mutt
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yum install mutt
 </span></span></code></pre></div><h2 id="2-config">2) config</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$vi ~/.muttrc
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>set sendmail<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/usr/local/msmtp/bin/msmtp&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$vi ~/.muttrc
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>set sendmail<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/usr/local/msmtp/bin/msmtp&#34;</span>
 </span></span><span style="display:flex;"><span>set from <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;user@domain.com&#34;</span>
 </span></span><span style="display:flex;"><span>set realname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Realname of the user&#34;</span>
 </span></span></code></pre></div><p>received mail:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>set pop_host<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pop.163.com&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>set pop_host<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pop.163.com&#34;</span>
 </span></span><span style="display:flex;"><span>set pop_user<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;love_shidie&#34;</span>
 </span></span><span style="display:flex;"><span>set pop_pass<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>getpassword email_id<span style="color:#e6db74">`</span>
 </span></span></code></pre></div><h1 id="test">test</h1>
 <h2 id="1-send-mail">1) send mail</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gpg -d ~/.msmtp/love_shidie-passoword.gpg
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gpg -d ~/.msmtp/love_shidie-passoword.gpg
 </span></span><span style="display:flex;"><span>$mutt -s <span style="color:#e6db74">&#34;test message&#34;</span> -a ~/message121.txt
 </span></span></code></pre></div><h2 id="2-received-mail">2) received mail</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$mutt
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$mutt
 </span></span></code></pre></div><p>Press key: G</p>
 <h1 id="reference">Reference</h1>
 <ul>

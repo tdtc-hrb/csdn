@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.157.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/java-maven-qa1/" />
 
@@ -179,29 +179,29 @@
     <section class="post-content">
       <h1 id="1-orgeclipsem2emaven2_classpath_container">1. org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER</h1>
 <p>Q:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Classpath entry org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER will not be exported or published. Runtime ClassNotFoundExceptions may result.  
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Classpath entry org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER will not be exported or published. Runtime ClassNotFoundExceptions may result.  
 </span></span></code></pre></div><p>A:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$mvn eclipse:clean
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$mvn eclipse:clean
 </span></span></code></pre></div><h2 id="reference">reference</h2>
 <ul>
 <li><a href="https://stackoverflow.com/questions/37624859/what-is-org-eclipse-m2e-maven2-classpath-container-and-how-do-i-make-it-work-in">what-is-org-eclipse-m2e-maven2-classpath-container-and-how-do-i-make-it-work-in</a></li>
 </ul>
 <h1 id="2-no-main-manifest-attribute-java-jar">2. no main manifest attribute java jar</h1>
 <p>Q:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$java -jar cliDemo-0.0.1-SNAPSHOT.jar
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$java -jar cliDemo-0.0.1-SNAPSHOT.jar
 </span></span><span style="display:flex;"><span>no main manifest attribute, in cliDemo-0.0.1-SNAPSHOT.jar
 </span></span></code></pre></div><p>A:</p>
 <blockquote>
 <p>for win:</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>java -cp cliDemo-0.0.1-SNAPSHOT.jar;C:<span style="color:#ae81ff">\U</span>sers<span style="color:#ae81ff">\x</span>iaobin<span style="color:#ae81ff">\.</span>m2<span style="color:#ae81ff">\r</span>epository<span style="color:#ae81ff">\c</span>ommons-cli<span style="color:#ae81ff">\c</span>ommons-cli<span style="color:#ae81ff">\1</span>.4<span style="color:#ae81ff">\c</span>ommons-cli-1.4.jar my.csdn9.ConsoleLauncher --help
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>java -cp cliDemo-0.0.1-SNAPSHOT.jar;C:<span style="color:#ae81ff">\U</span>sers<span style="color:#ae81ff">\x</span>iaobin<span style="color:#ae81ff">\.</span>m2<span style="color:#ae81ff">\r</span>epository<span style="color:#ae81ff">\c</span>ommons-cli<span style="color:#ae81ff">\c</span>ommons-cli<span style="color:#ae81ff">\1</span>.4<span style="color:#ae81ff">\c</span>ommons-cli-1.4.jar my.csdn9.ConsoleLauncher --help
 </span></span></code></pre></div><h2 id="reference-1">Reference</h2>
 <ul>
 <li><a href="https://stackoverflow.com/questions/41035499/how-to-run-jar-files-depend-on-jar-files">how-to-run-jar-files-depend-on-jar-files</a></li>
 </ul>
 <h1 id="3-coreexception-could-not-calculate-build-plan-plugin-orgapachemavenpluginsmaven-compiler-plugin">3. CoreException: Could not calculate build plan: Plugin org.apache.maven.plugins:maven-compiler-plugin</h1>
 <p>Q:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>CoreException: Could not calculate build plan: Plugin org.apache.maven.plugins:maven-compiler-plugin:3.1 or one of its dependencies could not be resolved: Failure to find org.apache.maven.plugins:maven-compiler-plugin:jar:3.1 in http://repository.jboss.org/nexus/content/groups/public was cached in the local repository, resolution will not be reattempted <span style="color:#66d9ef">until</span> the update interval of jboss-public-repository-group has elapsed or updates are forced
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>CoreException: Could not calculate build plan: Plugin org.apache.maven.plugins:maven-compiler-plugin:3.1 or one of its dependencies could not be resolved: Failure to find org.apache.maven.plugins:maven-compiler-plugin:jar:3.1 in http://repository.jboss.org/nexus/content/groups/public was cached in the local repository, resolution will not be reattempted <span style="color:#66d9ef">until</span> the update interval of jboss-public-repository-group has elapsed or updates are forced
 </span></span></code></pre></div><p>A:
 找到maven库目录，进入：~.m2\repository\org\apache\maven\plugins\maven-compiler-plugin   <br>
 删除3.1文件夹</p>
@@ -211,7 +211,7 @@
 </ul>
 <h1 id="4-proxy">4. Proxy</h1>
 <p>conf/settings.xml</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>  <span style="color:#75715e">&lt;!-- proxies
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>  <span style="color:#75715e">&lt;!-- proxies
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">   | This is a list of proxies which can be used on this machine to connect to the network.
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">   | Unless otherwise specified (by system property or command-line switch), the first proxy
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">   | specification in this list marked as active will be used.
@@ -228,9 +228,9 @@
 </span></span></code></pre></div><h1 id="5-how-to-add-oracle-jdbc-driver-in-your-maven-local-repository">5. How to add Oracle JDBC driver in your Maven local repository</h1>
 <h2 id="down-ojdbc6jar">down <a href="http://www.oracle.com/technetwork/database/enterprise-edition/jdbc-112010-090769.html">ojdbc6.jar</a></h2>
 <h2 id="exec">exec</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn install:install-file -Dfile<span style="color:#f92672">=</span>D:/war/lib/ojdbc6.jar -DgroupId<span style="color:#f92672">=</span>com.oracle -DartifactId<span style="color:#f92672">=</span>ojdbc6 -Dversion<span style="color:#f92672">=</span>11.2.0 -Dpackaging<span style="color:#f92672">=</span>jar
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mvn install:install-file -Dfile<span style="color:#f92672">=</span>D:/war/lib/ojdbc6.jar -DgroupId<span style="color:#f92672">=</span>com.oracle -DartifactId<span style="color:#f92672">=</span>ojdbc6 -Dversion<span style="color:#f92672">=</span>11.2.0 -Dpackaging<span style="color:#f92672">=</span>jar
 </span></span></code></pre></div><h2 id="pomxml">pom.xml</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- ojdbc6.jar example --&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- ojdbc6.jar example --&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>com.oracle<span style="color:#f92672">&lt;/groupId&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>ojdbc6<span style="color:#f92672">&lt;/artifactId&gt;</span>

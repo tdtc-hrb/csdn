@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.157.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_spark_cluster/" />
 
@@ -197,7 +197,7 @@
 </blockquote>
 <h1 id="stage-ii-run">Stage II: Run</h1>
 <h2 id="1-zk">1. ZK</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>zkServer.sh start
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>zkServer.sh start
 </span></span></code></pre></div><h2 id="2-hadoop">2. Hadoop</h2>
 <h3 id="1-hdfs">1) HDFS</h3>
 <p>see 《<a href="https://xiaobin80.gitee.io/csdn/post/ops_hadoop_cluster/">hadoop - cluster</a> - 3.1 HDFS》</p>
@@ -207,9 +207,9 @@
 <blockquote>
 <p>（server3，4）</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$SPARK_HOME/sbin/start-all.sh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$SPARK_HOME/sbin/start-all.sh
 </span></span></code></pre></div><h3 id="1-other-site">1) other site</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$SPARK_HOME/sbin/start-master.sh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$SPARK_HOME/sbin/start-master.sh
 </span></span></code></pre></div><p>Web:
 http://192.168.42.109:8082/</p>
 <p>http://192.168.42.110:8082/</p>
@@ -217,7 +217,7 @@ http://192.168.42.109:8082/</p>
 http://192.168.42.109:8081/</p>
 <p>http://192.168.42.110:8081/</p>
 <h1 id="stage-iii-stop">Stage III: Stop</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$SPARK_HOME/sbin/stop-all.sh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$SPARK_HOME/sbin/stop-all.sh
 </span></span></code></pre></div><h1 id="reference">Reference</h1>
 <ol>
 <li><a href="http://spark.apache.org/docs/latest/running-on-yarn.html">Running Spark on YARN</a></li>

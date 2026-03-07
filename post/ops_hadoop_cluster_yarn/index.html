@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.157.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_hadoop_cluster_yarn/" />
 
@@ -181,7 +181,7 @@
 <p>(../etc/hadoop/yarn-site.xml)</p>
 </blockquote>
 <h1 id="1-resourcemanager-ha">1. ResourceManager HA</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.ha.enabled<span style="color:#f92672">&lt;/name&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>true<span style="color:#f92672">&lt;/value&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
@@ -217,23 +217,23 @@
 <blockquote>
 <p>see Reference[3]</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.recovery.enabled<span style="color:#f92672">&lt;/name&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;value&gt;</span>true<span style="color:#f92672">&lt;/value&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
 </span></span></code></pre></div><h2 id="1-zookeeper">1) zookeeper</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.store.class<span style="color:#f92672">&lt;/name&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;value&gt;</span>org.apache.hadoop.yarn.server.resourcemanager.recovery.ZKRMStateStore<span style="color:#f92672">&lt;/value&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
 </span></span></code></pre></div><h1 id="3-aux-serviceauxiliary-service">3. Aux Service（Auxiliary Service）</h1>
 <h2 id="1-base">1) base</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;name&gt;</span>yarn.nodemanager.aux-services<span style="color:#f92672">&lt;/name&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;value&gt;</span>mapreduce_shuffle<span style="color:#f92672">&lt;/value&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
 </span></span></code></pre></div><h2 id="2-spark">2) spark</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;name&gt;</span>yarn.nodemanager.aux-services<span style="color:#f92672">&lt;/name&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;value&gt;</span>spark_shuffle,mapreduce_shuffle<span style="color:#f92672">&lt;/value&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>

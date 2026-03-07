@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.157.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_department_vsftp/" />
 
@@ -182,35 +182,35 @@
 参考Ubuntu14.04的<a href="https://help.ubuntu.com/14.04/serverguide/ftp-server.html">FTP Server文档</a></p>
 </blockquote>
 <h1 id="安装vsftpd">安装vsftpd</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>root@tdtc010-Vostro-270:~# apt-get install vsftpd
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>root@tdtc010-Vostro-270:~# apt-get install vsftpd
 </span></span></code></pre></div><h1 id="配置">配置</h1>
 <h2 id="允许上传">允许上传</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>local_enable<span style="color:#f92672">=</span>YES;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>local_enable<span style="color:#f92672">=</span>YES;
 </span></span><span style="display:flex;"><span>write_enable<span style="color:#f92672">=</span>YES;
 </span></span></code></pre></div><h2 id="允许匿名上传">允许匿名上传</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>anon_upload_enable<span style="color:#f92672">=</span>YES;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>anon_upload_enable<span style="color:#f92672">=</span>YES;
 </span></span></code></pre></div><h1 id="faq">FAQ</h1>
 <h2 id="553-could-not-create-file">553 Could not create file</h2>
 <p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/1366383847_4148.png" alt="2013-04-19 23:13:47">
 执行“快速连接”;提示错误信息：553 Could not create file</p>
 <h3 id="新建一个目录">新建一个目录</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>root@tdtc010-Vostro-270:/srv/ftp# mkdir upload_xp
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>root@tdtc010-Vostro-270:/srv/ftp# mkdir upload_xp
 </span></span></code></pre></div><h3 id="更改目录权限">更改目录权限</h3>
 <p>默认权限（FileZilla右击文件属性）
 <img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20170902112233231.png" alt="2013-04-19 23:13:47">
 更改为可读写：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>root@tdtc010-Vostro-270:/srv/ftp# chmod <span style="color:#ae81ff">777</span> upload_xp
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>root@tdtc010-Vostro-270:/srv/ftp# chmod <span style="color:#ae81ff">777</span> upload_xp
 </span></span></code></pre></div><p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20170902112934299.png" alt="2013-04-19 23:13:47"></p>
 <h2 id="550-failed-to-open-file">550 Failed to open file</h2>
 <p>解决办法： 开启公共权限（读）</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod <span style="color:#ae81ff">644</span> myfile.iso
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod <span style="color:#ae81ff">644</span> myfile.iso
 </span></span></code></pre></div><h2 id="显示ftp目录信息">显示ftp目录信息</h2>
 <p>在目录下建立一个.message文件即可。  <br>
 /srv/ftp/upload_xp/.message <br>
 文件内容：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>欢迎使用VSFTPD，这个是upload_xp目录
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>欢迎使用VSFTPD，这个是upload_xp目录
 </span></span></code></pre></div><p>再次，在FileZilla执行上传，显示成功：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>状态:	已连接
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>状态:	已连接
 </span></span><span style="display:flex;"><span>状态:	开始上传 D:<span style="color:#ae81ff">\3</span>60Downloads<span style="color:#ae81ff">\p</span>erl-5.16.3.tar.gz
 </span></span><span style="display:flex;"><span>命令:	CWD /upload_xp
 </span></span><span style="display:flex;"><span>响应:	<span style="color:#ae81ff">250</span> Directory successfully changed.
@@ -225,7 +225,7 @@
 </span></span></code></pre></div><p>全文完。</p>
 <h1 id="附">附</h1>
 <h2 id="1-终端操作过程仅供参考">1. 终端操作过程（仅供参考）</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tdtc010@tdtc010-Vostro-270:~$ su - root
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tdtc010@tdtc010-Vostro-270:~$ su - root
 </span></span><span style="display:flex;"><span>Password:
 </span></span><span style="display:flex;"><span>root@tdtc010-Vostro-270:~# apt-get install vsftpd
 </span></span><span style="display:flex;"><span>Reading package lists... Done
@@ -288,7 +288,7 @@
 </span></span><span style="display:flex;"><span>root@tdtc010-Vostro-270:/srv/ftp# chown ftp:root /srv/ftp/upload_xp
 </span></span><span style="display:flex;"><span>root@tdtc010-Vostro-270:/srv/ftp#
 </span></span></code></pre></div><h2 id="2-配置文件etcvsftpdconf">2. 配置文件(/etc/vsftpd.conf)</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Example config file /etc/vsftpd.conf</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Example config file /etc/vsftpd.conf</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># The default compiled in settings are fairly paranoid. This sample file</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># loosens things up a bit, to make the ftp daemon more usable.</span>

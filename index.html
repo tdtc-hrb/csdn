@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.157.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -158,69 +158,6 @@
 </nav>
 
 	</div>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/nodejs-debian/">在Debian下安装NodeJS</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><ul>
-<li>12 (Bookworm)</li>
-<li>13 (Trixie)</li>
-</ul>
-<blockquote>
-<p>Official website support: Page not updated.</p>
-</blockquote>
-<h1 id="1nodejs">1.node.js</h1>
-<p><a href="https://github.com/nodesource/distributions">v24/v22.x/20.x/18.x/16.x</a></p>
-<ul>
-<li>v24.x</li>
-</ul>
-<pre tabindex="0"><code>sudo apt install -y curl
-curl -fsSL https://deb.nodesource.com/setup_24.x | sudo -E bash -
-</code></pre><ul>
-<li>v22.x</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
-</span></span></code></pre></div><ul>
-<li>v20.x</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-</span></span></code></pre></div><h2 id="install">install</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install -y nodejs
-</span></span></code></pre></div><h2 id="update">update</h2>
-<p>first remove:</p>
-<pre tabindex="0"><code>sudo apt remove nodejs
-</code></pre><p>and then, remove <a href="https://unix.stackexchange.com/a/722477">libnode72</a>:</p>
-<pre tabindex="0"><code>sudo dpkg --remove --force-remove-reinstreq libnode72:amd64
-</code></pre><p>last install:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install -y nodejs
-</span></span></code></pre></div><h1 id="2-yarn-js">2. yarn js</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl --silent --show-error https://dl.yarnpkg.com/debian/pubkey.gpg | sudo gpg --dearmor -o /usr/share/keyrings/pubkey-archive-keyring.gpg
-</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;deb [signed-by=/usr/share/keyrings/pubkey-archive-keyring.gpg] \
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">https://dl.yarnpkg.com/debian/ stable main&#34;</span> | sudo tee /etc/apt/sources.list.d/yarn.list
-</span></span><span style="display:flex;"><span>sudo apt-get update
-</span></span><span style="display:flex;"><span>sudo apt-get install yarn
-</span></span></code></pre></div><h1 id="ref">Ref</h1>
-<ul>
-<li><a href="https://phoenixnap.com/kb/how-to-install-yarn-ubuntu">How to Install Yarn on Ubuntu 18.04</a></li>
-<li><a href="https://community.learnlinux.tv/t/how-to-apt-key-is-deprecated-heres-how-to-fix-it/489">How To: ‘apt-key’ is deprecated, here’s how to fix it</a></li>
-</ul> <a class="read-more" href="/csdn/post/nodejs-debian/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2026-01-06T23:08:39&#43;08:00">
-            6 Jan 2026
-        </time>
-    </footer>
-</article>
 
 	
 	   <article class="post post">
@@ -335,7 +272,7 @@ curl -fsSL https://deb.nodesource.com/setup_24.x | sudo -E bash -
 参见 <a href="https://tdtc-hrb.github.io/csdn/post/ops_openjdk_ubuntu/">设置OpenJDK - Ubuntu</a></li>
 </ul>
 <h2 id="安装tomcat">安装Tomcat</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo dnf install wget tar
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo dnf install wget tar
 </span></span></code></pre></div><p>下载(choose one):</p> <a class="read-more" href="/csdn/post/ops_tomcat/">&raquo;</a></p>
         
     </section>
@@ -345,8 +282,171 @@ curl -fsSL https://deb.nodesource.com/setup_24.x | sudo -E bash -
         
 
         
-        <time class="post-date" datetime="2025-11-03T12:38:08&#43;08:00">
-            3 Nov 2025
+        <time class="post-date" datetime="2026-03-03T12:38:08&#43;08:00">
+            3 Mar 2026
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_network_proxy/">设置proxy</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="os">OS</h1>
+<ul>
+<li>Windows</li>
+<li>Dibian/Ubuntu</li>
+<li>FreeBSD</li>
+</ul>
+<h2 id="windows">Windows</h2>
+<ul>
+<li>cmd</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>set http_proxy<span style="color:#f92672">=</span>http://127.0.0.1:8580
+</span></span><span style="display:flex;"><span>set https_proxy<span style="color:#f92672">=</span>http://127.0.0.1:8580
+</span></span></code></pre></div><ul>
+<li>powershell</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-ps" data-lang="ps"><span style="display:flex;"><span><span style="color:#a6e22e">$proxy=&#39;http:</span><span style="color:#960050;background-color:#1e0010">//</span>&lt;<span style="color:#a6e22e">IP</span>&gt;<span style="color:#a6e22e">:</span>&lt;<span style="color:#a6e22e">PORT</span>&gt;<span style="color:#a6e22e">&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">$ENV:HTTP_PROXY=$proxy</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">$ENV:HTTPS_PROXY=$proxy</span>
+</span></span></code></pre></div><p>ref: <a href="https://stackoverflow.com/a/47624713">https://stackoverflow.com/a/47624713</a></p>
+<h2 id="ubuntu">Ubuntu</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export http_proxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://192.168.1.108:1080&#34;</span>
+</span></span><span style="display:flex;"><span>export https_proxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://192.168.1.108:1080&#34;</span>
+</span></span></code></pre></div><h3 id="msys2">Msys2</h3>
+<p>Add the above command to your profile:</p>
+<pre tabindex="0"><code>/etc/profile
+</code></pre><h3 id="with-user-and-password">With user and password</h3>
+<p>Set up the server in the tool: <br>
+Check &ldquo;Run xxx as Server(listens 0.0.0.0)&rdquo;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export http_proxy<span style="color:#f92672">=</span>http://USERNAME:PASSWORD@192.168.1.108:8580/
+</span></span><span style="display:flex;"><span>export https_proxy<span style="color:#f92672">=</span>http://USERNAME:PASSWORD@192.168.1.108:8580/
+</span></span></code></pre></div><h2 id="freebsd"><a href="https://nanxiao.gitbooks.io/freebsd-101-hacks/content/posts/configure-proxy.html">FreeBSD</a></h2>
+<blockquote>
+<p>v12.4</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-csh" data-lang="csh"><span style="display:flex;"><span>setenv HTTP_PROXY http://web-proxy.xxxxxx.com:8080
+</span></span><span style="display:flex;"><span>setenv HTTPS_PROXY https://web-proxy.xxxxxx.com:8080
+</span></span></code></pre></div><h1 id="software">software</h1>
+<h2 id="virtualbox">VirtualBox</h2>
+<ul>
+<li>
+<p>Adapter 1 <br>
+host only, vboxnet0</p>
+</li>
+<li>
+<p>Adapter 2 <br>
+NAT</p>
+</li>
+</ul>
+<h3 id="guest-os">Guest os</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/netplan/00-installer-config.yaml
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>network:
+</span></span><span style="display:flex;"><span>    version: 2
+</span></span><span style="display:flex;"><span>    renderer: networkd
+</span></span><span style="display:flex;"><span>    ethernets:
+</span></span><span style="display:flex;"><span>        enp0s3:
+</span></span><span style="display:flex;"><span>            addresses:
+</span></span><span style="display:flex;"><span>                - 192.168.56.12/24
+</span></span><span style="display:flex;"><span>            dhcp4: no
+</span></span><span style="display:flex;"><span>        enp0s8:
+</span></span><span style="display:flex;"><span>            dhcp4: no
+</span></span></code></pre></div><h2 id="wine">Wine</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo dpkg --add-architecture i386
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo curl -O https://dl.winehq.org/wine-builds/winehq.key
+</span></span><span style="display:flex;"><span>sudo apt-key add winehq.key
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo apt-add-repository <span style="color:#e6db74">&#39;deb https://dl.winehq.org/wine-builds/ubuntu/ focal main&#39;</span>
+</span></span><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo apt install -y --install-recommends winehq-stable
+</span></span></code></pre></div><h3 id="usage-wine">usage wine</h3>
+<pre tabindex="0"><code>$ wine --version
+$ wine fg798p.exe
+</code></pre><h2 id="git">git</h2>
+<blockquote>
+<p>.gitconfig</p> <a class="read-more" href="/csdn/post/ops_network_proxy/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2026-02-23T14:08:08&#43;08:00">
+            23 Feb 2026
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/nodejs-debian/">在Debian下安装NodeJS</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><ul>
+<li>12 (Bookworm)</li>
+<li>13 (Trixie)</li>
+</ul>
+<blockquote>
+<p>Official website support: Page not updated.</p>
+</blockquote>
+<h1 id="1nodejs">1.node.js</h1>
+<p><a href="https://github.com/nodesource/distributions">v24/v22.x/20.x/18.x/16.x</a></p>
+<ul>
+<li>v24.x</li>
+</ul>
+<pre tabindex="0"><code>sudo apt install -y curl
+curl -fsSL https://deb.nodesource.com/setup_24.x | sudo -E bash -
+</code></pre><ul>
+<li>v22.x</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
+</span></span></code></pre></div><ul>
+<li>v20.x</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+</span></span></code></pre></div><h2 id="install">install</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install -y nodejs
+</span></span></code></pre></div><h2 id="update">update</h2>
+<p>first remove:</p>
+<pre tabindex="0"><code>sudo apt remove nodejs
+</code></pre><p>and then, remove <a href="https://unix.stackexchange.com/a/722477">libnode72</a>:</p>
+<pre tabindex="0"><code>sudo dpkg --remove --force-remove-reinstreq libnode72:amd64
+</code></pre><p>last install:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install -y nodejs
+</span></span></code></pre></div><h1 id="2-yarn-js">2. yarn js</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl --silent --show-error https://dl.yarnpkg.com/debian/pubkey.gpg | sudo gpg --dearmor -o /usr/share/keyrings/pubkey-archive-keyring.gpg
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;deb [signed-by=/usr/share/keyrings/pubkey-archive-keyring.gpg] \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">https://dl.yarnpkg.com/debian/ stable main&#34;</span> | sudo tee /etc/apt/sources.list.d/yarn.list
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install yarn
+</span></span></code></pre></div><h1 id="ref">Ref</h1>
+<ul>
+<li><a href="https://phoenixnap.com/kb/how-to-install-yarn-ubuntu">How to Install Yarn on Ubuntu 18.04</a></li>
+<li><a href="https://community.learnlinux.tv/t/how-to-apt-key-is-deprecated-heres-how-to-fix-it/489">How To: ‘apt-key’ is deprecated, here’s how to fix it</a></li>
+</ul> <a class="read-more" href="/csdn/post/nodejs-debian/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2026-01-06T23:08:39&#43;08:00">
+            6 Jan 2026
         </time>
     </footer>
 </article>
@@ -433,103 +533,6 @@ pkg bootstrap -f # forces reinstall of pkg
         
         <time class="post-date" datetime="2025-06-14T08:38:08&#43;08:00">
             14 Jun 2025
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_network_proxy/">设置proxy</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><h1 id="os">OS</h1>
-<ul>
-<li>Windows</li>
-<li>Dibian/Ubuntu</li>
-<li>FreeBSD</li>
-</ul>
-<h2 id="windows">Windows</h2>
-<ul>
-<li>cmd</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>set http_proxy<span style="color:#f92672">=</span>http://127.0.0.1:8580
-</span></span><span style="display:flex;"><span>set https_proxy<span style="color:#f92672">=</span>http://127.0.0.1:8580
-</span></span></code></pre></div><ul>
-<li>powershell</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ps" data-lang="ps"><span style="display:flex;"><span><span style="color:#a6e22e">$proxy=&#39;http:</span><span style="color:#960050;background-color:#1e0010">//</span>&lt;<span style="color:#a6e22e">IP</span>&gt;<span style="color:#a6e22e">:</span>&lt;<span style="color:#a6e22e">PORT</span>&gt;<span style="color:#a6e22e">&#39;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">$ENV:HTTP_PROXY=$proxy</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">$ENV:HTTPS_PROXY=$proxy</span>
-</span></span></code></pre></div><p>ref: <a href="https://stackoverflow.com/a/47624713">https://stackoverflow.com/a/47624713</a></p>
-<h2 id="ubuntu">Ubuntu</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export http_proxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://192.168.1.108:1080&#34;</span>
-</span></span><span style="display:flex;"><span>export https_proxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://192.168.1.108:1080&#34;</span>
-</span></span></code></pre></div><h3 id="with-user-and-password">With user and password</h3>
-<p>Set up the server in the tool: <br>
-Check &ldquo;Run xxx as Server(listens 0.0.0.0)&rdquo;</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export http_proxy<span style="color:#f92672">=</span>http://USERNAME:PASSWORD@192.168.1.108:8580/
-</span></span><span style="display:flex;"><span>export https_proxy<span style="color:#f92672">=</span>http://USERNAME:PASSWORD@192.168.1.108:8580/
-</span></span></code></pre></div><h2 id="freebsd"><a href="https://nanxiao.gitbooks.io/freebsd-101-hacks/content/posts/configure-proxy.html">FreeBSD</a></h2>
-<blockquote>
-<p>v12.4</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csh" data-lang="csh"><span style="display:flex;"><span>setenv HTTP_PROXY http://web-proxy.xxxxxx.com:8080
-</span></span><span style="display:flex;"><span>setenv HTTPS_PROXY https://web-proxy.xxxxxx.com:8080
-</span></span></code></pre></div><h1 id="software">software</h1>
-<h2 id="virtualbox">VirtualBox</h2>
-<ul>
-<li>
-<p>Adapter 1 <br>
-host only, vboxnet0</p>
-</li>
-<li>
-<p>Adapter 2 <br>
-NAT</p>
-</li>
-</ul>
-<h3 id="guest-os">Guest os</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/netplan/00-installer-config.yaml
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>network:
-</span></span><span style="display:flex;"><span>    version: 2
-</span></span><span style="display:flex;"><span>    renderer: networkd
-</span></span><span style="display:flex;"><span>    ethernets:
-</span></span><span style="display:flex;"><span>        enp0s3:
-</span></span><span style="display:flex;"><span>            addresses:
-</span></span><span style="display:flex;"><span>                - 192.168.56.12/24
-</span></span><span style="display:flex;"><span>            dhcp4: no
-</span></span><span style="display:flex;"><span>        enp0s8:
-</span></span><span style="display:flex;"><span>            dhcp4: no
-</span></span></code></pre></div><h2 id="wine">Wine</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
-</span></span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>sudo dpkg --add-architecture i386
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>sudo curl -O https://dl.winehq.org/wine-builds/winehq.key
-</span></span><span style="display:flex;"><span>sudo apt-key add winehq.key
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>sudo apt-add-repository <span style="color:#e6db74">&#39;deb https://dl.winehq.org/wine-builds/ubuntu/ focal main&#39;</span>
-</span></span><span style="display:flex;"><span>sudo apt update
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>sudo apt install -y --install-recommends winehq-stable
-</span></span></code></pre></div><h3 id="usage-wine">usage wine</h3>
-<pre tabindex="0"><code>$ wine --version
-$ wine fg798p.exe
-</code></pre><h2 id="git">git</h2>
-<blockquote>
-<p>.gitconfig</p> <a class="read-more" href="/csdn/post/ops_network_proxy/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2025-04-23T14:08:08&#43;08:00">
-            23 Apr 2025
         </time>
     </footer>
 </article>
@@ -678,13 +681,13 @@ $ wine fg798p.exe
 <ul>
 <li>import class</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>using System.IO;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>using System.IO;
 </span></span><span style="display:flex;"><span>using xbfInfoLib;
 </span></span></code></pre></div><h2 id="写xbf文件">写xbf文件</h2>
 <ul>
 <li>读Ini文件配置</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>Boolean flagMSSQL <span style="color:#f92672">=</span> false;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>Boolean flagMSSQL <span style="color:#f92672">=</span> false;
 </span></span><span style="display:flex;"><span>Boolean flagSecu <span style="color:#f92672">=</span> false;
 </span></span><span style="display:flex;"><span>string sectionName <span style="color:#f92672">=</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(<span style="color:#e6db74">&#34;config&#34;</span>, <span style="color:#e6db74">&#34;type&#34;</span>);
 </span></span><span style="display:flex;"><span>string strSrv <span style="color:#f92672">=</span> ini.<span style="color:#a6e22e">readIniFileVal</span>(sectionName, <span style="color:#e6db74">&#34;Server&#34;</span>);
@@ -722,10 +725,10 @@ $ wine fg798p.exe
 </span></span></code></pre></div><ul>
 <li>调用COM接口</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>xbfInfoLib.FormatClass xbf <span style="color:#f92672">=</span> new <span style="color:#a6e22e">FormatClass</span>();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>xbfInfoLib.FormatClass xbf <span style="color:#f92672">=</span> new <span style="color:#a6e22e">FormatClass</span>();
 </span></span><span style="display:flex;"><span>xbf.<span style="color:#a6e22e">setFileInfo</span>(strConn);
 </span></span></code></pre></div><h2 id="读xbf文件">读xbf文件</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>xbfInfoLib.FormatClass xbf <span style="color:#f92672">=</span> new <span style="color:#a6e22e">FormatClass</span>();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>xbfInfoLib.FormatClass xbf <span style="color:#f92672">=</span> new <span style="color:#a6e22e">FormatClass</span>();
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>string filePath <span style="color:#f92672">=</span> currDir <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#f92672">+</span> edtFileName.Text;
 </span></span><span style="display:flex;"><span>string strRet <span style="color:#f92672">=</span> xbf.<span style="color:#a6e22e">getFileInfo</span>(filePath);
@@ -763,7 +766,7 @@ $ wine fg798p.exe
 <ul>
 <li>Circular.h</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#pragma once
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#pragma once
 </span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Circular</span>
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
@@ -779,7 +782,7 @@ $ wine fg798p.exe
 </span></span></code></pre></div><ul>
 <li>Circular.cpp</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;Circular.h&#34;</span><span style="color:#75715e">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;Circular.h&#34;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Circular<span style="color:#f92672">::</span>Circular(<span style="color:#66d9ef">double</span> pi)
 </span></span><span style="display:flex;"><span>{
@@ -830,16 +833,16 @@ $ wine fg798p.exe
 <h2 id="remote-server">remote server</h2>
 <pre tabindex="0"><code>bind-address=0.0.0.0
 </code></pre><h2 id="utf8">utf8</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>[MY<span style="color:#f92672">-</span><span style="color:#ae81ff">013242</span>] [Server] <span style="color:#75715e">--character-set-server: &#39;utf8&#39; is currently an alias for the character set UTF8MB3,
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>[MY<span style="color:#f92672">-</span><span style="color:#ae81ff">013242</span>] [Server] <span style="color:#75715e">--character-set-server: &#39;utf8&#39; is currently an alias for the character set UTF8MB3,
 </span></span></span><span style="display:flex;"><span>but will be an <span style="color:#66d9ef">alias</span> <span style="color:#66d9ef">for</span> UTF8MB4 <span style="color:#66d9ef">in</span> a future release. Please consider <span style="color:#66d9ef">using</span> UTF8MB4 <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">to</span> be unambiguous.
 </span></span></code></pre></div><ul>
 <li>mysql5</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>character<span style="color:#f92672">-</span><span style="color:#66d9ef">set</span><span style="color:#f92672">-</span>server<span style="color:#f92672">=</span>utf8
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>character<span style="color:#f92672">-</span><span style="color:#66d9ef">set</span><span style="color:#f92672">-</span>server<span style="color:#f92672">=</span>utf8
 </span></span></code></pre></div><ul>
 <li>mysql8</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>character<span style="color:#f92672">-</span><span style="color:#66d9ef">set</span><span style="color:#f92672">-</span>server<span style="color:#f92672">=</span>utf8mb4
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>character<span style="color:#f92672">-</span><span style="color:#66d9ef">set</span><span style="color:#f92672">-</span>server<span style="color:#f92672">=</span>utf8mb4
 </span></span></code></pre></div><h2 id="validate-password">validate password</h2>
 <p>注意： <a href="https://mysqlserverteam.com/mysql-8-0-4-new-default-authentication-plugin-caching_sha2_password/">mysql8.0.4</a>，
 我们将无法直接使用phpMyAdmin来登录！</p>
@@ -848,18 +851,18 @@ $ wine fg798p.exe
 </code></pre><ul>
 <li>mysql5</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>mysql_native_password
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>mysql_native_password
 </span></span></code></pre></div><ul>
 <li>mysql8</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>caching_sha2_password
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>caching_sha2_password
 </span></span></code></pre></div><h1 id="ubuntu">Ubuntu</h1>
 <p>install mysql8:</p>
 <pre tabindex="0"><code>sudo apt install mysql-server
 </code></pre><pre tabindex="0"><code>sudo systemctl start mysql.service
 </code></pre><h2 id="config-mysql-secure">config mysql secure</h2>
 <pre tabindex="0"><code>sudo mysql
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;root&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span> IDENTIFIED <span style="color:#66d9ef">WITH</span> mysql_native_password <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;xbfirst80&#39;</span>;
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;root&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span> IDENTIFIED <span style="color:#66d9ef">WITH</span> mysql_native_password <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;xbfirst80&#39;</span>;
 </span></span></code></pre></div><pre tabindex="0"><code>sudo mysql_secure_installation
 </code></pre><h2 id="add-user">add user</h2>
 <p>password rule:</p> <a class="read-more" href="/csdn/post/mysql80-install/">&raquo;</a></p>

@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.157.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/c-automake/" />
 
@@ -185,46 +185,46 @@
 <p>注意: am文件是需要手工创建的!</p>
 <h2 id="ac文件">ac文件</h2>
 <p>生成configure.scan文件, 并重命名为configure.ac</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ autoscan
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ autoscan
 </span></span><span style="display:flex;"><span>$ mv configure.scan configure.ac
 </span></span></code></pre></div><h3 id="修改配置">修改配置</h3>
 <p>注意: 所有新修改的值都需要方括号([])</p>
 <ul>
 <li>程序属性</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_INIT<span style="color:#f92672">([</span>hex2int<span style="color:#f92672">]</span>, <span style="color:#f92672">[</span>v0.1<span style="color:#f92672">]</span>, <span style="color:#f92672">[</span>veic_2005@163.com<span style="color:#f92672">])</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_INIT<span style="color:#f92672">([</span>hex2int<span style="color:#f92672">]</span>, <span style="color:#f92672">[</span>v0.1<span style="color:#f92672">]</span>, <span style="color:#f92672">[</span>veic_2005@163.com<span style="color:#f92672">])</span>
 </span></span></code></pre></div><ul>
 <li>目录结构
 如果只有本目录, 使用空值</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AM_INIT_AUTOMAKE
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AM_INIT_AUTOMAKE
 </span></span></code></pre></div><ul>
 <li>检查编译器
 <a href="http://www.adp-gmbh.ch/misc/tools/configure/configure_in.html#ac_prog_cc">C compiler</a>:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_PROG_CC
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_PROG_CC
 </span></span></code></pre></div><p><a href="http://www.adp-gmbh.ch/misc/tools/configure/configure_in.html#ac_prog_cxx">C++ compiler</a>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_PROG_CXX
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_PROG_CXX
 </span></span></code></pre></div><ul>
 <li><a href="https://www.gnu.org/software/autoconf/manual/autoconf-2.71/html_node/Configuration-Files.html">输出Makefile.in</a></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_CONFIG_FILES<span style="color:#f92672">([</span>Makefile<span style="color:#f92672">])</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_CONFIG_FILES<span style="color:#f92672">([</span>Makefile<span style="color:#f92672">])</span>
 </span></span></code></pre></div><ul>
 <li>检查system头文件</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_CHECK_HEADERS<span style="color:#f92672">([</span>string.h<span style="color:#f92672">])</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_CHECK_HEADERS<span style="color:#f92672">([</span>string.h<span style="color:#f92672">])</span>
 </span></span></code></pre></div><h2 id="生成makefile">生成Makefile</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aclocal
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aclocal
 </span></span><span style="display:flex;"><span>autoconf
 </span></span></code></pre></div><h3 id="自定义宏可选">自定义宏(可选)</h3>
 <p>在ac file中的定义：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_CONFIG_HEADERS<span style="color:#f92672">([</span>config.h<span style="color:#f92672">])</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AC_CONFIG_HEADERS<span style="color:#f92672">([</span>config.h<span style="color:#f92672">])</span>
 </span></span></code></pre></div><p>执行：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>autoheader
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>autoheader
 </span></span></code></pre></div><h3 id="输出makefile">输出Makefile</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>automake --add-missing
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>automake --add-missing
 </span></span></code></pre></div><p>输出Makefile:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./configure
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./configure
 </span></span></code></pre></div><h2 id="example">Example</h2>
 <p>源代码参见<a href="https://tdtc-hrb.github.io/csdn/post/c-string-h2i/">十六进制转十进制</a></p>
 <ul>
@@ -236,12 +236,12 @@
 函数名声明</li>
 </ul>
 <h3 id="makefileam">Makefile.am</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AUTOMAKE_OPTIONS<span style="color:#f92672">=</span>foreign
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AUTOMAKE_OPTIONS<span style="color:#f92672">=</span>foreign
 </span></span><span style="display:flex;"><span>bin_PROGRAMS<span style="color:#f92672">=</span>hex2int
 </span></span><span style="display:flex;"><span>hex2int_SOURCES<span style="color:#f92672">=</span>main.c hex2int.c
 </span></span><span style="display:flex;"><span>include_HEADERS<span style="color:#f92672">=</span>hex2int.h
 </span></span></code></pre></div><h3 id="configureac">configure.ac</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#                                               -*- Autoconf -*-</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#                                               -*- Autoconf -*-</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Process this file with autoconf to produce a configure script.</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>AC_PREREQ<span style="color:#f92672">([</span>2.71<span style="color:#f92672">])</span>
@@ -269,7 +269,7 @@
 <p>小项目可以。
 注意：所有的命令前必须为TAB，不能使空格！</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#https://stackoverflow.com/questions/1484817/how-do-i-make-a-simple-makefile-for-gcc-on-linux</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#https://stackoverflow.com/questions/1484817/how-do-i-make-a-simple-makefile-for-gcc-on-linux</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#https://stackoverflow.com/questions/14109724/makefile-missing-separator/14109796</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#https://www.gnu.org/software/make/manual/html_node/Pattern-Examples.html#Pattern-Examples</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html#Automatic-Variables</span>

@@ -62,7 +62,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.157.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/mysql80-install/" />
 
@@ -188,16 +188,16 @@
 <h2 id="remote-server">remote server</h2>
 <pre tabindex="0"><code>bind-address=0.0.0.0
 </code></pre><h2 id="utf8">utf8</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>[MY<span style="color:#f92672">-</span><span style="color:#ae81ff">013242</span>] [Server] <span style="color:#75715e">--character-set-server: &#39;utf8&#39; is currently an alias for the character set UTF8MB3,
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>[MY<span style="color:#f92672">-</span><span style="color:#ae81ff">013242</span>] [Server] <span style="color:#75715e">--character-set-server: &#39;utf8&#39; is currently an alias for the character set UTF8MB3,
 </span></span></span><span style="display:flex;"><span>but will be an <span style="color:#66d9ef">alias</span> <span style="color:#66d9ef">for</span> UTF8MB4 <span style="color:#66d9ef">in</span> a future release. Please consider <span style="color:#66d9ef">using</span> UTF8MB4 <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">to</span> be unambiguous.
 </span></span></code></pre></div><ul>
 <li>mysql5</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>character<span style="color:#f92672">-</span><span style="color:#66d9ef">set</span><span style="color:#f92672">-</span>server<span style="color:#f92672">=</span>utf8
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>character<span style="color:#f92672">-</span><span style="color:#66d9ef">set</span><span style="color:#f92672">-</span>server<span style="color:#f92672">=</span>utf8
 </span></span></code></pre></div><ul>
 <li>mysql8</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>character<span style="color:#f92672">-</span><span style="color:#66d9ef">set</span><span style="color:#f92672">-</span>server<span style="color:#f92672">=</span>utf8mb4
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>character<span style="color:#f92672">-</span><span style="color:#66d9ef">set</span><span style="color:#f92672">-</span>server<span style="color:#f92672">=</span>utf8mb4
 </span></span></code></pre></div><h2 id="validate-password">validate password</h2>
 <p>注意： <a href="https://mysqlserverteam.com/mysql-8-0-4-new-default-authentication-plugin-caching_sha2_password/">mysql8.0.4</a>，
 我们将无法直接使用phpMyAdmin来登录！</p>
@@ -206,28 +206,28 @@
 </code></pre><ul>
 <li>mysql5</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>mysql_native_password
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>mysql_native_password
 </span></span></code></pre></div><ul>
 <li>mysql8</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>caching_sha2_password
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>caching_sha2_password
 </span></span></code></pre></div><h1 id="ubuntu">Ubuntu</h1>
 <p>install mysql8:</p>
 <pre tabindex="0"><code>sudo apt install mysql-server
 </code></pre><pre tabindex="0"><code>sudo systemctl start mysql.service
 </code></pre><h2 id="config-mysql-secure">config mysql secure</h2>
 <pre tabindex="0"><code>sudo mysql
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;root&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span> IDENTIFIED <span style="color:#66d9ef">WITH</span> mysql_native_password <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;xbfirst80&#39;</span>;
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;root&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span> IDENTIFIED <span style="color:#66d9ef">WITH</span> mysql_native_password <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;xbfirst80&#39;</span>;
 </span></span></code></pre></div><pre tabindex="0"><code>sudo mysql_secure_installation
 </code></pre><h2 id="add-user">add user</h2>
 <p>password rule:</p>
 <pre tabindex="0"><code>SHOW VARIABLES LIKE &#39;validate_password%&#39;;
 </code></pre><p>DBA:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;DBAdmin&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;&#39; IDENTIFIED BY &#39;</span>xb80first<span style="color:#e6db74">&#39;;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;DBAdmin&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;&#39; IDENTIFIED BY &#39;</span>xb80first<span style="color:#e6db74">&#39;;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">GRANT ALL PRIVILEGES ON *.* TO &#39;</span>DBAdmin<span style="color:#e6db74">&#39;@&#39;</span>localhost<span style="color:#e6db74">&#39;&#39;</span> <span style="color:#66d9ef">WITH</span> <span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">OPTION</span>;
 </span></span><span style="display:flex;"><span>flush <span style="color:#66d9ef">privileges</span>;
 </span></span></code></pre></div><p>remote user:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;tdtc2022&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;%&#39;</span> IDENTIFIED <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;qaz1xsw2&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;tdtc2022&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;%&#39;</span> IDENTIFIED <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;qaz1xsw2&#39;</span>;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">SELECT</span>,<span style="color:#66d9ef">INSERT</span>,<span style="color:#66d9ef">UPDATE</span>,<span style="color:#66d9ef">DELETE</span> <span style="color:#66d9ef">ON</span> carnumber.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;tdtc2022&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;%&#39;</span>;
 </span></span><span style="display:flex;"><span>flush <span style="color:#66d9ef">privileges</span>;
 </span></span></code></pre></div><h1 id="参考文档">参考文档</h1>

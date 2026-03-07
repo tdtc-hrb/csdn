@@ -57,7 +57,7 @@
         <link href='/csdn/tags/redis/index.xml' rel="alternate" type="application/rss+xml" title="Redis &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.157.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/tags/redis/" />
 
@@ -168,26 +168,26 @@
 <ul>
 <li>User set</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ useradd tdtc
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ useradd tdtc
 </span></span><span style="display:flex;"><span>$ passwd tdtc
 </span></span></code></pre></div><ul>
 <li><a href="https://tdtc-hrb.github.io/csdn/post/ops_rhel_repo/">Yum Repo</a></li>
 </ul>
 <h2 id="1-yum-install">1) yum install</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum groupinstall <span style="color:#e6db74">&#34;Development Tools&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo yum groupinstall <span style="color:#e6db74">&#34;Development Tools&#34;</span>
 </span></span><span style="display:flex;"><span>$sudo yum install tcl wget
 </span></span></code></pre></div><h3 id="v6">v6+</h3>
 <p>Just to clarify: there is no way this issue will be fixed, Redis &gt;= 6 will require a C11 compiler.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install centos-release-scl
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install centos-release-scl
 </span></span><span style="display:flex;"><span>sudo yum install devtoolset-8
 </span></span><span style="display:flex;"><span>scl enable devtoolset-8 bash
 </span></span></code></pre></div><h2 id="2-verification">2) verification</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$gcc -v
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$gcc -v
 </span></span><span style="display:flex;"><span>$make -v
 </span></span><span style="display:flex;"><span>$echo <span style="color:#e6db74">&#39;puts [info patchlevel];exit 0&#39;</span> | tclsh
 </span></span></code></pre></div><h1 id="1-installation">1. installation</h1>
 <h2 id="1-install">1) install</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://download.redis.io/releases/redis-6.0.16.tar.gz
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://download.redis.io/releases/redis-6.0.16.tar.gz
 </span></span><span style="display:flex;"><span>$tar xzvf redis-6.0.16.tar.gz
 </span></span><span style="display:flex;"><span>$cd redis-6.0.16
 </span></span><span style="display:flex;"><span>$make
@@ -196,11 +196,11 @@
 </span></span><span style="display:flex;"><span><span style="color:#75715e">## sudo</span>
 </span></span><span style="display:flex;"><span>$sudo make install
 </span></span></code></pre></div><h2 id="2-config">2) config</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo mkdir /etc/redis
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo mkdir /etc/redis
 </span></span><span style="display:flex;"><span>$sudo mkdir -p /var/redis
 </span></span><span style="display:flex;"><span>$sudo cp /home/tdtc/redis-6.0.16/redis.conf /etc/redis
 </span></span></code></pre></div><h3 id="redisconf">redis.conf</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>port  6379				         <span style="color:#75715e">#default port is already 6379.</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>port  6379				         <span style="color:#75715e">#default port is already 6379.</span>
 </span></span><span style="display:flex;"><span>daemonize yes			         <span style="color:#75715e">#run as a daemon</span>
 </span></span><span style="display:flex;"><span>supervised systemd			     <span style="color:#75715e">#signal systemd</span>
 </span></span><span style="display:flex;"><span>pidfile /var/run/redis_6379.pid  <span style="color:#75715e">#specify pid file</span>

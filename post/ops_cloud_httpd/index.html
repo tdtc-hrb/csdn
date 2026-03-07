@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.157.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_cloud_httpd/" />
 
@@ -186,12 +186,12 @@ httpd路径: /opt/httpd</p>
 <h1 id="一sysvinit">一、SysVinit</h1>
 <p>SysVinit是CentOS6的默认1号进程。</p>
 <h2 id="1-copy-script">1. Copy script</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># cp /opt/httpd/bin/apachectl /etc/rc.d/init.d/httpd</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># cp /opt/httpd/bin/apachectl /etc/rc.d/init.d/httpd</span>
 </span></span></code></pre></div><h2 id="2-edit-script">2. Edit script</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># cd /etc/rc.d/init.d</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># cd /etc/rc.d/init.d</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># vi httpd</span>
 </span></span></code></pre></div><p>The original file(apachectl)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Licensed to the Apache Software Foundation (ASF) under one or more</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># contributor license agreements.  See the NOTICE file distributed with</span>
@@ -296,7 +296,7 @@ httpd路径: /opt/httpd</p>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>exit $ERROR
 </span></span></code></pre></div><p>Add the following section to the file:(File header)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Startup script for the Apache Web Server</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
@@ -307,13 +307,13 @@ httpd路径: /opt/httpd</p>
 </span></span></code></pre></div><h1 id="二systemd">二、SystemD</h1>
 <p>SystemD是CentOS7的默认1号进程。</p>
 <h2 id="1-install">1. install</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># yum install httpd</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># yum install httpd</span>
 </span></span></code></pre></div><h2 id="2-start">2. start</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl enable httpd.service
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl enable httpd.service
 </span></span><span style="display:flex;"><span>systemctl start httpd.service
 </span></span></code></pre></div><h2 id="3-test">3. Test</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/opt/httpd/bin/apachectl -v
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Server version: Apache/2.2.27 <span style="color:#f92672">(</span>Unix<span style="color:#f92672">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/opt/httpd/bin/apachectl -v
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Server version: Apache/2.2.27 <span style="color:#f92672">(</span>Unix<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>Server built:   Apr  <span style="color:#ae81ff">5</span> <span style="color:#ae81ff">2014</span> 00:42:59
 </span></span></code></pre></div><h1 id="reference">Reference</h1>
 <ul>

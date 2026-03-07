@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.157.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_hadoop_cluster_hdfs/" />
 
@@ -181,17 +181,17 @@
 <p>(../etc/hadoop/hdfs-site.xml)</p>
 </blockquote>
 <h1 id="1-name-services">1. name services</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.nameservices<span style="color:#f92672">&lt;/name&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>mycluster<span style="color:#f92672">&lt;/value&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
 </span></span></code></pre></div><h2 id="1-name-node">1) name node</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.ha.namenodes.mycluster<span style="color:#f92672">&lt;/name&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>nn1,nn2<span style="color:#f92672">&lt;/value&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
 </span></span></code></pre></div><h2 id="2-rpcname-node">2) RPC(name node)</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.namenode.rpc-address.mycluster.nn1<span style="color:#f92672">&lt;/name&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>tdtc201:8020<span style="color:#f92672">&lt;/value&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
@@ -200,7 +200,7 @@
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>tdtc202:8020<span style="color:#f92672">&lt;/value&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
 </span></span></code></pre></div><h2 id="3-httpname-node">3) Http(name node)</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.namenode.http-address.mycluster.nn1<span style="color:#f92672">&lt;/name&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>tdtc201:50070<span style="color:#f92672">&lt;/value&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
@@ -210,30 +210,30 @@
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
 </span></span></code></pre></div><h1 id="2-journalnode">2. JournalNode</h1>
 <h2 id="1-quorum-journal-manager">1) quorum journal manager</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- Journal Node(QJM) --&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- Journal Node(QJM) --&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.namenode.shared.edits.dir<span style="color:#f92672">&lt;/name&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>qjournal://tdtc201:8485;tdtc202:8485;tdtc203:8485/mycluster<span style="color:#f92672">&lt;/value&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
 </span></span></code></pre></div><h3 id="local">local</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.journalnode.edits.dir<span style="color:#f92672">&lt;/name&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>/home/tdtc/app/hadoop/data/journaldata<span style="color:#f92672">&lt;/value&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
 </span></span></code></pre></div><h1 id="3-failover">3. failover</h1>
 <h2 id="1-support-class">1) support class</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- the Java class that HDFS clients use to contact the Active NameNode --&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- the Java class that HDFS clients use to contact the Active NameNode --&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.client.failover.proxy.provider.mycluster<span style="color:#f92672">&lt;/name&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider<span style="color:#f92672">&lt;/value&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
 </span></span></code></pre></div><h2 id="auto-switch">auto switch</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.ha.automatic-failover.enabled<span style="color:#f92672">&lt;/name&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>true<span style="color:#f92672">&lt;/value&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
 </span></span></code></pre></div><h1 id="4-sshfence">4. sshfence</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- sshfence - SSH to the Active NameNode and kill the process --&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- sshfence - SSH to the Active NameNode and kill the process --&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.ha.fencing.methods<span style="color:#f92672">&lt;/name&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>sshfence<span style="color:#f92672">&lt;/value&gt;</span>
@@ -246,7 +246,7 @@
 <blockquote>
 <p>default: 30s</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.ha.fencing.ssh.connect-timeout<span style="color:#f92672">&lt;/name&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>30000<span style="color:#f92672">&lt;/value&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>

@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.157.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -172,17 +172,17 @@
 <p>(../etc/hadoop/hdfs-site.xml)</p>
 </blockquote>
 <h1 id="1-name-services">1. name services</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.nameservices<span style="color:#f92672">&lt;/name&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>mycluster<span style="color:#f92672">&lt;/value&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
 </span></span></code></pre></div><h2 id="1-name-node">1) name node</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.ha.namenodes.mycluster<span style="color:#f92672">&lt;/name&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>nn1,nn2<span style="color:#f92672">&lt;/value&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
 </span></span></code></pre></div><h2 id="2-rpcname-node">2) RPC(name node)</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.namenode.rpc-address.mycluster.nn1<span style="color:#f92672">&lt;/name&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>tdtc201:8020<span style="color:#f92672">&lt;/value&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
@@ -191,7 +191,7 @@
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>tdtc202:8020<span style="color:#f92672">&lt;/value&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
 </span></span></code></pre></div><h2 id="3-httpname-node">3) Http(name node)</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.namenode.http-address.mycluster.nn1<span style="color:#f92672">&lt;/name&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>tdtc201:50070<span style="color:#f92672">&lt;/value&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
@@ -201,30 +201,30 @@
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
 </span></span></code></pre></div><h1 id="2-journalnode">2. JournalNode</h1>
 <h2 id="1-quorum-journal-manager">1) quorum journal manager</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- Journal Node(QJM) --&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- Journal Node(QJM) --&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.namenode.shared.edits.dir<span style="color:#f92672">&lt;/name&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>qjournal://tdtc201:8485;tdtc202:8485;tdtc203:8485/mycluster<span style="color:#f92672">&lt;/value&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
 </span></span></code></pre></div><h3 id="local">local</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.journalnode.edits.dir<span style="color:#f92672">&lt;/name&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>/home/tdtc/app/hadoop/data/journaldata<span style="color:#f92672">&lt;/value&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
 </span></span></code></pre></div><h1 id="3-failover">3. failover</h1>
 <h2 id="1-support-class">1) support class</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- the Java class that HDFS clients use to contact the Active NameNode --&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- the Java class that HDFS clients use to contact the Active NameNode --&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.client.failover.proxy.provider.mycluster<span style="color:#f92672">&lt;/name&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider<span style="color:#f92672">&lt;/value&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
 </span></span></code></pre></div><h2 id="auto-switch">auto switch</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.ha.automatic-failover.enabled<span style="color:#f92672">&lt;/name&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>true<span style="color:#f92672">&lt;/value&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
 </span></span></code></pre></div><h1 id="4-sshfence">4. sshfence</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- sshfence - SSH to the Active NameNode and kill the process --&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- sshfence - SSH to the Active NameNode and kill the process --&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>dfs.ha.fencing.methods<span style="color:#f92672">&lt;/name&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>sshfence<span style="color:#f92672">&lt;/value&gt;</span>
@@ -401,11 +401,11 @@ This may be configured like so, in your core-site.xml file:</p> <a class="read-m
         
             <p><h1 id="i-soft-list">I. Soft List</h1>
 <h2 id="1-zk">1. zk</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>2181/tcp
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>2181/tcp
 </span></span><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>2888/tcp
 </span></span><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>3888/tcp
 </span></span></code></pre></div><h2 id="2-hadoop">2. Hadoop</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>10020/tcp
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>10020/tcp
 </span></span><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>19888/tcp
 </span></span><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>8020/tcp
 </span></span><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>50070/tcp
@@ -413,7 +413,7 @@ This may be configured like so, in your core-site.xml file:</p> <a class="read-m
 </span></span><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>8088/tcp
 </span></span><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>8033/tcp
 </span></span></code></pre></div><h2 id="3-spark">3. Spark</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>6066/tcp
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>6066/tcp
 </span></span><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>7077/tcp
 </span></span><span style="display:flex;"><span>sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>8080-8088/tcp
 </span></span></code></pre></div><blockquote>
@@ -468,15 +468,15 @@ This may be configured like so, in your core-site.xml file:</p> <a class="read-m
 </blockquote>
 <h1 id="prepare">Prepare</h1>
 <p>Establish Directory &ldquo;.ssh&rdquo;</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$mkdir ~/.ssh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$mkdir ~/.ssh
 </span></span><span style="display:flex;"><span>$chmod <span style="color:#ae81ff">700</span> ~/.ssh
 </span></span></code></pre></div><h1 id="stage-i">Stage I</h1>
 <h2 id="1-config">1. config</h2>
 <blockquote>
 <p>另外一种方式为：把所有机器的IP和hostname放在/etc/hosts里，在此不再赘述, 请参见《<a href="https://xiaobin80.gitee.io/csdn/post/ops_zookeeper/">ZooKeeper multi-server install</a> - 3.FQDN》。</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$vi ~/.ssh/config
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Host host1
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$vi ~/.ssh/config
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Host host1
 </span></span><span style="display:flex;"><span>        HostName 192.168.0.110
 </span></span><span style="display:flex;"><span>        Port <span style="color:#ae81ff">22</span>
 </span></span><span style="display:flex;"><span>        User xiaobin112
@@ -486,10 +486,10 @@ This may be configured like so, in your core-site.xml file:</p> <a class="read-m
 </span></span><span style="display:flex;"><span>        Port <span style="color:#ae81ff">22</span>
 </span></span><span style="display:flex;"><span>        User xiaobin112
 </span></span></code></pre></div><h2 id="2-rw">2. r+w</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$chmod <span style="color:#ae81ff">600</span> ~/.ssh/config
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$chmod <span style="color:#ae81ff">600</span> ~/.ssh/config
 </span></span></code></pre></div><h1 id="stage-ii">Stage II</h1>
 <h2 id="1-gen">1. gen</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">(</span>Just press ENTER <span style="color:#66d9ef">for</span> all input values<span style="color:#f92672">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">(</span>Just press ENTER <span style="color:#66d9ef">for</span> all input values<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>ssh-keygen -t rsa -P <span style="color:#e6db74">&#39;&#39;</span>
 </span></span></code></pre></div><h2 id="2-file-copy">2. file copy</h2>
 <blockquote>
@@ -520,35 +520,35 @@ This may be configured like so, in your core-site.xml file:</p> <a class="read-m
 参考Ubuntu14.04的<a href="https://help.ubuntu.com/14.04/serverguide/ftp-server.html">FTP Server文档</a></p>
 </blockquote>
 <h1 id="安装vsftpd">安装vsftpd</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>root@tdtc010-Vostro-270:~# apt-get install vsftpd
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>root@tdtc010-Vostro-270:~# apt-get install vsftpd
 </span></span></code></pre></div><h1 id="配置">配置</h1>
 <h2 id="允许上传">允许上传</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>local_enable<span style="color:#f92672">=</span>YES;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>local_enable<span style="color:#f92672">=</span>YES;
 </span></span><span style="display:flex;"><span>write_enable<span style="color:#f92672">=</span>YES;
 </span></span></code></pre></div><h2 id="允许匿名上传">允许匿名上传</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>anon_upload_enable<span style="color:#f92672">=</span>YES;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>anon_upload_enable<span style="color:#f92672">=</span>YES;
 </span></span></code></pre></div><h1 id="faq">FAQ</h1>
 <h2 id="553-could-not-create-file">553 Could not create file</h2>
 <p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/1366383847_4148.png" alt="2013-04-19 23:13:47">
 执行“快速连接”;提示错误信息：553 Could not create file</p>
 <h3 id="新建一个目录">新建一个目录</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>root@tdtc010-Vostro-270:/srv/ftp# mkdir upload_xp
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>root@tdtc010-Vostro-270:/srv/ftp# mkdir upload_xp
 </span></span></code></pre></div><h3 id="更改目录权限">更改目录权限</h3>
 <p>默认权限（FileZilla右击文件属性）
 <img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20170902112233231.png" alt="2013-04-19 23:13:47">
 更改为可读写：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>root@tdtc010-Vostro-270:/srv/ftp# chmod <span style="color:#ae81ff">777</span> upload_xp
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>root@tdtc010-Vostro-270:/srv/ftp# chmod <span style="color:#ae81ff">777</span> upload_xp
 </span></span></code></pre></div><p><img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20170902112934299.png" alt="2013-04-19 23:13:47"></p>
 <h2 id="550-failed-to-open-file">550 Failed to open file</h2>
 <p>解决办法： 开启公共权限（读）</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod <span style="color:#ae81ff">644</span> myfile.iso
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod <span style="color:#ae81ff">644</span> myfile.iso
 </span></span></code></pre></div><h2 id="显示ftp目录信息">显示ftp目录信息</h2>
 <p>在目录下建立一个.message文件即可。  <br>
 /srv/ftp/upload_xp/.message <br>
 文件内容：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>欢迎使用VSFTPD，这个是upload_xp目录
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>欢迎使用VSFTPD，这个是upload_xp目录
 </span></span></code></pre></div><p>再次，在FileZilla执行上传，显示成功：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>状态:	已连接
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>状态:	已连接
 </span></span><span style="display:flex;"><span>状态:	开始上传 D:<span style="color:#ae81ff">\3</span>60Downloads<span style="color:#ae81ff">\p</span>erl-5.16.3.tar.gz
 </span></span><span style="display:flex;"><span>命令:	CWD /upload_xp
 </span></span><span style="display:flex;"><span>响应:	<span style="color:#ae81ff">250</span> Directory successfully changed.
@@ -627,12 +627,12 @@ httpd路径: /opt/httpd</p>
 <h1 id="一sysvinit">一、SysVinit</h1>
 <p>SysVinit是CentOS6的默认1号进程。</p>
 <h2 id="1-copy-script">1. Copy script</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># cp /opt/httpd/bin/apachectl /etc/rc.d/init.d/httpd</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># cp /opt/httpd/bin/apachectl /etc/rc.d/init.d/httpd</span>
 </span></span></code></pre></div><h2 id="2-edit-script">2. Edit script</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># cd /etc/rc.d/init.d</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># cd /etc/rc.d/init.d</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># vi httpd</span>
 </span></span></code></pre></div><p>The original file(apachectl)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Licensed to the Apache Software Foundation (ASF) under one or more</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># contributor license agreements.  See the NOTICE file distributed with</span>
@@ -767,16 +767,16 @@ OS: CentOS 7.2 x64</p>
 <img src="https://gitee.com/xiaobin80/csdn/raw/master/images/20171011171838468.png" alt="2017-10-11 17:18"></p>
 <h1 id="2-其他系统管理">2. 其他系统管理</h1>
 <h2 id="1-设置sellinux">1) 设置SeLlinux</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># setsebool -P ftp_home_dir on</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># setsebool -P ftp_home_dir on</span>
 </span></span></code></pre></div><h2 id="2-设置user">2) 设置user</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># useradd -m fdn -s /sbin/nologin</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># useradd -m fdn -s /sbin/nologin</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># passwd fdn</span>
 </span></span></code></pre></div><h1 id="3-安装pure-ftpd">3. 安装pure-ftpd</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># yum install pure-ftpd</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># yum install pure-ftpd</span>
 </span></span></code></pre></div><h2 id="1-setup">1) Setup</h2>
 <p>使用root简单设置pure-ftpd.conf</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># vi /etc/pure-ftpd/pure-ftpd.conf</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># If you want simple Unix (/etc/passwd) authentication, uncomment this</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># vi /etc/pure-ftpd/pure-ftpd.conf</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># If you want simple Unix (/etc/passwd) authentication, uncomment this</span>
 </span></span><span style="display:flex;"><span>UnixAuthentication            yes
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Cage in every user in his home directory</span>
@@ -789,7 +789,7 @@ OS: CentOS 7.2 x64</p>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Disallow anonymous connections. Only allow authenticated users.</span>
 </span></span><span style="display:flex;"><span>NoAnonymous                 yes
 </span></span></code></pre></div><h2 id="2-run">2) run</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># chkconfig pure-ftpd on</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># chkconfig pure-ftpd on</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># service pure-ftpd start</span>
 </span></span></code></pre></div><h1 id="参考文档">参考文档</h1>
 <ul>
@@ -819,7 +819,7 @@ OS: CentOS 7.2 x64</p>
         
             <p><p><a href="https://github.com/ragnor/simple-spring-memcached/wiki/Getting-Started">offical site</a></p>
 <h1 id="pom">pom</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;groupId&gt;</span>com.google.code.simple-spring-memcached<span style="color:#f92672">&lt;/groupId&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;artifactId&gt;</span>spymemcached-provider<span style="color:#f92672">&lt;/artifactId&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;version&gt;</span>4.1.3<span style="color:#f92672">&lt;/version&gt;</span>
@@ -828,7 +828,7 @@ OS: CentOS 7.2 x64</p>
 <blockquote>
 <p>applicationContext.xml</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;import</span> <span style="color:#a6e22e">resource=</span><span style="color:#e6db74">&#34;simplesm-context.xml&#34;</span> <span style="color:#f92672">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;import</span> <span style="color:#a6e22e">resource=</span><span style="color:#e6db74">&#34;simplesm-context.xml&#34;</span> <span style="color:#f92672">/&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;aop:aspectj-autoproxy</span> <span style="color:#f92672">/&gt;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;defaultMemcachedClient&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.google.code.ssm.CacheFactory&#34;</span><span style="color:#f92672">&gt;</span>
@@ -850,7 +850,7 @@ OS: CentOS 7.2 x64</p>
 <blockquote>
 <p>service layer</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Override</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Override</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">@ReadThroughSingleCache</span>(namespace <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;carnum&#34;</span>, expiration <span style="color:#f92672">=</span> 300)
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>TrainOrder<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getCarList</span>(String year, String month, <span style="color:#a6e22e">@ParameterValueKeyProvider</span> <span style="color:#66d9ef">int</span> trainNumber) {
 </span></span><span style="display:flex;"><span>	<span style="color:#75715e">// TODO Auto-generated method stub</span>

@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.154.3">
+    <meta name="generator" content="Hugo 0.157.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_dc_redis_ubuntu/" />
 
@@ -188,31 +188,31 @@ echo &#34;deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://
 </code></pre><ul>
 <li>install</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get update
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get update
 </span></span><span style="display:flex;"><span>sudo apt-get install redis-server
 </span></span></code></pre></div><h2 id="launch">Launch</h2>
 <ul>
 <li>local(WSL)</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>redis-server
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>redis-server
 </span></span></code></pre></div><ul>
 <li>remote(Virtual Box or VM ware etc.)</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo redis-server /etc/redis/redis.conf
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo redis-server /etc/redis/redis.conf
 </span></span></code></pre></div><h3 id="view-port">View port</h3>
 <p>install netstat:</p>
 <pre tabindex="0"><code>sudo apt install net-tools
 </code></pre><p>port:</p>
 <pre tabindex="0"><code>netstat -tunlp
 </code></pre><h3 id="test">Test</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wsl-1130@DESKTOP-14G6K9S:~$ redis-cli
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wsl-1130@DESKTOP-14G6K9S:~$ redis-cli
 </span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; SET mykey2 <span style="color:#e6db74">&#34;This is mykey2&#34;</span>
 </span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; SET mykey3 <span style="color:#e6db74">&#34;This is mykey3&#34;</span>
 </span></span></code></pre></div><h3 id="有数据">有数据</h3>
 <blockquote>
 <p><a href="https://stackoverflow.com/questions/5252099/redis-command-to-get-all-available-keys">redis-command-to-get-all-available-keys</a></p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wsl-1130@DESKTOP-14G6K9S:~$ redis-cli
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wsl-1130@DESKTOP-14G6K9S:~$ redis-cli
 </span></span><span style="display:flex;"><span>127.0.0.1:6379&gt; KEYS *
 </span></span><span style="display:flex;"><span>1<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;mykey3&#34;</span>
 </span></span><span style="display:flex;"><span>2<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;mykey2&#34;</span>
@@ -238,7 +238,7 @@ NOTE: You only need to do one of the above things in order for the server to sta
 <ul>
 <li>本地绑定（关）</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># bind 127.0.0.1 </span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># bind 127.0.0.1 </span>
 </span></span></code></pre></div><ul>
 <li>保护模式（关）</li>
 </ul>
@@ -247,22 +247,22 @@ NOTE: You only need to do one of the above things in order for the server to sta
 <p>新版本(v7.2.4)已禁止THP:</p>
 <pre tabindex="0"><code>disable-thp yes
 </code></pre><h3 id="memory">Memory</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. 
 </span></span><span style="display:flex;"><span>To fix this issue add <span style="color:#e6db74">&#39;vm.overcommit_memory = 1&#39;</span> to /etc/sysctl.conf and <span style="color:#66d9ef">then</span> reboot or run the command <span style="color:#e6db74">&#39;sysctl vm.overcommit_memory=1&#39;</span> <span style="color:#66d9ef">for</span> this to take effect.
 </span></span></code></pre></div><p>A: add vm.overcommit_memory=1
 edit sysctl.conf:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/sysctl.conf
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/sysctl.conf
 </span></span></code></pre></div><p>Take effect:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo sysctl -p
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo sysctl -p
 </span></span></code></pre></div><h3 id="network">Network</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>WARNING: The TCP backlog setting of <span style="color:#ae81ff">511</span> cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>WARNING: The TCP backlog setting of <span style="color:#ae81ff">511</span> cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
 </span></span></code></pre></div><p>A: add net.core.somaxconn=1024
 edit sysctl.conf:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/sysctl.conf
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/sysctl.conf
 </span></span></code></pre></div><p>Take effect:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo sysctl -p
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo sysctl -p
 </span></span></code></pre></div><h2 id="23-配置cluster">2.3 配置cluster</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Configure redis to use sockets</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Configure redis to use sockets</span>
 </span></span><span style="display:flex;"><span>sudo cp /etc/redis/redis.conf /etc/redis/redis.conf.orig
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Disable Redis listening on TCP by setting &#39;port&#39; to 0</span>
