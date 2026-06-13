@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.157.0">
+    <meta name="generator" content="Hugo 0.163.1">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_git_oper1/" />
 
@@ -92,11 +92,11 @@
     },
     "headline": "git操作 部分1",
     "name": "git操作 部分1",
-    "wordCount":  134 ,
+    "wordCount":  172 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
-      "alternateName": "en"
+      "alternateName": "cn"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/ops_git_oper1/",
     "datePublished": "2022-02-02T01:38Z",
@@ -185,8 +185,19 @@
 <li>&ldquo;~2&quot;表示向前回滚2个提交，以此类推。</li>
 </ul>
 <h2 id="2-强制推送">2. 强制推送</h2>
+<ul>
+<li>https</li>
+</ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git push -f --set-upstream origin master
-</span></span></code></pre></div><h1 id="二删除github发布">二、删除github发布</h1>
+</span></span></code></pre></div><h3 id="ssh">ssh</h3>
+<ul>
+<li><a href="https://community.atlassian.com/forums/Sourcetree-questions/How-to-quot-force-quot-push/qaq-p/718539">SourceTree</a></li>
+</ul>
+<pre tabindex="0"><code>1. Go to Tools &gt; Options.Select the Git tab.
+2. Check the box for Enable Force Push.
+3. (Recommended) Check Use Safe Force Push (--force-with-lease) if available, 
+4. as it prevents overwriting someone else&#39;s work.
+</code></pre><h1 id="二删除github发布">二、删除github发布</h1>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git tag -d <span style="color:#f92672">[</span>tag<span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>git push origin :<span style="color:#f92672">[</span>tag<span style="color:#f92672">]</span>
 </span></span></code></pre></div><p>例如：</p>

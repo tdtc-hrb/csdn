@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.157.0">
+    <meta name="generator" content="Hugo 0.163.1">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_tomcat/" />
 
@@ -96,7 +96,7 @@
     "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
-      "alternateName": "en"
+      "alternateName": "cn"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/ops_tomcat/",
     "datePublished": "2026-03-03T12:38Z",
@@ -178,102 +178,102 @@
 
     <section class="post-content">
       <table>
-  <thead>
-      <tr>
-          <th>Servlet Spec</th>
-          <th>JSP Spec</th>
-          <th>EL Spec</th>
-          <th>WebSocket Spec</th>
-          <th>Authentication (JASIC) Spec</th>
-          <th>Apache Tomcat Version</th>
-          <th>Latest Released Version</th>
-          <th>Supported Java Versions</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>6.1</td>
-          <td>4.0</td>
-          <td>6.0</td>
-          <td>2.2</td>
-          <td>3.1</td>
-          <td>11.0.x</td>
-          <td>11.0.0</td>
-          <td>17 and later</td>
-      </tr>
-      <tr>
-          <td>3.1</td>
-          <td>2.3</td>
-          <td>3.0</td>
-          <td>1.1</td>
-          <td>1.1</td>
-          <td>8.5.x</td>
-          <td><a href="https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.100/bin/apache-tomcat-8.5.100.zip">8.5.100</a></td>
-          <td>7 and later</td>
-      </tr>
-      <tr>
-          <td>2.5</td>
-          <td>2.1</td>
-          <td>2.1</td>
-          <td>N/A</td>
-          <td>N/A</td>
-          <td>6.0.x</td>
-          <td><a href="https://archive.apache.org/dist/tomcat/tomcat-6/v6.0.53/bin/apache-tomcat-6.0.53.zip">6.0.53</a></td>
-          <td>5 and later</td>
-      </tr>
-      <tr>
-          <td>2.4</td>
-          <td>2.0</td>
-          <td>N/A</td>
-          <td>N/A</td>
-          <td>N/A</td>
-          <td>5.5.x</td>
-          <td><a href="https://archive.apache.org/dist/tomcat/tomcat-5/v5.5.36/bin/apache-tomcat-5.5.36.zip">5.5.36</a></td>
-          <td>1.4 and later</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Servlet Spec</th>
+					<th>JSP Spec</th>
+					<th>EL Spec</th>
+					<th>WebSocket Spec</th>
+					<th>Authentication (JASIC) Spec</th>
+					<th>Apache Tomcat Version</th>
+					<th>Latest Released Version</th>
+					<th>Supported Java Versions</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>6.1</td>
+					<td>4.0</td>
+					<td>6.0</td>
+					<td>2.2</td>
+					<td>3.1</td>
+					<td>11.0.x</td>
+					<td>11.0.0</td>
+					<td>17 and later</td>
+			</tr>
+			<tr>
+					<td>3.1</td>
+					<td>2.3</td>
+					<td>3.0</td>
+					<td>1.1</td>
+					<td>1.1</td>
+					<td>8.5.x</td>
+					<td><a href="https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.100/bin/apache-tomcat-8.5.100.zip">8.5.100</a></td>
+					<td>7 and later</td>
+			</tr>
+			<tr>
+					<td>2.5</td>
+					<td>2.1</td>
+					<td>2.1</td>
+					<td>N/A</td>
+					<td>N/A</td>
+					<td>6.0.x</td>
+					<td><a href="https://archive.apache.org/dist/tomcat/tomcat-6/v6.0.53/bin/apache-tomcat-6.0.53.zip">6.0.53</a></td>
+					<td>5 and later</td>
+			</tr>
+			<tr>
+					<td>2.4</td>
+					<td>2.0</td>
+					<td>N/A</td>
+					<td>N/A</td>
+					<td>N/A</td>
+					<td>5.5.x</td>
+					<td><a href="https://archive.apache.org/dist/tomcat/tomcat-5/v5.5.36/bin/apache-tomcat-5.5.36.zip">5.5.36</a></td>
+					<td>1.4 and later</td>
+			</tr>
+	</tbody>
 </table>
 <h1 id="installation">installation</h1>
 <table>
-  <thead>
-      <tr>
-          <th>Platform version</th>
-          <th>Released</th>
-          <th>Specification</th>
-          <th>Java SE Support</th>
-          <th>Important Changes</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Jakarta EE 10</td>
-          <td>2022-03-31</td>
-          <td>10</td>
-          <td>Java SE 17/Java SE 11</td>
-          <td>Removal of deprecated items in Servlet, Faces, CDI and EJB (Entity Beans and Embeddable Container). CDI-Build Time.</td>
-      </tr>
-      <tr>
-          <td>Jakarta EE 9</td>
-          <td>2020-12-08</td>
-          <td>9</td>
-          <td>Java SE 8</td>
-          <td>API namespace move from javax to jakarta</td>
-      </tr>
-      <tr>
-          <td>Jakarta EE 8</td>
-          <td>2019-09-10</td>
-          <td>8</td>
-          <td>Java SE 8</td>
-          <td>Full compatiblity with Java EE 8</td>
-      </tr>
-      <tr>
-          <td>Java EE 8</td>
-          <td>2017-08-31</td>
-          <td>JSR 366</td>
-          <td>Java SE 8</td>
-          <td>HTTP/2 and CDI based Security</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Platform version</th>
+					<th>Released</th>
+					<th>Specification</th>
+					<th>Java SE Support</th>
+					<th>Important Changes</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Jakarta EE 10</td>
+					<td>2022-03-31</td>
+					<td>10</td>
+					<td>Java SE 17/Java SE 11</td>
+					<td>Removal of deprecated items in Servlet, Faces, CDI and EJB (Entity Beans and Embeddable Container). CDI-Build Time.</td>
+			</tr>
+			<tr>
+					<td>Jakarta EE 9</td>
+					<td>2020-12-08</td>
+					<td>9</td>
+					<td>Java SE 8</td>
+					<td>API namespace move from javax to jakarta</td>
+			</tr>
+			<tr>
+					<td>Jakarta EE 8</td>
+					<td>2019-09-10</td>
+					<td>8</td>
+					<td>Java SE 8</td>
+					<td>Full compatiblity with Java EE 8</td>
+			</tr>
+			<tr>
+					<td>Java EE 8</td>
+					<td>2017-08-31</td>
+					<td>JSR 366</td>
+					<td>Java SE 8</td>
+					<td>HTTP/2 and CDI based Security</td>
+			</tr>
+	</tbody>
 </table>
 <h2 id="安装jdk">安装JDK</h2>
 <ul>
@@ -375,6 +375,13 @@
 
 
   <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/csdn/post/c-preprocessor2/">
+          <section class="post">
+              <h2>c预处理器</h2>
+              
+          </section>
+      </a>
   
   
       <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_network_proxy/">

@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.157.0">
+    <meta name="generator" content="Hugo 0.163.1">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/mysql-master-slave-replication/" />
 
@@ -96,7 +96,7 @@
     "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
-      "alternateName": "en"
+      "alternateName": "cn"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/mysql-master-slave-replication/",
     "datePublished": "2022-04-13T09:38Z",
@@ -183,57 +183,57 @@
 <h1 id="1-网络配置">1. 网络配置</h1>
 <p>Replication Group 1:</p>
 <table>
-  <thead>
-      <tr>
-          <th>Name</th>
-          <th>IP</th>
-          <th>Memo</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>mysql1</td>
-          <td>192.168.0.160</td>
-          <td>Master</td>
-      </tr>
-      <tr>
-          <td>mysql11</td>
-          <td>192.168.0.161</td>
-          <td>Slave</td>
-      </tr>
-      <tr>
-          <td>mysql12</td>
-          <td>192.168.0.162</td>
-          <td>Slave</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Name</th>
+					<th>IP</th>
+					<th>Memo</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>mysql1</td>
+					<td>192.168.0.160</td>
+					<td>Master</td>
+			</tr>
+			<tr>
+					<td>mysql11</td>
+					<td>192.168.0.161</td>
+					<td>Slave</td>
+			</tr>
+			<tr>
+					<td>mysql12</td>
+					<td>192.168.0.162</td>
+					<td>Slave</td>
+			</tr>
+	</tbody>
 </table>
 <p>Replication Group 2(Maria DB):</p>
 <table>
-  <thead>
-      <tr>
-          <th>Name</th>
-          <th>IP</th>
-          <th>Memo</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>mysql2</td>
-          <td>192.168.0.170</td>
-          <td>Master</td>
-      </tr>
-      <tr>
-          <td>mysql21</td>
-          <td>192.168.0.171</td>
-          <td>Slave</td>
-      </tr>
-      <tr>
-          <td>mysql22</td>
-          <td>192.168.0.172</td>
-          <td>Slave</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Name</th>
+					<th>IP</th>
+					<th>Memo</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>mysql2</td>
+					<td>192.168.0.170</td>
+					<td>Master</td>
+			</tr>
+			<tr>
+					<td>mysql21</td>
+					<td>192.168.0.171</td>
+					<td>Slave</td>
+			</tr>
+			<tr>
+					<td>mysql22</td>
+					<td>192.168.0.172</td>
+					<td>Slave</td>
+			</tr>
+	</tbody>
 </table>
 <h1 id="2-configure-mysql-cluster">2. Configure MySQL cluster</h1>
 <h2 id="1-master-server">1) Master Server</h2>

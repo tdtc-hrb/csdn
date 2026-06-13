@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.157.0">
+    <meta name="generator" content="Hugo 0.163.1">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_hadoop_cluster/" />
 
@@ -96,7 +96,7 @@
     "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
-      "alternateName": "en"
+      "alternateName": "cn"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/ops_hadoop_cluster/",
     "datePublished": "2022-10-11T00:08Z",
@@ -179,104 +179,104 @@
     <section class="post-content">
       <h1 id="prepare">Prepare</h1>
 <table>
-  <thead>
-      <tr>
-          <th></th>
-          <th>server1</th>
-          <th>server2</th>
-          <th>server3</th>
-          <th>server4</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>NameNode</td>
-          <td>y</td>
-          <td>y</td>
-          <td></td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>DataNode</td>
-          <td> </td>
-          <td>y</td>
-          <td>y</td>
-          <td>y</td>
-      </tr>
-      <tr>
-          <td>ResourceManager</td>
-          <td> </td>
-          <td> </td>
-          <td>y</td>
-          <td>y</td>
-      </tr>
-      <tr>
-          <td>NodeManager</td>
-          <td>y</td>
-          <td>y</td>
-          <td>y</td>
-          <td>y</td>
-      </tr>
-      <tr>
-          <td>Zookeeper</td>
-          <td>y</td>
-          <td>y</td>
-          <td>y</td>
-          <td>y</td>
-      </tr>
-      <tr>
-          <td>JournalNode</td>
-          <td>y</td>
-          <td>y</td>
-          <td>y</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>ZK-FC</td>
-          <td>y</td>
-          <td>y</td>
-          <td> </td>
-          <td> </td>
-      </tr>
-      <tr>
-          <td>JobHistor</td>
-          <td>y</td>
-          <td></td>
-          <td></td>
-          <td></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th></th>
+					<th>server1</th>
+					<th>server2</th>
+					<th>server3</th>
+					<th>server4</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>NameNode</td>
+					<td>y</td>
+					<td>y</td>
+					<td></td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>DataNode</td>
+					<td> </td>
+					<td>y</td>
+					<td>y</td>
+					<td>y</td>
+			</tr>
+			<tr>
+					<td>ResourceManager</td>
+					<td> </td>
+					<td> </td>
+					<td>y</td>
+					<td>y</td>
+			</tr>
+			<tr>
+					<td>NodeManager</td>
+					<td>y</td>
+					<td>y</td>
+					<td>y</td>
+					<td>y</td>
+			</tr>
+			<tr>
+					<td>Zookeeper</td>
+					<td>y</td>
+					<td>y</td>
+					<td>y</td>
+					<td>y</td>
+			</tr>
+			<tr>
+					<td>JournalNode</td>
+					<td>y</td>
+					<td>y</td>
+					<td>y</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>ZK-FC</td>
+					<td>y</td>
+					<td>y</td>
+					<td> </td>
+					<td> </td>
+			</tr>
+			<tr>
+					<td>JobHistor</td>
+					<td>y</td>
+					<td></td>
+					<td></td>
+					<td></td>
+			</tr>
+	</tbody>
 </table>
 <table>
-  <thead>
-      <tr>
-          <th>Server Name</th>
-          <th>IP</th>
-          <th>Host Name</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>server1</td>
-          <td>192.168.42.107</td>
-          <td>tdtc201</td>
-      </tr>
-      <tr>
-          <td>server2</td>
-          <td>192.168.42.108</td>
-          <td>tdtc202</td>
-      </tr>
-      <tr>
-          <td>server3</td>
-          <td>192.168.42.109</td>
-          <td>tdtc203</td>
-      </tr>
-      <tr>
-          <td>server4</td>
-          <td>192.168.42.110</td>
-          <td>tdtc204</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Server Name</th>
+					<th>IP</th>
+					<th>Host Name</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>server1</td>
+					<td>192.168.42.107</td>
+					<td>tdtc201</td>
+			</tr>
+			<tr>
+					<td>server2</td>
+					<td>192.168.42.108</td>
+					<td>tdtc202</td>
+			</tr>
+			<tr>
+					<td>server3</td>
+					<td>192.168.42.109</td>
+					<td>tdtc203</td>
+			</tr>
+			<tr>
+					<td>server4</td>
+					<td>192.168.42.110</td>
+					<td>tdtc204</td>
+			</tr>
+	</tbody>
 </table>
 <h2 id="1-zk">1. zk</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>zkServer.sh start

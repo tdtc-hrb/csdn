@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.157.0">
+    <meta name="generator" content="Hugo 0.163.1">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -153,13 +153,127 @@
 	
 	    <a class="newer-posts" href="/csdn/post/page/5/">&larr; Newer Posts</a>
 	
-	<span class="page-number">Page 6 of 12</span>
+	<span class="page-number">Page 6 of 13</span>
 	
 	    <a class="older-posts" href="/csdn/post/page/7/">Older Posts &rarr;</a>
 	
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/java-springboot-jpa/">thymeleaf &#43; Spring Boot &#43; JPA</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h1 id="1-自动构建">1. 自动构建</h1>
+<h2 id="1-boot向导">1) <a href="https://start.spring.io/">boot向导</a></h2>
+<p><img src="https://github.com/tdtc-hrb/csdn/raw/master/images/springboot-dep.png" alt="project wizzard"></p>
+<h2 id="2-pom依赖">2) pom依赖</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;project</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">xsi:schemaLocation=</span><span style="color:#e6db74">&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;modelVersion&gt;</span>4.0.0<span style="color:#f92672">&lt;/modelVersion&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;groupId&gt;</span>com.example<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;artifactId&gt;</span>demo<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;version&gt;</span>0.0.2-SNAPSHOT<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;packaging&gt;</span>jar<span style="color:#f92672">&lt;/packaging&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;name&gt;</span>demo-jpa<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;description&gt;</span>Demo project for Spring Boot<span style="color:#f92672">&lt;/description&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;parent&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;artifactId&gt;</span>spring-boot-starter-parent<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;version&gt;</span>2.0.2.RELEASE<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;relativePath/&gt;</span> <span style="color:#75715e">&lt;!-- lookup parent from repository --&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;/parent&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;properties&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;project.build.sourceEncoding&gt;</span>UTF-8<span style="color:#f92672">&lt;/project.build.sourceEncoding&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;project.reporting.outputEncoding&gt;</span>UTF-8<span style="color:#f92672">&lt;/project.reporting.outputEncoding&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;java.version&gt;</span>1.8<span style="color:#f92672">&lt;/java.version&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;/properties&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;dependencies&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;artifactId&gt;</span>spring-boot-starter-data-jpa<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;artifactId&gt;</span>spring-boot-starter-web<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;artifactId&gt;</span>spring-boot-devtools<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;scope&gt;</span>runtime<span style="color:#f92672">&lt;/scope&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;groupId&gt;</span>mysql<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;artifactId&gt;</span>mysql-connector-java<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;scope&gt;</span>runtime<span style="color:#f92672">&lt;/scope&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;artifactId&gt;</span>spring-boot-starter-test<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;scope&gt;</span>test<span style="color:#f92672">&lt;/scope&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;artifactId&gt;</span>spring-boot-starter-thymeleaf<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;/dependencies&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;build&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;plugins&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;plugin&gt;</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#f92672">&lt;artifactId&gt;</span>spring-boot-maven-plugin<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">&lt;/plugin&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;/plugins&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;/build&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/project&gt;</span>
+</span></span></code></pre></div><h1 id="2-dml">2. DML</h1>
+<h2 id="1-db">1) DB</h2>
+<h3 id="applicationproperties">application.properties</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.driverClassName</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">com.mysql.jdbc.Driver</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.url</span><span style="color:#f92672">=</span><span style="color:#e6db74">jdbc:mysql://localhost:3306/test</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.username</span><span style="color:#f92672">=</span><span style="color:#e6db74">DBAdmin</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.password</span><span style="color:#f92672">=</span><span style="color:#e6db74">xbfirst</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.tomcat.max-wait</span><span style="color:#f92672">=</span><span style="color:#e6db74">20000</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.tomcat.max-active</span><span style="color:#f92672">=</span><span style="color:#e6db74">50</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.tomcat.max-idle</span><span style="color:#f92672">=</span><span style="color:#e6db74">20</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.tomcat.min-idle</span><span style="color:#f92672">=</span><span style="color:#e6db74">15</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.jpa.properties.hibernate.dialect</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">org.hibernate.dialect.MySQLDialect</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.jpa.properties.hibernate.id.new_generator_mappings</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.jpa.properties.hibernate.format_sql</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">logging.level.org.hibernate.SQL</span><span style="color:#f92672">=</span><span style="color:#e6db74">DEBUG</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">logging.level.org.hibernate.type.descriptor.sql.BasicBinder</span><span style="color:#f92672">=</span><span style="color:#e6db74">TRACE</span>
+</span></span></code></pre></div><h3 id="sql">SQL</h3>
+<blockquote>
+<p>table: user_details</p> <a class="read-more" href="/csdn/post/java-springboot-jpa/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2022-05-10T10:26:39&#43;08:00">
+            10 May 2022
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -314,57 +428,57 @@
 <h1 id="1-网络配置">1. 网络配置</h1>
 <p>Replication Group 1:</p>
 <table>
-  <thead>
-      <tr>
-          <th>Name</th>
-          <th>IP</th>
-          <th>Memo</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>mysql1</td>
-          <td>192.168.0.160</td>
-          <td>Master</td>
-      </tr>
-      <tr>
-          <td>mysql11</td>
-          <td>192.168.0.161</td>
-          <td>Slave</td>
-      </tr>
-      <tr>
-          <td>mysql12</td>
-          <td>192.168.0.162</td>
-          <td>Slave</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Name</th>
+					<th>IP</th>
+					<th>Memo</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>mysql1</td>
+					<td>192.168.0.160</td>
+					<td>Master</td>
+			</tr>
+			<tr>
+					<td>mysql11</td>
+					<td>192.168.0.161</td>
+					<td>Slave</td>
+			</tr>
+			<tr>
+					<td>mysql12</td>
+					<td>192.168.0.162</td>
+					<td>Slave</td>
+			</tr>
+	</tbody>
 </table>
 <p>Replication Group 2(Maria DB):</p>
 <table>
-  <thead>
-      <tr>
-          <th>Name</th>
-          <th>IP</th>
-          <th>Memo</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>mysql2</td>
-          <td>192.168.0.170</td>
-          <td>Master</td>
-      </tr>
-      <tr>
-          <td>mysql21</td>
-          <td>192.168.0.171</td>
-          <td>Slave</td>
-      </tr>
-      <tr>
-          <td>mysql22</td>
-          <td>192.168.0.172</td>
-          <td>Slave</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Name</th>
+					<th>IP</th>
+					<th>Memo</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>mysql2</td>
+					<td>192.168.0.170</td>
+					<td>Master</td>
+			</tr>
+			<tr>
+					<td>mysql21</td>
+					<td>192.168.0.171</td>
+					<td>Slave</td>
+			</tr>
+			<tr>
+					<td>mysql22</td>
+					<td>192.168.0.172</td>
+					<td>Slave</td>
+			</tr>
+	</tbody>
 </table>
 <h1 id="2-configure-mysql-cluster">2. Configure MySQL cluster</h1>
 <h2 id="1-master-server">1) Master Server</h2>
@@ -693,44 +807,26 @@
 <li>&ldquo;~2&quot;表示向前回滚2个提交，以此类推。</li>
 </ul>
 <h2 id="2-强制推送">2. 强制推送</h2>
+<ul>
+<li>https</li>
+</ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git push -f --set-upstream origin master
-</span></span></code></pre></div><h1 id="二删除github发布">二、删除github发布</h1>
+</span></span></code></pre></div><h3 id="ssh">ssh</h3>
+<ul>
+<li><a href="https://community.atlassian.com/forums/Sourcetree-questions/How-to-quot-force-quot-push/qaq-p/718539">SourceTree</a></li>
+</ul>
+<pre tabindex="0"><code>1. Go to Tools &gt; Options.Select the Git tab.
+2. Check the box for Enable Force Push.
+3. (Recommended) Check Use Safe Force Push (--force-with-lease) if available, 
+4. as it prevents overwriting someone else&#39;s work.
+</code></pre><h1 id="二删除github发布">二、删除github发布</h1>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git tag -d <span style="color:#f92672">[</span>tag<span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>git push origin :<span style="color:#f92672">[</span>tag<span style="color:#f92672">]</span>
 </span></span></code></pre></div><p>例如：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git tag -d v0.3.1
 </span></span><span style="display:flex;"><span>git push origin :v0.3.1
 </span></span></code></pre></div><h1 id="三修改commit信息">三、修改commit信息</h1>
-<p>可以修改最后一次提交的信息.</p>
-<p>进入git-cmd或git-bash：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git commit --amend
-</span></span></code></pre></div><p>About：</p>
-<blockquote>
-<p>git-bash和git-cmd的区别</p>
-<blockquote>
-<p>bash是linux风格的命令行，可以使用windows和linux的命令；
-cmd是windows风格的命令行，可以使用windows命令；</p>
-<blockquote>
-<p>此外，还有一个最大的不同点，git-cmd是天生就带了系统的PATH环境变量，
-这一点会导致如果你运行某些脚本的时候，如果依赖某些安装的程序，
-如python、node这些，git-bash就会提示不存在对应的命令，
-而git-cmd可以正确运行。
- </p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h1 id="四合并分支">四、合并分支</h1>
-<h2 id="1-checkout">1. checkout</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git checkout dev
-</span></span><span style="display:flex;"><span>git checkout master
-</span></span></code></pre></div><h2 id="2-merge">2. merge</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git merge origin/dev
-</span></span></code></pre></div><h1 id="五设置user">五、设置user</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git init
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config user.name <span style="color:#e6db74">&#34;xiaobin80&#34;</span>
-</span></span><span style="display:flex;"><span>git config user.email <span style="color:#e6db74">&#34;veic_2005@163.com&#34;</span>
-</span></span></code></pre></div><h1 id="issues">Issues</h1>
-<p>Git-2.39.1-64-bit + TortoiseGit-2.14.0.0-64bit</p> <a class="read-more" href="/csdn/post/ops_git_oper1/">&raquo;</a></p>
+<p>可以修改最后一次提交的信息.</p> <a class="read-more" href="/csdn/post/ops_git_oper1/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
@@ -746,81 +842,12 @@ cmd是windows风格的命令行，可以使用windows命令；</p>
 </article>
 
 	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/js-thousand-separator/">千位分隔符</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><h1 id="1-字符串替换">1. 字符串替换</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">/**
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * 字符串替换函数 - js
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * expStr:  查找的字符串
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * string:  整个字符串
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * repStr:  替换的字符串
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">replacStr</span>(<span style="color:#a6e22e">expStr</span>, <span style="color:#a6e22e">string</span>, <span style="color:#a6e22e">repStr</span>) {
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">regex</span>;
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (parseInt(<span style="color:#a6e22e">expStr</span>) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>)  <span style="color:#75715e">// 数字
-</span></span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">regex</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RegExp(<span style="color:#a6e22e">expStr</span>, <span style="color:#e6db74">&#34;g&#34;</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">else</span>			<span style="color:#75715e">// 非数字
-</span></span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">regex</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RegExp(<span style="color:#e6db74">&#34;\\&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">expStr</span>, <span style="color:#e6db74">&#34;g&#34;</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">string</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#a6e22e">regex</span>, <span style="color:#a6e22e">repStr</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">result</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h1 id="2-千分符">2. 千分符</h1>
-<p>例如，货币7867321.55，怎样使用js来分割他呢？</p>
-<h2 id="0-分离小数和整数">0. 分离小数和整数</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">strCny</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#e6db74">&#34;.&#34;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ( <span style="color:#a6e22e">index</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">strNum</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">strCny</span>.<span style="color:#a6e22e">substring</span>(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">index</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">strDec</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">strCny</span>.<span style="color:#a6e22e">substr</span>(<span style="color:#a6e22e">index</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">iLenCny</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">strCny</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">strNum</span>;
-</span></span><span style="display:flex;"><span>} 
-</span></span></code></pre></div><h2 id="1-转换为string">1. 转换为string</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">strCny</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">cny</span>.<span style="color:#a6e22e">toString</span>();
-</span></span></code></pre></div><h2 id="2-转化为数组">2. 转化为数组</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">strCny</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;&#34;</span>);
-</span></span></code></pre></div><h2 id="3-循环数组">3. 循环数组</h2>
-<ol>
-<li>由个位开始</li>
-<li>每3位，加个逗号</li>
-<li>控制count和len</li>
-</ol>
-<blockquote>
-<p>循环一次计数一次；
-每增加个逗号，长度（len）+1</p>
-</blockquote>
-<h2 id="4-转换string">4. 转换string</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#34;&#34;</span>);
-</span></span></code></pre></div><p>并输出</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">result</span>);  
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//alert(result);
-</span></span></span></code></pre></div><h1 id="完整代码">完整代码</h1>
-<p>money.html</p> <a class="read-more" href="/csdn/post/js-thousand-separator/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2021-11-18T02:18:39&#43;08:00">
-            18 Nov 2021
-        </time>
-    </footer>
-</article>
-
-	
 
 	<nav class="pagination" role="navigation">
 	
 	    <a class="newer-posts" href="/csdn/post/page/5/">&larr; Newer Posts</a>
 	
-	<span class="page-number">Page 6 of 12</span>
+	<span class="page-number">Page 6 of 13</span>
 	
 	    <a class="older-posts" href="/csdn/post/page/7/">Older Posts &rarr;</a>
 	

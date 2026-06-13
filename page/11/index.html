@@ -57,7 +57,7 @@
         <link href='/csdn/index.xml' rel="alternate" type="application/rss+xml" title="迁移自(blog.csdn.net/xiaobin_HLJ80) &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.157.0">
+    <meta name="generator" content="Hugo 0.163.1">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/" />
 
@@ -153,13 +153,100 @@
 	
 	    <a class="newer-posts" href="/csdn/page/10/">&larr; Newer Posts</a>
 	
-	<span class="page-number">Page 11 of 12</span>
+	<span class="page-number">Page 11 of 13</span>
 	
 	    <a class="older-posts" href="/csdn/page/12/">Older Posts &rarr;</a>
 	
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/ops_hadoop_cluster_yarn/">Hadoop配置 - yarn</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><blockquote>
+<p>(../etc/hadoop/yarn-site.xml)</p>
+</blockquote>
+<h1 id="1-resourcemanager-ha">1. ResourceManager HA</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.ha.enabled<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>true<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.cluster-id<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>cluster1<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.ha.rm-ids<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>rm1,rm2<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.hostname.rm1<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>tdtc203<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.hostname.rm2<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>tdtc204<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.webapp.address.rm1<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>tdtc203:8088<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.webapp.address.rm2<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>tdtc204:8088<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.zk-address<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;value&gt;</span>tdtc201:2181,tdtc202:2181,tdtc203:2181<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span></code></pre></div><h1 id="2-resource-manager-restart">2. Resource Manager Restart</h1>
+<blockquote>
+<p>see Reference[3]</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.recovery.enabled<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;value&gt;</span>true<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span></code></pre></div><h2 id="1-zookeeper">1) zookeeper</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;name&gt;</span>yarn.resourcemanager.store.class<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;value&gt;</span>org.apache.hadoop.yarn.server.resourcemanager.recovery.ZKRMStateStore<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span></code></pre></div><h1 id="3-aux-serviceauxiliary-service">3. Aux Service（Auxiliary Service）</h1>
+<h2 id="1-base">1) base</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;name&gt;</span>yarn.nodemanager.aux-services<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;value&gt;</span>mapreduce_shuffle<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span></code></pre></div><h2 id="2-spark">2) spark</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;name&gt;</span>yarn.nodemanager.aux-services<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;value&gt;</span>spark_shuffle,mapreduce_shuffle<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/property&gt;</span>
+</span></span></code></pre></div><h1 id="4-log-aggregation">4. log aggregation</h1>
+<ol>
+<li><a href="https://hadoop.apache.org/docs/r2.7.7/hadoop-yarn/hadoop-yarn-common/yarn-default.xml">yarn-default.xml</a></li>
+<li><a href="https://hadoop.apache.org/docs/r2.7.7/hadoop-yarn/hadoop-yarn-site/ResourceManagerHA.html">Resource Manager HA</a></li>
+<li><a href="https://hadoop.apache.org/docs/r2.7.7/hadoop-yarn/hadoop-yarn-site/ResourceManagerRestart.html">Resource Manager Restart</a></li>
+</ol> <a class="read-more" href="/csdn/post/ops_hadoop_cluster_yarn/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2020-04-14T10:08:08&#43;08:00">
+            14 Apr 2020
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -294,74 +381,74 @@ This may be configured like so, in your core-site.xml file:</p> <a class="read-m
 <p>自从hadoop2版本开始，社区引入了NameNode高可用方案。NameNode主从节点间需要同步操作日志来达到主从节点元数据一致。最初业界均通过NFS来实现日志同步，大家之所以选择NFS，一方面因为可以很方便地实现数据共享，另外一方面因为NFS已经发展20多年，已经相对稳定成熟。</p>
 <p>虽然如此，NFS也有缺点不能满足HDFS的在线存储业务：网络单点及其存储节点单点。业界提供了数据共享的一些高可用解决方案，但均不能很好地满足目前HDFS的应用场景。</p>
 <table>
-  <thead>
-      <tr>
-          <th>方案</th>
-          <th>网络单点</th>
-          <th>存储单点</th>
-          <th>备注</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Mysql</td>
-          <td>HA</td>
-          <td>无</td>
-          <td>无</td>
-      </tr>
-      <tr>
-          <td>Drbd+heartbeat+NFS</td>
-          <td>无</td>
-          <td>无</td>
-          <td>脑裂；数据有丢失风险</td>
-      </tr>
-      <tr>
-          <td>Keepalive+NFS</td>
-          <td>无</td>
-          <td>有</td>
-          <td>数据有丢失风险</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>方案</th>
+					<th>网络单点</th>
+					<th>存储单点</th>
+					<th>备注</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Mysql</td>
+					<td>HA</td>
+					<td>无</td>
+					<td>无</td>
+			</tr>
+			<tr>
+					<td>Drbd+heartbeat+NFS</td>
+					<td>无</td>
+					<td>无</td>
+					<td>脑裂；数据有丢失风险</td>
+			</tr>
+			<tr>
+					<td>Keepalive+NFS</td>
+					<td>无</td>
+					<td>有</td>
+					<td>数据有丢失风险</td>
+			</tr>
+	</tbody>
 </table>
 <p>为了满足共享日志的高可用性，社区引入QJM。QJM由cloudera开发，实现了读写高可用性，使HDFS达到真正的高可用性成为可能。</p>
 <h2 id="12-术语和定义">1.2 术语和定义</h2>
 <table>
-  <thead>
-      <tr>
-          <th>术语和定义</th>
-          <th>解释</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Epoch</td>
-          <td>由主节点在启动及其切换为主的时候分配，每次操作JN节点均会检查该值,类似zookeeper中的zxid，此时主NameNode类似zookeeper中的leader，JN节点类似ZK中的Follower</td>
-      </tr>
-      <tr>
-          <td>JournalNode</td>
-          <td>QJM存储段进程，提供日志读写，存储，修复等服务</td>
-      </tr>
-      <tr>
-          <td>QJM</td>
-          <td>Qurom Journal Manager</td>
-      </tr>
-      <tr>
-          <td>startLogSegment</td>
-          <td>开始一个新的日志段,该日志段状态为接收写入日志的状态</td>
-      </tr>
-      <tr>
-          <td>finalizeLogSegment</td>
-          <td>将文件由正在写入日志的状态转化为不接收写日志的状态</td>
-      </tr>
-      <tr>
-          <td>recoverUnfinalizedSegments</td>
-          <td>主从切换等情况下，恢复没有转换为finalized状态的日志</td>
-      </tr>
-      <tr>
-          <td>journalId</td>
-          <td>日志ID，由配置指定，如qjournal://g42:8485;g35:8485;uhp9:8485/geminifs，则其中的geminifs即为journalId</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>术语和定义</th>
+					<th>解释</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Epoch</td>
+					<td>由主节点在启动及其切换为主的时候分配，每次操作JN节点均会检查该值,类似zookeeper中的zxid，此时主NameNode类似zookeeper中的leader，JN节点类似ZK中的Follower</td>
+			</tr>
+			<tr>
+					<td>JournalNode</td>
+					<td>QJM存储段进程，提供日志读写，存储，修复等服务</td>
+			</tr>
+			<tr>
+					<td>QJM</td>
+					<td>Qurom Journal Manager</td>
+			</tr>
+			<tr>
+					<td>startLogSegment</td>
+					<td>开始一个新的日志段,该日志段状态为接收写入日志的状态</td>
+			</tr>
+			<tr>
+					<td>finalizeLogSegment</td>
+					<td>将文件由正在写入日志的状态转化为不接收写日志的状态</td>
+			</tr>
+			<tr>
+					<td>recoverUnfinalizedSegments</td>
+					<td>主从切换等情况下，恢复没有转换为finalized状态的日志</td>
+			</tr>
+			<tr>
+					<td>journalId</td>
+					<td>日志ID，由配置指定，如qjournal://g42:8485;g35:8485;uhp9:8485/geminifs，则其中的geminifs即为journalId</td>
+			</tr>
+	</tbody>
 </table>
 <h1 id="2shuffle">2. shuffle</h1>
 <p>作者：Lijie Xu
@@ -443,22 +530,22 @@ This may be configured like so, in your core-site.xml file:</p> <a class="read-m
 <p>OS: CentOS 7</p>
 </blockquote>
 <table>
-  <thead>
-      <tr>
-          <th>Ip</th>
-          <th>/etc/hostname</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>192.168.0.110</td>
-          <td>host1</td>
-      </tr>
-      <tr>
-          <td>192.168.0.111</td>
-          <td>host2</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Ip</th>
+					<th>/etc/hostname</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>192.168.0.110</td>
+					<td>host1</td>
+			</tr>
+			<tr>
+					<td>192.168.0.111</td>
+					<td>host2</td>
+			</tr>
+	</tbody>
 </table>
 <blockquote>
 <p>Note:</p>
@@ -811,73 +898,12 @@ OS: CentOS 7.2 x64</p>
 </article>
 
 	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/memcached-spy/">使用spymemcached操作memcached</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><p><a href="https://github.com/ragnor/simple-spring-memcached/wiki/Getting-Started">offical site</a></p>
-<h1 id="pom">pom</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;groupId&gt;</span>com.google.code.simple-spring-memcached<span style="color:#f92672">&lt;/groupId&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;artifactId&gt;</span>spymemcached-provider<span style="color:#f92672">&lt;/artifactId&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;version&gt;</span>4.1.3<span style="color:#f92672">&lt;/version&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
-</span></span></code></pre></div><h1 id="app-config">app config</h1>
-<blockquote>
-<p>applicationContext.xml</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;import</span> <span style="color:#a6e22e">resource=</span><span style="color:#e6db74">&#34;simplesm-context.xml&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;aop:aspectj-autoproxy</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;defaultMemcachedClient&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.google.code.ssm.CacheFactory&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;cacheClientFactory&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;cacheClientFactory&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.google.code.ssm.providers.spymemcached.MemcacheClientFactoryImpl&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/property&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;addressProvider&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.google.code.ssm.config.DefaultAddressProvider&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;address&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;127.0.0.1:11211&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;/bean&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/property&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;configuration&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.google.code.ssm.providers.CacheConfiguration&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;consistentHashing&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;/bean&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/property&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/bean&gt;</span>
-</span></span></code></pre></div><h1 id="code">code</h1>
-<blockquote>
-<p>service layer</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@ReadThroughSingleCache</span>(namespace <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;carnum&#34;</span>, expiration <span style="color:#f92672">=</span> 300)
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>TrainOrder<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getCarList</span>(String year, String month, <span style="color:#a6e22e">@ParameterValueKeyProvider</span> <span style="color:#66d9ef">int</span> trainNumber) {
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// TODO Auto-generated method stub</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> trainOrderDao.<span style="color:#a6e22e">getCarnumberList</span>(year, month, trainNumber);
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div> <a class="read-more" href="/csdn/post/memcached-spy/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2020-04-11T21:08:39&#43;08:00">
-            11 Apr 2020
-        </time>
-    </footer>
-</article>
-
-	
 
 	<nav class="pagination" role="navigation">
 	
 	    <a class="newer-posts" href="/csdn/page/10/">&larr; Newer Posts</a>
 	
-	<span class="page-number">Page 11 of 12</span>
+	<span class="page-number">Page 11 of 13</span>
 	
 	    <a class="older-posts" href="/csdn/page/12/">Older Posts &rarr;</a>
 	

@@ -57,7 +57,7 @@
         <link href='/csdn/post/index.xml' rel="alternate" type="application/rss+xml" title="Posts &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.157.0">
+    <meta name="generator" content="Hugo 0.163.1">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/" />
 
@@ -153,13 +153,82 @@
 	
 	    <a class="newer-posts" href="/csdn/post/">&larr; Newer Posts</a>
 	
-	<span class="page-number">Page 2 of 12</span>
+	<span class="page-number">Page 2 of 13</span>
 	
 	    <a class="older-posts" href="/csdn/post/page/3/">Older Posts &rarr;</a>
 	
 </nav>
 
 	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/csdn/post/mysql84-install/">安装MySQL 8.4</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h2 id="migration">Migration</h2>
+<ul>
+<li><a href="https://dev.mysql.com/doc/refman/8.0/en/upgrade-paths.html">The last release of v5.7, v8.0, and v8.4</a></li>
+<li><a href="https://dev.mysql.com/doc/refman/8.4/en/upgrade-paths.html">Table 3.1 Upgrade Paths for MySQL Server</a></li>
+</ul>
+<pre tabindex="0"><code>v5.7 -&gt; v8.0 -&gt; v8.4
+</code></pre><ul>
+<li>Re-enable MySQL Native Password Plugin</li>
+</ul>
+<pre tabindex="0"><code># Enable mysql_native_password plugin
+[mysqld]
+mysql_native_password=ON
+</code></pre><h3 id="mysql-upgrade"><a href="https://dev.mysql.com/doc/refman/8.0/en/upgrading-what-is-upgraded.html">mysql upgrade</a></h3>
+<table>
+	<thead>
+			<tr>
+					<th>mysql_upgrade Option</th>
+					<th>Server Option</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>&ndash;skip-sys-schema</td>
+					<td>&ndash;upgrade=NONE or &ndash;upgrade=MINIMAL</td>
+			</tr>
+			<tr>
+					<td>&ndash;upgrade-system-tables</td>
+					<td>&ndash;upgrade=NONE or &ndash;upgrade=MINIMAL</td>
+			</tr>
+			<tr>
+					<td>&ndash;force</td>
+					<td>&ndash;upgrade=FORCE</td>
+			</tr>
+	</tbody>
+</table>
+<ul>
+<li>v8.0</li>
+</ul>
+<pre tabindex="0"><code>mysql_upgrade --updgrade-systme-tables
+</code></pre><ul>
+<li>v8.4</li>
+</ul>
+<pre tabindex="0"><code>mysqld --upgrade=MINIMAL
+</code></pre><h2 id="what-is-new-in-mysql-84-since-mysql-80"><a href="https://dev.mysql.com/doc/refman/8.4/en/mysql-nutshell.html">What Is New in MySQL 8.4 since MySQL 8.0</a></h2>
+<ul>
+<li>
+<p>MySQL native password <br>
+Beginning with MySQL 8.4.0, the deprecated mysql_native_password authentication plugin is no longer enabled by default.</p> <a class="read-more" href="/csdn/post/mysql84-install/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+
+        
+        <time class="post-date" datetime="2024-12-26T00:08:39&#43;08:00">
+            26 Dec 2024
+        </time>
+    </footer>
+</article>
 
 	
 	   <article class="post post">
@@ -645,57 +714,12 @@ indicates that the system won’t fail even when IPv6 fails.</li>
 </article>
 
 	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/csdn/post/ops_dc_redis_ubuntu/">安装redis-server</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p><p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
-<h1 id="1-安装">1. 安装</h1>
-<p>Prerequisites:</p>
-<pre tabindex="0"><code>sudo apt install lsb-release curl gpg
-</code></pre><p>Add the repository to the apt index:</p>
-<pre tabindex="0"><code>curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
-
-echo &#34;deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main&#34; | sudo tee /etc/apt/sources.list.d/redis.list
-</code></pre><ul>
-<li>install</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get update
-</span></span><span style="display:flex;"><span>sudo apt-get install redis-server
-</span></span></code></pre></div><h2 id="launch">Launch</h2>
-<ul>
-<li>local(WSL)</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>redis-server
-</span></span></code></pre></div><ul>
-<li>remote(Virtual Box or VM ware etc.)</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo redis-server /etc/redis/redis.conf
-</span></span></code></pre></div><h3 id="view-port">View port</h3>
-<p>install netstat:</p> <a class="read-more" href="/csdn/post/ops_dc_redis_ubuntu/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-
-        
-        <time class="post-date" datetime="2024-03-10T08:08:08&#43;08:00">
-            10 Mar 2024
-        </time>
-    </footer>
-</article>
-
-	
 
 	<nav class="pagination" role="navigation">
 	
 	    <a class="newer-posts" href="/csdn/post/">&larr; Newer Posts</a>
 	
-	<span class="page-number">Page 2 of 12</span>
+	<span class="page-number">Page 2 of 13</span>
 	
 	    <a class="older-posts" href="/csdn/post/page/3/">Older Posts &rarr;</a>
 	
