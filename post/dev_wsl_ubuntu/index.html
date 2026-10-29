@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="Ubuntu/Debian" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2024-12-12T18:08:08&#43;08:00" />
+    <meta property="article:published_time" content="2026-10-24T15:08:08&#43;08:00" />
 
     
     
@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.163.1">
+    <meta name="generator" content="Hugo 0.169.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/dev_wsl_ubuntu/" />
 
@@ -92,15 +92,15 @@
     },
     "headline": "WSL部署local服务",
     "name": "WSL部署local服务",
-    "wordCount":  340 ,
+    "wordCount":  310 ,
     "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "zh"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/dev_wsl_ubuntu/",
-    "datePublished": "2024-12-12T18:08Z",
-    "dateModified": "2024-12-12T18:08Z",
+    "datePublished": "2026-10-24T15:08Z",
+    "dateModified": "2026-10-24T15:08Z",
     
     
     "description": "Ubuntu/Debian",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2024-12-12T18:08:08&#43;08:00">
-            Dec 12, 2024
+          <time class="post-date" datetime="2026-10-24T15:08:08&#43;08:00">
+            Oct 24, 2026
           </time>
         
          
@@ -177,32 +177,46 @@
     </header>
 
     <section class="post-content">
-      <p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
-<ul>
-<li>Windows 10 1809+ <br>
-缺省为WSL1</li>
+      <ul>
+<li>Windows 10 21h2+</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-ps" data-lang="ps"><span style="display:flex;"><span><span style="color:#a6e22e">wsl</span> <span style="color:#a6e22e">-l</span> <span style="color:#a6e22e">-v</span>
-</span></span></code></pre></div><blockquote>
+<blockquote>
 <p>在powerShell的管理员模式下运行命令!</p>
 </blockquote>
+<p><em><strong>注意： 目前 WSL2(Virtual Machine Platform) 与 VirtualBox 有冲突!</strong></em></p>
 <h1 id="安装卸载">安装/卸载</h1>
 <p>ON:</p>
 <pre tabindex="0"><code>Control Panel -&gt; Uninstall a program -&gt; Turn Windows features on or off, 
 勾选“Windows Subsystem for Linux”
-</code></pre><h2 id="ubuntu">Ubuntu</h2>
+</code></pre><p>缺省为WSL1:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-ps" data-lang="ps"><span style="display:flex;"><span><span style="color:#a6e22e">wsl</span> <span style="color:#a6e22e">-l</span> <span style="color:#a6e22e">-v</span>
+</span></span></code></pre></div><h3 id="wsl2">WSL2</h3>
+<blockquote>
+<p>If using WSL1, skip this step.</p>
+</blockquote>
 <ul>
-<li>
-<p><a href="https://aka.ms/wslubuntu2004">Ubuntu 2004</a></p>
-<p>从AppxBundle提取appx.</p>
-</li>
+<li>Enable Virtual Machine feature</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Add-AppxPackage .\Ubuntu_2004.xxx.appx
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>dism.exe /online /enable-feature /featurename<span style="color:#960050;background-color:#1e0010">:</span>VirtualMachinePlatform /all /norestart
+</span></span></code></pre></div><p>Reboot your Windows 10 host</p>
+<ul>
+<li><a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">WSL2 Linux kernel update package for x64 machines</a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>wsl --update
+</span></span></code></pre></div><ul>
+<li>Set WSL 2 as your default version</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>wsl --set-default-version <span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><h2 id="ubuntu">Ubuntu</h2>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/windows/wsl/install-manual#downloading-distributions">Ubuntu 2004</a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Add-AppxPackage .\Ubuntu2404-<span style="color:#ae81ff">240425</span>.AppxBundle
 </span></span></code></pre></div><h3 id="卸载">卸载</h3>
 <p>如果“普通”方式不工作，请使用“命令行”。</p>
 <ul>
 <li>
-<p>普通
+<p>普通 <br>
 右击“Ubuntu xxx” 图标，选择“Uninstall”即可。</p>
 </li>
 <li>
@@ -215,24 +229,7 @@
 <li><a href="https://learn.microsoft.com/en-us/windows/wsl/install-manual#downloading-distributions">down appx - debian v11</a></li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Add-AppxPackage .\DistroLauncher-Appx_1.12.2.0_x64.appx
-</span></span></code></pre></div><h3 id="wsl2">WSL2</h3>
-<ul>
-<li>Enable Virtual Machine feature</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>dism.exe /online /enable-feature /featurename<span style="color:#960050;background-color:#1e0010">:</span>VirtualMachinePlatform /all /norestart
-</span></span></code></pre></div><p>Reboot your Windows 10 host</p>
-<ul>
-<li>WSL Linux kernel update package</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>wsl --update
-</span></span></code></pre></div><ul>
-<li>Install
-Click the &ldquo;Debian&rdquo; icon to install Debian.
-This takes some time.</li>
-</ul>
-<p>Set a username and password for your Debian GNU/Linux installation when prompted</p>
-<p>You are now logged in to your Debian system in command line mode</p>
-<h3 id="exec">exec</h3>
+</span></span></code></pre></div><h3 id="exec">exec</h3>
 <p>enter wsl:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>wsl --shutdown
 </span></span><span style="display:flex;"><span>wsl -u root
@@ -276,20 +273,23 @@ mounted again.
 </span></span><span style="display:flex;"><span>apt dist-upgrade -y
 </span></span><span style="display:flex;"><span>apt autoremove -y
 </span></span></code></pre></div><h1 id="使用">使用</h1>
-<p>更改源列表:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/apt/sources.list
-</span></span></code></pre></div><pre tabindex="0"><code>http://archive.ubuntu.com -&gt; https://mirrors.aliyun.com/ubuntu/
-</code></pre><h2 id="文件互访">文件互访</h2>
-<p>首先，使用windows记事本，建立一个testTxtFile.txt； <br>
-然后，在WSL查看文件内容。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /mnt/c/Users/tdtc/
-</span></span><span style="display:flex;"><span>vi testTxtFile.txt
-</span></span></code></pre></div><p>最后，用WSL重命名文件名:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mv testTxtFile.txt testFile.txt
-</span></span></code></pre></div><p>在windows就可以看到重命名的testFile.txt。</p>
-<h2 id="访问wsl服务">访问WSL服务</h2>
+<ul>
+<li>wsl2</li>
+<li>wsl1</li>
+</ul>
+<h2 id="wsl2-1">WSL2</h2>
+<ul>
+<li>proxy</li>
+</ul>
+<h3 id="proxy">proxy</h3>
+<p>在当前的WSL2 中设置代理很麻烦。</p>
+<p>即使设置了 <code>networkingMode=Mirrored</code> 也无法工作！</p>
+<h2 id="wsl1">WSL1</h2>
+<ul>
+<li>访问WSL1服务</li>
+</ul>
 <blockquote>
-<p>WSL与windows 10共有端口，所以Windows 10已使用的端口，不要再分配给WSL</p>
+<p>WSL1与windows 10共有端口，所以Windows 10已使用的端口，不要再分配给WSL</p>
 </blockquote>
 <p>首先，在wsl中启动nginx；</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo service nginx start
@@ -352,17 +352,17 @@ mounted again.
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/nodejs-ubuntu/">
+      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_network_adapter_linux/">
           <section class="post">
-              <h2>在Ubuntu下安装NodeJS</h2>
+              <h2>Linux修改网卡为固定IP</h2>
               
           </section>
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_memcached_ubuntu/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/apt-oper-ubuntu/">
           <section class="post">
-              <h2>安装memcached</h2>
+              <h2>apt的安装问题</h2>
           </section>
       </a>
   

@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="Linux下tomcat的配置" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2026-03-03T12:38:08&#43;08:00" />
+    <meta property="article:published_time" content="2026-07-09T12:38:08&#43;08:00" />
 
     
     
@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.163.1">
+    <meta name="generator" content="Hugo 0.169.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_tomcat/" />
 
@@ -92,15 +92,15 @@
     },
     "headline": "Tomcat安装",
     "name": "Tomcat安装",
-    "wordCount":  232 ,
-    "timeRequired": "PT2M",
+    "wordCount":  211 ,
+    "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "zh"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/ops_tomcat/",
-    "datePublished": "2026-03-03T12:38Z",
-    "dateModified": "2026-03-03T12:38Z",
+    "datePublished": "2026-07-09T12:38Z",
+    "dateModified": "2026-07-09T12:38Z",
     
     
     "description": "Linux下tomcat的配置",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2026-03-03T12:38:08&#43;08:00">
-            Mar 3, 2026
+          <time class="post-date" datetime="2026-07-09T12:38:08&#43;08:00">
+            Jul 9, 2026
           </time>
         
          
@@ -181,59 +181,29 @@
 	<thead>
 			<tr>
 					<th>Servlet Spec</th>
-					<th>JSP Spec</th>
-					<th>EL Spec</th>
-					<th>WebSocket Spec</th>
-					<th>Authentication (JASIC) Spec</th>
 					<th>Apache Tomcat Version</th>
-					<th>Latest Released Version</th>
 					<th>Supported Java Versions</th>
 			</tr>
 	</thead>
 	<tbody>
 			<tr>
 					<td>6.1</td>
-					<td>4.0</td>
-					<td>6.0</td>
-					<td>2.2</td>
-					<td>3.1</td>
 					<td>11.0.x</td>
-					<td>11.0.0</td>
 					<td>17 and later</td>
 			</tr>
 			<tr>
-					<td>3.1</td>
-					<td>2.3</td>
-					<td>3.0</td>
-					<td>1.1</td>
-					<td>1.1</td>
-					<td>8.5.x</td>
-					<td><a href="https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.100/bin/apache-tomcat-8.5.100.zip">8.5.100</a></td>
-					<td>7 and later</td>
-			</tr>
-			<tr>
-					<td>2.5</td>
-					<td>2.1</td>
-					<td>2.1</td>
-					<td>N/A</td>
-					<td>N/A</td>
-					<td>6.0.x</td>
-					<td><a href="https://archive.apache.org/dist/tomcat/tomcat-6/v6.0.53/bin/apache-tomcat-6.0.53.zip">6.0.53</a></td>
-					<td>5 and later</td>
-			</tr>
-			<tr>
-					<td>2.4</td>
-					<td>2.0</td>
-					<td>N/A</td>
-					<td>N/A</td>
-					<td>N/A</td>
-					<td>5.5.x</td>
-					<td><a href="https://archive.apache.org/dist/tomcat/tomcat-5/v5.5.36/bin/apache-tomcat-5.5.36.zip">5.5.36</a></td>
-					<td>1.4 and later</td>
+					<td>4.0</td>
+					<td>9.0.x</td>
+					<td>8 and later</td>
 			</tr>
 	</tbody>
 </table>
+<p>See <a href="https://tomcat.apache.org/whichversion.html">&ldquo;which version&rdquo;</a> for details.</p>
+<p>Note: End of support for Tomcat 9.0.x has been announced as 31 March 2027.</p>
 <h1 id="installation">installation</h1>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Jakarta_EE">Java enterprise platform history</a></li>
+</ul>
 <table>
 	<thead>
 			<tr>
@@ -246,25 +216,25 @@
 	</thead>
 	<tbody>
 			<tr>
+					<td>Jakarta EE 11</td>
+					<td>2025-06-26[10]</td>
+					<td>11</td>
+					<td>Java SE 21 </br> Java SE 17</td>
+					<td>Data</td>
+			</tr>
+			<tr>
 					<td>Jakarta EE 10</td>
 					<td>2022-03-31</td>
 					<td>10</td>
-					<td>Java SE 17/Java SE 11</td>
+					<td>Java SE 17 </br> Java SE 11</td>
 					<td>Removal of deprecated items in Servlet, Faces, CDI and EJB (Entity Beans and Embeddable Container). CDI-Build Time.</td>
-			</tr>
-			<tr>
-					<td>Jakarta EE 9</td>
-					<td>2020-12-08</td>
-					<td>9</td>
-					<td>Java SE 8</td>
-					<td>API namespace move from javax to jakarta</td>
 			</tr>
 			<tr>
 					<td>Jakarta EE 8</td>
 					<td>2019-09-10</td>
 					<td>8</td>
 					<td>Java SE 8</td>
-					<td>Full compatiblity with Java EE 8</td>
+					<td>Full compatibility with Java EE 8</td>
 			</tr>
 			<tr>
 					<td>Java EE 8</td>
@@ -288,16 +258,16 @@
 <ul>
 <li>v9.0</li>
 </ul>
-<pre tabindex="0"><code>$wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-9/v9.0.115/bin/apache-tomcat-9.0.115.tar.gz --no-check-certificate
+<pre tabindex="0"><code>$wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-9/v9.0.120/bin/apache-tomcat-9.0.120.tar.gz --no-check-certificate
 </code></pre><ul>
 <li>v11.0</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-11/v11.0.18/bin/apache-tomcat-11.0.18.tar.gz --no-check-certificate
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-11/v11.0.24/bin/apache-tomcat-11.0.24.tar.gz --no-check-certificate
 </span></span></code></pre></div><p>Example of extracting v9.0:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$tar -zxvf apache-tomcat-9.0.115.tar.gz
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$tar -zxvf apache-tomcat-9.0.120.tar.gz
 </span></span></code></pre></div><h3 id="移动文件夹">移动文件夹</h3>
 <p>拷贝并重命名为tomcat</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo cp -R apache-tomcat-9.0.115 /usr/local/tomcat
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$sudo cp -R apache-tomcat-9.0.120 /usr/local/tomcat
 </span></span></code></pre></div><h1 id="执行tomcat">执行Tomcat</h1>
 <p>allow fw:</p>
 <ul>
@@ -376,17 +346,17 @@
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/c-preprocessor2/">
+      <a class="read-next-story" style="no-cover" href="/csdn/post/apt-oper-ubuntu/">
           <section class="post">
-              <h2>c预处理器</h2>
+              <h2>apt的安装问题</h2>
               
           </section>
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_network_proxy/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/c-preprocessor2/">
           <section class="post">
-              <h2>设置proxy</h2>
+              <h2>c预处理器</h2>
           </section>
       </a>
   

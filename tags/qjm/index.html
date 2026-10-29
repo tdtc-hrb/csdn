@@ -57,7 +57,7 @@
         <link href='/csdn/tags/qjm/index.xml' rel="alternate" type="application/rss+xml" title="QJM &middot; 迁移自(blog.csdn.net/xiaobin_HLJ80)" />
       
     
-    <meta name="generator" content="Hugo 0.163.1">
+    <meta name="generator" content="Hugo 0.169.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/tags/qjm/" />
 
@@ -247,7 +247,25 @@
 <ol>
 <li>
 <p>从逻辑角度来讲，Shuffle 过程就是一个 GroupByKey 的过程，两者没有本质区别。
-只是 MapReduce 为了方便 GroupBy 存在于不同 partition 中的 key/value records，就提前对 key 进行排序。Spark 认为很多应用不需要对 key 排序，就默认没有在 GroupBy 的过程中对 key 排序。</p> <a class="read-more" href="/csdn/post/ops_hadoop_abbr1/">&raquo;</a></p>
+只是 MapReduce 为了方便 GroupBy 存在于不同 partition 中的 key/value records，就提前对 key 进行排序。Spark 认为很多应用不需要对 key 排序，就默认没有在 GroupBy 的过程中对 key 排序。</p>
+</li>
+<li>
+<p>从数据流角度讲，两者有差别。
+MapReduce 只能从一个 Map Stage shuffle 数据，Spark 可以从多个 Map Stages shuffle 数据（这是 DAG 型数据流的优势，可以表达复杂的数据流操作，参见 CoGroup(), join() 等操作的数据流图 SparkInternals/4-shuffleDetails.md at master · JerryLead/SparkInternals · GitHub）。</p>
+</li>
+<li>
+<p>Shuffle write/read 实现上有一些区别。
+以前对 shuffle write/read 的分类是 sort-based 和 hash-based。MapReduce 可以说是 sort-based，shuffle write 和 shuffle read 过程都是基于key sorting 的 (buffering records + in-memory sort + on-disk external sorting)。早期的 Spark 是 hash-based，shuffle write 和 shuffle read 都使用 HashMap-like 的数据结构进行 aggregate (without key sorting)。但目前的 Spark 是两者的结合体，shuffle write 可以是 sort-based (only sort partition id, without key sorting)，shuffle read 阶段可以是 hash-based。因此，目前 sort-based 和 hash-based 已经“你中有我，我中有你”，界限已经不那么清晰。</p>
+</li>
+<li>
+<p>从数据 fetch 与数据计算的重叠粒度来讲，两者有细微区别。
+MapReduce 是粗粒度，reducer fetch 到的 records 先被放到 shuffle buffer 中休息，当 shuffle buffer 快满时，才对它们进行 combine()。而 Spark 是细粒度，可以即时将 fetch 到的 record 与 HashMap 中相同 key 的 record 进行 aggregate。</p>
+</li>
+<li>
+<p>从性能优化角度来讲，Spark考虑的更全面。
+MapReduce 的 shuffle 方式单一。Spark 针对不同类型的操作、不同类型的参数，会使用不同的 shuffle write 方式。比如 Shuffle write 有三种实现方式：</p>
+</li>
+</ol> <a class="read-more" href="/csdn/post/ops_hadoop_abbr1/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">

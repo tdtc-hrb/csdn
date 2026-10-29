@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="需要net-tools/netplan" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2024-03-12T08:38:08&#43;08:00" />
+    <meta property="article:published_time" content="2026-10-26T08:38:08&#43;08:00" />
 
     
     
@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.163.1">
+    <meta name="generator" content="Hugo 0.169.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/" />
 
@@ -92,15 +92,15 @@
     },
     "headline": "Linux修改网卡为固定IP",
     "name": "Linux修改网卡为固定IP",
-    "wordCount":  207 ,
+    "wordCount":  192 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "zh"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/ops_network_adapter_linux/",
-    "datePublished": "2024-03-12T08:38Z",
-    "dateModified": "2024-03-12T08:38Z",
+    "datePublished": "2026-10-26T08:38Z",
+    "dateModified": "2026-10-26T08:38Z",
     
     
     "description": "需要net-tools/netplan",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2024-03-12T08:38:08&#43;08:00">
-            Mar 12, 2024
+          <time class="post-date" datetime="2026-10-26T08:38:08&#43;08:00">
+            Oct 26, 2026
           </time>
         
          
@@ -177,32 +177,33 @@
     </header>
 
     <section class="post-content">
-      <ul>
-<li>RHEL</li>
-<li>Diban <br>
-Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</li>
-</ul>
-<h1 id="rhel-like">RHEL-like</h1>
+      <p>Netplan is prevalent in systemd-based systems like Ubuntu, while ifupdown is traditional, often found in Debian and RHEL.</p>
+<h3 id="view-network-adapters">View network adapters</h3>
 <ul>
-<li>Alma/Rocky</li>
-<li>CentOS <br>
-Less than RHEL version 8</li>
+<li>ipv4:</li>
 </ul>
-<h2 id="view">View</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ip addr
+</span></span></code></pre></div><ul>
+<li>ipv6:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ip -6 addr
+</span></span></code></pre></div><h3 id="virtual-machine">virtual machine</h3>
+<blockquote>
+<p>VirtualBox and VMware</p>
+</blockquote>
+<p>设置Network Adapter为Bridged</p>
+<h1 id="rhel-like">RHEL-like</h1>
 <p>net adapter list:</p>
 <pre tabindex="0"><code>$cd /etc/sysconfig/network-scripts
 $ls ifcfg-* -l
-</code></pre><h3 id="ipv4">ipv4</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ip addr
-</span></span></code></pre></div><h3 id="ipv6">ipv6</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ip -6 addr
-</span></span></code></pre></div><h2 id="setup">Setup</h2>
+</code></pre><h2 id="setup">Setup</h2>
 <p>Start job network adapter:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ONBOOT<span style="color:#f92672">=</span>yes
 </span></span></code></pre></div><h3 id="static">static</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cd /etc/sysconfig/network-scripts
 </span></span><span style="display:flex;"><span>$sudo vi ifcfg-enp0s3
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>BOOTPROTO<span style="color:#f92672">=</span>none
+</span></span></code></pre></div><p>file info:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>BOOTPROTO<span style="color:#f92672">=</span>none
 </span></span><span style="display:flex;"><span>IPADDR<span style="color:#f92672">=</span>192.168.1.186
 </span></span><span style="display:flex;"><span>PREFIX<span style="color:#f92672">=</span><span style="color:#ae81ff">24</span>
 </span></span><span style="display:flex;"><span>GATEWAY<span style="color:#f92672">=</span>192.168.1.1
@@ -219,28 +220,10 @@ This indicates that the default IPv6 route has been assigned to the interface.</
 <li>IPV6_FAILURE_FATAL=no <br>
 indicates that the system won’t fail even when IPv6 fails.</li>
 </ul>
-<h3 id="virtual-machine">virtual machine</h3>
-<p>设置Network Adapter为Bridged</p>
-<h4 id="net-adapter">net adapter</h4>
-<ul>
-<li>
-<p>vmware <br>
-default: eth0</p>
-</li>
-<li>
-<p>vbox <br>
-default: enp0s3</p>
-</li>
-</ul>
 <h1 id="debian-like">Debian-like</h1>
-<p>Debian:</p>
-<pre tabindex="0"><code>sudo apt install netplan.io
-</code></pre><h2 id="ubuntu">Ubuntu</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$cd /etc/netplan/
 </span></span><span style="display:flex;"><span>$sudo vi 00-installer-config.yaml
-</span></span></code></pre></div><ul>
-<li>Normal</li>
-</ul>
+</span></span></code></pre></div><h3 id="normal">Normal</h3>
 <blockquote>
 <p>路由器下</p>
 </blockquote>
@@ -280,10 +263,13 @@ network:
   version: 2
 </code></pre><p>宿主机的IP: 192.168.69.113</p>
 <p>宿主机的DNS: 192.168.69.218</p>
+<h2 id="dibian">Dibian</h2>
+<ul>
+<li><a href="https://tdtc-hrb.github.io/cnblogs/post/ops-network_adapter-debian/">最新版的Debian网络Adapter</a></li>
+</ul>
 <h1 id="ref">Ref</h1>
 <ul>
-<li><a href="https://www.tecmint.com/configure-ipv6-network-on-centos-rhel/">How to Configure IPv6 Network on CentOS/RHEL 8</a></li>
-<li><a href="https://techviewleo.com/manage-ubuntu-debian-networking-using-netplan/">How To Manage Ubuntu / Debian Networking using Netplan</a></li>
+<li><a href="https://www.tecmint.com/configure-ipv6-network-on-centos-rhel">How to Configure IPv6 Network on CentOS/RHEL 8</a></li>
 </ul>
 
     </section>
@@ -336,17 +322,10 @@ network:
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_openjdk_ubuntu/">
-          <section class="post">
-              <h2>设置OpenJDK</h2>
-              
-          </section>
-      </a>
   
-  
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_dc_redis_ubuntu/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/dev_wsl_ubuntu/">
           <section class="post">
-              <h2>安装redis-server</h2>
+              <h2>WSL部署local服务</h2>
           </section>
       </a>
   

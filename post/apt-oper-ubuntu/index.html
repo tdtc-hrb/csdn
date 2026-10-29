@@ -29,7 +29,7 @@
     
     <meta property="og:description" content="apt安装中使用到卸载、安装指定版本、以及查看deb版本" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2024-09-21T02:20:39&#43;08:00" />
+    <meta property="article:published_time" content="2026-09-21T02:20:39&#43;08:00" />
 
     
     
@@ -59,7 +59,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.163.1">
+    <meta name="generator" content="Hugo 0.169.0">
 
     <link rel="canonical" href="https://tdtc-hrb.github.io/csdn/post/apt-oper-ubuntu/" />
 
@@ -92,15 +92,15 @@
     },
     "headline": "apt的安装问题",
     "name": "apt的安装问题",
-    "wordCount":  180 ,
+    "wordCount":  96 ,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": "zh"
     },
     "url": "https://tdtc-hrb.github.io/csdn/post/apt-oper-ubuntu/",
-    "datePublished": "2024-09-21T02:20Z",
-    "dateModified": "2024-09-21T02:20Z",
+    "datePublished": "2026-09-21T02:20Z",
+    "dateModified": "2026-09-21T02:20Z",
     
     
     "description": "apt安装中使用到卸载、安装指定版本、以及查看deb版本",
@@ -168,8 +168,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2024-09-21T02:20:39&#43;08:00">
-            Sep 21, 2024
+          <time class="post-date" datetime="2026-09-21T02:20:39&#43;08:00">
+            Sep 21, 2026
           </time>
         
          
@@ -179,24 +179,13 @@
     <section class="post-content">
       <p>apt适合手动输入(有交互); apt-get适合脚本(无交互).</p>
 <p>Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).</p>
-<h1 id="manage">Manage</h1>
-<h2 id="卸载">卸载</h2>
+<h3 id="卸载">卸载</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get autoremove vsftpd --purge
-</span></span></code></pre></div><h2 id="安装指定版本">安装指定版本</h2>
+</span></span></code></pre></div><h3 id="安装指定版本">安装指定版本</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get install &lt;package name&gt;<span style="color:#f92672">=</span>&lt;version&gt;
-</span></span></code></pre></div><h2 id="列出版本">列出版本</h2>
+</span></span></code></pre></div><h3 id="列出版本">列出版本</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-cache madison &lt;&lt;package name&gt;&gt;
-</span></span></code></pre></div><h1 id="debian">DebIan</h1>
-<pre tabindex="0"><code>sudo sed -i &#39;s/deb.debian.org/mirrors.aliyun.com/g&#39; /etc/apt/sources.list
-</code></pre><h2 id="sudo">sudo</h2>
-<p>sudo.d(directory):</p>
-<pre tabindex="0"><code>Note also, that becasuse sudoers contents can vary widely, no attempt is made to add this 
-directive to existing sudoers files on upgrade. Feel free to add the above directive to the 
-end of your /etc/sudoers file to enabe this functionality for existing installations if you 
-wish! Sudo versions older than the one in Debian 11(bullseye) require the directive will only 
-support the old syntax #includedir, and the current sudo will happily accept both @includedir 
-and #includedir
-</code></pre><h3 id="install">install</h3>
+</span></span></code></pre></div><h2 id="sudo">sudo</h2>
 <p>using root:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>su - root
 </span></span></code></pre></div><p>install:</p>
@@ -210,17 +199,18 @@ and #includedir
 </span></span></code></pre></div><p>把文件权限改为只读:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod <span style="color:#ae81ff">440</span> /etc/sudoers
 </span></span></code></pre></div><h2 id="cd-rom-in-source">CD-ROM in source</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/apt/sources.list
-</span></span></code></pre></div><p>注释掉&quot;deb cdrom:xxx&quot;</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">##deb cdrom:xxx</span>
-</span></span></code></pre></div><ul>
-<li>no sources file</li>
-</ul>
 <pre tabindex="0"><code>$ sudo cp /usr/share/doc/apt/examples/sources.list /etc/apt/sources.list
 
 $ sudo apt update
 </code></pre><h3 id="command">Command</h3>
+<ul>
+<li>Disable the CD-ROM in sources.list:</li>
+</ul>
 <pre tabindex="0"><code>sudo sed -i &#39;/cdrom/d&#39; /etc/apt/sources.list
+</code></pre><ul>
+<li>add aliyun</li>
+</ul>
+<pre tabindex="0"><code>sudo sed -i &#39;s/deb.debian.org/mirrors.aliyun.com/g&#39; /etc/apt/sources.list
 </code></pre><h1 id="ref">Ref</h1>
 <ul>
 <li><a href="https://blog.csdn.net/putong11/article/details/9568685">Debian中安装使用sudo命令</a></li>
@@ -278,17 +268,17 @@ $ sudo apt update
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/csdn/post/ops_memcached_ubuntu/">
+      <a class="read-next-story" style="no-cover" href="/csdn/post/dev_wsl_ubuntu/">
           <section class="post">
-              <h2>安装memcached</h2>
+              <h2>WSL部署local服务</h2>
               
           </section>
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="/csdn/post/mysql57-win/">
+      <a class="read-next-story prev" style="no-cover" href="/csdn/post/ops_tomcat/">
           <section class="post">
-              <h2>安装配置MySQL 5.7</h2>
+              <h2>Tomcat安装</h2>
           </section>
       </a>
   
